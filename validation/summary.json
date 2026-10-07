@@ -506,5 +506,18 @@
     "thickness_mm": 1.5,
     "magnetization": "diametric",
     "material": "neodymium, grade unspecified; field and counting accuracy require prototype calibration"
+  },
+  "downloadableGlb": {
+    "source": "dist/index/3d.glb",
+    "output": "previews/3d.glb",
+    "sourceBytes": 13593000,
+    "outputBytes": 9308976,
+    "sourceSha256": "f9067c0f17f751215bffa8de16262e811949111d157d43a2df792b186da7a111",
+    "outputSha256": "8e103f802bbf1f774b8533564602b61ecd5b084bde79d31faeab2ed5fe89df66",
+    "meshCount": 33,
+    "removedOptionalAttributeArrays": 28,
+    "retainedBufferViewsByteIdentical": true,
+    "positionsIndicesAndNodeTransformsUnchanged": true,
+    "normals": "Face normals are derived by the viewer for untextured mechanical models. Electronic model normals and board textures are retained."
   }
 }

@@ -109,7 +109,13 @@ Run `bun run export:gerbers` after `bun run check:all` to produce the fabricatio
 
 The models use millimetres and Z-up assembly coordinates. Their offset is Z = −7.6 mm because tscircuit places the PCB midplane at Z = 0. This preserves the released cap, holder, cell and hatch stack. The central encoder uses the user-specified diametrically magnetized neodymium Ø5 × 1.5 mm disc, a Ø5.2 mm pocket and a 0.2 mm roof shim. Its nominal released/pressed sensor gaps remain 1.8/1.3 mm; magnet grade and field calibration are unverified. `mechanical/Circuit_Models/manifest.json` records model bounds and hashes. The MagSafe ring is still a reserved envelope pending a supplier magnet design.
 
-The CadQuery builder also writes `Circuit_Models/` into its output directory. After revising the CAD, copy those generated assets into `mechanical/Circuit_Models/`, rebuild the source, then run `bun run check:enclosure` to verify model alignment and unchanged electrical geometry. The assembly API follows the [TSCI cadassembly documentation](https://docs.tscircuit.com/elements/assembly-cadassembly).
+The CadQuery builder also writes `Circuit_Models/` into its output directory. After revising the CAD, copy those generated assets into `mechanical/Circuit_Models/`, rebuild the source, then run `bun run check:enclosure` to verify model alignment and unchanged electrical geometry. The downloadable GLB is compacted for the registry upload limit. It preserves every position, triangle index, node transform, electronic model and board texture byte-for-byte; viewers derive flat normals for the untextured enclosure models. Repeat this export step after a source build:
+
+```sh
+python3 validation/compact-glb.py dist/index/3d.glb previews/3d.glb --report validation/compact-glb-audit.json
+```
+
+The assembly API follows the [TSCI cadassembly documentation](https://docs.tscircuit.com/elements/assembly-cadassembly).
 
 ## Primary design sources
 
