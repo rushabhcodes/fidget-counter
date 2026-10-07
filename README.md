@@ -1,8 +1,8 @@
 # MagSafe BLE Fidget Counter — PCB Rev A
 
-> **Current revision 1.0.3: imported CR2032 holder, 0.30 mm via drill / 0.55 mm via land, green mask, double-sided Standard PCBA and ENIG.** TMAG3001A2YBGR is retained. This is a checked prototype ready for supplier quotation/CAM review; the assembly order has not been released.
+> **Current revision 1.0.4: enclosure integrated in the circuit assembly, imported CR2032 holder, 0.30 mm via drill / 0.55 mm via land, green mask, double-sided Standard PCBA and ENIG.** TMAG3001A2YBGR is retained. This is a checked prototype ready for supplier quotation/CAM review; the assembly order has not been released.
 
-The default registry entrypoint is `published.circuit.json`, the exact validated routed board. `bun run build` renders that saved board; `bun run build:source` rebuilds the editable TSX using the prescribed routing. `bun run check:all` rebuilds and validates the editable TSX, including routing and exported copper. The published circuit is refreshed from that checked build.
+The default registry entrypoint is `published.circuit.json`, the exact validated routed board and enclosure assembly. `bun run build` renders that saved board; `bun run build:source` rebuilds the editable TSX using the prescribed routing. `bun run check:all` rebuilds and validates the editable TSX, including routing and exported copper. The published circuit is refreshed from that checked build.
 
 ![Imported holder and revised enclosure](previews/battery-holder.png)
 
@@ -91,7 +91,7 @@ Current primary requirements: [rigid PCB capabilities](https://jlcpcb.com/capabi
 - Root TSX files, package/configuration files and lockfile: editable tscircuit project.
 - `verify.mjs`: repeatable full check runner, invoked with `bun run check:all`.
 - `published.circuit.json`: exact checked routed circuit used for the registry and supplied exports. The default build writes it to `dist/published/circuit.json`.
-- `previews/`: copper layout views, a fitted-part assembly reference and all four schematic sheets in PNG/SVG. `pcb-bottom` shows the actual underside orientation; `pcb-bottom-top-coordinates` retains the source coordinate view. The assembly reference excludes DNP parts, GPIO escape lands and bare test/contact interfaces; crystal manufacturer pin numbering is documented above. Library model downloads are included under `imports/`, with a fitted-board GLB and PNG under `previews/`.
+- `previews/`: copper layout views, a fitted-part assembly reference and all four schematic sheets in PNG/SVG. `pcb-bottom` shows the actual underside orientation; `pcb-bottom-top-coordinates` retains the source coordinate view. The assembly reference excludes DNP parts, GPIO escape lands and bare test/contact interfaces; crystal manufacturer pin numbering is documented above. Library model downloads are included under `imports/`, with the full device GLB and PNG at `previews/3d.*` and the unchanged bare PCB view at `previews/pcb-3d.*`.
 - `fabrication/`: prototype Gerber/drill ZIP and assembly position reference CSV.
 - `BOM.csv` and `netlist.txt`: assembly intent and electrical connectivity.
 - `mechanical/`: all five compatible printed enclosure parts in STL/STEP, editable CadQuery source/parameters and geometry validation.
@@ -102,6 +102,14 @@ Treat the Gerbers as a prototype review handoff. Resolve the thin mounting-hole 
 The fabrication ZIP contains Gerber and drill files only. Use the separate authored BOM and assembly position reference; automatically generated supplier BOM/rotation files have been omitted.
 
 Run `bun run export:gerbers` after `bun run check:all` to produce the fabrication ZIP; this preserves supplier copper geometry and fills the missing QFN lead paste records. To repeat the independent JLC geometry/export audits, install `validation/requirements.txt` into a local Python virtual environment, then run `validation/check-jlc.py published.circuit.json` and `validation/check-jlc-gerbers.py fabrication/Fidget_Counter_RevA_Prototype_Gerbers.zip published.circuit.json` from the project root. These produce reports in `work/` and fail on the measured rule violations.
+
+## Enclosure in the circuit's 3D view
+
+`index.circuit.tsx` wraps the board in `<assembly.device>` and adds `EnclosureAssembly` from `enclosure.tsx`. Its 14 named `<assembly.cadassembly>` elements load the existing enclosure geometry alongside the actual populated PCB. There are no duplicate electronics or holder dummies. The four outer shells are translucent to expose the interior; STL/STEP solids retain their original geometry.
+
+The models use millimetres and Z-up assembly coordinates. Their offset is Z = −7.6 mm because tscircuit places the PCB midplane at Z = 0. This preserves the released cap, holder, cell and hatch stack. The central encoder uses the user-specified diametrically magnetized neodymium Ø5 × 1.5 mm disc, a Ø5.2 mm pocket and a 0.2 mm roof shim. Its nominal released/pressed sensor gaps remain 1.8/1.3 mm; magnet grade and field calibration are unverified. `mechanical/Circuit_Models/manifest.json` records model bounds and hashes. The MagSafe ring is still a reserved envelope pending a supplier magnet design.
+
+The CadQuery builder also writes `Circuit_Models/` into its output directory. After revising the CAD, copy those generated assets into `mechanical/Circuit_Models/`, rebuild the source, then run `bun run check:enclosure` to verify model alignment and unchanged electrical geometry. The assembly API follows the [TSCI cadassembly documentation](https://docs.tscircuit.com/elements/assembly-cadassembly).
 
 ## Primary design sources
 

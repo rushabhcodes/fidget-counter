@@ -1,0 +1,7 @@
+newmtl MagSafe_Magnet_Array
+Ka 0.1 0.1 0.1
+Kd 0.24 0.63 0.74
+Ks 0.15 0.15 0.15
+Ns 20
+d 1
+illum 2

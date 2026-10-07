@@ -1,0 +1,7 @@
+newmtl Encoder_Magnet
+Ka 0.1 0.1 0.1
+Kd 0.88 0.31 0.22
+Ks 0.15 0.15 0.15
+Ns 20
+d 1
+illum 2

@@ -1,0 +1,10 @@
+{
+  "importedLibraryTypes": 19,
+  "originalImportedFiles": 57,
+  "fittedParts": 30,
+  "exactJlcpcbParts": 29,
+  "sharedGeometrySwitch": "KMR223NG ULC LFG uses the KMR232NGULCLFS package model; original 2 N MPN retained",
+  "builtGlbMeshCount": 19,
+  "circuitSha256": "c75c8d72635b2de5a913934df89587f7c9d62d463ee953eebf054ad80dc33e8a",
+  "glbSha256": "7cc8f0056249ece49b943b84511ea10a9e470eb952ffbc1aa6b6104c47b2130a"
+}

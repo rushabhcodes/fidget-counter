@@ -1,0 +1,7 @@
+newmtl Bottom_Cover
+Ka 0.1 0.1 0.1
+Kd 0.46 0.55 0.6
+Ks 0.15 0.15 0.15
+Ns 20
+d 1
+illum 2

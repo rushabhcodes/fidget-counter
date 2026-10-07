@@ -1,0 +1,245 @@
+{
+  "date": "2026-10-07",
+  "version": "1.0.3",
+  "tscircuit": "0.0.2748",
+  "cli": "0.1.2253",
+  "checks": {
+    "checkedAt": "2026-10-07T13:04:46.297Z",
+    "checks": [
+      "netlist",
+      "pin_specification",
+      "source",
+      "schematic-placement",
+      "placement",
+      "routing-difficulty",
+      "shorts",
+      "trace-length"
+    ],
+    "errors": 0,
+    "warnings": 0,
+    "routedTraces": 89,
+    "vias": 47,
+    "analyzedNetCount": 20,
+    "crystalBranches": [
+      {
+        "name": "U1_XC1",
+        "lengthMm": 5.733959096295852,
+        "vias": 0
+      },
+      {
+        "name": "U1_XC2",
+        "lengthMm": 5.849969009124063,
+        "vias": 0
+      },
+      {
+        "name": "C1_1",
+        "lengthMm": 1.3301010005234297,
+        "vias": 0
+      },
+      {
+        "name": "C2_1",
+        "lengthMm": 1.8053433884928216,
+        "vias": 0
+      },
+      {
+        "name": "U1_XL1",
+        "lengthMm": 2.621620736724572,
+        "vias": 0
+      },
+      {
+        "name": "U1_XL2",
+        "lengthMm": 4.374956001282802,
+        "vias": 0
+      },
+      {
+        "name": "C11_1",
+        "lengthMm": 1.8012711496278955,
+        "vias": 0
+      },
+      {
+        "name": "C12_1",
+        "lengthMm": 1.8712663515714518,
+        "vias": 0
+      }
+    ],
+    "sha256": {
+      "index.circuit.tsx": "3dec90a3371304018dbc1873241218affe8783c47b46f3e68ae133b2314a9ddd",
+      "parts.tsx": "47b85463e132fcc855a49d5c741ccd6e97a0e3e7af9b4a0375d8015f7091dc9f",
+      "passives.tsx": "3f2cdbf1cbff6cecd49da9cc3823255437d5a14cd1b8e2b1d41b7044d57d2a5f",
+      "model-assets.d.ts": "9456883f24ccb7aabd3a84f094f1b87c32756018db28ae45bc2eec59d96fea72",
+      "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
+      "routed-paths.json": "2989ec13f4d56ace059bce086b4712ea429f3a001d0705f82393ccab56a3c1ca",
+      "published.circuit.json": "c75c8d72635b2de5a913934df89587f7c9d62d463ee953eebf054ad80dc33e8a",
+      "package.json": "8a4469629504fee742d3b191dc7977e6376aef7aadab3dc880f34bf18a412f08",
+      "verify.mjs": "62063342d465580d84ab21b7a4d4ae35fa4c4f64c4a491b6ac3cd09e3669b982",
+      "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
+      "export-gerbers.mjs": "449fb40fdae108c9025ac9df21eea2669cb0cbb451fd642337dd72f091652008",
+      "dist/index/circuit.json": "c75c8d72635b2de5a913934df89587f7c9d62d463ee953eebf054ad80dc33e8a"
+    }
+  },
+  "jlcpcbGeometry": {
+    "input": "published.circuit.json",
+    "circuitJsonSha256": "c75c8d72635b2de5a913934df89587f7c9d62d463ee953eebf054ad80dc33e8a",
+    "copperChecks": [
+      {
+        "check": "different-net copper spacing",
+        "limitMm": 0.1,
+        "minimumMm": 0.105366,
+        "nearest": {
+          "a": "pcb_smtpad_87",
+          "aRef": "R3",
+          "b": "source_net_1_mst13_0:3",
+          "bRef": "trace",
+          "distanceMm": 0.105366
+        },
+        "violations": []
+      },
+      {
+        "check": "different-net SMT pad spacing",
+        "limitMm": 0.15,
+        "minimumMm": 0.199796,
+        "nearest": {
+          "a": "pcb_smtpad_10",
+          "aRef": "U1",
+          "b": "pcb_smtpad_11",
+          "bRef": "U1",
+          "distanceMm": 0.199796
+        },
+        "violations": []
+      },
+      {
+        "check": "SMT mask opening to different-net track",
+        "limitMm": 0.09,
+        "minimumMm": 0.105366,
+        "nearest": {
+          "a": "pcb_smtpad_87",
+          "aRef": "R3",
+          "b": "source_net_1_mst13_0:3",
+          "bRef": "trace",
+          "distanceMm": 0.105366
+        },
+        "violations": []
+      },
+      {
+        "check": "via drill to different-net track",
+        "limitMm": 0.2,
+        "minimumMm": 0.233103,
+        "nearest": {
+          "a": "pcb_via_0",
+          "aRef": "pcb_via",
+          "b": "pcb_trace_34:1",
+          "bRef": "U1_ANT",
+          "distanceMm": 0.233103
+        },
+        "violations": []
+      },
+      {
+        "check": "via drill to via drill",
+        "limitMm": 0.2,
+        "minimumMm": 0.407114,
+        "nearest": {
+          "a": "pcb_plated_hole_1",
+          "aRef": "GPIO_SDA",
+          "b": "pcb_via_2",
+          "bRef": "pcb_via",
+          "distanceMm": 0.407114
+        },
+        "violations": []
+      },
+      {
+        "check": "NPTH drill to copper",
+        "limitMm": 0.2,
+        "minimumMm": 0.389406,
+        "nearest": {
+          "a": "pcb_hole_3",
+          "aRef": "mounting",
+          "b": "pcb_copper_pour_0",
+          "bRef": "GND pour",
+          "distanceMm": 0.389406
+        },
+        "violations": []
+      },
+      {
+        "check": "wire-contact PTH drill to different-net track",
+        "limitMm": 0.28,
+        "minimumMm": 0.572741,
+        "nearest": {
+          "a": "pcb_plated_hole_3",
+          "aRef": "TP_GND",
+          "b": "source_net_5_0:1",
+          "bRef": "trace",
+          "distanceMm": 0.572741
+        },
+        "violations": []
+      }
+    ],
+    "minimumTraceWidthMm": 0.11,
+    "minimumCopperToBoardEdge": {
+      "id": "pcb_copper_pour_0",
+      "ref": "GND pour",
+      "distanceMm": 0.349999
+    },
+    "minimumMountingWebMm": 0.24938257832721972,
+    "drillInventory": {
+      "0.30 mm drill / 0.55 mm land": 50,
+      "3.60 mm NPTH": 4,
+      "0.40 mm drill / 1.20 mm land": 1
+    },
+    "silkscreenTextBelow1mm": []
+  },
+  "jlcpcbGerbers": {
+    "circuitJsonSha256": "c75c8d72635b2de5a913934df89587f7c9d62d463ee953eebf054ad80dc33e8a",
+    "gerberZipSha256": "fcb56f6d5b63f51f239a12ecacbde38c920953faae2997a74ae243b9f5a5defd",
+    "sensorMaskBridgeMm": 0.199796,
+    "minimumGreenMaskBridgeMm": 0.1,
+    "silkscreen": {
+      "top": {
+        "minimumDrawStrokeMm": 0.153,
+        "minimumMaskClearanceMm": 0.7378778227220619,
+        "violations": []
+      },
+      "bottom": {
+        "minimumDrawStrokeMm": 0.153,
+        "minimumMaskClearanceMm": 0.8420220834339692,
+        "violations": []
+      }
+    },
+    "boardAreaMm2": 1045.9265459632427,
+    "drillCount": 55,
+    "drillDensityPerSquareMetre": 52584.9546627081,
+    "exposedEnigAreaUpperBoundPercentOfSingleBoardArea": 16.96512618154169,
+    "maskCoverageViolations": [],
+    "fittedPadsMissingPaste": [],
+    "bareOrDnpPadsWithPaste": [],
+    "panelToolingAndTabsExcludedFromDensity": true
+  },
+  "importedModels": {
+    "importedLibraryTypes": 19,
+    "originalImportedFiles": 57,
+    "fittedParts": 30,
+    "exactJlcpcbParts": 29,
+    "sharedGeometrySwitch": "KMR223NG ULC LFG uses the KMR232NGULCLFS package model; original 2 N MPN retained",
+    "builtGlbMeshCount": 19,
+    "circuitSha256": "c75c8d72635b2de5a913934df89587f7c9d62d463ee953eebf054ad80dc33e8a",
+    "glbSha256": "7cc8f0056249ece49b943b84511ea10a9e470eb952ffbc1aa6b6104c47b2130a"
+  },
+  "batteryHolder": {
+    "mpn": "BS-08-B2AA020-R",
+    "jlcpcb": "C964787",
+    "layer": "bottom",
+    "manufacturerMaximumHeightMm": 5.8,
+    "enclosureHeightMm": 14.0,
+    "hatchScrews": 2,
+    "positiveFace": "toward hatch",
+    "rigidCollisionCount": 0,
+    "springContactFitTestRequired": true
+  },
+  "assembly": {
+    "top": 29,
+    "bottom": 1,
+    "target": "Standard, double-sided, ENIG"
+  },
+  "prototypeTested": false,
+  "camApproved": false,
+  "assemblyOrderReleased": false
+}

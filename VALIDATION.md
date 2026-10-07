@@ -1,4 +1,4 @@
-# PCB Rev A — JLC battery holder revision 1.0.3 validation — 7 October 2026
+# PCB Rev A — enclosure assembly revision 1.0.4 validation — 7 October 2026
 
 The final source and supplied routed circuit were checked using the pinned local tscircuit 0.0.2748 / CLI 0.1.2253. All previews and fabrication exports use this same routed JSON. The source-build SHA-256 hashes are recorded in `validation/summary.json`; previous publication reports are archived under `validation/history/`.
 
@@ -18,12 +18,18 @@ The final source and supplied routed circuit were checked using the pinned local
 | Gerber-derived copper shorts, both layers | 0 shorts |
 | Revised 14.0 mm enclosure | All 14 reference solids valid; 5 printable parts; zero unintended solid collisions |
 | Fitted component positions | 30 components: 29 top and 1 bottom; DNP/bare lands excluded |
+| Enclosure in circuit 3D | 14 mechanical models aligned within 0.0001 mm of CAD mesh bounds; portable OBJ/MTL URLs |
+| Electrical revision comparison | All electrical, PCB and imported component CAD records identical to checked v1.0.3; metadata hash excluded |
 
 All eight CLI check types passed. The complete routed build and the separate full library validator contain zero errors and zero warnings. The full trace-length reports, individual crystal branch lengths and exact source hashes are included in `validation/`. `bun run check:all` repeats the checks and rejects actionable placement issues, asynchronous tool exceptions, error records and warning records.
 
 The CLI's `net.SWDCLK` length report omits its manually linked source branch and reports 0 mm. The supplied routed JSON contains that complete copper connection, with a planar length of 23.13246 mm. `validation/routing-geometry.json` independently totals the routed copper in each of the 20 connectivity groups; the raw CLI output is retained. Connectivity and both-layer shorts checks pass.
 
 The unmodified TSCI JLCPCB imports and all 30 fitted component meshes pass `validation/check-imports.mjs`. SW1 uses shared imported KMR2 geometry while retaining its original 2 N manufacturer part number; the substitute’s catalog identifier is deliberately not assigned.
+
+The source now uses `assembly.device` and 14 named `assembly.cadassembly` elements to include the released enclosure beside the populated PCB. Mechanical electronics/holder dummies are excluded. The four outer shells are translucent in the circuit view; print STL and STEP geometry remains solid. `validation/check-enclosure.mjs` verifies asset hashes, current CAD parameters, model positions and exported GLB bounds, and is included in `bun run check:all`.
+
+The confirmed encoder is a diametrically magnetized neodymium Ø5 × 1.5 mm disc. The revised cap uses a Ø5.2 mm pocket and 0.2 mm roof shim. Its nominal sensor air gaps remain 1.8 mm released and 1.3 mm pressed. CAD regeneration found zero unintended solid intersections. Magnet grade, sensor field margin and rotation accuracy still require a prototype measurement.
 
 The MCU and sensor pins explicitly define power, ground, open-drain I2C, pull-up and required connections. Crystals use native electrical models; both signal pairs and their load-cap branches stay on the top layer. Passive manufacturer parts are specified in BOM.csv. Bare copper test points are excluded from physical component assembly. The explicit parts engine preserves authored supplier identifiers and datasheet pin models; no DRC is disabled.
 

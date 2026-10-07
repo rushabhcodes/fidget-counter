@@ -1,0 +1,387 @@
+{
+  "units": "mm",
+  "axes": "Z-up",
+  "state": "Released",
+  "pcbMidplaneZMm": 7.6,
+  "sourceParameters": {
+    "body_diameter": 42.0,
+    "cap_diameter": 61.6,
+    "cap_grip_bottom_z": 1.0,
+    "cap_grip_wall": 0.95,
+    "cap_edge_rib_count": 88,
+    "cap_top_groove_count": 48,
+    "cap_top_groove_depth": 0.3,
+    "cap_top_groove_width": 0.8,
+    "cap_top_groove_inner_radius": 7.0,
+    "attachment_flange_diameter": 58.0,
+    "overall_height": 14.0,
+    "button_travel": 0.5,
+    "radial_running_clearance": 0.25,
+    "pcb_diameter": 36.5,
+    "pcb_thickness": 1.0,
+    "pcb_bottom_z": 7.1,
+    "sensor_height": 0.5,
+    "encoder_diameter": 5.0,
+    "encoder_thickness": 1.5,
+    "encoder_magnetization": "diametric",
+    "encoder_pocket_clearance": 0.2,
+    "encoder_released_airgap": 1.8,
+    "encoder_roof_shim": 0.2,
+    "skirt_outer_radius": 19.4,
+    "skirt_wall": 0.8,
+    "skirt_bottom_z": 6.8999999999999995,
+    "snap_lip_top_z": 8.55,
+    "snap_slot_root_z": 12.05,
+    "snap_lip_projection": 0.5,
+    "snap_slot_width": 1.0,
+    "snap_tab_count": 6,
+    "flexure_count": 4,
+    "flexure_thickness": 1.0,
+    "flexure_width": 2.0,
+    "flexure_mean_radius": 15.75,
+    "flexure_arc_degrees": 55.0,
+    "flexure_preload": 0.25,
+    "petg_modulus_estimate_mpa": 1800.0,
+    "magnet_region_inner_diameter": 46.0,
+    "magnet_region_outer_diameter": 54.1,
+    "attachment_magnet_thickness": 1.1,
+    "attachment_gap_degrees": 20.0,
+    "attachment_pocket_clearance": 0.25,
+    "attachment_mode": "envelope",
+    "vendor_sectors": [],
+    "shield_thickness": 0.7,
+    "bottom_skin_thickness": 0.6,
+    "phone_pad_thickness": 0.2,
+    "magnet_adhesive_thickness": 0.05,
+    "battery_holder_mpn": "BS-08-B2AA020-R",
+    "battery_holder_jlcpcb": "C964787",
+    "battery_holder_max_height": 5.8,
+    "battery_holder_pcb_x": -1.2,
+    "battery_holder_pcb_y": 0,
+    "battery_negative_face_depth": 1.5
+  },
+  "circuitPositionOffsetMm": [
+    0,
+    0,
+    -7.6
+  ],
+  "excludedDummyModels": [
+    "Angle_Sensor_Dummy",
+    "BLE_MCU_Dummy",
+    "Battery_Holder",
+    "Flexure_Neutral",
+    "PCB_Board",
+    "PCB_Dummy",
+    "Tactile_Switch"
+  ],
+  "parts": [
+    {
+      "name": "Rotating_Cap",
+      "vertices": 11236,
+      "triangles": 10032,
+      "boundsMm": [
+        [
+          -30.799779031156604,
+          -30.799779031156607,
+          1.0
+        ],
+        [
+          30.799779031156604,
+          30.799779031156607,
+          14.0
+        ]
+      ],
+      "translucent": true,
+      "sha256": {
+        "Rotating_Cap.obj": "8c57bc47d5aa92f383f71d02ba561afe0a3dd7d6149d6d079434a4ef3ff43bf3",
+        "Rotating_Cap.mtl": "218a07fe8a060bc2bb21c23ebc49f9f9f036eb098db4e5505aad035265054d04"
+      }
+    },
+    {
+      "name": "Encoder_Magnet",
+      "vertices": 842,
+      "triangles": 836,
+      "boundsMm": [
+        [
+          -2.5,
+          -2.4997202545256836,
+          10.4
+        ],
+        [
+          2.5,
+          2.4997202545256836,
+          11.9
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "Encoder_Magnet.obj": "304b5c3fc4cf40252d9502a093dfc8754f58cbd5f97f1e1b35d9e0431a9daff4",
+        "Encoder_Magnet.mtl": "8014572fad05f7a6b5abbbc5a5da2b3e7dd0a229d776bbc50965c6bbd4787a54"
+      }
+    },
+    {
+      "name": "Stationary_Housing",
+      "vertices": 16990,
+      "triangles": 16924,
+      "boundsMm": [
+        [
+          -29.0,
+          -28.994267563331903,
+          0.7999999999999998
+        ],
+        [
+          29.0,
+          28.994267563331903,
+          11.0
+        ]
+      ],
+      "translucent": true,
+      "sha256": {
+        "Stationary_Housing.obj": "759322c81a1568831b57a95f905ef398c8b140d255cecb4f0d4c06db8a26ad26",
+        "Stationary_Housing.mtl": "1ab6c1fd3c7f6a80f167617da726b3aeefcff50dac043057f4ce959b83f1b86f"
+      }
+    },
+    {
+      "name": "Flexure_Retention_System",
+      "vertices": 11790,
+      "triangles": 12436,
+      "boundsMm": [
+        [
+          -18.3,
+          -18.296511025300465,
+          10.737147648537327
+        ],
+        [
+          18.3,
+          18.296511025300465,
+          12.8
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "Flexure_Retention_System.obj": "169870a3df3e2ec7bed9f8d508e02961fa206d573e290fdca88d9964cd88db35",
+        "Flexure_Retention_System.mtl": "0e01570cefa785d0462fe0000cab1f0278254958e9ef0f91fd82003ab7db2573"
+      }
+    },
+    {
+      "name": "CR2032",
+      "vertices": 842,
+      "triangles": 836,
+      "boundsMm": [
+        [
+          -10.0,
+          -9.998881018102734,
+          2.3999999999999995
+        ],
+        [
+          10.0,
+          9.998881018102734,
+          5.6
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "CR2032.obj": "29916d604bd56010464fdc4ce2336b77f48f83dd036d3f5df374cb29a4df6101",
+        "CR2032.mtl": "0624551fa24d61fc9cc454b3f7bb6de5b55a126b178b6cce329615ba913bfaea"
+      }
+    },
+    {
+      "name": "Battery_Hatch",
+      "vertices": 4404,
+      "triangles": 5012,
+      "boundsMm": [
+        [
+          -11.99883320658494,
+          -13.299730482921243,
+          0.2
+        ],
+        [
+          11.99883320658494,
+          13.299900866047702,
+          2.0
+        ]
+      ],
+      "translucent": true,
+      "sha256": {
+        "Battery_Hatch.obj": "f33559e3e55a000e800474d42639f608578daec431d6f39378c98d3f8a4c08be",
+        "Battery_Hatch.mtl": "1a9c46848c11e2db78601f6ffd4c2656dd7be16e8c8bd629c4b753040026404f"
+      }
+    },
+    {
+      "name": "MagSafe_Magnet_Array",
+      "vertices": 1600,
+      "triangles": 1588,
+      "boundsMm": [
+        [
+          -27.050000000000004,
+          -27.04794026101936,
+          0.8500000000000001
+        ],
+        [
+          26.639049718980228,
+          27.047940261019356,
+          1.9500000000000002
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "MagSafe_Magnet_Array.obj": "1670f76dbfbbce23d5dc8856561a57576f03d5476fbc42680f48bcc622f468dd",
+        "MagSafe_Magnet_Array.mtl": "9021f205c6d1171d31e7dbecab20ad05551b6d55202e9b714546109fc33cc681"
+      }
+    },
+    {
+      "name": "Magnetic_Shield",
+      "vertices": 1600,
+      "triangles": 1588,
+      "boundsMm": [
+        [
+          -26.95,
+          -26.947947875581207,
+          2.0
+        ],
+        [
+          26.540568943679006,
+          26.947947875581203,
+          2.7
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "Magnetic_Shield.obj": "59bc1c358f51e93a19485e043179d14d583ce5d55b596c810b218a1f2025e4b5",
+        "Magnetic_Shield.mtl": "cb1454e8c65981ee284156ab489cd3601f8cb129b9f172e54ee8b19212e3665b"
+      }
+    },
+    {
+      "name": "Bottom_Cover",
+      "vertices": 1970,
+      "triangles": 1960,
+      "boundsMm": [
+        [
+          -29.0,
+          -28.994267563331903,
+          0.19999999999999998
+        ],
+        [
+          29.0,
+          28.994267563331903,
+          0.8
+        ]
+      ],
+      "translucent": true,
+      "sha256": {
+        "Bottom_Cover.obj": "8992a98a749be39fcb7ccf80f2b8eaeeecf80626efe6612eaeb9f6e330c304fd",
+        "Bottom_Cover.mtl": "37188f5db3224a11e6a34104b0f311be0c2777cdd7888bbc7ca9ff8e9cb4b64d"
+      }
+    },
+    {
+      "name": "Flexure_Fasteners",
+      "vertices": 5088,
+      "triangles": 6304,
+      "boundsMm": [
+        [
+          -12.855129855222073,
+          -12.854853116900166,
+          8.499999999999996
+        ],
+        [
+          12.85512985522207,
+          12.854853116900165,
+          12.1
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "Flexure_Fasteners.obj": "6755e8a20451e6f212cc6670f85a23286c6e4478e55b220d9c629044ad8e44e2",
+        "Flexure_Fasteners.mtl": "1493a202f6e6bdf583dd98d346217742007deb4ce700d641596266b19055456d"
+      }
+    },
+    {
+      "name": "Battery_Fasteners",
+      "vertices": 2544,
+      "triangles": 3152,
+      "boundsMm": [
+        [
+          -7.85,
+          -13.149634310074623,
+          0.23
+        ],
+        [
+          7.85,
+          13.149634310074623,
+          5.08
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "Battery_Fasteners.obj": "fafe4145df55dc82b01e8a5f4f1a4473a922313f3588b9bc6ea93b98164d71b3",
+        "Battery_Fasteners.mtl": "49fd784710e65009e2d1d346313a0c8450cd6dc9da9bf03a9ab9d97036f30af6"
+      }
+    },
+    {
+      "name": "Phone_Pad",
+      "vertices": 4812,
+      "triangles": 4948,
+      "boundsMm": [
+        [
+          -29.0,
+          -28.994267563331903,
+          -2.7755575615628914e-17
+        ],
+        [
+          29.0,
+          28.994267563331903,
+          0.20000000000000004
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "Phone_Pad.obj": "b1898d84661265883afeaa18c4f3ebec390466ccbf4a64a55867b184c90833de",
+        "Phone_Pad.mtl": "f25957e8a22ebd5053f82d9bfbbc65188dd88b327026a448e9531b52f6ecd1e5"
+      }
+    },
+    {
+      "name": "Encoder_Shim",
+      "vertices": 634,
+      "triangles": 628,
+      "boundsMm": [
+        [
+          -2.5,
+          -2.4995058244251642,
+          11.9
+        ],
+        [
+          2.5,
+          2.499505824425164,
+          12.1
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "Encoder_Shim.obj": "9cd1091674179e9315e297fa5d00b6272608ead5ccdbdcb507152970ce8284ee",
+        "Encoder_Shim.mtl": "f1c201613a38d001f3d937705361b1a10dfc99e9db07a16663dbdf65402e9ee4"
+      }
+    },
+    {
+      "name": "PCB_Spacers",
+      "vertices": 5072,
+      "triangles": 5056,
+      "boundsMm": [
+        [
+          -13.655129855222071,
+          -13.654694980716217,
+          8.1
+        ],
+        [
+          13.655129855222071,
+          13.654694980716215,
+          11.0
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "PCB_Spacers.obj": "7962d2c8cb4bc2f9aba922d5d4bcc82b8c8b467c94d68af1c33c7b3e62dac8bd",
+        "PCB_Spacers.mtl": "9747e4b143186089333dc958e95d1c5b47deaa84fa050099df71eb6e213ebce2"
+      }
+    }
+  ]
+}

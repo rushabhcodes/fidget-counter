@@ -3102,6 +3102,90 @@
     "title": "MagSafe BLE Fidget Counter — PCB Rev A"
   },
   {
+    "type": "source_component",
+    "source_component_id": "source_component_40",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Rotating_Cap"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_41",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Encoder_Magnet"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_42",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Stationary_Housing"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_43",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Flexure_Retention_System"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_44",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_CR2032"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_45",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Battery_Hatch"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_46",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_MagSafe_Magnet_Array"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_47",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Magnetic_Shield"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_48",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Bottom_Cover"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_49",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Flexure_Fasteners"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_50",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Battery_Fasteners"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_51",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Phone_Pad"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_52",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_Encoder_Shim"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_53",
+    "ftype": "subassembly",
+    "name": "ENCLOSURE_PCB_Spacers"
+  },
+  {
     "type": "source_component_internal_connection",
     "source_component_internal_connection_id": "source_component_internal_connection_0",
     "source_component_id": "source_component_25",
@@ -21767,6 +21851,384 @@
       "y": 0,
       "z": -0.6
     }
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_30",
+    "model_obj_url": "./mechanical/Circuit_Models/Rotating_Cap.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Rotating_Cap.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_40",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": true
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_31",
+    "model_obj_url": "./mechanical/Circuit_Models/Encoder_Magnet.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Encoder_Magnet.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_41",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_32",
+    "model_obj_url": "./mechanical/Circuit_Models/Stationary_Housing.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Stationary_Housing.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_42",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": true
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_33",
+    "model_obj_url": "./mechanical/Circuit_Models/Flexure_Retention_System.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Flexure_Retention_System.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_43",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_34",
+    "model_obj_url": "./mechanical/Circuit_Models/CR2032.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/CR2032.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_44",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_35",
+    "model_obj_url": "./mechanical/Circuit_Models/Battery_Hatch.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Battery_Hatch.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_45",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": true
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_36",
+    "model_obj_url": "./mechanical/Circuit_Models/MagSafe_Magnet_Array.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/MagSafe_Magnet_Array.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_46",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_37",
+    "model_obj_url": "./mechanical/Circuit_Models/Magnetic_Shield.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Magnetic_Shield.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_47",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_38",
+    "model_obj_url": "./mechanical/Circuit_Models/Bottom_Cover.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Bottom_Cover.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_48",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": true
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_39",
+    "model_obj_url": "./mechanical/Circuit_Models/Flexure_Fasteners.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Flexure_Fasteners.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_49",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_40",
+    "model_obj_url": "./mechanical/Circuit_Models/Battery_Fasteners.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Battery_Fasteners.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_50",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_41",
+    "model_obj_url": "./mechanical/Circuit_Models/Phone_Pad.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Phone_Pad.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_51",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_42",
+    "model_obj_url": "./mechanical/Circuit_Models/Encoder_Shim.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Encoder_Shim.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_52",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_43",
+    "model_obj_url": "./mechanical/Circuit_Models/PCB_Spacers.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/PCB_Spacers.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -7.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_53",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
   },
   {
     "type": "pcb_trace",
@@ -42112,6 +42574,6 @@
   },
   {
     "type": "source_project_metadata",
-    "source_filesystem_md5_hash": "187379b4a20d7b85fa5347c9b00f2a2d"
+    "source_filesystem_md5_hash": "586aff2a0480b752104889a2b4dd1054"
   }
 ]

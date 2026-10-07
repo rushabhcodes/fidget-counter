@@ -43,6 +43,20 @@ COMPONENTS:
  - C13: 0.5pF capacitor
  - C14: 0.5pF capacitor
  - ANT1: RFANT3216120A5T
+ - ENCLOSURE_Rotating_Cap: ENCLOSURE_Rotating_Cap, source_component
+ - ENCLOSURE_Encoder_Magnet: ENCLOSURE_Encoder_Magnet, source_component
+ - ENCLOSURE_Stationary_Housing: ENCLOSURE_Stationary_Housing, source_component
+ - ENCLOSURE_Flexure_Retention_System: ENCLOSURE_Flexure_Retention_System, source_component
+ - ENCLOSURE_CR2032: ENCLOSURE_CR2032, source_component
+ - ENCLOSURE_Battery_Hatch: ENCLOSURE_Battery_Hatch, source_component
+ - ENCLOSURE_MagSafe_Magnet_Array: ENCLOSURE_MagSafe_Magnet_Array, source_component
+ - ENCLOSURE_Magnetic_Shield: ENCLOSURE_Magnetic_Shield, source_component
+ - ENCLOSURE_Bottom_Cover: ENCLOSURE_Bottom_Cover, source_component
+ - ENCLOSURE_Flexure_Fasteners: ENCLOSURE_Flexure_Fasteners, source_component
+ - ENCLOSURE_Battery_Fasteners: ENCLOSURE_Battery_Fasteners, source_component
+ - ENCLOSURE_Phone_Pad: ENCLOSURE_Phone_Pad, source_component
+ - ENCLOSURE_Encoder_Shim: ENCLOSURE_Encoder_Shim, source_component
+ - ENCLOSURE_PCB_Spacers: ENCLOSURE_PCB_Spacers, source_component
 
 NET: U1_DEC1
   - U1 DEC1
@@ -391,4 +405,32 @@ C14 (0.5pF undefined)
 ANT1 (RFANT3216120A5T)
 - pin1(feed): NETS(ANT1_feed)
 - pin2(NC): NOT_CONNECTED
+
+ENCLOSURE_Rotating_Cap
+
+ENCLOSURE_Encoder_Magnet
+
+ENCLOSURE_Stationary_Housing
+
+ENCLOSURE_Flexure_Retention_System
+
+ENCLOSURE_CR2032
+
+ENCLOSURE_Battery_Hatch
+
+ENCLOSURE_MagSafe_Magnet_Array
+
+ENCLOSURE_Magnetic_Shield
+
+ENCLOSURE_Bottom_Cover
+
+ENCLOSURE_Flexure_Fasteners
+
+ENCLOSURE_Battery_Fasteners
+
+ENCLOSURE_Phone_Pad
+
+ENCLOSURE_Encoder_Shim
+
+ENCLOSURE_PCB_Spacers
 

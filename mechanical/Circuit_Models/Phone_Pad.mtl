@@ -1,0 +1,7 @@
+newmtl Phone_Pad
+Ka 0.1 0.1 0.1
+Kd 0.16 0.18 0.2
+Ks 0.15 0.15 0.15
+Ns 20
+d 1
+illum 2

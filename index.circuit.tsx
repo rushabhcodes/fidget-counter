@@ -1,4 +1,6 @@
 import {Fragment} from "react"
+import {assembly} from "@tscircuit/core"
+import {EnclosureAssembly} from "./enclosure"
 import {NRF52810,TMAG3001,HF_XTAL,LF_XTAL,RF_ANT,CapButton,BatteryHolder} from "./parts"
 import {routeBoard} from "./routing"
 import {Cap,Res,Ind} from "./passives"
@@ -42,7 +44,8 @@ const Link=({a,b,w=.11}:{a:string,b:string,w?:number})=>{
   pcbPath={localRoutes[a] && a.startsWith(".U1.")?orientMcuPath(localRoutes[a]!):localRoutes[a]} pcbPathRelativeTo={localRoutes[a]?selector(a):undefined}/>
 }
 const G=({p}:{p:string})=><Link a={p} b="net.GND"/>
-export default ()=> <board name="FIDGET_COUNTER_REVA" title="MagSafe BLE Fidget Counter — PCB Rev A"
+export default ()=> <assembly.device name="FIDGET_COUNTER">
+ <board name="FIDGET_COUNTER_REVA" title="MagSafe BLE Fidget Counter — PCB Rev A"
  outline={outline} thickness={1} layers={2} solderMaskColor="green" doubleSidedAssembly
  partsEngine={fixedPartsEngine}
  defaultViaTenting="top_and_bottom_tented" isViaInPadAllowed={false} schLayout={{layoutMode:"relative"}}
@@ -231,3 +234,5 @@ export default ()=> <board name="FIDGET_COUNTER_REVA" title="MagSafe BLE Fidget 
  {["V","G","D","C","R"].map((label,i)=><Fragment key={label}><silkscreentext text={label}
   layer="bottom" pcbX={-4+i*2} pcbY={-15.8} fontSize={1.7}/></Fragment>)}
 </board>
+ <EnclosureAssembly/>
+</assembly.device>

@@ -17,8 +17,9 @@
     "pcb_thickness": 1.0,
     "pcb_bottom_z": 7.1,
     "sensor_height": 0.5,
-    "encoder_diameter": 6.0,
-    "encoder_thickness": 2.0,
+    "encoder_diameter": 5.0,
+    "encoder_thickness": 1.5,
+    "encoder_magnetization": "diametric",
     "encoder_pocket_clearance": 0.2,
     "encoder_released_airgap": 1.8,
     "encoder_roof_shim": 0.2,
@@ -61,7 +62,7 @@
       "print": true,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 8659.377,
+      "volume_mm3": 8659.392,
       "size_mm": [
         61.6,
         61.6,
@@ -78,11 +79,11 @@
       "print": false,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 56.549,
+      "volume_mm3": 29.452,
       "size_mm": [
-        6.001,
-        6.0,
-        2.001
+        5.001,
+        5.0,
+        1.501
       ],
       "color": [
         0.88,
@@ -359,7 +360,13 @@
     "surface_strain_estimate": 0.00704
   },
   "magnet_layout_status": "Envelope only; no material, polarity, segment count or attachment compliance validated",
-  "electronics_status": "Mechanical board and key package bounding dummies; complete populated PCB is supplied separately as tscircuit GLB. No physical RF or firmware validation.",
+  "encoder_magnet_status": {
+    "diameter_mm": 5.0,
+    "thickness_mm": 1.5,
+    "magnetization": "diametric",
+    "material": "neodymium, grade unspecified; field and counting accuracy require prototype calibration"
+  },
+  "electronics_status": "STEP assemblies use mechanical electronics bounding dummies. The tscircuit assembly replaces these with the actual populated board. No physical RF or firmware validation.",
   "contact_hardware_status": "JLCPCB C964787 BS-08-B2AA020-R fitted below PCB; manufacturer 5.8 mm maximum height used for clearance",
   "holder_conservative_bottom_clearance_mm": 0.5,
   "battery_positive_face": "toward removable bottom hatch",

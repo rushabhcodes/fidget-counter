@@ -112,6 +112,7 @@ cap=cap.cut(compound(grooves)).clean()
 cap=cap.fuse(annulus(11.6,13.7,pcb_top+2.15,deck_z-(pcb_top+2.15)+0.02))
 pocket_r=(P['encoder_diameter']+P['encoder_pocket_clearance'])/2
 pocket_top=magnet_z+P['encoder_thickness']+P['encoder_roof_shim']
+assert pocket_top<=deck_z, 'Encoder pocket cuts through cap roof'
 boss_bottom=magnet_z-0.15
 cap=cap.fuse(disk(pocket_r+1.1,boss_bottom,deck_z-boss_bottom+0.02))
 cap=cap.cut(disk(pocket_r,boss_bottom-0.1,pocket_top-boss_bottom+0.1)).clean()
@@ -347,6 +348,8 @@ for n,s,c in [('PCB_Board',board,colors['PCB_Dummy']),('Flexure_Neutral',neutral
 mesh_path=args.mesh_out or (OUT/'Validation'/'scene_meshes.json')
 mesh_path.parent.mkdir(parents=True,exist_ok=True)
 mesh_path.write_text(json.dumps(meshes))
+from export_circuit_models import export_models
+export_models(meshes, OUT/'Circuit_Models', pcb_z+P['pcb_thickness']/2, P)
 
 # Physical collision audit, both end states. Report unloaded spring-contact
 # interference separately, after confirming the cell clears the rigid holder.
@@ -392,7 +395,8 @@ validation={'parameters_mm':P,'manifest':manifest,'collision_audit':collisions,'
    'pressed_force_n':round(k*P['flexure_count']*(P['flexure_preload']+P['button_travel']),3),
    'surface_strain_estimate':round(1.5*P['flexure_thickness']*(P['flexure_preload']+P['button_travel'])/L**2,5)},
  'magnet_layout_status':'Envelope only; no material, polarity, segment count or attachment compliance validated',
- 'electronics_status':'Mechanical board and key package bounding dummies; complete populated PCB is supplied separately as tscircuit GLB. No physical RF or firmware validation.',
+ 'encoder_magnet_status':{'diameter_mm':P['encoder_diameter'],'thickness_mm':P['encoder_thickness'],'magnetization':P['encoder_magnetization'],'material':'neodymium, grade unspecified; field and counting accuracy require prototype calibration'},
+ 'electronics_status':'STEP assemblies use mechanical electronics bounding dummies. The tscircuit assembly replaces these with the actual populated board. No physical RF or firmware validation.',
  'contact_hardware_status':'JLCPCB C964787 BS-08-B2AA020-R fitted below PCB; manufacturer 5.8 mm maximum height used for clearance',
  'holder_conservative_bottom_clearance_mm':round(pcb_z-P['battery_holder_max_height']-skin_top,4),
  'battery_positive_face':'toward removable bottom hatch',

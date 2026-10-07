@@ -1,0 +1,7 @@
+newmtl PCB_Spacers
+Ka 0.1 0.1 0.1
+Kd 0.7 0.72 0.74
+Ks 0.15 0.15 0.15
+Ns 20
+d 1
+illum 2

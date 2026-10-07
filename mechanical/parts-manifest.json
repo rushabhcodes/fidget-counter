@@ -4,7 +4,7 @@
     "print": true,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 8659.377,
+    "volume_mm3": 8659.392,
     "size_mm": [
       61.6,
       61.6,
@@ -21,11 +21,11 @@
     "print": false,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 56.549,
+    "volume_mm3": 29.452,
     "size_mm": [
-      6.001,
-      6.0,
-      2.001
+      5.001,
+      5.0,
+      1.501
     ],
     "color": [
       0.88,

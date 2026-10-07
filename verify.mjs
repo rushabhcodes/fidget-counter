@@ -105,6 +105,8 @@ const clocks = crystalTraces.map(source => {
 })
 if (clocks.length !== 8) throw new Error(`Expected all eight crystal signal branches, found ${clocks.length}`)
 const sha256 = file => createHash("sha256").update(readFileSync(file)).digest("hex")
+await import("./validation/check-imports.mjs")
+await import("./validation/check-enclosure.mjs")
 const summary = {
   checkedAt: new Date().toISOString(),
   checks: ["netlist", "pin_specification", "source", "schematic-placement", "placement", "routing-difficulty", "shorts", "trace-length"],
@@ -112,7 +114,7 @@ const summary = {
   routedTraces: circuit.filter(element => element.type === "pcb_trace").length,
   vias: circuit.filter(element => element.type === "pcb_via").length,
   analyzedNetCount: targets.size, crystalBranches: clocks,
-  sha256: Object.fromEntries(["index.circuit.tsx", "parts.tsx", "passives.tsx", "model-assets.d.ts", "routing.ts", "routed-paths.json", "published.circuit.json", "package.json", "verify.mjs", "gerber-compat.mjs", "export-gerbers.mjs", "dist/index/circuit.json"].map(file => [file, sha256(file)])),
+  sha256: Object.fromEntries(["index.circuit.tsx", "enclosure.tsx", "parts.tsx", "passives.tsx", "model-assets.d.ts", "routing.ts", "routed-paths.json", "published.circuit.json", "package.json", "verify.mjs", "gerber-compat.mjs", "export-gerbers.mjs", "validation/check-enclosure.mjs", "mechanical/Circuit_Models/manifest.json", "dist/index/circuit.json"].map(file => [file, sha256(file)])),
 }
 writeFileSync("work/check-all-summary.json", JSON.stringify(summary, null, 2) + "\n")
 console.log(`Pass: all library checks; trace lengths for ${targets.size} nets; eight crystal branches have no vias`)

@@ -1,0 +1,255 @@
+{
+  "electricalBaselineVersion": "1.0.3",
+  "electricalRecordsUnchanged": true,
+  "electricalRecordsSha256": "2f61bd60f92435a4ff0948e47598774b3395add7e045356aa0880ad5f3d10843",
+  "circuitSha256": "c67d636591ab784d55c5548705bb11b0c983228a6dcb18e103f7d5f28adc5999",
+  "glbSha256": "f9067c0f17f751215bffa8de16262e811949111d157d43a2df792b186da7a111",
+  "mechanicalModels": 14,
+  "pcbMidplaneOffsetMm": -7.6,
+  "models": [
+    {
+      "name": "ENCLOSURE_Rotating_Cap",
+      "worldBoundsGltfMm": [
+        [
+          -30.799779,
+          -6.6,
+          -30.799779
+        ],
+        [
+          30.799779,
+          6.4,
+          30.799779
+        ]
+      ],
+      "maximumBoundsErrorMm": 3.115660618391303e-8,
+      "translucent": true
+    },
+    {
+      "name": "ENCLOSURE_Encoder_Magnet",
+      "worldBoundsGltfMm": [
+        [
+          -2.5,
+          2.8000000000000007,
+          -2.4997203
+        ],
+        [
+          2.5,
+          4.300000000000001,
+          2.4997203
+        ]
+      ],
+      "maximumBoundsErrorMm": 4.547431631252152e-8,
+      "translucent": false
+    },
+    {
+      "name": "ENCLOSURE_Stationary_Housing",
+      "worldBoundsGltfMm": [
+        [
+          -29,
+          -6.8,
+          -28.9942676
+        ],
+        [
+          29,
+          3.4000000000000004,
+          28.9942676
+        ]
+      ],
+      "maximumBoundsErrorMm": 3.666809789137915e-8,
+      "translucent": true
+    },
+    {
+      "name": "ENCLOSURE_Flexure_Retention_System",
+      "worldBoundsGltfMm": [
+        [
+          -18.3,
+          3.1371476000000005,
+          -18.296511
+        ],
+        [
+          18.3,
+          5.200000000000001,
+          18.296511
+        ]
+      ],
+      "maximumBoundsErrorMm": 4.853732704646063e-8,
+      "translucent": false
+    },
+    {
+      "name": "ENCLOSURE_CR2032",
+      "worldBoundsGltfMm": [
+        [
+          -10,
+          -5.199999999999999,
+          -9.998881
+        ],
+        [
+          10,
+          -2,
+          9.998881
+        ]
+      ],
+      "maximumBoundsErrorMm": 1.8102733534419713e-8,
+      "translucent": false
+    },
+    {
+      "name": "ENCLOSURE_Battery_Hatch",
+      "worldBoundsGltfMm": [
+        [
+          -11.9988332,
+          -7.3999999999999995,
+          -13.2997305
+        ],
+        [
+          11.9988332,
+          -5.6,
+          13.2999009
+        ]
+      ],
+      "maximumBoundsErrorMm": 3.395229875025052e-8,
+      "translucent": true
+    },
+    {
+      "name": "ENCLOSURE_MagSafe_Magnet_Array",
+      "worldBoundsGltfMm": [
+        [
+          -26.6390497,
+          -6.75,
+          -27.0479403
+        ],
+        [
+          27.05,
+          -5.6499999999999995,
+          27.0479403
+        ]
+      ],
+      "maximumBoundsErrorMm": 3.8980644490038685e-8,
+      "translucent": false
+    },
+    {
+      "name": "ENCLOSURE_Magnetic_Shield",
+      "worldBoundsGltfMm": [
+        [
+          -26.5405689,
+          -5.6,
+          -26.9479479
+        ],
+        [
+          26.95,
+          -4.8999999999999995,
+          26.9479479
+        ]
+      ],
+      "maximumBoundsErrorMm": 4.367900530155566e-8,
+      "translucent": false
+    },
+    {
+      "name": "ENCLOSURE_Bottom_Cover",
+      "worldBoundsGltfMm": [
+        [
+          -29,
+          -7.3999999999999995,
+          -28.9942676
+        ],
+        [
+          29,
+          -6.8,
+          28.9942676
+        ]
+      ],
+      "maximumBoundsErrorMm": 3.666809789137915e-8,
+      "translucent": true
+    },
+    {
+      "name": "ENCLOSURE_Flexure_Fasteners",
+      "worldBoundsGltfMm": [
+        [
+          -12.8551299,
+          0.9000000000000004,
+          -12.8548531
+        ],
+        [
+          12.8551299,
+          4.5,
+          12.8548531
+        ]
+      ],
+      "maximumBoundsErrorMm": 4.4777928920325394e-8,
+      "translucent": false
+    },
+    {
+      "name": "ENCLOSURE_Battery_Fasteners",
+      "worldBoundsGltfMm": [
+        [
+          -7.85,
+          -7.369999999999999,
+          -13.1496343
+        ],
+        [
+          7.85,
+          -2.5199999999999996,
+          13.1496343
+        ]
+      ],
+      "maximumBoundsErrorMm": 1.0074622025513236e-8,
+      "translucent": false
+    },
+    {
+      "name": "ENCLOSURE_Phone_Pad",
+      "worldBoundsGltfMm": [
+        [
+          -29,
+          -7.6,
+          -28.9942676
+        ],
+        [
+          29,
+          -7.3999999999999995,
+          28.9942676
+        ]
+      ],
+      "maximumBoundsErrorMm": 3.666809789137915e-8,
+      "translucent": false
+    },
+    {
+      "name": "ENCLOSURE_Encoder_Shim",
+      "worldBoundsGltfMm": [
+        [
+          -2.5,
+          4.300000000000001,
+          -2.4995058
+        ],
+        [
+          2.5,
+          4.5,
+          2.4995058
+        ]
+      ],
+      "maximumBoundsErrorMm": 2.4425164113495157e-8,
+      "translucent": false
+    },
+    {
+      "name": "ENCLOSURE_PCB_Spacers",
+      "worldBoundsGltfMm": [
+        [
+          -13.6551299,
+          0.5,
+          -13.654695
+        ],
+        [
+          13.6551299,
+          3.4000000000000004,
+          13.654695
+        ]
+      ],
+      "maximumBoundsErrorMm": 4.4777928920325394e-8,
+      "translucent": false
+    }
+  ],
+  "sourceSha256": {
+    "enclosure.tsx": "f7ac2a1c8f5f2636555f22bdb70aa077d727a9862ed8488f52218bab7904ac11",
+    "mechanical/export_circuit_models.py": "78c263febfca967d0af62269f91cdd043caff4cfa1648395302574a7a28075bb",
+    "mechanical/build_enclosure.py": "fcea9688a7b2e53328395393cde5767a1ec901b353ab6651107def9ec02c130d",
+    "mechanical/Circuit_Models/manifest.json": "69e5025f118fc36f307686d58bc1a6382c2d6bcd1a820fa9b1d1e8f55d1406cd"
+  }
+}
