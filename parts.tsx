@@ -1,7 +1,14 @@
-import {Fragment} from "react"
-import type { AntennaProps, BatteryProps, ChipProps, CrystalProps, PinAttributeMap } from "@tscircuit/props"
+import {Children,cloneElement,isValidElement} from "react"
+import type {ReactElement} from "react"
+import {NRF52810_QFAA_R} from "./imports/NRF52810_QFAA_R/NRF52810_QFAA_R"
+import {TMAG3001A2YBGR} from "./imports/TMAG3001A2YBGR/TMAG3001A2YBGR"
+import {X201632MKB4SI} from "./imports/X201632MKB4SI/X201632MKB4SI"
+import {ABS07_32_768KHZ_9_T} from "./imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T"
+import {KMR232NGULCLFS} from "./imports/KMR232NGULCLFS/KMR232NGULCLFS"
+import {RFANT3216120A5T} from "./imports/RFANT3216120A5T/RFANT3216120A5T"
+import type { BatteryProps, ChipProps, CrystalProps, PinAttributeMap } from "@tscircuit/props"
 
-// Pin map and exact QFAA land pattern: seveibar/nrf52810 v0.1.3.
+// Nordic QFAA signal labels; copper and models come from the JLCPCB import.
 export const nrfPins = Object.fromEntries([
  "DEC1",["P0_00","XL1"],["P0_01","XL2"],"P0_02","P0_03","P0_04","P0_05",
  "P0_06","P0_07","P0_08","P0_09","P0_10","VDD1","P0_11","P0_12","P0_13",
@@ -37,70 +44,54 @@ Object.assign(nrfPinAttributes, {
  pin48:{requiresPower:true,mustBeConnected:true,shouldHaveDecouplingCapacitor:true,recommendedDecouplingCapacitorCapacitance:"100nF"},
  pin49:{requiresGround:true,mustBeConnected:true},
 })
-export const NRF52810 = (props:ChipProps)=><chip manufacturerPartNumber="nRF52810-QFAA-R"
- pinLabels={nrfPins} pinAttributes={nrfPinAttributes} supplierPartNumbers={{jlcpcb:["C141828"]}}
- footprint={<footprint>
-  {Array.from({length:48},(_,i)=>{const s=Math.floor(i/12),n=i%12
-   const xy=[[-3,2.2-n*.4],[-2.2+n*.4,-3],[3,-2.2+n*.4],[2.2-n*.4,3]][s]
-   return <Fragment key={i}><smtpad portHints={[`pin${i+1}`]} shape="rect" pcbX={xy[0]} pcbY={xy[1]}
-    width={s%2?.2:.95} height={s%2?.95:.2}/></Fragment>})}
-  <smtpad portHints={["pin49","thermalpad"]} shape="rect" width={4.6} height={4.6} pcbX={0} pcbY={0}/>
-  <courtyardrect width={7.2} height={7.2}/><silkscreencircle pcbX={-3.65} pcbY={3.65} radius={.15} strokeWidth={.15} isFilled/>
- </footprint>} {...props}/>
+// Preserve imported copper/pad numbers/courtyards and models. The dense board
+// uses its own validated legend rather than supplier outline graphics.
+export const libraryProps = (element: ReactElement): ChipProps => {
+ const props=element.props as ChipProps
+ const footprint=props.footprint
+ if(!isValidElement<{children?:React.ReactNode}>(footprint)) return props
+ return {...props, footprint:cloneElement(footprint,{children:Children.toArray(footprint.props.children)
+  .filter(child=>!isValidElement(child) || typeof child.type!=="string" || !child.type.startsWith("silkscreen"))})}
+}
+export const NRF52810 = (props:ChipProps)=><chip
+ {...libraryProps(NRF52810_QFAA_R({name:props.name}))}
+ pcbRotation={270} pinAttributes={nrfPinAttributes} {...props}/>
 
-// TI SLYS053C YBG0006 package top view: A1/A2, B1/B2, C1/C2.
-export const TMAG3001 = (props:ChipProps)=><chip manufacturerPartNumber="TMAG3001A2YBGR"
- pinLabels={{pin1:["A1","VCC"],pin2:["A2","ADDR"],pin3:["B1","INT"],pin4:["B2","GND"],pin5:["C1","SDA"],pin6:["C2","SCL"]}}
+// EasyEDA numbers the WCSP down columns; retain its A1/B1/C1/A2/B2/C2 mapping.
+export const TMAG3001 = (props:ChipProps)=><chip
+ {...libraryProps(TMAG3001A2YBGR({name:props.name}))}
+ pinLabels={{pin1:["VCC","A1"],pin2:["INT","N_INT","B1"],pin3:["SDA","C1"],pin4:["ADDR","A2"],pin5:["GND","B2"],pin6:["SCL","C2"]}}
  pinAttributes={{
   pin1:{requiresPower:true,mustBeConnected:true,shouldHaveDecouplingCapacitor:true,recommendedDecouplingCapacitorCapacitance:"100nF"},
-  pin2:{isInput:true,mustBeConnected:true},
-  pin3:{isOutput:true,canUseOpenDrain:true,isUsingOpenDrain:true,needsExternalPullup:true,mustBeConnected:true},
-  pin4:{requiresGround:true,mustBeConnected:true},
-  pin5:{isBidirectional:true,activeCapability:"i2c_sda",canUseOpenDrain:true,isUsingOpenDrain:true,needsExternalPullup:true,mustBeConnected:true},
+  pin2:{isOutput:true,canUseOpenDrain:true,isUsingOpenDrain:true,needsExternalPullup:true,mustBeConnected:true},
+  pin3:{isBidirectional:true,activeCapability:"i2c_sda",canUseOpenDrain:true,isUsingOpenDrain:true,needsExternalPullup:true,mustBeConnected:true},
+  pin4:{isInput:true,mustBeConnected:true},
+  pin5:{requiresGround:true,mustBeConnected:true},
   pin6:{isInput:true,activeCapability:"i2c_scl",needsExternalPullup:true,mustBeConnected:true},
- }}
- footprint={<footprint>{Array.from({length:6},(_,i)=><Fragment key={i}><smtpad portHints={[`pin${i+1}`]}
-  shape="circle" radius={.115} pcbX={i%2?.2:-.2} pcbY={.4-Math.floor(i/2)*.4}
-  solderMaskMargin={.025} solderPasteMargin={.01}/></Fragment>)}
-  <courtyardrect width={1.324} height={1.816}/><silkscreencircle pcbX={-.9} pcbY={.35} radius={.15} strokeWidth={.15} isFilled/>
- </footprint>} {...props}/>
-// Builtin crystal pins 1/2/3/4 map to manufacturer pads 4/1/2/3 respectively.
-// This retains the exact reference land coordinates and oscillator polarity.
+ }} {...props}/>
 export const HF_XTAL=(p:Omit<CrystalProps,"frequency"|"loadCapacitance">)=><crystal
- frequency="32MHz" loadCapacitance="8pF" pinVariant="four_pin" maxTraceLength={10}
- manufacturerPartNumber="X201632MKB4SI" supplierPartNumbers={{jlcpcb:["C718072"]}}
- pinAttributes={{pin1:{isPassive:true},pin2:{isPassive:true,requiresGround:true},pin3:{isPassive:true},pin4:{isPassive:true,requiresGround:true}}}
- footprint={<footprint>{[[.7,.5499],[.7,-.5499],[-.7,-.5499],[-.7,.5499]].map(([x,y],i)=><Fragment key={i}>
-  <smtpad portHints={[`pin${i+1}`]} shape="rect" pcbX={x} pcbY={y} width={.9} height={.8}/>
- </Fragment>)}<courtyardrect width={2.55} height={2.4}/></footprint>} {...p}/>
+ {...libraryProps(X201632MKB4SI({name:p.name,loadCapacitance:"8pF"}))} frequency="32MHz" pinVariant="four_pin"
+ loadCapacitance="8pF" maxTraceLength={10}
+ pinAttributes={{pin1:{isPassive:true},pin2:{isPassive:true,requiresGround:true},pin3:{isPassive:true},pin4:{isPassive:true,requiresGround:true}}} {...p}/>
 export const LF_XTAL=(p:Omit<CrystalProps,"frequency"|"loadCapacitance">)=><crystal
- frequency="32.768kHz" loadCapacitance="9pF" maxTraceLength={10}
- manufacturerPartNumber="ABS07-32.768KHZ-9-T" supplierPartNumbers={{jlcpcb:["C179635"]}}
- pinAttributes={{pin1:{isPassive:true},pin2:{isPassive:true}}}
- footprint={<footprint>
-  <smtpad portHints={["pin1"]} shape="rect" pcbX={-1.27495} pcbY={0} width={1.05} height={1.7}/>
-  <smtpad portHints={["pin2"]} shape="rect" pcbX={1.27495} pcbY={0} width={1.05} height={1.7}/>
-  <courtyardrect width={4} height={2.1}/>
- </footprint>} {...p}/>
-export const RF_ANT=(p:AntennaProps)=><antenna manufacturerPartNumber="RFANT3216120A5T" supplierPartNumbers={{jlcpcb:["C127629"]}}
- pinAttributes={{pin1:{isPassive:true,mustBeConnected:true}}}
- footprint={<footprint>
-  <smtpad portHints={["pin1"]} shape="rect" pcbX={-1.55005} pcbY={0} width={.8} height={1.66}/>
-  <smtpad portHints={[]} shape="rect" pcbX={1.55005} pcbY={0} width={.8} height={1.66}/>
-  <courtyardrect width={4.15} height={2.16}/>
- </footprint>} {...p}/>
-// Official KiCad KMR2 lands; repeated pad numbers denote internally common contacts.
-export const CapButton=(p:ChipProps)=><pushbutton manufacturerPartNumber="KMR223NG ULC LFG / Y78B22324FP"
- pinLabels={{pin1:["A"],pin2:["B"]}} footprint={<footprint>
-  {[-2.05,2.05].flatMap(x=>[.8,-.8].map((y,i)=><Fragment key={`${x}/${y}`}><smtpad portHints={[`pin${i+1}`]}
-   shape="rect" pcbX={x} pcbY={y} width={.9} height={1}/></Fragment>))}
-  <courtyardrect width={5.5} height={3.3}/>
- </footprint>} {...p}/>
-export const BatteryContacts=(p:BatteryProps)=><battery standard="CR2032" voltage="3V"
+ {...libraryProps(ABS07_32_768KHZ_9_T({name:p.name,loadCapacitance:"9pF"}))} frequency="32.768kHz"
+ loadCapacitance="9pF" maxTraceLength={10}
+ pinAttributes={{pin1:{isPassive:true},pin2:{isPassive:true}}} {...p}/>
+export const RF_ANT=(p:ChipProps)=><chip
+ {...libraryProps(RFANT3216120A5T({name:p.name}))}
+ pinLabels={{pin1:["feed"],pin2:["NC"]}} noConnect={["pin2"]}
+ pinAttributes={{pin1:{isPassive:true,mustBeConnected:true},pin2:{isPassive:true}}} {...p}/>
+// Shared KMR2 package geometry from C221681. Keep the existing 2 N ULC part;
+// C221681 is the 3 N variant, so it must not be assigned to this BOM row.
+export const CapButton=(p:ChipProps)=><pushbutton
+ {...libraryProps(KMR232NGULCLFS({name:p.name}))}
+ manufacturerPartNumber="KMR223NG ULC LFG / Y78B22324FP" supplierPartNumbers={{}}
+ pinLabels={{pin1:["A1"],pin2:["B2"],pin3:["B"],pin4:["A"]}}
+ internallyConnectedPins={[["pin1","pin4"],["pin2","pin3"]]}
+ {...p}/>
+// Bare wiring interface for the separately mounted CR2032 contacts.
+// Standard footprint generator, no fitted connector or holder.
+export const BatteryContacts=(p:BatteryProps)=><battery standard="CR2032" voltage="3V" doNotPlace
  manufacturerPartNumber="CR2032 hatch spring-contact interface"
  pinAttributes={{pin1:{providesPower:true,providesVoltage:"3V",mustBeConnected:true},pin2:{providesGround:true,mustBeConnected:true}}}
- footprint={<footprint>
- <platedhole portHints={["pin1"]} shape="circle" pcbX={-2} pcbY={0} holeDiameter={.6} outerDiameter={1.8}/>
- <platedhole portHints={["pin2"]} shape="circle" pcbX={2} pcbY={0} holeDiameter={.6} outerDiameter={1.8}/>
- <courtyardcircle pcbX={-2} pcbY={0} radius={1.1}/><courtyardcircle pcbX={2} pcbY={0} radius={1.1}/>
- </footprint>} {...p}/>
+ footprint="pinrow2_p4_id0.6_od1.8_nosquareplating_nosilkscreen" {...p}/>

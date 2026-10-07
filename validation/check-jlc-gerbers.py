@@ -3,6 +3,7 @@ import hashlib, json, re, sys, zipfile
 from pathlib import Path
 from shapely.geometry import Point, LineString, box
 from shapely.ops import unary_union
+from shapely.affinity import rotate, translate
 
 archive=Path(sys.argv[1])
 circuit_path=Path(sys.argv[2] if len(sys.argv)>2 else 'dist/index/circuit.json')
@@ -13,6 +14,9 @@ def read_primitives(data):
         m=re.fullmatch(r'%ADD(\d+)([CR]),([\d.]+)(?:X([\d.]+))?\*%',line)
         if m:
             apertures[int(m[1])]=(m[2],float(m[3]),float(m[4] or m[3]));continue
+        m=re.fullmatch(r'%ADD(\d+)(HORZPILL|VERTPILL),([\d.]+)X([\d.]+)X[\d.]+X[\d.]+\*%',line)
+        if m:
+            apertures[int(m[1])]=(m[2],float(m[3]),float(m[4]));continue
         if line.startswith('%') or line.startswith('G04'):continue
         m=re.fullmatch(r'D(\d+)\*',line)
         if m:dcode=int(m[1]);continue
@@ -23,7 +27,12 @@ def read_primitives(data):
         if op in (1,3):
             kind,w,h=apertures[dcode]
             if op==3:
-                g=Point(x,y).buffer(w/2,quad_segs=64) if kind=='C' else box(x-w/2,y-h/2,x+w/2,y+h/2)
+                if kind=='C':g=Point(x,y).buffer(w/2,quad_segs=64)
+                elif kind=='R':g=box(x-w/2,y-h/2,x+w/2,y+h/2)
+                else:
+                    r=min(w,h)/2
+                    ends=[(x-w/2+r,y),(x+w/2-r,y)] if w>=h else [(x,y-h/2+r),(x,y+h/2-r)]
+                    g=LineString(ends).buffer(r,quad_segs=64)
             else:
                 assert kind=='C' and previous is not None
                 g=LineString([previous,(x,y)]).buffer(w/2,quad_segs=32)
@@ -35,6 +44,27 @@ def read_primitives(data):
 with zipfile.ZipFile(archive) as z:
     mask={layer:read_primitives(z.read(name).decode())[0] for layer,name in [('top','F_Mask.gbr'),('bottom','B_Mask.gbr')]}
     silk={layer:read_primitives(z.read(name).decode()) for layer,name in [('top','F_SilkScreen.gbr'),('bottom','B_SilkScreen.gbr')]}
+    paste={layer:read_primitives(z.read(name).decode())[0] for layer,name in [('top','F_Paste.gbr'),('bottom','B_Paste.gbr')]}
+def pad_geometry(p):
+    if p['shape']=='circle':return Point(p['x'],p['y']).buffer(p['radius'],quad_segs=64)
+    if p['shape']=='rect':return box(p['x']-p['width']/2,p['y']-p['height']/2,p['x']+p['width']/2,p['y']+p['height']/2)
+    assert p['shape'] in ('pill','rotated_pill'),p['shape']
+    w,h=p['width'],p['height'];r=min(w,h)/2
+    ends=[(-w/2+r,0),(w/2-r,0)] if w>=h else [(0,-h/2+r),(0,h/2-r)]
+    return translate(rotate(LineString(ends).buffer(r,quad_segs=64),p.get('ccw_rotation',0),origin=(0,0)),p['x'],p['y'])
+components={e['pcb_component_id']:e for e in c if e['type']=='pcb_component'}
+mask_union={layer:unary_union(shapes).buffer(.000002) for layer,shapes in mask.items()}
+paste_union={layer:unary_union(shapes) for layer,shapes in paste.items()}
+pad_coverage=[];paste_coverage=[];excluded_paste=[]
+for p in [e for e in c if e['type']=='pcb_smtpad']:
+    if not p.get('is_covered_with_solder_mask'):
+        missing_area=pad_geometry(p).difference(mask_union[p['layer']]).area
+        if missing_area>1e-7:pad_coverage.append({'pad':p['pcb_smtpad_id'],'missingMaskAreaMm2':missing_area})
+    center=Point(p['x'],p['y'])
+    fitted=not components[p['pcb_component_id']].get('do_not_place')
+    present=paste_union[p['layer']].covers(center)
+    if fitted and not present:paste_coverage.append(p['pcb_smtpad_id'])
+    if not fitted and present:excluded_paste.append(p['pcb_smtpad_id'])
 board=next(e for e in c if e['type']=='pcb_board')
 u2=next(e for e in c if e['type']=='pcb_component' and e['center']=={'x':0,'y':0})
 sensor=[]
@@ -60,10 +90,12 @@ result={'circuitJsonSha256':hashlib.sha256(circuit_path.read_bytes()).hexdigest(
     'silkscreen':legend,'boardAreaMm2':area,'drillCount':drill_count,
     'drillDensityPerSquareMetre':drill_count/area*1e6,
     'exposedEnigAreaUpperBoundPercentOfSingleBoardArea':exposed_bound/area*100,
+    'maskCoverageViolations':pad_coverage,'fittedPadsMissingPaste':paste_coverage,'bareOrDnpPadsWithPaste':excluded_paste,
     'panelToolingAndTabsExcludedFromDensity':True}
 Path('work/jlc-gerber-audit.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result,indent=2))
 assert bridge>=.1-1e-5
+assert not pad_coverage and not paste_coverage and not excluded_paste, 'Incomplete mask/paste export'
 assert all(v['minimumDrawStrokeMm']>=.15-1e-5 and not v['violations'] for v in legend.values()), 'Legend requires repair'
 assert result['drillDensityPerSquareMetre']<150000
 assert result['exposedEnigAreaUpperBoundPercentOfSingleBoardArea']<30

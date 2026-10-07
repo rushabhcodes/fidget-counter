@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-07T10:22:59.136Z",
+  "checkedAt": "2026-10-07T11:39:16.502Z",
   "checks": [
     "netlist",
     "pin_specification",
@@ -13,57 +13,64 @@
   "errors": 0,
   "warnings": 0,
   "routedTraces": 87,
-  "vias": 41,
+  "vias": 45,
   "analyzedNetCount": 20,
   "crystalBranches": [
     {
       "name": "U1_XC1",
-      "lengthMm": 5.7339770846134686,
+      "lengthMm": 5.733959096295852,
       "vias": 0
     },
     {
       "name": "U1_XC2",
-      "lengthMm": 5.850099999999999,
+      "lengthMm": 5.849969009124063,
       "vias": 0
     },
     {
       "name": "C1_1",
-      "lengthMm": 1.2401,
+      "lengthMm": 1.3301010005234297,
       "vias": 0
     },
     {
       "name": "C2_1",
-      "lengthMm": 1.8008840158422177,
+      "lengthMm": 1.8053433884928216,
       "vias": 0
     },
     {
       "name": "U1_XL1",
-      "lengthMm": 2.6216147232013283,
+      "lengthMm": 2.621620736724572,
       "vias": 0
     },
     {
       "name": "U1_XL2",
-      "lengthMm": 4.37495,
+      "lengthMm": 4.374956001282802,
       "vias": 0
     },
     {
       "name": "C11_1",
-      "lengthMm": 1.8113106692434644,
+      "lengthMm": 1.8012711496278955,
       "vias": 0
     },
     {
       "name": "C12_1",
-      "lengthMm": 1.9106179233226994,
+      "lengthMm": 1.8712663515714518,
       "vias": 0
     }
   ],
   "sha256": {
-    "index.circuit.tsx": "3cf75af3665f0c5eccb6e62a91a37027f59f9628c7365493d9cd2a2bf07edc27",
-    "parts.tsx": "f3a103df32039723077116ab56f415c06bb7d4639a6ef143881631735e6309c9",
+    "index.circuit.tsx": "78552f499ec52993b59931ad6b330732ff9ee47695fbf4006e7afcfcb29ea0e4",
+    "parts.tsx": "1f24a21ed5785e700876e68099cef3b3f413c6e5e911d850e64f36d962dfca12",
+    "passives.tsx": "3f2cdbf1cbff6cecd49da9cc3823255437d5a14cd1b8e2b1d41b7044d57d2a5f",
+    "model-assets.d.ts": "9456883f24ccb7aabd3a84f094f1b87c32756018db28ae45bc2eec59d96fea72",
     "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
-    "routed-paths.json": "f999097afe34b11a9230ddd6a16d8abace2c5a81f240560a607fa3fe59fa215a",
-    "package.json": "e6b898acccce78afe6bf2f5c2aaf347e43302c00649ccb42a1337da3c34289b2",
-    "verify.mjs": "28c76c33e03968cde83a525fa30c8ce8933fd339a67f93a369eed99bcb8ba8ca",
-    "dist/index/circuit.json": "2664f257910045a47d8b446392ab0b8b0eeee5106a29819695f5bceeef72d2d8"
-  }
+    "routed-paths.json": "47c41503f41aedef25f946411394711d59fb6baa439273a458e35cb119c64aae",
+    "published.circuit.json": "cdd640e890e61a9871b93df984382f54e9f206c78aeadc87920223363a8f19a0",
+    "package.json": "234f1ba288264ffc2fbcf6c7f52229ba46a1052d2ed27b5a1c33f784a952a3a1",
+    "verify.mjs": "62063342d465580d84ab21b7a4d4ae35fa4c4f64c4a491b6ac3cd09e3669b982",
+    "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
+    "export-gerbers.mjs": "449fb40fdae108c9025ac9df21eea2669cb0cbb451fd642337dd72f091652008",
+    "dist/index/circuit.json": "cdd640e890e61a9871b93df984382f54e9f206c78aeadc87920223363a8f19a0"
+  },
+  "savedBoardRefreshedFromCheckedSource": true,
+  "postSourceCheckExportValidation": "Updated tenting export audited in actual Gerbers; final export copper shorts passed"
 }

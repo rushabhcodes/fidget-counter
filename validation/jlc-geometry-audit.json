@@ -1,43 +1,43 @@
 {
   "input": "dist/index/circuit.json",
-  "circuitJsonSha256": "2664f257910045a47d8b446392ab0b8b0eeee5106a29819695f5bceeef72d2d8",
+  "circuitJsonSha256": "cdd640e890e61a9871b93df984382f54e9f206c78aeadc87920223363a8f19a0",
   "copperChecks": [
     {
       "check": "different-net copper spacing",
       "limitMm": 0.1,
-      "minimumMm": 0.103553,
+      "minimumMm": 0.105366,
       "nearest": {
-        "a": "pcb_smtpad_100",
-        "aRef": "C1",
-        "b": "pcb_trace_38:1",
-        "bRef": "RF_FEED",
-        "distanceMm": 0.103553
+        "a": "pcb_smtpad_85",
+        "aRef": "R3",
+        "b": "source_net_1_mst13_0:8",
+        "bRef": "BT1_pos",
+        "distanceMm": 0.105366
       },
       "violations": []
     },
     {
       "check": "different-net SMT pad spacing",
       "limitMm": 0.15,
-      "minimumMm": 0.17,
+      "minimumMm": 0.199796,
       "nearest": {
-        "a": "pcb_smtpad_73",
-        "aRef": "U2",
-        "b": "pcb_smtpad_74",
-        "bRef": "U2",
-        "distanceMm": 0.17
+        "a": "pcb_smtpad_10",
+        "aRef": "U1",
+        "b": "pcb_smtpad_11",
+        "bRef": "U1",
+        "distanceMm": 0.199796
       },
       "violations": []
     },
     {
       "check": "SMT mask opening to different-net track",
       "limitMm": 0.09,
-      "minimumMm": 0.103553,
+      "minimumMm": 0.105366,
       "nearest": {
-        "a": "pcb_smtpad_100",
-        "aRef": "C1",
-        "b": "pcb_trace_38:1",
-        "bRef": "RF_FEED",
-        "distanceMm": 0.103553
+        "a": "pcb_smtpad_85",
+        "aRef": "R3",
+        "b": "source_net_1_mst13_0:8",
+        "bRef": "BT1_pos",
+        "distanceMm": 0.105366
       },
       "violations": []
     },
@@ -102,7 +102,7 @@
   },
   "minimumMountingWebMm": 0.24938257832721972,
   "drillInventory": {
-    "0.30 mm drill / 0.55 mm land": 44,
+    "0.30 mm drill / 0.55 mm land": 48,
     "3.60 mm NPTH": 4,
     "0.60 mm drill / 1.80 mm land": 2,
     "0.40 mm drill / 1.20 mm land": 1

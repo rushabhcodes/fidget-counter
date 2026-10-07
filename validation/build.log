@@ -12,10 +12,15 @@ Generating preview images...
 [index] Written schematic.svg
 [index] Generating schematic PNG...
 [index] Written schematic.png
+[index] Generating 3D PNG...
+[index] Written 3d.png
+Generating GLB models for all builds...
+[index] Converting circuit to GLB...
+[index] Written 3d.glb
 
 Build complete
   Circuits  1 passed
-  Options   pcb-png, schematic-png, svgs
+  Options   pcb-png, schematic-png, svgs, 3d-png, glbs
   Output    dist
 
 ✓ Done

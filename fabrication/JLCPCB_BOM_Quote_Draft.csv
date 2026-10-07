@@ -1,19 +1,19 @@
 Comment,Designator,Footprint,LCSC Part #,Manufacturer Part Number,Sourcing status
-nRF52810-QFAA-R,U1,QFN48 6x6mm 0.4mm pitch,C141828,nRF52810-QFAA-R,Reference supplier mapping retained; exact identity and stock must be reconfirmed in quote
-TMAG3001A2YBGR,U2,WCSP6 YBG 0.4mm pitch,C31115089,TMAG3001A2YBGR,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-X201632MKB4SI,X1,2016 4-pad crystal,C718072,X201632MKB4SI,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-ABS07-32.768KHZ-9-T,X2,ABS07 2-pad crystal,C179635,ABS07-32.768KHZ-9-T,Reference supplier mapping retained; exact identity and stock must be reconfirmed in quote
-RFANT3216120A5T,ANT1,3216 ceramic antenna,C127629,RFANT3216120A5T,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-KMR223NG ULC LFG / Y78B22324FP,SW1,KMR2 4.2x2.8mm body,,KMR223NG ULC LFG / Y78B22324FP,Exact MPN assembly sourcing not verified; procurement or consignment required
-3.9nH,L1,0402,C5452416,LQG15HS3N9B02D,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-6.8nH,L2,0402,,LQG15HS6N8G02D,Exact MPN assembly sourcing not verified; procurement or consignment required
-0.8pF,C3,0402,C88902,GJM1555C1HR80WB01D,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-12pF,"C1,C2,C11,C12",0402,C76948,GRM1555C1H120JA01D,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-100pF,C7,0402,C77177,GRM1555C1H101JA01D,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-100nF,"C4,C5,C6,C8,C16,C18",0402,C71629,GRM155R71C104KA88D,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-1uF,C10,0603,,GRM188R71A105KA61D,Exact MPN assembly sourcing not verified; procurement or consignment required
-4.7uF,C9,0603,C71631,GRM188R60J475KE19D,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-22uF,C15,0603,,GRM188R60J226ME15D,Exact MPN assembly sourcing not verified; procurement or consignment required
-10nF,C17,0402,C85735,GRM155R71C103KA01D,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-10k ohm,"R1,R2,R3",0402,C60490,RC0402FR-0710KL,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
-100k ohm,"R4,R5",0402,C60491,RC0402FR-07100KL,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+nRF52810-QFAA-R,U1,QFN48 6x6mm 0.4mm pitch,C141828,nRF52810-QFAA-R,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+TMAG3001A2YBGR,U2,WCSP6 YBG 0.4mm pitch,C31115089,TMAG3001A2YBGR,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+X201632MKB4SI,X1,2016 4-pad crystal,C718072,X201632MKB4SI,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+ABS07-32.768KHZ-9-T,X2,ABS07 2-pad crystal,C179635,ABS07-32.768KHZ-9-T,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+RFANT3216120A5T,ANT1,3216 ceramic antenna,C127629,RFANT3216120A5T,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+KMR223NG ULC LFG / Y78B22324FP,SW1,"KMR2 4.6x2.8mm package, 1.9mm actuator height",,KMR223NG ULC LFG / Y78B22324FP,Exact MPN assembly sourcing not verified; procurement or consignment required
+3.9nH,L1,0402,C5452416,LQG15HS3N9B02D,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+6.8nH,L2,0402,C521064,LQG15HS6N8G02D,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+0.8pF,C3,0402,C88902,GJM1555C1HR80WB01D,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+12pF,"C1,C2,C11,C12",0402,C76948,GRM1555C1H120JA01D,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+100pF,C7,0402,C77177,GRM1555C1H101JA01D,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+100nF,"C4,C5,C6,C8,C16,C18",0402,C71629,GRM155R71C104KA88D,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+1uF,C10,0603,C730442,CL10B105KA8NNWC,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+4.7uF,C9,0603,C71631,GRM188R60J475KE19D,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+22uF,C15,0603,C440187,GRM188R60J226ME15D,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+10nF,C17,0402,C85735,GRM155R71C103KA01D,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+10k ohm,"R1,R2,R3",0402,C60490,RC0402FR-0710KL,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+100k ohm,"R4,R5",0402,C60491,RC0402FR-07100KL,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote

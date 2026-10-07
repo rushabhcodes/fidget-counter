@@ -22,8 +22,8 @@ BT1 is **a two-pole solder interface, not a commercial battery holder or two dir
 
 | Land | Position | Connection |
 |---|---|---|
-| PLUS | (-2,-11) | Spring touching the CR2032 upper positive face / positive rim |
-| MINUS | (2,-11) | Spring touching the smaller negative face on the underside |
+| PLUS | (2,-11) | Spring touching the CR2032 upper positive face / positive rim |
+| MINUS | (-2,-11) | Spring touching the smaller negative face on the underside |
 
 Install the CR2032 **positive side toward the PCB**. The printed hatch's shallow cup locates it. Provide two compliant metal contacts and insulated leads to BT1. The existing 0.3 mm space above the cell can accept a thin formed positive leaf; a prototype starting material is 0.15 mm phosphor-bronze strip, approximately 2 mm wide, with an exposed contact tip and insulated tail. Form the tip to provide preload in that gap rather than stacking a commercial holder there.
 
@@ -39,4 +39,4 @@ TP_GND has a 0.4 mm plated drill in its 1.2 mm land; the other SWD pads are undr
 
 Antenna keepout spans X=-3.5…3.5, Y=13.6…18.0 on both layers. Keep metal, wires and attachment parts out of that volume above/below the PCB where practical. The attachment magnet/shield annulus is outside the PCB, but the phone and cell still influence RF and the Hall sensor.
 
-Three small signal diagnostic lands at the MCU escape points are 0.45 mm plated lands with 0.2 mm drills. They require no fitted components. Keep the specified underside insulating film over the cell footprint, including these lands.
+Three small signal diagnostic lands at the MCU escape points are 0.55 mm plated lands with 0.30 mm drills. They require no fitted components. Keep the specified underside insulating film over the cell footprint, including these lands.

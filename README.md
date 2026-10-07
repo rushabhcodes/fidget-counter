@@ -2,7 +2,7 @@
 
 > **Current revision: 0.30 mm via drill / 0.55 mm via land, green mask, Standard PCBA and ENIG.** TMAG3001A2YBGR is retained. This is a checked prototype ready for supplier quotation/CAM review; the assembly order has not been released.
 
-The default registry entrypoint is `published.circuit.json`, the exact validated routed board. `bun run build` renders that saved board; `bun run build:source` rebuilds the editable TSX using the prescribed routing. `bun run check:all` checks the source, verifies that its design files and saved board match the validated hashes, then validates the saved routing and exported copper.
+The default registry entrypoint is `published.circuit.json`, the exact validated routed board. `bun run build` renders that saved board; `bun run build:source` rebuilds the editable TSX using the prescribed routing. `bun run check:all` rebuilds and validates the editable TSX, including routing and exported copper. The published circuit is refreshed from that checked build.
 
 ![Validated routed PCB](previews/pcb-top.png)
 
@@ -20,11 +20,19 @@ bun run check:all
 
 Use the project's local CLI through `bun run tsci` to keep the tool version consistent with the lockfile. At project initialization, tscircuit 0.0.2748 and CLI 0.1.2253 were verified against the official npm registry. See `bun.lock` for installed dependency versions.
 
-`check:all` runs TypeScript, every TSCI check command, a preserved-board build, the full `@tscircuit/checks` validator, and Gerber-derived shorts on both layers. It analyzes trace lengths for every electrical net and requires all eight crystal signal branches to be at most 10 mm with zero vias. Results and source hashes go to `work/`. It fails on design errors, warnings, actionable placement issues or an asynchronous tool exception. Routing difficulty is an advisory congestion estimate; successful routing and DRC determine the final result.
+`check:all` runs TypeScript, every TSCI check command, a source build, the full `@tscircuit/checks` validator, and Gerber-derived shorts on both layers. It analyzes trace lengths for every electrical net and requires all eight crystal signal branches to be at most 10 mm with zero vias. Results and source hashes go to `work/`. It fails on design errors, warnings, actionable placement issues or an asynchronous tool exception. Routing difficulty is an advisory congestion estimate; successful routing and DRC determine the final result.
 
 The board uses an explicit parts engine that returns the authored supplier identifiers. Pin roles and manufacturer choices come from the listed datasheets and BOM, so checks do not replace them with remote supplier suggestions. No design-rule check is disabled.
 
-`index.circuit.tsx` defines placement, nets, four schematic sheets and local routing. `routing.ts` uses tscircuit's local custom-router API to load the remaining edited copper branches from `routed-paths.json`. Its terminal signature rejects stale routes after placement/connectivity changes. The supplied routing is prescribed and reproducible; all normal DRC, pour, connection and shorts checks remain enabled. `parts.tsx` contains the reference MCU footprint, crystals/antenna and manufacturer-specific sensor/switch land patterns. The physical MCU is declared once and split into sheet-local schematic boxes.
+`index.circuit.tsx` defines placement, nets, four schematic sheets and local routing. `routing.ts` uses tscircuit's local custom-router API to load the remaining edited copper branches from `routed-paths.json`. Its terminal signature rejects stale routes after placement/connectivity changes. The supplied routing is prescribed and reproducible; all normal DRC, pour, connection and shorts checks remain enabled. `imports/` contains unmodified TSCI JLCPCB imports with downloaded OBJ/STEP models. `parts.tsx` and `passives.tsx` add electrical pin roles and select those library parts. Imported copper, pad numbers, courtyards and model files are preserved; supplier silkscreen graphics are omitted where the board uses its own legend. Bare diagnostic, programming and wiring lands use standard footprint generators. The physical MCU is declared once and split into sheet-local schematic boxes.
+
+## JLCPCB library imports
+
+The parts were located with `tsci search --jlcpcb --json`, matched by exact manufacturer part number, then imported with `tsci import --jlcpcb --download --use-exact-footprint C<number>`. The exact-footprint flag keeps supplier geometry instead of substituting a similar footprint generator. `validation/jlc-imports.json` records the commands, catalog identifiers and SHA-256 hashes of all generated TSX/OBJ/STEP files. Stock returned by search is cached; it is not an assembly reservation.
+
+**SW1 exception:** the existing 2 N KMR223NG ULC LFG / Y78B22324FP has no verified JLCPCB catalog identifier. Its footprint and visual model reuse the imported KMR232NGULCLFS (C221681) geometry: both share the manufacturer's KMR2 package/land drawing. The fitted part remains the original 2 N switch. C221681 is deliberately absent from SW1's supplier identifiers and assembly BOM because it is the 3 N variant. A substitution to that variant awaits the user's preference; exact 2 N procurement or consignment remains open. There are no hand-drawn component copper footprints in the project.
+
+For local 3D output, use `bun run tsci build index.circuit.tsx --glbs --3d-png`. This CLI version's standalone JSON-to-GLB export resolves project-relative model URLs against the registry; its build path resolves downloaded files correctly. Model meshes have been checked in the built GLB. Imported visual models are assembly illustrations, not tolerance-certified mechanical drawings.
 
 ## Hardware and firmware handoff
 
@@ -52,11 +60,11 @@ See **MECHANICAL.md** for mounting coordinates, the required cap-pusher change a
 
 The reference's 3.9 nH / 0.8 pF chip matching and 6.8 nH antenna matching are starting values. The new feed and circular ground geometry need RF measurement and tuning in the final enclosure against the intended phone. A 0.5 mm feed width is the retained routing starting value, not a verified 50 Ω transmission line. Confirm the fabricator's actual stackup and recalculate the feed/ground geometry before an RF-qualified production release. Measure crystal startup/frequency and adjust the 12 pF load capacitors if needed.
 
-U2 is a six-ball 0.4 mm-pitch WCSP. Its manufacturer land pattern uses 0.23 mm lands; assembly needs suitable stencil alignment and reflow. The current sensor is cataloged as JLCPCB C31115089; it remains in this design by request. Stock and preorder availability are not guaranteed. The exact SW1 switch has no verified JLCPCB assembly listing; procurement or consignment needs confirmation. The generated QFN exposed-pad paste is a single 3.22 × 3.22 mm aperture over the 4.6 × 4.6 mm copper land. Have the assembler review and segment that aperture for its stencil/reflow process before ordering assembly.
+U2 is a six-ball 0.4 mm-pitch WCSP. The exact JLCPCB/EasyEDA import uses 0.20 mm lands, while TI's recommended land drawing uses 0.23 mm. The imported footprint is retained as requested; the assembler must review this difference and stencil/reflow suitability before an order. The current sensor is cataloged as JLCPCB C31115089; it remains in this design by request. Stock and preorder availability are not guaranteed. The exact SW1 switch has no verified JLCPCB assembly listing; procurement or consignment needs confirmation. The fabrication export adds the core’s missing QFN lead paste apertures at its normal 70% linear size reduction and excludes paste from bare/DNP sites. The generated QFN exposed-pad paste is a single 3.22 × 3.22 mm aperture over the 4.6 × 4.6 mm copper land. Have the assembler review and segment that aperture for its stencil/reflow process before ordering assembly.
 
-The authored BOM now specifies Murata capacitors/RF inductors and Yageo resistors, with manufacturer source links. Passive footprints retain tscircuit's generic 0402/0603 lands; have the assembler confirm land and stencil compatibility with the selected parts. Capacitor DC-bias derating and RF performance still need prototype measurements. `Assembly_Position_Reference.csv` contains authored coordinates and rotations, which the assembler must map to its own component conventions. No fitted parts are on the underside. Soldermask covers both ground pours, and vias are tented on both sides.
+The BOM specifies imported Murata RF/passive parts, Yageo resistors and a Samsung 1 µF C10. C10 is CL10B105KA8NNWC (25 V, X7R, ±10%, 0603), replacing the previously unresolved Murata part. All fitted passive footprints and models come from their exact JLCPCB imports. Capacitor DC-bias derating and RF performance still need prototype measurements. `Assembly_Position_Reference.csv` contains authored coordinates and rotations, which the assembler must map to its own component conventions. No fitted parts are on the underside. Soldermask covers both ground pours, and vias are tented on both sides.
 
-Both oscillators use native crystal models with electrical length/via constraints. X1's logical pins 1/2/3/4 map to manufacturer pads 4/1/2/3; logical pins 1 and 3 are the crystal terminals, and 2 and 4 are grounded case pads. The physical lands retain the reference geometry. X1 is a 32 MHz, 8 pF-load crystal; X2 is 32.768 kHz with a 9 pF load. The four 12 pF external capacitors are initial values that include an allowance for PCB and pin parasitics.
+Both oscillators use native crystal models with electrical length/via constraints. X1 uses the imported manufacturer's pad numbers directly: 1 and 3 are crystal terminals, and 2 and 4 are grounded case pads. Its authored PCB rotation is 90°. X1 is a 32 MHz, 8 pF-load crystal; X2 is 32.768 kHz with a 9 pF load. The four 12 pF external capacitors are initial values that include an allowance for PCB and pin parasitics.
 
 PCB checks verify connectivity and geometry. Physical rotation accuracy, BLE range, current consumption and battery/contact life require a populated prototype. `VALIDATION.md` records the actual final tool results.
 
@@ -64,13 +72,13 @@ PCB checks verify connectivity and geometry. Physical rotation accuracy, BLE ran
 
 Keep U2 TMAG3001A2YBGR. Target **Standard PCBA, top side only**, with **ENIG**, green soldermask, 2 layers, 1 oz copper and 1.0 mm finished thickness. Use regular routed outline tolerance (±0.2 mm), regular minimum via option (0.3 mm drill), and tented vias. The routed design uses **0.30 mm drill / 0.55 mm land**; GPIO escape lands use the same geometry and have no inserted component.
 
-The narrow sensor mask bridges are 0.12 mm, so green mask is specified. Printed text is 1.7 mm nominal height with a 0.153 mm stroke; pin-one markers use 0.15 mm strokes. Default passive outlines that overlapped nearby mask openings are omitted. `validation/jlc-geometry-audit.json` records measured copper/drill clearances, and `validation/jlc-gerber-audit.json` checks the exported mask and legend; these independent checks supplement the TSCI checks.
+The imported sensor mask bridges are 0.20 mm, so green mask is specified. Printed text is 1.7 mm nominal height with a 0.153 mm stroke; pin-one markers use 0.15 mm strokes. Default passive outlines that overlapped nearby mask openings are omitted. `validation/jlc-geometry-audit.json` records measured copper/drill clearances, and `validation/jlc-gerber-audit.json` checks the exported mask and legend; these independent checks supplement the TSCI checks.
 
 The 36.5 mm circle needs a carrier for Standard PCBA. Ask JLCPCB to panelize the single-board Gerbers into a panel at least 70 × 70 mm, with 5 mm handling rails, tooling holes and fiducials. Use mouse-bite tabs clear of the antenna and mounting holes. Confirm tab locations and finished-circle clearance with CAM; depanelization leaves local tab remnants. The supplied Gerber ZIP is a single-board definition, not a fabricated carrier panel.
 
 Normal Standard assembly setup, stencil, feeder loading, inspection, ENIG, panelization, component and shipping costs remain. The drill, copper and mask changes aim to avoid unnecessary fabrication options. A supplier quote and CAM review are still required to confirm all charges; no final price or zero-surcharge guarantee has been obtained.
 
-`BOM.csv` distinguishes verified catalog identities, retained reference mappings and unresolved exact-MPN sourcing. `JLCPCB_BOM_Quote_Draft.csv` includes fitted parts only; `JLCPCB_CPL_Quote_Draft.csv` gives single-board positions in millimetres. Both contain 29 designators. Rotations are authored rotations and must be visually matched to JLCPCB's models, particularly U1, U2, X1, X2, ANT1 and SW1. Confirm the QFN exposed-pad stencil apertures with the assembler. ANT1's [catalog listing](https://jlcpcb.com/partdetail/Walsin_TechCorp-RFANT3216120A5T/C127629) carries a fixture notice; confirm whether a fixture is required and its charge. C10, C15, L2 and SW1 still require sourcing confirmation; U2 and the four crystal load capacitors need stock confirmation for the selected quantity.
+`BOM.csv` distinguishes verified catalog identities, retained reference mappings and unresolved exact-MPN sourcing. `JLCPCB_BOM_Quote_Draft.csv` includes fitted parts only; `JLCPCB_CPL_Quote_Draft.csv` gives single-board positions in millimetres. Both contain 29 designators. Rotations are authored rotations and must be visually matched to JLCPCB's models, particularly U1, U2, X1, X2, ANT1 and SW1. Confirm the QFN exposed-pad stencil apertures with the assembler. ANT1's [catalog listing](https://jlcpcb.com/partdetail/Walsin_TechCorp-RFANT3216120A5T/C127629) carries a fixture notice; confirm whether a fixture is required and its charge. C10, C15 and L2 now have exact imported catalog identifiers. SW1 still requires exact-part sourcing confirmation; U2 and the four crystal load capacitors need stock confirmation for the selected quantity.
 
 The mounting-hole web remains 0.25 mm nominal, inherited from the enclosure. Obtain explicit CAM acceptance, or revise the hole positions and enclosure together. This handoff is ready for supplier review and quotation, with the unresolved items stated; it is not released for an assembly order.
 
@@ -81,7 +89,7 @@ Current primary requirements: [rigid PCB capabilities](https://jlcpcb.com/capabi
 - Root TSX files, package/configuration files and lockfile: editable tscircuit project.
 - `verify.mjs`: repeatable full check runner, invoked with `bun run check:all`.
 - `published.circuit.json`: exact checked routed circuit used for the registry and supplied exports. The default build writes it to `dist/published/circuit.json`.
-- `previews/`: copper layout views, a fitted-part assembly reference and all four schematic sheets in PNG/SVG. `pcb-bottom` shows the actual underside orientation; `pcb-bottom-top-coordinates` retains the source coordinate view. The assembly reference excludes DNP parts, GPIO escape lands and bare test/contact interfaces; crystal logical-to-physical pin mapping is documented above.
+- `previews/`: copper layout views, a fitted-part assembly reference and all four schematic sheets in PNG/SVG. `pcb-bottom` shows the actual underside orientation; `pcb-bottom-top-coordinates` retains the source coordinate view. The assembly reference excludes DNP parts, GPIO escape lands and bare test/contact interfaces; crystal manufacturer pin numbering is documented above. Library model downloads are included under `imports/`, with a fitted-board GLB and PNG under `previews/`.
 - `fabrication/`: prototype Gerber/drill ZIP and assembly position reference CSV.
 - `BOM.csv` and `netlist.txt`: assembly intent and electrical connectivity.
 - `mechanical/`: compatible rotating-cap STL/STEP and its geometry validation.
@@ -91,7 +99,7 @@ Treat the Gerbers as a prototype review handoff. Resolve the thin mounting-hole 
 
 The fabrication ZIP contains Gerber and drill files only. Use the separate authored BOM and assembly position reference; automatically generated supplier BOM/rotation files have been omitted.
 
-To repeat the independent JLC geometry/export audits after `bun run check:all`, install `validation/requirements.txt` into a local Python virtual environment, then run `validation/check-jlc.py published.circuit.json` and `validation/check-jlc-gerbers.py fabrication/Fidget_Counter_RevA_Prototype_Gerbers.zip published.circuit.json` from the project root. These produce reports in `work/` and fail on the measured rule violations.
+Run `bun run export:gerbers` after `bun run check:all` to produce the fabrication ZIP; this preserves supplier copper geometry and fills the missing QFN lead paste records. To repeat the independent JLC geometry/export audits, install `validation/requirements.txt` into a local Python virtual environment, then run `validation/check-jlc.py published.circuit.json` and `validation/check-jlc-gerbers.py fabrication/Fidget_Counter_RevA_Prototype_Gerbers.zip published.circuit.json` from the project root. These produce reports in `work/` and fail on the measured rule violations.
 
 ## Primary design sources
 
@@ -99,7 +107,7 @@ To repeat the independent JLC geometry/export audits after `bun run check:all`, 
 - Nordic reference circuitry: https://docs.nordicsemi.com/r/bundle/ps_nrf52810/page/ref_circuitry.html
 - TI TMAG3001 datasheet, SLYS053C: https://www.ti.com/lit/ds/symlink/tmag3001.pdf
 - C&K KMR2 datasheet: https://www.ckswitches.com/media/1479/kmr2.pdf
-- Official KiCad KMR2 footprint: https://github.com/KiCad/kicad-footprints/blob/master/Button_Switch_SMD.pretty/SW_Push_1P1T_NO_CK_KMR2.kicad_mod
+- TSCI JLCPCB import workflow: https://docs.tscircuit.com/command-line/tsci-import
 
 
 ## Published project
@@ -107,4 +115,4 @@ To repeat the independent JLC geometry/export audits after `bun run check:all`, 
 - GitHub: https://github.com/rushabhcodes/fidget-counter
 - Tscircuit registry: https://tscircuit.com/rushabhcodes/fidget-counter
 
-`validation/` retains the complete source-build and JLC review results for this 0.30 mm revision. `validation/publication/` records the publication checks and hashes for the repository metadata and preserved entrypoint. The saved circuit is byte-identical to the validated source-build output.
+`validation/` retains the complete source-build and JLC review results for this 0.30 mm revision. `validation/history/v1.0.1-publication/` preserves the previous publication reports. Current reports and imported-file provenance are in `validation/`. The saved circuit is byte-identical to the validated source-build output.

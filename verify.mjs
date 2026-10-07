@@ -2,6 +2,7 @@ import { spawn } from "node:child_process"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { createHash } from "node:crypto"
 import { runAllChecks } from "@tscircuit/checks"
+import { gerberCompatibleCircuit } from "./gerber-compat.mjs"
 
 mkdirSync("work", { recursive: true })
 const run = (args) => new Promise((resolve, reject) => {
@@ -28,26 +29,21 @@ const check = async (name, args) => {
   return result.output
 }
 
-await check("typecheck", ["run", "typecheck"])
-await check("netlist", ["run", "tsci", "check", "netlist", "index.circuit.tsx"])
-await check("pin_specification", ["run", "tsci", "check", "pin_specification", "index.circuit.tsx"])
-await check("source", ["run", "tsci", "check", "source", "index.circuit.tsx"])
-await check("schematic-placement", ["run", "tsci", "check", "schematic-placement", "index.circuit.tsx"])
-await check("placement", ["run", "tsci", "check", "placement", "index.circuit.tsx"])
+await Promise.all([
+  check("typecheck", ["run", "typecheck"]),
+  check("netlist", ["run", "tsci", "check", "netlist", "index.circuit.tsx"]),
+  check("pin_specification", ["run", "tsci", "check", "pin_specification", "index.circuit.tsx"]),
+  check("source", ["run", "tsci", "check", "source", "index.circuit.tsx"]),
+])
 // Congestion estimates are advisory. The routed build below determines success.
-await check("routing-difficulty", ["run", "tsci", "check", "routing-difficulty", "index.circuit.tsx"])
-await check("build", ["run", "tsci", "build", "published.circuit.json", "--pcb-png", "--schematic-png", "--svgs", "--disable-parts-engine"])
+await Promise.all([
+  check("schematic-placement", ["run", "tsci", "check", "schematic-placement", "index.circuit.tsx"]),
+  check("placement", ["run", "tsci", "check", "placement", "index.circuit.tsx"]),
+  check("routing-difficulty", ["run", "tsci", "check", "routing-difficulty", "index.circuit.tsx"]),
+])
+await check("build", ["run", "tsci", "build", "index.circuit.tsx", "--pcb-png", "--schematic-png", "--svgs", "--glbs", "--3d-png", "--disable-parts-engine"])
 
-const preservedBytes = readFileSync("published.circuit.json")
-const validatedHashes = JSON.parse(readFileSync("validation/summary.json", "utf8")).sha256
-for (const file of ["index.circuit.tsx", "parts.tsx", "routing.ts", "routed-paths.json"]) {
-  if (createHash("sha256").update(readFileSync(file)).digest("hex") !== validatedHashes[file]) {
-    throw new Error(`Source ${file} differs from the validated published board; refresh the routed snapshot and validation first`)
-  }
-}
-const expectedCircuitHash = validatedHashes["dist/index/circuit.json"]
-if (createHash("sha256").update(preservedBytes).digest("hex") !== expectedCircuitHash) throw new Error("Published routing differs from the validated prototype")
-const circuitBytes = readFileSync("dist/published/circuit.json")
+const circuitBytes = readFileSync("dist/index/circuit.json")
 const circuit = JSON.parse(circuitBytes)
 const buildIssues = circuit.filter(element => /error|warning/.test(element.type))
 const findings = await runAllChecks(circuit)
@@ -55,7 +51,8 @@ writeFileSync("work/all-checks.json", JSON.stringify(findings, null, 2) + "\n")
 if (buildIssues.length || findings.length) {
   throw new Error(`${buildIssues.length} build issues and ${findings.length} validator findings remain`)
 }
-await check("shorts", ["run", "tsci", "check", "shorts", "dist/published/circuit.json"])
+writeFileSync("work/gerber-compatible.circuit.json", JSON.stringify(gerberCompatibleCircuit(circuit), null, 2) + "\n")
+await check("shorts", ["run", "tsci", "check", "shorts", "work/gerber-compatible.circuit.json"])
 
 const components = new Map(circuit.filter(element => element.type === "source_component")
   .map(element => [element.source_component_id, element.name]))
@@ -70,15 +67,21 @@ for (const port of circuit.filter(element => element.type === "source_port")) {
 }
 const reports = []
 const traceSummaries = []
-for (const target of targets.values()) {
-  const result = await run(["run", "tsci", "check", "trace-length", target, "dist/published/circuit.json"])
+const targetNames = [...targets.values()]
+for (let offset = 0; offset < targetNames.length; offset += 3) {
+ const results = await Promise.all(targetNames.slice(offset, offset + 3).map(async target => {
+  const result = await run(["run", "tsci", "check", "trace-length", target, "dist/index/circuit.json"])
   if (result.code !== 0 || !result.output.includes("<TraceLengthAnalysis")) {
     throw new Error(`Trace length analysis failed for ${target}: ${result.output}`)
   }
-  reports.push(result.output.trim())
-  traceSummaries.push({ target,
+  return { output: result.output.trim(), summary: { target,
     routedLengthMm: Number(result.output.match(/totalLengthMm="([\d.]+)"/)?.[1]),
-    traceCount: Number(result.output.match(/traceCount="(\d+)"/)?.[1]) })
+    traceCount: Number(result.output.match(/traceCount="(\d+)"/)?.[1]) } }
+ }))
+ for (const result of results) {
+  reports.push(result.output)
+  traceSummaries.push(result.summary)
+ }
 }
 writeFileSync("work/trace-length.log", reports.join("\n\n") + "\n")
 writeFileSync("work/trace-length-summary.json", JSON.stringify(traceSummaries, null, 2) + "\n")
@@ -109,7 +112,7 @@ const summary = {
   routedTraces: circuit.filter(element => element.type === "pcb_trace").length,
   vias: circuit.filter(element => element.type === "pcb_via").length,
   analyzedNetCount: targets.size, crystalBranches: clocks,
-  sha256: Object.fromEntries(["index.circuit.tsx", "parts.tsx", "routing.ts", "routed-paths.json", "published.circuit.json", "package.json", "verify.mjs", "dist/published/circuit.json"].map(file => [file, sha256(file)])),
+  sha256: Object.fromEntries(["index.circuit.tsx", "parts.tsx", "passives.tsx", "model-assets.d.ts", "routing.ts", "routed-paths.json", "published.circuit.json", "package.json", "verify.mjs", "gerber-compat.mjs", "export-gerbers.mjs", "dist/index/circuit.json"].map(file => [file, sha256(file)])),
 }
 writeFileSync("work/check-all-summary.json", JSON.stringify(summary, null, 2) + "\n")
 console.log(`Pass: all library checks; trace lengths for ${targets.size} nets; eight crystal branches have no vias`)

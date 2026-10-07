@@ -3,6 +3,7 @@ import hashlib, json, math, sys
 from pathlib import Path
 from shapely.geometry import Point, Polygon, LineString, box
 from shapely import make_valid
+from shapely.affinity import rotate, translate
 
 path = Path(sys.argv[1] if len(sys.argv)>1 else 'dist/index/circuit.json')
 c = json.loads(path.read_text())
@@ -32,6 +33,18 @@ def group(e):
 def pad(e):
     if e['shape']=='circle':
         return Point(e['x'],e['y']).buffer(e.get('radius',e.get('outer_diameter',0)/2),quad_segs=64)
+    if e['shape'] in ('pill', 'rotated_pill'):
+        w,h=e['width'],e['height']
+        radius=e.get('radius',min(w,h)/2)
+        if w>h:
+            core=LineString([(-w/2+radius,0),(w/2-radius,0)])
+        elif h>w:
+            core=LineString([(0,-h/2+radius),(0,h/2-radius)])
+        else:
+            core=Point(0,0)
+        geometry=core.buffer(radius,quad_segs=64)
+        geometry=rotate(geometry,e.get('ccw_rotation',0),origin=(0,0))
+        return translate(geometry,xoff=e['x'],yoff=e['y'])
     assert e['shape']=='rect',e
     return box(e['x']-e['width']/2,e['y']-e['height']/2,e['x']+e['width']/2,e['y']+e['height']/2)
 cu=[]; holes=[]; vias=[]; smds=[]; wires=[]
@@ -79,7 +92,7 @@ def measure(name,left,right,limit,same_collection=False,different=True):
 mask_pads=[]
 for item in smds:
     raw=item['raw']; margin=raw.get('soldermask_margin',0)
-    geometry=item['geom'].buffer(margin,quad_segs=64) if raw['shape']=='circle' else box(
+    geometry=item['geom'].buffer(margin,quad_segs=64) if raw['shape']!='rect' else box(
         raw['x']-raw['width']/2-margin,raw['y']-raw['height']/2-margin,
         raw['x']+raw['width']/2+margin,raw['y']+raw['height']/2+margin)
     mask_pads.append(dict(item,geom=geometry))

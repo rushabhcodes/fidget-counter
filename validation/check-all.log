@@ -1,12 +1,12 @@
 $ bun verify.mjs
 Pass: typecheck
-Pass: netlist
-Pass: pin_specification
 Pass: source
+Pass: pin_specification
+Pass: netlist
 Pass: schematic-placement
 Pass: placement
 Pass: routing-difficulty
 Pass: build
 Pass: shorts
 Pass: all library checks; trace lengths for 20 nets; eight crystal branches have no vias
-Complete: 87 routed traces, 41 vias, zero errors and warnings
+Complete: 87 routed traces, 45 vias, zero errors and warnings
