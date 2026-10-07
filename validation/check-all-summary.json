@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-10-07T00:11:57.850Z",
+  "checks": [
+    "netlist",
+    "pin_specification",
+    "source",
+    "schematic-placement",
+    "placement",
+    "routing-difficulty",
+    "shorts",
+    "trace-length"
+  ],
+  "errors": 0,
+  "warnings": 0,
+  "routedTraces": 87,
+  "vias": 48,
+  "analyzedNetCount": 20,
+  "crystalBranches": [
+    {
+      "name": "U1_XC1",
+      "lengthMm": 5.7339770846134686,
+      "vias": 0
+    },
+    {
+      "name": "U1_XC2",
+      "lengthMm": 5.850099999999999,
+      "vias": 0
+    },
+    {
+      "name": "C1_1",
+      "lengthMm": 1.2401,
+      "vias": 0
+    },
+    {
+      "name": "C2_1",
+      "lengthMm": 1.8008840158422177,
+      "vias": 0
+    },
+    {
+      "name": "U1_XL1",
+      "lengthMm": 2.6216147232013283,
+      "vias": 0
+    },
+    {
+      "name": "U1_XL2",
+      "lengthMm": 4.37495,
+      "vias": 0
+    },
+    {
+      "name": "C11_1",
+      "lengthMm": 1.8113106692434644,
+      "vias": 0
+    },
+    {
+      "name": "C12_1",
+      "lengthMm": 1.9106179233226994,
+      "vias": 0
+    }
+  ],
+  "sha256": {
+    "index.circuit.tsx": "3523b75f523caf3ad4f1175239c1ec427217e8776b3c37cf3d57e31289019f4a",
+    "parts.tsx": "473c537824451331529eae967d807060044cdab77e9b80335b88eb938efe2194",
+    "package.json": "e6b898acccce78afe6bf2f5c2aaf347e43302c00649ccb42a1337da3c34289b2",
+    "verify.mjs": "644da3716d6c1a56b534d3854eb05d4dd5fe8b72dfb1c071b2a10513ed8f179b",
+    "dist/index/circuit.json": "84f25eaf26d99eaae34a9e9ed1077feb5d7f0d4b69746e8b427bed670f4f273b"
+  }
+}

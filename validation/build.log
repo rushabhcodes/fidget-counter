@@ -1,0 +1,29 @@
+Building 1 file(s)...
+Building index.circuit.tsx...
+Generating circuit JSON...
+Autorouting phase 1/1 has been running for 10.2s; enabling phase diagnostics. Re-run with --autorouter-debug for full autorouter logs from the start.
+Autorouting <board#543 name=".FIDGET_COUNTER_REVA" /> phase 1/1 long-running start: connections=10, obstacles=558, previous_traces=16, router=tscircuit, solver=AutoroutingPipelineSolver9_PreloadedTraceGraph, cache=miss, cache_id=12cad7cd/fd565d3b
+  connections: U1_DEC1, net.GND, net.VBAT, net.SCL, net.SDA, net.HALL_INT, net.SWDIO, net.SWDCLK, net.NRESET, net.CAP_PRESS
+  phase 1/1 progress: solver=AutoroutingPipelineSolver9_PreloadedTraceGraph solver_phase=highDensityRouteSolver steps=31 progress=56% iterations_per_second=1728 elapsed=10.2s
+  phase 1/1 progress: solver=AutoroutingPipelineSolver9_PreloadedTraceGraph solver_phase=highDensityRouteSolver steps=32 progress=56% iterations_per_second=1128 elapsed=10.5s
+  phase 1/1 progress: solver=AutoroutingPipelineSolver9_PreloadedTraceGraph solver_phase=pipeline9JointDrcRepairSolver steps=58 progress=84% iterations_per_second=6 elapsed=20.8s
+  phase 1/1 done: routed_traces=53, jumpers=0, errors=0, elapsed=28.2s
+Could not save autorouting paths for subcircuit_source_group_0: PCB port selector is not unique: .FIDGET_COUNTER_REVA > port.top
+Circuit JSON written to dist/index/circuit.json
+Generating preview images...
+[index] Generating PCB SVG...
+[index] Written pcb.svg
+[index] Generating PCB PNG...
+[index] Written pcb.png
+[index] Generating schematic SVG...
+[index] Written schematic.svg
+[index] Generating schematic PNG...
+[index] Written schematic.png
+
+Build complete
+  Circuits  1 passed
+  Options   pcb-png, schematic-png, svgs
+  Output    dist
+
+✓ Done
+Build exiting with code 0: build finished successfully

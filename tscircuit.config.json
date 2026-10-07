@@ -1,0 +1,10 @@
+{
+  "$schema": "https://cdn.jsdelivr.net/npm/@tscircuit/cli/types/tscircuit.config.schema.json",
+  "mainEntrypoint": "published.circuit.json",
+  "previewComponentPath": "published.circuit.json",
+  "includeBoardFiles": [
+    "published.circuit.json"
+  ],
+  "alwaysUseLatestTscircuitOnCloud": false,
+  "buildCommand": "bun run build"
+}

@@ -1,0 +1,393 @@
+Errors: 0
+Warnings: 0
+
+Readable Netlist:
+COMPONENTS:
+ - GPIO_SCL: 
+ - GPIO_SDA: 
+ - GPIO_HALL_INT: 
+ - U1: nRF52810-QFAA-R
+ - BT1: BT1, source_component
+ - C4: 100nF capacitor
+ - C9: 4.7uF capacitor
+ - C15: 22uF capacitor
+ - C5: 100nF capacitor
+ - C7: 100pF capacitor
+ - C8: 100nF capacitor
+ - C10: 1uF capacitor
+ - C16: 100nF capacitor
+ - C18: 100nF capacitor
+ - TP_VDD: TP_VDD, source_component
+ - TP_GND: TP_GND, source_component
+ - TP_SWDIO: TP_SWDIO, source_component
+ - TP_SWDCLK: TP_SWDCLK, source_component
+ - TP_RESET: TP_RESET, source_component
+ - R4: 100kΩ resistor
+ - U2: TMAG3001A2YBGR
+ - C6: 100nF capacitor
+ - R1: 10kΩ resistor
+ - R2: 10kΩ resistor
+ - R3: 10kΩ resistor
+ - SW1: SW1, source_component
+ - R5: 100kΩ resistor
+ - C17: 10nF capacitor
+ - X1: X1, source_component
+ - C1: 12pF capacitor
+ - C2: 12pF capacitor
+ - X2: X2, source_component
+ - C11: 12pF capacitor
+ - C12: 12pF capacitor
+ - L1: L1, source_component
+ - L2: L2, source_component
+ - C3: 0.8pF capacitor
+ - C13: 0.5pF capacitor
+ - C14: 0.5pF capacitor
+ - ANT1: RFANT3216120A5T
+
+NET: C5_pos
+  - U1 DEC1
+  - C5 pin1 (+)
+
+NET: C7_pos
+  - U1 DEC2
+  - C7 pin1 (+)
+
+NET: C8_pos
+  - U1 DEC3
+  - C8 pin1 (+)
+
+NET: C10_pos
+  - U1 DEC4
+  - C10 pin1 (+)
+
+NET: SWDIO
+  - U1 SWDIO
+  - TP_SWDIO pin1
+
+NET: SWDCLK
+  - U1 SWDCLK
+  - TP_SWDCLK pin1
+
+NET: NRESET
+  - U1 P0_21
+  - R4 pin2
+  - TP_RESET pin1
+
+NET: SCL
+  - U2 C2 (SCL)
+  - R1 pin2
+  - U1 P0_26
+  - GPIO_SCL SIGNAL
+
+NET: SDA
+  - U2 C1 (SDA)
+  - R2 pin2
+  - U1 P0_27
+  - GPIO_SDA SIGNAL
+
+NET: HALL_INT
+  - U2 B1
+  - R3 pin2
+  - U1 P0_28
+  - GPIO_HALL_INT SIGNAL
+
+NET: VBAT
+  - R5 pin1
+  - C6 pin1 (+)
+  - U2 A1
+  - R3 pin1
+  - R2 pin1
+  - R1 pin1
+  - U1 VDD2
+  - C18 pin1 (+)
+  - C16 pin1 (+)
+  - C15 pin1 (+)
+  - C4 pin1 (+)
+  - BT1 pin1 (+)
+  - U1 VDD3
+  - U1 VDD1
+  - C9 pin1 (+)
+  - R4 pin1
+  - TP_VDD pin1
+
+NET: CAP_PRESS
+  - SW1 A
+  - SW1 pin1_internal_1
+  - U1 P0_29
+  - R5 pin2
+  - C17 pin1 (+)
+
+NET: C1_pos
+  - C1 pin1 (+)
+  - U1 XC1
+  - X1 pin1
+
+NET: C2_pos
+  - C2 pin1 (+)
+  - U1 XC2
+  - X1 pin3
+
+NET: X2_pos
+  - C11 pin1 (+)
+  - U1 P0_00
+  - X2 pin1 (+)
+
+NET: X2_neg
+  - C12 pin1 (+)
+  - U1 P0_01
+  - X2 pin2 (-)
+
+NET: U1_ANT
+  - C3 pin1 (+)
+  - U1 ANT
+  - L1 pin1 (+)
+
+NET: L1_neg
+  - C13 pin1 (+)
+  - L1 pin2 (-)
+  - L2 pin1 (+)
+
+NET: ANT1_feed
+  - C14 pin1 (+)
+  - L2 pin2 (-)
+  - ANT1 pin1
+
+NET: GND
+  - C14 pin2 (-)
+  - C13 pin2 (-)
+  - C3 pin2 (-)
+  - C12 pin2 (-)
+  - C11 pin2 (-)
+  - C2 pin2 (-)
+  - SW1 B
+  - SW1 pin2_internal_1
+  - C6 pin2 (-)
+  - U2 A2
+  - U2 B2 (GND)
+  - C7 pin2 (-)
+  - C16 pin2 (-)
+  - C15 pin2 (-)
+  - C4 pin2 (-)
+  - BT1 pin2 (-)
+  - TP_GND pin1
+  - C1 pin2 (-)
+  - X1 pin4
+  - X1 pin2
+  - C10 pin2 (-)
+  - C8 pin2 (-)
+  - C5 pin2 (-)
+  - C17 pin2 (-)
+  - C18 pin2 (-)
+  - C9 pin2 (-)
+  - U1 VSS1
+  - U1 VSS2
+  - U1 EP
+
+
+COMPONENT_PINS:
+GPIO_SCL
+- pin1(SIGNAL): NETS(SCL)
+
+GPIO_SDA
+- pin1(SIGNAL): NETS(SDA)
+
+GPIO_HALL_INT
+- pin1(SIGNAL): NETS(HALL_INT)
+
+U1 (nRF52810-QFAA-R)
+- pin1(DEC1): NETS(C5_pos)
+- pin2(P0_00, XL1): NETS(X2_pos)
+- pin3(P0_01, XL2): NETS(X2_neg)
+- pin4(P0_02): NOT_CONNECTED
+- pin5(P0_03): NOT_CONNECTED
+- pin6(P0_04): NOT_CONNECTED
+- pin7(P0_05): NOT_CONNECTED
+- pin8(P0_06): NOT_CONNECTED
+- pin9(P0_07): NOT_CONNECTED
+- pin10(P0_08): NOT_CONNECTED
+- pin11(P0_09): NOT_CONNECTED
+- pin12(P0_10): NOT_CONNECTED
+- pin13(VDD1): NETS(VBAT)
+- pin14(P0_11): NOT_CONNECTED
+- pin15(P0_12): NOT_CONNECTED
+- pin16(P0_13): NOT_CONNECTED
+- pin17(P0_14): NOT_CONNECTED
+- pin18(P0_15): NOT_CONNECTED
+- pin19(P0_16): NOT_CONNECTED
+- pin20(P0_17): NOT_CONNECTED
+- pin21(P0_18): NOT_CONNECTED
+- pin22(P0_19): NOT_CONNECTED
+- pin23(P0_20): NOT_CONNECTED
+- pin24(P0_21, nRESET): NETS(NRESET)
+- pin25(SWDCLK): NETS(SWDCLK)
+- pin26(SWDIO): NETS(SWDIO)
+- pin27(P0_22): NOT_CONNECTED
+- pin28(P0_23): NOT_CONNECTED
+- pin29(P0_24): NOT_CONNECTED
+- pin30(ANT): NETS(U1_ANT)
+- pin31(VSS2): NETS(GND)
+- pin32(DEC2): NETS(C7_pos)
+- pin33(DEC3): NETS(C8_pos)
+- pin34(XC1): NETS(C1_pos)
+- pin35(XC2): NETS(C2_pos)
+- pin36(VDD3): NETS(VBAT)
+- pin37(P0_25): NOT_CONNECTED
+- pin38(P0_26): NETS(SCL)
+- pin39(P0_27): NETS(SDA)
+- pin40(P0_28): NETS(HALL_INT)
+- pin41(P0_29): NETS(CAP_PRESS)
+- pin42(P0_30): NOT_CONNECTED
+- pin43(P0_31): NOT_CONNECTED
+- pin44(NC): NOT_CONNECTED
+- pin45(VSS1): NETS(GND)
+- pin46(DEC4): NETS(C10_pos)
+- pin47(DCC): NOT_CONNECTED
+- pin48(VDD2): NETS(VBAT)
+- pin49(EP, thermalpad): NETS(GND)
+
+BT1 (CR2032 hatch spring-contact interface)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(GND)
+
+C4 (100nF undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(GND)
+
+C9 (4.7uF undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(GND)
+
+C15 (22uF undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(GND)
+
+C5 (100nF undefined)
+- pin1(anode, pos, left): NETS(C5_pos)
+- pin2(cathode, neg, right): NETS(GND)
+
+C7 (100pF undefined)
+- pin1(anode, pos, left): NETS(C7_pos)
+- pin2(cathode, neg, right): NETS(GND)
+
+C8 (100nF undefined)
+- pin1(anode, pos, left): NETS(C8_pos)
+- pin2(cathode, neg, right): NETS(GND)
+
+C10 (1uF undefined)
+- pin1(anode, pos, left): NETS(C10_pos)
+- pin2(cathode, neg, right): NETS(GND)
+
+C16 (100nF undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(GND)
+
+C18 (100nF undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(GND)
+
+TP_VDD
+- pin1: NETS(VBAT)
+
+TP_GND
+- pin1: NETS(GND)
+
+TP_SWDIO
+- pin1: NETS(SWDIO)
+
+TP_SWDCLK
+- pin1: NETS(SWDCLK)
+
+TP_RESET
+- pin1: NETS(NRESET)
+
+R4 (100kΩ undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(NRESET)
+
+U2 (TMAG3001A2YBGR)
+- pin1(A1, VCC): NETS(VBAT)
+- pin2(A2, ADDR): NETS(GND)
+- pin3(B1, INT): NETS(HALL_INT)
+- pin4(B2, GND): NETS(GND)
+- pin5(C1, SDA): NETS(SDA)
+- pin6(C2, SCL): NETS(SCL)
+
+C6 (100nF undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(GND)
+
+R1 (10kΩ undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(SCL)
+
+R2 (10kΩ undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(SDA)
+
+R3 (10kΩ undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(HALL_INT)
+
+SW1 (KMR223NG ULC LFG / Y78B22324FP)
+- pin1_internal_1(pin1, 1): NETS(CAP_PRESS)
+- pin2_internal_1(pin2, 2): NETS(GND)
+- pin1(A): NETS(CAP_PRESS)
+- pin2(B): NETS(GND)
+
+R5 (100kΩ undefined)
+- pin1(anode, pos, left): NETS(VBAT)
+- pin2(cathode, neg, right): NETS(CAP_PRESS)
+
+C17 (10nF undefined)
+- pin1(anode, pos, left): NETS(CAP_PRESS)
+- pin2(cathode, neg, right): NETS(GND)
+
+X1 (X201632MKB4SI)
+- pin1(left1, X1): NETS(C1_pos)
+- pin2(gnd2, top1, gnd1): NETS(GND)
+- pin3(right1, X2): NETS(C2_pos)
+- pin4(gnd1, bottom1, gnd2): NETS(GND)
+
+C1 (12pF undefined)
+- pin1(anode, pos, left): NETS(C1_pos)
+- pin2(cathode, neg, right): NETS(GND)
+
+C2 (12pF undefined)
+- pin1(anode, pos, left): NETS(C2_pos)
+- pin2(cathode, neg, right): NETS(GND)
+
+X2 (ABS07-32.768KHZ-9-T)
+- pin1(pos, left, X1): NETS(X2_pos)
+- pin2(neg, right, X2): NETS(X2_neg)
+
+C11 (12pF undefined)
+- pin1(anode, pos, left): NETS(X2_pos)
+- pin2(cathode, neg, right): NETS(GND)
+
+C12 (12pF undefined)
+- pin1(anode, pos, left): NETS(X2_neg)
+- pin2(cathode, neg, right): NETS(GND)
+
+L1 (LQG15HS3N9B02D)
+- pin1(anode, pos, left): NETS(U1_ANT)
+- pin2(cathode, neg, right): NETS(L1_neg)
+
+L2 (LQG15HS6N8G02D)
+- pin1(anode, pos, left): NETS(L1_neg)
+- pin2(cathode, neg, right): NETS(ANT1_feed)
+
+C3 (0.8pF undefined)
+- pin1(anode, pos, left): NETS(U1_ANT)
+- pin2(cathode, neg, right): NETS(GND)
+
+C13 (0.5pF undefined)
+- pin1(anode, pos, left): NETS(L1_neg)
+- pin2(cathode, neg, right): NETS(GND)
+
+C14 (0.5pF undefined)
+- pin1(anode, pos, left): NETS(ANT1_feed)
+- pin2(cathode, neg, right): NETS(GND)
+
+ANT1 (RFANT3216120A5T)
+- pin1(feed): NETS(ANT1_feed)
+
