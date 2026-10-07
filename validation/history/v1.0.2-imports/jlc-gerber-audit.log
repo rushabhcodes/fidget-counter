@@ -1,0 +1,26 @@
+{
+  "circuitJsonSha256": "cdd640e890e61a9871b93df984382f54e9f206c78aeadc87920223363a8f19a0",
+  "gerberZipSha256": "3eb1fcb13e687618b4de4eac9ce90b2af1d802898664c807cf8c2345d08426e2",
+  "sensorMaskBridgeMm": 0.199796,
+  "minimumGreenMaskBridgeMm": 0.1,
+  "silkscreen": {
+    "top": {
+      "minimumDrawStrokeMm": 0.153,
+      "minimumMaskClearanceMm": 0.7378778227220619,
+      "violations": []
+    },
+    "bottom": {
+      "minimumDrawStrokeMm": 0.153,
+      "minimumMaskClearanceMm": 0.1607599447342971,
+      "violations": []
+    }
+  },
+  "boardAreaMm2": 1045.9265459632427,
+  "drillCount": 55,
+  "drillDensityPerSquareMetre": 52584.9546627081,
+  "exposedEnigAreaUpperBoundPercentOfSingleBoardArea": 15.140701495052241,
+  "maskCoverageViolations": [],
+  "fittedPadsMissingPaste": [],
+  "bareOrDnpPadsWithPaste": [],
+  "panelToolingAndTabsExcludedFromDensity": true
+}

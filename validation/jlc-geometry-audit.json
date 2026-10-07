@@ -1,16 +1,16 @@
 {
-  "input": "dist/index/circuit.json",
-  "circuitJsonSha256": "cdd640e890e61a9871b93df984382f54e9f206c78aeadc87920223363a8f19a0",
+  "input": "published.circuit.json",
+  "circuitJsonSha256": "c75c8d72635b2de5a913934df89587f7c9d62d463ee953eebf054ad80dc33e8a",
   "copperChecks": [
     {
       "check": "different-net copper spacing",
       "limitMm": 0.1,
       "minimumMm": 0.105366,
       "nearest": {
-        "a": "pcb_smtpad_85",
+        "a": "pcb_smtpad_87",
         "aRef": "R3",
-        "b": "source_net_1_mst13_0:8",
-        "bRef": "BT1_pos",
+        "b": "source_net_1_mst13_0:3",
+        "bRef": "trace",
         "distanceMm": 0.105366
       },
       "violations": []
@@ -33,10 +33,10 @@
       "limitMm": 0.09,
       "minimumMm": 0.105366,
       "nearest": {
-        "a": "pcb_smtpad_85",
+        "a": "pcb_smtpad_87",
         "aRef": "R3",
-        "b": "source_net_1_mst13_0:8",
-        "bRef": "BT1_pos",
+        "b": "source_net_1_mst13_0:3",
+        "bRef": "trace",
         "distanceMm": 0.105366
       },
       "violations": []
@@ -85,7 +85,7 @@
       "limitMm": 0.28,
       "minimumMm": 0.572741,
       "nearest": {
-        "a": "pcb_plated_hole_5",
+        "a": "pcb_plated_hole_3",
         "aRef": "TP_GND",
         "b": "source_net_5_0:1",
         "bRef": "trace",
@@ -102,9 +102,8 @@
   },
   "minimumMountingWebMm": 0.24938257832721972,
   "drillInventory": {
-    "0.30 mm drill / 0.55 mm land": 48,
+    "0.30 mm drill / 0.55 mm land": 50,
     "3.60 mm NPTH": 4,
-    "0.60 mm drill / 1.80 mm land": 2,
     "0.40 mm drill / 1.20 mm land": 1
   },
   "silkscreenTextBelow1mm": []

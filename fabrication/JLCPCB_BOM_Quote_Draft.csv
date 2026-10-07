@@ -17,3 +17,4 @@ KMR223NG ULC LFG / Y78B22324FP,SW1,"KMR2 4.6x2.8mm package, 1.9mm actuator heigh
 10nF,C17,0402,C85735,GRM155R71C103KA01D,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
 10k ohm,"R1,R2,R3",0402,C60490,RC0402FR-0710KL,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
 100k ohm,"R4,R5",0402,C60491,RC0402FR-07100KL,Exact JLCPCB library import verified; current assembly stock/preorder must be confirmed in quote
+CR2032 holder BS-08-B2AA020-R,BT1,SMT holder 24.1x15.7mm / 5.8mm maximum height,C964787,BS-08-B2AA020-R,Exact JLCPCB library import verified; confirm stock and double-sided assembly process in quote

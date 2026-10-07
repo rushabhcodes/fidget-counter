@@ -245,7 +245,7 @@ U1 (NRF52810-QFAA-R)
 - pin48(VDD2): NETS(VBAT)
 - pin49(EP): NETS(GND)
 
-BT1 (CR2032 hatch spring-contact interface)
+BT1 (BS-08-B2AA020-R)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(GND)
 

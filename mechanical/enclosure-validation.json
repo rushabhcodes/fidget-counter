@@ -1,0 +1,367 @@
+{
+  "parameters_mm": {
+    "body_diameter": 42.0,
+    "cap_diameter": 61.6,
+    "cap_grip_bottom_z": 1.0,
+    "cap_grip_wall": 0.95,
+    "cap_edge_rib_count": 88,
+    "cap_top_groove_count": 48,
+    "cap_top_groove_depth": 0.3,
+    "cap_top_groove_width": 0.8,
+    "cap_top_groove_inner_radius": 7.0,
+    "attachment_flange_diameter": 58.0,
+    "overall_height": 14.0,
+    "button_travel": 0.5,
+    "radial_running_clearance": 0.25,
+    "pcb_diameter": 36.5,
+    "pcb_thickness": 1.0,
+    "pcb_bottom_z": 7.1,
+    "sensor_height": 0.5,
+    "encoder_diameter": 6.0,
+    "encoder_thickness": 2.0,
+    "encoder_pocket_clearance": 0.2,
+    "encoder_released_airgap": 1.8,
+    "encoder_roof_shim": 0.2,
+    "skirt_outer_radius": 19.4,
+    "skirt_wall": 0.8,
+    "skirt_bottom_z": 6.8999999999999995,
+    "snap_lip_top_z": 8.55,
+    "snap_slot_root_z": 12.05,
+    "snap_lip_projection": 0.5,
+    "snap_slot_width": 1.0,
+    "snap_tab_count": 6,
+    "flexure_count": 4,
+    "flexure_thickness": 1.0,
+    "flexure_width": 2.0,
+    "flexure_mean_radius": 15.75,
+    "flexure_arc_degrees": 55.0,
+    "flexure_preload": 0.25,
+    "petg_modulus_estimate_mpa": 1800.0,
+    "magnet_region_inner_diameter": 46.0,
+    "magnet_region_outer_diameter": 54.1,
+    "attachment_magnet_thickness": 1.1,
+    "attachment_gap_degrees": 20.0,
+    "attachment_pocket_clearance": 0.25,
+    "attachment_mode": "envelope",
+    "vendor_sectors": [],
+    "shield_thickness": 0.7,
+    "bottom_skin_thickness": 0.6,
+    "phone_pad_thickness": 0.2,
+    "magnet_adhesive_thickness": 0.05,
+    "battery_holder_mpn": "BS-08-B2AA020-R",
+    "battery_holder_jlcpcb": "C964787",
+    "battery_holder_max_height": 5.8,
+    "battery_holder_pcb_x": -1.2,
+    "battery_holder_pcb_y": 0,
+    "battery_negative_face_depth": 1.5
+  },
+  "manifest": [
+    {
+      "name": "Rotating_Cap",
+      "print": true,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 8659.377,
+      "size_mm": [
+        61.6,
+        61.6,
+        13.0
+      ],
+      "color": [
+        0.13,
+        0.19,
+        0.26
+      ]
+    },
+    {
+      "name": "Encoder_Magnet",
+      "print": false,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 56.549,
+      "size_mm": [
+        6.001,
+        6.0,
+        2.001
+      ],
+      "color": [
+        0.88,
+        0.31,
+        0.22
+      ]
+    },
+    {
+      "name": "Stationary_Housing",
+      "print": true,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 4867.961,
+      "size_mm": [
+        58.0,
+        58.0,
+        10.2
+      ],
+      "color": [
+        0.77,
+        0.82,
+        0.84
+      ]
+    },
+    {
+      "name": "Flexure_Retention_System",
+      "print": true,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 283.577,
+      "size_mm": [
+        36.6,
+        36.6,
+        2.05
+      ],
+      "color": [
+        0.96,
+        0.64,
+        0.18
+      ]
+    },
+    {
+      "name": "PCB_Dummy",
+      "print": false,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 1005.632,
+      "size_mm": [
+        36.504,
+        36.5,
+        1.004
+      ],
+      "color": [
+        0.07,
+        0.4,
+        0.28
+      ]
+    },
+    {
+      "name": "Angle_Sensor_Dummy",
+      "print": false,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 0.542,
+      "size_mm": [
+        0.824,
+        1.316,
+        0.5
+      ],
+      "color": [
+        0.1,
+        0.12,
+        0.16
+      ]
+    },
+    {
+      "name": "BLE_MCU_Dummy",
+      "print": false,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 32.4,
+      "size_mm": [
+        6.0,
+        6.0,
+        0.9
+      ],
+      "color": [
+        0.1,
+        0.12,
+        0.16
+      ]
+    },
+    {
+      "name": "Tactile_Switch",
+      "print": false,
+      "cad_valid": true,
+      "solids": 2,
+      "volume_mm3": 17.469,
+      "size_mm": [
+        2.8,
+        4.2,
+        1.9
+      ],
+      "color": [
+        0.68,
+        0.71,
+        0.73
+      ]
+    },
+    {
+      "name": "CR2032",
+      "print": false,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 1005.31,
+      "size_mm": [
+        20.002,
+        20.0,
+        3.202
+      ],
+      "color": [
+        0.63,
+        0.68,
+        0.73
+      ]
+    },
+    {
+      "name": "Battery_Holder",
+      "print": false,
+      "cad_valid": true,
+      "solids": 2,
+      "volume_mm3": 347.713,
+      "size_mm": [
+        26.1,
+        15.702,
+        5.311
+      ],
+      "color": [
+        0.29,
+        0.3,
+        0.32
+      ]
+    },
+    {
+      "name": "Battery_Hatch",
+      "print": true,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 292.054,
+      "size_mm": [
+        24.0,
+        26.6,
+        1.8
+      ],
+      "color": [
+        0.29,
+        0.4,
+        0.46
+      ]
+    },
+    {
+      "name": "MagSafe_Magnet_Array",
+      "print": false,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 661.573,
+      "size_mm": [
+        53.695,
+        54.102,
+        1.106
+      ],
+      "color": [
+        0.24,
+        0.63,
+        0.74
+      ]
+    },
+    {
+      "name": "Magnetic_Shield",
+      "print": false,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 400.211,
+      "size_mm": [
+        53.497,
+        53.902,
+        0.706
+      ],
+      "color": [
+        0.47,
+        0.53,
+        0.6
+      ]
+    },
+    {
+      "name": "Bottom_Cover",
+      "print": true,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 1289.605,
+      "size_mm": [
+        58.0,
+        58.0,
+        0.6
+      ],
+      "color": [
+        0.46,
+        0.55,
+        0.6
+      ]
+    }
+  ],
+  "collision_audit": [],
+  "contact_fit_estimates": [
+    {
+      "state": "Released",
+      "parts": [
+        "CR2032",
+        "Battery_Holder"
+      ],
+      "overlap_mm3": 2.62148,
+      "classification": "undeformed negative spring contact",
+      "rigid_housing_overlap_mm3": 0.0
+    },
+    {
+      "state": "Pressed",
+      "parts": [
+        "CR2032",
+        "Battery_Holder"
+      ],
+      "overlap_mm3": 2.62148,
+      "classification": "undeformed negative spring contact",
+      "rigid_housing_overlap_mm3": 0.0
+    }
+  ],
+  "hatch_mounts_mm": [
+    [
+      6.0,
+      -11.3
+    ],
+    [
+      -6.0,
+      11.3
+    ]
+  ],
+  "swd_pad_row_mm": {
+    "x": [
+      -4,
+      -2,
+      0,
+      2,
+      4
+    ],
+    "y": -14,
+    "pad_diameter": 1.2
+  },
+  "minimum_swd_pad_to_hatch_post_mm": 0.2601,
+  "button_travel_mm": 0.5,
+  "sensor_gap_released_mm": 1.8,
+  "sensor_gap_pressed_mm": 1.3,
+  "snap_radial_engagement_mm": 0.25,
+  "retention_groove_wall_mm": 0.8000000000000007,
+  "skirt_running_clearance_radial_mm": 0.25,
+  "outer_grip_height_mm": 13.0,
+  "outer_grip_flange_clearance_radial_mm": 0.25,
+  "outer_grip_phone_clearance_pressed_mm": 0.5,
+  "snap_strain_estimate": 0.02448979591836735,
+  "flexure_estimate": {
+    "method": "straight cantilever approximation; curved beam and FDM anisotropy not solved",
+    "length_mm": 12.645,
+    "four_beam_stiffness_n_per_mm": 1.781,
+    "rest_force_n": 0.445,
+    "pressed_force_n": 1.335,
+    "surface_strain_estimate": 0.00704
+  },
+  "magnet_layout_status": "Envelope only; no material, polarity, segment count or attachment compliance validated",
+  "electronics_status": "Mechanical board and key package bounding dummies; complete populated PCB is supplied separately as tscircuit GLB. No physical RF or firmware validation.",
+  "contact_hardware_status": "JLCPCB C964787 BS-08-B2AA020-R fitted below PCB; manufacturer 5.8 mm maximum height used for clearance",
+  "holder_conservative_bottom_clearance_mm": 0.5,
+  "battery_positive_face": "toward removable bottom hatch",
+  "holder_contact_model_note": "Library contacts are undeformed. Battery/holder overlap is reported separately as a contact-fit estimate, not certified retention or spring-force validation."
+}

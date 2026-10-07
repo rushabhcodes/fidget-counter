@@ -25,10 +25,10 @@ for (const component of fitted) {
   if (source.name !== "SW1" && !source.supplier_part_numbers?.jlcpcb?.length) throw new Error(`Missing exact JLC identifier: ${source.name}`)
   if (source.name === "SW1" && source.supplier_part_numbers?.jlcpcb?.length) throw new Error("Original 2 N switch assigned a substitute's supplier ID")
 }
-if (fitted.length !== 29) throw new Error(`Expected 29 fitted parts, got ${fitted.length}`)
+if (fitted.length !== 30) throw new Error(`Expected 30 fitted parts, got ${fitted.length}`)
 mkdirSync("work", {recursive:true})
 writeFileSync("work/import-model-audit.json", JSON.stringify({importedLibraryTypes:provenance.parts.length,
   originalImportedFiles:provenance.parts.reduce((n,p) => n + p.files.length,0), fittedParts:fitted.length,
-  exactJlcpcbParts:28, sharedGeometrySwitch:"KMR223NG ULC LFG uses the KMR232NGULCLFS package model; original 2 N MPN retained",
+  exactJlcpcbParts:29, sharedGeometrySwitch:"KMR223NG ULC LFG uses the KMR232NGULCLFS package model; original 2 N MPN retained",
   builtGlbMeshCount:gltf.meshes.length, circuitSha256:hash("dist/index/circuit.json"), glbSha256:hash("dist/index/3d.glb")}, null, 2) + "\n")
-console.log("Pass: original JLC imports, supplier identifiers and all 29 fitted model nodes")
+console.log("Pass: original JLC imports, supplier identifiers and all 30 fitted model nodes")

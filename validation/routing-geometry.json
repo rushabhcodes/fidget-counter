@@ -32,7 +32,7 @@
   {
     "connectivityGroup": "FIDGET_COUNTER_REVA_connectivity_net3",
     "name": "GND",
-    "planarCopperLengthMm": 166.89784,
+    "planarCopperLengthMm": 184.56902,
     "pcbTraceIds": [
       "pcb_trace_3",
       "pcb_trace_4",
@@ -70,13 +70,14 @@
       "source_net_0_mst17_0",
       "source_net_0_mst18_0",
       "source_net_0_mst19_0",
-      "source_net_0_mst20_0"
+      "source_net_0_mst20_0",
+      "source_net_0_holder_0"
     ]
   },
   {
     "connectivityGroup": "FIDGET_COUNTER_REVA_connectivity_net9",
     "name": "VBAT",
-    "planarCopperLengthMm": 86.16742,
+    "planarCopperLengthMm": 144.27297,
     "pcbTraceIds": [
       "pcb_trace_17",
       "pcb_trace_18",
@@ -93,7 +94,8 @@
       "source_net_1_mst10_0",
       "source_net_1_mst11_0",
       "source_net_1_mst12_0",
-      "source_net_1_mst13_0"
+      "source_net_1_mst13_0",
+      "source_net_1_holder_0"
     ]
   },
   {
@@ -131,7 +133,7 @@
   {
     "connectivityGroup": "FIDGET_COUNTER_REVA_connectivity_net14",
     "name": "CAP_PRESS",
-    "planarCopperLengthMm": 32.19721,
+    "planarCopperLengthMm": 32.25276,
     "pcbTraceIds": [
       "pcb_trace_24",
       "pcb_trace_25",

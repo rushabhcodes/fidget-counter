@@ -1,5 +1,5 @@
 import {Fragment} from "react"
-import {NRF52810,TMAG3001,HF_XTAL,LF_XTAL,RF_ANT,CapButton,BatteryContacts} from "./parts"
+import {NRF52810,TMAG3001,HF_XTAL,LF_XTAL,RF_ANT,CapButton,BatteryHolder} from "./parts"
 import {routeBoard} from "./routing"
 import {Cap,Res,Ind} from "./passives"
 import type {PartsEngine,TraceProps} from "@tscircuit/props"
@@ -16,8 +16,8 @@ const localRoutes: Record<string,TraceProps["pcbPath"]>={
  ".C3.pin1":[{x:-.75,y:.15},{x:-1.5,y:.15}],
  ".U1.P0_29":[{x:.6,y:3.7},{x:.45,y:3.85},
   {x:.45,y:3.85,via:true,fromLayer:"top",toLayer:"bottom"},{x:.45,y:3.85},
-  {x:-.1,y:6},{x:13.5,y:6},{x:16,y:-3.5},
-  {x:16,y:-3.5,via:true,fromLayer:"bottom",toLayer:"top"},{x:16,y:-3.5}],
+  {x:-.1,y:6},{x:13.5,y:6},{x:14.8,y:-2.9},
+  {x:14.8,y:-2.9,via:true,fromLayer:"bottom",toLayer:"top"},{x:14.8,y:-2.9}],
  ".U1.SWDCLK":[{x:3.7,y:-2.2},{x:3.7,y:-2.9},
   {x:3.7,y:-2.9,via:true,fromLayer:"top",toLayer:"bottom"},{x:3.7,y:-2.9},
   {x:3.9,y:-3.5},{x:3.9,y:-17.2},{x:9.5,y:-17.2}],
@@ -70,8 +70,8 @@ export default ()=> <board name="FIDGET_COUNTER_REVA" title="MagSafe BLE Fidget 
  <keepout shape="rect" pcbX={0} pcbY={15.8} width={7} height={4.4}
   layers={["top","bottom"]} excludeRefs={[".ANT1"]}/>
  {/* Reserve the underside of these top pads to prevent via drills in the lands. */}
- <keepout shape="rect" pcbX={-1.69} pcbY={6} width={.54} height={.64} layers={["bottom"]}/>
- <keepout shape="rect" pcbX={-2.11} pcbY={1.2} width={.54} height={.64} layers={["bottom"]}/>
+ <keepout shape="rect" pcbX={-1.69} pcbY={6} width={.54} height={.64} layers={["bottom"]} excludeRefs={[".BT1"]}/>
+ <keepout shape="rect" pcbX={-2.11} pcbY={1.2} width={.54} height={.64} layers={["bottom"]} excludeRefs={[".BT1"]}/>
  <NRF52810 name="U1" pcbX={-7.5} pcbY={5} noConnect={unused} noSchematicRepresentation/>
  <via name="EP_GND" pcbX={-3.65} pcbY={5.12} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <trace name="QFN_LOCAL_GND" from=".U1 > .VSS2" to=".EP_GND > .top" width={.11}
@@ -84,9 +84,9 @@ export default ()=> <board name="FIDGET_COUNTER_REVA" title="MagSafe BLE Fidget 
  <trace name="C9_LOCAL_GND" from=".C9 > .pin2" to=".C9_GND > .top" width={.11} pcbStraightLine/>
  <via name="C18_GND" pcbX={-6.8} pcbY={10.2} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <trace name="C18_LOCAL_GND" from=".C18 > .pin2" to=".C18_GND > .top" width={.11} pcbStraightLine maxLength={1.5}/>
- <via name="C17_GND" pcbX={10.4} pcbY={1.2} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
+ <via name="C17_GND" pcbX={10.4} pcbY={2.1} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <trace name="C17_LOCAL_GND" from=".C17 > .pin2" to=".C17_GND > .top" width={.11}
-  pcbPathRelativeTo=".C17 > .pin2" pcbPath={[{x:1.2,y:-.9}]}/>
+  pcbPathRelativeTo=".C17 > .pin2" pcbPath={[{x:2.1,y:-.9}]}/>
  <via name="C5_GND" pcbX={-13.4} pcbY={8.8} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <trace name="C5_LOCAL_GND" from=".C5 > .pin2" to=".C5_GND > .top" width={.11}
   pcbPathRelativeTo=".C5 > .pin2" pcbPath={[{x:1,y:-.5}]}/>
@@ -115,7 +115,7 @@ export default ()=> <board name="FIDGET_COUNTER_REVA" title="MagSafe BLE Fidget 
   <schematicbox name="U1 Ground" chipRef=".U1" schX={0} schY={-2.2} width={1.1} height={.8} schSectionName="power"
    pinLabels={{pin1:"VSS1",pin2:"VSS2",pin3:"EP"}}
    schPinArrangement={{leftSide:["pin1","pin2","pin3"],rightSide:[]}}/>
-  <BatteryContacts name="BT1" layer="bottom" pcbX={0} pcbY={-11} schX={-6} schY={2} schOrientation="vertical" schSectionName="power"/>
+  <BatteryHolder name="BT1" layer="bottom" pcbX={-1.2} pcbY={0} pcbSx={hideText} schX={-6} schY={2} schOrientation="vertical" schSectionName="power"/>
   <Cap name="C4" capacitance="100nF" pcbX={-10} pcbY={.7} schX={-3.5} schY={2.5} schSectionName="power"/>
   <Cap name="C9" capacitance="4.7uF" pcbX={-7.5} pcbY={.5} schX={-3.5} schY={0} schSectionName="power"/>
   <Cap name="C15" capacitance="22uF" pcbX={-6} pcbY={-3.5} pcbRotation={180} schX={-6} schY={0} schSectionName="power"/>
@@ -136,7 +136,7 @@ export default ()=> <board name="FIDGET_COUNTER_REVA" title="MagSafe BLE Fidget 
   {["VDD1","VDD3"].map(p=><Link key={p} a={`.U1.${p}`} b="net.VBAT"/>)}
   <trace name="VDD2_LOCAL" from=".U1 > .VDD2" to=".C18 > .pin1" width={.11}
    pcbPathRelativeTo=".U1 > .VDD2" pcbPath={[{x:-3.9,y:-2.2},{x:-3.9,y:-1.4}]}/>
-  <Link a=".BT1.pos" b="net.VBAT"/><G p=".BT1.neg"/>
+  <Link a=".BT1.pin1" b="net.VBAT"/><G p=".BT1.pin2"/>
   {["C4","C9","C15","C16","C18"].map(c=><Link key={c} a={`.${c}.pin1`} b="net.VBAT"/>)}
   {["C4","C15","C16","C7","C8","C10"].map(c=><G key={c} p={`.${c}.pin2`}/>)}
   <Link a=".U1.DEC1" b=".C5.pin1"/><Link a=".U1.DEC2" b=".C7.pin1"/>
@@ -216,14 +216,18 @@ export default ()=> <board name="FIDGET_COUNTER_REVA" title="MagSafe BLE Fidget 
  <trace name="C11_LOCAL_GND" from=".C11 > .pin2" to=".C11_GND > .top" width={.11} pcbStraightLine/>
  <via name="C12_GND" pcbX={-15.8} pcbY={5.02} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <trace name="C12_LOCAL_GND" from=".C12 > .pin2" to=".C12_GND > .top" width={.11} pcbStraightLine/>
+ {/* Junction vias retain the existing power-tree routing; these are tented
+     routing features, not contacts or separately fitted components. */}
+ <via name="BT_POS_JUNCTION" pcbX={2} pcbY={-11} holeDiameter={.3} outerDiameter={.55} connectsTo="net.VBAT"/>
+ <via name="BT_NEG_JUNCTION" pcbX={-2} pcbY={-11} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <copperpour name="TOP_GND" layer="top" connectsTo="net.GND" clearance={.15} boardEdgeMargin={.35} coveredWithSolderMask/>
  <copperpour name="BOTTOM_GND" layer="bottom" connectsTo="net.GND" clearance={.15} boardEdgeMargin={.35} coveredWithSolderMask/>
- <silkscreentext text="FIDGET / A2" pcbX={0} pcbY={-6} fontSize={1.7}/>
+ <silkscreentext text="FIDGET / A3" pcbX={0} pcbY={-6} fontSize={1.7}/>
  <silkscreentext text="HALL" pcbX={0} pcbY={-3} fontSize={1.7}/>
  <silkscreentext text="CAP" pcbX={12.65} pcbY={-3.6} fontSize={1.7}/>
  <silkscreentext text="RF CLEAR" pcbX={4.8} pcbY={13.3} fontSize={1.7}/>
- <silkscreentext text="+" layer="bottom" pcbX={2} pcbY={-9.4} fontSize={1.7}/>
- <silkscreentext text="-" layer="bottom" pcbX={-2} pcbY={-9.4} fontSize={1.7}/>
+ <silkscreentext text="+" layer="bottom" pcbX={-13} pcbY={-3.8} fontSize={1.7}/>
+ <silkscreentext text="-" layer="bottom" pcbX={9.5} pcbY={-3.8} fontSize={1.7}/>
  {["V","G","D","C","R"].map((label,i)=><Fragment key={label}><silkscreentext text={label}
   layer="bottom" pcbX={-4+i*2} pcbY={-15.8} fontSize={1.7}/></Fragment>)}
 </board>

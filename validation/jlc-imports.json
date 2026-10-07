@@ -402,6 +402,28 @@
           "sha256": "40453afb315e093975ba08453ba5105709a4dd71c63128e72ffaea6807aa6cd9"
         }
       ]
+    },
+    {
+      "part": "BS_08_B2AA020_R",
+      "jlcpcb": "C964787",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C964787",
+      "files": [
+        {
+          "path": "imports/BS_08_B2AA020_R/BS_08_B2AA020_R.obj",
+          "bytes": 98977,
+          "sha256": "6f14b69db8252082af19981ea4ef8f6eba675bc210f14e77315b19862ccfe0ad"
+        },
+        {
+          "path": "imports/BS_08_B2AA020_R/BS_08_B2AA020_R.step",
+          "bytes": 1788228,
+          "sha256": "4714a2d39b88797145aacf8a737b9977321a492e45a83ee97f29d933f943d8ec"
+        },
+        {
+          "path": "imports/BS_08_B2AA020_R/BS_08_B2AA020_R.tsx",
+          "bytes": 7902,
+          "sha256": "9ebc546bb682b8f1d11121895e15a4aeb793ab8c1d8e24dea64601790a055a3c"
+        }
+      ]
     }
   ],
   "notes": [

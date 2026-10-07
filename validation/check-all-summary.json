@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-07T11:39:16.502Z",
+  "checkedAt": "2026-10-07T13:04:46.297Z",
   "checks": [
     "netlist",
     "pin_specification",
@@ -12,8 +12,8 @@
   ],
   "errors": 0,
   "warnings": 0,
-  "routedTraces": 87,
-  "vias": 45,
+  "routedTraces": 89,
+  "vias": 47,
   "analyzedNetCount": 20,
   "crystalBranches": [
     {
@@ -58,19 +58,17 @@
     }
   ],
   "sha256": {
-    "index.circuit.tsx": "78552f499ec52993b59931ad6b330732ff9ee47695fbf4006e7afcfcb29ea0e4",
-    "parts.tsx": "1f24a21ed5785e700876e68099cef3b3f413c6e5e911d850e64f36d962dfca12",
+    "index.circuit.tsx": "3dec90a3371304018dbc1873241218affe8783c47b46f3e68ae133b2314a9ddd",
+    "parts.tsx": "47b85463e132fcc855a49d5c741ccd6e97a0e3e7af9b4a0375d8015f7091dc9f",
     "passives.tsx": "3f2cdbf1cbff6cecd49da9cc3823255437d5a14cd1b8e2b1d41b7044d57d2a5f",
     "model-assets.d.ts": "9456883f24ccb7aabd3a84f094f1b87c32756018db28ae45bc2eec59d96fea72",
     "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
-    "routed-paths.json": "47c41503f41aedef25f946411394711d59fb6baa439273a458e35cb119c64aae",
-    "published.circuit.json": "cdd640e890e61a9871b93df984382f54e9f206c78aeadc87920223363a8f19a0",
-    "package.json": "234f1ba288264ffc2fbcf6c7f52229ba46a1052d2ed27b5a1c33f784a952a3a1",
+    "routed-paths.json": "2989ec13f4d56ace059bce086b4712ea429f3a001d0705f82393ccab56a3c1ca",
+    "published.circuit.json": "c75c8d72635b2de5a913934df89587f7c9d62d463ee953eebf054ad80dc33e8a",
+    "package.json": "8a4469629504fee742d3b191dc7977e6376aef7aadab3dc880f34bf18a412f08",
     "verify.mjs": "62063342d465580d84ab21b7a4d4ae35fa4c4f64c4a491b6ac3cd09e3669b982",
     "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
     "export-gerbers.mjs": "449fb40fdae108c9025ac9df21eea2669cb0cbb451fd642337dd72f091652008",
-    "dist/index/circuit.json": "cdd640e890e61a9871b93df984382f54e9f206c78aeadc87920223363a8f19a0"
-  },
-  "savedBoardRefreshedFromCheckedSource": true,
-  "postSourceCheckExportValidation": "Updated tenting export audited in actual Gerbers; final export copper shorts passed"
+    "dist/index/circuit.json": "c75c8d72635b2de5a913934df89587f7c9d62d463ee953eebf054ad80dc33e8a"
+  }
 }

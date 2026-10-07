@@ -1,0 +1,54 @@
+placement summary: no placement issues
+
+board top-layer utilization:
+- occupied: 11.737% (156.364mm^2 of 1332.25mm^2)
+- empty spaces over 5% of board area:
+  - 38.493% (512.825mm^2); bounds=(minX=-18.25mm, maxX=18.25mm, minY=-18.25mm, maxY=-4.2mm)
+  - 17.486% (232.963mm^2); bounds=(minX=3.22mm, maxX=18.25mm, minY=2.75mm, maxY=18.25mm)
+  - 6.38% (84.999mm^2); bounds=(minX=-18.25mm, maxX=-9.12mm, minY=8.94mm, maxY=18.25mm)
+
+board-edge status:
+- GPIO_SCL: 8.525mm inside bottom edge
+- GPIO_SDA: 7.875mm inside bottom edge
+- GPIO_HALL_INT: 8.525mm inside bottom edge
+- U1: 7.275mm inside left edge
+- BT1: 6.35mm inside top edge
+- C4: 7.58mm inside left edge
+- C9: 9.65mm inside left edge
+- C15: 11.15mm inside left edge
+- C5: 5.18mm inside left edge
+- C7: 12.48mm inside bottom edge
+- C8: 11.98mm inside bottom edge
+- C10: 5.15mm inside bottom edge
+- C16: 7.68mm inside bottom edge
+- C18: 8.58mm inside bottom edge
+- TP_VDD: 3.65mm inside top edge
+- TP_GND: 3.65mm inside top edge
+- TP_SWDIO: 3.65mm inside top edge
+- TP_SWDCLK: 3.65mm inside top edge
+- TP_RESET: 3.65mm inside top edge
+- R4: 13.334mm inside left edge
+- U2: 17.75mm inside top edge
+- C6: 15.98mm inside left edge
+- R1: 15.234mm inside right edge
+- R2: 15.234mm inside right edge
+- R3: 15.234mm inside right edge
+- SW1: 4.3mm inside right edge
+- R5: 9.534mm inside right edge
+- C17: 8.48mm inside right edge
+- X1: 9.1mm inside bottom edge
+- C1: 10.68mm inside bottom edge
+- C2: 7.48mm inside bottom edge
+- X2: 4.4mm inside left edge
+- C11: 3.18mm inside left edge
+- C12: 3.18mm inside left edge
+- L1: 13.58mm inside bottom edge
+- L2: 13.58mm inside bottom edge
+- C3: 14.88mm inside left edge
+- C13: 14.67mm inside bottom edge
+- C14: 14.67mm inside bottom edge
+- ANT1: 0.52mm inside bottom edge
+
+placement drc:
+Errors: 0
+Warnings: 0

@@ -1,12 +1,12 @@
 [
   {
     "target": "net.GND",
-    "routedLengthMm": 266.1,
+    "routedLengthMm": 269.42,
     "traceCount": 49
   },
   {
     "target": "net.VBAT",
-    "routedLengthMm": 97.68,
+    "routedLengthMm": 148.07,
     "traceCount": 16
   },
   {

@@ -1,42 +1,41 @@
-# PCB / enclosure interface
+# PCB / enclosure interface — holder revision 1.0.3
 
-All PCB coordinates are millimetres in a top view, relative to the rotation axis. The board is Ø36.5 × 1.0 mm and uses four Ø3.6 mm **nonplated** holes on a 16.2 mm radius at 45°, 135°, 225° and 315°. Hole centers are (±11.45513, ±11.45513). The 2.2 mm radius keepouts reserve the existing printed spacers around each hole.
+Coordinates are millimetres in a top view, relative to the rotation axis. The board is Ø36.5 × 1.0 mm, with four Ø3.6 mm nonplated mounting holes at (±11.45513, ±11.45513). Their thin 0.25 mm nominal edge web still requires fabricator acceptance. Printed shoulders and bushings support the board.
 
-The existing spacer positions leave only **0.25 mm nominal FR4 between each mounting hole and the circular edge**. This thin web needs explicit fabricator acceptance and handling review for the prototype. Support the board with the printed bushings and avoid forcing the holes or clamping against unsupported FR4. Increasing the board diameter would interfere with the current cap's inner retention skirt; a production revision should coordinate the hole pattern and enclosure before widening this web.
+The revised enclosure is **14.0 mm high**. PCB bottom/top planes are Z=7.1/8.1. U2 is centered at (0,0); U1 is the 6 × 6 mm QFN at (-7.5,5); SW1 is centered at (12.65,0). The encoder magnet's lower face is Z=10.4, leaving nominal sensor package clearance of 1.8 mm released and 1.3 mm pressed. Use a diametrically magnetized Ø6 × 2 mm magnet and calibrate with the final phone and cell installed.
 
-U2 package center is (0,0). U1 is a 6 × 6 mm QFN at (-7.5,5), replacing the earlier 5 × 5 mm CAD placeholder. SW1 actuator center is (12.65,0); its long body axis follows Y. All populated electronic parts are on top. Battery solder lands and SWD pads are on the underside outside the cell's Ø20 mm footprint.
+The Ø61.6 mm cap retains its full circumference grip, extending down to Z=1.0. Its pressed lower edge remains 0.5 mm above the phone plane. The annular switch pusher uses `pcb_top + 2.15`: nominal 0.25 mm free clearance above the 1.9 mm actuator, followed by nominal 0.25 mm switch displacement during the cap's 0.5 mm travel. Fit-test the switch and printed stack; the tactile switch must not act as the structural stop.
 
-The PCB bottom/top planes in the enclosure remain Z=5.3/6.3. The selected U2 package is at most 0.5 mm tall, so the existing encoder magnet bottom at Z=8.6 gives approximately 1.8 mm package-top clearance released and 1.3 mm pressed. The internal Hall plane is below the package surface; use measured magnetic field and calibrated angle to set the final magnet shim. Keep the Ø6 × 2 mm magnet **diametrically magnetized**.
+## Commercial CR2032 holder
 
-## Required cap pusher adjustment
+BT1 is **MYOUNG BS-08-B2AA020-R, JLCPCB C964787**, mounted on the PCB underside. The exact footprint, pad numbers and OBJ/STEP model come from `tsci import --jlcpcb --download --use-exact-footprint C964787`; the imported files are unchanged. The manufacturer drawing specifies 24.1 × 15.7 mm body dimensions and **5.8 mm maximum height**. Clearance uses that maximum rather than the library model's 5.3 mm height. The holder's maximum envelope leaves 0.5 mm above the hatch floor.
 
-The actual KMR223NG ULC switch has a nominal actuator height of 1.9 mm and electrical travel of 0.25 ± 0.1 mm. The earlier CAD placeholder was 1.6 mm tall.
+The footprint origin is (-1.2,0), which centers the manufacturer drawing's cell axis at (0,0) after the bottom-side mirror. Pin 1 is positive at (-12.999913,0), with a 3.5 × 3.8 mm SMT land; pin 2 is negative at (9.499915,0), with a 5.7 × 2.8 mm SMT land. These coordinates are top-view coordinates. Two regular tented routing vias at (2,-11) and (-2,-11) preserve the original power distribution; they are not battery contacts or wire attachment points.
 
-**Shorten the cap's annular pusher by 0.30 mm:** raise its lower face from Z=8.15 to **Z=8.45** in the released assembly, while retaining its radial extent 11.6–13.7 mm. With the PCB top at Z=6.3 and switch top at nominal Z=8.2, this gives nominal 0.25 mm free clearance. The cap's 0.5 mm travel then supplies nominal 0.25 mm switch displacement. In the existing CAD builder this is the `pcb_top+1.85` pusher expression: replace both occurrences with `pcb_top+2.15`.
+Insert the CR2032 **positive face toward the removable bottom hatch**, negative face toward the PCB. Insert the battery after PCB reflow. The commercial holder supplies retention and contacts; the hatch carries no spring contacts or wires.
 
-The hardware switch and printed stack have tolerances. Fit the printed cap against the actual switch, tune the lower face/shims so electrical closure occurs before the cap stop, and provide local compliance so the tactile mechanism is not the structural hard stop. The outer grip sleeve and captured rotating cap geometry are retained. The previously exported Rev B cap STL is not automatically updated by this PCB project; use `Rotating_Cap_for_PCB_RevA.stl` supplied with the PCB handoff, or regenerate the cap before assembling this switch. The supplied cap preserves the Ø61.6 mm full-height grip sleeve and changes only the pusher.
+Remove the device from the phone, undo the two M2 hatch screws and remove the plain hatch. Release the cell from the holder using its open sides, fit a fresh CR2032 in the marked orientation and reinstall the hatch. The cap, PCB and holder stay assembled. Screw centers are (6,-11.3) and (-6,11.3), clear of the holder's solder tails, cell and SWD pad row. Nominal pad-edge clearance to the nearest hatch post is recorded in `mechanical/enclosure-validation.json`.
 
-## Replaceable battery contacts
+The exported holder STEP contains its unloaded negative spring contact. Its 2.62 mm³ intersection with the nominal cell is reported separately as spring preload geometry; the cell has zero intersection with the rigid holder body. Contact deflection, insertion/removal motion, retention force and printed tolerances require a physical fit test. The battery-open STEP illustrates access, not a simulated insertion trajectory.
 
-BT1 is **a two-pole solder interface, not a commercial battery holder or two direct-contact pads on the same cell face**. Its wire lands have 1.8 mm copper diameter with a 0.6 mm plated drill, accessible from the underside:
+## Programming and clearance
 
-| Land | Position | Connection |
-|---|---|---|
-| PLUS | (2,-11) | Spring touching the CR2032 upper positive face / positive rim |
-| MINUS | (-2,-11) | Spring touching the smaller negative face on the underside |
+SWD pads are at Y=-14 and X=-4,-2,0,2,4, ordered VDD, GND, SWDIO, SWDCLK, nRESET in a top view. Viewed directly underneath, their order is **R, C, D, G, V**, matching the legend. Remove the hatch for programming. Use a fixture with narrow probes; the nearest post clearance is nominal. VDD is a target-voltage reference; remove the primary cell before deliberately powering the board from the programmer.
 
-Install the CR2032 **positive side toward the PCB**. The printed hatch's shallow cup locates it. Provide two compliant metal contacts and insulated leads to BT1. The existing 0.3 mm space above the cell can accept a thin formed positive leaf; a prototype starting material is 0.15 mm phosphor-bronze strip, approximately 2 mm wide, with an exposed contact tip and insulated tail. Form the tip to provide preload in that gap rather than stacking a commercial holder there.
+TP_GND has a 0.4 mm plated drill; the remaining four 1.2 mm pogo pads are undrilled. GPIO diagnostic lands use 0.30 mm drills and 0.55 mm lands, with no fitted parts. All routing vias are tented on both sides. The holder's insulating housing separates the cell from PCB copper.
 
-A separate approximately 3 mm-wide, 0.15 mm-thick negative strip occupies the existing 4 × 11 × 0.2 mm floor relief under the cell. Its exposed contact tip bears on the negative disk; its tail exits through the cup's Y=-10.8 contact notch. Insulate the tail where it passes the positive can/rim. Join insulated flexible leads outside the cell footprint, where there is vertical room, and provide strain relief. The supplied dimensions are prototype contact blanks; spring force and final bends require a fit test. Bare PCB lands are not substitutes for these contacts.
+The antenna keepout is X=-3.5…3.5, Y=13.6…18.0 on both layers. Keep metal and attachment parts away from this volume where practical. The phone, cell and attachment magnets still affect RF and Hall readings.
 
-The hatch is removed by undoing its two M2 screws. Lower it carefully; if its negative contact is hatch-mounted, leave enough flexible lead length for it to swing down without pulling on BT1. Lift the cell from the cup, insert a new CR2032 in the marked orientation and reinstall the hatch. The cap and PCB stay assembled. Cover the board underside over the cell with an insulating film; tent vias on both sides as specified. Soldermask alone should not be used as a moving cell-contact wear surface.
+## Editable enclosure and supplied parts
 
-The five SWD pads are at Y=-14, X=-4,-2,0,2,4 (top-view coordinates), ordered VDD, GND, SWDIO, SWDCLK, nRESET. Their orientation appears mirrored when viewing the actual underside. Use these pads only with the underside accessible and avoid applying programming voltage against an installed primary cell. VDD is a target-voltage reference unless the cell is removed and an external supply is deliberately used.
+`build_enclosure.py` and `enclosure-parameters.json` regenerate the assembly with CadQuery ≥2.6. Run from the project root:
 
-Viewed directly from underneath, their left-to-right order is **R, C, D, G, V**, matching the underside silkscreen: reset, clock, data, ground, battery voltage.
+```sh
+python mechanical/build_enclosure.py --out work/enclosure
+```
 
-TP_GND has a 0.4 mm plated drill in its 1.2 mm land; the other SWD pads are undrilled surface lands. Trim contact-wire ends and solder joints flush enough to preserve the top-side clearance.
+`Print_STL/` contains all five parts in print orientation: Rotating_Cap, Stationary_Housing, Flexure_Retention_System, Battery_Hatch and Bottom_Cover. Corresponding editable solids are in `STEP_Parts/`. Use the complete revised set; the previous 12.2 mm enclosure and cap are incompatible with this holder stack.
 
-Antenna keepout spans X=-3.5…3.5, Y=13.6…18.0 on both layers. Keep metal, wires and attachment parts out of that volume above/below the PCB where practical. The attachment magnet/shield annulus is outside the PCB, but the phone and cell still influence RF and the Hall sensor.
+Released, pressed, exploded and battery-open assemblies are included in the downloadable mechanical handoff. Electronics other than the holder are board/key-package bounding references; the complete populated PCB is supplied separately as the tscircuit GLB. The attachment magnet array remains a reserved envelope, and the flexure calculation is an approximate cantilever estimate rather than FEA or a measured return force.
 
-Three small signal diagnostic lands at the MCU escape points are 0.55 mm plated lands with 0.30 mm drills. They require no fitted components. Keep the specified underside insulating film over the cell footprint, including these lands.
+Sources: [MYOUNG holder drawing](https://xonstorage.z8.web.core.windows.net/pdf/myoung_bs08b2aa020_apr22_xonlink.pdf), [JLCPCB holder listing](https://jlcpcb.com/partdetail/MYOUNG-BS_08_B2AA020R/C964787), [C&K KMR2 drawing](https://www.ckswitches.com/media/1479/kmr2.pdf).

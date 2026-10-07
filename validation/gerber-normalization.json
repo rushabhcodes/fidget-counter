@@ -1,11 +1,11 @@
 {
   "source": "dist/index/circuit.json",
-  "sourceSha256": "cdd640e890e61a9871b93df984382f54e9f206c78aeadc87920223363a8f19a0",
-  "exportCircuitSha256": "411281b56ca6eca01fad161d637dd301026a615ecc1a60bcc9693d14f08805d5",
-  "gerberZipSha256": "3eb1fcb13e687618b4de4eac9ce90b2af1d802898664c807cf8c2345d08426e2",
+  "sourceSha256": "c75c8d72635b2de5a913934df89587f7c9d62d463ee953eebf054ad80dc33e8a",
+  "exportCircuitSha256": "9458dec7120670eebb28b11b40c3e9d4317be44670254b033f1ad42c853e227b",
+  "gerberZipSha256": "fcb56f6d5b63f51f239a12ecacbde38c920953faae2997a74ae243b9f5a5defd",
   "normalizedPadCount": 48,
-  "fittedPasteCount": 113,
+  "fittedPasteCount": 115,
   "addedPillPasteCount": 48,
-  "tentedViaCount": 45,
+  "tentedViaCount": 47,
   "note": "Copper geometry unchanged. Added missing fitted QFN lead paste at 70% linear size; excluded bare/DNP paste; applied source board's both-side via tenting; quarter-turn pills represented as axis-aligned equivalents."
 }

@@ -376,5 +376,28 @@
       0.8,
       0.8
     ]
+  },
+  {
+    "part": "BS_08_B2AA020_R",
+    "vertices": 1477,
+    "bounds": {
+      "min": [
+        -13.049995,
+        -7.85,
+        -0.01
+      ],
+      "max": [
+        13.05,
+        7.85,
+        5.3
+      ]
+    },
+    "size_mm": [
+      26.099995,
+      15.7,
+      5.31
+    ],
+    "clearance_height_mm": 5.8,
+    "clearance_height_source": "MYOUNG BS-08-B2AA020 manufacturer drawing"
   }
 ]

@@ -1,0 +1,412 @@
+{
+  "importedAt": "2026-10-07",
+  "cli": "0.1.2253",
+  "flags": [
+    "--jlcpcb",
+    "--download",
+    "--use-exact-footprint"
+  ],
+  "parts": [
+    {
+      "part": "ABS07_32_768KHZ_9_T",
+      "jlcpcb": "C179635",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C179635",
+      "files": [
+        {
+          "path": "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.tsx",
+          "bytes": 1746,
+          "sha256": "773a9b178e1e8daba40ec2b7f9804b891397ca47f1fbdabb2cc1f6b101eac994"
+        },
+        {
+          "path": "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj",
+          "bytes": 75921,
+          "sha256": "5cb7b3d39911902565b7d20a63b8be35513c8d72b9d0dca36c801d731893bcf5"
+        },
+        {
+          "path": "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.step",
+          "bytes": 1500490,
+          "sha256": "d8b313a83de060e58141efc987e51c0ad04a3855784f981139dc3698331d1f2d"
+        }
+      ]
+    },
+    {
+      "part": "CL10B105KA8NNWC",
+      "jlcpcb": "C730442",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C730442",
+      "files": [
+        {
+          "path": "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.tsx",
+          "bytes": 2785,
+          "sha256": "5542c7c34bb8c463e7fbe39e9905a37d217575bba9ad742c42b01e8c351984eb"
+        },
+        {
+          "path": "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.obj",
+          "bytes": 57506,
+          "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+        },
+        {
+          "path": "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.step",
+          "bytes": 1468156,
+          "sha256": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110"
+        }
+      ]
+    },
+    {
+      "part": "GJM1555C1HR80WB01D",
+      "jlcpcb": "C88902",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C88902",
+      "files": [
+        {
+          "path": "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.tsx",
+          "bytes": 2826,
+          "sha256": "995f2947f850eddfe592707f562eb9310628e63e32d2c3f2cc0b1b1426f33b03"
+        },
+        {
+          "path": "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.obj",
+          "bytes": 55992,
+          "sha256": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d"
+        },
+        {
+          "path": "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.step",
+          "bytes": 1481985,
+          "sha256": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14"
+        }
+      ]
+    },
+    {
+      "part": "GRM1555C1H101JA01D",
+      "jlcpcb": "C77177",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C77177",
+      "files": [
+        {
+          "path": "imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.tsx",
+          "bytes": 2826,
+          "sha256": "d0fd09855b3fc3c9625cd8037a6bfddc548d452f24d2df1ee25363e19621e938"
+        },
+        {
+          "path": "imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.obj",
+          "bytes": 55992,
+          "sha256": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d"
+        },
+        {
+          "path": "imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.step",
+          "bytes": 1481985,
+          "sha256": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14"
+        }
+      ]
+    },
+    {
+      "part": "GRM1555C1H120JA01D",
+      "jlcpcb": "C76948",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C76948",
+      "files": [
+        {
+          "path": "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.tsx",
+          "bytes": 2825,
+          "sha256": "e9256483c613ef5f1d8153d8474c686c3cfd064495bcde7e3e0285f967c91842"
+        },
+        {
+          "path": "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
+          "bytes": 55992,
+          "sha256": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d"
+        },
+        {
+          "path": "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step",
+          "bytes": 1481985,
+          "sha256": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14"
+        }
+      ]
+    },
+    {
+      "part": "GRM155R71C103KA01D",
+      "jlcpcb": "C85735",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C85735",
+      "files": [
+        {
+          "path": "imports/GRM155R71C103KA01D/GRM155R71C103KA01D.tsx",
+          "bytes": 2825,
+          "sha256": "54a0d4f426cae84baec8a7b049928fc37177cc117768b10f3ae3a30b4df8e518"
+        },
+        {
+          "path": "imports/GRM155R71C103KA01D/GRM155R71C103KA01D.obj",
+          "bytes": 55992,
+          "sha256": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d"
+        },
+        {
+          "path": "imports/GRM155R71C103KA01D/GRM155R71C103KA01D.step",
+          "bytes": 1481985,
+          "sha256": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14"
+        }
+      ]
+    },
+    {
+      "part": "GRM155R71C104KA88D",
+      "jlcpcb": "C71629",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C71629",
+      "files": [
+        {
+          "path": "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.tsx",
+          "bytes": 2826,
+          "sha256": "7f1190238b0dae41c71b32909d60c636ee785c8f50f3fe404d292049a63a0899"
+        },
+        {
+          "path": "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.obj",
+          "bytes": 55992,
+          "sha256": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d"
+        },
+        {
+          "path": "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step",
+          "bytes": 1481985,
+          "sha256": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14"
+        }
+      ]
+    },
+    {
+      "part": "GRM188R60J226ME15D",
+      "jlcpcb": "C440187",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C440187",
+      "files": [
+        {
+          "path": "imports/GRM188R60J226ME15D/GRM188R60J226ME15D.tsx",
+          "bytes": 2798,
+          "sha256": "5e47da4f12d61039525619c0435f586aa86db6228e3d44a27997ead976e850ce"
+        },
+        {
+          "path": "imports/GRM188R60J226ME15D/GRM188R60J226ME15D.obj",
+          "bytes": 57506,
+          "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+        },
+        {
+          "path": "imports/GRM188R60J226ME15D/GRM188R60J226ME15D.step",
+          "bytes": 1468156,
+          "sha256": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110"
+        }
+      ]
+    },
+    {
+      "part": "GRM188R60J475KE19D",
+      "jlcpcb": "C71631",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C71631",
+      "files": [
+        {
+          "path": "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.tsx",
+          "bytes": 2798,
+          "sha256": "7f82887730a602640519427f3e61118035920018690f3707d38e065fb45e815d"
+        },
+        {
+          "path": "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.obj",
+          "bytes": 57506,
+          "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+        },
+        {
+          "path": "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.step",
+          "bytes": 1468156,
+          "sha256": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110"
+        }
+      ]
+    },
+    {
+      "part": "KMR232NGULCLFS",
+      "jlcpcb": "C221681",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C221681",
+      "files": [
+        {
+          "path": "imports/KMR232NGULCLFS/KMR232NGULCLFS.tsx",
+          "bytes": 3095,
+          "sha256": "c3e502b06ece9a5efec854cfad768bf7915729db65afc82be716fc056f7b0173"
+        },
+        {
+          "path": "imports/KMR232NGULCLFS/KMR232NGULCLFS.obj",
+          "bytes": 214298,
+          "sha256": "97d09f9cc9cc53195e913724a2a04a139efb3ed3d8f13a538b83a1d64b5ee6ad"
+        },
+        {
+          "path": "imports/KMR232NGULCLFS/KMR232NGULCLFS.step",
+          "bytes": 1692662,
+          "sha256": "62738609d38cdfb03321b20f50e4c82b8ef03905bfebe44e02ed1d5909f6c22c"
+        }
+      ]
+    },
+    {
+      "part": "LQG15HS3N9B02D",
+      "jlcpcb": "C5452416",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C5452416",
+      "files": [
+        {
+          "path": "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.tsx",
+          "bytes": 2783,
+          "sha256": "984cbe947f9d326a801fd523aa6c91ded7b9f726caa88e2d33056e13b25a778f"
+        },
+        {
+          "path": "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.obj",
+          "bytes": 56040,
+          "sha256": "b63526a517650b79fb6295c769af37c49321e39f50c7a23ca7c6a9b148031910"
+        },
+        {
+          "path": "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.step",
+          "bytes": 1485269,
+          "sha256": "54e0f0bcaf7410e7eebc62d9ca4e2d54c30d2d5f52d816b81de85fffb4cb06f4"
+        }
+      ]
+    },
+    {
+      "part": "LQG15HS6N8G02D",
+      "jlcpcb": "C521064",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C521064",
+      "files": [
+        {
+          "path": "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.tsx",
+          "bytes": 3420,
+          "sha256": "b66642ae98540ea22fd36e222b70cbd2c5d09a06411b6731d642c1428283c8b3"
+        },
+        {
+          "path": "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.obj",
+          "bytes": 74673,
+          "sha256": "b47da88d07499fc647a8d2ea4052a7f2f80ba43a034606f1f9e9120313059fc9"
+        },
+        {
+          "path": "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.step",
+          "bytes": 1490837,
+          "sha256": "a9e3440491fe778b6cd506a9af4fe608b51e57c361087ef1028b5c09c77fc199"
+        }
+      ]
+    },
+    {
+      "part": "NRF52810_QFAA_R",
+      "jlcpcb": "C141828",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C141828",
+      "files": [
+        {
+          "path": "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.tsx",
+          "bytes": 10485,
+          "sha256": "16545ac2b5a2a88e2c3c7f1d5c0c600a7fdf76b9e9cd76d621aba6e6320d5266"
+        },
+        {
+          "path": "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.obj",
+          "bytes": 426811,
+          "sha256": "8258dd6e76bc88992a6c1f9f021455cdf3a4c014b8e6f4d21aace97017f2351d"
+        },
+        {
+          "path": "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step",
+          "bytes": 4926963,
+          "sha256": "757179567becc0f67f627e24efc67b4d8b556002f4b336735358f6716bbd37ad"
+        }
+      ]
+    },
+    {
+      "part": "RC0402FR_07100KL",
+      "jlcpcb": "C60491",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C60491",
+      "files": [
+        {
+          "path": "imports/RC0402FR_07100KL/RC0402FR_07100KL.tsx",
+          "bytes": 1780,
+          "sha256": "46f9e8e09e23bf75e78b2462cbd204ff7f14cae8c271903ab7f5d0a21a73e646"
+        },
+        {
+          "path": "imports/RC0402FR_07100KL/RC0402FR_07100KL.obj",
+          "bytes": 18730,
+          "sha256": "658e8980a1ff78ad44b1f30b6de0c63023cfd0b883902f3c1333902984d7bfe4"
+        },
+        {
+          "path": "imports/RC0402FR_07100KL/RC0402FR_07100KL.step",
+          "bytes": 1068271,
+          "sha256": "055d10977e0e0b859b0b263328e4e4bfd98261ad252688cb3736f72f67aa4729"
+        }
+      ]
+    },
+    {
+      "part": "RC0402FR_0710KL",
+      "jlcpcb": "C60490",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C60490",
+      "files": [
+        {
+          "path": "imports/RC0402FR_0710KL/RC0402FR_0710KL.tsx",
+          "bytes": 1775,
+          "sha256": "c87b0b8e4645446c1f17751797e5f7e83f427e539f32278c305d37f38d55868d"
+        },
+        {
+          "path": "imports/RC0402FR_0710KL/RC0402FR_0710KL.obj",
+          "bytes": 18730,
+          "sha256": "658e8980a1ff78ad44b1f30b6de0c63023cfd0b883902f3c1333902984d7bfe4"
+        },
+        {
+          "path": "imports/RC0402FR_0710KL/RC0402FR_0710KL.step",
+          "bytes": 1068271,
+          "sha256": "055d10977e0e0b859b0b263328e4e4bfd98261ad252688cb3736f72f67aa4729"
+        }
+      ]
+    },
+    {
+      "part": "RFANT3216120A5T",
+      "jlcpcb": "C127629",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C127629",
+      "files": [
+        {
+          "path": "imports/RFANT3216120A5T/RFANT3216120A5T.tsx",
+          "bytes": 1634,
+          "sha256": "e14f5ad09e5cc7fd464c1ed9c0852065c8329692e2911bc4f5554e529f43547f"
+        },
+        {
+          "path": "imports/RFANT3216120A5T/RFANT3216120A5T.obj",
+          "bytes": 56261,
+          "sha256": "ba4988b20c73c147f25e669f375ba18952fc7264b4439dea6b34edb862bfbdfb"
+        },
+        {
+          "path": "imports/RFANT3216120A5T/RFANT3216120A5T.step",
+          "bytes": 1408045,
+          "sha256": "44168c6e5d17ffce4789710ef4075cb75102fd74af108ddc5869e7e437d108ab"
+        }
+      ]
+    },
+    {
+      "part": "TMAG3001A2YBGR",
+      "jlcpcb": "C31115089",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C31115089",
+      "files": [
+        {
+          "path": "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.tsx",
+          "bytes": 2265,
+          "sha256": "a81e534199e0707e775ec31edf9ec8e3460ac86a71fcd3e3f5772cec216c1c8c"
+        },
+        {
+          "path": "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.obj",
+          "bytes": 264659,
+          "sha256": "6f173be057eaf9f0a0862da20b531eca856cc867241bce9419154798d4a7f23d"
+        },
+        {
+          "path": "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.step",
+          "bytes": 1002614,
+          "sha256": "fdf0609ecdf3febf5ad11cc6e67910be38daf56d9018bce33ad0c991eaef2aff"
+        }
+      ]
+    },
+    {
+      "part": "X201632MKB4SI",
+      "jlcpcb": "C718072",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C718072",
+      "files": [
+        {
+          "path": "imports/X201632MKB4SI/X201632MKB4SI.tsx",
+          "bytes": 1970,
+          "sha256": "207540bec9380d92c7d30c2f6e39cfddd9448efa81feaf609108a7d55cc9900e"
+        },
+        {
+          "path": "imports/X201632MKB4SI/X201632MKB4SI.obj",
+          "bytes": 123416,
+          "sha256": "4dc100dd1132d03621c32baea19177e179987dca238440bf56c9a0eb7dc74047"
+        },
+        {
+          "path": "imports/X201632MKB4SI/X201632MKB4SI.step",
+          "bytes": 1268787,
+          "sha256": "40453afb315e093975ba08453ba5105709a4dd71c63128e72ffaea6807aa6cd9"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Raw generated TSX, OBJ and STEP files are unmodified. Wrappers omit library silkscreen and add electrical attributes.",
+    "SW1 retains the original 2 N KMR223NG ULC LFG. C221681 contributes shared KMR2 geometry only; its supplier ID is not assigned to SW1.",
+    "The importer uses the exact EasyEDA footprint, not an approximate generator match."
+  ]
+}

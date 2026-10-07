@@ -6,6 +6,7 @@ import {X201632MKB4SI} from "./imports/X201632MKB4SI/X201632MKB4SI"
 import {ABS07_32_768KHZ_9_T} from "./imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T"
 import {KMR232NGULCLFS} from "./imports/KMR232NGULCLFS/KMR232NGULCLFS"
 import {RFANT3216120A5T} from "./imports/RFANT3216120A5T/RFANT3216120A5T"
+import {BS_08_B2AA020_R} from "./imports/BS_08_B2AA020_R/BS_08_B2AA020_R"
 import type { BatteryProps, ChipProps, CrystalProps, PinAttributeMap } from "@tscircuit/props"
 
 // Nordic QFAA signal labels; copper and models come from the JLCPCB import.
@@ -89,9 +90,9 @@ export const CapButton=(p:ChipProps)=><pushbutton
  pinLabels={{pin1:["A1"],pin2:["B2"],pin3:["B"],pin4:["A"]}}
  internallyConnectedPins={[["pin1","pin4"],["pin2","pin3"]]}
  {...p}/>
-// Bare wiring interface for the separately mounted CR2032 contacts.
-// Standard footprint generator, no fitted connector or holder.
-export const BatteryContacts=(p:BatteryProps)=><battery standard="CR2032" voltage="3V" doNotPlace
- manufacturerPartNumber="CR2032 hatch spring-contact interface"
+// Complete two-terminal holder: unmodified JLCPCB copper and model, fitted below
+// the PCB. Pin 1 is the positive contact, matching the imported polarity marker.
+export const BatteryHolder=(p:BatteryProps)=><battery
+ {...{...libraryProps(BS_08_B2AA020_R({name:p.name})),symbol:undefined}} standard="CR2032" voltage="3V"
  pinAttributes={{pin1:{providesPower:true,providesVoltage:"3V",mustBeConnected:true},pin2:{providesGround:true,mustBeConnected:true}}}
- footprint="pinrow2_p4_id0.6_od1.8_nosquareplating_nosilkscreen" {...p}/>
+ {...p}/>

@@ -1,5 +1,5 @@
-<TraceLengthAnalysis requestedTarget="net.GND" resolvedTarget="net.GND" targetKind="net" traceCount="49" totalLengthMm="266.10" totalStraightLineDistanceMm="351.00">
-  <Trace id="source_trace_32:source_port_73" label="BT1.pin2 -&gt; net.GND" connectionType="via net" lengthMm="9.41" straightLineDistanceMm="15.45">
+<TraceLengthAnalysis requestedTarget="net.GND" resolvedTarget="net.GND" targetKind="net" traceCount="49" totalLengthMm="269.42" totalStraightLineDistanceMm="344.94">
+  <Trace id="source_trace_32:source_port_73" label="BT1.pin2 -&gt; net.GND" connectionType="via net" lengthMm="16.06" straightLineDistanceMm="13.40">
     <ConnectedPins>
       <Pin ref="BT1.pin2" />
       <Pin ref="C1.pin2" />
@@ -44,7 +44,7 @@
       <Pin ref="X1.pin4" />
     </ConnectedPins>
     <PinPositions>
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -69,7 +69,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -86,15 +86,22 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
-      <Point x="-2.00" y="-11.00" layer="top" kind="endpoint" />
-      <Point x="-2.00" y="-8.32" layer="top" kind="track" />
-      <Point x="-6.70" y="-3.50" layer="top" kind="endpoint" />
+      <Point x="9.50" y="0.00" layer="bottom" kind="endpoint" />
+      <Point x="-1.10" y="-10.60" layer="bottom" kind="track" />
+      <Point x="-1.20" y="-10.60" layer="bottom" kind="track" />
+      <Point x="-1.30" y="-10.70" layer="bottom" kind="track" />
+      <Point x="-1.40" y="-10.70" layer="bottom" kind="track" />
+      <Point x="-1.50" y="-10.80" layer="bottom" kind="track" />
+      <Point x="-1.60" y="-10.80" layer="bottom" kind="track" />
+      <Point x="-1.70" y="-10.90" layer="bottom" kind="track" />
+      <Point x="-1.90" y="-10.90" layer="bottom" kind="track" />
+      <Point x="-2.00" y="-11.00" layer="bottom" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_19:source_port_126" label="C1.pin2 -&gt; net.GND" connectionType="via net" lengthMm="0.80" straightLineDistanceMm="6.72">
+  <Trace id="source_trace_19:source_port_126" label="C1.pin2 -&gt; net.GND" connectionType="via net" lengthMm="0.80" straightLineDistanceMm="6.34">
     <ConnectedPins>
       <Pin ref="C1.pin2" />
       <Pin ref="BT1.pin2" />
@@ -140,7 +147,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
       <Pin ref="C12.pin2" x="-14.80" y="5.02" layers="top" />
@@ -164,7 +171,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -181,14 +188,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="2.72" y="7.30" layer="top" kind="endpoint" />
       <Point x="2.80" y="8.10" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_78:source_port_126" label="C1.pin2 -&gt; net.GND" connectionType="via net" lengthMm="6.72" straightLineDistanceMm="6.72">
+  <Trace id="source_trace_78:source_port_126" label="C1.pin2 -&gt; net.GND" connectionType="via net" lengthMm="6.34" straightLineDistanceMm="6.34">
     <ConnectedPins>
       <Pin ref="C1.pin2" />
       <Pin ref="BT1.pin2" />
@@ -234,7 +241,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
       <Pin ref="C12.pin2" x="-14.80" y="5.02" layers="top" />
@@ -258,7 +265,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -275,10 +282,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_14:source_port_87" label="C10.pin2 -&gt; net.GND" connectionType="via net" lengthMm="9.25" straightLineDistanceMm="9.25">
+  <Trace id="source_trace_14:source_port_87" label="C10.pin2 -&gt; net.GND" connectionType="via net" lengthMm="9.12" straightLineDistanceMm="9.12">
     <ConnectedPins>
       <Pin ref="C10.pin2" />
       <Pin ref="BT1.pin2" />
@@ -324,7 +331,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
       <Pin ref="C12.pin2" x="-14.80" y="5.02" layers="top" />
@@ -348,7 +355,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -365,10 +372,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_43:source_port_87" label="C10.pin2 -&gt; net.GND" connectionType="via net" lengthMm="9.25" straightLineDistanceMm="9.25">
+  <Trace id="source_trace_43:source_port_87" label="C10.pin2 -&gt; net.GND" connectionType="via net" lengthMm="9.12" straightLineDistanceMm="9.12">
     <ConnectedPins>
       <Pin ref="C10.pin2" />
       <Pin ref="BT1.pin2" />
@@ -414,7 +421,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
       <Pin ref="C12.pin2" x="-14.80" y="5.02" layers="top" />
@@ -438,7 +445,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -455,10 +462,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_84:source_port_132" label="C11.pin2 -&gt; net.GND" connectionType="via net" lengthMm="11.62" straightLineDistanceMm="11.62">
+  <Trace id="source_trace_84:source_port_132" label="C11.pin2 -&gt; net.GND" connectionType="via net" lengthMm="11.85" straightLineDistanceMm="11.85">
     <ConnectedPins>
       <Pin ref="C11.pin2" />
       <Pin ref="BT1.pin2" />
@@ -504,7 +511,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C12.pin2" x="-14.80" y="5.02" layers="top" />
@@ -528,7 +535,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -545,10 +552,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_95:source_port_132" label="C11.pin2 -&gt; net.GND" connectionType="via net" lengthMm="1.00" straightLineDistanceMm="11.62">
+  <Trace id="source_trace_95:source_port_132" label="C11.pin2 -&gt; net.GND" connectionType="via net" lengthMm="1.00" straightLineDistanceMm="11.85">
     <ConnectedPins>
       <Pin ref="C11.pin2" />
       <Pin ref="BT1.pin2" />
@@ -594,7 +601,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C12.pin2" x="-14.80" y="5.02" layers="top" />
@@ -618,7 +625,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -635,14 +642,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-14.80" y="6.28" layer="top" kind="endpoint" />
       <Point x="-15.80" y="6.25" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_85:source_port_134" label="C12.pin2 -&gt; net.GND" connectionType="via net" lengthMm="11.48" straightLineDistanceMm="11.48">
+  <Trace id="source_trace_85:source_port_134" label="C12.pin2 -&gt; net.GND" connectionType="via net" lengthMm="11.75" straightLineDistanceMm="11.75">
     <ConnectedPins>
       <Pin ref="C12.pin2" />
       <Pin ref="BT1.pin2" />
@@ -688,7 +695,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C12.pin2" x="-14.80" y="5.02" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -712,7 +719,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -729,10 +736,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_96:source_port_134" label="C12.pin2 -&gt; net.GND" connectionType="via net" lengthMm="1.00" straightLineDistanceMm="11.48">
+  <Trace id="source_trace_96:source_port_134" label="C12.pin2 -&gt; net.GND" connectionType="via net" lengthMm="1.00" straightLineDistanceMm="11.75">
     <ConnectedPins>
       <Pin ref="C12.pin2" />
       <Pin ref="BT1.pin2" />
@@ -778,7 +785,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C12.pin2" x="-14.80" y="5.02" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -802,7 +809,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -819,14 +826,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-14.80" y="5.02" layer="top" kind="endpoint" />
       <Point x="-15.80" y="5.02" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_93:source_port_142" label="C13.pin2 -&gt; net.GND" connectionType="via net" lengthMm="2.57" straightLineDistanceMm="2.57">
+  <Trace id="source_trace_93:source_port_142" label="C13.pin2 -&gt; net.GND" connectionType="via net" lengthMm="2.68" straightLineDistanceMm="2.68">
     <ConnectedPins>
       <Pin ref="C13.pin2" />
       <Pin ref="BT1.pin2" />
@@ -872,7 +879,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C13.pin2" x="-1.85" y="2.29" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -896,7 +903,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -913,10 +920,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_94:source_port_144" label="C14.pin2 -&gt; net.GND" connectionType="via net" lengthMm="4.37" straightLineDistanceMm="4.37">
+  <Trace id="source_trace_94:source_port_144" label="C14.pin2 -&gt; net.GND" connectionType="via net" lengthMm="4.29" straightLineDistanceMm="4.29">
     <ConnectedPins>
       <Pin ref="C14.pin2" />
       <Pin ref="BT1.pin2" />
@@ -962,7 +969,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C14.pin2" x="0.50" y="2.29" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -986,7 +993,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -1003,10 +1010,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_39:source_port_79" label="C15.pin2 -&gt; net.GND" connectionType="via net" lengthMm="8.58" straightLineDistanceMm="8.58">
+  <Trace id="source_trace_39:source_port_79" label="C15.pin2 -&gt; net.GND" connectionType="via net" lengthMm="9.41" straightLineDistanceMm="8.96">
     <ConnectedPins>
       <Pin ref="C15.pin2" />
       <Pin ref="BT1.pin2" />
@@ -1052,7 +1059,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C15.pin2" x="-6.70" y="-3.50" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -1076,7 +1083,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -1093,12 +1100,107 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
+    <TraceRequirements none />
+    <Path>
+      <Point x="-6.70" y="-3.50" layer="top" kind="endpoint" />
+      <Point x="-2.00" y="-8.32" layer="top" kind="track" />
+      <Point x="-2.00" y="-11.00" layer="top" kind="endpoint" />
+    </Path>
+  </Trace>
+  <Trace id="source_trace_40:source_port_89" label="C16.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.90" straightLineDistanceMm="5.90">
+    <ConnectedPins>
+      <Pin ref="C16.pin2" />
+      <Pin ref="BT1.pin2" />
+      <Pin ref="C1.pin2" />
+      <Pin ref="C10.pin2" />
+      <Pin ref="C11.pin2" />
+      <Pin ref="C12.pin2" />
+      <Pin ref="C13.pin2" />
+      <Pin ref="C14.pin2" />
+      <Pin ref="C15.pin2" />
+      <Pin ref="C17.pin2" />
+      <Pin ref="C18.pin2" />
+      <Pin ref="C2.pin2" />
+      <Pin ref="C3.pin2" />
+      <Pin ref="C4.pin2" />
+      <Pin ref="C5.pin2" />
+      <Pin ref="C6.pin2" />
+      <Pin ref="C7.pin2" />
+      <Pin ref="C8.pin2" />
+      <Pin ref="C9.pin2" />
+      <Pin ref="source_manually_placed_via_0.bottom" />
+      <Pin ref="source_manually_placed_via_0.top" />
+      <Pin ref="source_manually_placed_via_1.top" />
+      <Pin ref="source_manually_placed_via_10.top" />
+      <Pin ref="source_manually_placed_via_11.top" />
+      <Pin ref="source_manually_placed_via_2.top" />
+      <Pin ref="source_manually_placed_via_3.top" />
+      <Pin ref="source_manually_placed_via_4.top" />
+      <Pin ref="source_manually_placed_via_5.bottom" />
+      <Pin ref="source_manually_placed_via_5.top" />
+      <Pin ref="source_manually_placed_via_6.top" />
+      <Pin ref="source_manually_placed_via_7.bottom" />
+      <Pin ref="source_manually_placed_via_7.top" />
+      <Pin ref="source_manually_placed_via_8.top" />
+      <Pin ref="source_manually_placed_via_9.top" />
+      <Pin ref="SW1.B" />
+      <Pin ref="TP_GND.pin1" />
+      <Pin ref="U1.VSS2" />
+      <Pin ref="U2.ADDR" />
+      <Pin ref="U2.GND" />
+      <Pin ref="X1.pin2" />
+      <Pin ref="X1.pin4" />
+    </ConnectedPins>
+    <PinPositions>
+      <Pin ref="C16.pin2" x="-4.80" y="10.32" layers="top" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
+      <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
+      <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
+      <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
+      <Pin ref="C12.pin2" x="-14.80" y="5.02" layers="top" />
+      <Pin ref="C13.pin2" x="-1.85" y="2.29" layers="top" />
+      <Pin ref="C14.pin2" x="0.50" y="2.29" layers="top" />
+      <Pin ref="C15.pin2" x="-6.70" y="-3.50" layers="top" />
+      <Pin ref="C17.pin2" x="9.50" y="0.42" layers="top" />
+      <Pin ref="C18.pin2" x="-7.78" y="9.40" layers="top" />
+      <Pin ref="C2.pin2" x="0.42" y="10.50" layers="top" />
+      <Pin ref="C3.pin2" x="-3.10" y="1.98" layers="top" />
+      <Pin ref="C4.pin2" x="-9.58" y="0.70" layers="top" />
+      <Pin ref="C5.pin2" x="-12.82" y="8.42" layers="top" />
+      <Pin ref="C6.pin2" x="-1.18" y="1.20" layers="top" />
+      <Pin ref="C7.pin2" x="0.42" y="5.50" layers="top" />
+      <Pin ref="C8.pin2" x="-1.78" y="6.00" layers="top" />
+      <Pin ref="C9.pin2" x="-6.80" y="0.50" layers="top" />
+      <Pin ref="source_manually_placed_via_0.bottom" x="-3.65" y="5.12" layers="bottom" />
+      <Pin ref="source_manually_placed_via_0.top" x="-3.65" y="5.12" layers="top" />
+      <Pin ref="source_manually_placed_via_1.top" x="-6.67" y="-0.40" layers="top" />
+      <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
+      <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
+      <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
+      <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
+      <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
+      <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
+      <Pin ref="source_manually_placed_via_6.top" x="-6.10" y="12.90" layers="top" />
+      <Pin ref="source_manually_placed_via_7.bottom" x="-1.40" y="7.40" layers="bottom" />
+      <Pin ref="source_manually_placed_via_7.top" x="-1.40" y="7.40" layers="top" />
+      <Pin ref="source_manually_placed_via_8.top" x="1.40" y="9.00" layers="top" />
+      <Pin ref="source_manually_placed_via_9.top" x="2.80" y="8.10" layers="top" />
+      <Pin ref="SW1.B" x="13.45" y="-2.05" layers="top" />
+      <Pin ref="TP_GND.pin1" x="-2.00" y="-14.00" layers="top,bottom" />
+      <Pin ref="U1.VSS2" x="-4.50" y="5.20" layers="top" />
+      <Pin ref="U2.ADDR" x="0.20" y="0.40" layers="top" />
+      <Pin ref="U2.GND" x="0.20" y="0.00" layers="top" />
+      <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
+      <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
+    </PinPositions>
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_40:source_port_89" label="C16.pin2 -&gt; net.GND" connectionType="via net" lengthMm="6.11" straightLineDistanceMm="6.11">
+  <Trace id="source_trace_11:source_port_120" label="C17.pin2 -&gt; net.GND" connectionType="via net" lengthMm="13.26" straightLineDistanceMm="13.26">
     <ConnectedPins>
-      <Pin ref="C16.pin2" />
+      <Pin ref="C17.pin2" />
       <Pin ref="BT1.pin2" />
       <Pin ref="C1.pin2" />
       <Pin ref="C10.pin2" />
@@ -1107,7 +1209,7 @@
       <Pin ref="C13.pin2" />
       <Pin ref="C14.pin2" />
       <Pin ref="C15.pin2" />
-      <Pin ref="C17.pin2" />
+      <Pin ref="C16.pin2" />
       <Pin ref="C18.pin2" />
       <Pin ref="C2.pin2" />
       <Pin ref="C3.pin2" />
@@ -1141,8 +1243,8 @@
       <Pin ref="X1.pin4" />
     </ConnectedPins>
     <PinPositions>
-      <Pin ref="C16.pin2" x="-4.80" y="10.32" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="C17.pin2" x="9.50" y="0.42" layers="top" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -1150,7 +1252,7 @@
       <Pin ref="C13.pin2" x="-1.85" y="2.29" layers="top" />
       <Pin ref="C14.pin2" x="0.50" y="2.29" layers="top" />
       <Pin ref="C15.pin2" x="-6.70" y="-3.50" layers="top" />
-      <Pin ref="C17.pin2" x="9.50" y="0.42" layers="top" />
+      <Pin ref="C16.pin2" x="-4.80" y="10.32" layers="top" />
       <Pin ref="C18.pin2" x="-7.78" y="9.40" layers="top" />
       <Pin ref="C2.pin2" x="0.42" y="10.50" layers="top" />
       <Pin ref="C3.pin2" x="-3.10" y="1.98" layers="top" />
@@ -1166,7 +1268,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -1183,100 +1285,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_11:source_port_120" label="C17.pin2 -&gt; net.GND" connectionType="via net" lengthMm="13.44" straightLineDistanceMm="13.44">
-    <ConnectedPins>
-      <Pin ref="C17.pin2" />
-      <Pin ref="BT1.pin2" />
-      <Pin ref="C1.pin2" />
-      <Pin ref="C10.pin2" />
-      <Pin ref="C11.pin2" />
-      <Pin ref="C12.pin2" />
-      <Pin ref="C13.pin2" />
-      <Pin ref="C14.pin2" />
-      <Pin ref="C15.pin2" />
-      <Pin ref="C16.pin2" />
-      <Pin ref="C18.pin2" />
-      <Pin ref="C2.pin2" />
-      <Pin ref="C3.pin2" />
-      <Pin ref="C4.pin2" />
-      <Pin ref="C5.pin2" />
-      <Pin ref="C6.pin2" />
-      <Pin ref="C7.pin2" />
-      <Pin ref="C8.pin2" />
-      <Pin ref="C9.pin2" />
-      <Pin ref="source_manually_placed_via_0.bottom" />
-      <Pin ref="source_manually_placed_via_0.top" />
-      <Pin ref="source_manually_placed_via_1.top" />
-      <Pin ref="source_manually_placed_via_10.top" />
-      <Pin ref="source_manually_placed_via_11.top" />
-      <Pin ref="source_manually_placed_via_2.top" />
-      <Pin ref="source_manually_placed_via_3.top" />
-      <Pin ref="source_manually_placed_via_4.top" />
-      <Pin ref="source_manually_placed_via_5.bottom" />
-      <Pin ref="source_manually_placed_via_5.top" />
-      <Pin ref="source_manually_placed_via_6.top" />
-      <Pin ref="source_manually_placed_via_7.bottom" />
-      <Pin ref="source_manually_placed_via_7.top" />
-      <Pin ref="source_manually_placed_via_8.top" />
-      <Pin ref="source_manually_placed_via_9.top" />
-      <Pin ref="SW1.B" />
-      <Pin ref="TP_GND.pin1" />
-      <Pin ref="U1.VSS2" />
-      <Pin ref="U2.ADDR" />
-      <Pin ref="U2.GND" />
-      <Pin ref="X1.pin2" />
-      <Pin ref="X1.pin4" />
-    </ConnectedPins>
-    <PinPositions>
-      <Pin ref="C17.pin2" x="9.50" y="0.42" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
-      <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
-      <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
-      <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
-      <Pin ref="C12.pin2" x="-14.80" y="5.02" layers="top" />
-      <Pin ref="C13.pin2" x="-1.85" y="2.29" layers="top" />
-      <Pin ref="C14.pin2" x="0.50" y="2.29" layers="top" />
-      <Pin ref="C15.pin2" x="-6.70" y="-3.50" layers="top" />
-      <Pin ref="C16.pin2" x="-4.80" y="10.32" layers="top" />
-      <Pin ref="C18.pin2" x="-7.78" y="9.40" layers="top" />
-      <Pin ref="C2.pin2" x="0.42" y="10.50" layers="top" />
-      <Pin ref="C3.pin2" x="-3.10" y="1.98" layers="top" />
-      <Pin ref="C4.pin2" x="-9.58" y="0.70" layers="top" />
-      <Pin ref="C5.pin2" x="-12.82" y="8.42" layers="top" />
-      <Pin ref="C6.pin2" x="-1.18" y="1.20" layers="top" />
-      <Pin ref="C7.pin2" x="0.42" y="5.50" layers="top" />
-      <Pin ref="C8.pin2" x="-1.78" y="6.00" layers="top" />
-      <Pin ref="C9.pin2" x="-6.80" y="0.50" layers="top" />
-      <Pin ref="source_manually_placed_via_0.bottom" x="-3.65" y="5.12" layers="bottom" />
-      <Pin ref="source_manually_placed_via_0.top" x="-3.65" y="5.12" layers="top" />
-      <Pin ref="source_manually_placed_via_1.top" x="-6.67" y="-0.40" layers="top" />
-      <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
-      <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
-      <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
-      <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
-      <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
-      <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
-      <Pin ref="source_manually_placed_via_6.top" x="-6.10" y="12.90" layers="top" />
-      <Pin ref="source_manually_placed_via_7.bottom" x="-1.40" y="7.40" layers="bottom" />
-      <Pin ref="source_manually_placed_via_7.top" x="-1.40" y="7.40" layers="top" />
-      <Pin ref="source_manually_placed_via_8.top" x="1.40" y="9.00" layers="top" />
-      <Pin ref="source_manually_placed_via_9.top" x="2.80" y="8.10" layers="top" />
-      <Pin ref="SW1.B" x="13.45" y="-2.05" layers="top" />
-      <Pin ref="TP_GND.pin1" x="-2.00" y="-14.00" layers="top,bottom" />
-      <Pin ref="U1.VSS2" x="-4.50" y="5.20" layers="top" />
-      <Pin ref="U2.ADDR" x="0.20" y="0.40" layers="top" />
-      <Pin ref="U2.GND" x="0.20" y="0.00" layers="top" />
-      <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
-      <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
-    </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
-    <TraceRequirements none />
-  </Trace>
-  <Trace id="source_trace_10:source_port_91" label="C18.pin2 -&gt; net.GND" connectionType="via net" lengthMm="6.70" straightLineDistanceMm="6.70">
+  <Trace id="source_trace_10:source_port_91" label="C18.pin2 -&gt; net.GND" connectionType="via net" lengthMm="6.68" straightLineDistanceMm="6.68">
     <ConnectedPins>
       <Pin ref="C18.pin2" />
       <Pin ref="BT1.pin2" />
@@ -1322,7 +1334,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C18.pin2" x="-7.78" y="9.40" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -1346,7 +1358,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -1363,12 +1375,12 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements>
       <MaxLengthMm>1.50</MaxLengthMm>
     </TraceRequirements>
   </Trace>
-  <Trace id="source_trace_79:source_port_128" label="C2.pin2 -&gt; net.GND" connectionType="via net" lengthMm="7.17" straightLineDistanceMm="7.17">
+  <Trace id="source_trace_79:source_port_128" label="C2.pin2 -&gt; net.GND" connectionType="via net" lengthMm="6.78" straightLineDistanceMm="6.78">
     <ConnectedPins>
       <Pin ref="C2.pin2" />
       <Pin ref="BT1.pin2" />
@@ -1414,7 +1426,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C2.pin2" x="0.42" y="10.50" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -1438,7 +1450,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -1455,10 +1467,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_92:source_port_140" label="C3.pin2 -&gt; net.GND" connectionType="via net" lengthMm="1.47" straightLineDistanceMm="2.42">
+  <Trace id="source_trace_92:source_port_140" label="C3.pin2 -&gt; net.GND" connectionType="via net" lengthMm="1.47" straightLineDistanceMm="2.70">
     <ConnectedPins>
       <Pin ref="C3.pin2" />
       <Pin ref="BT1.pin2" />
@@ -1504,7 +1516,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C3.pin2" x="-3.10" y="1.98" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -1528,7 +1540,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -1545,7 +1557,7 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-3.10" y="1.98" layer="top" kind="endpoint" />
@@ -1553,7 +1565,7 @@
       <Point x="-1.85" y="2.29" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_38:source_port_75" label="C4.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.40" straightLineDistanceMm="7.25">
+  <Trace id="source_trace_38:source_port_75" label="C4.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.40" straightLineDistanceMm="7.64">
     <ConnectedPins>
       <Pin ref="C4.pin2" />
       <Pin ref="BT1.pin2" />
@@ -1599,7 +1611,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C4.pin2" x="-9.58" y="0.70" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -1623,7 +1635,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -1640,7 +1652,7 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-9.58" y="0.70" layer="top" kind="endpoint" />
@@ -1648,7 +1660,7 @@
       <Point x="-6.70" y="-3.50" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_12:source_port_81" label="C5.pin2 -&gt; net.GND" connectionType="via net" lengthMm="10.30" straightLineDistanceMm="10.30">
+  <Trace id="source_trace_12:source_port_81" label="C5.pin2 -&gt; net.GND" connectionType="via net" lengthMm="10.46" straightLineDistanceMm="10.46">
     <ConnectedPins>
       <Pin ref="C5.pin2" />
       <Pin ref="BT1.pin2" />
@@ -1694,7 +1706,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C5.pin2" x="-12.82" y="8.42" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -1718,7 +1730,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -1735,10 +1747,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_64:source_port_106" label="C6.pin2 -&gt; net.GND" connectionType="via net" lengthMm="3.85" straightLineDistanceMm="3.85">
+  <Trace id="source_trace_64:source_port_106" label="C6.pin2 -&gt; net.GND" connectionType="via net" lengthMm="3.96" straightLineDistanceMm="3.96">
     <ConnectedPins>
       <Pin ref="C6.pin2" />
       <Pin ref="BT1.pin2" />
@@ -1784,7 +1796,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C6.pin2" x="-1.18" y="1.20" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -1808,7 +1820,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -1825,10 +1837,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_41:source_port_83" label="C7.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.41" straightLineDistanceMm="3.92">
+  <Trace id="source_trace_41:source_port_83" label="C7.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.41" straightLineDistanceMm="3.57">
     <ConnectedPins>
       <Pin ref="C7.pin2" />
       <Pin ref="BT1.pin2" />
@@ -1874,7 +1886,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C7.pin2" x="0.42" y="5.50" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -1898,7 +1910,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -1915,7 +1927,7 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="0.42" y="5.50" layer="top" kind="endpoint" />
@@ -1933,7 +1945,7 @@
       <Point x="0.50" y="2.29" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_13:source_port_85" label="C8.pin2 -&gt; net.GND" connectionType="via net" lengthMm="2.24" straightLineDistanceMm="2.24">
+  <Trace id="source_trace_13:source_port_85" label="C8.pin2 -&gt; net.GND" connectionType="via net" lengthMm="1.83" straightLineDistanceMm="1.83">
     <ConnectedPins>
       <Pin ref="C8.pin2" />
       <Pin ref="BT1.pin2" />
@@ -1979,7 +1991,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C8.pin2" x="-1.78" y="6.00" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2003,7 +2015,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -2020,10 +2032,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_42:source_port_85" label="C8.pin2 -&gt; net.GND" connectionType="via net" lengthMm="2.24" straightLineDistanceMm="2.24">
+  <Trace id="source_trace_42:source_port_85" label="C8.pin2 -&gt; net.GND" connectionType="via net" lengthMm="1.83" straightLineDistanceMm="1.83">
     <ConnectedPins>
       <Pin ref="C8.pin2" />
       <Pin ref="BT1.pin2" />
@@ -2069,7 +2081,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C8.pin2" x="-1.78" y="6.00" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2093,7 +2105,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -2110,10 +2122,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_9:source_port_77" label="C9.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.21" straightLineDistanceMm="5.21">
+  <Trace id="source_trace_9:source_port_77" label="C9.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.61" straightLineDistanceMm="5.61">
     <ConnectedPins>
       <Pin ref="C9.pin2" />
       <Pin ref="BT1.pin2" />
@@ -2159,7 +2171,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C9.pin2" x="-6.80" y="0.50" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2183,7 +2195,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -2200,10 +2212,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_17:source_port_53" label="source_manually_placed_via_0.bottom -&gt; net.GND" connectionType="via net" lengthMm="3.31" straightLineDistanceMm="0.79">
+  <Trace id="source_trace_17:source_port_53" label="source_manually_placed_via_0.bottom -&gt; net.GND" connectionType="via net" lengthMm="3.31" straightLineDistanceMm="0.74">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_0.bottom" />
       <Pin ref="BT1.pin2" />
@@ -2249,7 +2261,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_0.bottom" x="-3.65" y="5.12" layers="bottom" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2273,7 +2285,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -2290,7 +2302,7 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-1.10" y="6.05" layer="bottom" kind="endpoint" />
@@ -2298,7 +2310,7 @@
       <Point x="-3.65" y="5.12" layer="bottom" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_6:source_port_52" label="source_manually_placed_via_0.top -&gt; net.GND" connectionType="via net" lengthMm="0.85" straightLineDistanceMm="0.79">
+  <Trace id="source_trace_6:source_port_52" label="source_manually_placed_via_0.top -&gt; net.GND" connectionType="via net" lengthMm="0.85" straightLineDistanceMm="0.74">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_0.top" />
       <Pin ref="BT1.pin2" />
@@ -2344,7 +2356,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_0.top" x="-3.65" y="5.12" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2368,7 +2380,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -2385,14 +2397,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-4.50" y="5.20" layer="top" kind="endpoint" />
       <Point x="-3.65" y="5.12" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_9:source_port_54" label="source_manually_placed_via_1.top -&gt; net.GND" connectionType="via net" lengthMm="5.84" straightLineDistanceMm="5.84">
+  <Trace id="source_trace_9:source_port_54" label="source_manually_placed_via_1.top -&gt; net.GND" connectionType="via net" lengthMm="6.24" straightLineDistanceMm="6.24">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_1.top" />
       <Pin ref="BT1.pin2" />
@@ -2438,7 +2450,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_1.top" x="-6.67" y="-0.40" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2462,7 +2474,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -2479,10 +2491,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_95:source_port_147" label="source_manually_placed_via_10.top -&gt; net.GND" connectionType="via net" lengthMm="1.00" straightLineDistanceMm="12.60">
+  <Trace id="source_trace_95:source_port_147" label="source_manually_placed_via_10.top -&gt; net.GND" connectionType="via net" lengthMm="1.00" straightLineDistanceMm="12.84">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_10.top" />
       <Pin ref="BT1.pin2" />
@@ -2528,7 +2540,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2552,7 +2564,7 @@
       <Pin ref="source_manually_placed_via_1.top" x="-6.67" y="-0.40" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -2569,14 +2581,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-14.80" y="6.28" layer="top" kind="endpoint" />
       <Point x="-15.80" y="6.25" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_96:source_port_149" label="source_manually_placed_via_11.top -&gt; net.GND" connectionType="via net" lengthMm="1.00" straightLineDistanceMm="12.48">
+  <Trace id="source_trace_96:source_port_149" label="source_manually_placed_via_11.top -&gt; net.GND" connectionType="via net" lengthMm="1.00" straightLineDistanceMm="12.75">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_11.top" />
       <Pin ref="BT1.pin2" />
@@ -2622,7 +2634,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2646,7 +2658,7 @@
       <Pin ref="source_manually_placed_via_1.top" x="-6.67" y="-0.40" layers="top" />
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -2663,14 +2675,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-14.80" y="5.02" layer="top" kind="endpoint" />
       <Point x="-15.80" y="5.02" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_10:source_port_56" label="source_manually_placed_via_2.top -&gt; net.GND" connectionType="via net" lengthMm="6.76" straightLineDistanceMm="6.76">
+  <Trace id="source_trace_10:source_port_56" label="source_manually_placed_via_2.top -&gt; net.GND" connectionType="via net" lengthMm="6.67" straightLineDistanceMm="6.67">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_2.top" />
       <Pin ref="BT1.pin2" />
@@ -2716,7 +2728,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2740,7 +2752,7 @@
       <Pin ref="source_manually_placed_via_1.top" x="-6.67" y="-0.40" layers="top" />
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -2757,12 +2769,12 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements>
       <MaxLengthMm>1.50</MaxLengthMm>
     </TraceRequirements>
   </Trace>
-  <Trace id="source_trace_11:source_port_58" label="source_manually_placed_via_3.top -&gt; net.GND" connectionType="via net" lengthMm="14.10" straightLineDistanceMm="14.10">
+  <Trace id="source_trace_11:source_port_58" label="source_manually_placed_via_3.top -&gt; net.GND" connectionType="via net" lengthMm="13.70" straightLineDistanceMm="13.70">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_3.top" />
       <Pin ref="BT1.pin2" />
@@ -2807,8 +2819,8 @@
       <Pin ref="X1.pin4" />
     </ConnectedPins>
     <PinPositions>
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2849,10 +2861,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_12:source_port_60" label="source_manually_placed_via_4.top -&gt; net.GND" connectionType="via net" lengthMm="10.99" straightLineDistanceMm="10.99">
+  <Trace id="source_trace_12:source_port_60" label="source_manually_placed_via_4.top -&gt; net.GND" connectionType="via net" lengthMm="11.13" straightLineDistanceMm="11.13">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_4.top" />
       <Pin ref="BT1.pin2" />
@@ -2898,7 +2910,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -2923,7 +2935,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
       <Pin ref="source_manually_placed_via_6.top" x="-6.10" y="12.90" layers="top" />
@@ -2939,10 +2951,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_16:source_port_63" label="source_manually_placed_via_5.bottom -&gt; net.GND" connectionType="via net" lengthMm="1.38" straightLineDistanceMm="2.78">
+  <Trace id="source_trace_16:source_port_63" label="source_manually_placed_via_5.bottom -&gt; net.GND" connectionType="via net" lengthMm="1.38" straightLineDistanceMm="2.39">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_5.bottom" />
       <Pin ref="BT1.pin2" />
@@ -2988,7 +3000,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3013,7 +3025,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
       <Pin ref="source_manually_placed_via_6.top" x="-6.10" y="12.90" layers="top" />
@@ -3029,14 +3041,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-1.10" y="6.05" layer="bottom" kind="endpoint" />
       <Point x="-1.40" y="7.40" layer="bottom" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_17:source_port_63" label="source_manually_placed_via_5.bottom -&gt; net.GND" connectionType="via net" lengthMm="3.31" straightLineDistanceMm="2.78">
+  <Trace id="source_trace_17:source_port_63" label="source_manually_placed_via_5.bottom -&gt; net.GND" connectionType="via net" lengthMm="3.31" straightLineDistanceMm="2.39">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_5.bottom" />
       <Pin ref="BT1.pin2" />
@@ -3082,7 +3094,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3107,7 +3119,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
       <Pin ref="source_manually_placed_via_6.top" x="-6.10" y="12.90" layers="top" />
@@ -3123,7 +3135,7 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-1.10" y="6.05" layer="bottom" kind="endpoint" />
@@ -3131,7 +3143,7 @@
       <Point x="-3.65" y="5.12" layer="bottom" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_13:source_port_62" label="source_manually_placed_via_5.top -&gt; net.GND" connectionType="via net" lengthMm="2.78" straightLineDistanceMm="2.78">
+  <Trace id="source_trace_13:source_port_62" label="source_manually_placed_via_5.top -&gt; net.GND" connectionType="via net" lengthMm="2.39" straightLineDistanceMm="2.39">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_5.top" />
       <Pin ref="BT1.pin2" />
@@ -3177,7 +3189,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3202,7 +3214,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_6.top" x="-6.10" y="12.90" layers="top" />
@@ -3218,10 +3230,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_14:source_port_64" label="source_manually_placed_via_6.top -&gt; net.GND" connectionType="via net" lengthMm="8.95" straightLineDistanceMm="8.95">
+  <Trace id="source_trace_14:source_port_64" label="source_manually_placed_via_6.top -&gt; net.GND" connectionType="via net" lengthMm="8.76" straightLineDistanceMm="8.76">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_6.top" />
       <Pin ref="BT1.pin2" />
@@ -3267,7 +3279,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_6.top" x="-6.10" y="12.90" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3292,7 +3304,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -3308,10 +3320,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_16:source_port_67" label="source_manually_placed_via_7.bottom -&gt; net.GND" connectionType="via net" lengthMm="1.38" straightLineDistanceMm="3.58">
+  <Trace id="source_trace_16:source_port_67" label="source_manually_placed_via_7.bottom -&gt; net.GND" connectionType="via net" lengthMm="1.38" straightLineDistanceMm="3.18">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_7.bottom" />
       <Pin ref="BT1.pin2" />
@@ -3357,7 +3369,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_7.bottom" x="-1.40" y="7.40" layers="bottom" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3382,7 +3394,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -3398,14 +3410,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-1.10" y="6.05" layer="bottom" kind="endpoint" />
       <Point x="-1.40" y="7.40" layer="bottom" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_15:source_port_66" label="source_manually_placed_via_7.top -&gt; net.GND" connectionType="via net" lengthMm="3.58" straightLineDistanceMm="3.58">
+  <Trace id="source_trace_15:source_port_66" label="source_manually_placed_via_7.top -&gt; net.GND" connectionType="via net" lengthMm="3.18" straightLineDistanceMm="3.18">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_7.top" />
       <Pin ref="BT1.pin2" />
@@ -3451,7 +3463,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_7.top" x="-1.40" y="7.40" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3476,7 +3488,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -3492,10 +3504,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_18:source_port_68" label="source_manually_placed_via_8.top -&gt; net.GND" connectionType="via net" lengthMm="6.61" straightLineDistanceMm="6.61">
+  <Trace id="source_trace_18:source_port_68" label="source_manually_placed_via_8.top -&gt; net.GND" connectionType="via net" lengthMm="6.20" straightLineDistanceMm="6.20">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_8.top" />
       <Pin ref="BT1.pin2" />
@@ -3541,7 +3553,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_8.top" x="1.40" y="9.00" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3566,7 +3578,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -3582,10 +3594,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_19:source_port_70" label="source_manually_placed_via_9.top -&gt; net.GND" connectionType="via net" lengthMm="0.80" straightLineDistanceMm="7.17">
+  <Trace id="source_trace_19:source_port_70" label="source_manually_placed_via_9.top -&gt; net.GND" connectionType="via net" lengthMm="0.80" straightLineDistanceMm="6.78">
     <ConnectedPins>
       <Pin ref="source_manually_placed_via_9.top" />
       <Pin ref="BT1.pin2" />
@@ -3631,7 +3643,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="source_manually_placed_via_9.top" x="2.80" y="8.10" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3656,7 +3668,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -3672,14 +3684,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="2.72" y="7.30" layer="top" kind="endpoint" />
       <Point x="2.80" y="8.10" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_69:source_port_115" label="SW1.B -&gt; net.GND" connectionType="via net" lengthMm="17.98" straightLineDistanceMm="17.98">
+  <Trace id="source_trace_69:source_port_115" label="SW1.B -&gt; net.GND" connectionType="via net" lengthMm="17.83" straightLineDistanceMm="17.83">
     <ConnectedPins>
       <Pin ref="SW1.B" />
       <Pin ref="BT1.pin2" />
@@ -3725,7 +3737,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="SW1.B" x="13.45" y="-2.05" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3750,7 +3762,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -3766,10 +3778,10 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_22:source_port_93" label="TP_GND.pin1 -&gt; net.GND" connectionType="via net" lengthMm="6.73" straightLineDistanceMm="18.44">
+  <Trace id="source_trace_22:source_port_93" label="TP_GND.pin1 -&gt; net.GND" connectionType="via net" lengthMm="6.73" straightLineDistanceMm="18.71">
     <ConnectedPins>
       <Pin ref="TP_GND.pin1" />
       <Pin ref="BT1.pin2" />
@@ -3815,7 +3827,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="TP_GND.pin1" x="-2.00" y="-14.00" layers="top,bottom" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3840,7 +3852,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -3856,7 +3868,7 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-2.00" y="-14.00" layer="top" kind="endpoint" />
@@ -3877,7 +3889,7 @@
       <Point x="-2.00" y="-11.00" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_6:source_port_33" label="U1.VSS2 -&gt; net.GND" connectionType="via net" lengthMm="0.85" straightLineDistanceMm="1.42">
+  <Trace id="source_trace_6:source_port_33" label="U1.VSS2 -&gt; net.GND" connectionType="via net" lengthMm="0.85" straightLineDistanceMm="1.53">
     <ConnectedPins>
       <Pin ref="U1.VSS2" />
       <Pin ref="BT1.pin2" />
@@ -3923,7 +3935,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="U1.VSS2" x="-4.50" y="5.20" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -3948,7 +3960,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -3964,14 +3976,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-4.50" y="5.20" layer="top" kind="endpoint" />
       <Point x="-3.65" y="5.12" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_62:source_port_102" label="U2.ADDR -&gt; net.GND" connectionType="via net" lengthMm="2.25" straightLineDistanceMm="5.33">
+  <Trace id="source_trace_62:source_port_102" label="U2.ADDR -&gt; net.GND" connectionType="via net" lengthMm="2.25" straightLineDistanceMm="5.38">
     <ConnectedPins>
       <Pin ref="U2.ADDR" />
       <Pin ref="BT1.pin2" />
@@ -4017,7 +4029,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="U2.ADDR" x="0.20" y="0.40" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -4042,7 +4054,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -4058,7 +4070,7 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="0.20" y="0.40" layer="top" kind="endpoint" />
@@ -4075,7 +4087,7 @@
       <Point x="-1.18" y="1.20" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_61:source_port_103" label="U2.GND -&gt; net.GND" connectionType="via net" lengthMm="0.40" straightLineDistanceMm="5.64">
+  <Trace id="source_trace_61:source_port_103" label="U2.GND -&gt; net.GND" connectionType="via net" lengthMm="0.40" straightLineDistanceMm="5.70">
     <ConnectedPins>
       <Pin ref="U2.GND" />
       <Pin ref="BT1.pin2" />
@@ -4121,7 +4133,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="U2.GND" x="0.20" y="0.00" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -4146,7 +4158,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -4162,14 +4174,14 @@
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="0.20" y="0.00" layer="top" kind="endpoint" />
       <Point x="0.20" y="0.40" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_18:source_port_122" label="X1.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.80" straightLineDistanceMm="5.80">
+  <Trace id="source_trace_18:source_port_122" label="X1.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.40" straightLineDistanceMm="5.40">
     <ConnectedPins>
       <Pin ref="X1.pin2" />
       <Pin ref="BT1.pin2" />
@@ -4215,7 +4227,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -4240,7 +4252,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -4256,10 +4268,10 @@
       <Pin ref="U2.GND" x="0.20" y="0.00" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_76:source_port_122" label="X1.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.80" straightLineDistanceMm="5.80">
+  <Trace id="source_trace_76:source_port_122" label="X1.pin2 -&gt; net.GND" connectionType="via net" lengthMm="5.40" straightLineDistanceMm="5.40">
     <ConnectedPins>
       <Pin ref="X1.pin2" />
       <Pin ref="BT1.pin2" />
@@ -4305,7 +4317,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -4330,7 +4342,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -4346,10 +4358,10 @@
       <Pin ref="U2.GND" x="0.20" y="0.00" layers="top" />
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_15:source_port_121" label="X1.pin4 -&gt; net.GND" connectionType="via net" lengthMm="4.03" straightLineDistanceMm="4.03">
+  <Trace id="source_trace_15:source_port_121" label="X1.pin4 -&gt; net.GND" connectionType="via net" lengthMm="3.62" straightLineDistanceMm="3.62">
     <ConnectedPins>
       <Pin ref="X1.pin4" />
       <Pin ref="BT1.pin2" />
@@ -4395,7 +4407,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -4420,7 +4432,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -4436,10 +4448,10 @@
       <Pin ref="U2.GND" x="0.20" y="0.00" layers="top" />
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_77:source_port_121" label="X1.pin4 -&gt; net.GND" connectionType="via net" lengthMm="4.03" straightLineDistanceMm="4.03">
+  <Trace id="source_trace_77:source_port_121" label="X1.pin4 -&gt; net.GND" connectionType="via net" lengthMm="3.62" straightLineDistanceMm="3.62">
     <ConnectedPins>
       <Pin ref="X1.pin4" />
       <Pin ref="BT1.pin2" />
@@ -4485,7 +4497,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="X1.pin4" x="-0.55" y="7.30" layers="top" />
-      <Pin ref="BT1.pin2" x="-2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin2" x="9.50" y="0.00" layers="bottom" />
       <Pin ref="C1.pin2" x="2.72" y="7.30" layers="top" />
       <Pin ref="C10.pin2" x="-7.40" y="12.70" layers="top" />
       <Pin ref="C11.pin2" x="-14.80" y="6.28" layers="top" />
@@ -4510,7 +4522,7 @@
       <Pin ref="source_manually_placed_via_10.top" x="-15.80" y="6.25" layers="top" />
       <Pin ref="source_manually_placed_via_11.top" x="-15.80" y="5.02" layers="top" />
       <Pin ref="source_manually_placed_via_2.top" x="-6.80" y="10.20" layers="top" />
-      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="1.20" layers="top" />
+      <Pin ref="source_manually_placed_via_3.top" x="10.40" y="2.10" layers="top" />
       <Pin ref="source_manually_placed_via_4.top" x="-13.40" y="8.80" layers="top" />
       <Pin ref="source_manually_placed_via_5.bottom" x="-1.10" y="6.05" layers="bottom" />
       <Pin ref="source_manually_placed_via_5.top" x="-1.10" y="6.05" layers="top" />
@@ -4526,13 +4538,13 @@
       <Pin ref="U2.GND" x="0.20" y="0.00" layers="top" />
       <Pin ref="X1.pin2" x="0.55" y="8.70" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.GND" x="-3.34" y="4.39" layer="top" />
+    <Connection kind="via net" target="net.GND" x="-3.05" y="4.68" layer="top" />
     <TraceRequirements none />
   </Trace>
 </TraceLengthAnalysis>
 
-<TraceLengthAnalysis requestedTarget="net.VBAT" resolvedTarget="net.VBAT" targetKind="net" traceCount="16" totalLengthMm="97.68" totalStraightLineDistanceMm="108.54">
-  <Trace id="source_trace_31:source_port_72" label="BT1.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="12.17" straightLineDistanceMm="12.22">
+<TraceLengthAnalysis requestedTarget="net.VBAT" resolvedTarget="net.VBAT" targetKind="net" traceCount="16" totalLengthMm="148.07" totalStraightLineDistanceMm="105.25">
+  <Trace id="source_trace_31:source_port_72" label="BT1.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="58.42" straightLineDistanceMm="9.21">
     <ConnectedPins>
       <Pin ref="BT1.pin1" />
       <Pin ref="C15.pin1" />
@@ -4552,7 +4564,7 @@
       <Pin ref="U2.VCC" />
     </ConnectedPins>
     <PinPositions>
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -4569,25 +4581,66 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
     <Path>
-      <Point x="2.00" y="-11.00" layer="top" kind="endpoint" />
-      <Point x="3.23" y="-9.77" layer="top" kind="track" />
-      <Point x="3.23" y="-2.01" layer="top" kind="track" />
-      <Point x="3.25" y="-2.00" layer="top" kind="track" />
-      <Point x="3.25" y="-0.97" layer="top" kind="track" />
-      <Point x="2.97" y="-0.93" layer="top" kind="track" />
-      <Point x="2.80" y="-0.93" layer="top" kind="track" />
-      <Point x="2.78" y="-0.95" layer="top" kind="track" />
-      <Point x="2.54" y="-0.95" layer="top" kind="track" />
-      <Point x="2.28" y="-1.16" layer="top" kind="track" />
-      <Point x="2.09" y="-1.31" layer="top" kind="track" />
-      <Point x="1.98" y="-1.31" layer="top" kind="track" />
-      <Point x="1.87" y="-1.50" layer="top" kind="endpoint" />
+      <Point x="-13.00" y="0.00" layer="bottom" kind="endpoint" />
+      <Point x="-12.90" y="0.10" layer="bottom" kind="track" />
+      <Point x="-12.90" y="0.20" layer="bottom" kind="track" />
+      <Point x="-12.70" y="0.40" layer="bottom" kind="track" />
+      <Point x="-12.70" y="3.00" layer="bottom" kind="track" />
+      <Point x="-10.40" y="5.30" layer="bottom" kind="track" />
+      <Point x="-10.40" y="5.40" layer="bottom" kind="track" />
+      <Point x="-8.00" y="7.80" layer="bottom" kind="track" />
+      <Point x="-8.00" y="11.20" layer="bottom" kind="track" />
+      <Point x="-7.80" y="11.40" layer="bottom" kind="track" />
+      <Point x="-5.70" y="11.40" layer="bottom" kind="track" />
+      <Point x="-5.00" y="12.10" layer="bottom" kind="track" />
+      <Point x="-3.40" y="12.10" layer="bottom" kind="track" />
+      <Point x="-3.30" y="12.00" layer="bottom" kind="track" />
+      <Point x="-3.20" y="12.00" layer="bottom" kind="track" />
+      <Point x="-2.70" y="11.50" layer="bottom" kind="track" />
+      <Point x="3.60" y="11.50" layer="bottom" kind="track" />
+      <Point x="3.70" y="11.40" layer="bottom" kind="track" />
+      <Point x="6.20" y="11.40" layer="bottom" kind="track" />
+      <Point x="6.40" y="11.20" layer="bottom" kind="track" />
+      <Point x="6.40" y="10.70" layer="bottom" kind="track" />
+      <Point x="6.50" y="10.60" layer="bottom" kind="track" />
+      <Point x="6.50" y="10.00" layer="bottom" kind="track" />
+      <Point x="6.60" y="9.90" layer="bottom" kind="track" />
+      <Point x="6.60" y="9.30" layer="bottom" kind="track" />
+      <Point x="6.70" y="9.20" layer="bottom" kind="track" />
+      <Point x="6.70" y="8.60" layer="bottom" kind="track" />
+      <Point x="6.80" y="8.50" layer="bottom" kind="track" />
+      <Point x="6.80" y="8.00" layer="bottom" kind="track" />
+      <Point x="6.90" y="7.90" layer="bottom" kind="track" />
+      <Point x="6.90" y="7.40" layer="bottom" kind="track" />
+      <Point x="12.70" y="1.60" layer="bottom" kind="track" />
+      <Point x="12.70" y="-1.60" layer="bottom" kind="track" />
+      <Point x="4.30" y="-10.00" layer="bottom" kind="track" />
+      <Point x="4.10" y="-10.00" layer="bottom" kind="track" />
+      <Point x="4.00" y="-10.10" layer="bottom" kind="track" />
+      <Point x="3.90" y="-10.10" layer="bottom" kind="track" />
+      <Point x="3.80" y="-10.20" layer="bottom" kind="track" />
+      <Point x="3.70" y="-10.20" layer="bottom" kind="track" />
+      <Point x="3.60" y="-10.30" layer="bottom" kind="track" />
+      <Point x="3.50" y="-10.30" layer="bottom" kind="track" />
+      <Point x="3.40" y="-10.40" layer="bottom" kind="track" />
+      <Point x="3.30" y="-10.40" layer="bottom" kind="track" />
+      <Point x="3.20" y="-10.50" layer="bottom" kind="track" />
+      <Point x="3.00" y="-10.50" layer="bottom" kind="track" />
+      <Point x="2.90" y="-10.60" layer="bottom" kind="track" />
+      <Point x="2.80" y="-10.60" layer="bottom" kind="track" />
+      <Point x="2.70" y="-10.70" layer="bottom" kind="track" />
+      <Point x="2.60" y="-10.70" layer="bottom" kind="track" />
+      <Point x="2.50" y="-10.80" layer="bottom" kind="track" />
+      <Point x="2.40" y="-10.80" layer="bottom" kind="track" />
+      <Point x="2.30" y="-10.90" layer="bottom" kind="track" />
+      <Point x="2.10" y="-10.90" layer="bottom" kind="track" />
+      <Point x="2.00" y="-11.00" layer="bottom" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_35:source_port_78" label="C15.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="4.41" straightLineDistanceMm="4.41">
+  <Trace id="source_trace_35:source_port_78" label="C15.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="4.62" straightLineDistanceMm="4.62">
     <ConnectedPins>
       <Pin ref="C15.pin1" />
       <Pin ref="BT1.pin1" />
@@ -4608,7 +4661,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
       <Pin ref="C4.pin1" x="-10.42" y="0.70" layers="top" />
@@ -4624,10 +4677,10 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_36:source_port_88" label="C16.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="9.48" straightLineDistanceMm="9.48">
+  <Trace id="source_trace_36:source_port_88" label="C16.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="8.65" straightLineDistanceMm="8.65">
     <ConnectedPins>
       <Pin ref="C16.pin1" />
       <Pin ref="BT1.pin1" />
@@ -4648,7 +4701,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
       <Pin ref="C4.pin1" x="-10.42" y="0.70" layers="top" />
@@ -4664,10 +4717,10 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_37:source_port_90" label="C18.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="10.84" straightLineDistanceMm="10.84">
+  <Trace id="source_trace_37:source_port_90" label="C18.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="9.77" straightLineDistanceMm="9.77">
     <ConnectedPins>
       <Pin ref="C18.pin1" />
       <Pin ref="BT1.pin1" />
@@ -4688,7 +4741,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C4.pin1" x="-10.42" y="0.70" layers="top" />
@@ -4704,12 +4757,12 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements>
       <MaxLengthMm>3.00</MaxLengthMm>
     </TraceRequirements>
   </Trace>
-  <Trace id="source_trace_33:source_port_74" label="C4.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="7.54" straightLineDistanceMm="7.54">
+  <Trace id="source_trace_33:source_port_74" label="C4.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="6.59" straightLineDistanceMm="6.59">
     <ConnectedPins>
       <Pin ref="C4.pin1" />
       <Pin ref="BT1.pin1" />
@@ -4730,7 +4783,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C4.pin1" x="-10.42" y="0.70" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -4746,10 +4799,10 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_63:source_port_105" label="C6.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="1.34" straightLineDistanceMm="1.34">
+  <Trace id="source_trace_63:source_port_105" label="C6.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="1.84" straightLineDistanceMm="1.84">
     <ConnectedPins>
       <Pin ref="C6.pin1" />
       <Pin ref="BT1.pin1" />
@@ -4770,7 +4823,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C6.pin1" x="-2.02" y="1.20" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -4786,10 +4839,10 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_34:source_port_76" label="C9.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="5.31" straightLineDistanceMm="5.31">
+  <Trace id="source_trace_34:source_port_76" label="C9.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="4.38" straightLineDistanceMm="4.38">
     <ConnectedPins>
       <Pin ref="C9.pin1" />
       <Pin ref="BT1.pin1" />
@@ -4810,7 +4863,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="C9.pin1" x="-8.20" y="0.50" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -4826,10 +4879,10 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_51:source_port_107" label="R1.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="1.50" straightLineDistanceMm="4.94">
+  <Trace id="source_trace_51:source_port_107" label="R1.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="1.50" straightLineDistanceMm="5.74">
     <ConnectedPins>
       <Pin ref="R1.pin1" />
       <Pin ref="BT1.pin1" />
@@ -4850,7 +4903,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="R1.pin1" x="1.87" y="1.50" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -4866,14 +4919,14 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="1.87" y="1.50" layer="top" kind="endpoint" />
       <Point x="1.87" y="0.00" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_53:source_port_109" label="R2.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="4.77" straightLineDistanceMm="4.77">
+  <Trace id="source_trace_53:source_port_109" label="R2.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="5.77" straightLineDistanceMm="5.77">
     <ConnectedPins>
       <Pin ref="R2.pin1" />
       <Pin ref="BT1.pin1" />
@@ -4894,7 +4947,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="R2.pin1" x="1.87" y="0.00" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -4910,10 +4963,10 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_55:source_port_111" label="R3.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="5.06" straightLineDistanceMm="5.06">
+  <Trace id="source_trace_55:source_port_111" label="R3.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="12.17" straightLineDistanceMm="6.18">
     <ConnectedPins>
       <Pin ref="R3.pin1" />
       <Pin ref="BT1.pin1" />
@@ -4934,7 +4987,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="R3.pin1" x="1.87" y="-1.50" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -4950,12 +5003,67 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
+    <TraceRequirements none />
+    <Path>
+      <Point x="1.87" y="-1.50" layer="top" kind="endpoint" />
+      <Point x="1.98" y="-1.31" layer="top" kind="track" />
+      <Point x="2.09" y="-1.31" layer="top" kind="track" />
+      <Point x="2.28" y="-1.16" layer="top" kind="track" />
+      <Point x="2.54" y="-0.95" layer="top" kind="track" />
+      <Point x="2.78" y="-0.95" layer="top" kind="track" />
+      <Point x="2.80" y="-0.93" layer="top" kind="track" />
+      <Point x="2.97" y="-0.93" layer="top" kind="track" />
+      <Point x="3.25" y="-0.97" layer="top" kind="track" />
+      <Point x="3.25" y="-2.00" layer="top" kind="track" />
+      <Point x="3.23" y="-2.01" layer="top" kind="track" />
+      <Point x="3.23" y="-9.77" layer="top" kind="track" />
+      <Point x="2.00" y="-11.00" layer="top" kind="endpoint" />
+    </Path>
+  </Trace>
+  <Trace id="source_trace_26:source_port_97" label="R4.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="0.19" straightLineDistanceMm="0.19">
+    <ConnectedPins>
+      <Pin ref="R4.pin1" />
+      <Pin ref="BT1.pin1" />
+      <Pin ref="C15.pin1" />
+      <Pin ref="C16.pin1" />
+      <Pin ref="C18.pin1" />
+      <Pin ref="C4.pin1" />
+      <Pin ref="C6.pin1" />
+      <Pin ref="C9.pin1" />
+      <Pin ref="R1.pin1" />
+      <Pin ref="R2.pin1" />
+      <Pin ref="R3.pin1" />
+      <Pin ref="R5.pin1" />
+      <Pin ref="TP_VDD.pin1" />
+      <Pin ref="U1.VDD1" />
+      <Pin ref="U1.VDD3" />
+      <Pin ref="U2.VCC" />
+    </ConnectedPins>
+    <PinPositions>
+      <Pin ref="R4.pin1" x="-3.77" y="0.70" layers="top" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
+      <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
+      <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
+      <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
+      <Pin ref="C4.pin1" x="-10.42" y="0.70" layers="top" />
+      <Pin ref="C6.pin1" x="-2.02" y="1.20" layers="top" />
+      <Pin ref="C9.pin1" x="-8.20" y="0.50" layers="top" />
+      <Pin ref="R1.pin1" x="1.87" y="1.50" layers="top" />
+      <Pin ref="R2.pin1" x="1.87" y="0.00" layers="top" />
+      <Pin ref="R3.pin1" x="1.87" y="-1.50" layers="top" />
+      <Pin ref="R5.pin1" x="7.57" y="0.00" layers="top" />
+      <Pin ref="TP_VDD.pin1" x="-4.00" y="-14.00" layers="bottom" />
+      <Pin ref="U1.VDD1" x="-9.70" y="2.00" layers="top" />
+      <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
+      <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
+    </PinPositions>
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_26:source_port_97" label="R4.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="1.01" straightLineDistanceMm="1.01">
+  <Trace id="source_trace_65:source_port_117" label="R5.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="11.44" straightLineDistanceMm="11.44">
     <ConnectedPins>
-      <Pin ref="R4.pin1" />
+      <Pin ref="R5.pin1" />
       <Pin ref="BT1.pin1" />
       <Pin ref="C15.pin1" />
       <Pin ref="C16.pin1" />
@@ -4966,15 +5074,15 @@
       <Pin ref="R1.pin1" />
       <Pin ref="R2.pin1" />
       <Pin ref="R3.pin1" />
-      <Pin ref="R5.pin1" />
+      <Pin ref="R4.pin1" />
       <Pin ref="TP_VDD.pin1" />
       <Pin ref="U1.VDD1" />
       <Pin ref="U1.VDD3" />
       <Pin ref="U2.VCC" />
     </ConnectedPins>
     <PinPositions>
-      <Pin ref="R4.pin1" x="-3.77" y="0.70" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="R5.pin1" x="7.57" y="0.00" layers="top" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -4984,56 +5092,16 @@
       <Pin ref="R1.pin1" x="1.87" y="1.50" layers="top" />
       <Pin ref="R2.pin1" x="1.87" y="0.00" layers="top" />
       <Pin ref="R3.pin1" x="1.87" y="-1.50" layers="top" />
-      <Pin ref="R5.pin1" x="7.57" y="0.00" layers="top" />
+      <Pin ref="R4.pin1" x="-3.77" y="0.70" layers="top" />
       <Pin ref="TP_VDD.pin1" x="-4.00" y="-14.00" layers="bottom" />
       <Pin ref="U1.VDD1" x="-9.70" y="2.00" layers="top" />
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_65:source_port_117" label="R5.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="10.47" straightLineDistanceMm="10.47">
-    <ConnectedPins>
-      <Pin ref="R5.pin1" />
-      <Pin ref="BT1.pin1" />
-      <Pin ref="C15.pin1" />
-      <Pin ref="C16.pin1" />
-      <Pin ref="C18.pin1" />
-      <Pin ref="C4.pin1" />
-      <Pin ref="C6.pin1" />
-      <Pin ref="C9.pin1" />
-      <Pin ref="R1.pin1" />
-      <Pin ref="R2.pin1" />
-      <Pin ref="R3.pin1" />
-      <Pin ref="R4.pin1" />
-      <Pin ref="TP_VDD.pin1" />
-      <Pin ref="U1.VDD1" />
-      <Pin ref="U1.VDD3" />
-      <Pin ref="U2.VCC" />
-    </ConnectedPins>
-    <PinPositions>
-      <Pin ref="R5.pin1" x="7.57" y="0.00" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
-      <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
-      <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
-      <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
-      <Pin ref="C4.pin1" x="-10.42" y="0.70" layers="top" />
-      <Pin ref="C6.pin1" x="-2.02" y="1.20" layers="top" />
-      <Pin ref="C9.pin1" x="-8.20" y="0.50" layers="top" />
-      <Pin ref="R1.pin1" x="1.87" y="1.50" layers="top" />
-      <Pin ref="R2.pin1" x="1.87" y="0.00" layers="top" />
-      <Pin ref="R3.pin1" x="1.87" y="-1.50" layers="top" />
-      <Pin ref="R4.pin1" x="-3.77" y="0.70" layers="top" />
-      <Pin ref="TP_VDD.pin1" x="-4.00" y="-14.00" layers="bottom" />
-      <Pin ref="U1.VDD1" x="-9.70" y="2.00" layers="top" />
-      <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
-      <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
-    </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
-    <TraceRequirements none />
-  </Trace>
-  <Trace id="source_trace_21:source_port_92" label="TP_VDD.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="8.19" straightLineDistanceMm="14.24">
+  <Trace id="source_trace_21:source_port_92" label="TP_VDD.pin1 -&gt; net.VBAT" connectionType="via net" lengthMm="8.19" straightLineDistanceMm="14.88">
     <ConnectedPins>
       <Pin ref="TP_VDD.pin1" />
       <Pin ref="BT1.pin1" />
@@ -5054,7 +5122,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="TP_VDD.pin1" x="-4.00" y="-14.00" layers="bottom" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -5070,7 +5138,7 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-4.00" y="-14.00" layer="bottom" kind="endpoint" />
@@ -5085,7 +5153,7 @@
       <Point x="2.00" y="-11.00" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_28:source_port_15" label="U1.VDD1 -&gt; net.VBAT" connectionType="via net" lengthMm="7.04" straightLineDistanceMm="7.04">
+  <Trace id="source_trace_28:source_port_15" label="U1.VDD1 -&gt; net.VBAT" connectionType="via net" lengthMm="5.97" straightLineDistanceMm="5.97">
     <ConnectedPins>
       <Pin ref="U1.VDD1" />
       <Pin ref="BT1.pin1" />
@@ -5106,7 +5174,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="U1.VDD1" x="-9.70" y="2.00" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -5122,10 +5190,10 @@
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
   </Trace>
-  <Trace id="source_trace_29:source_port_38" label="U1.VDD3 -&gt; net.VBAT" connectionType="via net" lengthMm="2.38" straightLineDistanceMm="7.19">
+  <Trace id="source_trace_29:source_port_38" label="U1.VDD3 -&gt; net.VBAT" connectionType="via net" lengthMm="2.38" straightLineDistanceMm="6.35">
     <ConnectedPins>
       <Pin ref="U1.VDD3" />
       <Pin ref="BT1.pin1" />
@@ -5146,7 +5214,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -5162,7 +5230,7 @@
       <Pin ref="U1.VDD1" x="-9.70" y="2.00" layers="top" />
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-4.50" y="7.20" layer="top" kind="endpoint" />
@@ -5170,7 +5238,7 @@
       <Point x="-4.80" y="9.48" layer="top" kind="endpoint" />
     </Path>
   </Trace>
-  <Trace id="source_trace_60:source_port_99" label="U2.VCC -&gt; net.VBAT" connectionType="via net" lengthMm="6.19" straightLineDistanceMm="2.71">
+  <Trace id="source_trace_60:source_port_99" label="U2.VCC -&gt; net.VBAT" connectionType="via net" lengthMm="6.19" straightLineDistanceMm="3.67">
     <ConnectedPins>
       <Pin ref="U2.VCC" />
       <Pin ref="BT1.pin1" />
@@ -5191,7 +5259,7 @@
     </ConnectedPins>
     <PinPositions>
       <Pin ref="U2.VCC" x="-0.20" y="0.40" layers="top" />
-      <Pin ref="BT1.pin1" x="2.00" y="-11.00" layers="top,bottom" />
+      <Pin ref="BT1.pin1" x="-13.00" y="0.00" layers="bottom" />
       <Pin ref="C15.pin1" x="-5.30" y="-3.50" layers="top" />
       <Pin ref="C16.pin1" x="-4.80" y="9.48" layers="top" />
       <Pin ref="C18.pin1" x="-8.62" y="9.40" layers="top" />
@@ -5207,7 +5275,7 @@
       <Pin ref="U1.VDD1" x="-9.70" y="2.00" layers="top" />
       <Pin ref="U1.VDD3" x="-4.50" y="7.20" layers="top" />
     </PinPositions>
-    <Connection kind="via net" target="net.VBAT" x="-2.90" y="0.19" layer="top" />
+    <Connection kind="via net" target="net.VBAT" x="-3.83" y="0.88" layer="top" />
     <TraceRequirements none />
     <Path>
       <Point x="-0.20" y="0.40" layer="top" kind="endpoint" />
