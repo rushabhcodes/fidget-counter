@@ -1,0 +1,111 @@
+{
+  "input": "dist/index/circuit.json",
+  "circuitJsonSha256": "2664f257910045a47d8b446392ab0b8b0eeee5106a29819695f5bceeef72d2d8",
+  "copperChecks": [
+    {
+      "check": "different-net copper spacing",
+      "limitMm": 0.1,
+      "minimumMm": 0.103553,
+      "nearest": {
+        "a": "pcb_smtpad_100",
+        "aRef": "C1",
+        "b": "pcb_trace_38:1",
+        "bRef": "RF_FEED",
+        "distanceMm": 0.103553
+      },
+      "violations": []
+    },
+    {
+      "check": "different-net SMT pad spacing",
+      "limitMm": 0.15,
+      "minimumMm": 0.17,
+      "nearest": {
+        "a": "pcb_smtpad_73",
+        "aRef": "U2",
+        "b": "pcb_smtpad_74",
+        "bRef": "U2",
+        "distanceMm": 0.17
+      },
+      "violations": []
+    },
+    {
+      "check": "SMT mask opening to different-net track",
+      "limitMm": 0.09,
+      "minimumMm": 0.103553,
+      "nearest": {
+        "a": "pcb_smtpad_100",
+        "aRef": "C1",
+        "b": "pcb_trace_38:1",
+        "bRef": "RF_FEED",
+        "distanceMm": 0.103553
+      },
+      "violations": []
+    },
+    {
+      "check": "via drill to different-net track",
+      "limitMm": 0.2,
+      "minimumMm": 0.233103,
+      "nearest": {
+        "a": "pcb_via_0",
+        "aRef": "pcb_via",
+        "b": "pcb_trace_34:1",
+        "bRef": "U1_ANT",
+        "distanceMm": 0.233103
+      },
+      "violations": []
+    },
+    {
+      "check": "via drill to via drill",
+      "limitMm": 0.2,
+      "minimumMm": 0.407114,
+      "nearest": {
+        "a": "pcb_plated_hole_1",
+        "aRef": "GPIO_SDA",
+        "b": "pcb_via_2",
+        "bRef": "pcb_via",
+        "distanceMm": 0.407114
+      },
+      "violations": []
+    },
+    {
+      "check": "NPTH drill to copper",
+      "limitMm": 0.2,
+      "minimumMm": 0.389406,
+      "nearest": {
+        "a": "pcb_hole_3",
+        "aRef": "mounting",
+        "b": "pcb_copper_pour_0",
+        "bRef": "GND pour",
+        "distanceMm": 0.389406
+      },
+      "violations": []
+    },
+    {
+      "check": "wire-contact PTH drill to different-net track",
+      "limitMm": 0.28,
+      "minimumMm": 0.572741,
+      "nearest": {
+        "a": "pcb_plated_hole_5",
+        "aRef": "TP_GND",
+        "b": "source_net_5_0:1",
+        "bRef": "trace",
+        "distanceMm": 0.572741
+      },
+      "violations": []
+    }
+  ],
+  "minimumTraceWidthMm": 0.11,
+  "minimumCopperToBoardEdge": {
+    "id": "pcb_copper_pour_0",
+    "ref": "GND pour",
+    "distanceMm": 0.349999
+  },
+  "minimumMountingWebMm": 0.24938257832721972,
+  "drillInventory": {
+    "0.30 mm drill / 0.55 mm land": 44,
+    "3.60 mm NPTH": 4,
+    "0.60 mm drill / 1.80 mm land": 2,
+    "0.40 mm drill / 1.20 mm land": 1
+  },
+  "silkscreenTextBelow1mm": []
+}

@@ -39,7 +39,13 @@ await check("routing-difficulty", ["run", "tsci", "check", "routing-difficulty",
 await check("build", ["run", "tsci", "build", "published.circuit.json", "--pcb-png", "--schematic-png", "--svgs", "--disable-parts-engine"])
 
 const preservedBytes = readFileSync("published.circuit.json")
-const expectedCircuitHash = JSON.parse(readFileSync("validation/summary.json", "utf8")).sha256["dist/index/circuit.json"]
+const validatedHashes = JSON.parse(readFileSync("validation/summary.json", "utf8")).sha256
+for (const file of ["index.circuit.tsx", "parts.tsx", "routing.ts", "routed-paths.json"]) {
+  if (createHash("sha256").update(readFileSync(file)).digest("hex") !== validatedHashes[file]) {
+    throw new Error(`Source ${file} differs from the validated published board; refresh the routed snapshot and validation first`)
+  }
+}
+const expectedCircuitHash = validatedHashes["dist/index/circuit.json"]
 if (createHash("sha256").update(preservedBytes).digest("hex") !== expectedCircuitHash) throw new Error("Published routing differs from the validated prototype")
 const circuitBytes = readFileSync("dist/published/circuit.json")
 const circuit = JSON.parse(circuitBytes)
@@ -103,7 +109,7 @@ const summary = {
   routedTraces: circuit.filter(element => element.type === "pcb_trace").length,
   vias: circuit.filter(element => element.type === "pcb_via").length,
   analyzedNetCount: targets.size, crystalBranches: clocks,
-  sha256: Object.fromEntries(["index.circuit.tsx", "parts.tsx", "package.json", "verify.mjs", "dist/published/circuit.json"].map(file => [file, sha256(file)])),
+  sha256: Object.fromEntries(["index.circuit.tsx", "parts.tsx", "routing.ts", "routed-paths.json", "published.circuit.json", "package.json", "verify.mjs", "dist/published/circuit.json"].map(file => [file, sha256(file)])),
 }
 writeFileSync("work/check-all-summary.json", JSON.stringify(summary, null, 2) + "\n")
 console.log(`Pass: all library checks; trace lengths for ${targets.size} nets; eight crystal branches have no vias`)

@@ -45,7 +45,7 @@ export const NRF52810 = (props:ChipProps)=><chip manufacturerPartNumber="nRF5281
    return <Fragment key={i}><smtpad portHints={[`pin${i+1}`]} shape="rect" pcbX={xy[0]} pcbY={xy[1]}
     width={s%2?.2:.95} height={s%2?.95:.2}/></Fragment>})}
   <smtpad portHints={["pin49","thermalpad"]} shape="rect" width={4.6} height={4.6} pcbX={0} pcbY={0}/>
-  <courtyardrect width={7.2} height={7.2}/><silkscreencircle pcbX={-3.65} pcbY={3.65} radius={.15}/>
+  <courtyardrect width={7.2} height={7.2}/><silkscreencircle pcbX={-3.65} pcbY={3.65} radius={.15} strokeWidth={.15} isFilled/>
  </footprint>} {...props}/>
 
 // TI SLYS053C YBG0006 package top view: A1/A2, B1/B2, C1/C2.
@@ -62,7 +62,7 @@ export const TMAG3001 = (props:ChipProps)=><chip manufacturerPartNumber="TMAG300
  footprint={<footprint>{Array.from({length:6},(_,i)=><Fragment key={i}><smtpad portHints={[`pin${i+1}`]}
   shape="circle" radius={.115} pcbX={i%2?.2:-.2} pcbY={.4-Math.floor(i/2)*.4}
   solderMaskMargin={.025} solderPasteMargin={.01}/></Fragment>)}
-  <courtyardrect width={1.324} height={1.816}/><silkscreencircle pcbX={-.7} pcbY={.7} radius={.08}/>
+  <courtyardrect width={1.324} height={1.816}/><silkscreencircle pcbX={-.9} pcbY={.35} radius={.15} strokeWidth={.15} isFilled/>
  </footprint>} {...props}/>
 // Builtin crystal pins 1/2/3/4 map to manufacturer pads 4/1/2/3 respectively.
 // This retains the exact reference land coordinates and oscillator polarity.
@@ -94,7 +94,7 @@ export const CapButton=(p:ChipProps)=><pushbutton manufacturerPartNumber="KMR223
  pinLabels={{pin1:["A"],pin2:["B"]}} footprint={<footprint>
   {[-2.05,2.05].flatMap(x=>[.8,-.8].map((y,i)=><Fragment key={`${x}/${y}`}><smtpad portHints={[`pin${i+1}`]}
    shape="rect" pcbX={x} pcbY={y} width={.9} height={1}/></Fragment>))}
-  <courtyardrect width={5.5} height={3.3}/><silkscreenrect width={3.6} height={2.3}/>
+  <courtyardrect width={5.5} height={3.3}/>
  </footprint>} {...p}/>
 export const BatteryContacts=(p:BatteryProps)=><battery standard="CR2032" voltage="3V"
  manufacturerPartNumber="CR2032 hatch spring-contact interface"

@@ -2,16 +2,16 @@ Detected entrypoint: 'index.circuit.tsx'
 placement summary: no placement issues
 
 board top-layer utilization:
-- occupied: 11.103% (147.915mm^2 of 1332.25mm^2)
+- occupied: 11.125% (148.215mm^2 of 1332.25mm^2)
 - empty spaces over 5% of board area:
   - 38.411% (511.73mm^2); bounds=(minX=-18.25mm, maxX=18.25mm, minY=-18.25mm, maxY=-4.23mm)
   - 17.475% (232.81mm^2); bounds=(minX=3.23mm, maxX=18.25mm, minY=2.75mm, maxY=18.25mm)
   - 6.49% (86.458mm^2); bounds=(minX=-18.25mm, maxX=-9.13mm, minY=8.77mm, maxY=18.25mm)
 
 board-edge status:
-- GPIO_SCL: 9.075mm inside bottom edge
-- GPIO_SDA: 8.375mm inside bottom edge
-- GPIO_HALL_INT: 9.075mm inside bottom edge
+- GPIO_SCL: 8.525mm inside bottom edge
+- GPIO_SDA: 7.875mm inside bottom edge
+- GPIO_HALL_INT: 8.525mm inside bottom edge
 - U1: 7.275mm inside left edge
 - BT1: 6.35mm inside top edge
 - C4: 7.47mm inside left edge

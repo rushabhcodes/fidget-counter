@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-07T10:10:40.228Z",
+  "checkedAt": "2026-10-07T10:35:45.105Z",
   "checks": [
     "netlist",
     "pin_specification",
@@ -13,7 +13,7 @@
   "errors": 0,
   "warnings": 0,
   "routedTraces": 87,
-  "vias": 48,
+  "vias": 41,
   "analyzedNetCount": 20,
   "crystalBranches": [
     {
@@ -58,25 +58,33 @@
     }
   ],
   "sha256": {
-    "index.circuit.tsx": "3523b75f523caf3ad4f1175239c1ec427217e8776b3c37cf3d57e31289019f4a",
-    "parts.tsx": "473c537824451331529eae967d807060044cdab77e9b80335b88eb938efe2194",
-    "published.circuit.json": "84f25eaf26d99eaae34a9e9ed1077feb5d7f0d4b69746e8b427bed670f4f273b",
-    "package.json": "2e189018988236860a20e7c3d5431bf1c5597fd816dc37264cf7b69628f2f90c",
+    "index.circuit.tsx": "3cf75af3665f0c5eccb6e62a91a37027f59f9628c7365493d9cd2a2bf07edc27",
+    "parts.tsx": "f3a103df32039723077116ab56f415c06bb7d4639a6ef143881631735e6309c9",
+    "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
+    "routed-paths.json": "f999097afe34b11a9230ddd6a16d8abace2c5a81f240560a607fa3fe59fa215a",
+    "published.circuit.json": "2664f257910045a47d8b446392ab0b8b0eeee5106a29819695f5bceeef72d2d8",
+    "package.json": "be56c821b21ba11ad4f2489ca3e9fe369ace3825f100b1ff1884d835c18f9da0",
     "bun.lock": "fc21739ea7f6809ae40dc7c2595d67a9655456bd9ea5b760f900197830b6936a",
     "tsconfig.json": "3369b71950778d4e33593aee7a0389f2f4162946c3abfd8c1ec7c138c16e8276",
     "tscircuit.config.json": "d4b38e0e14e975a855b0336e589f7ef082d62b31eef32ecd777dda0a0101fb98",
     ".npmrc": "aa5229e8ba9836aaa12b83d0b0ef38c3dea2e432bcbcd6296dfdd6e9c5b75670",
     ".gitignore": "f0ab4c925b486c15fe9ea29d0531420573fb66eb81ca792a7da3a9cc358f43a1",
-    "README.md": "a21a849d05ea8d8c5a413c7df1d69565d40d1895979f4911b47e1494ef9570ec",
-    "VALIDATION.md": "8e054d3b9867eda055cca7744bbbed3069408d229de3cc1385acbf305708895b",
+    "README.md": "f8e898c1779452605773eaaee1a911269d9fbb8d58bc6f9c0c01ce0377aa8337",
+    "VALIDATION.md": "e259170f7b413d38b809a0659fe040655a5c40db0bd927a3408c0990c6be778c",
     "MECHANICAL.md": "ed3c6d8915c38d6bc54e620f3ea87876745e752b93fe99624d339544aa1ded12",
-    "BOM.csv": "ba9a552231ab648614d1dfe257f5b45608346db2f63ec3d7478343827bd69ddc",
-    "verify.mjs": "37d18c595858772ecb0a09b1ab229673d608c8d1ca055b62fd4c665476699a4b"
+    "BOM.csv": "59a6a6f5ec4a459fc357b8f4cda2e6a58f5a4d96c6fef952dadbcb66ad8773b4",
+    "verify.mjs": "97c03deaf045fc01e43710d387496d9bc52789f6a042f6525d3589c6f8cdfab1",
+    "validation/check-jlc.py": "6077e9a010c4afd3b3c4bbf4957b5019ec2676d69150dea42e35c1d34ad51d85",
+    "validation/check-jlc-gerbers.py": "3a39230ad4b7320acd3673987022ae130e402e3d734388965e0f0847108d9ae2",
+    "fabrication/Fidget_Counter_RevA_Prototype_Gerbers.zip": "0f3c73c47b90a89fe631babe0903d3a36f15e2f52c1cd35fef8e6bd9e61efd6d",
+    "fabrication/JLCPCB_BOM_Quote_Draft.csv": "e68af44c00be8d066196a7a71d5c0eb673aac2cb2473ca6e985c54a4b74a0264",
+    "fabrication/JLCPCB_CPL_Quote_Draft.csv": "fe6e5259da8fcd97b3ab065496551dfe31cec998baea689ffeccacf57ea9deb9"
   },
-  "publicationRevision": "earlier validated Rev A prototype",
-  "viaDrillMm": 0.2,
-  "viaLandMm": 0.45,
-  "circuitMatchesOriginalValidatedHandoff": true,
+  "publicationRevision": "0.30 mm drill / 0.55 mm land revision",
+  "viaDrillMm": 0.3,
+  "viaLandMm": 0.55,
+  "circuitMatchesValidatedSourceBuild": true,
   "github": "https://github.com/rushabhcodes/fidget-counter",
-  "registry": "https://tscircuit.com/rushabhcodes/fidget-counter"
+  "registry": "https://tscircuit.com/rushabhcodes/fidget-counter",
+  "packageVersion": "1.0.1"
 }

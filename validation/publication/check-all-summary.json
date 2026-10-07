@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-07T10:10:40.228Z",
+  "checkedAt": "2026-10-07T10:35:45.105Z",
   "checks": [
     "netlist",
     "pin_specification",
@@ -13,7 +13,7 @@
   "errors": 0,
   "warnings": 0,
   "routedTraces": 87,
-  "vias": 48,
+  "vias": 41,
   "analyzedNetCount": 20,
   "crystalBranches": [
     {
@@ -58,10 +58,13 @@
     }
   ],
   "sha256": {
-    "index.circuit.tsx": "3523b75f523caf3ad4f1175239c1ec427217e8776b3c37cf3d57e31289019f4a",
-    "parts.tsx": "473c537824451331529eae967d807060044cdab77e9b80335b88eb938efe2194",
-    "package.json": "2e189018988236860a20e7c3d5431bf1c5597fd816dc37264cf7b69628f2f90c",
-    "verify.mjs": "37d18c595858772ecb0a09b1ab229673d608c8d1ca055b62fd4c665476699a4b",
-    "dist/published/circuit.json": "84f25eaf26d99eaae34a9e9ed1077feb5d7f0d4b69746e8b427bed670f4f273b"
+    "index.circuit.tsx": "3cf75af3665f0c5eccb6e62a91a37027f59f9628c7365493d9cd2a2bf07edc27",
+    "parts.tsx": "f3a103df32039723077116ab56f415c06bb7d4639a6ef143881631735e6309c9",
+    "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
+    "routed-paths.json": "f999097afe34b11a9230ddd6a16d8abace2c5a81f240560a607fa3fe59fa215a",
+    "published.circuit.json": "2664f257910045a47d8b446392ab0b8b0eeee5106a29819695f5bceeef72d2d8",
+    "package.json": "be56c821b21ba11ad4f2489ca3e9fe369ace3825f100b1ff1884d835c18f9da0",
+    "verify.mjs": "97c03deaf045fc01e43710d387496d9bc52789f6a042f6525d3589c6f8cdfab1",
+    "dist/published/circuit.json": "2664f257910045a47d8b446392ab0b8b0eeee5106a29819695f5bceeef72d2d8"
   }
 }

@@ -4,38 +4,38 @@ COMPONENTS:
  - GPIO_HALL_INT: 
  - U1: nRF52810-QFAA-R
  - BT1: BT1, source_component
- - C4: 100nF cap0402 capacitor
- - C9: 4.7uF cap0603 capacitor
- - C15: 22uF cap0603 capacitor
- - C5: 100nF cap0402 capacitor
- - C7: 100pF cap0402 capacitor
- - C8: 100nF cap0402 capacitor
- - C10: 1uF cap0603 capacitor
- - C16: 100nF cap0402 capacitor
- - C18: 100nF cap0402 capacitor
+ - C4: 100nF cap0402_nosilkscreen capacitor
+ - C9: 4.7uF cap0603_nosilkscreen capacitor
+ - C15: 22uF cap0603_nosilkscreen capacitor
+ - C5: 100nF cap0402_nosilkscreen capacitor
+ - C7: 100pF cap0402_nosilkscreen capacitor
+ - C8: 100nF cap0402_nosilkscreen capacitor
+ - C10: 1uF cap0603_nosilkscreen capacitor
+ - C16: 100nF cap0402_nosilkscreen capacitor
+ - C18: 100nF cap0402_nosilkscreen capacitor
  - TP_VDD: TP_VDD, source_component
  - TP_GND: TP_GND, source_component
  - TP_SWDIO: TP_SWDIO, source_component
  - TP_SWDCLK: TP_SWDCLK, source_component
  - TP_RESET: TP_RESET, source_component
- - R4: 100kΩ res0402 resistor
+ - R4: 100kΩ res0402_nosilkscreen resistor
  - U2: TMAG3001A2YBGR
- - C6: 100nF cap0402 capacitor
- - R1: 10kΩ res0402 resistor
- - R2: 10kΩ res0402 resistor
- - R3: 10kΩ res0402 resistor
+ - C6: 100nF cap0402_nosilkscreen capacitor
+ - R1: 10kΩ res0402_nosilkscreen resistor
+ - R2: 10kΩ res0402_nosilkscreen resistor
+ - R3: 10kΩ res0402_nosilkscreen resistor
  - SW1: SW1, source_component
- - R5: 100kΩ res0402 resistor
- - C17: 10nF cap0402 capacitor
+ - R5: 100kΩ res0402_nosilkscreen resistor
+ - C17: 10nF cap0402_nosilkscreen capacitor
  - X1: X1, source_component
- - C1: 12pF cap0402 capacitor
- - C2: 12pF cap0402 capacitor
+ - C1: 12pF cap0402_nosilkscreen capacitor
+ - C2: 12pF cap0402_nosilkscreen capacitor
  - X2: X2, source_component
- - C11: 12pF cap0402 capacitor
- - C12: 12pF cap0402 capacitor
+ - C11: 12pF cap0402_nosilkscreen capacitor
+ - C12: 12pF cap0402_nosilkscreen capacitor
  - L1: L1, source_component
  - L2: L2, source_component
- - C3: 0.8pF cap0402 capacitor
+ - C3: 0.8pF cap0402_nosilkscreen capacitor
  - C13: 0.5pF capacitor
  - C14: 0.5pF capacitor
  - ANT1: RFANT3216120A5T
@@ -245,39 +245,39 @@ BT1 (CR2032 hatch spring-contact interface)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(GND)
 
-C4 (100nF cap0402)
+C4 (100nF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(GND)
 
-C9 (4.7uF cap0603)
+C9 (4.7uF cap0603_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(GND)
 
-C15 (22uF cap0603)
+C15 (22uF cap0603_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(GND)
 
-C5 (100nF cap0402)
+C5 (100nF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(C5_pos)
 - pin2(cathode, neg, right): NETS(GND)
 
-C7 (100pF cap0402)
+C7 (100pF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(C7_pos)
 - pin2(cathode, neg, right): NETS(GND)
 
-C8 (100nF cap0402)
+C8 (100nF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(C8_pos)
 - pin2(cathode, neg, right): NETS(GND)
 
-C10 (1uF cap0603)
+C10 (1uF cap0603_nosilkscreen)
 - pin1(anode, pos, left): NETS(C10_pos)
 - pin2(cathode, neg, right): NETS(GND)
 
-C16 (100nF cap0402)
+C16 (100nF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(GND)
 
-C18 (100nF cap0402)
+C18 (100nF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(GND)
 
@@ -296,7 +296,7 @@ TP_SWDCLK
 TP_RESET
 - pin1: NETS(NRESET)
 
-R4 (100kΩ res0402)
+R4 (100kΩ res0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(NRESET)
 
@@ -308,19 +308,19 @@ U2 (TMAG3001A2YBGR)
 - pin5(C1, SDA): NETS(SDA)
 - pin6(C2, SCL): NETS(SCL)
 
-C6 (100nF cap0402)
+C6 (100nF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(GND)
 
-R1 (10kΩ res0402)
+R1 (10kΩ res0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(SCL)
 
-R2 (10kΩ res0402)
+R2 (10kΩ res0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(SDA)
 
-R3 (10kΩ res0402)
+R3 (10kΩ res0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(HALL_INT)
 
@@ -330,11 +330,11 @@ SW1 (KMR223NG ULC LFG / Y78B22324FP)
 - pin1(A): NETS(CAP_PRESS)
 - pin2(B): NETS(GND)
 
-R5 (100kΩ res0402)
+R5 (100kΩ res0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(VBAT)
 - pin2(cathode, neg, right): NETS(CAP_PRESS)
 
-C17 (10nF cap0402)
+C17 (10nF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(CAP_PRESS)
 - pin2(cathode, neg, right): NETS(GND)
 
@@ -344,11 +344,11 @@ X1 (X201632MKB4SI)
 - pin3(right1, X2): NETS(C2_pos)
 - pin4(gnd1, bottom1, gnd2): NETS(GND)
 
-C1 (12pF cap0402)
+C1 (12pF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(C1_pos)
 - pin2(cathode, neg, right): NETS(GND)
 
-C2 (12pF cap0402)
+C2 (12pF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(C2_pos)
 - pin2(cathode, neg, right): NETS(GND)
 
@@ -356,11 +356,11 @@ X2 (ABS07-32.768KHZ-9-T)
 - pin1(pos, left, X1): NETS(X2_pos)
 - pin2(neg, right, X2): NETS(X2_neg)
 
-C11 (12pF cap0402)
+C11 (12pF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(X2_pos)
 - pin2(cathode, neg, right): NETS(GND)
 
-C12 (12pF cap0402)
+C12 (12pF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(X2_neg)
 - pin2(cathode, neg, right): NETS(GND)
 
@@ -372,7 +372,7 @@ L2 (LQG15HS6N8G02D)
 - pin1(anode, pos, left): NETS(L1_neg)
 - pin2(cathode, neg, right): NETS(ANT1_feed)
 
-C3 (0.8pF cap0402)
+C3 (0.8pF cap0402_nosilkscreen)
 - pin1(anode, pos, left): NETS(U1_ANT)
 - pin2(cathode, neg, right): NETS(GND)
 

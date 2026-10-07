@@ -1,28 +1,28 @@
-References,Quantity,Value_or_part,Package,Manufacturer_or_source,Assembly,Notes,Manufacturer_part_number,Source_url
-U1,1,nRF52810-QFAA-R,QFN48 6x6mm 0.4mm pitch,Nordic / JLCPCB C141828,FIT,Reference QFAA pin map; LDO mode only,nRF52810-QFAA-R,
-U2,1,TMAG3001A2YBGR,WCSP6 YBG 0.4mm pitch,Texas Instruments,FIT,±120/240mT version; source separately; max package height 0.5mm,TMAG3001A2YBGR,
-X1,1,X201632MKB4SI,2016 4-pad crystal,JLCPCB C718072,FIT,32MHz; 8pF load; ±10ppm; same manufacturer pad geometry as reference,X201632MKB4SI,https://jlcpcb.com/partdetail/X201632MKB4SI/C718072
-X2,1,ABS07-32.768KHZ-9-T,ABS07 2-pad crystal,Abracon / JLCPCB C179635,FIT,32.768kHz 9pF nominal load,ABS07-32.768KHZ-9-T,
-ANT1,1,RFANT3216120A5T,3216 ceramic antenna,Walsin / JLCPCB C127629,FIT,Tune matching in final assembly,RFANT3216120A5T,
-SW1,1,KMR223NG ULC LFG / Y78B22324FP,KMR2 4.2x2.8mm body,C&K / Littelfuse,FIT,1.9mm nominal height; 2N actuation; gold low-current contacts,KMR223NG ULC LFG / Y78B22324FP,
-L1,1,3.9nH,0402,Murata,FIT,3.9nH ±0.1nH; RF matching starting value,LQG15HS3N9B02D,https://www.mouser.com/datasheet/3/76/1/JELF243B-0010.pdf
-L2,1,6.8nH,0402,Murata,FIT,6.8nH ±2%; tune with antenna,LQG15HS6N8G02D,https://www.mouser.com/datasheet/3/76/1/JELF243B-0010.pdf
-C3,1,0.8pF,0402,Murata,FIT,0.8pF ±0.05pF; 50V C0G high-Q RF shunt,GJM1555C1HR80WB01D,https://www.murata.com/en-us/products/productdetail?partno=GJM1555C1HR80WB01%23
-C13 C14,2,0.5pF candidate,0402,C0G NP0 capacitor supplier,DNP,Optional RF shunts; pads remain on PCB,,
-C1 C2 C11 C12,4,12pF,0402,Murata,FIT,12pF ±5%; 50V C0G; initial load caps; verify oscillator frequency,GRM1555C1H120JA01D,https://www.murata.com/en-us/products/productdetail?partno=GRM1555C1H120JA01%23
-C7,1,100pF,0402,Murata,FIT,100pF ±5%; 50V C0G; DEC2 decoupling,GRM1555C1H101JA01D,https://www.murata.com/en-us/products/productdetail?partno=GRM1555C1H101JA01%23
-C4 C5 C6 C8 C16 C18,6,100nF,0402,Murata,FIT,100nF ±10%; 16V X7R; 0.55mm max height,GRM155R71C104KA88D,https://www.murata.com/en-us/products/productdetail?partno=GRM155R71C104KA88%23
-C10,1,1uF,0603,Murata,FIT,1uF ±10%; 10V X7R; DEC4 decoupling,GRM188R71A105KA61D,https://www.murata.com/en-us/products/productdetail?partno=GRM188R71A105KA61%23
-C9,1,4.7uF,0603,Murata,FIT,4.7uF ±10%; 6.3V X5R; effective capacitance derates with DC bias,GRM188R60J475KE19D,https://www.murata.com/en-us/products/productdetail?partno=GRM188R60J475KE19%23
-C15,1,22uF,0603,Murata,FIT,22uF ±20%; 6.3V X5R; verify effective capacitance at battery voltage,GRM188R60J226ME15D,https://www.murata.com/en-us/products/productdetail?partno=GRM188R60J226ME15%23
-C17,1,10nF,0402,Murata,FIT,10nF ±10%; 16V X7R; cap GPIO filter,GRM155R71C103KA01D,https://www.murata.com/en-us/products/productdetail?partno=GRM155R71C103KA01%23
-R1 R2 R3,3,10k ohm,0402,Yageo,FIT,10k ±1%; 0.063W; I2C and Hall INT pull-ups,RC0402FR-0710KL,https://yageogroup.com/component-documentation/download/specsheet/RC0402FR-0710KL
-R4 R5,2,100k ohm,0402,Yageo,FIT,100k ±1%; 0.063W; nRESET and cap GPIO pull-ups,RC0402FR-07100KL,https://yageogroup.com/component-documentation/download/specsheet/RC0402FR-07100KL
-BT1,1,Two-pole spring contact landing,1.8mm PTH pads / 0.6mm drill,PCB copper,BARE PAD,No commercial holder mounted; see contact assembly,,
-TP_VDD TP_GND TP_SWDIO TP_SWDCLK TP_RESET,5,SWD pogo land,1.2mm diameter underside pad,PCB copper,BARE PAD,GND land has 0.4mm plated drill; remaining four pads undrilled,,
-BATTERY,1,CR2032 primary lithium cell,20x3.2mm,Battery supplier,MECHANICAL,Positive side toward PCB; replace through underside hatch,,
-CONTACT_PLUS,1,Formed spring leaf,Prototype 0.15mm phosphor bronze,Custom contact fabrication,MECHANICAL,Approximately 2mm wide; insulate tail; fit preload to 0.3mm upper gap,,
-CONTACT_MINUS,1,Formed spring leaf,Prototype 0.15mm phosphor bronze,Custom contact fabrication,MECHANICAL,Approximately 3mm wide; fits floor relief; insulate tail at positive can,,
-CONTACT_LEADS,2,Insulated flexible leads,Outside cell footprint,Prototype assembly,MECHANICAL,Strain relief and hatch service slack required,,
-ENCODER_MAGNET,1,Diametric neodymium magnet,6x2mm,Magnet supplier,MECHANICAL,Verify diametric magnetization; calibration with final phone and cell,,
-GPIO_SCL GPIO_SDA GPIO_HALL_INT,3,Signal diagnostic land,0.45mm PTH pad / 0.2mm drill,PCB copper,BARE PAD,Local GPIO escape and fine probe access; no component fitted,,
+References,Quantity,Value_or_part,Package,Manufacturer_or_source,Assembly,Notes,Manufacturer_part_number,Source_url,JLCPCB_part_number,Sourcing_status
+U1,1,nRF52810-QFAA-R,QFN48 6x6mm 0.4mm pitch,Nordic / JLCPCB C141828,FIT,Reference QFAA pin map; LDO mode only,nRF52810-QFAA-R,,C141828,Reference supplier mapping retained; exact identity and stock must be reconfirmed in quote
+U2,1,TMAG3001A2YBGR,WCSP6 YBG 0.4mm pitch,Texas Instruments / JLCPCB C31115089,FIT,Retain current sensor; Standard PCBA and ENIG; confirm availability/preorder; max package height 0.5mm,TMAG3001A2YBGR,,C31115089,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+X1,1,X201632MKB4SI,2016 4-pad crystal,JLCPCB C718072,FIT,32MHz; 8pF load; ±10ppm; same manufacturer pad geometry as reference,X201632MKB4SI,https://jlcpcb.com/partdetail/X201632MKB4SI/C718072,C718072,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+X2,1,ABS07-32.768KHZ-9-T,ABS07 2-pad crystal,Abracon / JLCPCB C179635,FIT,32.768kHz 9pF nominal load,ABS07-32.768KHZ-9-T,,C179635,Reference supplier mapping retained; exact identity and stock must be reconfirmed in quote
+ANT1,1,RFANT3216120A5T,3216 ceramic antenna,Walsin / JLCPCB C127629,FIT,Tune matching in final assembly; catalog fixture notice: confirm fixture necessity/charge in quote,RFANT3216120A5T,,C127629,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+SW1,1,KMR223NG ULC LFG / Y78B22324FP,KMR2 4.2x2.8mm body,C&K / Littelfuse,FIT,1.9mm nominal height; 2N actuation; gold low-current contacts,KMR223NG ULC LFG / Y78B22324FP,,,Exact MPN assembly sourcing not verified; procurement or consignment required
+L1,1,3.9nH,0402,Murata,FIT,3.9nH ±0.1nH; RF matching starting value,LQG15HS3N9B02D,https://www.mouser.com/datasheet/3/76/1/JELF243B-0010.pdf,C5452416,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+L2,1,6.8nH,0402,Murata,FIT,6.8nH ±2%; tune with antenna,LQG15HS6N8G02D,https://www.mouser.com/datasheet/3/76/1/JELF243B-0010.pdf,,Exact MPN assembly sourcing not verified; procurement or consignment required
+C3,1,0.8pF,0402,Murata,FIT,0.8pF ±0.05pF; 50V C0G high-Q RF shunt,GJM1555C1HR80WB01D,https://www.murata.com/en-us/products/productdetail?partno=GJM1555C1HR80WB01%23,C88902,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+C13 C14,2,0.5pF candidate,0402,C0G NP0 capacitor supplier,DNP,Optional RF shunts; pads remain on PCB,,,,Excluded from SMT assembly
+C1 C2 C11 C12,4,12pF,0402,Murata,FIT,12pF ±5%; 50V C0G; initial load caps; verify oscillator frequency,GRM1555C1H120JA01D,https://www.murata.com/en-us/products/productdetail?partno=GRM1555C1H120JA01%23,C76948,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+C7,1,100pF,0402,Murata,FIT,100pF ±5%; 50V C0G; DEC2 decoupling,GRM1555C1H101JA01D,https://www.murata.com/en-us/products/productdetail?partno=GRM1555C1H101JA01%23,C77177,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+C4 C5 C6 C8 C16 C18,6,100nF,0402,Murata,FIT,100nF ±10%; 16V X7R; 0.55mm max height,GRM155R71C104KA88D,https://www.murata.com/en-us/products/productdetail?partno=GRM155R71C104KA88%23,C71629,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+C10,1,1uF,0603,Murata,FIT,1uF ±10%; 10V X7R; DEC4 decoupling,GRM188R71A105KA61D,https://www.murata.com/en-us/products/productdetail?partno=GRM188R71A105KA61%23,,Exact MPN assembly sourcing not verified; procurement or consignment required
+C9,1,4.7uF,0603,Murata,FIT,4.7uF ±10%; 6.3V X5R; effective capacitance derates with DC bias,GRM188R60J475KE19D,https://www.murata.com/en-us/products/productdetail?partno=GRM188R60J475KE19%23,C71631,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+C15,1,22uF,0603,Murata,FIT,22uF ±20%; 6.3V X5R; verify effective capacitance at battery voltage,GRM188R60J226ME15D,https://www.murata.com/en-us/products/productdetail?partno=GRM188R60J226ME15%23,,Exact MPN assembly sourcing not verified; procurement or consignment required
+C17,1,10nF,0402,Murata,FIT,10nF ±10%; 16V X7R; cap GPIO filter,GRM155R71C103KA01D,https://www.murata.com/en-us/products/productdetail?partno=GRM155R71C103KA01%23,C85735,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+R1 R2 R3,3,10k ohm,0402,Yageo,FIT,10k ±1%; 0.063W; I2C and Hall INT pull-ups,RC0402FR-0710KL,https://yageogroup.com/component-documentation/download/specsheet/RC0402FR-0710KL,C60490,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+R4 R5,2,100k ohm,0402,Yageo,FIT,100k ±1%; 0.063W; nRESET and cap GPIO pull-ups,RC0402FR-07100KL,https://yageogroup.com/component-documentation/download/specsheet/RC0402FR-07100KL,C60491,Catalog identity verified; quantity/stock/preorder must be confirmed in quote
+BT1,1,Two-pole spring contact landing,1.8mm PTH pads / 0.6mm drill,PCB copper,BARE PAD,No commercial holder mounted; see contact assembly,,,,Excluded from SMT assembly
+TP_VDD TP_GND TP_SWDIO TP_SWDCLK TP_RESET,5,SWD pogo land,1.2mm diameter underside pad,PCB copper,BARE PAD,GND land has 0.4mm plated drill; remaining four pads undrilled,,,,Excluded from SMT assembly
+BATTERY,1,CR2032 primary lithium cell,20x3.2mm,Battery supplier,MECHANICAL,Positive side toward PCB; replace through underside hatch,,,,Excluded from SMT assembly
+CONTACT_PLUS,1,Formed spring leaf,Prototype 0.15mm phosphor bronze,Custom contact fabrication,MECHANICAL,Approximately 2mm wide; insulate tail; fit preload to 0.3mm upper gap,,,,Excluded from SMT assembly
+CONTACT_MINUS,1,Formed spring leaf,Prototype 0.15mm phosphor bronze,Custom contact fabrication,MECHANICAL,Approximately 3mm wide; fits floor relief; insulate tail at positive can,,,,Excluded from SMT assembly
+CONTACT_LEADS,2,Insulated flexible leads,Outside cell footprint,Prototype assembly,MECHANICAL,Strain relief and hatch service slack required,,,,Excluded from SMT assembly
+ENCODER_MAGNET,1,Diametric neodymium magnet,6x2mm,Magnet supplier,MECHANICAL,Verify diametric magnetization; calibration with final phone and cell,,,,Excluded from SMT assembly
+GPIO_SCL GPIO_SDA GPIO_HALL_INT,3,Signal diagnostic land,0.55mm via land / 0.30mm drill,PCB copper,BARE PAD,Local GPIO escape and fine probe access; no component fitted,,,,Excluded from SMT assembly

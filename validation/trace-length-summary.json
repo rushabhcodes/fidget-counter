@@ -1,32 +1,32 @@
 [
   {
     "target": "net.GND",
-    "routedLengthMm": 255.25,
-    "traceCount": 41
+    "routedLengthMm": 258.97,
+    "traceCount": 45
   },
   {
     "target": "net.VBAT",
-    "routedLengthMm": 93.42,
+    "routedLengthMm": 97.3,
     "traceCount": 16
   },
   {
     "target": "net.SCL",
-    "routedLengthMm": 15.55,
+    "routedLengthMm": 16.64,
     "traceCount": 3
   },
   {
     "target": "net.SDA",
-    "routedLengthMm": 18.99,
+    "routedLengthMm": 20.38,
     "traceCount": 3
   },
   {
     "target": "net.HALL_INT",
-    "routedLengthMm": 18.12,
-    "traceCount": 3
+    "routedLengthMm": 13.73,
+    "traceCount": 2
   },
   {
     "target": "net.SWDIO",
-    "routedLengthMm": 35.63,
+    "routedLengthMm": 39.02,
     "traceCount": 2
   },
   {
@@ -36,12 +36,12 @@
   },
   {
     "target": "net.NRESET",
-    "routedLengthMm": 35.49,
+    "routedLengthMm": 31.81,
     "traceCount": 3
   },
   {
     "target": "net.CAP_PRESS",
-    "routedLengthMm": 8.18,
+    "routedLengthMm": 5.23,
     "traceCount": 3
   },
   {
@@ -61,7 +61,7 @@
   },
   {
     "target": "U1.ANT",
-    "routedLengthMm": 1.36,
+    "routedLengthMm": 1.31,
     "traceCount": 1
   },
   {

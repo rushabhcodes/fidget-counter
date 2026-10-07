@@ -30,7 +30,7 @@
     "warnings": 0
   },
   "routed_trace_count": 87,
-  "via_count": 48,
+  "via_count": 41,
   "analyzed_net_count": 20,
   "crystal_branches": [
     {
@@ -77,27 +77,172 @@
   "routing_difficulty": "advisory congestion estimate; routing completed",
   "warning_counts": {},
   "sha256": {
-    "index.circuit.tsx": "3523b75f523caf3ad4f1175239c1ec427217e8776b3c37cf3d57e31289019f4a",
-    "parts.tsx": "473c537824451331529eae967d807060044cdab77e9b80335b88eb938efe2194",
+    "index.circuit.tsx": "3cf75af3665f0c5eccb6e62a91a37027f59f9628c7365493d9cd2a2bf07edc27",
+    "parts.tsx": "f3a103df32039723077116ab56f415c06bb7d4639a6ef143881631735e6309c9",
+    "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
+    "routed-paths.json": "f999097afe34b11a9230ddd6a16d8abace2c5a81f240560a607fa3fe59fa215a",
     "package.json": "e6b898acccce78afe6bf2f5c2aaf347e43302c00649ccb42a1337da3c34289b2",
     "bun.lock": "fc21739ea7f6809ae40dc7c2595d67a9655456bd9ea5b760f900197830b6936a",
     "tsconfig.json": "3369b71950778d4e33593aee7a0389f2f4162946c3abfd8c1ec7c138c16e8276",
     "tscircuit.config.json": "96817bade27262c7626a6b394bc1745a26045d40ae7bd30fa19c93ac56e5d9d1",
     ".npmrc": "aa5229e8ba9836aaa12b83d0b0ef38c3dea2e432bcbcd6296dfdd6e9c5b75670",
     ".gitignore": "104ef8da35f260a32fc0f6e7417364a80c69521ab1f6c190314eb5cea3f9dfde",
-    "README.md": "a301e8db8ede9a11305843f785535fa26e3c2e47de94ed4db97e4508de928fc3",
+    "README.md": "476cc83ec005069b224c37d6ff99b8aa942bc17af0a8117c174a914cdb0abc65",
     "MECHANICAL.md": "ed3c6d8915c38d6bc54e620f3ea87876745e752b93fe99624d339544aa1ded12",
-    "BOM.csv": "ba9a552231ab648614d1dfe257f5b45608346db2f63ec3d7478343827bd69ddc",
-    "verify.mjs": "644da3716d6c1a56b534d3854eb05d4dd5fe8b72dfb1c071b2a10513ed8f179b",
-    "dist/index/circuit.json": "84f25eaf26d99eaae34a9e9ed1077feb5d7f0d4b69746e8b427bed670f4f273b"
+    "BOM.csv": "59a6a6f5ec4a459fc357b8f4cda2e6a58f5a4d96c6fef952dadbcb66ad8773b4",
+    "verify.mjs": "28c76c33e03968cde83a525fa30c8ce8933fd339a67f93a369eed99bcb8ba8ca",
+    "dist/index/circuit.json": "2664f257910045a47d8b446392ab0b8b0eeee5106a29819695f5bceeef72d2d8"
   },
   "board": {
     "diameter_mm": 36.5,
     "thickness_mm": 1,
     "layers": 2,
     "minimum_trace_width_mm": 0.11,
-    "via_drill_mm": 0.2,
-    "via_land_mm": 0.45
+    "via_drill_mm": 0.3,
+    "via_land_mm": 0.55,
+    "soldermask": "green",
+    "surface_finish_target": "ENIG",
+    "copper_oz": 1
+  },
+  "jlcpcb": {
+    "assembly_target": "Standard, top only",
+    "carrier_panel_required": true,
+    "supplier_quote_complete": false,
+    "supplier_cam_approved": false,
+    "geometry_audit": {
+      "input": "dist/index/circuit.json",
+      "circuitJsonSha256": "2664f257910045a47d8b446392ab0b8b0eeee5106a29819695f5bceeef72d2d8",
+      "copperChecks": [
+        {
+          "check": "different-net copper spacing",
+          "limitMm": 0.1,
+          "minimumMm": 0.103553,
+          "nearest": {
+            "a": "pcb_smtpad_100",
+            "aRef": "C1",
+            "b": "pcb_trace_38:1",
+            "bRef": "RF_FEED",
+            "distanceMm": 0.103553
+          },
+          "violations": []
+        },
+        {
+          "check": "different-net SMT pad spacing",
+          "limitMm": 0.15,
+          "minimumMm": 0.17,
+          "nearest": {
+            "a": "pcb_smtpad_73",
+            "aRef": "U2",
+            "b": "pcb_smtpad_74",
+            "bRef": "U2",
+            "distanceMm": 0.17
+          },
+          "violations": []
+        },
+        {
+          "check": "SMT mask opening to different-net track",
+          "limitMm": 0.09,
+          "minimumMm": 0.103553,
+          "nearest": {
+            "a": "pcb_smtpad_100",
+            "aRef": "C1",
+            "b": "pcb_trace_38:1",
+            "bRef": "RF_FEED",
+            "distanceMm": 0.103553
+          },
+          "violations": []
+        },
+        {
+          "check": "via drill to different-net track",
+          "limitMm": 0.2,
+          "minimumMm": 0.233103,
+          "nearest": {
+            "a": "pcb_via_0",
+            "aRef": "pcb_via",
+            "b": "pcb_trace_34:1",
+            "bRef": "U1_ANT",
+            "distanceMm": 0.233103
+          },
+          "violations": []
+        },
+        {
+          "check": "via drill to via drill",
+          "limitMm": 0.2,
+          "minimumMm": 0.407114,
+          "nearest": {
+            "a": "pcb_plated_hole_1",
+            "aRef": "GPIO_SDA",
+            "b": "pcb_via_2",
+            "bRef": "pcb_via",
+            "distanceMm": 0.407114
+          },
+          "violations": []
+        },
+        {
+          "check": "NPTH drill to copper",
+          "limitMm": 0.2,
+          "minimumMm": 0.389406,
+          "nearest": {
+            "a": "pcb_hole_3",
+            "aRef": "mounting",
+            "b": "pcb_copper_pour_0",
+            "bRef": "GND pour",
+            "distanceMm": 0.389406
+          },
+          "violations": []
+        },
+        {
+          "check": "wire-contact PTH drill to different-net track",
+          "limitMm": 0.28,
+          "minimumMm": 0.572741,
+          "nearest": {
+            "a": "pcb_plated_hole_5",
+            "aRef": "TP_GND",
+            "b": "source_net_5_0:1",
+            "bRef": "trace",
+            "distanceMm": 0.572741
+          },
+          "violations": []
+        }
+      ],
+      "minimumTraceWidthMm": 0.11,
+      "minimumCopperToBoardEdge": {
+        "id": "pcb_copper_pour_0",
+        "ref": "GND pour",
+        "distanceMm": 0.349999
+      },
+      "minimumMountingWebMm": 0.24938257832721972,
+      "drillInventory": {
+        "0.30 mm drill / 0.55 mm land": 44,
+        "3.60 mm NPTH": 4,
+        "0.60 mm drill / 1.80 mm land": 2,
+        "0.40 mm drill / 1.20 mm land": 1
+      },
+      "silkscreenTextBelow1mm": []
+    },
+    "gerber_audit": {
+      "circuitJsonSha256": "2664f257910045a47d8b446392ab0b8b0eeee5106a29819695f5bceeef72d2d8",
+      "gerberZipSha256": "0f3c73c47b90a89fe631babe0903d3a36f15e2f52c1cd35fef8e6bd9e61efd6d",
+      "sensorMaskBridgeMm": 0.12,
+      "minimumGreenMaskBridgeMm": 0.1,
+      "silkscreen": {
+        "top": {
+          "minimumDrawStrokeMm": 0.15,
+          "minimumMaskClearanceMm": 0.24627682310676668,
+          "violations": []
+        },
+        "bottom": {
+          "minimumDrawStrokeMm": 0.153,
+          "minimumMaskClearanceMm": 0.16075994473429708,
+          "violations": []
+        }
+      },
+      "boardAreaMm2": 1045.9265459632427,
+      "drillCount": 51,
+      "drillDensityPerSquareMetre": 48760.59432360206,
+      "exposedEnigAreaUpperBoundPercentOfSingleBoardArea": 15.57776431675546,
+      "panelToolingAndTabsExcludedFromDensity": true
+    }
   },
   "physical_prototype_tested": false,
   "fitted_component_count": 29,
@@ -115,5 +260,5 @@
     "drill-L1-L2.drl",
     "drill_npth.drl"
   ],
-  "prototype_gerber_zip_sha256": "3c87204393b9043b208cc40e9c783ea426aaf8febb2f97fb340838edf0522005"
+  "prototype_gerber_zip_sha256": "0f3c73c47b90a89fe631babe0903d3a36f15e2f52c1cd35fef8e6bd9e61efd6d"
 }
