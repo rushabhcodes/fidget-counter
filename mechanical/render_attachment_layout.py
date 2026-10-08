@@ -52,6 +52,5 @@ fig.text(.035,.075,f"Minimum web {layout['minimum_pocket_web_mm']:.3f} mm · use
 fig.text(.035,.035,'Check axial polarity and phone attraction before gluing. Holding force and Hall bias require a prototype test.',fontsize=9,color='#526a78')
 args.output.parent.mkdir(parents=True,exist_ok=True)
 fig.savefig(args.output,dpi=160)
-fig.savefig(args.output.with_suffix('.svg'))
 plt.close(fig)
 print(args.output)
