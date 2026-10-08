@@ -40,10 +40,19 @@
     "petg_modulus_estimate_mpa": 1800.0,
     "magnet_region_inner_diameter": 46.0,
     "magnet_region_outer_diameter": 54.1,
-    "attachment_magnet_thickness": 1.1,
+    "attachment_magnet_thickness": 1.5,
     "attachment_gap_degrees": 20.0,
     "attachment_pocket_clearance": 0.25,
-    "attachment_mode": "envelope",
+    "attachment_mode": "disc_array",
+    "attachment_disc_diameter": 5.0,
+    "attachment_disc_count": 24,
+    "attachment_disc_pitch_diameter": 49.25,
+    "attachment_disc_phase_degrees": 7.5,
+    "attachment_disc_pocket_diameter_clearance": 0.25,
+    "attachment_tray_outer_radius": 28.05,
+    "attachment_tray_radial_clearance": 0.15,
+    "attachment_required_magnetization": "axial",
+    "attachment_magnetization_verified": false,
     "vendor_sectors": [],
     "shield_thickness": 0.7,
     "bottom_skin_thickness": 0.6,
@@ -96,7 +105,7 @@
       "print": true,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 4867.961,
+      "volume_mm3": 4218.468,
       "size_mm": [
         58.0,
         58.0,
@@ -248,12 +257,12 @@
       "name": "MagSafe_Magnet_Array",
       "print": false,
       "cad_valid": true,
-      "solids": 1,
-      "volume_mm3": 661.573,
+      "solids": 24,
+      "volume_mm3": 706.858,
       "size_mm": [
-        53.695,
-        54.102,
-        1.106
+        53.829,
+        53.829,
+        1.501
       ],
       "color": [
         0.24,
@@ -266,10 +275,10 @@
       "print": false,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 400.211,
+      "volume_mm3": 563.193,
       "size_mm": [
-        53.497,
-        53.902,
+        54.456,
+        54.45,
         0.706
       ],
       "color": [
@@ -283,11 +292,11 @@
       "print": true,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 1289.605,
+      "volume_mm3": 2168.191,
       "size_mm": [
         58.0,
         58.0,
-        0.6
+        2.15
       ],
       "color": [
         0.46,
@@ -359,7 +368,7 @@
     "pressed_force_n": 1.335,
     "surface_strain_estimate": 0.00704
   },
-  "magnet_layout_status": "Envelope only; no material, polarity, segment count or attachment compliance validated",
+  "magnet_layout_status": "Disc-array mechanical prototype; ordered magnetization, holding force, Hall bias and MagSafe compatibility unverified",
   "encoder_magnet_status": {
     "diameter_mm": 5.0,
     "thickness_mm": 1.5,
@@ -370,5 +379,175 @@
   "contact_hardware_status": "JLCPCB C964787 BS-08-B2AA020-R fitted below PCB; manufacturer 5.8 mm maximum height used for clearance",
   "holder_conservative_bottom_clearance_mm": 0.5,
   "battery_positive_face": "toward removable bottom hatch",
-  "holder_contact_model_note": "Library contacts are undeformed. Battery/holder overlap is reported separately as a contact-fit estimate, not certified retention or spring-force validation."
+  "holder_contact_model_note": "Library contacts are undeformed. Battery/holder overlap is reported separately as a contact-fit estimate, not certified retention or spring-force validation.",
+  "attachment_disc_array": {
+    "count": 24,
+    "diameter_mm": 5.0,
+    "thickness_mm": 1.5,
+    "pitch_circle_diameter_mm": 49.25,
+    "pocket_diameter_mm": 5.25,
+    "pocket_depth_mm": 1.55,
+    "adhesive_allowance_mm": 0.05,
+    "minimum_pocket_web_mm": 1.1784149668375399,
+    "inner_wall_mm": 1.0,
+    "outer_wall_mm": 0.8000000000000007,
+    "housing_outer_rim_mm": 0.7999999999999993,
+    "tray_outer_diameter_mm": 56.1,
+    "tray_radial_clearance_mm": 0.15,
+    "floor_thickness_mm": 0.6,
+    "magnet_bottom_z_mm": 0.8500000000000001,
+    "magnet_top_z_mm": 2.35,
+    "shield_inner_diameter_mm": 44.05,
+    "shield_outer_diameter_mm": 54.45,
+    "shield_bottom_z_mm": 2.4,
+    "shield_top_z_mm": 3.0999999999999996,
+    "flange_top_z_mm": 3.8999999999999995,
+    "centers_mm": [
+      {
+        "index": 1,
+        "angle_degrees": 7.5,
+        "x": 24.41432971133008,
+        "y": 3.21420748341877
+      },
+      {
+        "index": 2,
+        "angle_degrees": 22.5,
+        "x": 22.750533488090436,
+        "y": 9.423579521990336
+      },
+      {
+        "index": 3,
+        "angle_degrees": 37.5,
+        "x": 19.536326004671665,
+        "y": 14.990750189339746
+      },
+      {
+        "index": 4,
+        "angle_degrees": 52.5,
+        "x": 14.990750189339746,
+        "y": 19.536326004671665
+      },
+      {
+        "index": 5,
+        "angle_degrees": 67.5,
+        "x": 9.423579521990337,
+        "y": 22.750533488090436
+      },
+      {
+        "index": 6,
+        "angle_degrees": 82.5,
+        "x": 3.2142074834187735,
+        "y": 24.41432971133008
+      },
+      {
+        "index": 7,
+        "angle_degrees": 97.5,
+        "x": -3.214207483418771,
+        "y": 24.41432971133008
+      },
+      {
+        "index": 8,
+        "angle_degrees": 112.5,
+        "x": -9.423579521990334,
+        "y": 22.750533488090436
+      },
+      {
+        "index": 9,
+        "angle_degrees": 127.5,
+        "x": -14.990750189339746,
+        "y": 19.536326004671665
+      },
+      {
+        "index": 10,
+        "angle_degrees": 142.5,
+        "x": -19.536326004671665,
+        "y": 14.990750189339751
+      },
+      {
+        "index": 11,
+        "angle_degrees": 157.5,
+        "x": -22.750533488090436,
+        "y": 9.423579521990339
+      },
+      {
+        "index": 12,
+        "angle_degrees": 172.5,
+        "x": -24.41432971133008,
+        "y": 3.21420748341877
+      },
+      {
+        "index": 13,
+        "angle_degrees": 187.5,
+        "x": -24.414329711330083,
+        "y": -3.2142074834187637
+      },
+      {
+        "index": 14,
+        "angle_degrees": 202.5,
+        "x": -22.75053348809044,
+        "y": -9.423579521990334
+      },
+      {
+        "index": 15,
+        "angle_degrees": 217.5,
+        "x": -19.536326004671665,
+        "y": -14.990750189339746
+      },
+      {
+        "index": 16,
+        "angle_degrees": 232.5,
+        "x": -14.990750189339751,
+        "y": -19.53632600467166
+      },
+      {
+        "index": 17,
+        "angle_degrees": 247.5,
+        "x": -9.423579521990328,
+        "y": -22.75053348809044
+      },
+      {
+        "index": 18,
+        "angle_degrees": 262.5,
+        "x": -3.2142074834187713,
+        "y": -24.41432971133008
+      },
+      {
+        "index": 19,
+        "angle_degrees": 277.5,
+        "x": 3.2142074834187624,
+        "y": -24.414329711330083
+      },
+      {
+        "index": 20,
+        "angle_degrees": 292.5,
+        "x": 9.42357952199034,
+        "y": -22.750533488090433
+      },
+      {
+        "index": 21,
+        "angle_degrees": 307.5,
+        "x": 14.990750189339744,
+        "y": -19.536326004671665
+      },
+      {
+        "index": 22,
+        "angle_degrees": 322.5,
+        "x": 19.53632600467166,
+        "y": -14.990750189339751
+      },
+      {
+        "index": 23,
+        "angle_degrees": 337.5,
+        "x": 22.75053348809044,
+        "y": -9.42357952199033
+      },
+      {
+        "index": 24,
+        "angle_degrees": 352.5,
+        "x": 24.41432971133008,
+        "y": -3.2142074834187726
+      }
+    ],
+    "installation": "Insert backing ring in housing recess; orient and glue discs into inside-face cover pockets; bond cover after fit testing."
+  }
 }

@@ -1,8 +1,8 @@
 $ bun verify.mjs
 Pass: typecheck
 Pass: netlist
-Pass: source
 Pass: pin_specification
+Pass: source
 Pass: schematic-placement
 Pass: placement
 Pass: routing-difficulty

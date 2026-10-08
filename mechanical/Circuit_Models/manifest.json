@@ -44,10 +44,19 @@
     "petg_modulus_estimate_mpa": 1800.0,
     "magnet_region_inner_diameter": 46.0,
     "magnet_region_outer_diameter": 54.1,
-    "attachment_magnet_thickness": 1.1,
+    "attachment_magnet_thickness": 1.5,
     "attachment_gap_degrees": 20.0,
     "attachment_pocket_clearance": 0.25,
-    "attachment_mode": "envelope",
+    "attachment_mode": "disc_array",
+    "attachment_disc_diameter": 5.0,
+    "attachment_disc_count": 24,
+    "attachment_disc_pitch_diameter": 49.25,
+    "attachment_disc_phase_degrees": 7.5,
+    "attachment_disc_pocket_diameter_clearance": 0.25,
+    "attachment_tray_outer_radius": 28.05,
+    "attachment_tray_radial_clearance": 0.15,
+    "attachment_required_magnetization": "axial",
+    "attachment_magnetization_verified": false,
     "vendor_sectors": [],
     "shield_thickness": 0.7,
     "bottom_skin_thickness": 0.6,
@@ -121,13 +130,13 @@
     },
     {
       "name": "Stationary_Housing",
-      "vertices": 16990,
-      "triangles": 16924,
+      "vertices": 18318,
+      "triangles": 18252,
       "boundsMm": [
         [
           -29.0,
           -28.994267563331903,
-          0.7999999999999998
+          0.7999999999999999
         ],
         [
           29.0,
@@ -137,7 +146,7 @@
       ],
       "translucent": true,
       "sha256": {
-        "Stationary_Housing.obj": "759322c81a1568831b57a95f905ef398c8b140d255cecb4f0d4c06db8a26ad26",
+        "Stationary_Housing.obj": "cab81338ba8a79b35856a36af033f1878a1cdbd3376336564c173ca4b1c218e8",
         "Stationary_Housing.mtl": "1ab6c1fd3c7f6a80f167617da726b3aeefcff50dac043057f4ce959b83f1b86f"
       }
     },
@@ -209,52 +218,52 @@
     },
     {
       "name": "MagSafe_Magnet_Array",
-      "vertices": 1600,
-      "triangles": 1588,
+      "vertices": 20208,
+      "triangles": 20064,
       "boundsMm": [
         [
-          -27.050000000000004,
-          -27.04794026101936,
+          -26.914329711330083,
+          -26.914049965855767,
           0.8500000000000001
         ],
         [
-          26.639049718980228,
-          27.047940261019356,
-          1.9500000000000002
+          26.91432971133008,
+          26.914049965855764,
+          2.35
         ]
       ],
       "translucent": false,
       "sha256": {
-        "MagSafe_Magnet_Array.obj": "1670f76dbfbbce23d5dc8856561a57576f03d5476fbc42680f48bcc622f468dd",
+        "MagSafe_Magnet_Array.obj": "edc0dfa9af4dc4146971c0611d74a07fcab9d9f4853d4f08930138c0d0ace89d",
         "MagSafe_Magnet_Array.mtl": "9021f205c6d1171d31e7dbecab20ad05551b6d55202e9b714546109fc33cc681"
       }
     },
     {
       "name": "Magnetic_Shield",
-      "vertices": 1600,
-      "triangles": 1588,
+      "vertices": 1684,
+      "triangles": 1680,
       "boundsMm": [
         [
-          -26.95,
-          -26.947947875581207,
-          2.0
+          -27.225,
+          -27.221953571784695,
+          2.4
         ],
         [
-          26.540568943679006,
-          26.947947875581203,
-          2.7
+          27.225,
+          27.221953571784695,
+          3.0999999999999996
         ]
       ],
       "translucent": false,
       "sha256": {
-        "Magnetic_Shield.obj": "59bc1c358f51e93a19485e043179d14d583ce5d55b596c810b218a1f2025e4b5",
+        "Magnetic_Shield.obj": "43ae2e8f8435af9c390c7e9f7ff34550ce2f8542ca63fa5c90ffd75711436509",
         "Magnetic_Shield.mtl": "cb1454e8c65981ee284156ab489cd3601f8cb129b9f172e54ee8b19212e3665b"
       }
     },
     {
       "name": "Bottom_Cover",
-      "vertices": 1970,
-      "triangles": 1960,
+      "vertices": 18454,
+      "triangles": 18392,
       "boundsMm": [
         [
           -29.0,
@@ -264,12 +273,12 @@
         [
           29.0,
           28.994267563331903,
-          0.8
+          2.35
         ]
       ],
       "translucent": true,
       "sha256": {
-        "Bottom_Cover.obj": "8992a98a749be39fcb7ccf80f2b8eaeeecf80626efe6612eaeb9f6e330c304fd",
+        "Bottom_Cover.obj": "0e7f1acfe63932dea89d8ef657f2264fe997a7cfbcf23b3af8dc4935b351eae9",
         "Bottom_Cover.mtl": "37188f5db3224a11e6a34104b0f311be0c2777cdd7888bbc7ca9ff8e9cb4b64d"
       }
     },
@@ -335,7 +344,7 @@
       ],
       "translucent": false,
       "sha256": {
-        "Phone_Pad.obj": "b1898d84661265883afeaa18c4f3ebec390466ccbf4a64a55867b184c90833de",
+        "Phone_Pad.obj": "af5bab438049c31ce2214354e239a097323dd372f368f16103771bca08223ff3",
         "Phone_Pad.mtl": "f25957e8a22ebd5053f82d9bfbbc65188dd88b327026a448e9531b52f6ecd1e5"
       }
     },

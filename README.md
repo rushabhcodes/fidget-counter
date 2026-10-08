@@ -1,10 +1,12 @@
 # MagSafe BLE Fidget Counter — PCB Rev A
 
-> **Current revision 1.0.4: enclosure integrated in the circuit assembly, imported CR2032 holder, 0.30 mm via drill / 0.55 mm via land, green mask, double-sided Standard PCBA and ENIG.** TMAG3001A2YBGR is retained. This is a checked prototype ready for supplier quotation/CAM review; the assembly order has not been released.
+> **Current revision 1.0.5: 24 pockets for Ø5 × 1.5 mm bottom attachment magnets, enclosure integrated in the circuit assembly, imported CR2032 holder, 0.30 mm via drill / 0.55 mm via land, green mask, double-sided Standard PCBA and ENIG.** TMAG3001A2YBGR is retained. This is a checked prototype ready for supplier quotation/CAM review; the assembly order has not been released.
 
 The default registry entrypoint is `published.circuit.json`, the exact validated routed board and enclosure assembly. `bun run build` renders that saved board; `bun run build:source` rebuilds the editable TSX using the prescribed routing. `bun run check:all` rebuilds and validates the editable TSX, including routing and exported copper. The published circuit is refreshed from that checked build.
 
 ![Imported holder and revised enclosure](previews/battery-holder.png)
+
+![Bottom cover magnet pockets](previews/magnet-tray.png)
 
 ![Validated routed PCB](previews/pcb-top.png)
 
@@ -107,7 +109,7 @@ Run `bun run export:gerbers` after `bun run check:all` to produce the fabricatio
 
 `index.circuit.tsx` wraps the board in `<assembly.device>` and adds `EnclosureAssembly` from `enclosure.tsx`. Its 14 named `<assembly.cadassembly>` elements load the existing enclosure geometry alongside the actual populated PCB. There are no duplicate electronics or holder dummies. The four outer shells are translucent to expose the interior; STL/STEP solids retain their original geometry.
 
-The models use millimetres and Z-up assembly coordinates. Their offset is Z = −7.6 mm because tscircuit places the PCB midplane at Z = 0. This preserves the released cap, holder, cell and hatch stack. The central encoder uses the user-specified diametrically magnetized neodymium Ø5 × 1.5 mm disc, a Ø5.2 mm pocket and a 0.2 mm roof shim. Its nominal released/pressed sensor gaps remain 1.8/1.3 mm; magnet grade and field calibration are unverified. `mechanical/Circuit_Models/manifest.json` records model bounds and hashes. The MagSafe ring is still a reserved envelope pending a supplier magnet design.
+The models use millimetres and Z-up assembly coordinates. Their offset is Z = −7.6 mm because tscircuit places the PCB midplane at Z = 0. This preserves the released cap, holder, cell and hatch stack. The central encoder uses the user-specified diametrically magnetized neodymium Ø5 × 1.5 mm disc, a Ø5.2 mm pocket and a 0.2 mm roof shim. Its nominal released/pressed sensor gaps remain 1.8/1.3 mm; magnet grade and field calibration are unverified. `mechanical/Circuit_Models/manifest.json` records model bounds and hashes. The bottom cover now locates 24 separate Ø5 × 1.5 mm discs on a Ø49.25 mm pitch circle. Its inside-face pockets are Ø5.25 × 1.55 mm, including 0.05 mm adhesive allowance. The housing accepts the thicker cover tray and a Ø44.05 / Ø54.45 × 0.7 mm steel backing ring; overall enclosure height remains 14 mm. Use this revision's housing and bottom cover together. See `MECHANICAL.md` for loading order and polarity checks; holding force, ordered magnetization and phone compatibility are unverified.
 
 The CadQuery builder also writes `Circuit_Models/` into its output directory. After revising the CAD, copy those generated assets into `mechanical/Circuit_Models/`, rebuild the source, then run `bun run check:enclosure` to verify model alignment and unchanged electrical geometry. The downloadable GLB is compacted for the registry upload limit. It preserves every position, triangle index, node transform, electronic model and board texture byte-for-byte; viewers derive flat normals for the untextured enclosure models. Repeat this export step after a source build:
 

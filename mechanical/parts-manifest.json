@@ -38,7 +38,7 @@
     "print": true,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 4867.961,
+    "volume_mm3": 4218.468,
     "size_mm": [
       58.0,
       58.0,
@@ -190,12 +190,12 @@
     "name": "MagSafe_Magnet_Array",
     "print": false,
     "cad_valid": true,
-    "solids": 1,
-    "volume_mm3": 661.573,
+    "solids": 24,
+    "volume_mm3": 706.858,
     "size_mm": [
-      53.695,
-      54.102,
-      1.106
+      53.829,
+      53.829,
+      1.501
     ],
     "color": [
       0.24,
@@ -208,10 +208,10 @@
     "print": false,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 400.211,
+    "volume_mm3": 563.193,
     "size_mm": [
-      53.497,
-      53.902,
+      54.456,
+      54.45,
       0.706
     ],
     "color": [
@@ -225,11 +225,11 @@
     "print": true,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 1289.605,
+    "volume_mm3": 2168.191,
     "size_mm": [
       58.0,
       58.0,
-      0.6
+      2.15
     ],
     "color": [
       0.46,

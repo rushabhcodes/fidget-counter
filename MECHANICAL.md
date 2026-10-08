@@ -1,4 +1,4 @@
-# PCB / enclosure interface — holder revision 1.0.3
+# PCB / enclosure interface — disc magnet revision 1.0.5
 
 Coordinates are millimetres in a top view, relative to the rotation axis. The board is Ø36.5 × 1.0 mm, with four Ø3.6 mm nonplated mounting holes at (±11.45513, ±11.45513). Their thin 0.25 mm nominal edge web still requires fabricator acceptance. Printed shoulders and bushings support the board.
 
@@ -26,6 +26,16 @@ TP_GND has a 0.4 mm plated drill; the remaining four 1.2 mm pogo pads are undril
 
 The antenna keepout is X=-3.5…3.5, Y=13.6…18.0 on both layers. Keep metal and attachment parts away from this volume where practical. The phone, cell and attachment magnets still affect RF and Hall readings.
 
+## Bottom disc magnet tray
+
+The ordered Ø5 × 1.5 mm discs replace the reserved segmented-ring magnet envelope. **24 inside-face pockets** in `Bottom_Cover` sit on a Ø49.25 mm pitch circle, spaced 15° apart with the first center at 7.5°. Each pocket is **Ø5.25 mm, 1.55 mm deep**: 1.5 mm magnet plus 0.05 mm nominal adhesive thickness. Diametral clearance is 0.25 mm. Adjacent pockets have 1.178 mm nominal plastic web, with 1.000 mm inner and 0.800 mm outer tray walls; a 0.800 mm continuous housing rim supports the flange above. The phone-facing skin remains 0.6 mm, plus the separate 0.2 mm protective pad. Print a fit coupon or test one pocket before committing the magnets; printer and magnet tolerances may need adjustment.
+
+The pocket walls are a raised tray integral with the bottom cover. The stationary housing has clearance for that tray and an upper recess for a continuous **steel backing ring, ID44.05 × OD54.45 × 0.7 mm**. This is a separate metal reference part, not a printed magnet or a verified magnetic shield. Both it and the discs load from below while the cover is off. A backing ring cannot pass through individual Ø5.25 mm holes, which is why the locating pockets are in the separate cover rather than trapped under a housing roof.
+
+Insert the backing ring into the housing recess first. Check the ordered magnets' axial polarity and attraction against the intended phone or case before gluing. Fit 24 discs into the cover pockets with a thin adhesive layer beneath each disc. Their upper faces sit flush with the tray at Z=2.35 mm, and the backing ring starts at Z=2.40 mm. Dry-fit the loaded cover, then bond it to the housing's mating faces; do not bond across the battery-hatch seam. The battery remains independently accessible through its two-screw hatch. Use the **new housing and bottom cover together**; the old 1.1 mm ring cavity is incompatible with this tray. The cap, PCB, battery holder, hatch and flexure retain their prior geometry and height.
+
+The custom disc layout is a mechanical prototype, not a MagSafe-qualified array. The purchased part's magnetization direction has not been confirmed. Polarity distribution, holding/sliding/rotation force, sensor offset/saturation and BLE performance require tests with the actual assembled phone. Do not assume that a uniform axial-disc circle reproduces Apple's prescribed ring polarity. The central encoder magnet remains diametrically magnetized and separate from these attachment magnets.
+
 ## Editable enclosure and supplied parts
 
 `build_enclosure.py` and `enclosure-parameters.json` regenerate the assembly with CadQuery ≥2.6. Run from the project root:
@@ -36,6 +46,6 @@ python mechanical/build_enclosure.py --out work/enclosure
 
 `Print_STL/` contains all five parts in print orientation: Rotating_Cap, Stationary_Housing, Flexure_Retention_System, Battery_Hatch and Bottom_Cover. Corresponding editable solids are in `STEP_Parts/`. Use the complete revised set; the previous 12.2 mm enclosure and cap are incompatible with this holder stack.
 
-Released, pressed, exploded and battery-open assemblies are included in the downloadable mechanical handoff. Electronics other than the holder are board/key-package bounding references; the circuit now combines the actual populated PCB with the released enclosure in `previews/3d.glb`. Its 14 assembly models exclude these electronic bounding dummies and the duplicate holder. `previews/pcb-3d.glb` retains the bare board view. The four outer shells are translucent in the circuit viewer. The builder also exports aligned OBJ/MTL files in `Circuit_Models/`; copy these into `mechanical/Circuit_Models/` after a CAD revision. The attachment magnet array remains a reserved envelope, and the flexure calculation is an approximate cantilever estimate rather than FEA or a measured return force.
+Released, pressed, exploded and battery-open assemblies are included in the downloadable mechanical handoff. Electronics other than the holder are board/key-package bounding references; the circuit now combines the actual populated PCB with the released enclosure in `previews/3d.glb`. Its 14 assembly models exclude these electronic bounding dummies and the duplicate holder. `previews/pcb-3d.glb` retains the bare board view. The four outer shells are translucent in the circuit viewer. The builder also exports aligned OBJ/MTL files in `Circuit_Models/`; copy these into `mechanical/Circuit_Models/` after a CAD revision. Attachment discs now match the ordered dimensions; magnetic performance is untested. The flexure calculation is an approximate cantilever estimate rather than FEA or a measured return force.
 
 Sources: [MYOUNG holder drawing](https://xonstorage.z8.web.core.windows.net/pdf/myoung_bs08b2aa020_apr22_xonlink.pdf), [JLCPCB holder listing](https://jlcpcb.com/partdetail/MYOUNG-BS_08_B2AA020R/C964787), [C&K KMR2 drawing](https://www.ckswitches.com/media/1479/kmr2.pdf).

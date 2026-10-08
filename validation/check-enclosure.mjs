@@ -6,6 +6,21 @@ const hash = bytes => createHash("sha256").update(bytes).digest("hex")
 const manifest = JSON.parse(readFileSync("mechanical/Circuit_Models/manifest.json"))
 assert.deepEqual(manifest.sourceParameters,JSON.parse(readFileSync("mechanical/enclosure-parameters.json")),
   "Enclosure mesh assets are stale; regenerate from the current CAD parameters")
+const geometry = JSON.parse(readFileSync("mechanical/enclosure-validation.json"))
+assert.deepEqual(geometry.parameters_mm,manifest.sourceParameters,"Stale enclosure geometry audit")
+assert.equal(geometry.collision_audit.length,0,"Unintended mechanical collision remains")
+assert(geometry.manifest.every(part => part.cad_valid),"Invalid enclosure solid remains")
+if (manifest.sourceParameters.attachment_mode === "disc_array") {
+  const layout = geometry.attachment_disc_array
+  assert.equal(layout.count,manifest.sourceParameters.attachment_disc_count)
+  assert.equal(layout.centers_mm.length,layout.count)
+  assert.equal(layout.diameter_mm,manifest.sourceParameters.attachment_disc_diameter)
+  assert.equal(layout.thickness_mm,manifest.sourceParameters.attachment_magnet_thickness)
+  assert(layout.minimum_pocket_web_mm >= 1 && layout.inner_wall_mm >= 1)
+  assert(layout.outer_wall_mm >= 0.8-1e-6 && layout.housing_outer_rim_mm >= 0.8-1e-6)
+  assert(layout.floor_thickness_mm >= 0.6)
+  assert(Math.abs(layout.pocket_depth_mm-layout.thickness_mm-layout.adhesive_allowance_mm)<1e-6)
+}
 const circuitBytes = readFileSync("dist/index/circuit.json")
 const circuit = JSON.parse(circuitBytes)
 const sources = circuit.filter(e => e.type === "source_component" && e.name?.startsWith("ENCLOSURE_"))

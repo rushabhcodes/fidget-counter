@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-08",
-  "version": "1.0.5",
+  "date": "2026-10-07",
+  "version": "1.0.4",
   "tscircuit": "0.0.2748",
   "cli": "0.1.2253",
   "checks": {
-    "checkedAt": "2026-10-08T12:17:26.711Z",
+    "checkedAt": "2026-10-07T14:54:58.368Z",
     "checks": [
       "netlist",
       "pin_specification",
@@ -64,22 +64,22 @@
     ],
     "sha256": {
       "index.circuit.tsx": "054a8c548b1a393e66a67450e56a90312112adce681a1ee757d7915ba8242781",
-      "enclosure.tsx": "226604888149eddb1dae410c41948b213537bfc5b77c312fe19f289a1c24eef0",
+      "enclosure.tsx": "f7ac2a1c8f5f2636555f22bdb70aa077d727a9862ed8488f52218bab7904ac11",
       "parts.tsx": "47b85463e132fcc855a49d5c741ccd6e97a0e3e7af9b4a0375d8015f7091dc9f",
       "passives.tsx": "3f2cdbf1cbff6cecd49da9cc3823255437d5a14cd1b8e2b1d41b7044d57d2a5f",
       "model-assets.d.ts": "9456883f24ccb7aabd3a84f094f1b87c32756018db28ae45bc2eec59d96fea72",
       "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
       "routed-paths.json": "2989ec13f4d56ace059bce086b4712ea429f3a001d0705f82393ccab56a3c1ca",
-      "published.circuit.json": "850240c0a24dad6c883232d210860867111de9088b6d7a1b0fc64fe1ae386fec",
-      "package.json": "70602e6236bb8e826f2923f07a80c94456c4060fe0d3abf2fa2e2c52b4138e33",
+      "published.circuit.json": "c67d636591ab784d55c5548705bb11b0c983228a6dcb18e103f7d5f28adc5999",
+      "package.json": "699294edb5d280249e55b665b910c6ef8eeed9b8a605b5805fca4a173981f74f",
       "verify.mjs": "b67d00f0cad733ba73514f6ecddd07273b05801d5ca842b757ed3a0099f08d9a",
       "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
       "export-gerbers.mjs": "449fb40fdae108c9025ac9df21eea2669cb0cbb451fd642337dd72f091652008",
-      "validation/check-enclosure.mjs": "e8a03100701c8e3bb27cc2c67941f90a9d9dc71a92f5a5e27dbcb856f4f24fdf",
-      "mechanical/Circuit_Models/manifest.json": "65b1bdfd39c8adb8eaa17f261f5dd510fccc984c036e08c0d8f026e0d07b63ea",
-      "dist/index/circuit.json": "850240c0a24dad6c883232d210860867111de9088b6d7a1b0fc64fe1ae386fec"
+      "validation/check-enclosure.mjs": "cec4defd34101a96ed5571de88fa35a230ea5b19766c63cd123db79f45796290",
+      "mechanical/Circuit_Models/manifest.json": "69e5025f118fc36f307686d58bc1a6382c2d6bcd1a820fa9b1d1e8f55d1406cd",
+      "dist/index/circuit.json": "c67d636591ab784d55c5548705bb11b0c983228a6dcb18e103f7d5f28adc5999"
     },
-    "savedCircuitMatchesCheckedSource": true
+    "savedCircuitBuildVerified": true
   },
   "jlcpcbGeometry": {
     "input": "published.circuit.json",
@@ -224,8 +224,8 @@
     "exactJlcpcbParts": 29,
     "sharedGeometrySwitch": "KMR223NG ULC LFG uses the KMR232NGULCLFS package model; original 2 N MPN retained",
     "builtGlbMeshCount": 33,
-    "circuitSha256": "850240c0a24dad6c883232d210860867111de9088b6d7a1b0fc64fe1ae386fec",
-    "glbSha256": "0dde2f3bed9b4e51f18bf6141cdbb03ab0d72190d9b0cc0ff6cd09b6ac0ee0d0"
+    "circuitSha256": "c67d636591ab784d55c5548705bb11b0c983228a6dcb18e103f7d5f28adc5999",
+    "glbSha256": "f9067c0f17f751215bffa8de16262e811949111d157d43a2df792b186da7a111"
   },
   "batteryHolder": {
     "mpn": "BS-08-B2AA020-R",
@@ -250,8 +250,8 @@
     "electricalBaselineVersion": "1.0.3",
     "electricalRecordsUnchanged": true,
     "electricalRecordsSha256": "2f61bd60f92435a4ff0948e47598774b3395add7e045356aa0880ad5f3d10843",
-    "circuitSha256": "850240c0a24dad6c883232d210860867111de9088b6d7a1b0fc64fe1ae386fec",
-    "glbSha256": "0dde2f3bed9b4e51f18bf6141cdbb03ab0d72190d9b0cc0ff6cd09b6ac0ee0d0",
+    "circuitSha256": "c67d636591ab784d55c5548705bb11b0c983228a6dcb18e103f7d5f28adc5999",
+    "glbSha256": "f9067c0f17f751215bffa8de16262e811949111d157d43a2df792b186da7a111",
     "mechanicalModels": 14,
     "pcbMidplaneOffsetMm": -7.6,
     "models": [
@@ -361,34 +361,34 @@
         "name": "ENCLOSURE_MagSafe_Magnet_Array",
         "worldBoundsGltfMm": [
           [
-            -26.9143297,
+            -26.6390497,
             -6.75,
-            -26.91405
+            -27.0479403
           ],
           [
-            26.9143297,
-            -5.25,
-            26.91405
+            27.05,
+            -5.6499999999999995,
+            27.0479403
           ]
         ],
-        "maximumBoundsErrorMm": 3.414423588310456e-08,
+        "maximumBoundsErrorMm": 3.8980644490038685e-08,
         "translucent": false
       },
       {
         "name": "ENCLOSURE_Magnetic_Shield",
         "worldBoundsGltfMm": [
           [
-            -27.225,
-            -5.199999999999999,
-            -27.2219536
+            -26.5405689,
+            -5.6,
+            -26.9479479
           ],
           [
-            27.225,
-            -4.5,
-            27.2219536
+            26.95,
+            -4.8999999999999995,
+            26.9479479
           ]
         ],
-        "maximumBoundsErrorMm": 2.8215303871093056e-08,
+        "maximumBoundsErrorMm": 4.367900530155566e-08,
         "translucent": false
       },
       {
@@ -401,7 +401,7 @@
           ],
           [
             29,
-            -5.25,
+            -6.8,
             28.9942676
           ]
         ],
@@ -495,10 +495,10 @@
       }
     ],
     "sourceSha256": {
-      "enclosure.tsx": "226604888149eddb1dae410c41948b213537bfc5b77c312fe19f289a1c24eef0",
+      "enclosure.tsx": "f7ac2a1c8f5f2636555f22bdb70aa077d727a9862ed8488f52218bab7904ac11",
       "mechanical/export_circuit_models.py": "78c263febfca967d0af62269f91cdd043caff4cfa1648395302574a7a28075bb",
-      "mechanical/build_enclosure.py": "79b1a78b2ca16b730877b8caa934fab494d90c87da44a412c1008b0094bada96",
-      "mechanical/Circuit_Models/manifest.json": "65b1bdfd39c8adb8eaa17f261f5dd510fccc984c036e08c0d8f026e0d07b63ea"
+      "mechanical/build_enclosure.py": "fcea9688a7b2e53328395393cde5767a1ec901b353ab6651107def9ec02c130d",
+      "mechanical/Circuit_Models/manifest.json": "69e5025f118fc36f307686d58bc1a6382c2d6bcd1a820fa9b1d1e8f55d1406cd"
     }
   },
   "encoderMagnet": {
@@ -510,185 +510,14 @@
   "downloadableGlb": {
     "source": "dist/index/3d.glb",
     "output": "previews/3d.glb",
-    "sourceBytes": 17298444,
-    "outputBytes": 10834776,
-    "sourceSha256": "0dde2f3bed9b4e51f18bf6141cdbb03ab0d72190d9b0cc0ff6cd09b6ac0ee0d0",
-    "outputSha256": "0c59e4107cb556437a339495440a9430489a624ff15b893799eba96be57012dd",
+    "sourceBytes": 13593000,
+    "outputBytes": 9308976,
+    "sourceSha256": "f9067c0f17f751215bffa8de16262e811949111d157d43a2df792b186da7a111",
+    "outputSha256": "8e103f802bbf1f774b8533564602b61ecd5b084bde79d31faeab2ed5fe89df66",
     "meshCount": 33,
     "removedOptionalAttributeArrays": 28,
     "retainedBufferViewsByteIdentical": true,
     "positionsIndicesAndNodeTransformsUnchanged": true,
     "normals": "Face normals are derived by the viewer for untextured mechanical models. Electronic model normals and board textures are retained."
-  },
-  "attachmentDiscArray": {
-    "count": 24,
-    "diameter_mm": 5.0,
-    "thickness_mm": 1.5,
-    "pitch_circle_diameter_mm": 49.25,
-    "pocket_diameter_mm": 5.25,
-    "pocket_depth_mm": 1.55,
-    "adhesive_allowance_mm": 0.05,
-    "minimum_pocket_web_mm": 1.1784149668375399,
-    "inner_wall_mm": 1.0,
-    "outer_wall_mm": 0.8000000000000007,
-    "housing_outer_rim_mm": 0.7999999999999993,
-    "tray_outer_diameter_mm": 56.1,
-    "tray_radial_clearance_mm": 0.15,
-    "floor_thickness_mm": 0.6,
-    "magnet_bottom_z_mm": 0.8500000000000001,
-    "magnet_top_z_mm": 2.35,
-    "shield_inner_diameter_mm": 44.05,
-    "shield_outer_diameter_mm": 54.45,
-    "shield_bottom_z_mm": 2.4,
-    "shield_top_z_mm": 3.0999999999999996,
-    "flange_top_z_mm": 3.8999999999999995,
-    "centers_mm": [
-      {
-        "index": 1,
-        "angle_degrees": 7.5,
-        "x": 24.41432971133008,
-        "y": 3.21420748341877
-      },
-      {
-        "index": 2,
-        "angle_degrees": 22.5,
-        "x": 22.750533488090436,
-        "y": 9.423579521990336
-      },
-      {
-        "index": 3,
-        "angle_degrees": 37.5,
-        "x": 19.536326004671665,
-        "y": 14.990750189339746
-      },
-      {
-        "index": 4,
-        "angle_degrees": 52.5,
-        "x": 14.990750189339746,
-        "y": 19.536326004671665
-      },
-      {
-        "index": 5,
-        "angle_degrees": 67.5,
-        "x": 9.423579521990337,
-        "y": 22.750533488090436
-      },
-      {
-        "index": 6,
-        "angle_degrees": 82.5,
-        "x": 3.2142074834187735,
-        "y": 24.41432971133008
-      },
-      {
-        "index": 7,
-        "angle_degrees": 97.5,
-        "x": -3.214207483418771,
-        "y": 24.41432971133008
-      },
-      {
-        "index": 8,
-        "angle_degrees": 112.5,
-        "x": -9.423579521990334,
-        "y": 22.750533488090436
-      },
-      {
-        "index": 9,
-        "angle_degrees": 127.5,
-        "x": -14.990750189339746,
-        "y": 19.536326004671665
-      },
-      {
-        "index": 10,
-        "angle_degrees": 142.5,
-        "x": -19.536326004671665,
-        "y": 14.990750189339751
-      },
-      {
-        "index": 11,
-        "angle_degrees": 157.5,
-        "x": -22.750533488090436,
-        "y": 9.423579521990339
-      },
-      {
-        "index": 12,
-        "angle_degrees": 172.5,
-        "x": -24.41432971133008,
-        "y": 3.21420748341877
-      },
-      {
-        "index": 13,
-        "angle_degrees": 187.5,
-        "x": -24.414329711330083,
-        "y": -3.2142074834187637
-      },
-      {
-        "index": 14,
-        "angle_degrees": 202.5,
-        "x": -22.75053348809044,
-        "y": -9.423579521990334
-      },
-      {
-        "index": 15,
-        "angle_degrees": 217.5,
-        "x": -19.536326004671665,
-        "y": -14.990750189339746
-      },
-      {
-        "index": 16,
-        "angle_degrees": 232.5,
-        "x": -14.990750189339751,
-        "y": -19.53632600467166
-      },
-      {
-        "index": 17,
-        "angle_degrees": 247.5,
-        "x": -9.423579521990328,
-        "y": -22.75053348809044
-      },
-      {
-        "index": 18,
-        "angle_degrees": 262.5,
-        "x": -3.2142074834187713,
-        "y": -24.41432971133008
-      },
-      {
-        "index": 19,
-        "angle_degrees": 277.5,
-        "x": 3.2142074834187624,
-        "y": -24.414329711330083
-      },
-      {
-        "index": 20,
-        "angle_degrees": 292.5,
-        "x": 9.42357952199034,
-        "y": -22.750533488090433
-      },
-      {
-        "index": 21,
-        "angle_degrees": 307.5,
-        "x": 14.990750189339744,
-        "y": -19.536326004671665
-      },
-      {
-        "index": 22,
-        "angle_degrees": 322.5,
-        "x": 19.53632600467166,
-        "y": -14.990750189339751
-      },
-      {
-        "index": 23,
-        "angle_degrees": 337.5,
-        "x": 22.75053348809044,
-        "y": -9.42357952199033
-      },
-      {
-        "index": 24,
-        "angle_degrees": 352.5,
-        "x": 24.41432971133008,
-        "y": -3.2142074834187726
-      }
-    ],
-    "installation": "Insert backing ring in housing recess; orient and glue discs into inside-face cover pockets; bond cover after fit testing."
-  },
-  "attachmentMagnetizationVerified": false
+  }
 }

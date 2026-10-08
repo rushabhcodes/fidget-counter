@@ -18,7 +18,7 @@ import obj13 from "./mechanical/Circuit_Models/PCB_Spacers.obj"
 
 // CAD solids use the phone plane as Z=0; the circuit uses the PCB midplane.
 // Keep imported electronics and BT1 on the board; never add their CAD dummies.
-// The MagSafe mesh is a reserved magnet envelope, pending a supplier design.
+// Bottom attachment uses the ordered-size discs; magnetic performance is untested.
 const models = [
   {name:"ENCLOSURE_Rotating_Cap",obj:obj0,mtl:"./mechanical/Circuit_Models/Rotating_Cap.mtl",translucent:true},
   {name:"ENCLOSURE_Encoder_Magnet",obj:obj1,mtl:"./mechanical/Circuit_Models/Encoder_Magnet.mtl",translucent:false},
