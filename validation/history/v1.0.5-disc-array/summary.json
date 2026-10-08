@@ -1,10 +1,10 @@
 {
   "date": "2026-10-08",
-  "version": "1.0.6",
+  "version": "1.0.5",
   "tscircuit": "0.0.2748",
   "cli": "0.1.2253",
   "checks": {
-    "checkedAt": "2026-10-08T13:20:23.657Z",
+    "checkedAt": "2026-10-08T12:17:26.711Z",
     "checks": [
       "netlist",
       "pin_specification",
@@ -64,27 +64,26 @@
     ],
     "sha256": {
       "index.circuit.tsx": "054a8c548b1a393e66a67450e56a90312112adce681a1ee757d7915ba8242781",
-      "enclosure.tsx": "4bfe1edb79570c80666e6b3c5913e1dd7f0eb863fdbe97c9960a3e7909f5251e",
+      "enclosure.tsx": "226604888149eddb1dae410c41948b213537bfc5b77c312fe19f289a1c24eef0",
       "parts.tsx": "47b85463e132fcc855a49d5c741ccd6e97a0e3e7af9b4a0375d8015f7091dc9f",
       "passives.tsx": "3f2cdbf1cbff6cecd49da9cc3823255437d5a14cd1b8e2b1d41b7044d57d2a5f",
       "model-assets.d.ts": "9456883f24ccb7aabd3a84f094f1b87c32756018db28ae45bc2eec59d96fea72",
       "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
       "routed-paths.json": "2989ec13f4d56ace059bce086b4712ea429f3a001d0705f82393ccab56a3c1ca",
-      "published.circuit.json": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
-      "package.json": "51cceaca4fc68e01e62f8d6498d05c0e73e058ee398b2aa8cffa31eae9041102",
+      "published.circuit.json": "850240c0a24dad6c883232d210860867111de9088b6d7a1b0fc64fe1ae386fec",
+      "package.json": "70602e6236bb8e826f2923f07a80c94456c4060fe0d3abf2fa2e2c52b4138e33",
       "verify.mjs": "b67d00f0cad733ba73514f6ecddd07273b05801d5ca842b757ed3a0099f08d9a",
       "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
       "export-gerbers.mjs": "449fb40fdae108c9025ac9df21eea2669cb0cbb451fd642337dd72f091652008",
-      "validation/check-enclosure.mjs": "038dd5e8698d576adf544b7cea6f2e1379a4fca932b76c67f68613f7013ee3fc",
-      "mechanical/Circuit_Models/manifest.json": "ba188e79f8288a0a12d50f998b80aab731c335adcf1da823b88831ebad03f073",
-      "dist/index/circuit.json": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073"
+      "validation/check-enclosure.mjs": "e8a03100701c8e3bb27cc2c67941f90a9d9dc71a92f5a5e27dbcb856f4f24fdf",
+      "mechanical/Circuit_Models/manifest.json": "65b1bdfd39c8adb8eaa17f261f5dd510fccc984c036e08c0d8f026e0d07b63ea",
+      "dist/index/circuit.json": "850240c0a24dad6c883232d210860867111de9088b6d7a1b0fc64fe1ae386fec"
     },
-    "publicationRefreshedFromCheckedSourceBuild": true,
-    "enclosureModelCount": 12
+    "savedCircuitMatchesCheckedSource": true
   },
   "jlcpcbGeometry": {
     "input": "published.circuit.json",
-    "circuitJsonSha256": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
+    "circuitJsonSha256": "c67d636591ab784d55c5548705bb11b0c983228a6dcb18e103f7d5f28adc5999",
     "copperChecks": [
       {
         "check": "different-net copper spacing",
@@ -193,7 +192,7 @@
     "silkscreenTextBelow1mm": []
   },
   "jlcpcbGerbers": {
-    "circuitJsonSha256": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
+    "circuitJsonSha256": "c67d636591ab784d55c5548705bb11b0c983228a6dcb18e103f7d5f28adc5999",
     "gerberZipSha256": "37cf5f8e586103673d12e0000a9ee4cb7fff6f7ced7105cf92fb2f89140c5f88",
     "sensorMaskBridgeMm": 0.199796,
     "minimumGreenMaskBridgeMm": 0.1,
@@ -224,9 +223,9 @@
     "fittedParts": 30,
     "exactJlcpcbParts": 29,
     "sharedGeometrySwitch": "KMR223NG ULC LFG uses the KMR232NGULCLFS package model; original 2 N MPN retained",
-    "builtGlbMeshCount": 31,
-    "circuitSha256": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
-    "glbSha256": "48ababc615fc8442e47e3cfcb882205f5166c6a31a75308364443e7c9ea11e15"
+    "builtGlbMeshCount": 33,
+    "circuitSha256": "850240c0a24dad6c883232d210860867111de9088b6d7a1b0fc64fe1ae386fec",
+    "glbSha256": "0dde2f3bed9b4e51f18bf6141cdbb03ab0d72190d9b0cc0ff6cd09b6ac0ee0d0"
   },
   "batteryHolder": {
     "mpn": "BS-08-B2AA020-R",
@@ -234,12 +233,10 @@
     "layer": "bottom",
     "manufacturerMaximumHeightMm": 5.8,
     "enclosureHeightMm": 14.0,
-    "hatchScrews": 0,
-    "positiveFace": "toward solid bottom cover",
+    "hatchScrews": 2,
+    "positiveFace": "toward hatch",
     "rigidCollisionCount": 0,
-    "springContactFitTestRequired": true,
-    "serviceAccess": "top",
-    "pcbRetainingScrews": 4
+    "springContactFitTestRequired": true
   },
   "assembly": {
     "top": 29,
@@ -253,9 +250,9 @@
     "electricalBaselineVersion": "1.0.3",
     "electricalRecordsUnchanged": true,
     "electricalRecordsSha256": "2f61bd60f92435a4ff0948e47598774b3395add7e045356aa0880ad5f3d10843",
-    "circuitSha256": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
-    "glbSha256": "48ababc615fc8442e47e3cfcb882205f5166c6a31a75308364443e7c9ea11e15",
-    "mechanicalModels": 12,
+    "circuitSha256": "850240c0a24dad6c883232d210860867111de9088b6d7a1b0fc64fe1ae386fec",
+    "glbSha256": "0dde2f3bed9b4e51f18bf6141cdbb03ab0d72190d9b0cc0ff6cd09b6ac0ee0d0",
+    "mechanicalModels": 14,
     "pcbMidplaneOffsetMm": -7.6,
     "models": [
       {
@@ -344,6 +341,23 @@
         "translucent": false
       },
       {
+        "name": "ENCLOSURE_Battery_Hatch",
+        "worldBoundsGltfMm": [
+          [
+            -11.9988332,
+            -7.3999999999999995,
+            -13.2997305
+          ],
+          [
+            11.9988332,
+            -5.6,
+            13.2999009
+          ]
+        ],
+        "maximumBoundsErrorMm": 3.395229875025052e-08,
+        "translucent": true
+      },
+      {
         "name": "ENCLOSURE_MagSafe_Magnet_Array",
         "worldBoundsGltfMm": [
           [
@@ -412,6 +426,23 @@
         "translucent": false
       },
       {
+        "name": "ENCLOSURE_Battery_Fasteners",
+        "worldBoundsGltfMm": [
+          [
+            -7.85,
+            -7.369999999999999,
+            -13.1496343
+          ],
+          [
+            7.85,
+            -2.5199999999999996,
+            13.1496343
+          ]
+        ],
+        "maximumBoundsErrorMm": 1.0074622025513236e-08,
+        "translucent": false
+      },
+      {
         "name": "ENCLOSURE_Phone_Pad",
         "worldBoundsGltfMm": [
           [
@@ -464,10 +495,10 @@
       }
     ],
     "sourceSha256": {
-      "enclosure.tsx": "4bfe1edb79570c80666e6b3c5913e1dd7f0eb863fdbe97c9960a3e7909f5251e",
-      "mechanical/export_circuit_models.py": "753078c9093808bbe87d37c230b1199fb98fbc64631194c471320ad79012e3e4",
-      "mechanical/build_enclosure.py": "9030b9db9f8e039180643b93a511a38f4411492d8a8e93a3cf810ccafdbf6f1f",
-      "mechanical/Circuit_Models/manifest.json": "ba188e79f8288a0a12d50f998b80aab731c335adcf1da823b88831ebad03f073"
+      "enclosure.tsx": "226604888149eddb1dae410c41948b213537bfc5b77c312fe19f289a1c24eef0",
+      "mechanical/export_circuit_models.py": "78c263febfca967d0af62269f91cdd043caff4cfa1648395302574a7a28075bb",
+      "mechanical/build_enclosure.py": "79b1a78b2ca16b730877b8caa934fab494d90c87da44a412c1008b0094bada96",
+      "mechanical/Circuit_Models/manifest.json": "65b1bdfd39c8adb8eaa17f261f5dd510fccc984c036e08c0d8f026e0d07b63ea"
     }
   },
   "encoderMagnet": {
@@ -479,13 +510,13 @@
   "downloadableGlb": {
     "source": "dist/index/3d.glb",
     "output": "previews/3d.glb",
-    "sourceBytes": 15441332,
-    "outputBytes": 9003968,
-    "sourceSha256": "48ababc615fc8442e47e3cfcb882205f5166c6a31a75308364443e7c9ea11e15",
-    "outputSha256": "2c18d8d9bbba4f438774fea8c7ed245d6eaef805299e6719e0990398565b9df9",
-    "meshCount": 31,
-    "removedOptionalAttributeArrays": 24,
-    "implicitIdentityIndexArrays": 12,
+    "sourceBytes": 17298444,
+    "outputBytes": 9659504,
+    "sourceSha256": "0dde2f3bed9b4e51f18bf6141cdbb03ab0d72190d9b0cc0ff6cd09b6ac0ee0d0",
+    "outputSha256": "46d500251f8ba5749480ed38219d1cb88adbdb6ec62a1aaa013552052b2f88b1",
+    "meshCount": 33,
+    "removedOptionalAttributeArrays": 28,
+    "implicitIdentityIndexArrays": 14,
     "mergedDuplicateBufferViews": 53,
     "retainedBufferViewsByteIdentical": true,
     "positionsIndicesAndNodeTransformsUnchanged": true,
@@ -661,254 +692,5 @@
     ],
     "installation": "Insert backing ring in housing recess; orient and glue discs into inside-face cover pockets; bond cover after fit testing."
   },
-  "attachmentMagnetizationVerified": false,
-  "topService": {
-    "access": "top",
-    "bottom_hatch": false,
-    "hatch_fasteners": 0,
-    "pcb_retaining_screws": 4,
-    "screw_size": "M1.6",
-    "cap_release_latches": 2,
-    "release_keys_required": 2,
-    "release_deflection_mm": 0.35,
-    "release_strain_estimate": 0.018738845925044614,
-    "released_latch_to_pcb_clearance_mm": 0.19999999999999574,
-    "released_lip_to_bore_clearance_mm": 0.10000000000000142,
-    "release_key_tip_to_shoulder_mm": 1.4500000000000028,
-    "release_key_checks": [
-      {
-        "angle_degrees": 90,
-        "housing_overlap_mm3": 0.0,
-        "retaining_roof_intact": true
-      },
-      {
-        "angle_degrees": 270,
-        "housing_overlap_mm3": 0.0,
-        "retaining_roof_intact": true
-      }
-    ],
-    "pcb_pick_corridors": [
-      {
-        "angle_degrees": 0,
-        "radial_bounds_mm": [
-          18.4,
-          19.4
-        ],
-        "width_mm": 2.4,
-        "rigid_collisions": 0
-      },
-      {
-        "angle_degrees": 180,
-        "radial_bounds_mm": [
-          18.4,
-          19.4
-        ],
-        "width_mm": 2.4,
-        "rigid_collisions": 0
-      }
-    ],
-    "pcb_holder_cell_extraction": [
-      {
-        "lift_mm": 0,
-        "rigid_collisions": []
-      },
-      {
-        "lift_mm": 0.5,
-        "rigid_collisions": []
-      },
-      {
-        "lift_mm": 1,
-        "rigid_collisions": []
-      },
-      {
-        "lift_mm": 2,
-        "rigid_collisions": []
-      },
-      {
-        "lift_mm": 4,
-        "rigid_collisions": []
-      },
-      {
-        "lift_mm": 6,
-        "rigid_collisions": []
-      },
-      {
-        "lift_mm": 10,
-        "rigid_collisions": []
-      },
-      {
-        "lift_mm": 16,
-        "rigid_collisions": []
-      },
-      {
-        "lift_mm": 24.0,
-        "rigid_collisions": []
-      }
-    ],
-    "pcb_removal_motion": "straight +Z after cap, flexure, screws and spacers are removed",
-    "solid_center_floor_verified": true,
-    "physical_cycle_tested": false
-  },
-  "importedBoardExtraction": {
-    "movingModels": [
-      {
-        "name": "Box0",
-        "maximum_radius_mm": 18.25000072974619,
-        "bore_clearance_mm": 1.399999270253808
-      },
-      {
-        "name": "U1",
-        "maximum_radius_mm": 13.200388400382188,
-        "bore_clearance_mm": 6.4496115996178105
-      },
-      {
-        "name": "BT1",
-        "maximum_radius_mm": 14.0020913482488,
-        "bore_clearance_mm": 5.647908651751198
-      },
-      {
-        "name": "C4",
-        "maximum_radius_mm": 10.541106375617789,
-        "bore_clearance_mm": 9.10889362438221
-      },
-      {
-        "name": "C9",
-        "maximum_radius_mm": 8.346520244359027,
-        "bore_clearance_mm": 11.303479755640971
-      },
-      {
-        "name": "C15",
-        "maximum_radius_mm": 7.831708573717563,
-        "bore_clearance_mm": 11.818291426282435
-      },
-      {
-        "name": "C5",
-        "maximum_radius_mm": 15.535001423938606,
-        "bore_clearance_mm": 4.114998576061392
-      },
-      {
-        "name": "C7",
-        "maximum_radius_mm": 5.770012650890713,
-        "bore_clearance_mm": 13.879987349109285
-      },
-      {
-        "name": "C8",
-        "maximum_radius_mm": 6.801858457675388,
-        "bore_clearance_mm": 12.84814154232461
-      },
-      {
-        "name": "C10",
-        "maximum_radius_mm": 14.981838978289549,
-        "bore_clearance_mm": 4.66816102171045
-      },
-      {
-        "name": "C16",
-        "maximum_radius_mm": 11.554480180746555,
-        "bore_clearance_mm": 8.095519819253443
-      },
-      {
-        "name": "C18",
-        "maximum_radius_mm": 12.984522519129234,
-        "bore_clearance_mm": 6.665477480870765
-      },
-      {
-        "name": "R4",
-        "maximum_radius_mm": 4.795047015219084,
-        "bore_clearance_mm": 14.854952984780915
-      },
-      {
-        "name": "U2",
-        "maximum_radius_mm": 0.7632276714458621,
-        "bore_clearance_mm": 18.886772328554137
-      },
-      {
-        "name": "C6",
-        "maximum_radius_mm": 2.544089622824006,
-        "bore_clearance_mm": 17.10591037717599
-      },
-      {
-        "name": "R1",
-        "maximum_radius_mm": 3.3019001249922537,
-        "bore_clearance_mm": 16.348099875007744
-      },
-      {
-        "name": "R2",
-        "maximum_radius_mm": 2.811139688463711,
-        "bore_clearance_mm": 16.838860311536287
-      },
-      {
-        "name": "R3",
-        "maximum_radius_mm": 3.3018866674824716,
-        "bore_clearance_mm": 16.348113332517528
-      },
-      {
-        "name": "SW1",
-        "maximum_radius_mm": 14.163747060901981,
-        "bore_clearance_mm": 5.4862529390980175
-      },
-      {
-        "name": "R5",
-        "maximum_radius_mm": 8.50367604910111,
-        "bore_clearance_mm": 11.14632395089889
-      },
-      {
-        "name": "C17",
-        "maximum_radius_mm": 9.761795553174089,
-        "bore_clearance_mm": 9.88820444682591
-      },
-      {
-        "name": "X1",
-        "maximum_radius_mm": 9.05612978100765,
-        "bore_clearance_mm": 10.593870218992349
-      },
-      {
-        "name": "C1",
-        "maximum_radius_mm": 8.04671451078662,
-        "bore_clearance_mm": 11.603285489213379
-      },
-      {
-        "name": "C2",
-        "maximum_radius_mm": 10.760723625729463,
-        "bore_clearance_mm": 8.889276374270535
-      },
-      {
-        "name": "X2",
-        "maximum_radius_mm": 15.583982479476829,
-        "bore_clearance_mm": 4.06601752052317
-      },
-      {
-        "name": "C11",
-        "maximum_radius_mm": 16.67685783295673,
-        "bore_clearance_mm": 2.9731421670432674
-      },
-      {
-        "name": "C12",
-        "maximum_radius_mm": 15.885257299512489,
-        "bore_clearance_mm": 3.76474270048751
-      },
-      {
-        "name": "L1",
-        "maximum_radius_mm": 5.694015334746955,
-        "bore_clearance_mm": 13.955984665253045
-      },
-      {
-        "name": "L2",
-        "maximum_radius_mm": 4.778315626772829,
-        "bore_clearance_mm": 14.871684373227168
-      },
-      {
-        "name": "C3",
-        "maximum_radius_mm": 4.422585066267904,
-        "bore_clearance_mm": 15.227414933732096
-      },
-      {
-        "name": "ANT1",
-        "maximum_radius_mm": 17.773259975295915,
-        "bore_clearance_mm": 1.876740024704084
-      }
-    ],
-    "method": "Conservative XY radial envelope of every actual populated-board GLB vertex; fixed-column compatibility retained from unchanged PCB",
-    "minimum_bore_clearance_mm": 1.399999270253808,
-    "physical_removal_tested": false
-  }
+  "attachmentMagnetizationVerified": false
 }

@@ -1,4 +1,4 @@
-# PCB Rev A — disc magnet revision 1.0.5 validation — 8 October 2026
+# PCB Rev A — top-access revision 1.0.6 validation — 8 October 2026
 
 The final source and supplied routed circuit were checked using the pinned local tscircuit 0.0.2748 / CLI 0.1.2253. All previews and fabrication exports use this same routed JSON. The source-build SHA-256 hashes are recorded in `validation/summary.json`; previous publication reports are archived under `validation/history/`.
 
@@ -16,9 +16,9 @@ The final source and supplied routed circuit were checked using the pinned local
 | Trace-length analysis | All 20 electrical nets analyzed |
 | Crystal routing | All eight signal branches at most 10 mm, with zero vias |
 | Gerber-derived copper shorts, both layers | 0 shorts |
-| Revised 14.0 mm enclosure | All 14 reference solids valid; 5 printable parts; zero unintended solid collisions |
+| Revised 14.0 mm enclosure | All 13 reference solids valid; 4 main printable parts; zero unintended solid collisions |
 | Fitted component positions | 30 components: 29 top and 1 bottom; DNP/bare lands excluded |
-| Enclosure in circuit 3D | 14 mechanical models aligned within 0.0001 mm of CAD mesh bounds; portable OBJ/MTL URLs |
+| Enclosure in circuit 3D | 12 mechanical models aligned within 0.0001 mm of CAD mesh bounds; portable OBJ/MTL URLs |
 | Electrical revision comparison | All electrical, PCB and imported component CAD records identical to checked v1.0.3; metadata hash excluded |
 
 All eight CLI check types passed. The complete routed build and the separate full library validator contain zero errors and zero warnings. The full trace-length reports, individual crystal branch lengths and exact source hashes are included in `validation/`. `bun run check:all` repeats the checks and rejects actionable placement issues, asynchronous tool exceptions, error records and warning records.
@@ -27,13 +27,15 @@ The CLI's `net.SWDCLK` length report omits its manually linked source branch and
 
 The unmodified TSCI JLCPCB imports and all 30 fitted component meshes pass `validation/check-imports.mjs`. SW1 uses shared imported KMR2 geometry while retaining its original 2 N manufacturer part number; the substitute’s catalog identifier is deliberately not assigned.
 
-The source now uses `assembly.device` and 14 named `assembly.cadassembly` elements to include the released enclosure beside the populated PCB. Mechanical electronics/holder dummies are excluded. The four outer shells are translucent in the circuit view; print STL and STEP geometry remains solid. `validation/check-enclosure.mjs` verifies asset hashes, current CAD parameters, model positions and exported GLB bounds, and is included in `bun run check:all`.
+The source now uses `assembly.device` and 12 named `assembly.cadassembly` elements to include the released enclosure beside the populated PCB. Mechanical electronics/holder dummies are excluded. The three outer shells are translucent in the circuit view; print STL and STEP geometry remains solid. `validation/check-enclosure.mjs` verifies asset hashes, current CAD parameters, model positions and exported GLB bounds, and is included in `bun run check:all`.
 
 `validation/compact-glb-audit.json` verifies the downloadable GLB reduction to fit the registry upload limit. All retained geometry buffers, triangle order, node transforms, electronic normals and PCB textures are unchanged. Identical buffers share storage and sequential enclosure indices are implicit. Optional enclosure normals and unused UV arrays are omitted; GLTF viewers derive the flat face normals. The full CLI build remains available locally in `dist/index/3d.glb`.
 
 The confirmed encoder is a diametrically magnetized neodymium Ø5 × 1.5 mm disc. The revised cap uses a Ø5.2 mm pocket and 0.2 mm roof shim. Its nominal sensor air gaps remain 1.8 mm released and 1.3 mm pressed. CAD regeneration found zero unintended solid intersections. Magnet grade, sensor field margin and rotation accuracy still require a prototype measurement.
 
-The bottom cover has 24 Ø5.25 × 1.55 mm pockets for the ordered Ø5 × 1.5 mm discs, on a Ø49.25 mm pitch circle. The geometry audit checks the actual disc count/volume, open pocket interiors, intact 0.6 mm pocket floors, minimum 1.178 mm pocket webs, 0.8 mm tray/housing rims and clearance in released/pressed states. The continuous backing-ring recess remains accessible with the tray removed. Its shielding performance, the discs' magnetization, attachment force and phone/Hall compatibility have not been measured. The new housing and bottom cover form a matched set.
+The bottom cover has 24 Ø5.25 × 1.55 mm pockets for the ordered Ø5 × 1.5 mm discs, on a Ø49.25 mm pitch circle. The geometry audit checks the actual disc count/volume, open pocket interiors, intact 0.6 mm pocket floors, minimum 1.178 mm pocket webs, 0.8 mm tray/housing rims and clearance in released/pressed states. The continuous backing-ring recess remains accessible with the tray removed. Its shielding performance, the discs' magnetization, attachment force and phone/Hall compatibility have not been measured. The new cap, housing and solid bottom cover form a matched set.
+
+Top service removes the hatch, hatch posts and two M2 screws. Two deliberate release ports operate the cap latches without interrupting the retaining roof. The geometry audit checks key/housing clearance, nominal 0.10 mm released lip clearance, 0.20 mm latch/PCB clearance, the solid center floor and nine upward board/holder/cell extraction positions. No rigid intersections occur along this sampled path. Repeated latch cycles, screw retention and populated-board removal still require physical testing.
 
 The MCU and sensor pins explicitly define power, ground, open-drain I2C, pull-up and required connections. Crystals use native electrical models; both signal pairs and their load-cap branches stay on the top layer. Passive manufacturer parts are specified in BOM.csv. Bare copper test points are excluded from physical component assembly. The explicit parts engine preserves authored supplier identifiers and datasheet pin models; no DRC is disabled.
 

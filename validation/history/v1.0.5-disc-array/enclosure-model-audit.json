@@ -2,9 +2,9 @@
   "electricalBaselineVersion": "1.0.3",
   "electricalRecordsUnchanged": true,
   "electricalRecordsSha256": "2f61bd60f92435a4ff0948e47598774b3395add7e045356aa0880ad5f3d10843",
-  "circuitSha256": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
-  "glbSha256": "48ababc615fc8442e47e3cfcb882205f5166c6a31a75308364443e7c9ea11e15",
-  "mechanicalModels": 12,
+  "circuitSha256": "850240c0a24dad6c883232d210860867111de9088b6d7a1b0fc64fe1ae386fec",
+  "glbSha256": "0dde2f3bed9b4e51f18bf6141cdbb03ab0d72190d9b0cc0ff6cd09b6ac0ee0d0",
+  "mechanicalModels": 14,
   "pcbMidplaneOffsetMm": -7.6,
   "models": [
     {
@@ -93,6 +93,23 @@
       "translucent": false
     },
     {
+      "name": "ENCLOSURE_Battery_Hatch",
+      "worldBoundsGltfMm": [
+        [
+          -11.9988332,
+          -7.3999999999999995,
+          -13.2997305
+        ],
+        [
+          11.9988332,
+          -5.6,
+          13.2999009
+        ]
+      ],
+      "maximumBoundsErrorMm": 3.395229875025052e-8,
+      "translucent": true
+    },
+    {
       "name": "ENCLOSURE_MagSafe_Magnet_Array",
       "worldBoundsGltfMm": [
         [
@@ -161,6 +178,23 @@
       "translucent": false
     },
     {
+      "name": "ENCLOSURE_Battery_Fasteners",
+      "worldBoundsGltfMm": [
+        [
+          -7.85,
+          -7.369999999999999,
+          -13.1496343
+        ],
+        [
+          7.85,
+          -2.5199999999999996,
+          13.1496343
+        ]
+      ],
+      "maximumBoundsErrorMm": 1.0074622025513236e-8,
+      "translucent": false
+    },
+    {
       "name": "ENCLOSURE_Phone_Pad",
       "worldBoundsGltfMm": [
         [
@@ -213,9 +247,9 @@
     }
   ],
   "sourceSha256": {
-    "enclosure.tsx": "4bfe1edb79570c80666e6b3c5913e1dd7f0eb863fdbe97c9960a3e7909f5251e",
-    "mechanical/export_circuit_models.py": "753078c9093808bbe87d37c230b1199fb98fbc64631194c471320ad79012e3e4",
-    "mechanical/build_enclosure.py": "9030b9db9f8e039180643b93a511a38f4411492d8a8e93a3cf810ccafdbf6f1f",
-    "mechanical/Circuit_Models/manifest.json": "ba188e79f8288a0a12d50f998b80aab731c335adcf1da823b88831ebad03f073"
+    "enclosure.tsx": "226604888149eddb1dae410c41948b213537bfc5b77c312fe19f289a1c24eef0",
+    "mechanical/export_circuit_models.py": "78c263febfca967d0af62269f91cdd043caff4cfa1648395302574a7a28075bb",
+    "mechanical/build_enclosure.py": "79b1a78b2ca16b730877b8caa934fab494d90c87da44a412c1008b0094bada96",
+    "mechanical/Circuit_Models/manifest.json": "65b1bdfd39c8adb8eaa17f261f5dd510fccc984c036e08c0d8f026e0d07b63ea"
   }
 }

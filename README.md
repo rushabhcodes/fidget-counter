@@ -1,10 +1,10 @@
 # MagSafe BLE Fidget Counter — PCB Rev A
 
-> **Current revision 1.0.5: 24 pockets for Ø5 × 1.5 mm bottom attachment magnets, enclosure integrated in the circuit assembly, imported CR2032 holder, 0.30 mm via drill / 0.55 mm via land, green mask, double-sided Standard PCBA and ENIG.** TMAG3001A2YBGR is retained. This is a checked prototype ready for supplier quotation/CAM review; the assembly order has not been released.
+> **Current revision 1.0.6: top battery access, a cap with two deliberate release latches, solid bottom cover with 24 magnet pockets, imported CR2032 holder, 0.30 mm via drill / 0.55 mm via land, green mask, double-sided Standard PCBA and ENIG.** TMAG3001A2YBGR is retained. This is a checked prototype ready for supplier quotation/CAM review; the assembly order has not been released.
 
 The default registry entrypoint is `published.circuit.json`, the exact validated routed board and enclosure assembly. `bun run build` renders that saved board; `bun run build:source` rebuilds the editable TSX using the prescribed routing. `bun run check:all` rebuilds and validates the editable TSX, including routing and exported copper. The published circuit is refreshed from that checked build.
 
-![Imported holder and revised enclosure](previews/battery-holder.png)
+![Top battery access and revised enclosure](previews/battery-access.png)
 
 ![Bottom cover magnet pockets](previews/magnet-tray.png)
 
@@ -12,7 +12,7 @@ The default registry entrypoint is `published.circuit.json`, the exact validated
 
 A 36.5 mm circular, two-layer, 1.0 mm PCB for the revised 14.0 mm rotating-cap enclosure. The nRF52810-QFAA reference, its power circuitry, crystals and initial RF matching values come from [seveibar/nrf52810](https://tscircuit.com/seveibar/nrf52810#files), installed as `@tsci/seveibar.nrf52810@0.1.3`. This is a new circular layout; the reference's RF qualification does not carry over.
 
-The central TMAG3001A2 measures the diametric encoder magnet's XY angle. A cap-operated tactile switch supports a two-second count-reset hold in firmware. BT1 is the bottom-mounted MYOUNG BS-08-B2AA020-R holder (JLCPCB C964787), imported with its exact footprint and 3D model. The CR2032 is replaceable through the two-screw underside hatch, positive face toward the hatch. The PCB and holder stay fixed during replacement. Five underside pogo pads provide SWD access. No LED, charging circuit or tall programming connector is fitted.
+The central TMAG3001A2 measures the diametric encoder magnet's XY angle. A cap-operated tactile switch supports a two-second count-reset hold in firmware. BT1 is the bottom-mounted MYOUNG BS-08-B2AA020-R holder (JLCPCB C964787), imported with its exact footprint and 3D model. The CR2032 is replaced from above: release the two cap latches, remove the four flexure/PCB screws, then lift and flip the board with its soldered holder. The cell positive face points toward the solid bottom cover. Five underside pogo pads provide SWD access. No LED, charging circuit or tall programming connector is fitted.
 
 ## Open and build
 
@@ -60,7 +60,7 @@ At rest, use the sensor's wake-and-sleep mode and a magnetic-change interrupt to
 
 ## Assembly and tuning
 
-See **MECHANICAL.md** for mounting coordinates, the required cap-pusher change and the imported holder and removable battery hatch. See **BOM.csv** for assembly values and source identifiers. C13/C14 are DNP tuning sites; their initial values describe candidate capacitors, not fitted parts.
+See **MECHANICAL.md** for mounting coordinates, the required cap-pusher change and the imported holder and top battery access. See **BOM.csv** for assembly values and source identifiers. C13/C14 are DNP tuning sites; their initial values describe candidate capacitors, not fitted parts.
 
 The reference's 3.9 nH / 0.8 pF chip matching and 6.8 nH antenna matching are starting values. The new feed and circular ground geometry need RF measurement and tuning in the final enclosure against the intended phone. A 0.5 mm feed width is the retained routing starting value, not a verified 50 Ω transmission line. Confirm the fabricator's actual stackup and recalculate the feed/ground geometry before an RF-qualified production release. Measure crystal startup/frequency and adjust the 12 pF load capacitors if needed.
 
@@ -96,7 +96,7 @@ Current primary requirements: [rigid PCB capabilities](https://jlcpcb.com/capabi
 - `previews/`: copper layout views, a fitted-part assembly reference and all four schematic sheets in PNG/SVG. `pcb-bottom` shows the actual underside orientation; `pcb-bottom-top-coordinates` retains the source coordinate view. The assembly reference excludes DNP parts, GPIO escape lands and bare test/contact interfaces; crystal manufacturer pin numbering is documented above. Library model downloads are included under `imports/`, with the full device GLB and PNG at `previews/3d.*` and the unchanged bare PCB view at `previews/pcb-3d.*`.
 - `fabrication/`: prototype Gerber/drill ZIP and assembly position reference CSV.
 - `BOM.csv` and `netlist.txt`: assembly intent and electrical connectivity.
-- `mechanical/`: all five compatible printed enclosure parts in STL/STEP, editable CadQuery source/parameters and geometry validation.
+- `mechanical/`: all four compatible printed enclosure parts in STL/STEP, editable CadQuery source/parameters and geometry validation.
 - `validation/`: final check logs, warning inventory and source/circuit hashes.
 
 Treat the Gerbers as a prototype review handoff. Resolve the thin mounting-hole web with the fabricator and the stencil/land-pattern details with the assembler before placing an order. RF tuning and magnetic calibration remain prototype measurements.
@@ -107,9 +107,9 @@ Run `bun run export:gerbers` after `bun run check:all` to produce the fabricatio
 
 ## Enclosure in the circuit's 3D view
 
-`index.circuit.tsx` wraps the board in `<assembly.device>` and adds `EnclosureAssembly` from `enclosure.tsx`. Its 14 named `<assembly.cadassembly>` elements load the existing enclosure geometry alongside the actual populated PCB. There are no duplicate electronics or holder dummies. The four outer shells are translucent to expose the interior; STL/STEP solids retain their original geometry.
+`index.circuit.tsx` wraps the board in `<assembly.device>` and adds `EnclosureAssembly` from `enclosure.tsx`. Its 12 named `<assembly.cadassembly>` elements load the existing enclosure geometry alongside the actual populated PCB. There are no duplicate electronics or holder dummies. The three outer shells are translucent to expose the interior; STL/STEP solids retain their original geometry.
 
-The models use millimetres and Z-up assembly coordinates. Their offset is Z = −7.6 mm because tscircuit places the PCB midplane at Z = 0. This preserves the released cap, holder, cell and hatch stack. The central encoder uses the user-specified diametrically magnetized neodymium Ø5 × 1.5 mm disc, a Ø5.2 mm pocket and a 0.2 mm roof shim. Its nominal released/pressed sensor gaps remain 1.8/1.3 mm; magnet grade and field calibration are unverified. `mechanical/Circuit_Models/manifest.json` records model bounds and hashes. The bottom cover now locates 24 separate Ø5 × 1.5 mm discs on a Ø49.25 mm pitch circle. Its inside-face pockets are Ø5.25 × 1.55 mm, including 0.05 mm adhesive allowance. The housing accepts the thicker cover tray and a Ø44.05 / Ø54.45 × 0.7 mm steel backing ring; overall enclosure height remains 14 mm. Use this revision's housing and bottom cover together. See `MECHANICAL.md` for loading order and polarity checks; holding force, ordered magnetization and phone compatibility are unverified.
+The models use millimetres and Z-up assembly coordinates. Their offset is Z = −7.6 mm because tscircuit places the PCB midplane at Z = 0. This preserves the released cap, holder and cell stack. The central encoder uses the user-specified diametrically magnetized neodymium Ø5 × 1.5 mm disc, a Ø5.2 mm pocket and a 0.2 mm roof shim. Its nominal released/pressed sensor gaps remain 1.8/1.3 mm; magnet grade and field calibration are unverified. `mechanical/Circuit_Models/manifest.json` records model bounds and hashes. The bottom cover now locates 24 separate Ø5 × 1.5 mm discs on a Ø49.25 mm pitch circle. Its inside-face pockets are Ø5.25 × 1.55 mm, including 0.05 mm adhesive allowance. The housing accepts the thicker cover tray and a Ø44.05 / Ø54.45 × 0.7 mm steel backing ring; overall enclosure height remains 14 mm. Use this revision's cap, housing and solid bottom cover together. The two release keys and PCB lift pick are included as printable tools. See `MECHANICAL.md` for loading order and polarity checks; holding force, ordered magnetization and phone compatibility are unverified.
 
 The CadQuery builder also writes `Circuit_Models/` into its output directory. After revising the CAD, copy those generated assets into `mechanical/Circuit_Models/`, rebuild the source, then run `bun run check:enclosure` to verify model alignment and unchanged electrical geometry. The downloadable GLB is compacted for the registry upload limit. It preserves every position, triangle index, node transform, electronic model and board texture byte-for-byte; viewers derive flat normals for the untextured enclosure models. Repeat this export step after a source build:
 

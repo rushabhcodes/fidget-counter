@@ -11,7 +11,7 @@ import json
 
 EXCLUDED = {"PCB_Dummy", "Angle_Sensor_Dummy", "BLE_MCU_Dummy",
             "Tactile_Switch", "Battery_Holder", "PCB_Board", "Flexure_Neutral"}
-SHELLS = {"Rotating_Cap", "Stationary_Housing", "Battery_Hatch", "Bottom_Cover"}
+SHELLS = {"Rotating_Cap", "Stationary_Housing", "Bottom_Cover"}
 
 
 def export_models(meshes, output, pcb_midplane_z, parameters=None):
@@ -21,7 +21,7 @@ def export_models(meshes, output, pcb_midplane_z, parameters=None):
     output.mkdir(parents=True, exist_ok=True)
     selected = [m for m in meshes if m["state"] in {"Released", "Detail"}
                 and m["name"] not in EXCLUDED]
-    assert len(selected) == 14
+    assert len(selected) == 12
     manifest = {"units": "mm", "axes": "Z-up", "state": "Released",
                 "pcbMidplaneZMm": pcb_midplane_z, "sourceParameters": parameters,
                 "circuitPositionOffsetMm": [0, 0, -pcb_midplane_z],

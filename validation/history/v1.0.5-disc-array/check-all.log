@@ -1,8 +1,8 @@
 $ bun verify.mjs
 Pass: typecheck
-Pass: source
 Pass: netlist
 Pass: pin_specification
+Pass: source
 Pass: schematic-placement
 Pass: placement
 Pass: routing-difficulty
@@ -12,6 +12,3 @@ Pass: original JLC imports, supplier identifiers and all 30 fitted model nodes
 Pass: 14 aligned enclosure models; electrical records unchanged; portable model URLs
 Pass: all library checks; trace lengths for 20 nets; eight crystal branches have no vias
 Complete: 89 routed traces, 47 vias, zero errors and warnings
-
-Enclosure report rechecked after correcting its static model-count log:
-Pass: 12 aligned enclosure models; electrical records unchanged; portable model URLs

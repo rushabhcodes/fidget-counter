@@ -1,5 +1,5 @@
 {
-  "circuitJsonSha256": "c67d636591ab784d55c5548705bb11b0c983228a6dcb18e103f7d5f28adc5999",
+  "circuitJsonSha256": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
   "gerberZipSha256": "37cf5f8e586103673d12e0000a9ee4cb7fff6f7ced7105cf92fb2f89140c5f88",
   "sensorMaskBridgeMm": 0.199796,
   "minimumGreenMaskBridgeMm": 0.1,

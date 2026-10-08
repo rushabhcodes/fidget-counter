@@ -1,0 +1,44 @@
+[
+  {
+    "file": "mechanical/Print_STL/Bottom_Cover.stl",
+    "triangles": 22676,
+    "closedEdgeIncidence": true,
+    "sha256": "f769b233294264e3f803bf0cf8a78a124f96100c87d2449963897399178d4f82"
+  },
+  {
+    "file": "mechanical/Print_STL/Cap_Release_Key_Print_2.stl",
+    "triangles": 44,
+    "closedEdgeIncidence": true,
+    "sha256": "f02b73d1f3f6d763d02f450210f8355738713167de76e58aa4e481a4addcfce1"
+  },
+  {
+    "file": "mechanical/Print_STL/Flexure_Retention_System.stl",
+    "triangles": 17300,
+    "closedEdgeIncidence": true,
+    "sha256": "c9d47442dbf6d19d31f705d0cb7886eec35748922df12d133ec89a6e1f7e3693"
+  },
+  {
+    "file": "mechanical/Print_STL/PCB_Lift_Pick.stl",
+    "triangles": 28,
+    "closedEdgeIncidence": true,
+    "sha256": "5699d1db105454cebfcbd1087814d0ce485029b3f17ded63ca83c3e5226ebc40"
+  },
+  {
+    "file": "mechanical/Print_STL/PCB_Spacer_Print_4.stl",
+    "triangles": 1680,
+    "closedEdgeIncidence": true,
+    "sha256": "52d367dac9bb1be90e846e678d643006ffa4897b9774a7cb824caea0bc0b085c"
+  },
+  {
+    "file": "mechanical/Print_STL/Rotating_Cap.stl",
+    "triangles": 11052,
+    "closedEdgeIncidence": true,
+    "sha256": "e0e054b67849811c1568c12c7514c91f8742bcfd1671bc6f1c87347ec3399c41"
+  },
+  {
+    "file": "mechanical/Print_STL/Stationary_Housing.stl",
+    "triangles": 19396,
+    "closedEdgeIncidence": true,
+    "sha256": "6493aeed08ffbad732df7bada4db1cafc3cb196fd0359128197c1b444fd8343d"
+  }
+]

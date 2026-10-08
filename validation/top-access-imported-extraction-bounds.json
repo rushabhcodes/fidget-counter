@@ -1,0 +1,162 @@
+{
+  "movingModels": [
+    {
+      "name": "Box0",
+      "maximum_radius_mm": 18.25000072974619,
+      "bore_clearance_mm": 1.399999270253808
+    },
+    {
+      "name": "U1",
+      "maximum_radius_mm": 13.200388400382188,
+      "bore_clearance_mm": 6.4496115996178105
+    },
+    {
+      "name": "BT1",
+      "maximum_radius_mm": 14.0020913482488,
+      "bore_clearance_mm": 5.647908651751198
+    },
+    {
+      "name": "C4",
+      "maximum_radius_mm": 10.541106375617789,
+      "bore_clearance_mm": 9.10889362438221
+    },
+    {
+      "name": "C9",
+      "maximum_radius_mm": 8.346520244359027,
+      "bore_clearance_mm": 11.303479755640971
+    },
+    {
+      "name": "C15",
+      "maximum_radius_mm": 7.831708573717563,
+      "bore_clearance_mm": 11.818291426282435
+    },
+    {
+      "name": "C5",
+      "maximum_radius_mm": 15.535001423938606,
+      "bore_clearance_mm": 4.114998576061392
+    },
+    {
+      "name": "C7",
+      "maximum_radius_mm": 5.770012650890713,
+      "bore_clearance_mm": 13.879987349109285
+    },
+    {
+      "name": "C8",
+      "maximum_radius_mm": 6.801858457675388,
+      "bore_clearance_mm": 12.84814154232461
+    },
+    {
+      "name": "C10",
+      "maximum_radius_mm": 14.981838978289549,
+      "bore_clearance_mm": 4.66816102171045
+    },
+    {
+      "name": "C16",
+      "maximum_radius_mm": 11.554480180746555,
+      "bore_clearance_mm": 8.095519819253443
+    },
+    {
+      "name": "C18",
+      "maximum_radius_mm": 12.984522519129234,
+      "bore_clearance_mm": 6.665477480870765
+    },
+    {
+      "name": "R4",
+      "maximum_radius_mm": 4.795047015219084,
+      "bore_clearance_mm": 14.854952984780915
+    },
+    {
+      "name": "U2",
+      "maximum_radius_mm": 0.7632276714458621,
+      "bore_clearance_mm": 18.886772328554137
+    },
+    {
+      "name": "C6",
+      "maximum_radius_mm": 2.544089622824006,
+      "bore_clearance_mm": 17.10591037717599
+    },
+    {
+      "name": "R1",
+      "maximum_radius_mm": 3.3019001249922537,
+      "bore_clearance_mm": 16.348099875007744
+    },
+    {
+      "name": "R2",
+      "maximum_radius_mm": 2.811139688463711,
+      "bore_clearance_mm": 16.838860311536287
+    },
+    {
+      "name": "R3",
+      "maximum_radius_mm": 3.3018866674824716,
+      "bore_clearance_mm": 16.348113332517528
+    },
+    {
+      "name": "SW1",
+      "maximum_radius_mm": 14.163747060901981,
+      "bore_clearance_mm": 5.4862529390980175
+    },
+    {
+      "name": "R5",
+      "maximum_radius_mm": 8.50367604910111,
+      "bore_clearance_mm": 11.14632395089889
+    },
+    {
+      "name": "C17",
+      "maximum_radius_mm": 9.761795553174089,
+      "bore_clearance_mm": 9.88820444682591
+    },
+    {
+      "name": "X1",
+      "maximum_radius_mm": 9.05612978100765,
+      "bore_clearance_mm": 10.593870218992349
+    },
+    {
+      "name": "C1",
+      "maximum_radius_mm": 8.04671451078662,
+      "bore_clearance_mm": 11.603285489213379
+    },
+    {
+      "name": "C2",
+      "maximum_radius_mm": 10.760723625729463,
+      "bore_clearance_mm": 8.889276374270535
+    },
+    {
+      "name": "X2",
+      "maximum_radius_mm": 15.583982479476829,
+      "bore_clearance_mm": 4.06601752052317
+    },
+    {
+      "name": "C11",
+      "maximum_radius_mm": 16.67685783295673,
+      "bore_clearance_mm": 2.9731421670432674
+    },
+    {
+      "name": "C12",
+      "maximum_radius_mm": 15.885257299512489,
+      "bore_clearance_mm": 3.76474270048751
+    },
+    {
+      "name": "L1",
+      "maximum_radius_mm": 5.694015334746955,
+      "bore_clearance_mm": 13.955984665253045
+    },
+    {
+      "name": "L2",
+      "maximum_radius_mm": 4.778315626772829,
+      "bore_clearance_mm": 14.871684373227168
+    },
+    {
+      "name": "C3",
+      "maximum_radius_mm": 4.422585066267904,
+      "bore_clearance_mm": 15.227414933732096
+    },
+    {
+      "name": "ANT1",
+      "maximum_radius_mm": 17.773259975295915,
+      "bore_clearance_mm": 1.876740024704084
+    }
+  ],
+  "method": "Conservative XY radial envelope of every actual populated-board GLB vertex; fixed-column compatibility retained from unchanged PCB",
+  "minimum_bore_clearance_mm": 1.399999270253808,
+  "physical_removal_tested": false
+}

@@ -25,7 +25,21 @@ const circuitBytes = readFileSync("dist/index/circuit.json")
 const circuit = JSON.parse(circuitBytes)
 const sources = circuit.filter(e => e.type === "source_component" && e.name?.startsWith("ENCLOSURE_"))
 const assemblyIds = new Set(sources.map(e => e.source_component_id))
-assert.equal(sources.length,14)
+assert.equal(sources.length,12)
+assert.equal(manifest.parts.length,12)
+assert(!manifest.parts.some(p => ["Battery_Hatch","Battery_Fasteners"].includes(p.name)))
+assert.equal(geometry.parameters_mm.battery_access,"top")
+assert.equal(geometry.top_service.bottom_hatch,false)
+assert.equal(geometry.top_service.hatch_fasteners,0)
+assert.equal(geometry.top_service.cap_release_latches,2)
+assert.equal(geometry.top_service.pcb_retaining_screws,4)
+assert(geometry.top_service.solid_center_floor_verified)
+assert(geometry.top_service.released_latch_to_pcb_clearance_mm >= 0.2-1e-6)
+assert(geometry.top_service.released_lip_to_bore_clearance_mm > 0)
+assert.equal(geometry.top_service.release_key_checks.length,2)
+assert(geometry.top_service.release_key_checks.every(p => p.retaining_roof_intact && p.housing_overlap_mm3 < 0.002))
+assert.equal(geometry.top_service.pcb_holder_cell_extraction.length,9)
+assert(geometry.top_service.pcb_holder_cell_extraction.every(p => p.rigid_collisions.length===0))
 assert.equal(circuit.filter(e => e.type === "pcb_component" && assemblyIds.has(e.source_component_id)).length,0)
 // Baseline: the checked v1.0.3 board at Git commit 8d744cd. Metadata hashes and
 // the newly added mechanical-only records are the sole excluded records.
@@ -79,4 +93,4 @@ writeFileSync("work/enclosure-model-audit.json",JSON.stringify({
   sourceSha256:Object.fromEntries(["enclosure.tsx","mechanical/export_circuit_models.py",
     "mechanical/build_enclosure.py","mechanical/Circuit_Models/manifest.json"].map(p=>[p,hash(readFileSync(p))])),
 },null,2)+"\n")
-console.log("Pass: 14 aligned enclosure models; electrical records unchanged; portable model URLs")
+console.log(`Pass: ${sources.length} aligned enclosure models; electrical records unchanged; portable model URLs`)

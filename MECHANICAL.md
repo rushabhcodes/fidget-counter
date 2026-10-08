@@ -1,4 +1,4 @@
-# PCB / enclosure interface — disc magnet revision 1.0.5
+# PCB / enclosure interface — top-access revision 1.0.6
 
 Coordinates are millimetres in a top view, relative to the rotation axis. The board is Ø36.5 × 1.0 mm, with four Ø3.6 mm nonplated mounting holes at (±11.45513, ±11.45513). Their thin 0.25 mm nominal edge web still requires fabricator acceptance. Printed shoulders and bushings support the board.
 
@@ -8,19 +8,32 @@ The Ø61.6 mm cap retains its full circumference grip, extending down to Z=1.0. 
 
 ## Commercial CR2032 holder
 
-BT1 is **MYOUNG BS-08-B2AA020-R, JLCPCB C964787**, mounted on the PCB underside. The exact footprint, pad numbers and OBJ/STEP model come from `tsci import --jlcpcb --download --use-exact-footprint C964787`; the imported files are unchanged. The manufacturer drawing specifies 24.1 × 15.7 mm body dimensions and **5.8 mm maximum height**. Clearance uses that maximum rather than the library model's 5.3 mm height. The holder's maximum envelope leaves 0.5 mm above the hatch floor.
+BT1 is **MYOUNG BS-08-B2AA020-R, JLCPCB C964787**, mounted on the PCB underside. The exact footprint, pad numbers and OBJ/STEP model come from `tsci import --jlcpcb --download --use-exact-footprint C964787`; the imported files are unchanged. The manufacturer drawing specifies 24.1 × 15.7 mm body dimensions and **5.8 mm maximum height**. Clearance uses that maximum rather than the library model's 5.3 mm height. The holder's maximum envelope leaves 0.5 mm above the solid floor.
 
 The footprint origin is (-1.2,0), which centers the manufacturer drawing's cell axis at (0,0) after the bottom-side mirror. Pin 1 is positive at (-12.999913,0), with a 3.5 × 3.8 mm SMT land; pin 2 is negative at (9.499915,0), with a 5.7 × 2.8 mm SMT land. These coordinates are top-view coordinates. Two regular tented routing vias at (2,-11) and (-2,-11) preserve the original power distribution; they are not battery contacts or wire attachment points.
 
-Insert the CR2032 **positive face toward the removable bottom hatch**, negative face toward the PCB. Insert the battery after PCB reflow. The commercial holder supplies retention and contacts; the hatch carries no spring contacts or wires.
+Insert the CR2032 **positive face toward the solid bottom cover**, negative face toward the PCB. Insert the battery after PCB reflow. The commercial holder supplies retention and contacts. The bottom cover is permanently closed.
 
-Remove the device from the phone, undo the two M2 hatch screws and remove the plain hatch. Release the cell from the holder using its open sides, fit a fresh CR2032 in the marked orientation and reinstall the hatch. The cap, PCB and holder stay assembled. Screw centers are (6,-11.3) and (-6,11.3), clear of the holder's solder tails, cell and SWD pad row. Nominal pad-edge clearance to the nearest hatch post is recorded in `mechanical/enclosure-validation.json`.
+## Top battery access and cap release
 
-The exported holder STEP contains its unloaded negative spring contact. Its 2.62 mm³ intersection with the nominal cell is reported separately as spring preload geometry; the cell has zero intersection with the rigid holder body. Contact deflection, insertion/removal motion, retention force and printed tolerances require a physical fit test. The battery-open STEP illustrates access, not a simulated insertion trajectory.
+The cap now has **two 0.6 mm PETG latch tongues** instead of six broad retention segments. Two 6 × 3.5 mm windows in the grip line up with two 3 × 1.4 mm radial ports in the housing, at 90° and 270°. The retention roof above the ports remains continuous, so aligning the ports alone does not unlock the cap. The 0.25 mm nominal lip engagement and 0.5 mm button travel are retained. Use PETG for the cap and flexure; repeated release of the thin latches has not been physically tested.
+
+1. Remove the device from the phone. Rotate the cap until both grip windows align with the housing ports.
+2. Insert the two printed `Cap_Release_Key_Print_2` keys through the windows and ports. Press both keys inward until their shoulders meet the housing, then gently lift the cap about 1 mm. Withdraw the keys and lift the cap clear. Do not force a latch that does not release; fit-test the port/key pair first.
+3. Undo the **four M1.6 screws** securing the flexure and PCB spacers. Lift away the flexure and four bushings. Keep the loose bushings together.
+4. Use the nonconductive `PCB_Lift_Pick` at the PCB edges near 0° and 180°, away from the parts. Raise both edges gradually, then lift the PCB, soldered holder and cell together straight upward along the four columns. Grip the PCB edge; do not pull on components or solder tails.
+5. Turn the lifted PCB over, release the cell from the holder's open sides and fit a fresh CR2032. Positive face points away from the PCB.
+6. Lower the board onto its shoulders and columns, refit the four bushings, flexure and screws, then snap the cap back on. Confirm free rotation, return travel and cap retention before use.
+
+The keys have 1.0 × 2.4 mm blades and shoulders that limit nominal latch deflection to 0.35 mm. At that deflection the lip clears the bore by 0.10 mm and the latch inner face clears the PCB by 0.20 mm. The approximate release strain is 1.87%; this is not FEA or a measured fatigue limit. CAD checks both key paths, the intact retention roof and nine upward board/holder/cell positions from 0 to 24 mm. The initial edge-pick corridors clear rigid solids; actual pick leverage and component clearances require a printed/populated prototype.
+
+There is **no bottom hatch, hatch seam, hatch post or M2 hatch screw**. The bottom cover and protective pad are continuous. The four existing top fasteners remain the reusable PCB mount.
+
+The exported holder STEP contains its unloaded negative spring contact. Its 2.62 mm³ intersection with the nominal cell is reported separately as spring preload geometry; the cell has zero intersection with the rigid holder body. Contact deflection, insertion/removal motion, retention force and printed tolerances require a physical fit test. The top-service STEP illustrates the lifted and flipped board; cell insertion/removal from the spring holder is not a simulated trajectory.
 
 ## Programming and clearance
 
-SWD pads are at Y=-14 and X=-4,-2,0,2,4, ordered VDD, GND, SWDIO, SWDCLK, nRESET in a top view. Viewed directly underneath, their order is **R, C, D, G, V**, matching the legend. Remove the hatch for programming. Use a fixture with narrow probes; the nearest post clearance is nominal. VDD is a target-voltage reference; remove the primary cell before deliberately powering the board from the programmer.
+SWD pads are at Y=-14 and X=-4,-2,0,2,4, ordered VDD, GND, SWDIO, SWDCLK, nRESET in a top view. Viewed directly underneath, their order is **R, C, D, G, V**, matching the legend. Lift the PCB through the top and turn it over for programming. Use a fixture with narrow probes. VDD is a target-voltage reference; remove the primary cell before deliberately powering the board from the programmer.
 
 TP_GND has a 0.4 mm plated drill; the remaining four 1.2 mm pogo pads are undrilled. GPIO diagnostic lands use 0.30 mm drills and 0.55 mm lands, with no fitted parts. All routing vias are tented on both sides. The holder's insulating housing separates the cell from PCB copper.
 
@@ -32,7 +45,7 @@ The ordered Ø5 × 1.5 mm discs replace the reserved segmented-ring magnet envel
 
 The pocket walls are a raised tray integral with the bottom cover. The stationary housing has clearance for that tray and an upper recess for a continuous **steel backing ring, ID44.05 × OD54.45 × 0.7 mm**. This is a separate metal reference part, not a printed magnet or a verified magnetic shield. Both it and the discs load from below while the cover is off. A backing ring cannot pass through individual Ø5.25 mm holes, which is why the locating pockets are in the separate cover rather than trapped under a housing roof.
 
-Insert the backing ring into the housing recess first. Check the ordered magnets' axial polarity and attraction against the intended phone or case before gluing. Fit 24 discs into the cover pockets with a thin adhesive layer beneath each disc. Their upper faces sit flush with the tray at Z=2.35 mm, and the backing ring starts at Z=2.40 mm. Dry-fit the loaded cover, then bond it to the housing's mating faces; do not bond across the battery-hatch seam. The battery remains independently accessible through its two-screw hatch. Use the **new housing and bottom cover together**; the old 1.1 mm ring cavity is incompatible with this tray. The cap, PCB, battery holder, hatch and flexure retain their prior geometry and height.
+Insert the backing ring into the housing recess first. Check the ordered magnets' axial polarity and attraction against the intended phone or case before gluing. Fit 24 discs into the cover pockets with a thin adhesive layer beneath each disc. Their upper faces sit flush with the tray at Z=2.35 mm, and the backing ring starts at Z=2.40 mm. Dry-fit the loaded cover, then bond it to the housing's mating faces. Subsequent battery service uses the top opening. Use the **new cap, housing and solid bottom cover together**. The PCB, soldered holder and flexure retain their geometry and assembled height.
 
 The custom disc layout is a mechanical prototype, not a MagSafe-qualified array. The purchased part's magnetization direction has not been confirmed. Polarity distribution, holding/sliding/rotation force, sensor offset/saturation and BLE performance require tests with the actual assembled phone. Do not assume that a uniform axial-disc circle reproduces Apple's prescribed ring polarity. The central encoder magnet remains diametrically magnetized and separate from these attachment magnets.
 
@@ -44,8 +57,8 @@ The custom disc layout is a mechanical prototype, not a MagSafe-qualified array.
 python mechanical/build_enclosure.py --out work/enclosure
 ```
 
-`Print_STL/` contains all five parts in print orientation: Rotating_Cap, Stationary_Housing, Flexure_Retention_System, Battery_Hatch and Bottom_Cover. Corresponding editable solids are in `STEP_Parts/`. Use the complete revised set; the previous 12.2 mm enclosure and cap are incompatible with this holder stack.
+`Print_STL/` contains four main enclosure parts: Rotating_Cap, Stationary_Housing, Flexure_Retention_System and Bottom_Cover. Also print four PCB spacers, two cap release keys and one PCB lift pick from their named STL files. Corresponding editable solids are in `STEP_Parts/`. Use the complete revised cap/housing/cover set; older caps and housing ports do not form the new release mechanism.
 
-Released, pressed, exploded and battery-open assemblies are included in the downloadable mechanical handoff. Electronics other than the holder are board/key-package bounding references; the circuit now combines the actual populated PCB with the released enclosure in `previews/3d.glb`. Its 14 assembly models exclude these electronic bounding dummies and the duplicate holder. `previews/pcb-3d.glb` retains the bare board view. The four outer shells are translucent in the circuit viewer. The builder also exports aligned OBJ/MTL files in `Circuit_Models/`; copy these into `mechanical/Circuit_Models/` after a CAD revision. Attachment discs now match the ordered dimensions; magnetic performance is untested. The flexure calculation is an approximate cantilever estimate rather than FEA or a measured return force.
+Released, pressed, exploded and top-service assemblies are included in the downloadable mechanical handoff. Electronics other than the holder are board/key-package bounding references; the circuit now combines the actual populated PCB with the released enclosure in `previews/3d.glb`. Its 12 assembly models exclude these electronic bounding dummies and the duplicate holder. `previews/pcb-3d.glb` retains the bare board view. The three outer shells are translucent in the circuit viewer. The builder also exports aligned OBJ/MTL files in `Circuit_Models/`; copy these into `mechanical/Circuit_Models/` after a CAD revision. Attachment discs now match the ordered dimensions; magnetic performance is untested. The flexure calculation is an approximate cantilever estimate rather than FEA or a measured return force.
 
 Sources: [MYOUNG holder drawing](https://xonstorage.z8.web.core.windows.net/pdf/myoung_bs08b2aa020_apr22_xonlink.pdf), [JLCPCB holder listing](https://jlcpcb.com/partdetail/MYOUNG-BS_08_B2AA020R/C964787), [C&K KMR2 drawing](https://www.ckswitches.com/media/1479/kmr2.pdf).

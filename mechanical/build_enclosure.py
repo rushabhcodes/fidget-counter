@@ -76,6 +76,11 @@ assert Rbase > mag_ro+mc+1, 'Attachment flange too small'
 assert P['encoder_released_airgap']-P['button_travel'] >= 0.5, 'Pressed sensor gap too small'
 assert P['flexure_count'] in (3,4)
 assert P['attachment_mode'] in ('envelope','vendor_sectors','disc_array')
+assert P['battery_access']=='top'
+assert P['snap_tab_count']==len(P['snap_tab_center_degrees'])==2
+assert P['cap_service_port_bottom_z']+P['cap_service_port_height']<P['snap_lip_top_z'], 'Release port cuts the retaining roof'
+assert Rskirt-P['snap_tab_wall']-P['cap_release_deflection']-P['pcb_diameter']/2>=0.2-1e-6, 'Released latch fouls PCB edge'
+assert Rlip-P['cap_release_deflection']<Rbore, 'Released latch cannot pass the bore'
 assert grip_inner-Rbase >= P['radial_running_clearance']-1e-6, 'Outer grip fouls lower flange'
 assert grip_bottom-P['button_travel'] >= 0.5-1e-6, 'Pressed outer grip too close to phone plane'
 assert P['cap_top_groove_depth'] <= 0.4, 'Top grip leaves too little deck thickness'
@@ -91,10 +96,17 @@ profile=[(Rskirt_i,P['skirt_bottom_z']), (Rskirt,P['skirt_bottom_z']),
          (Rskirt,P['snap_lip_top_z']-0.65),(Rlip,P['snap_lip_top_z']-0.4),
          (Rlip,P['snap_lip_top_z']),(Rskirt,P['snap_lip_top_z']),
          (Rskirt,deck_z+0.02),(Rskirt_i,deck_z+0.02)]
-skirt=cq.Workplane('XZ').polyline(profile).close().revolve(360,(0,0),(0,1)).val()
-for i in range(P['snap_tab_count']):
-    skirt=skirt.cut(radial_box(Rskirt,3.0,P['snap_slot_width'],P['skirt_bottom_z']-0.05,
-                             P['snap_slot_root_z']-P['skirt_bottom_z']+0.05,i*360/P['snap_tab_count']))
+skirt=annulus(Rskirt_i,Rskirt,P['skirt_bottom_z'],deck_z+0.02-P['skirt_bottom_z'])
+for angle in P['snap_tab_center_degrees']:
+    half=P['snap_tab_arc_degrees']/2
+    latch=cq.Workplane('XZ').polyline(profile).close().revolve(2*half,(0,0),(0,1)).val().rotate((0,0,0),(0,0,1),angle-half)
+    skirt=skirt.fuse(latch)
+    # Thin only the two flexing tongues. The remaining skirt still guides the cap.
+    skirt=skirt.cut(sector(Rskirt_i-0.05,Rskirt-P['snap_tab_wall'],P['skirt_bottom_z']-0.05,
+                         P['snap_slot_root_z']-P['skirt_bottom_z']+0.05,angle-half-2,angle+half+2))
+    for boundary in [angle-half-1.5,angle+half+1.5]:
+        skirt=skirt.cut(radial_box(Rskirt,3.0,P['snap_slot_width'],P['skirt_bottom_z']-0.05,
+                                 P['snap_slot_root_z']-P['skirt_bottom_z']+0.05,boundary))
 cap=cap.fuse(skirt)
 ribs=[radial_box(Rcap-0.55,1.10,0.70,grip_bottom,P['overall_height']-grip_bottom,
                 i*360/P['cap_edge_rib_count']) for i in range(P['cap_edge_rib_count'])]
@@ -117,6 +129,10 @@ assert pocket_top<=deck_z, 'Encoder pocket cuts through cap roof'
 boss_bottom=magnet_z-0.15
 cap=cap.fuse(disk(pocket_r+1.1,boss_bottom,deck_z-boss_bottom+0.02))
 cap=cap.cut(disk(pocket_r,boss_bottom-0.1,pocket_top-boss_bottom+0.1)).clean()
+for angle in P['snap_tab_center_degrees']:
+    cap=cap.cut(radial_box(Rcap-0.6,3.0,P['cap_grip_window_width'],P['cap_grip_window_bottom_z'],
+                          P['cap_grip_window_height'],angle))
+cap=cap.clean()
 encoder=disk(P['encoder_diameter']/2,magnet_z,P['encoder_thickness'])
 
 # Structural housing. Lower widened flange keeps attachment magnets outside the core.
@@ -127,6 +143,9 @@ housing=housing.cut(disk(Rbore,1.5,body_top+1.0))
 housing=housing.cut(annulus(Rbore-0.02,Rgroove,P['snap_lip_top_z']-1.30,1.30))
 housing=housing.cut(cone(Rbore,Rbore+0.4,body_top-0.5,0.51))
 housing=housing.cut(disk(12.25,skin_top-0.1,1.5-skin_top+0.2))
+for angle in P['snap_tab_center_degrees']:
+    housing=housing.cut(radial_box(Rbody,3.0,P['cap_service_port_width'],P['cap_service_port_bottom_z'],
+                                  P['cap_service_port_height'],angle))
 # The disc tray loads from its inside face before attaching the bottom cover.
 # The housing's upper recess accepts a continuous steel backing ring first;
 # locating pockets in the cover avoids trapping that ring above small holes.
@@ -181,12 +200,6 @@ for x,y in mounts:
     housing=housing.fuse(disk(2.3,1.49,pcb_z-1.49,x,y))
     housing=housing.fuse(disk(1.55,pcb_z-0.01,body_top-pcb_z+0.01,x,y))
     housing=housing.cut(disk(0.625,pcb_z+0.85,3.10,x,y))
-# Offset hatch posts clear the holder tails, cell and underside SWD pad row.
-hatch_mounts=[(6.0,-11.3),(-6.0,11.3)]
-for x,y in hatch_mounts:
-    housing=housing.fuse(disk(2.5,skin_top,pcb_z-skin_top,x,y))
-    housing=housing.cut(disk(2.2,skin_top-0.01,1.42,x,y))
-    housing=housing.cut(disk(0.85,2.20,pcb_z-2.20-0.19,x,y))
 # Four perimeter notches engage fixed columns and register PCB rotation.
 housing=housing.clean()
 
@@ -259,51 +272,50 @@ holder_path=HERE.parent/'imports/BS_08_B2AA020_R/BS_08_B2AA020_R.step'
 holder=cq.importers.importStep(str(holder_path)).val().translate((0,0,0.01)).rotate((0,0,0),(0,1,0),180)
 holder=holder.translate((P['battery_holder_pcb_x'],P['battery_holder_pcb_y'],pcb_z))
 pcb_dummy=board
-# The negative face is closest to the PCB; positive face is visible at the hatch.
+# The negative face is closest to the PCB; positive face points at the solid floor.
 # This is a nominal fit reference. Compliant metal contacts need a physical test.
 battery=disk(10.0,pcb_z-P['battery_negative_face_depth']-3.2,3.2)
 
-# Removable plain hatch: the commercial holder retains the cell. No printed cup,
-# spring-contact relief, soldered leads or contact hardware on the moving hatch.
-door=disk(12.0,pad,skin)
-aperture=disk(12.25,pad-0.1,skin+0.2)
-for x,y in hatch_mounts:
-    door=door.fuse(disk(2.0,pad,2.0-pad,x,y))
-    door=door.cut(disk(1.1,pad-0.05,2.1,x,y))
-    door=door.cut(cone(1.95,1.1,pad-0.01,1.01,x,y))
-    aperture=aperture.fuse(disk(2.25,pad-0.1,skin+0.2,x,y))
-door=door.clean()
-bottom=disk(Rbase,pad,skin).cut(aperture).clean()
+# Continuous phone-facing floor. Battery service is entirely through the top.
+bottom=disk(Rbase,pad,skin)
 if P['attachment_mode']=='disc_array':
     tray=annulus(Rbody,tray_ro,skin_top-0.01,mag_top-skin_top+0.01)
     pockets=[disk(disc_pocket_r,skin_top,mag_top-skin_top+0.1,c['x'],c['y'])
              for c in attachment_centers]
     tray=tray.cut(compound(pockets))
     bottom=bottom.fuse(tray).clean()
-# Film is split between the permanent cover and hatch. It does not bridge the seam.
-pad_cutter=disk(Rbase,-0.01,pad+0.01)
-phone_pad=compound([bottom.translate((0,0,-pad)).intersect(pad_cutter),
-                   door.intersect(disk(Rbase,pad,pad)).translate((0,0,-pad))])
+phone_pad=disk(Rbase,0,pad)
 encoder_shim=disk(P['encoder_diameter']/2,magnet_z+P['encoder_thickness'],P['encoder_roof_shim'])
 
 def flat_screw(x,y,head_z,dia,length,head_d):
     head_h=(head_d-dia)/2
     return cone(head_d/2,dia/2,head_z,head_h,x,y).fuse(disk(dia/2,head_z+head_h,length,x,y)).clean()
 flex_screws=compound([flat_screw(x,y,body_top+0.46,1.6,3.0,2.8).rotate((x,y,body_top+0.78),(x+1,y,body_top+0.78),180) for x,y in mounts])
-# Counter-sunk screws are oriented head towards the phone; shanks point upward.
-door_screws=compound([flat_screw(x,y,pad+0.03,2.0,4.0,3.7) for x,y in hatch_mounts])
 # Four bushings clamp the PCB against its shoulders when the spring insert is
 # screwed down. The board cannot lift toward the encoder when the phone flips.
 pcb_spacers=compound([annulus(1.7,2.2,pcb_top,body_top-pcb_top).translate((x,y,0)) for x,y in mounts])
 spacer_print=annulus(1.7,2.2,0,body_top-pcb_top)
 cq.exporters.export(spacer_print,str(OUT/'Print_STL'/'PCB_Spacer_Print_4.stl'),tolerance=0.025,angularTolerance=0.06)
 cq.exporters.export(pcb_spacers,str(OUT/'STEP_Parts'/'PCB_Spacer_Bushings.step'))
+# Two reusable flat keys enter the aligned side ports. A shoulder limits inward
+# latch displacement; a separate handle stays outside the full grip sleeve.
+key_tip=Rbody-(Rlip-P['cap_release_deflection'])
+key_handle_start=Rcap-(Rlip-P['cap_release_deflection'])+0.8
+key_width=P['cap_release_key_blade_width'];key_thickness=P['cap_release_key_blade_thickness']
+release_key=box(key_handle_start+7,key_width,key_thickness,x=(key_handle_start+7)/2)
+release_key=release_key.fuse(box(2.0,key_width,2.5,x=key_tip+1),
+                           box(7,8,2.5,x=key_handle_start+3.5)).clean()
+cq.exporters.export(release_key,str(OUT/'Print_STL'/'Cap_Release_Key_Print_2.stl'),tolerance=0.025,angularTolerance=0.06)
+cq.exporters.export(release_key,str(OUT/'STEP_Parts'/'Cap_Release_Key.step'))
+lift_pick=box(20,2.4,0.8,x=10).fuse(box(7,8,2.5,x=16.5)).clean()
+cq.exporters.export(lift_pick,str(OUT/'Print_STL'/'PCB_Lift_Pick.stl'),tolerance=0.025,angularTolerance=0.06)
+cq.exporters.export(lift_pick,str(OUT/'STEP_Parts'/'PCB_Lift_Pick.step'))
 
 parts={
  'Rotating_Cap':cap,'Encoder_Magnet':encoder,'Stationary_Housing':housing,
  'Flexure_Retention_System':released_flex,'PCB_Dummy':pcb_dummy,
  'Angle_Sensor_Dummy':sensor,'BLE_MCU_Dummy':mcu,'Tactile_Switch':switch,
- 'CR2032':battery,'Battery_Holder':holder,'Battery_Hatch':door,
+ 'CR2032':battery,'Battery_Holder':holder,
  'MagSafe_Magnet_Array':attachment,'Magnetic_Shield':shield,'Bottom_Cover':bottom}
 colors={'Rotating_Cap':(0.13,0.19,0.26),'Encoder_Magnet':(0.88,0.31,0.22),
  'Stationary_Housing':(0.77,0.82,0.84),'Flexure_Retention_System':(0.96,0.64,0.18),
@@ -312,8 +324,8 @@ colors={'Rotating_Cap':(0.13,0.19,0.26),'Encoder_Magnet':(0.88,0.31,0.22),
  'CR2032':(0.63,0.68,0.73),'Battery_Holder':(0.29,0.30,0.32),'Battery_Hatch':(0.29,0.40,0.46),
  'MagSafe_Magnet_Array':(0.24,0.63,0.74),'Magnetic_Shield':(0.47,0.53,0.60),
  'Bottom_Cover':(0.46,0.55,0.60)}
-print_parts=['Rotating_Cap','Stationary_Housing','Flexure_Retention_System','Battery_Hatch','Bottom_Cover']
-states={'Released':parts.copy(),'Pressed':parts.copy(),'Exploded':{},'Battery_Open':parts.copy()}
+print_parts=['Rotating_Cap','Stationary_Housing','Flexure_Retention_System','Bottom_Cover']
+states={'Released':parts.copy(),'Pressed':parts.copy(),'Exploded':{},'Top_Service':parts.copy()}
 states['Pressed']['Rotating_Cap']=cap.translate((0,0,-P['button_travel']))
 states['Pressed']['Encoder_Magnet']=encoder.translate((0,0,-P['button_travel']))
 states['Pressed']['Flexure_Retention_System']=pressed_flex
@@ -321,20 +333,23 @@ states['Pressed']['Tactile_Switch']=pressed_switch
 explode={'Rotating_Cap':66,'Encoder_Magnet':45,'Flexure_Retention_System':30,
  'Angle_Sensor_Dummy':23,'BLE_MCU_Dummy':23,'Tactile_Switch':23,
  'PCB_Dummy':17,'Battery_Holder':17,'CR2032':8,'Stationary_Housing':0,
- 'Magnetic_Shield':-14,'MagSafe_Magnet_Array':-28,'Bottom_Cover':-42,'Battery_Hatch':-52}
-for n,s in parts.items(): states['Exploded'][n]=s.translate((26 if n=='Battery_Hatch' else 0,0,explode[n]))
-states['Battery_Open']['Battery_Hatch']=door.translate((28,0,-18))
-states['Battery_Open']['CR2032']=battery.translate((0,0,-14))
+ 'Magnetic_Shield':-14,'MagSafe_Magnet_Array':-28,'Bottom_Cover':-42}
+for n,s in parts.items(): states['Exploded'][n]=s.translate((0,0,explode[n]))
+states['Top_Service']['Rotating_Cap']=cap.translate((-65,0,20))
+states['Top_Service']['Encoder_Magnet']=encoder.translate((-65,0,20))
+states['Top_Service']['Flexure_Retention_System']=released_flex.translate((0,0,30))
+for name in ['PCB_Dummy','Battery_Holder','CR2032','Angle_Sensor_Dummy','BLE_MCU_Dummy','Tactile_Switch']:
+    states['Top_Service'][name]=parts[name].rotate((0,0,pcb_z+0.5),(0,1,pcb_z+0.5),180).translate((58,0,P['pcb_service_lift']))
 
-for state in ['Released','Pressed','Exploded','Battery_Open']:
+for state in ['Released','Pressed','Exploded','Top_Service']:
     assy=cq.Assembly(name='MagSafe_BLE_Fidget_'+state)
     for name,s in states[state].items(): assy.add(s,name=name,color=cq.Color(*colors[name]))
     if state!='Exploded':
-        assy.add(flex_screws,name='Flexure_M1_6_Fasteners',color=cq.Color(0.4,0.44,0.48))
-        if state!='Battery_Open': assy.add(door_screws,name='Battery_M2_Fasteners',color=cq.Color(0.4,0.44,0.48))
+        assy.add(flex_screws.translate((0,0,30 if state=='Top_Service' else 0)),name='Flexure_M1_6_Fasteners',color=cq.Color(0.4,0.44,0.48))
         assy.add(phone_pad,name='Protective_Film',color=cq.Color(0.16,0.18,0.20))
-        assy.add(encoder_shim.translate((0,0,-P['button_travel'] if state=='Pressed' else 0)),name='Encoder_Roof_Shim',color=cq.Color(0.6,0.6,0.6))
-        assy.add(pcb_spacers,name='PCB_Spacer_Bushings',color=cq.Color(0.7,0.72,0.74))
+        shim_shift=(-65,0,20) if state=='Top_Service' else (0,0,-P['button_travel'] if state=='Pressed' else 0)
+        assy.add(encoder_shim.translate(shim_shift),name='Encoder_Roof_Shim',color=cq.Color(0.6,0.6,0.6))
+        assy.add(pcb_spacers.translate((0,0,20 if state=='Top_Service' else 0)),name='PCB_Spacer_Bushings',color=cq.Color(0.7,0.72,0.74))
     else:
         assy.add(pcb_spacers.translate((0,0,23)),name='PCB_Spacer_Bushings',color=cq.Color(0.7,0.72,0.74))
     assy.export(str(OUT/f'Fidget_Assembly_{state}.step'))
@@ -376,7 +391,6 @@ for name,s in parts.items():
 # visibly distinct without splitting the 13 required component exports.
 for n,s,c in [('PCB_Board',board,colors['PCB_Dummy']),('Flexure_Neutral',neutral_flex,colors['Flexure_Retention_System']),
               ('Flexure_Fasteners',flex_screws,(0.44,0.48,0.52)),
-              ('Battery_Fasteners',door_screws,(0.44,0.48,0.52)),
               ('Phone_Pad',phone_pad,(0.16,0.18,0.20)),
               ('Encoder_Shim',encoder_shim,(0.6,0.6,0.6)),
               ('PCB_Spacers',pcb_spacers,(0.7,0.72,0.74))]:
@@ -411,12 +425,41 @@ for state in ['Released','Pressed']:
     for n,s in states[state].items():
         v=pcb_spacers.intersect(s).Volume()
         if v>0.002: collisions.append({'state':state,'parts':['PCB_Spacer_Bushings',n],'overlap_mm3':round(v,5)})
+# The top service path uses the existing four mounting holes and screws.
+# After removing the cap, flexure, screws and spacers, the complete board/cell/
+# holder stack must translate straight upward without touching fixed solids.
+extraction=[]
+lift_parts=['PCB_Dummy','Battery_Holder','CR2032','Angle_Sensor_Dummy','BLE_MCU_Dummy','Tactile_Switch']
+fixed_parts=['Stationary_Housing','Bottom_Cover','MagSafe_Magnet_Array','Magnetic_Shield']
+for lift in [0,0.5,1,2,4,6,10,16,P['pcb_service_lift']]:
+    rows=[]
+    for name in lift_parts:
+        moved=parts[name].translate((0,0,lift))
+        for fixed in fixed_parts:
+            volume=moved.intersect(parts[fixed]).Volume()
+            if volume>0.002: rows.append({'moving':name,'fixed':fixed,'overlap_mm3':round(volume,5)})
+    assert not rows, f'Top service path blocked at lift {lift}: {rows}'
+    extraction.append({'lift_mm':lift,'rigid_collisions':rows})
+key_checks=[]
+for angle in P['snap_tab_center_degrees']:
+    installed_key=release_key.translate((Rlip-P['cap_release_deflection'],0,7.35)).rotate((0,0,0),(0,0,1),angle)
+    overlap=installed_key.intersect(housing).Volume()
+    assert overlap<0.002, 'Release key collides with housing outside its service port'
+    roof=sector(Rbore+0.05,Rbody,P['snap_lip_top_z']+0.05,0.35,angle-3,angle+3)
+    assert abs(housing.intersect(roof).Volume()-roof.Volume())<0.001, 'Retaining roof missing above release port'
+    key_checks.append({'angle_degrees':angle,'housing_overlap_mm3':round(overlap,5),'retaining_roof_intact':True})
+pick_checks=[]
+for angle in [0,180]:
+    corridor=radial_box(18.9,1.0,2.4,5.9,body_top+0.5-5.9,angle)
+    for name in ['Stationary_Housing','PCB_Dummy','Battery_Holder','CR2032']:
+        assert corridor.intersect(parts[name]).Volume()<0.002, f'PCB lift pick corridor blocked by {name}'
+    pick_checks.append({'angle_degrees':angle,'radial_bounds_mm':[18.4,19.4],'width_mm':2.4,'rigid_collisions':0})
+floor_probe=disk(12.25,pad,skin)
+assert abs(bottom.intersect(floor_probe).Volume()-floor_probe.Volume())<0.001, 'Solid bottom retains a hatch opening'
 L=P['flexure_mean_radius']*math.radians(P['flexure_arc_degrees']-fixed_root_degrees)
 k=P['petg_modulus_estimate_mpa']*P['flexure_width']*P['flexure_thickness']**3/(4*L**3)
 validation={'parameters_mm':P,'manifest':manifest,'collision_audit':collisions,'contact_fit_estimates':contact_fit,
- 'hatch_mounts_mm':hatch_mounts,
  'swd_pad_row_mm':{'x':[-4,-2,0,2,4],'y':-14,'pad_diameter':1.2},
- 'minimum_swd_pad_to_hatch_post_mm':round(min(math.hypot(x-px,y+14)-2.5-0.6 for x,y in hatch_mounts for px in [-4,-2,0,2,4]),4),
  'button_travel_mm':P['button_travel'],
  'sensor_gap_released_mm':P['encoder_released_airgap'],
  'sensor_gap_pressed_mm':P['encoder_released_airgap']-P['button_travel'],
@@ -425,7 +468,7 @@ validation={'parameters_mm':P,'manifest':manifest,'collision_audit':collisions,'
  'outer_grip_height_mm':P['overall_height']-grip_bottom,
  'outer_grip_flange_clearance_radial_mm':round(grip_inner-Rbase,4),
  'outer_grip_phone_clearance_pressed_mm':grip_bottom-P['button_travel'],
- 'snap_strain_estimate':1.5*P['skirt_wall']*(Rlip-Rbore)/(P['snap_slot_root_z']-P['snap_lip_top_z'])**2,
+ 'snap_strain_estimate':1.5*P['snap_tab_wall']*(Rlip-Rbore)/(P['snap_slot_root_z']-P['snap_lip_top_z'])**2,
  'flexure_estimate':{'method':'straight cantilever approximation; curved beam and FDM anisotropy not solved',
    'length_mm':round(L,3),'four_beam_stiffness_n_per_mm':round(k*P['flexure_count'],3),
    'rest_force_n':round(k*P['flexure_count']*P['flexure_preload'],3),
@@ -437,7 +480,17 @@ validation={'parameters_mm':P,'manifest':manifest,'collision_audit':collisions,'
  'electronics_status':'STEP assemblies use mechanical electronics bounding dummies. The tscircuit assembly replaces these with the actual populated board. No physical RF or firmware validation.',
  'contact_hardware_status':'JLCPCB C964787 BS-08-B2AA020-R fitted below PCB; manufacturer 5.8 mm maximum height used for clearance',
  'holder_conservative_bottom_clearance_mm':round(pcb_z-P['battery_holder_max_height']-skin_top,4),
- 'battery_positive_face':'toward removable bottom hatch',
+ 'battery_positive_face':'toward solid bottom cover',
+ 'top_service':{'access':'top','bottom_hatch':False,'hatch_fasteners':0,'pcb_retaining_screws':4,
+    'screw_size':'M1.6','cap_release_latches':P['snap_tab_count'],'release_keys_required':2,
+    'release_deflection_mm':P['cap_release_deflection'],
+    'release_strain_estimate':1.5*P['snap_tab_wall']*P['cap_release_deflection']/(P['snap_slot_root_z']-P['snap_lip_top_z'])**2,
+    'released_latch_to_pcb_clearance_mm':Rskirt-P['snap_tab_wall']-P['cap_release_deflection']-P['pcb_diameter']/2,
+    'released_lip_to_bore_clearance_mm':Rbore-(Rlip-P['cap_release_deflection']),
+    'release_key_tip_to_shoulder_mm':key_tip,'release_key_checks':key_checks,
+    'pcb_pick_corridors':pick_checks,'pcb_holder_cell_extraction':extraction,
+    'pcb_removal_motion':'straight +Z after cap, flexure, screws and spacers are removed',
+    'solid_center_floor_verified':True,'physical_cycle_tested':False},
  'holder_contact_model_note':'Library contacts are undeformed. Battery/holder overlap is reported separately as a contact-fit estimate, not certified retention or spring-force validation.'}
 if P['attachment_mode']=='disc_array':
     validation['attachment_disc_array']={

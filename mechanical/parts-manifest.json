@@ -4,7 +4,7 @@
     "print": true,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 8659.392,
+    "volume_mm3": 8575.897,
     "size_mm": [
       61.6,
       61.6,
@@ -38,7 +38,7 @@
     "print": true,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 4218.468,
+    "volume_mm3": 4046.12,
     "size_mm": [
       58.0,
       58.0,
@@ -170,23 +170,6 @@
     ]
   },
   {
-    "name": "Battery_Hatch",
-    "print": true,
-    "cad_valid": true,
-    "solids": 1,
-    "volume_mm3": 292.054,
-    "size_mm": [
-      24.0,
-      26.6,
-      1.8
-    ],
-    "color": [
-      0.29,
-      0.4,
-      0.46
-    ]
-  },
-  {
     "name": "MagSafe_Magnet_Array",
     "print": false,
     "cad_valid": true,
@@ -225,7 +208,7 @@
     "print": true,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 2168.191,
+    "volume_mm3": 2463.834,
     "size_mm": [
       58.0,
       58.0,

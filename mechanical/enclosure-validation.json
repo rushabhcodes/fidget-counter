@@ -27,10 +27,27 @@
     "skirt_wall": 0.8,
     "skirt_bottom_z": 6.8999999999999995,
     "snap_lip_top_z": 8.55,
-    "snap_slot_root_z": 12.05,
+    "snap_slot_root_z": 12.65,
     "snap_lip_projection": 0.5,
     "snap_slot_width": 1.0,
-    "snap_tab_count": 6,
+    "snap_tab_count": 2,
+    "snap_tab_center_degrees": [
+      90,
+      270
+    ],
+    "snap_tab_arc_degrees": 18.0,
+    "snap_tab_wall": 0.6,
+    "cap_service_port_width": 3.0,
+    "cap_service_port_bottom_z": 7.1,
+    "cap_service_port_height": 1.4,
+    "cap_grip_window_width": 6.0,
+    "cap_grip_window_bottom_z": 6.5,
+    "cap_grip_window_height": 3.5,
+    "cap_release_key_blade_width": 2.4,
+    "cap_release_key_blade_thickness": 1.0,
+    "cap_release_deflection": 0.35,
+    "battery_access": "top",
+    "pcb_service_lift": 24.0,
     "flexure_count": 4,
     "flexure_thickness": 1.0,
     "flexure_width": 2.0,
@@ -71,7 +88,7 @@
       "print": true,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 8659.392,
+      "volume_mm3": 8575.897,
       "size_mm": [
         61.6,
         61.6,
@@ -105,7 +122,7 @@
       "print": true,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 4218.468,
+      "volume_mm3": 4046.12,
       "size_mm": [
         58.0,
         58.0,
@@ -237,23 +254,6 @@
       ]
     },
     {
-      "name": "Battery_Hatch",
-      "print": true,
-      "cad_valid": true,
-      "solids": 1,
-      "volume_mm3": 292.054,
-      "size_mm": [
-        24.0,
-        26.6,
-        1.8
-      ],
-      "color": [
-        0.29,
-        0.4,
-        0.46
-      ]
-    },
-    {
       "name": "MagSafe_Magnet_Array",
       "print": false,
       "cad_valid": true,
@@ -292,7 +292,7 @@
       "print": true,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 2168.191,
+      "volume_mm3": 2463.834,
       "size_mm": [
         58.0,
         58.0,
@@ -328,16 +328,6 @@
       "rigid_housing_overlap_mm3": 0.0
     }
   ],
-  "hatch_mounts_mm": [
-    [
-      6.0,
-      -11.3
-    ],
-    [
-      -6.0,
-      11.3
-    ]
-  ],
   "swd_pad_row_mm": {
     "x": [
       -4,
@@ -349,7 +339,6 @@
     "y": -14,
     "pad_diameter": 1.2
   },
-  "minimum_swd_pad_to_hatch_post_mm": 0.2601,
   "button_travel_mm": 0.5,
   "sensor_gap_released_mm": 1.8,
   "sensor_gap_pressed_mm": 1.3,
@@ -359,7 +348,7 @@
   "outer_grip_height_mm": 13.0,
   "outer_grip_flange_clearance_radial_mm": 0.25,
   "outer_grip_phone_clearance_pressed_mm": 0.5,
-  "snap_strain_estimate": 0.02448979591836735,
+  "snap_strain_estimate": 0.01338488994646044,
   "flexure_estimate": {
     "method": "straight cantilever approximation; curved beam and FDM anisotropy not solved",
     "length_mm": 12.645,
@@ -378,7 +367,94 @@
   "electronics_status": "STEP assemblies use mechanical electronics bounding dummies. The tscircuit assembly replaces these with the actual populated board. No physical RF or firmware validation.",
   "contact_hardware_status": "JLCPCB C964787 BS-08-B2AA020-R fitted below PCB; manufacturer 5.8 mm maximum height used for clearance",
   "holder_conservative_bottom_clearance_mm": 0.5,
-  "battery_positive_face": "toward removable bottom hatch",
+  "battery_positive_face": "toward solid bottom cover",
+  "top_service": {
+    "access": "top",
+    "bottom_hatch": false,
+    "hatch_fasteners": 0,
+    "pcb_retaining_screws": 4,
+    "screw_size": "M1.6",
+    "cap_release_latches": 2,
+    "release_keys_required": 2,
+    "release_deflection_mm": 0.35,
+    "release_strain_estimate": 0.018738845925044614,
+    "released_latch_to_pcb_clearance_mm": 0.19999999999999574,
+    "released_lip_to_bore_clearance_mm": 0.10000000000000142,
+    "release_key_tip_to_shoulder_mm": 1.4500000000000028,
+    "release_key_checks": [
+      {
+        "angle_degrees": 90,
+        "housing_overlap_mm3": 0.0,
+        "retaining_roof_intact": true
+      },
+      {
+        "angle_degrees": 270,
+        "housing_overlap_mm3": 0.0,
+        "retaining_roof_intact": true
+      }
+    ],
+    "pcb_pick_corridors": [
+      {
+        "angle_degrees": 0,
+        "radial_bounds_mm": [
+          18.4,
+          19.4
+        ],
+        "width_mm": 2.4,
+        "rigid_collisions": 0
+      },
+      {
+        "angle_degrees": 180,
+        "radial_bounds_mm": [
+          18.4,
+          19.4
+        ],
+        "width_mm": 2.4,
+        "rigid_collisions": 0
+      }
+    ],
+    "pcb_holder_cell_extraction": [
+      {
+        "lift_mm": 0,
+        "rigid_collisions": []
+      },
+      {
+        "lift_mm": 0.5,
+        "rigid_collisions": []
+      },
+      {
+        "lift_mm": 1,
+        "rigid_collisions": []
+      },
+      {
+        "lift_mm": 2,
+        "rigid_collisions": []
+      },
+      {
+        "lift_mm": 4,
+        "rigid_collisions": []
+      },
+      {
+        "lift_mm": 6,
+        "rigid_collisions": []
+      },
+      {
+        "lift_mm": 10,
+        "rigid_collisions": []
+      },
+      {
+        "lift_mm": 16,
+        "rigid_collisions": []
+      },
+      {
+        "lift_mm": 24.0,
+        "rigid_collisions": []
+      }
+    ],
+    "pcb_removal_motion": "straight +Z after cap, flexure, screws and spacers are removed",
+    "solid_center_floor_verified": true,
+    "physical_cycle_tested": false
+  },
   "holder_contact_model_note": "Library contacts are undeformed. Battery/holder overlap is reported separately as a contact-fit estimate, not certified retention or spring-force validation.",
   "attachment_disc_array": {
     "count": 24,
