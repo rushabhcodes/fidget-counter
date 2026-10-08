@@ -1,0 +1,48 @@
+{
+  "method": "Exact STEP intersections; only the two intentionally flexing latch zones excluded",
+  "initial_cap_lift_mm": 0.5,
+  "remove_keys_after_initial_lift": true,
+  "samples": [
+    {
+      "angle_degrees": 90,
+      "cap_lift_mm": 0,
+      "nonlatch_cap_overlap_mm3": 0.0
+    },
+    {
+      "angle_degrees": 90,
+      "cap_lift_mm": 0.15,
+      "nonlatch_cap_overlap_mm3": 0.0
+    },
+    {
+      "angle_degrees": 90,
+      "cap_lift_mm": 0.3,
+      "nonlatch_cap_overlap_mm3": 0.0
+    },
+    {
+      "angle_degrees": 90,
+      "cap_lift_mm": 0.5,
+      "nonlatch_cap_overlap_mm3": 0.0
+    },
+    {
+      "angle_degrees": 270,
+      "cap_lift_mm": 0,
+      "nonlatch_cap_overlap_mm3": 0.0
+    },
+    {
+      "angle_degrees": 270,
+      "cap_lift_mm": 0.15,
+      "nonlatch_cap_overlap_mm3": 0.0
+    },
+    {
+      "angle_degrees": 270,
+      "cap_lift_mm": 0.3,
+      "nonlatch_cap_overlap_mm3": 0.0
+    },
+    {
+      "angle_degrees": 270,
+      "cap_lift_mm": 0.5,
+      "nonlatch_cap_overlap_mm3": 0.0
+    }
+  ],
+  "physical_release_and_friction_tested": false
+}
