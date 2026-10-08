@@ -29,7 +29,7 @@ The unmodified TSCI JLCPCB imports and all 30 fitted component meshes pass `vali
 
 The source now uses `assembly.device` and 14 named `assembly.cadassembly` elements to include the released enclosure beside the populated PCB. Mechanical electronics/holder dummies are excluded. The four outer shells are translucent in the circuit view; print STL and STEP geometry remains solid. `validation/check-enclosure.mjs` verifies asset hashes, current CAD parameters, model positions and exported GLB bounds, and is included in `bun run check:all`.
 
-`validation/compact-glb-audit.json` verifies the downloadable GLB reduction to fit the registry upload limit. All retained geometry buffers, node transforms, electronic normals and PCB textures are unchanged. Optional enclosure normals and unused UV arrays are omitted; GLTF viewers derive the flat face normals. The full CLI build remains available locally in `dist/index/3d.glb`.
+`validation/compact-glb-audit.json` verifies the downloadable GLB reduction to fit the registry upload limit. All retained geometry buffers, triangle order, node transforms, electronic normals and PCB textures are unchanged. Identical buffers share storage and sequential enclosure indices are implicit. Optional enclosure normals and unused UV arrays are omitted; GLTF viewers derive the flat face normals. The full CLI build remains available locally in `dist/index/3d.glb`.
 
 The confirmed encoder is a diametrically magnetized neodymium Ø5 × 1.5 mm disc. The revised cap uses a Ø5.2 mm pocket and 0.2 mm roof shim. Its nominal sensor air gaps remain 1.8 mm released and 1.3 mm pressed. CAD regeneration found zero unintended solid intersections. Magnet grade, sensor field margin and rotation accuracy still require a prototype measurement.
 
