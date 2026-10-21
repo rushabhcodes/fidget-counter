@@ -5,6 +5,6 @@
   "includeBoardFiles": [
     "published.circuit.json"
   ],
-  "alwaysUseLatestTscircuitOnCloud": false,
+  "alwaysUseLatestTscircuitOnCloud": true,
   "buildCommand": "bun cloud-build.mjs"
 }
