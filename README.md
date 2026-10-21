@@ -23,7 +23,7 @@ The registry cloud worker runs `bun cloud-build.mjs`. It verifies hashes of the 
 
 ## Programming
 
-See [PROGRAMMING.md](PROGRAMMING.md) for the standard Cortex SWD adapter pinout, underside pad orientation, safe target power, tool installation, firmware pin map, and flash/verify/recovery commands. Program the board before enclosure assembly. The design repository does not contain application firmware or a flashable HEX.
+See [PROGRAMMING.md](https://github.com/rushabhcodes/fidget-counter/blob/main/PROGRAMMING.md) for the standard Cortex SWD adapter pinout, underside pad orientation, safe target power, tool installation, firmware pin map, and flash/verify/recovery commands. Program the board before enclosure assembly. The design repository does not contain application firmware or a flashable HEX.
 
 ## Cell access and assembly
 
