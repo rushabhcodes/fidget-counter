@@ -1,0 +1,45 @@
+import { createHash } from "node:crypto"
+import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs"
+import { dirname, resolve, relative, extname } from "node:path"
+import { fileURLToPath } from "node:url"
+import { gzipSync } from "node:zlib"
+
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
+const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex")
+const walk = (path) => readdirSync(path, { withFileTypes: true }).flatMap((item) => {
+  const child = resolve(path, item.name)
+  return item.isDirectory() ? walk(child) : [child]
+})
+const inputs = [
+  ...readdirSync(root).filter((name) => /\.(tsx?|circuit\.json)$/.test(name)),
+  "routed-paths.json",
+  ...walk(resolve(root, "imports")).map((path) => relative(root, path)),
+  ...walk(resolve(root, "mechanical"))
+    .filter((path) => [".py", ".json", ".stl", ".obj", ".mtl", ".step"].includes(extname(path)))
+    .map((path) => relative(root, path)),
+]
+const manifest = {
+  formatVersion: 1,
+  description: "Locally built and checked preview; hashes bind it to the published source and CAD assets.",
+  inputs: Object.fromEntries([...new Set(inputs)].sort().map((name) => [name, sha256(readFileSync(resolve(root, name)))])),
+  artifacts: [],
+}
+mkdirSync(resolve(root, "cloud-assets"), { recursive: true })
+for (const name of ["circuit.json", "pcb.png", "pcb.svg", "schematic.png", "schematic.svg", "3d.glb"]) {
+  const bytes = readFileSync(resolve(root, "dist/published", name))
+  const output = `dist/published/${name}`
+  let source = "published.circuit.json"
+  let encoding = "raw"
+  if (name === "circuit.json") {
+    if (sha256(bytes) !== sha256(readFileSync(resolve(root, source)))) {
+      throw new Error("dist/published/circuit.json differs from published.circuit.json; rebuild the saved snapshot first")
+    }
+  } else {
+    source = `cloud-assets/${name}.gz.b64`
+    encoding = "gzip-base64"
+    writeFileSync(resolve(root, source), gzipSync(bytes, { level: 9 }).toString("base64") + "\n")
+  }
+  manifest.artifacts.push({ source, output, encoding, bytes: bytes.length, sha256: sha256(bytes) })
+}
+writeFileSync(resolve(root, "cloud-assets/manifest.json"), JSON.stringify(manifest, null, 2) + "\n")
+console.log(`Prepared ${manifest.artifacts.length} checked artifacts with ${Object.keys(manifest.inputs).length} input hashes`)

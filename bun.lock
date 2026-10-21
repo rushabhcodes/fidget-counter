@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@tsci/rushabhcodes.Fidget Counter",
+      "name": "@tsci/rushabhcodes.fidget-counter",
       "dependencies": {
         "@tsci/seveibar.nrf52810": "0.1.3",
       },

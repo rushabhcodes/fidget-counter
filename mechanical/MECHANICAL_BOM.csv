@@ -1,0 +1,12 @@
+Part,Quantity,Notes
+Stationary_Base,1,PLA; unchanged two integral outward-release clips
+Bottom_Tray,1,PLA; unchanged attachment-disc arrangement
+PCB_Retainer_Print_4,4,PLA; existing PCB retaining washers
+Selected Cap_*.stl,1 per style,Complete single-piece rotor/grip/pusher; no separate hub
+Encoder magnet,1 per printed top,Diametrically magnetized diameter 5 x thickness 1.5 mm
+Encoder spacer,1 per printed top,Nonmagnetic thickness0.2 mm above the disc
+PCB screws,4,Existing M1.6 countersunk; size to measured post depth
+Attachment magnets,24,Axially magnetized diameter 5 x thickness 1.5 mm; unchanged in fixed base
+Backing ring,1,Existing steel ring; ID44.05 OD54.45 thickness0.7 mm
+CR2032,1,In existing soldered bottom PCB holder
+PCB and components,1,Existing inward SW1 draft at x0 y-5 mm

@@ -1,0 +1,5 @@
+newmtl PCB_Retainers
+Kd 0.42 0.49 0.52
+Ks 0.15 0.15 0.15
+Ns 20
+d 1

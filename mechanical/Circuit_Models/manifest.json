@@ -1,369 +1,118 @@
 {
-  "units": "mm",
-  "axes": "Z-up",
-  "state": "Released",
+  "styles": [
+    "circular",
+    "ships_wheel",
+    "rounded_triangle",
+    "scalloped_coin",
+    "petal_flower",
+    "four_leaf_clover",
+    "rounded_hexagon",
+    "rounded_square",
+    "wave_rim",
+    "turbine_wheel",
+    "thumb_scoop"
+  ],
+  "modelsPerSelectedStyle": 8,
+  "totalAssets": 18,
   "pcbMidplaneZMm": 7.6,
-  "sourceParameters": {
-    "body_diameter": 42.0,
-    "cap_diameter": 61.6,
-    "cap_grip_bottom_z": 1.0,
-    "cap_grip_wall": 0.95,
-    "cap_edge_rib_count": 88,
-    "cap_top_groove_count": 48,
-    "cap_top_groove_depth": 0.3,
-    "cap_top_groove_width": 0.8,
-    "cap_top_groove_inner_radius": 7.0,
-    "attachment_flange_diameter": 58.0,
-    "overall_height": 14.0,
-    "button_travel": 0.5,
-    "radial_running_clearance": 0.25,
-    "pcb_diameter": 36.5,
-    "pcb_thickness": 1.0,
-    "pcb_bottom_z": 7.1,
-    "sensor_height": 0.5,
-    "encoder_diameter": 5.0,
-    "encoder_thickness": 1.5,
-    "encoder_magnetization": "diametric",
-    "encoder_pocket_clearance": 0.2,
-    "encoder_released_airgap": 1.8,
-    "encoder_roof_shim": 0.2,
-    "skirt_outer_radius": 19.4,
-    "skirt_wall": 0.8,
-    "skirt_bottom_z": 6.8999999999999995,
-    "snap_lip_top_z": 8.55,
-    "snap_slot_root_z": 12.65,
-    "snap_lip_projection": 0.5,
-    "snap_slot_width": 1.0,
-    "snap_tab_count": 2,
-    "snap_tab_center_degrees": [
-      90,
-      270
-    ],
-    "snap_tab_arc_degrees": 18.0,
-    "snap_tab_wall": 0.6,
-    "cap_service_port_width": 3.0,
-    "cap_service_port_bottom_z": 7.1,
-    "cap_service_port_height": 1.4,
-    "cap_grip_window_width": 6.0,
-    "cap_grip_window_bottom_z": 6.5,
-    "cap_grip_window_height": 3.5,
-    "cap_release_key_blade_width": 2.4,
-    "cap_release_key_blade_thickness": 1.0,
-    "cap_release_deflection": 0.35,
-    "battery_access": "top",
-    "pcb_service_lift": 24.0,
-    "flexure_count": 4,
-    "flexure_thickness": 1.0,
-    "flexure_width": 2.0,
-    "flexure_mean_radius": 15.75,
-    "flexure_arc_degrees": 55.0,
-    "flexure_preload": 0.25,
-    "petg_modulus_estimate_mpa": 1800.0,
-    "magnet_region_inner_diameter": 46.0,
-    "magnet_region_outer_diameter": 54.1,
-    "attachment_magnet_thickness": 1.5,
-    "attachment_gap_degrees": 20.0,
-    "attachment_pocket_clearance": 0.25,
-    "attachment_mode": "disc_array",
-    "attachment_disc_diameter": 5.0,
-    "attachment_disc_count": 24,
-    "attachment_disc_pitch_diameter": 49.25,
-    "attachment_disc_phase_degrees": 7.5,
-    "attachment_disc_pocket_diameter_clearance": 0.25,
-    "attachment_tray_outer_radius": 28.05,
-    "attachment_tray_radial_clearance": 0.15,
-    "attachment_required_magnetization": "axial",
-    "attachment_magnetization_verified": false,
-    "vendor_sectors": [],
-    "shield_thickness": 0.7,
-    "bottom_skin_thickness": 0.6,
-    "phone_pad_thickness": 0.2,
-    "magnet_adhesive_thickness": 0.05,
-    "battery_holder_mpn": "BS-08-B2AA020-R",
-    "battery_holder_jlcpcb": "C964787",
-    "battery_holder_max_height": 5.8,
-    "battery_holder_pcb_x": -1.2,
-    "battery_holder_pcb_y": 0,
-    "battery_negative_face_depth": 1.5
+  "modelSha256": {
+    "Stationary_Base.obj": "67f5efcc2187b70d9b48d5a47c64577c9fe0953ce43725635d638d5770962a2c",
+    "Stationary_Base.mtl": "a0371938a2ded3771f9cece1c165875a7ef4ea6ff9e13f7a29c3113865c8d522",
+    "Bottom_Tray.obj": "396944bbaa6d077b9234a2615e3c0e0209edb3566c1e2cb83f48dba815415104",
+    "Bottom_Tray.mtl": "7a6e7a562d7dffe52b2fc40d64c9d553825da1eee7f937e98cf489fb0c226354",
+    "Cell.obj": "cfb699d9e1ce7b12df8e0af5a24c2319046203f699e4c6ccde6e33d4cf90c776",
+    "Cell.mtl": "e304c073a9f02c01866a7eee017e2adf231e6a359f47ce97ec0edf8ee9beb897",
+    "PCB_Retainers.obj": "edb812d289386f1ebfa8f583b40dbe213597291fdf3b870e88b36511130ef1a2",
+    "PCB_Retainers.mtl": "0d74dff2ff5e66ee9c2217bf77ed9b4ece03619347a6f8a23e89011131d68996",
+    "Backing_Ring.obj": "1e072ef172843cd41133790ecf8290140744da9a487a7134f4b2be729276bf3d",
+    "Backing_Ring.mtl": "a8a2a1a44943e4475094c87869d48127bb761b7e8aa5eb7950bbdfa84230bb98",
+    "Attachment_Magnets.obj": "585c556cf8b31a26b69182a3b76c6301fc747c1cfed381183551c3dadabec5d5",
+    "Attachment_Magnets.mtl": "2435dd298974549fe7cc9f0b8343561401ebadf591fcb6aa7252dec97a3b00f5",
+    "Magnet.obj": "34197c6aa1b85782565320bbcbae7cc45870a9c3a7400d0d56bf32d625977f2f",
+    "Magnet.mtl": "6bd9c6ae73054c873c772d9e9fe553046213625ffe3844167e07f78927e1d8ea",
+    "Cap_circular.obj": "32cd63810aa8fcff9510013c4281ff51b9f7f0387ccd3513489901dcc136e1f0",
+    "Cap_circular.mtl": "8a5b94cc22ede29404c3e87c8903d9b97ca8c30a352659b34370023d59ef1fcf",
+    "Cap_ships_wheel.obj": "0ec43a51d398853d918245154988592f2c3e5fb124ecfcac2d0f3385577b6d08",
+    "Cap_ships_wheel.mtl": "2f063774e37c36c68098a76758df1b76463935e756e310e67aa2597a8688d71d",
+    "Cap_rounded_triangle.obj": "07094a2d293370c40d360088d43909f066b09afb1bc49a78dd4be40af5de877a",
+    "Cap_rounded_triangle.mtl": "00d8f792fa67775f0e2e8dad9d0ae87affb5135c75a90ef2851beb4032c187a9",
+    "Cap_scalloped_coin.obj": "2e9e92dbd5b9fa037df3dc17478e70c55bb32938f19984b1f602cea86147b2f7",
+    "Cap_scalloped_coin.mtl": "84f945bdf479db75a0374c7fdd84cd041c003228057bae1e91fe25fff2139a91",
+    "Cap_petal_flower.obj": "55281a962903e4ddfdcd2b09daebcb57f71b367c3bba110aef796a475431c8b5",
+    "Cap_petal_flower.mtl": "72ad470db5df29a0b875c833281148a69a17c0761108397c0580b8202cd647ea",
+    "Cap_four_leaf_clover.obj": "0e1dedf0bd33c53696ecebfa7e8fe1bae530b5c1228504282b01ebafbf337536",
+    "Cap_four_leaf_clover.mtl": "f1cb2446e140f051df3163acaa6fb0e05f77301b666eafa7a86cfb7c370271ef",
+    "Cap_rounded_hexagon.obj": "a6100229929abe0515c8564ed4694e8cf5ecffa6b95b13fef36f17b0f28a7355",
+    "Cap_rounded_hexagon.mtl": "a1c2575f97f6338bc629e27471366f4460d55e90471a9917d58418252cf3b0fe",
+    "Cap_rounded_square.obj": "64874779c05ce8efeeff8964cde4dbb30a4d3af38df4cea93d31f561f97aeda9",
+    "Cap_rounded_square.mtl": "f81f023071c0c20842067438d081d3a6218b30c9a7bea899b007a0c2e8f7cecc",
+    "Cap_wave_rim.obj": "86e531984bfcc9b66ca32cfbe1a61046276420b5c7327eac75de815a6f553d79",
+    "Cap_wave_rim.mtl": "358f0c1c08b21f25e8589fdf2d1512ed740e4044a210cc8ccb34697df19000d6",
+    "Cap_turbine_wheel.obj": "273a5f2328a8582379b5b9409223acd3fcffbfd1890c422c21d327cbcc67c377",
+    "Cap_turbine_wheel.mtl": "3c8716554aa10002d47bf45aa77869dd12e922159efe8e0c9f0f985bf0261c17",
+    "Cap_thumb_scoop.obj": "c840208654934513982588b2fd86511ad000c3c429bc54c0fab7eb2709149d41",
+    "Cap_thumb_scoop.mtl": "3dc9f199fddb10cd0dd526a0c4c19d4662fbbb41d9209cff44ed6b6dded31630"
   },
-  "circuitPositionOffsetMm": [
-    0,
-    0,
-    -7.6
-  ],
-  "excludedDummyModels": [
-    "Angle_Sensor_Dummy",
-    "BLE_MCU_Dummy",
-    "Battery_Holder",
-    "Flexure_Neutral",
-    "PCB_Board",
-    "PCB_Dummy",
-    "Tactile_Switch"
-  ],
-  "parts": [
-    {
-      "name": "Rotating_Cap",
-      "vertices": 10568,
-      "triangles": 9308,
-      "boundsMm": [
-        [
-          -30.799779031156604,
-          -30.799779031156607,
-          1.0
-        ],
-        [
-          30.799779031156604,
-          30.799779031156607,
-          14.0
-        ]
-      ],
-      "translucent": true,
-      "sha256": {
-        "Rotating_Cap.obj": "02f1c24560be2bd5fb3b4bc718bcaf8c906c1bd45b749d9bc4dd7b8c01e32cc3",
-        "Rotating_Cap.mtl": "218a07fe8a060bc2bb21c23ebc49f9f9f036eb098db4e5505aad035265054d04"
-      }
-    },
-    {
-      "name": "Encoder_Magnet",
-      "vertices": 842,
-      "triangles": 836,
-      "boundsMm": [
-        [
-          -2.5,
-          -2.4997202545256836,
-          10.4
-        ],
-        [
-          2.5,
-          2.4997202545256836,
-          11.9
-        ]
-      ],
-      "translucent": false,
-      "sha256": {
-        "Encoder_Magnet.obj": "304b5c3fc4cf40252d9502a093dfc8754f58cbd5f97f1e1b35d9e0431a9daff4",
-        "Encoder_Magnet.mtl": "8014572fad05f7a6b5abbbc5a5da2b3e7dd0a229d776bbc50965c6bbd4787a54"
-      }
-    },
-    {
-      "name": "Stationary_Housing",
-      "vertices": 14668,
-      "triangles": 14604,
-      "boundsMm": [
-        [
-          -29.0,
-          -28.994267563331903,
-          0.7999999999999999
-        ],
-        [
-          29.0,
-          28.994267563331903,
-          11.0
-        ]
-      ],
-      "translucent": true,
-      "sha256": {
-        "Stationary_Housing.obj": "a9e843f938f608c9d414fdec7900b71a0961c681e4f894c939fae37024d0088e",
-        "Stationary_Housing.mtl": "1ab6c1fd3c7f6a80f167617da726b3aeefcff50dac043057f4ce959b83f1b86f"
-      }
-    },
-    {
-      "name": "Flexure_Retention_System",
-      "vertices": 11790,
-      "triangles": 12436,
-      "boundsMm": [
-        [
-          -18.3,
-          -18.296511025300465,
-          10.737147648537327
-        ],
-        [
-          18.3,
-          18.296511025300465,
-          12.8
-        ]
-      ],
-      "translucent": false,
-      "sha256": {
-        "Flexure_Retention_System.obj": "169870a3df3e2ec7bed9f8d508e02961fa206d573e290fdca88d9964cd88db35",
-        "Flexure_Retention_System.mtl": "0e01570cefa785d0462fe0000cab1f0278254958e9ef0f91fd82003ab7db2573"
-      }
-    },
-    {
-      "name": "CR2032",
-      "vertices": 842,
-      "triangles": 836,
-      "boundsMm": [
-        [
-          -10.0,
-          -9.998881018102734,
-          2.3999999999999995
-        ],
-        [
-          10.0,
-          9.998881018102734,
-          5.6
-        ]
-      ],
-      "translucent": false,
-      "sha256": {
-        "CR2032.obj": "29916d604bd56010464fdc4ce2336b77f48f83dd036d3f5df374cb29a4df6101",
-        "CR2032.mtl": "0624551fa24d61fc9cc454b3f7bb6de5b55a126b178b6cce329615ba913bfaea"
-      }
-    },
-    {
-      "name": "MagSafe_Magnet_Array",
-      "vertices": 20208,
-      "triangles": 20064,
-      "boundsMm": [
-        [
-          -26.914329711330083,
-          -26.914049965855767,
-          0.8500000000000001
-        ],
-        [
-          26.91432971133008,
-          26.914049965855764,
-          2.35
-        ]
-      ],
-      "translucent": false,
-      "sha256": {
-        "MagSafe_Magnet_Array.obj": "edc0dfa9af4dc4146971c0611d74a07fcab9d9f4853d4f08930138c0d0ace89d",
-        "MagSafe_Magnet_Array.mtl": "9021f205c6d1171d31e7dbecab20ad05551b6d55202e9b714546109fc33cc681"
-      }
-    },
-    {
-      "name": "Magnetic_Shield",
-      "vertices": 1684,
-      "triangles": 1680,
-      "boundsMm": [
-        [
-          -27.225,
-          -27.221953571784695,
-          2.4
-        ],
-        [
-          27.225,
-          27.221953571784695,
-          3.0999999999999996
-        ]
-      ],
-      "translucent": false,
-      "sha256": {
-        "Magnetic_Shield.obj": "43ae2e8f8435af9c390c7e9f7ff34550ce2f8542ca63fa5c90ffd75711436509",
-        "Magnetic_Shield.mtl": "cb1454e8c65981ee284156ab489cd3601f8cb129b9f172e54ee8b19212e3665b"
-      }
-    },
-    {
-      "name": "Bottom_Cover",
-      "vertices": 17118,
-      "triangles": 17060,
-      "boundsMm": [
-        [
-          -29.0,
-          -28.994267563331903,
-          0.2
-        ],
-        [
-          29.0,
-          28.994267563331903,
-          2.35
-        ]
-      ],
-      "translucent": true,
-      "sha256": {
-        "Bottom_Cover.obj": "cbe4514469108579341613b49839c267e9ea0dbf0a1739baa07814edaf185c92",
-        "Bottom_Cover.mtl": "37188f5db3224a11e6a34104b0f311be0c2777cdd7888bbc7ca9ff8e9cb4b64d"
-      }
-    },
-    {
-      "name": "Flexure_Fasteners",
-      "vertices": 5088,
-      "triangles": 6304,
-      "boundsMm": [
-        [
-          -12.855129855222073,
-          -12.854853116900166,
-          8.499999999999996
-        ],
-        [
-          12.85512985522207,
-          12.854853116900165,
-          12.1
-        ]
-      ],
-      "translucent": false,
-      "sha256": {
-        "Flexure_Fasteners.obj": "6755e8a20451e6f212cc6670f85a23286c6e4478e55b220d9c629044ad8e44e2",
-        "Flexure_Fasteners.mtl": "1493a202f6e6bdf583dd98d346217742007deb4ce700d641596266b19055456d"
-      }
-    },
-    {
-      "name": "Phone_Pad",
-      "vertices": 634,
-      "triangles": 628,
-      "boundsMm": [
-        [
-          -29.0,
-          -28.994267563331903,
-          0.0
-        ],
-        [
-          29.0,
-          28.994267563331903,
-          0.2
-        ]
-      ],
-      "translucent": false,
-      "sha256": {
-        "Phone_Pad.obj": "236cb33e801923b7e7194b30ee12ac2cddc0beddcd6b7da2fcfaa3057cbccacd",
-        "Phone_Pad.mtl": "f25957e8a22ebd5053f82d9bfbbc65188dd88b327026a448e9531b52f6ecd1e5"
-      }
-    },
-    {
-      "name": "Encoder_Shim",
-      "vertices": 634,
-      "triangles": 628,
-      "boundsMm": [
-        [
-          -2.5,
-          -2.4995058244251642,
-          11.9
-        ],
-        [
-          2.5,
-          2.499505824425164,
-          12.1
-        ]
-      ],
-      "translucent": false,
-      "sha256": {
-        "Encoder_Shim.obj": "9cd1091674179e9315e297fa5d00b6272608ead5ccdbdcb507152970ce8284ee",
-        "Encoder_Shim.mtl": "f1c201613a38d001f3d937705361b1a10dfc99e9db07a16663dbdf65402e9ee4"
-      }
-    },
-    {
-      "name": "PCB_Spacers",
-      "vertices": 5072,
-      "triangles": 5056,
-      "boundsMm": [
-        [
-          -13.655129855222071,
-          -13.654694980716217,
-          8.1
-        ],
-        [
-          13.655129855222071,
-          13.654694980716215,
-          11.0
-        ]
-      ],
-      "translucent": false,
-      "sha256": {
-        "PCB_Spacers.obj": "7962d2c8cb4bc2f9aba922d5d4bcc82b8c8b467c94d68af1c33c7b3e62dac8bd",
-        "PCB_Spacers.mtl": "9747e4b143186089333dc958e95d1c5b47deaa84fa050099df71eb6e213ebce2"
-      }
-    }
-  ]
+  "sourceParameters": {
+    "design": "One-piece V4 \u2014 eleven screw-free interchangeable rotor/grip modules",
+    "cap_style": "all",
+    "cap_styles": [
+      "circular",
+      "ships_wheel",
+      "rounded_triangle",
+      "scalloped_coin",
+      "petal_flower",
+      "four_leaf_clover",
+      "rounded_hexagon",
+      "rounded_square",
+      "wave_rim",
+      "turbine_wheel",
+      "thumb_scoop"
+    ],
+    "units": "mm",
+    "base_diameter": 58.0,
+    "cap_max_diameter": 61.6,
+    "overall_height": 15.2,
+    "cap_deck_bottom": 13.2,
+    "cap_edge_bottom": 7.2,
+    "grip_height": 8.0,
+    "cap_skirt_inner_radius": 26.8,
+    "pcb_diameter": 36.5,
+    "pcb_bottom": 7.1,
+    "pcb_thickness": 1.0,
+    "switch_x": 0.0,
+    "switch_y": -5.0,
+    "switch_height": 1.9,
+    "button_travel": 0.25,
+    "magnet_diameter": 5.0,
+    "magnet_thickness": 1.5,
+    "magnet_bottom": 10.4,
+    "magnet_pocket_diameter": 5.2,
+    "pusher_outer_radius": 6.1,
+    "guide_neck_outer_radius": 19.9,
+    "guide_neck_inner_radius": 18.6,
+    "guide_radial_clearance": 0.2,
+    "retention_flange_outer_radius": 21.0,
+    "material": "PLA",
+    "return": "tactile switch internal dome only; physical test required",
+    "service": "Pull both opposed tabs outward 0.8 mm and lift the top module; undo four PCB screws for cell access",
+    "publication": "Repository revision 1.0.7",
+    "hub_cover_thickness": 0.6,
+    "base_guide_outer_radius": 22.0,
+    "snap_clip_count": 2,
+    "snap_beam_radius": 23.4,
+    "snap_beam_width": 1.2,
+    "snap_beam_height": 2.0,
+    "snap_beam_bottom": 4.5,
+    "snap_arc_degrees": 90,
+    "snap_hook_inner_radius": 20.5,
+    "snap_hook_underside": 9.75,
+    "snap_hook_top": 10.85,
+    "snap_release_displacement": 0.8,
+    "snap_pad_top": 6.3,
+    "cap_style_change": "Pull the two base tabs outward, lift out the complete top, snap in another one-piece module",
+    "encoder_magnet_per_top_module": 1,
+    "cap_mount_hardware_count": 0,
+    "magnet_installation": "One diametrically magnetized diameter 5 x thickness 1.5 mm disc in each module; retain with adhesive after fit and field checks"
+  }
 }

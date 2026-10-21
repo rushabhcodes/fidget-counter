@@ -1,6 +1,8 @@
 import {Fragment} from "react"
 import {assembly} from "@tscircuit/core"
-import {EnclosureAssembly} from "./enclosure"
+import {EnclosureAssembly, type CapStyle} from "./enclosure"
+// Select any of the 11 CAP_STYLE_OPTIONS exported by enclosure.tsx.
+const CAP_STYLE: CapStyle = "circular"
 import {NRF52810,TMAG3001,HF_XTAL,LF_XTAL,RF_ANT,CapButton,BatteryHolder} from "./parts"
 import {routeBoard} from "./routing"
 import {Cap,Res,Ind} from "./passives"
@@ -168,7 +170,7 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
   <Link a=".C6.pin1" b="net.VBAT"/><G p=".C6.pin2"/>
   <schematicbox name="U1 Cap GPIO" chipRef=".U1" schX={-4} schY={-4} width={2.6} height={.4} schSectionName="button"
    pinLabels={{pin1:"P0_29"}} schPinArrangement={{leftSide:[],rightSide:["pin1"]}}/>
-  <CapButton name="SW1" pcbX={12.65} pcbY={0} pcbRotation={90} schX={1} schY={-4} schSectionName="button"/>
+  <CapButton name="SW1" pcbX={0} pcbY={-5} pcbRotation={0} schX={1} schY={-4} schSectionName="button"/>
   <Res name="R5" pcbSx={hideText} resistance="100k" pcbX={8} pcbY={0} schX={-1} schY={-2}
    schOrientation="vertical" schSectionName="button" connections={{pin1:"net.VBAT",pin2:"net.CAP_PRESS"}}/>
   <Cap name="C17" capacitance="10nF" pcbX={9.5} pcbY={0} pcbRotation={90} schX={4} schY={-4} schSectionName="button"/>
@@ -225,14 +227,14 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
  <via name="BT_NEG_JUNCTION" pcbX={-2} pcbY={-11} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <copperpour name="TOP_GND" layer="top" connectsTo="net.GND" clearance={.15} boardEdgeMargin={.35} coveredWithSolderMask/>
  <copperpour name="BOTTOM_GND" layer="bottom" connectsTo="net.GND" clearance={.15} boardEdgeMargin={.35} coveredWithSolderMask/>
- <silkscreentext text="FIDGET / A3" pcbX={0} pcbY={-6} fontSize={1.7}/>
+ <silkscreentext text="FIDGET / A3" pcbX={0} pcbY={-10.5} fontSize={1.7}/>
  <silkscreentext text="HALL" pcbX={0} pcbY={-3} fontSize={1.7}/>
- <silkscreentext text="CAP" pcbX={12.65} pcbY={-3.6} fontSize={1.7}/>
+ <silkscreentext text="CAP" pcbX={0} pcbY={-8.6} fontSize={1.7}/>
  <silkscreentext text="RF CLEAR" pcbX={4.8} pcbY={13.3} fontSize={1.7}/>
  <silkscreentext text="+" layer="bottom" pcbX={-13} pcbY={-3.8} fontSize={1.7}/>
  <silkscreentext text="-" layer="bottom" pcbX={9.5} pcbY={-3.8} fontSize={1.7}/>
  {["V","G","D","C","R"].map((label,i)=><Fragment key={label}><silkscreentext text={label}
   layer="bottom" pcbX={-4+i*2} pcbY={-15.8} fontSize={1.7}/></Fragment>)}
 </board>
- <EnclosureAssembly/>
+ <EnclosureAssembly capStyle={CAP_STYLE}/>
 </assembly.device>

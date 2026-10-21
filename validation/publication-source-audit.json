@@ -1,0 +1,16 @@
+{
+  "release": "1.0.8",
+  "design": "One-piece V4",
+  "sourceBuildPassed": true,
+  "designRecordsMatchCheckedDraft": true,
+  "capStyles": 11,
+  "mechanicalModelsPerSelectedStyle": 8,
+  "fittedModels": 30,
+  "vias": 50,
+  "viaDrillMm": 0.3,
+  "viaLandMm": 0.55,
+  "gripHeightMm": 8,
+  "overallHeightMm": 15.2,
+  "sourceSha256": "d215a8b097e02f01851ff64bac1ad9c8fb51e015c35c7f48ad52934087f4134c",
+  "circuitSha256": "874a0b2e78caac284df2370cc58d322cb904f43cabcca2e0a0a37fa627487f4e"
+}

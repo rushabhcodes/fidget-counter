@@ -6,5 +6,5 @@
     "published.circuit.json"
   ],
   "alwaysUseLatestTscircuitOnCloud": false,
-  "buildCommand": "bun run build"
+  "buildCommand": "bun cloud-build.mjs"
 }
