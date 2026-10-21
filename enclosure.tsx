@@ -1,45 +1,55 @@
 import {assembly} from "@tscircuit/core"
 import {Fragment} from "react"
-import manifest from "./mechanical/Circuit_Models/manifest.json"
-import obj0 from "./mechanical/Circuit_Models/Rotating_Cap.obj"
-import obj1 from "./mechanical/Circuit_Models/Encoder_Magnet.obj"
-import obj2 from "./mechanical/Circuit_Models/Stationary_Housing.obj"
-import obj3 from "./mechanical/Circuit_Models/Flexure_Retention_System.obj"
-import obj4 from "./mechanical/Circuit_Models/CR2032.obj"
-import obj6 from "./mechanical/Circuit_Models/MagSafe_Magnet_Array.obj"
-import obj7 from "./mechanical/Circuit_Models/Magnetic_Shield.obj"
-import obj8 from "./mechanical/Circuit_Models/Bottom_Cover.obj"
-import obj9 from "./mechanical/Circuit_Models/Flexure_Fasteners.obj"
-import obj11 from "./mechanical/Circuit_Models/Phone_Pad.obj"
-import obj12 from "./mechanical/Circuit_Models/Encoder_Shim.obj"
-import obj13 from "./mechanical/Circuit_Models/PCB_Spacers.obj"
+import obj0 from "./mechanical/Circuit_Models/Stationary_Base.obj"
+import obj1 from "./mechanical/Circuit_Models/Bottom_Tray.obj"
+import obj2 from "./mechanical/Circuit_Models/Cell.obj"
+import obj3 from "./mechanical/Circuit_Models/PCB_Retainers.obj"
+import obj4 from "./mechanical/Circuit_Models/Backing_Ring.obj"
+import obj5 from "./mechanical/Circuit_Models/Attachment_Magnets.obj"
+import obj6 from "./mechanical/Circuit_Models/Magnet.obj"
+import obj7 from "./mechanical/Circuit_Models/Cap_circular.obj"
+import obj8 from "./mechanical/Circuit_Models/Cap_ships_wheel.obj"
+import obj9 from "./mechanical/Circuit_Models/Cap_rounded_triangle.obj"
+import obj10 from "./mechanical/Circuit_Models/Cap_scalloped_coin.obj"
+import obj11 from "./mechanical/Circuit_Models/Cap_petal_flower.obj"
+import obj12 from "./mechanical/Circuit_Models/Cap_four_leaf_clover.obj"
+import obj13 from "./mechanical/Circuit_Models/Cap_rounded_hexagon.obj"
+import obj14 from "./mechanical/Circuit_Models/Cap_rounded_square.obj"
+import obj15 from "./mechanical/Circuit_Models/Cap_wave_rim.obj"
+import obj16 from "./mechanical/Circuit_Models/Cap_turbine_wheel.obj"
+import obj17 from "./mechanical/Circuit_Models/Cap_thumb_scoop.obj"
 
-// CAD solids use the phone plane as Z=0; the circuit uses the PCB midplane.
-// Keep imported electronics and BT1 on the board; never add their CAD dummies.
-// Bottom attachment uses the ordered-size discs; magnetic performance is untested.
-// The bottom is solid; release the two cap latches to service the board from above.
+export type CapStyle = "circular" | "ships_wheel" | "rounded_triangle" | "scalloped_coin" | "petal_flower" | "four_leaf_clover" | "rounded_hexagon" | "rounded_square" | "wave_rim" | "turbine_wheel" | "thumb_scoop"
+export const CAP_STYLE_OPTIONS = ["circular", "ships_wheel", "rounded_triangle", "scalloped_coin", "petal_flower", "four_leaf_clover", "rounded_hexagon", "rounded_square", "wave_rim", "turbine_wheel", "thumb_scoop"] as const
 const models = [
-  {name:"ENCLOSURE_Rotating_Cap",obj:obj0,mtl:"./mechanical/Circuit_Models/Rotating_Cap.mtl",translucent:true},
-  {name:"ENCLOSURE_Encoder_Magnet",obj:obj1,mtl:"./mechanical/Circuit_Models/Encoder_Magnet.mtl",translucent:false},
-  {name:"ENCLOSURE_Stationary_Housing",obj:obj2,mtl:"./mechanical/Circuit_Models/Stationary_Housing.mtl",translucent:true},
-  {name:"ENCLOSURE_Flexure_Retention_System",obj:obj3,mtl:"./mechanical/Circuit_Models/Flexure_Retention_System.mtl",translucent:false},
-  {name:"ENCLOSURE_CR2032",obj:obj4,mtl:"./mechanical/Circuit_Models/CR2032.mtl",translucent:false},
-  {name:"ENCLOSURE_MagSafe_Magnet_Array",obj:obj6,mtl:"./mechanical/Circuit_Models/MagSafe_Magnet_Array.mtl",translucent:false},
-  {name:"ENCLOSURE_Magnetic_Shield",obj:obj7,mtl:"./mechanical/Circuit_Models/Magnetic_Shield.mtl",translucent:false},
-  {name:"ENCLOSURE_Bottom_Cover",obj:obj8,mtl:"./mechanical/Circuit_Models/Bottom_Cover.mtl",translucent:true},
-  {name:"ENCLOSURE_Flexure_Fasteners",obj:obj9,mtl:"./mechanical/Circuit_Models/Flexure_Fasteners.mtl",translucent:false},
-  {name:"ENCLOSURE_Phone_Pad",obj:obj11,mtl:"./mechanical/Circuit_Models/Phone_Pad.mtl",translucent:false},
-  {name:"ENCLOSURE_Encoder_Shim",obj:obj12,mtl:"./mechanical/Circuit_Models/Encoder_Shim.mtl",translucent:false},
-  {name:"ENCLOSURE_PCB_Spacers",obj:obj13,mtl:"./mechanical/Circuit_Models/PCB_Spacers.mtl",translucent:false},
+  {name:"Stationary_Base",obj:obj0,mtl:"./mechanical/Circuit_Models/Stationary_Base.mtl",style:null},
+  {name:"Bottom_Tray",obj:obj1,mtl:"./mechanical/Circuit_Models/Bottom_Tray.mtl",style:null},
+  {name:"Cell",obj:obj2,mtl:"./mechanical/Circuit_Models/Cell.mtl",style:null},
+  {name:"PCB_Retainers",obj:obj3,mtl:"./mechanical/Circuit_Models/PCB_Retainers.mtl",style:null},
+  {name:"Backing_Ring",obj:obj4,mtl:"./mechanical/Circuit_Models/Backing_Ring.mtl",style:null},
+  {name:"Attachment_Magnets",obj:obj5,mtl:"./mechanical/Circuit_Models/Attachment_Magnets.mtl",style:null},
+  {name:"Magnet",obj:obj6,mtl:"./mechanical/Circuit_Models/Magnet.mtl",style:null},
+  {name:"Cap_circular",obj:obj7,mtl:"./mechanical/Circuit_Models/Cap_circular.mtl",style:"circular"},
+  {name:"Cap_ships_wheel",obj:obj8,mtl:"./mechanical/Circuit_Models/Cap_ships_wheel.mtl",style:"ships_wheel"},
+  {name:"Cap_rounded_triangle",obj:obj9,mtl:"./mechanical/Circuit_Models/Cap_rounded_triangle.mtl",style:"rounded_triangle"},
+  {name:"Cap_scalloped_coin",obj:obj10,mtl:"./mechanical/Circuit_Models/Cap_scalloped_coin.mtl",style:"scalloped_coin"},
+  {name:"Cap_petal_flower",obj:obj11,mtl:"./mechanical/Circuit_Models/Cap_petal_flower.mtl",style:"petal_flower"},
+  {name:"Cap_four_leaf_clover",obj:obj12,mtl:"./mechanical/Circuit_Models/Cap_four_leaf_clover.mtl",style:"four_leaf_clover"},
+  {name:"Cap_rounded_hexagon",obj:obj13,mtl:"./mechanical/Circuit_Models/Cap_rounded_hexagon.mtl",style:"rounded_hexagon"},
+  {name:"Cap_rounded_square",obj:obj14,mtl:"./mechanical/Circuit_Models/Cap_rounded_square.mtl",style:"rounded_square"},
+  {name:"Cap_wave_rim",obj:obj15,mtl:"./mechanical/Circuit_Models/Cap_wave_rim.mtl",style:"wave_rim"},
+  {name:"Cap_turbine_wheel",obj:obj16,mtl:"./mechanical/Circuit_Models/Cap_turbine_wheel.mtl",style:"turbine_wheel"},
+  {name:"Cap_thumb_scoop",obj:obj17,mtl:"./mechanical/Circuit_Models/Cap_thumb_scoop.mtl",style:"thumb_scoop"},
 ]
 
-export const EnclosureAssembly = () => <Fragment>
-  {models.map(({name,obj,mtl,translucent}) => <assembly.cadassembly
-    key={name} name={name} displayName={name.replace("ENCLOSURE_", "").replace(/_/g, " ")}
-    cadModel={{
-      objUrl:obj,mtlUrl:mtl,
-      modelOriginPosition:{x:0,y:0,z:0},modelUnitToMmScale:1,
-      positionOffset:{x:0,y:0,z:-manifest.pcbMidplaneZMm},
-      rotationOffset:{x:0,y:0,z:0},showAsTranslucentModel:translucent,
+// Each top is an integral rotor/grip/pusher; all tops share the snap base.
+// CAD coordinates are mm from the phone plane; PCB midplane is at Z=7.6 mm.
+export const EnclosureAssembly = ({capStyle="circular"}: {capStyle?:CapStyle} = {}) => <Fragment>
+  {models.filter(m => m.style === null || m.style === capStyle).map(m => <assembly.cadassembly
+    key={m.name} name={`ONEPIECE_V4_${m.name}`} displayName={m.name.replace(/_/g," ")}
+    cadModel={{objUrl:m.obj,mtlUrl:m.mtl,modelUnitToMmScale:1,
+      modelOriginPosition:{x:0,y:0,z:0},positionOffset:{x:0,y:0,z:-7.6},
+      rotationOffset:{x:0,y:0,z:0},
+      showAsTranslucentModel:m.style !== null || ["Bottom_Tray","Stationary_Base"].includes(m.name),
     }}/>)}
 </Fragment>

@@ -1,221 +1,153 @@
 {
-  "electricalBaselineVersion": "1.0.3",
-  "electricalRecordsUnchanged": true,
-  "electricalRecordsSha256": "2f61bd60f92435a4ff0948e47598774b3395add7e045356aa0880ad5f3d10843",
-  "circuitSha256": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
-  "glbSha256": "48ababc615fc8442e47e3cfcb882205f5166c6a31a75308364443e7c9ea11e15",
-  "mechanicalModels": 12,
-  "pcbMidplaneOffsetMm": -7.6,
+  "revision": "1.0.7",
+  "selectedStyle": "circular",
+  "allCapStyles": [
+    "circular",
+    "ships_wheel",
+    "rounded_triangle",
+    "scalloped_coin",
+    "petal_flower",
+    "four_leaf_clover",
+    "rounded_hexagon",
+    "rounded_square",
+    "wave_rim",
+    "turbine_wheel",
+    "thumb_scoop"
+  ],
+  "mechanicalModels": 8,
+  "circuitSha256": "874a0b2e78caac284df2370cc58d322cb904f43cabcca2e0a0a37fa627487f4e",
+  "glbSha256": "a307c229628daaeb6ee75d700e09f423774e6ee4f8386b12343a5ce5fdfcb33c",
   "models": [
     {
-      "name": "ENCLOSURE_Rotating_Cap",
-      "worldBoundsGltfMm": [
-        [
-          -30.799779,
-          -6.6,
-          -30.799779
-        ],
-        [
-          30.799779,
-          6.4,
-          30.799779
-        ]
-      ],
-      "maximumBoundsErrorMm": 3.115660618391303e-8,
-      "translucent": true
-    },
-    {
-      "name": "ENCLOSURE_Encoder_Magnet",
-      "worldBoundsGltfMm": [
-        [
-          -2.5,
-          2.8000000000000007,
-          -2.4997203
-        ],
-        [
-          2.5,
-          4.300000000000001,
-          2.4997203
-        ]
-      ],
-      "maximumBoundsErrorMm": 4.547431631252152e-8,
-      "translucent": false
-    },
-    {
-      "name": "ENCLOSURE_Stationary_Housing",
+      "name": "Stationary_Base",
       "worldBoundsGltfMm": [
         [
           -29,
           -6.8,
-          -28.9942676
+          -28.9961976
         ],
         [
-          29,
-          3.4000000000000004,
-          28.9942676
+          28.9847915,
+          3.25,
+          28.9961976
         ]
       ],
-      "maximumBoundsErrorMm": 3.666809789137915e-8,
-      "translucent": true
+      "maximumBoundsErrorMm": 0
     },
     {
-      "name": "ENCLOSURE_Flexure_Retention_System",
+      "name": "Bottom_Tray",
       "worldBoundsGltfMm": [
         [
-          -18.3,
-          3.1371476000000005,
-          -18.296511
+          -29,
+          -7.3999999999999995,
+          -28.9961976
         ],
         [
-          18.3,
-          5.200000000000001,
-          18.296511
+          28.9847915,
+          -5.25,
+          28.9961976
         ]
       ],
-      "maximumBoundsErrorMm": 4.853732704646063e-8,
-      "translucent": false
+      "maximumBoundsErrorMm": 0
     },
     {
-      "name": "ENCLOSURE_CR2032",
+      "name": "Cell",
       "worldBoundsGltfMm": [
         [
           -10,
           -5.199999999999999,
-          -9.998881
+          -9.9986888
         ],
         [
-          10,
+          9.9947557,
           -2,
-          9.998881
+          9.9986888
         ]
       ],
-      "maximumBoundsErrorMm": 1.8102733534419713e-8,
-      "translucent": false
+      "maximumBoundsErrorMm": 0
     },
     {
-      "name": "ENCLOSURE_MagSafe_Magnet_Array",
-      "worldBoundsGltfMm": [
-        [
-          -26.9143297,
-          -6.75,
-          -26.91405
-        ],
-        [
-          26.9143297,
-          -5.25,
-          26.91405
-        ]
-      ],
-      "maximumBoundsErrorMm": 3.414423588310456e-8,
-      "translucent": false
-    },
-    {
-      "name": "ENCLOSURE_Magnetic_Shield",
-      "worldBoundsGltfMm": [
-        [
-          -27.225,
-          -5.199999999999999,
-          -27.2219536
-        ],
-        [
-          27.225,
-          -4.5,
-          27.2219536
-        ]
-      ],
-      "maximumBoundsErrorMm": 2.8215303871093056e-8,
-      "translucent": false
-    },
-    {
-      "name": "ENCLOSURE_Bottom_Cover",
-      "worldBoundsGltfMm": [
-        [
-          -29,
-          -7.3999999999999995,
-          -28.9942676
-        ],
-        [
-          29,
-          -5.25,
-          28.9942676
-        ]
-      ],
-      "maximumBoundsErrorMm": 3.666809789137915e-8,
-      "translucent": true
-    },
-    {
-      "name": "ENCLOSURE_Flexure_Fasteners",
-      "worldBoundsGltfMm": [
-        [
-          -12.8551299,
-          0.9000000000000004,
-          -12.8548531
-        ],
-        [
-          12.8551299,
-          4.5,
-          12.8548531
-        ]
-      ],
-      "maximumBoundsErrorMm": 4.4777928920325394e-8,
-      "translucent": false
-    },
-    {
-      "name": "ENCLOSURE_Phone_Pad",
-      "worldBoundsGltfMm": [
-        [
-          -29,
-          -7.6,
-          -28.9942676
-        ],
-        [
-          29,
-          -7.3999999999999995,
-          28.9942676
-        ]
-      ],
-      "maximumBoundsErrorMm": 3.666809789137915e-8,
-      "translucent": false
-    },
-    {
-      "name": "ENCLOSURE_Encoder_Shim",
-      "worldBoundsGltfMm": [
-        [
-          -2.5,
-          4.300000000000001,
-          -2.4995058
-        ],
-        [
-          2.5,
-          4.5,
-          2.4995058
-        ]
-      ],
-      "maximumBoundsErrorMm": 2.4425164113495157e-8,
-      "translucent": false
-    },
-    {
-      "name": "ENCLOSURE_PCB_Spacers",
+      "name": "PCB_Retainers",
       "worldBoundsGltfMm": [
         [
           -13.6551299,
           0.5,
-          -13.654695
+          -13.6548414
         ],
         [
-          13.6551299,
-          3.4000000000000004,
-          13.654695
+          13.6539761,
+          1.5,
+          13.6548414
         ]
       ],
-      "maximumBoundsErrorMm": 4.4777928920325394e-8,
-      "translucent": false
+      "maximumBoundsErrorMm": 0
+    },
+    {
+      "name": "Backing_Ring",
+      "worldBoundsGltfMm": [
+        [
+          -27.225,
+          -5.199999999999999,
+          -27.2214304
+        ],
+        [
+          27.2107224,
+          -4.5,
+          27.2214304
+        ]
+      ],
+      "maximumBoundsErrorMm": 0
+    },
+    {
+      "name": "Attachment_Magnets",
+      "worldBoundsGltfMm": [
+        [
+          -26.9143297,
+          -6.75,
+          -26.9140019
+        ],
+        [
+          26.9130186,
+          -5.25,
+          26.9140019
+        ]
+      ],
+      "maximumBoundsErrorMm": 0
+    },
+    {
+      "name": "Magnet",
+      "worldBoundsGltfMm": [
+        [
+          -2.5,
+          2.8000000000000007,
+          -2.4996722
+        ],
+        [
+          2.4986889,
+          4.300000000000001,
+          2.4996722
+        ]
+      ],
+      "maximumBoundsErrorMm": 0
+    },
+    {
+      "name": "Cap_circular",
+      "worldBoundsGltfMm": [
+        [
+          -30.7998377,
+          -3.5999999999999996,
+          -30.7998377
+        ],
+        [
+          30.7998377,
+          7.6,
+          30.7998377
+        ]
+      ],
+      "maximumBoundsErrorMm": 0
     }
   ],
-  "sourceSha256": {
-    "enclosure.tsx": "4bfe1edb79570c80666e6b3c5913e1dd7f0eb863fdbe97c9960a3e7909f5251e",
-    "mechanical/export_circuit_models.py": "753078c9093808bbe87d37c230b1199fb98fbc64631194c471320ad79012e3e4",
-    "mechanical/build_enclosure.py": "9030b9db9f8e039180643b93a511a38f4411492d8a8e93a3cf810ccafdbf6f1f",
-    "mechanical/Circuit_Models/manifest.json": "ba188e79f8288a0a12d50f998b80aab731c335adcf1da823b88831ebad03f073"
-  }
+  "printParts": 14,
+  "pressRotationConfigurationsCovered": 396,
+  "physicalTested": false
 }

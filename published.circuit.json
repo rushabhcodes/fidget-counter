@@ -3105,73 +3105,49 @@
     "type": "source_component",
     "source_component_id": "source_component_40",
     "ftype": "subassembly",
-    "name": "ENCLOSURE_Rotating_Cap"
+    "name": "ONEPIECE_V4_Stationary_Base"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_41",
     "ftype": "subassembly",
-    "name": "ENCLOSURE_Encoder_Magnet"
+    "name": "ONEPIECE_V4_Bottom_Tray"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_42",
     "ftype": "subassembly",
-    "name": "ENCLOSURE_Stationary_Housing"
+    "name": "ONEPIECE_V4_Cell"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_43",
     "ftype": "subassembly",
-    "name": "ENCLOSURE_Flexure_Retention_System"
+    "name": "ONEPIECE_V4_PCB_Retainers"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_44",
     "ftype": "subassembly",
-    "name": "ENCLOSURE_CR2032"
+    "name": "ONEPIECE_V4_Backing_Ring"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_45",
     "ftype": "subassembly",
-    "name": "ENCLOSURE_MagSafe_Magnet_Array"
+    "name": "ONEPIECE_V4_Attachment_Magnets"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_46",
     "ftype": "subassembly",
-    "name": "ENCLOSURE_Magnetic_Shield"
+    "name": "ONEPIECE_V4_Magnet"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_47",
     "ftype": "subassembly",
-    "name": "ENCLOSURE_Bottom_Cover"
-  },
-  {
-    "type": "source_component",
-    "source_component_id": "source_component_48",
-    "ftype": "subassembly",
-    "name": "ENCLOSURE_Flexure_Fasteners"
-  },
-  {
-    "type": "source_component",
-    "source_component_id": "source_component_49",
-    "ftype": "subassembly",
-    "name": "ENCLOSURE_Phone_Pad"
-  },
-  {
-    "type": "source_component",
-    "source_component_id": "source_component_50",
-    "ftype": "subassembly",
-    "name": "ENCLOSURE_Encoder_Shim"
-  },
-  {
-    "type": "source_component",
-    "source_component_id": "source_component_51",
-    "ftype": "subassembly",
-    "name": "ENCLOSURE_PCB_Spacers"
+    "name": "ONEPIECE_V4_Cap_circular"
   },
   {
     "type": "source_component_internal_connection",
@@ -11403,13 +11379,13 @@
     "type": "pcb_component",
     "pcb_component_id": "pcb_component_35",
     "center": {
-      "x": 12.65,
-      "y": 0
+      "x": 0,
+      "y": -5
     },
-    "width": 2.5999440000000007,
-    "height": 5.0000662,
+    "width": 5.0000662,
+    "height": 2.599943999999999,
     "layer": "top",
-    "rotation": 90,
+    "rotation": 0,
     "source_component_id": "source_component_25",
     "subcircuit_id": "subcircuit_source_group_0",
     "do_not_place": false,
@@ -11417,8 +11393,8 @@
     "is_allowed_to_be_off_board": false,
     "position_mode": "relative_to_group_anchor",
     "positioned_relative_to_pcb_board_id": "pcb_board_0",
-    "display_offset_x": 12.65,
-    "display_offset_y": 0,
+    "display_offset_x": 0,
+    "display_offset_y": -5,
     "pin1_location": "rightside_top"
   },
   {
@@ -15649,14 +15625,14 @@
     "pcb_port_id": "pcb_port_113",
     "layer": "top",
     "shape": "rect",
-    "width": 0.999998,
-    "height": 0.8999982,
+    "width": 0.8999982,
+    "height": 0.999998,
     "port_hints": [
       "pin1"
     ],
     "is_covered_with_solder_mask": false,
-    "x": 11.850027,
-    "y": 2.050034,
+    "x": 2.050034,
+    "y": -4.200027,
     "subcircuit_id": "subcircuit_source_group_0"
   },
   {
@@ -15664,10 +15640,10 @@
     "pcb_solder_paste_id": "pcb_solder_paste_49",
     "layer": "top",
     "shape": "rect",
-    "width": 0.6999986,
-    "height": 0.6299987399999999,
-    "x": 11.850027,
-    "y": 2.050034,
+    "width": 0.6299987399999999,
+    "height": 0.6999986,
+    "x": 2.050034,
+    "y": -4.200027,
     "pcb_component_id": "pcb_component_35",
     "pcb_smtpad_id": "pcb_smtpad_89",
     "subcircuit_id": "subcircuit_source_group_0"
@@ -15679,14 +15655,14 @@
     "pcb_port_id": "pcb_port_114",
     "layer": "top",
     "shape": "rect",
-    "width": 0.999998,
-    "height": 0.8999982,
+    "width": 0.8999982,
+    "height": 0.999998,
     "port_hints": [
       "pin2"
     ],
     "is_covered_with_solder_mask": false,
-    "x": 13.449973,
-    "y": 2.050034,
+    "x": 2.050034,
+    "y": -5.799973,
     "subcircuit_id": "subcircuit_source_group_0"
   },
   {
@@ -15694,10 +15670,10 @@
     "pcb_solder_paste_id": "pcb_solder_paste_50",
     "layer": "top",
     "shape": "rect",
-    "width": 0.6999986,
-    "height": 0.6299987399999999,
-    "x": 13.449973,
-    "y": 2.050034,
+    "width": 0.6299987399999999,
+    "height": 0.6999986,
+    "x": 2.050034,
+    "y": -5.799973,
     "pcb_component_id": "pcb_component_35",
     "pcb_smtpad_id": "pcb_smtpad_90",
     "subcircuit_id": "subcircuit_source_group_0"
@@ -15709,14 +15685,14 @@
     "pcb_port_id": "pcb_port_115",
     "layer": "top",
     "shape": "rect",
-    "width": 0.999998,
-    "height": 0.8999982,
+    "width": 0.8999982,
+    "height": 0.999998,
     "port_hints": [
       "pin3"
     ],
     "is_covered_with_solder_mask": false,
-    "x": 13.449973,
-    "y": -2.050034,
+    "x": -2.050034,
+    "y": -5.799973,
     "subcircuit_id": "subcircuit_source_group_0"
   },
   {
@@ -15724,10 +15700,10 @@
     "pcb_solder_paste_id": "pcb_solder_paste_51",
     "layer": "top",
     "shape": "rect",
-    "width": 0.6999986,
-    "height": 0.6299987399999999,
-    "x": 13.449973,
-    "y": -2.050034,
+    "width": 0.6299987399999999,
+    "height": 0.6999986,
+    "x": -2.050034,
+    "y": -5.799973,
     "pcb_component_id": "pcb_component_35",
     "pcb_smtpad_id": "pcb_smtpad_91",
     "subcircuit_id": "subcircuit_source_group_0"
@@ -15739,14 +15715,14 @@
     "pcb_port_id": "pcb_port_116",
     "layer": "top",
     "shape": "rect",
-    "width": 0.999998,
-    "height": 0.8999982,
+    "width": 0.8999982,
+    "height": 0.999998,
     "port_hints": [
       "pin4"
     ],
     "is_covered_with_solder_mask": false,
-    "x": 11.850027,
-    "y": -2.050034,
+    "x": -2.050034,
+    "y": -4.200027,
     "subcircuit_id": "subcircuit_source_group_0"
   },
   {
@@ -15754,10 +15730,10 @@
     "pcb_solder_paste_id": "pcb_solder_paste_52",
     "layer": "top",
     "shape": "rect",
-    "width": 0.6999986,
-    "height": 0.6299987399999999,
-    "x": 11.850027,
-    "y": -2.050034,
+    "width": 0.6299987399999999,
+    "height": 0.6999986,
+    "x": -2.050034,
+    "y": -4.200027,
     "pcb_component_id": "pcb_component_35",
     "pcb_smtpad_id": "pcb_smtpad_92",
     "subcircuit_id": "subcircuit_source_group_0"
@@ -15769,24 +15745,24 @@
     "layer": "top",
     "outline": [
       {
-        "x": 10.99502440000017,
-        "y": -2.750033099999996
+        "x": -2.750033099999996,
+        "y": -3.3450244000001703
       },
       {
-        "x": 10.99502440000017,
-        "y": 2.750033099999996
+        "x": 2.750033099999996,
+        "y": -3.3450244000001703
       },
       {
-        "x": 14.305026399999997,
-        "y": 2.750033099999996
+        "x": 2.750033099999996,
+        "y": -6.655026399999997
       },
       {
-        "x": 14.305026399999997,
-        "y": -2.750033099999996
+        "x": -2.750033099999996,
+        "y": -6.655026399999997
       },
       {
-        "x": 10.99502440000017,
-        "y": -2.750033099999996
+        "x": -2.750033099999996,
+        "y": -3.3450244000001703
       }
     ],
     "subcircuit_id": "subcircuit_source_group_0"
@@ -17195,7 +17171,7 @@
     "anchor_alignment": "center",
     "anchor_position": {
       "x": 0,
-      "y": -6
+      "y": -10.5
     },
     "font": "tscircuit2024",
     "font_size": 1.7,
@@ -17226,8 +17202,8 @@
     "pcb_silkscreen_text_id": "pcb_silkscreen_text_2",
     "anchor_alignment": "center",
     "anchor_position": {
-      "x": 12.65,
-      "y": -3.6
+      "x": 0,
+      "y": -8.6
     },
     "font": "tscircuit2024",
     "font_size": 1.7,
@@ -18733,8 +18709,8 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": 11.850027,
-    "y": 2.050034,
+    "x": 2.050034,
+    "y": -4.200027,
     "source_port_id": "source_port_113"
   },
   {
@@ -18745,8 +18721,8 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": 13.449973,
-    "y": 2.050034,
+    "x": 2.050034,
+    "y": -5.799973,
     "source_port_id": "source_port_114"
   },
   {
@@ -18757,8 +18733,8 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": 13.449973,
-    "y": -2.050034,
+    "x": -2.050034,
+    "y": -5.799973,
     "source_port_id": "source_port_115"
   },
   {
@@ -18769,8 +18745,8 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": 11.850027,
-    "y": -2.050034,
+    "x": -2.050034,
+    "y": -4.200027,
     "source_port_id": "source_port_116"
   },
   {
@@ -19237,12 +19213,12 @@
     "layer": "top",
     "route": [
       {
-        "x": 11.850027,
-        "y": 2.050034
+        "x": 2.050034,
+        "y": -4.200027
       },
       {
-        "x": 11.850027,
-        "y": -2.050034
+        "x": -2.050034,
+        "y": -4.200027
       }
     ],
     "stroke_width": 0.05
@@ -19255,11 +19231,11 @@
     "font": "tscircuit2024",
     "font_size": 0.12,
     "text": "MARKED INTERNALLY CONNECTED",
-    "ccw_rotation": 270,
+    "ccw_rotation": 0,
     "layer": "top",
     "anchor_position": {
-      "x": 11.970027,
-      "y": 0
+      "x": 0,
+      "y": -4.3200270000000005
     },
     "anchor_alignment": "center"
   },
@@ -19271,12 +19247,12 @@
     "layer": "top",
     "route": [
       {
-        "x": 13.449973,
-        "y": 2.050034
+        "x": 2.050034,
+        "y": -5.799973
       },
       {
-        "x": 13.449973,
-        "y": -2.050034
+        "x": -2.050034,
+        "y": -5.799973
       }
     ],
     "stroke_width": 0.05
@@ -19289,11 +19265,11 @@
     "font": "tscircuit2024",
     "font_size": 0.12,
     "text": "MARKED INTERNALLY CONNECTED",
-    "ccw_rotation": 270,
+    "ccw_rotation": 0,
     "layer": "top",
     "anchor_position": {
-      "x": 13.569973,
-      "y": 0
+      "x": 0,
+      "y": -5.919973
     },
     "anchor_alignment": "center"
   },
@@ -21519,14 +21495,14 @@
     "type": "cad_component",
     "cad_component_id": "cad_component_17",
     "position": {
-      "x": 12.65,
-      "y": 0,
+      "x": 0,
+      "y": -5,
       "z": 0.5
     },
     "rotation": {
       "x": 0,
       "y": 0,
-      "z": 90
+      "z": 0
     },
     "pcb_component_id": "pcb_component_35",
     "source_component_id": "source_component_25",
@@ -21843,8 +21819,8 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_30",
-    "model_obj_url": "./mechanical/Circuit_Models/Rotating_Cap.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Rotating_Cap.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/Stationary_Base.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Stationary_Base.mtl",
     "position": {
       "x": 0,
       "y": 0,
@@ -21870,8 +21846,8 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_31",
-    "model_obj_url": "./mechanical/Circuit_Models/Encoder_Magnet.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Encoder_Magnet.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/Bottom_Tray.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Bottom_Tray.mtl",
     "position": {
       "x": 0,
       "y": 0,
@@ -21892,13 +21868,13 @@
     "model_unit_to_mm_scale_factor": 1,
     "model_object_fit": "contain_within_bounds",
     "anchor_alignment": "center",
-    "show_as_translucent_model": false
+    "show_as_translucent_model": true
   },
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_32",
-    "model_obj_url": "./mechanical/Circuit_Models/Stationary_Housing.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Stationary_Housing.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/Cell.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Cell.mtl",
     "position": {
       "x": 0,
       "y": 0,
@@ -21919,13 +21895,13 @@
     "model_unit_to_mm_scale_factor": 1,
     "model_object_fit": "contain_within_bounds",
     "anchor_alignment": "center",
-    "show_as_translucent_model": true
+    "show_as_translucent_model": false
   },
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_33",
-    "model_obj_url": "./mechanical/Circuit_Models/Flexure_Retention_System.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Flexure_Retention_System.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/PCB_Retainers.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/PCB_Retainers.mtl",
     "position": {
       "x": 0,
       "y": 0,
@@ -21951,8 +21927,8 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_34",
-    "model_obj_url": "./mechanical/Circuit_Models/CR2032.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/CR2032.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/Backing_Ring.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Backing_Ring.mtl",
     "position": {
       "x": 0,
       "y": 0,
@@ -21978,8 +21954,8 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_35",
-    "model_obj_url": "./mechanical/Circuit_Models/MagSafe_Magnet_Array.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/MagSafe_Magnet_Array.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/Attachment_Magnets.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Attachment_Magnets.mtl",
     "position": {
       "x": 0,
       "y": 0,
@@ -22005,8 +21981,8 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_36",
-    "model_obj_url": "./mechanical/Circuit_Models/Magnetic_Shield.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Magnetic_Shield.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/Magnet.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Magnet.mtl",
     "position": {
       "x": 0,
       "y": 0,
@@ -22032,8 +22008,8 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_37",
-    "model_obj_url": "./mechanical/Circuit_Models/Bottom_Cover.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Bottom_Cover.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/Cap_circular.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Cap_circular.mtl",
     "position": {
       "x": 0,
       "y": 0,
@@ -22055,150 +22031,6 @@
     "model_object_fit": "contain_within_bounds",
     "anchor_alignment": "center",
     "show_as_translucent_model": true
-  },
-  {
-    "type": "cad_component",
-    "cad_component_id": "cad_component_38",
-    "model_obj_url": "./mechanical/Circuit_Models/Flexure_Fasteners.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Flexure_Fasteners.mtl",
-    "position": {
-      "x": 0,
-      "y": 0,
-      "z": -7.6
-    },
-    "rotation": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "layer": "top",
-    "source_component_id": "source_component_48",
-    "model_origin_position": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "model_unit_to_mm_scale_factor": 1,
-    "model_object_fit": "contain_within_bounds",
-    "anchor_alignment": "center",
-    "show_as_translucent_model": false
-  },
-  {
-    "type": "cad_component",
-    "cad_component_id": "cad_component_39",
-    "model_obj_url": "./mechanical/Circuit_Models/Phone_Pad.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Phone_Pad.mtl",
-    "position": {
-      "x": 0,
-      "y": 0,
-      "z": -7.6
-    },
-    "rotation": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "layer": "top",
-    "source_component_id": "source_component_49",
-    "model_origin_position": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "model_unit_to_mm_scale_factor": 1,
-    "model_object_fit": "contain_within_bounds",
-    "anchor_alignment": "center",
-    "show_as_translucent_model": false
-  },
-  {
-    "type": "cad_component",
-    "cad_component_id": "cad_component_40",
-    "model_obj_url": "./mechanical/Circuit_Models/Encoder_Shim.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Encoder_Shim.mtl",
-    "position": {
-      "x": 0,
-      "y": 0,
-      "z": -7.6
-    },
-    "rotation": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "layer": "top",
-    "source_component_id": "source_component_50",
-    "model_origin_position": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "model_unit_to_mm_scale_factor": 1,
-    "model_object_fit": "contain_within_bounds",
-    "anchor_alignment": "center",
-    "show_as_translucent_model": false
-  },
-  {
-    "type": "cad_component",
-    "cad_component_id": "cad_component_41",
-    "model_obj_url": "./mechanical/Circuit_Models/PCB_Spacers.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/PCB_Spacers.mtl",
-    "position": {
-      "x": 0,
-      "y": 0,
-      "z": -7.6
-    },
-    "rotation": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "layer": "top",
-    "source_component_id": "source_component_51",
-    "model_origin_position": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "model_unit_to_mm_scale_factor": 1,
-    "model_object_fit": "contain_within_bounds",
-    "anchor_alignment": "center",
-    "show_as_translucent_model": false
-  },
-  {
-    "type": "pcb_trace",
-    "pcb_trace_id": "source_net_8_mst0_0",
-    "connection_name": "source_net_8",
-    "connectsTo": [
-      "pcb_port_119",
-      "pcb_port_116"
-    ],
-    "route": [
-      {
-        "route_type": "wire",
-        "x": 11.850027,
-        "y": -2.050034,
-        "width": 0.11,
-        "layer": "top",
-        "start_pcb_port_id": "pcb_port_116"
-      },
-      {
-        "route_type": "wire",
-        "x": 10.31,
-        "y": -0.51,
-        "width": 0.11,
-        "layer": "top"
-      },
-      {
-        "route_type": "wire",
-        "x": 9.5,
-        "y": -0.420116,
-        "width": 0.11,
-        "layer": "top",
-        "end_pcb_port_id": "pcb_port_119"
-      }
-    ],
-    "subcircuit_id": "subcircuit_source_group_0",
-    "source_trace_id": "source_trace_68"
   },
   {
     "type": "pcb_trace",
@@ -25135,48 +24967,6 @@
   },
   {
     "type": "pcb_trace",
-    "pcb_trace_id": "source_net_0_mst12_0",
-    "connection_name": "source_net_0",
-    "connectsTo": [
-      "pcb_port_58",
-      "pcb_port_115"
-    ],
-    "route": [
-      {
-        "route_type": "wire",
-        "x": 10.4,
-        "y": 2.1,
-        "width": 0.11,
-        "layer": "top",
-        "start_pcb_port_id": "pcb_port_58",
-        "is_inside_copper_pour": true,
-        "copper_pour_id": "pcb_copper_pour_0"
-      },
-      {
-        "route_type": "wire",
-        "x": 10.4,
-        "y": 0.9999999999999991,
-        "width": 0.11,
-        "layer": "top",
-        "is_inside_copper_pour": true,
-        "copper_pour_id": "pcb_copper_pour_0"
-      },
-      {
-        "route_type": "wire",
-        "x": 13.449973,
-        "y": -2.050034,
-        "width": 0.11,
-        "layer": "top",
-        "end_pcb_port_id": "pcb_port_115",
-        "is_inside_copper_pour": true,
-        "copper_pour_id": "pcb_copper_pour_0"
-      }
-    ],
-    "subcircuit_id": "subcircuit_source_group_0",
-    "source_trace_id": "source_trace_11"
-  },
-  {
-    "type": "pcb_trace",
     "pcb_trace_id": "source_net_0_mst13_0",
     "connection_name": "source_net_0",
     "connectsTo": [
@@ -27542,6 +27332,494 @@
     "source_trace_id": "source_trace_32"
   },
   {
+    "type": "pcb_trace",
+    "pcb_trace_id": "source_net_8_mst0_0",
+    "connection_name": "source_net_8",
+    "connectsTo": [
+      "pcb_port_116",
+      "pcb_port_119"
+    ],
+    "route": [
+      {
+        "route_type": "wire",
+        "x": -2.050034,
+        "y": -4.200027,
+        "width": 0.11,
+        "layer": "top",
+        "start_pcb_port_id": "pcb_port_116"
+      },
+      {
+        "route_type": "wire",
+        "x": 1.2,
+        "y": -4.2,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 1.3,
+        "y": -4.1,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 1.4,
+        "y": -4.1,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 1.5,
+        "y": -4,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 1.6,
+        "y": -4,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 1.7,
+        "y": -3.9,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 1.9,
+        "y": -3.9,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 2,
+        "y": -3.8,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 2.1,
+        "y": -3.8,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 2.2,
+        "y": -3.7,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 2.3,
+        "y": -3.7,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 2.4,
+        "y": -3.6,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 2.5,
+        "y": -3.6,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 2.8,
+        "y": -3.3,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "via",
+        "x": 2.8,
+        "y": -3.3,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.55,
+        "via_hole_diameter": 0.3
+      },
+      {
+        "route_type": "wire",
+        "x": 2.8,
+        "y": -3.3,
+        "width": 0.11,
+        "layer": "bottom"
+      },
+      {
+        "route_type": "wire",
+        "x": 5.4,
+        "y": -0.7,
+        "width": 0.11,
+        "layer": "bottom"
+      },
+      {
+        "route_type": "via",
+        "x": 5.4,
+        "y": -0.7,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.55,
+        "via_hole_diameter": 0.3
+      },
+      {
+        "route_type": "wire",
+        "x": 5.4,
+        "y": -0.7,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 8.9,
+        "y": -0.7,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 9,
+        "y": -0.6,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.1,
+        "y": -0.6,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.2,
+        "y": -0.5,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.4,
+        "y": -0.5,
+        "width": 0.11,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.5,
+        "y": -0.420116,
+        "width": 0.11,
+        "layer": "top",
+        "end_pcb_port_id": "pcb_port_119"
+      }
+    ],
+    "subcircuit_id": "subcircuit_source_group_0",
+    "source_trace_id": "source_trace_68"
+  },
+  {
+    "type": "pcb_trace",
+    "pcb_trace_id": "source_net_0_mst12_0",
+    "connection_name": "source_net_0",
+    "connectsTo": [
+      "pcb_port_115",
+      "pcb_port_58"
+    ],
+    "route": [
+      {
+        "route_type": "wire",
+        "x": 10.4,
+        "y": 2.1,
+        "width": 0.11,
+        "layer": "bottom",
+        "end_pcb_port_id": "pcb_port_58",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23",
+        "start_pcb_port_id": "pcb_port_59"
+      },
+      {
+        "route_type": "wire",
+        "x": 10.3,
+        "y": 2,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 10.1,
+        "y": 2,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 10,
+        "y": 1.9,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.9,
+        "y": 1.9,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.8,
+        "y": 1.8,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.7,
+        "y": 1.8,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.6,
+        "y": 1.7,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.5,
+        "y": 1.7,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.4,
+        "y": 1.6,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.2,
+        "y": 1.6,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 9.1,
+        "y": 1.5,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 9,
+        "y": 1.5,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 8.9,
+        "y": 1.4,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 8.8,
+        "y": 1.4,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 8.7,
+        "y": 1.3,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 8.6,
+        "y": 1.3,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 8.5,
+        "y": 1.2,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 8.4,
+        "y": 1.2,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 8.3,
+        "y": 1.1,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 8.1,
+        "y": 1.1,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 8,
+        "y": 1,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 7.9,
+        "y": 1,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 3.1,
+        "y": -3.8,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": 0.7,
+        "y": -3.8,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "wire",
+        "x": -1.2,
+        "y": -5.7,
+        "width": 0.11,
+        "layer": "bottom",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_23"
+      },
+      {
+        "route_type": "via",
+        "x": -1.2,
+        "y": -5.7,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.55,
+        "via_hole_diameter": 0.3
+      },
+      {
+        "route_type": "wire",
+        "x": -1.2,
+        "y": -5.7,
+        "width": 0.11,
+        "layer": "top",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_0"
+      },
+      {
+        "route_type": "wire",
+        "x": -2,
+        "y": -5.7,
+        "width": 0.11,
+        "layer": "top",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_0"
+      },
+      {
+        "route_type": "wire",
+        "x": -2.050034,
+        "y": -5.799973,
+        "width": 0.11,
+        "layer": "top",
+        "start_pcb_port_id": "pcb_port_115",
+        "is_inside_copper_pour": true,
+        "copper_pour_id": "pcb_copper_pour_0",
+        "end_pcb_port_id": "pcb_port_115"
+      }
+    ],
+    "subcircuit_id": "subcircuit_source_group_0",
+    "source_trace_id": "source_trace_11"
+  },
+  {
     "type": "pcb_via",
     "pcb_via_id": "pcb_via_20",
     "pcb_trace_id": "source_net_7_mst1_0",
@@ -27997,6 +28275,57 @@
     ],
     "from_layer": "bottom",
     "to_layer": "top",
+    "subcircuit_id": "subcircuit_source_group_0",
+    "subcircuit_connectivity_map_key": "FIDGET_COUNTER_REVA_connectivity_net3"
+  },
+  {
+    "type": "pcb_via",
+    "pcb_via_id": "pcb_via_47",
+    "pcb_trace_id": "source_net_8_mst0_0",
+    "x": 2.8,
+    "y": -3.3,
+    "hole_diameter": 0.3,
+    "outer_diameter": 0.55,
+    "layers": [
+      "top",
+      "bottom"
+    ],
+    "from_layer": "top",
+    "to_layer": "bottom",
+    "subcircuit_id": "subcircuit_source_group_0",
+    "subcircuit_connectivity_map_key": "FIDGET_COUNTER_REVA_connectivity_net14"
+  },
+  {
+    "type": "pcb_via",
+    "pcb_via_id": "pcb_via_48",
+    "pcb_trace_id": "source_net_8_mst0_0",
+    "x": 5.4,
+    "y": -0.7,
+    "hole_diameter": 0.3,
+    "outer_diameter": 0.55,
+    "layers": [
+      "top",
+      "bottom"
+    ],
+    "from_layer": "bottom",
+    "to_layer": "top",
+    "subcircuit_id": "subcircuit_source_group_0",
+    "subcircuit_connectivity_map_key": "FIDGET_COUNTER_REVA_connectivity_net14"
+  },
+  {
+    "type": "pcb_via",
+    "pcb_via_id": "pcb_via_49",
+    "pcb_trace_id": "source_net_0_mst12_0",
+    "x": -1.2,
+    "y": -5.7,
+    "hole_diameter": 0.3,
+    "outer_diameter": 0.55,
+    "layers": [
+      "top",
+      "bottom"
+    ],
+    "from_layer": "top",
+    "to_layer": "bottom",
     "subcircuit_id": "subcircuit_source_group_0",
     "subcircuit_connectivity_map_key": "FIDGET_COUNTER_REVA_connectivity_net3"
   },
@@ -33254,28 +33583,160 @@
               "y": -0.41481
             },
             {
-              "x": 8.917317,
-              "y": -0.437586
+              "x": 8.891972,
+              "y": -0.426415
             },
             {
-              "x": 8.917479,
-              "y": -0.437219
+              "x": 8.886108,
+              "y": -0.429549
             },
             {
-              "x": 8.92155,
-              "y": -0.439395
+              "x": 8.855043,
+              "y": -0.455043
             },
             {
-              "x": 8.934251,
-              "y": -0.443248
+              "x": 8.815086,
+              "y": -0.495
             },
             {
-              "x": 8.93397,
-              "y": -0.444075
+              "x": 5.770007,
+              "y": -0.495
+            },
+            {
+              "x": 5.753375,
+              "y": -0.463883
+            },
+            {
+              "x": 5.70052,
+              "y": -0.39948
+            },
+            {
+              "x": 5.636117,
+              "y": -0.346625
+            },
+            {
+              "x": 5.56264,
+              "y": -0.307351
+            },
+            {
+              "x": 5.482913,
+              "y": -0.283166
+            },
+            {
+              "x": 5.4,
+              "y": -0.275
+            },
+            {
+              "x": 5.317087,
+              "y": -0.283166
+            },
+            {
+              "x": 5.23736,
+              "y": -0.307351
+            },
+            {
+              "x": 5.163883,
+              "y": -0.346625
+            },
+            {
+              "x": 5.09948,
+              "y": -0.39948
+            },
+            {
+              "x": 5.046625,
+              "y": -0.463883
+            },
+            {
+              "x": 5.007351,
+              "y": -0.53736
+            },
+            {
+              "x": 4.983166,
+              "y": -0.617087
+            },
+            {
+              "x": 4.975,
+              "y": -0.7
+            },
+            {
+              "x": 4.983166,
+              "y": -0.782913
+            },
+            {
+              "x": 5.007351,
+              "y": -0.86264
+            },
+            {
+              "x": 5.046625,
+              "y": -0.936117
+            },
+            {
+              "x": 5.09948,
+              "y": -1.00052
+            },
+            {
+              "x": 5.163883,
+              "y": -1.053375
+            },
+            {
+              "x": 5.23736,
+              "y": -1.092649
+            },
+            {
+              "x": 5.317087,
+              "y": -1.116834
+            },
+            {
+              "x": 5.4,
+              "y": -1.125
+            },
+            {
+              "x": 5.482913,
+              "y": -1.116834
+            },
+            {
+              "x": 5.56264,
+              "y": -1.092649
+            },
+            {
+              "x": 5.636117,
+              "y": -1.053375
+            },
+            {
+              "x": 5.70052,
+              "y": -1.00052
+            },
+            {
+              "x": 5.753375,
+              "y": -0.936117
+            },
+            {
+              "x": 5.770007,
+              "y": -0.905
+            },
+            {
+              "x": 8.9,
+              "y": -0.905
+            },
+            {
+              "x": 8.939994,
+              "y": -0.901061
+            },
+            {
+              "x": 8.97845,
+              "y": -0.889395
+            },
+            {
+              "x": 9.013892,
+              "y": -0.870451
+            },
+            {
+              "x": 9.044957,
+              "y": -0.844957
             },
             {
               "x": 9.079998,
-              "y": -0.493758
+              "y": -0.809916
             },
             {
               "x": 9.079998,
@@ -33284,62 +33745,6 @@
             {
               "x": 9.920002,
               "y": -0.820115
-            },
-            {
-              "x": 9.920002,
-              "y": -0.672981
-            },
-            {
-              "x": 10.215902,
-              "y": -0.705816
-            },
-            {
-              "x": 11.200028,
-              "y": -1.689947
-            },
-            {
-              "x": 11.200028,
-              "y": -2.650033
-            },
-            {
-              "x": 12.500026,
-              "y": -2.650033
-            },
-            {
-              "x": 12.500026,
-              "y": -1.450035
-            },
-            {
-              "x": 11.539944,
-              "y": -1.450035
-            },
-            {
-              "x": 10.454957,
-              "y": -0.365043
-            },
-            {
-              "x": 10.423892,
-              "y": -0.339549
-            },
-            {
-              "x": 10.38845,
-              "y": -0.320605
-            },
-            {
-              "x": 10.349994,
-              "y": -0.308939
-            },
-            {
-              "x": 10.332503,
-              "y": -0.307216
-            },
-            {
-              "x": 10.33261,
-              "y": -0.306251
-            },
-            {
-              "x": 9.920002,
-              "y": -0.260465
             },
             {
               "x": 9.920002,
@@ -33964,6 +34369,246 @@
             {
               "x": 3.03,
               "y": -2.011654
+            },
+            {
+              "x": 3.03,
+              "y": -2.943355
+            },
+            {
+              "x": 2.96264,
+              "y": -2.907351
+            },
+            {
+              "x": 2.882913,
+              "y": -2.883166
+            },
+            {
+              "x": 2.8,
+              "y": -2.875
+            },
+            {
+              "x": 2.717087,
+              "y": -2.883166
+            },
+            {
+              "x": 2.63736,
+              "y": -2.907351
+            },
+            {
+              "x": 2.563883,
+              "y": -2.946625
+            },
+            {
+              "x": 2.49948,
+              "y": -2.99948
+            },
+            {
+              "x": 2.446625,
+              "y": -3.063883
+            },
+            {
+              "x": 2.407351,
+              "y": -3.13736
+            },
+            {
+              "x": 2.383166,
+              "y": -3.217087
+            },
+            {
+              "x": 2.375,
+              "y": -3.3
+            },
+            {
+              "x": 2.383166,
+              "y": -3.382913
+            },
+            {
+              "x": 2.387215,
+              "y": -3.396259
+            },
+            {
+              "x": 2.360006,
+              "y": -3.398939
+            },
+            {
+              "x": 2.32155,
+              "y": -3.410605
+            },
+            {
+              "x": 2.286108,
+              "y": -3.429549
+            },
+            {
+              "x": 2.255043,
+              "y": -3.455043
+            },
+            {
+              "x": 2.215086,
+              "y": -3.495
+            },
+            {
+              "x": 2.2,
+              "y": -3.495
+            },
+            {
+              "x": 2.160006,
+              "y": -3.498939
+            },
+            {
+              "x": 2.12155,
+              "y": -3.510605
+            },
+            {
+              "x": 2.086108,
+              "y": -3.529549
+            },
+            {
+              "x": 2.061154,
+              "y": -3.550028
+            },
+            {
+              "x": 1.450035,
+              "y": -3.550028
+            },
+            {
+              "x": 1.450035,
+              "y": -3.801964
+            },
+            {
+              "x": 1.42155,
+              "y": -3.810605
+            },
+            {
+              "x": 1.386108,
+              "y": -3.829549
+            },
+            {
+              "x": 1.355043,
+              "y": -3.855043
+            },
+            {
+              "x": 1.315086,
+              "y": -3.895
+            },
+            {
+              "x": 1.3,
+              "y": -3.895
+            },
+            {
+              "x": 1.260006,
+              "y": -3.898939
+            },
+            {
+              "x": 1.22155,
+              "y": -3.910605
+            },
+            {
+              "x": 1.186108,
+              "y": -3.929549
+            },
+            {
+              "x": 1.155043,
+              "y": -3.955043
+            },
+            {
+              "x": 1.115085,
+              "y": -3.995001
+            },
+            {
+              "x": -1.450035,
+              "y": -3.995022
+            },
+            {
+              "x": -1.450035,
+              "y": -3.550028
+            },
+            {
+              "x": -2.650033,
+              "y": -3.550028
+            },
+            {
+              "x": -2.650033,
+              "y": -4.850026
+            },
+            {
+              "x": -1.450035,
+              "y": -4.850026
+            },
+            {
+              "x": -1.450035,
+              "y": -4.405022
+            },
+            {
+              "x": 1.200002,
+              "y": -4.405
+            },
+            {
+              "x": 1.239994,
+              "y": -4.401061
+            },
+            {
+              "x": 1.27845,
+              "y": -4.389395
+            },
+            {
+              "x": 1.313892,
+              "y": -4.370451
+            },
+            {
+              "x": 1.344957,
+              "y": -4.344957
+            },
+            {
+              "x": 1.384914,
+              "y": -4.305
+            },
+            {
+              "x": 1.4,
+              "y": -4.305
+            },
+            {
+              "x": 1.439994,
+              "y": -4.301061
+            },
+            {
+              "x": 1.450035,
+              "y": -4.298015
+            },
+            {
+              "x": 1.450035,
+              "y": -4.850026
+            },
+            {
+              "x": 2.650033,
+              "y": -4.850026
+            },
+            {
+              "x": 2.650033,
+              "y": -3.739881
+            },
+            {
+              "x": 2.683322,
+              "y": -3.706592
+            },
+            {
+              "x": 2.717087,
+              "y": -3.716834
+            },
+            {
+              "x": 2.8,
+              "y": -3.725
+            },
+            {
+              "x": 2.882913,
+              "y": -3.716834
+            },
+            {
+              "x": 2.96264,
+              "y": -3.692649
+            },
+            {
+              "x": 3.03,
+              "y": -3.656645
             },
             {
               "x": 3.03,
@@ -35968,26 +36613,6 @@
             {
               "x": -5.849975,
               "y": -2.900001
-            }
-          ]
-        },
-        {
-          "vertices": [
-            {
-              "x": 11.200028,
-              "y": 1.450035
-            },
-            {
-              "x": 12.500026,
-              "y": 1.450035
-            },
-            {
-              "x": 12.500026,
-              "y": 2.650033
-            },
-            {
-              "x": 11.200028,
-              "y": 2.650033
             }
           ]
         }
@@ -39203,24 +39828,244 @@
               "y": -1.208834
             },
             {
-              "x": 4.63464,
-              "y": -1.184649
+              "x": 4.62143,
+              "y": -1.188656
             },
             {
-              "x": 4.708117,
-              "y": -1.145375
+              "x": 2.916678,
+              "y": -2.893408
             },
             {
-              "x": 4.77252,
-              "y": -1.09252
+              "x": 2.882913,
+              "y": -2.883166
             },
             {
-              "x": 4.825375,
-              "y": -1.028117
+              "x": 2.8,
+              "y": -2.875
             },
             {
-              "x": 4.864649,
-              "y": -0.95464
+              "x": 2.717087,
+              "y": -2.883166
+            },
+            {
+              "x": 2.63736,
+              "y": -2.907351
+            },
+            {
+              "x": 2.563883,
+              "y": -2.946625
+            },
+            {
+              "x": 2.49948,
+              "y": -2.99948
+            },
+            {
+              "x": 2.446625,
+              "y": -3.063883
+            },
+            {
+              "x": 2.407351,
+              "y": -3.13736
+            },
+            {
+              "x": 2.383166,
+              "y": -3.217087
+            },
+            {
+              "x": 2.375,
+              "y": -3.3
+            },
+            {
+              "x": 2.383166,
+              "y": -3.382913
+            },
+            {
+              "x": 2.407351,
+              "y": -3.46264
+            },
+            {
+              "x": 2.446625,
+              "y": -3.536117
+            },
+            {
+              "x": 2.49948,
+              "y": -3.60052
+            },
+            {
+              "x": 2.563883,
+              "y": -3.653375
+            },
+            {
+              "x": 2.63736,
+              "y": -3.692649
+            },
+            {
+              "x": 2.717087,
+              "y": -3.716834
+            },
+            {
+              "x": 2.8,
+              "y": -3.725
+            },
+            {
+              "x": 2.882913,
+              "y": -3.716834
+            },
+            {
+              "x": 2.96264,
+              "y": -3.692649
+            },
+            {
+              "x": 3.036117,
+              "y": -3.653375
+            },
+            {
+              "x": 3.10052,
+              "y": -3.60052
+            },
+            {
+              "x": 3.153375,
+              "y": -3.536117
+            },
+            {
+              "x": 3.192649,
+              "y": -3.46264
+            },
+            {
+              "x": 3.216834,
+              "y": -3.382913
+            },
+            {
+              "x": 3.225,
+              "y": -3.3
+            },
+            {
+              "x": 3.216834,
+              "y": -3.217087
+            },
+            {
+              "x": 3.206592,
+              "y": -3.183322
+            },
+            {
+              "x": 5.283322,
+              "y": -1.106592
+            },
+            {
+              "x": 5.317087,
+              "y": -1.116834
+            },
+            {
+              "x": 5.4,
+              "y": -1.125
+            },
+            {
+              "x": 5.482913,
+              "y": -1.116834
+            },
+            {
+              "x": 5.56264,
+              "y": -1.092649
+            },
+            {
+              "x": 5.636117,
+              "y": -1.053375
+            },
+            {
+              "x": 5.70052,
+              "y": -1.00052
+            },
+            {
+              "x": 5.753375,
+              "y": -0.936117
+            },
+            {
+              "x": 5.792649,
+              "y": -0.86264
+            },
+            {
+              "x": 5.816834,
+              "y": -0.782913
+            },
+            {
+              "x": 5.825,
+              "y": -0.7
+            },
+            {
+              "x": 5.816834,
+              "y": -0.617087
+            },
+            {
+              "x": 5.792649,
+              "y": -0.53736
+            },
+            {
+              "x": 5.753375,
+              "y": -0.463883
+            },
+            {
+              "x": 5.70052,
+              "y": -0.39948
+            },
+            {
+              "x": 5.636117,
+              "y": -0.346625
+            },
+            {
+              "x": 5.56264,
+              "y": -0.307351
+            },
+            {
+              "x": 5.482913,
+              "y": -0.283166
+            },
+            {
+              "x": 5.4,
+              "y": -0.275
+            },
+            {
+              "x": 5.317087,
+              "y": -0.283166
+            },
+            {
+              "x": 5.23736,
+              "y": -0.307351
+            },
+            {
+              "x": 5.163883,
+              "y": -0.346625
+            },
+            {
+              "x": 5.09948,
+              "y": -0.39948
+            },
+            {
+              "x": 5.046625,
+              "y": -0.463883
+            },
+            {
+              "x": 5.007351,
+              "y": -0.53736
+            },
+            {
+              "x": 4.983166,
+              "y": -0.617087
+            },
+            {
+              "x": 4.975,
+              "y": -0.7
+            },
+            {
+              "x": 4.983166,
+              "y": -0.782913
+            },
+            {
+              "x": 4.993408,
+              "y": -0.816678
+            },
+            {
+              "x": 4.868656,
+              "y": -0.94143
             },
             {
               "x": 4.888834,
@@ -42508,6 +43353,6 @@
   },
   {
     "type": "source_project_metadata",
-    "source_filesystem_md5_hash": "571ba19d416ac564550ea07bc2ea3e75"
+    "source_filesystem_md5_hash": "9928f57516e747991729e142be51a0f5"
   }
 ]

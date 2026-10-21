@@ -3,72 +3,78 @@ import {createHash} from "node:crypto"
 import assert from "node:assert/strict"
 
 const hash = bytes => createHash("sha256").update(bytes).digest("hex")
+const parameters = JSON.parse(readFileSync("mechanical/enclosure-parameters.json"))
 const manifest = JSON.parse(readFileSync("mechanical/Circuit_Models/manifest.json"))
-assert.deepEqual(manifest.sourceParameters,JSON.parse(readFileSync("mechanical/enclosure-parameters.json")),
-  "Enclosure mesh assets are stale; regenerate from the current CAD parameters")
 const geometry = JSON.parse(readFileSync("mechanical/enclosure-validation.json"))
-assert.deepEqual(geometry.parameters_mm,manifest.sourceParameters,"Stale enclosure geometry audit")
-assert.equal(geometry.collision_audit.length,0,"Unintended mechanical collision remains")
-assert(geometry.manifest.every(part => part.cad_valid),"Invalid enclosure solid remains")
-if (manifest.sourceParameters.attachment_mode === "disc_array") {
-  const layout = geometry.attachment_disc_array
-  assert.equal(layout.count,manifest.sourceParameters.attachment_disc_count)
-  assert.equal(layout.centers_mm.length,layout.count)
-  assert.equal(layout.diameter_mm,manifest.sourceParameters.attachment_disc_diameter)
-  assert.equal(layout.thickness_mm,manifest.sourceParameters.attachment_magnet_thickness)
-  assert(layout.minimum_pocket_web_mm >= 1 && layout.inner_wall_mm >= 1)
-  assert(layout.outer_wall_mm >= 0.8-1e-6 && layout.housing_outer_rim_mm >= 0.8-1e-6)
-  assert(layout.floor_thickness_mm >= 0.6)
-  assert(Math.abs(layout.pocket_depth_mm-layout.thickness_mm-layout.adhesive_allowance_mm)<1e-6)
-}
+const stls = JSON.parse(readFileSync("validation/onepiece-stl-audit.json"))
+assert.deepEqual(manifest.sourceParameters,parameters,"Mesh parameters are stale")
+assert.deepEqual(geometry.parameters,parameters,"Geometry audit is stale")
+assert.deepEqual(manifest.styles,parameters.cap_styles)
+assert.equal(manifest.styles.length,11)
+assert.equal(manifest.totalAssets,18)
+assert.equal(manifest.modelsPerSelectedStyle,8)
+assert.equal(geometry.printed_parts.length,14)
+assert(geometry.printed_parts.every(p => p.valid && p.solids === 1))
+assert.equal(geometry.press_rotation_checks.length,396)
+assert(geometry.press_rotation_checks.every(p => p.rigid_collisions === 0))
+assert(geometry.snap_release_checks.every(p => p.collision_mm3 === 0 && p.tabs_outward_mm === 0.8))
+assert.equal(geometry.exact_shared_hub_magnet_poses,72)
+assert.equal(geometry.cap_mount_screws,0)
+assert.equal(geometry.separate_return_springs,0)
+assert.equal(geometry.encoder_magnet_per_top_module,1)
+assert.equal(parameters.overall_height,15.2)
+assert.equal(parameters.grip_height,8)
+assert.equal(parameters.button_travel,0.25)
+assert(stls.passed && stls.parts.length === 14 && !stls.physically_tested)
+for (const part of stls.parts)
+  assert.equal(hash(readFileSync(`mechanical/Print_STL/${part.file}`)),part.sha256,`Stale print mesh: ${part.file}`)
+for (const [file,sha] of Object.entries(manifest.modelSha256))
+  assert.equal(hash(readFileSync(`mechanical/Circuit_Models/${file}`)),sha,`Stale circuit model: ${file}`)
+
 const circuitBytes = readFileSync("dist/index/circuit.json")
 const circuit = JSON.parse(circuitBytes)
-const sources = circuit.filter(e => e.type === "source_component" && e.name?.startsWith("ENCLOSURE_"))
-const assemblyIds = new Set(sources.map(e => e.source_component_id))
-assert.equal(sources.length,12)
-assert.equal(manifest.parts.length,12)
-assert(!manifest.parts.some(p => ["Battery_Hatch","Battery_Fasteners"].includes(p.name)))
-assert.equal(geometry.parameters_mm.battery_access,"top")
-assert.equal(geometry.top_service.bottom_hatch,false)
-assert.equal(geometry.top_service.hatch_fasteners,0)
-assert.equal(geometry.top_service.cap_release_latches,2)
-assert.equal(geometry.top_service.pcb_retaining_screws,4)
-assert(geometry.top_service.solid_center_floor_verified)
-assert(geometry.top_service.released_latch_to_pcb_clearance_mm >= 0.2-1e-6)
-assert(geometry.top_service.released_lip_to_bore_clearance_mm > 0)
-assert.equal(geometry.top_service.release_key_checks.length,2)
-assert(geometry.top_service.release_key_checks.every(p => p.retaining_roof_intact && p.housing_overlap_mm3 < 0.002))
-assert.equal(geometry.top_service.pcb_holder_cell_extraction.length,9)
-assert(geometry.top_service.pcb_holder_cell_extraction.every(p => p.rigid_collisions.length===0))
-assert.equal(circuit.filter(e => e.type === "pcb_component" && assemblyIds.has(e.source_component_id)).length,0)
-// Baseline: the checked v1.0.3 board at Git commit 8d744cd. Metadata hashes and
-// the newly added mechanical-only records are the sole excluded records.
-const electronics = circuit.filter(e => e.type !== "source_project_metadata" &&
-  !(["source_component","cad_component"].includes(e.type) && assemblyIds.has(e.source_component_id)))
-const electricalHash = hash(JSON.stringify(electronics))
-assert.equal(electricalHash,"2f61bd60f92435a4ff0948e47598774b3395add7e045356aa0880ad5f3d10843",
-  "Electrical geometry or connectivity changed from the checked holder revision")
+const sources = circuit.filter(e => e.type === "source_component" && e.name?.startsWith("ONEPIECE_V4_"))
+const ids = new Set(sources.map(e => e.source_component_id))
+assert.equal(sources.length,8)
+assert.equal(circuit.filter(e => e.type === "pcb_component" && ids.has(e.source_component_id)).length,0)
+const style = readFileSync("index.circuit.tsx","utf8").match(/const CAP_STYLE: CapStyle = "([a-z_]+)"/)[1]
+assert(manifest.styles.includes(style))
+assert(sources.some(e => e.name === `ONEPIECE_V4_Cap_${style}`))
+assert.equal(sources.filter(e => e.name.startsWith("ONEPIECE_V4_Cap_")).length,1)
+const component = name => circuit.find(e => e.type === "pcb_component" && e.source_component_id ===
+  circuit.find(s => s.type === "source_component" && s.name === name)?.source_component_id)
+assert.deepEqual(component("SW1").center,{x:0,y:-5})
+assert.equal(component("SW1").rotation,0)
+assert.deepEqual(component("U2").center,{x:0,y:0})
+for (const via of circuit.filter(e => e.type === "pcb_via")) {
+  assert.equal(via.hole_diameter,0.3)
+  assert.equal(via.outer_diameter,0.55)
+}
+
 const glbBytes = readFileSync("dist/index/3d.glb")
 const gltf = JSON.parse(glbBytes.subarray(20,20 + glbBytes.readUInt32LE(12)).toString())
 const reports = []
-for (const part of manifest.parts) {
-  for (const [file,sha] of Object.entries(part.sha256))
-    assert.equal(hash(readFileSync(`mechanical/Circuit_Models/${file}`)),sha,`Changed asset: ${file}`)
-  const name = `ENCLOSURE_${part.name}`
-  const source = sources.find(e => e.name === name)
-  assert(source,`Missing assembly source: ${name}`)
+for (const source of sources) {
+  const name = source.name.replace("ONEPIECE_V4_","")
   const cad = circuit.find(e => e.type === "cad_component" && e.source_component_id === source.source_component_id)
-  assert(cad,`Missing assembly CAD: ${name}`)
-  assert.equal(cad.model_obj_url,`./mechanical/Circuit_Models/${part.name}.obj`)
-  assert.equal(cad.model_mtl_url,`./mechanical/Circuit_Models/${part.name}.mtl`)
-  assert.deepEqual(cad.position,{x:0,y:0,z:-manifest.pcbMidplaneZMm})
+  assert(cad,`Missing CAD: ${name}`)
+  assert.equal(cad.model_obj_url,`./mechanical/Circuit_Models/${name}.obj`)
+  assert.equal(cad.model_mtl_url,`./mechanical/Circuit_Models/${name}.mtl`)
+  assert.deepEqual(cad.position,{x:0,y:0,z:-7.6})
   assert.deepEqual(cad.rotation,{x:0,y:0,z:0})
   assert.deepEqual(cad.model_origin_position,{x:0,y:0,z:0})
   assert.equal(cad.model_unit_to_mm_scale_factor,1)
-  assert.equal(cad.show_as_translucent_model,part.translucent)
-  const node = gltf.nodes.find(n => n.name === name && Number.isInteger(n.mesh))
-  assert(node,`Missing exported mesh: ${name}`)
-  assert(!node.rotation && !node.matrix && !node.scale,`Unexpected model transform: ${name}`)
+  const bounds = [[Infinity,Infinity,Infinity],[-Infinity,-Infinity,-Infinity]]
+  for (const line of readFileSync(`mechanical/Circuit_Models/${name}.obj`,"utf8").split("\n")) {
+    if (!line.startsWith("v ")) continue
+    line.split(/\s+/).slice(1).map(Number).forEach((value,axis) => {
+      bounds[0][axis] = Math.min(bounds[0][axis],value)
+      bounds[1][axis] = Math.max(bounds[1][axis],value)
+    })
+  }
+  const node = gltf.nodes.find(n => n.name === source.name && Number.isInteger(n.mesh))
+  assert(node,`Missing GLB mesh: ${name}`)
+  assert(!node.rotation && !node.matrix && !node.scale)
   const actual = [[Infinity,Infinity,Infinity],[-Infinity,-Infinity,-Infinity]]
   for (const primitive of gltf.meshes[node.mesh].primitives) {
     const positions = gltf.accessors[primitive.attributes.POSITION]
@@ -77,20 +83,16 @@ for (const part of manifest.parts) {
       actual[1][axis] = Math.max(actual[1][axis],positions.max[axis] + (node.translation?.[axis] ?? 0))
     }
   }
-  // The exporter consistently maps circuit (x,y,z) to GLTF (-x,z,y).
-  const [min,max] = part.boundsMm
-  const expected = [[-max[0],min[2]-manifest.pcbMidplaneZMm,min[1]],
-                    [-min[0],max[2]-manifest.pcbMidplaneZMm,max[1]]]
+  const [min,max] = bounds
+  const expected = [[-max[0],min[2]-7.6,min[1]],[-min[0],max[2]-7.6,max[1]]]
   const error = Math.max(...actual.flatMap((v,i) => v.map((n,j) => Math.abs(n-expected[i][j]))))
-  assert(error < 0.0001,`Misaligned model: ${name}, error ${error} mm`)
-  reports.push({name,worldBoundsGltfMm:actual,maximumBoundsErrorMm:error,translucent:part.translucent})
+  assert(error < 0.0001,`Misaligned ${name}: ${error} mm`)
+  reports.push({name,worldBoundsGltfMm:actual,maximumBoundsErrorMm:error})
 }
 mkdirSync("work",{recursive:true})
 writeFileSync("work/enclosure-model-audit.json",JSON.stringify({
-  electricalBaselineVersion:"1.0.3",electricalRecordsUnchanged:true,electricalRecordsSha256:electricalHash,
-  circuitSha256:hash(circuitBytes),glbSha256:hash(glbBytes),mechanicalModels:reports.length,
-  pcbMidplaneOffsetMm:-manifest.pcbMidplaneZMm,models:reports,
-  sourceSha256:Object.fromEntries(["enclosure.tsx","mechanical/export_circuit_models.py",
-    "mechanical/build_enclosure.py","mechanical/Circuit_Models/manifest.json"].map(p=>[p,hash(readFileSync(p))])),
+  revision:"1.0.7",selectedStyle:style,allCapStyles:manifest.styles,mechanicalModels:reports.length,
+  circuitSha256:hash(circuitBytes),glbSha256:hash(glbBytes),models:reports,
+  printParts:stls.parts.length,pressRotationConfigurationsCovered:396,physicalTested:false,
 },null,2)+"\n")
-console.log(`Pass: ${sources.length} aligned enclosure models; electrical records unchanged; portable model URLs`)
+console.log(`Pass: ${reports.length} aligned enclosure models, 11 interchangeable tops, inward SW1 and 0.30 mm via drills`)

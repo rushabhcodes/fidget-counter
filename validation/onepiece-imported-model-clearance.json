@@ -1,0 +1,199 @@
+{
+  "pcbGlbSha256": "3410eff90efce10067d134d59cdd4a75f2a88903fbcf185bf5cbf7d1284b8368",
+  "originalBoardAndFittedModelNodes": 31,
+  "minimum_inner_hub_clearance_mm": 0.34999927025381083,
+  "minimum_pressed_pusher_to_non_switch_mesh_clearance_mm": 0.44999995231628453,
+  "switch_body_height_mm": 1.42,
+  "imported_switch_full_height_mm": 1.92,
+  "mechanical_nominal_actuator_height_mm": 1.9,
+  "switch_rigid_body_to_pressed_pusher_clearance_mm": 0.23000000000000043,
+  "note": "The supplied switch model includes its actuator. Its nominal 1.92 mm mesh is 0.02 mm above the manufacturer 1.9 mm nominal contact plane. The actuator is an intentional moving contact; fit to the actual switch. No extra actuator marker is used.",
+  "models": [
+    {
+      "name": "Box0",
+      "maximum_radius_mm": 18.25000072974619,
+      "minimum_z_mm": 7.1,
+      "maximum_z_mm": 8.1
+    },
+    {
+      "name": "U1",
+      "maximum_radius_mm": 13.200388400382188,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "BT1",
+      "maximum_radius_mm": 14.0020913482488,
+      "minimum_z_mm": 1.7900000572204586,
+      "maximum_z_mm": 7.100000000000001
+    },
+    {
+      "name": "C4",
+      "maximum_radius_mm": 10.541106375617789,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "C9",
+      "maximum_radius_mm": 8.346520244359027,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.900000011920929
+    },
+    {
+      "name": "C15",
+      "maximum_radius_mm": 7.831708573717563,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.900000011920929
+    },
+    {
+      "name": "C5",
+      "maximum_radius_mm": 15.535001423938606,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "C7",
+      "maximum_radius_mm": 5.770012650890713,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "C8",
+      "maximum_radius_mm": 6.801858457675388,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "C10",
+      "maximum_radius_mm": 14.981838978289549,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.900000011920929
+    },
+    {
+      "name": "C16",
+      "maximum_radius_mm": 11.554480180746555,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "C18",
+      "maximum_radius_mm": 12.984522519129234,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "R4",
+      "maximum_radius_mm": 4.795047015219084,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.460000014305114
+    },
+    {
+      "name": "U2",
+      "maximum_radius_mm": 0.7632276714458621,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.600999987125396
+    },
+    {
+      "name": "C6",
+      "maximum_radius_mm": 2.544089622824006,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "R1",
+      "maximum_radius_mm": 3.3019001249922537,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.460000014305114
+    },
+    {
+      "name": "R2",
+      "maximum_radius_mm": 2.811139688463711,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.460000014305114
+    },
+    {
+      "name": "R3",
+      "maximum_radius_mm": 3.3018866674824716,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.460000014305114
+    },
+    {
+      "name": "SW1",
+      "maximum_radius_mm": 6.6524886356793855,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 10.019999957084655
+    },
+    {
+      "name": "R5",
+      "maximum_radius_mm": 8.50367604910111,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.460000014305114
+    },
+    {
+      "name": "C17",
+      "maximum_radius_mm": 9.761795553174089,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "X1",
+      "maximum_radius_mm": 9.05612978100765,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.56000000834465
+    },
+    {
+      "name": "C1",
+      "maximum_radius_mm": 8.04671451078662,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "C2",
+      "maximum_radius_mm": 10.760723625729463,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "X2",
+      "maximum_radius_mm": 15.583982479476829,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 9.010000026226043
+    },
+    {
+      "name": "C11",
+      "maximum_radius_mm": 16.67685783295673,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "C12",
+      "maximum_radius_mm": 15.885257299512489,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "L1",
+      "maximum_radius_mm": 5.694015334746955,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "L2",
+      "maximum_radius_mm": 4.778315626772829,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.619999980926513
+    },
+    {
+      "name": "C3",
+      "maximum_radius_mm": 4.422585066267904,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 8.6
+    },
+    {
+      "name": "ANT1",
+      "maximum_radius_mm": 17.773259975295915,
+      "minimum_z_mm": 8.1,
+      "maximum_z_mm": 9.300000047683715
+    }
+  ]
+}
