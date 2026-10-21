@@ -12,7 +12,7 @@ Use the same type/grade of encoder disc in each module. Firmware should ignore a
 
 ## Programming before assembly
 
-Program and verify the populated board before fitting it into the enclosure. The SWD pads are on the underside, and the solid bottom tray has no programming opening. Follow [PROGRAMMING.md](PROGRAMMING.md) for the pad orientation, Cortex adapter wiring, power setup and programming procedure.
+Program and verify the populated board before fitting it into the enclosure. The SWD pads are on the underside, and the solid bottom tray has no programming opening. Follow [PROGRAMMING.md](https://github.com/rushabhcodes/fidget-counter/blob/main/PROGRAMMING.md) for the pad orientation, Cortex adapter wiring, power setup and programming procedure.
 
 ## Pressing and battery service
 
