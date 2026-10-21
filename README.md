@@ -21,6 +21,10 @@ After validating a changed source, copy `dist/index/circuit.json` to `published.
 
 The registry cloud worker runs `bun cloud-build.mjs`. It verifies hashes of the circuit source, supplier imports and enclosure assets, checks the saved circuit for error records, and restores the checked PCB, schematic and GLB outputs to `dist/published`. It needs no dependency installation, network model downloads or mesh regeneration. A source change without refreshed artifacts fails explicitly. This avoids the previous cloud `bun run build` command, which stalled until the worker's 30-minute timeout; local source compilation and design checks are still required before preparing a changed preview.
 
+## Programming
+
+See [PROGRAMMING.md](PROGRAMMING.md) for the standard Cortex SWD adapter pinout, underside pad orientation, safe target power, tool installation, firmware pin map, and flash/verify/recovery commands. Program the board before enclosure assembly. The design repository does not contain application firmware or a flashable HEX.
+
 ## Cell access and assembly
 
 Release the top, remove the four PCB retaining screws, lift and flip the board with its soldered CR2032 holder, then replace the cell. Every interchangeable top needs its own diametrically magnetized Ø5 × 1.5 mm encoder magnet. The bottom tray retains 24 attachment-magnet pockets.

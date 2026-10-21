@@ -10,6 +10,10 @@ Each top requires its OWN diametrically magnetized Ø5 × 1.5 mm encoder disc. T
 
 Use the same type/grade of encoder disc in each module. Firmware should ignore a missing magnet during removal and re-establish the angular baseline after reattachment, to avoid counting the swap as a turn. That behavior has not been implemented or verified here; counter-reset firmware remains outside this mechanical revision.
 
+## Programming before assembly
+
+Program and verify the populated board before fitting it into the enclosure. The SWD pads are on the underside, and the solid bottom tray has no programming opening. Follow [PROGRAMMING.md](PROGRAMMING.md) for the pad orientation, Cortex adapter wiring, power setup and programming procedure.
+
 ## Pressing and battery service
 
 The complete top descends 0.25 mm to the base hard stop. The annular pusher contacts the inward SW1 actuator at every rotation angle, and the switch dome supplies axial return. There is no separate return spring or yellow flexible ring. The base clips retain the module radially and provide 0.05 mm nominal upward float.
