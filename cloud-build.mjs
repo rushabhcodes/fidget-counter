@@ -5,7 +5,8 @@ import { fileURLToPath } from "node:url"
 import { gunzipSync } from "node:zlib"
 
 // The registry worker has a time limit. Publish the locally checked artifacts
-// without loading the CLI, downloading CAD models, or rebuilding their meshes.
+// without loading the circuit compiler, downloading CAD models, or rebuilding
+// their meshes. The registry CLI starts this script after its CI bootstrap.
 const root = dirname(fileURLToPath(import.meta.url))
 const manifest = JSON.parse(readFileSync(resolve(root, "cloud-assets/manifest.json"), "utf8"))
 const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex")
