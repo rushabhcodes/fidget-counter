@@ -42,8 +42,8 @@
     "retention_flange_outer_radius": 21.0,
     "material": "PLA",
     "return": "tactile switch internal dome only; physical test required",
-    "service": "Pull both opposed tabs outward 0.8 mm and lift the top module; undo four PCB screws for cell access",
-    "publication": "Repository revision 1.0.7",
+    "service": "Release the cap, push the two PCB latch tips outward 0.6 mm, then lift the board; no bolts or screws",
+    "publication": "Inward-hole, bolt-free review draft based on registry 1.0.9",
     "hub_cover_thickness": 0.6,
     "base_guide_outer_radius": 22.0,
     "snap_clip_count": 2,
@@ -60,7 +60,27 @@
     "cap_style_change": "Pull the two base tabs outward, lift out the complete top, snap in another one-piece module",
     "encoder_magnet_per_top_module": 1,
     "cap_mount_hardware_count": 0,
-    "magnet_installation": "One diametrically magnetized diameter 5 x thickness 1.5 mm disc in each module; retain with adhesive after fit and field checks"
+    "magnet_installation": "One diametrically magnetized diameter 5 x thickness 1.5 mm disc in each module; retain with adhesive after fit and field checks",
+    "pcb_retention": "Two clearance-fit PCB snap latches and two recessed locating posts; inward holes with no separate hardware",
+    "pcb_mount": {
+      "radius_mm": 15.2,
+      "angles_deg": [
+        45,
+        135,
+        225,
+        315
+      ],
+      "hole_diameter_mm": 3.0,
+      "copper_keepout_radius_mm": 1.8,
+      "shoulder_radius_mm": 2.25,
+      "locator_radius_mm": 1.1,
+      "locator_height_mm": 0.65,
+      "beam_thickness_mm": 0.6,
+      "beam_width_mm": 1.2,
+      "retaining_outer_radius_mm": 1.8,
+      "axial_float_mm": 0.15,
+      "release_displacement_mm": 0.6
+    }
   },
   "printed_parts": [
     {
@@ -85,7 +105,7 @@
       "name": "Stationary_Base",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 4229.017,
+      "volume_mm3": 4213.74,
       "bounds_mm": [
         [
           -29.0,
@@ -294,24 +314,6 @@
           30.8,
           29.2,
           15.200000000000031
-        ]
-      ]
-    },
-    {
-      "name": "PCB_Retainer_Print_4",
-      "valid": true,
-      "solids": 1,
-      "volume_mm3": 11.748,
-      "bounds_mm": [
-        [
-          -2.2,
-          -2.2,
-          0.0
-        ],
-        [
-          2.2,
-          2.2,
-          1.0
         ]
       ]
     }
@@ -3159,7 +3161,7 @@
   "retention_upward_float_mm": 0.05,
   "release_tabs_outward_mm": 0.8,
   "all_caps_full_rotation_envelope": true,
-  "exact_shared_hub_magnet_poses": 72,
+  "exact_shared_hub_magnet_poses": 108,
   "cap_clearance_method": "All low cap geometry is outside R26.8; hook tops are below the deck and inside R24.084; release pads are 0.65 mm below the pressed grip edge",
   "snap_insertion_note": "Upper hook ramp provides insertion cam; force and automatic re-engagement require printed testing",
   "separate_return_springs": 0,
@@ -3179,5 +3181,121 @@
     "Magnet field and BLE calibration",
     "Each module magnet polarity, installed depth and PCB/cell service"
   ],
-  "electronics_reference": "Centered Hall sensor and inward SW1 at (0,-5) in index.circuit.tsx; includes the matching prescribed routing revision."
+  "electronics_reference": "Centered Hall sensor and inward SW1 at (0,-5) in index.circuit.tsx; includes the matching prescribed routing revision.",
+  "pcb_retention": {
+    "system": "Two clearance-fit snap latches and two recessed locating posts; no bolts",
+    "pcb_screws": 0,
+    "separate_pcb_retainers": 0,
+    "lock_count": 2,
+    "mount_centers_mm": [
+      [
+        10.748023074035522,
+        10.74802307403552
+      ],
+      [
+        -10.74802307403552,
+        10.748023074035522
+      ],
+      [
+        -10.748023074035524,
+        -10.74802307403552
+      ],
+      [
+        10.748023074035519,
+        -10.748023074035524
+      ]
+    ],
+    "mount_radius_mm": 15.2,
+    "clip_centers_mm": [
+      [
+        10.748023074035522,
+        10.74802307403552
+      ],
+      [
+        -10.748023074035524,
+        -10.74802307403552
+      ]
+    ],
+    "pcb_hole_diameter_mm": 3.0,
+    "nominal_pcb_edge_web_mm": 1.5500000000000007,
+    "release_direction": "Push both diagonal latch tips radially OUTWARD, then lift the board",
+    "release_displacement_mm": 0.6,
+    "retention_ledge_z_mm": 8.25,
+    "axial_float_mm": 0.15000000000000036,
+    "latch_top_z_mm": 9.0,
+    "locator_top_z_mm": 7.75,
+    "locator_recess_below_board_top_mm": 0.35,
+    "rigid_locator_to_hole_radial_clearance_mm": 0.3999999999999999,
+    "minimum_locked_feature_to_hole_clearance_mm": 0.20288782289271534,
+    "minimum_released_hook_to_hole_clearance_mm": 0.15835921350012594,
+    "inward_retention_overlap_mm": 0.30000000000000004,
+    "beam_thickness_mm": 0.6,
+    "beam_width_mm": 1.2,
+    "straight_beam_strain_estimate_percent": 1.1851851851851851,
+    "validation_limit": "Prescribed clearance poses; no FEA, measured force, fatigue or printed fit validation",
+    "physical_tested": false,
+    "retention_checked_at_lift_mm": 0.25,
+    "seated_base_to_pcb_intersection_mm3": 0.0,
+    "released_base_to_pcb_intersection_mm3": 0.0,
+    "extraction_checks": [
+      {
+        "lift_mm": 0,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 0.08,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 0.16,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 0.3,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 0.5,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 0.85,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 1,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 2,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 4,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 6,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 10,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 15,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 24,
+        "rigid_collisions": 0
+      }
+    ]
+  },
+  "encoder_spacer": {
+    "diameter_mm": 5,
+    "thickness_mm": 0.2,
+    "bottom_z_mm": 11.9,
+    "top_z_mm": 12.1
+  }
 }

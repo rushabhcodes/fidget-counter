@@ -1,0 +1,2 @@
+$ bun validation/check-programming.mjs
+Pass: exact six-contact/three-hole TC2030 geometry, programmer pinout, isolated 5 V contact, zero stencil paste and clear probe courtyard

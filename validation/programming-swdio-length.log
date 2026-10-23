@@ -1,0 +1,50 @@
+<TraceLengthAnalysis requestedTarget="net.SWDIO" resolvedTarget="net.SWDIO" targetKind="net" traceCount="2" totalLengthMm="38.47" totalStraightLineDistanceMm="16.19">
+  <Trace id="source_trace_22:source_port_93" label="J_DEBUG.SWDIO -&gt; net.SWDIO" connectionType="via net" lengthMm="30.38" straightLineDistanceMm="8.10">
+    <ConnectedPins>
+      <Pin ref="J_DEBUG.SWDIO" />
+      <Pin ref="U1.SWDIO" />
+    </ConnectedPins>
+    <PinPositions>
+      <Pin ref="J_DEBUG.SWDIO" x="-1.27" y="-12.67" layers="top" />
+      <Pin ref="U1.SWDIO" x="-4.50" y="3.20" layers="top" />
+    </PinPositions>
+    <Connection kind="via net" target="net.SWDIO" x="-2.89" y="-4.73" layer="top" />
+    <TraceRequirements none />
+    <Path>
+      <Point x="-1.27" y="-12.67" layer="top" kind="endpoint" />
+      <Point x="-1.27" y="-11.80" layer="top" kind="track" />
+      <Point x="-4.00" y="-11.80" layer="top" kind="track" />
+      <Point x="-6.00" y="-12.20" layer="top" kind="track" />
+      <Point x="-6.00" y="-12.20" layer="bottom" kind="track" />
+      <Point x="-6.00" y="-13.64" layer="bottom" kind="track" />
+      <Point x="-8.96" y="-10.72" layer="bottom" kind="track" />
+      <Point x="-8.96" y="-1.28" layer="bottom" kind="track" />
+      <Point x="-8.96" y="-0.97" layer="bottom" kind="track" />
+      <Point x="-8.96" y="-0.76" layer="bottom" kind="track" />
+      <Point x="-8.96" y="-0.55" layer="bottom" kind="track" />
+      <Point x="-8.96" y="-0.35" layer="bottom" kind="track" />
+      <Point x="-6.64" y="1.92" layer="bottom" kind="track" />
+      <Point x="-4.87" y="1.92" layer="bottom" kind="track" />
+      <Point x="-4.78" y="1.87" layer="bottom" kind="track" />
+      <Point x="-4.83" y="2.20" layer="bottom" kind="track" />
+      <Point x="-4.87" y="2.32" layer="bottom" kind="track" />
+      <Point x="-5.08" y="2.58" layer="bottom" kind="track" />
+      <Point x="-3.64" y="3.65" layer="bottom" kind="track" />
+      <Point x="-3.64" y="3.65" layer="top" kind="via" />
+      <Point x="-4.00" y="3.20" layer="top" kind="track" />
+      <Point x="-4.50" y="3.20" layer="top" kind="endpoint" />
+    </Path>
+  </Trace>
+  <Trace id="source_trace_48:source_port_28" label="U1.SWDIO -&gt; net.SWDIO" connectionType="via net" lengthMm="8.10" straightLineDistanceMm="8.10">
+    <ConnectedPins>
+      <Pin ref="U1.SWDIO" />
+      <Pin ref="J_DEBUG.SWDIO" />
+    </ConnectedPins>
+    <PinPositions>
+      <Pin ref="U1.SWDIO" x="-4.50" y="3.20" layers="top" />
+      <Pin ref="J_DEBUG.SWDIO" x="-1.27" y="-12.67" layers="top" />
+    </PinPositions>
+    <Connection kind="via net" target="net.SWDIO" x="-2.89" y="-4.73" layer="top" />
+    <TraceRequirements none />
+  </Trace>
+</TraceLengthAnalysis>

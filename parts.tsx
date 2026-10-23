@@ -1,4 +1,6 @@
 import {Children,cloneElement,isValidElement} from "react"
+import {StandardTagConnectSwd} from "@tsci/tscircuit.standard-jst-programmer"
+import type {TagConnectProps} from "@tsci/tscircuit.standard-jst-programmer"
 import type {ReactElement} from "react"
 import {NRF52810_QFAA_R} from "./imports/NRF52810_QFAA_R/NRF52810_QFAA_R"
 import {TMAG3001A2YBGR} from "./imports/TMAG3001A2YBGR/TMAG3001A2YBGR"
@@ -8,6 +10,20 @@ import {KMR232NGULCLFS} from "./imports/KMR232NGULCLFS/KMR232NGULCLFS"
 import {RFANT3216120A5T} from "./imports/RFANT3216120A5T/RFANT3216120A5T"
 import {BS_08_B2AA020_R} from "./imports/BS_08_B2AA020_R/BS_08_B2AA020_R"
 import type { BatteryProps, ChipProps, CrystalProps, PinAttributeMap } from "@tscircuit/props"
+
+// Keep the library's exact TC2030 geometry/pinout. The probe approaches +Z;
+// this target has no lateral cable opening or fitted connector body.
+export const TagConnectSwd=(props:TagConnectProps)=>{
+ const target=StandardTagConnectSwd(props)
+ return <connector {...target.props} pinAttributes={{
+  pin1:{requiresPower:true,mustBeConnected:true},
+  pin2:{isPassive:true,mustBeConnected:true},
+  pin3:{isPassive:true,mustBeConnected:true},
+  pin4:{isPassive:true,mustBeConnected:true},
+  pin5:{requiresGround:true,mustBeConnected:true},
+  pin6:{isPassive:true,doNotConnect:true},
+ }} footprint={cloneElement(target.props.footprint,{insertionDirection:"from_above"})}/>
+}
 
 // Nordic QFAA signal labels; copper and models come from the JLCPCB import.
 export const nrfPins = Object.fromEntries([

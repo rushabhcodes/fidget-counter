@@ -6,6 +6,7 @@
       "name": "@tsci/rushabhcodes.fidget-counter",
       "dependencies": {
         "@tsci/seveibar.nrf52810": "0.1.3",
+        "@tsci/tscircuit.standard-jst-programmer": "0.8.0",
         "tscircuit": "0.0.2748",
       },
       "devDependencies": {
@@ -141,6 +142,8 @@
     "@thednp/dommatrix": ["@thednp/dommatrix@3.1.2", "", {}, "sha512-wxRH2/Qdqd+JxFpjb5vw+ZMaij8Hqa/9Hgl41n2Jb+3WNRhdemrosK0FxEo/yEvhvHGW8D1tZ3oPH9N0m1QG+A=="],
 
     "@tsci/seveibar.nrf52810": ["@tsci/seveibar.nrf52810@0.1.3", "https://npm.tscircuit.com/package_files/download?package_name=seveibar%2Fnrf52810&package_file_id=01ca2a7e-161c-412c-8831-46ce215eb76c&package_release_version=0.1.3&file_path=dist%2Fpackage.tgz", {}, "sha512-PReF3xC78Ef5Px1P5z4gDaX0Sd6tGYGqXE1fmkqyYsV00vQSdrgEteKiQ38dfhkXd9Ocs8UqowAKvJUNUU0avA=="],
+
+    "@tsci/tscircuit.standard-jst-programmer": ["@tsci/tscircuit.standard-jst-programmer@0.8.0", "https://npm.tscircuit.com/package_files/download?package_name=tscircuit%2Fstandard-jst-programmer&package_file_id=ed0e6058-57a7-431e-b6af-47a85a26662e&package_release_version=0.8.0&file_path=dist%2Fpackage.tgz", {}, "sha512-jEaCymQbOd0v6QG6nMt90MCJiTK4lHBIXiAeYXB0PX3dCAtgGrCfe5XHLPIEU5O9Vw3H9K3vcBozHy6xf+IYbA=="],
 
     "@tscircuit/alphabet": ["@tscircuit/alphabet@0.0.25", "", { "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-PWLjptI6AlLEtF/wjN1N8uC+n3G7vtg0j3xKE1fgWHDhahtnlQRqHDrtPSLlkIR9aJjRfjplzLuaUEaCRvJmZA=="],
 

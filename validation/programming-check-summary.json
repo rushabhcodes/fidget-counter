@@ -1,0 +1,154 @@
+{
+  "checkedAt": "2026-10-23T12:32:17.159Z",
+  "passed": true,
+  "baseline": "Local automatic-lock draft based on 1.0.9",
+  "publication": "Local draft only; no remote publication",
+  "sourcePackage": "@tsci/tscircuit.standard-jst-programmer@0.8.0",
+  "errors": 0,
+  "warnings": 0,
+  "libraryFindings": 0,
+  "gerberShorts": 0,
+  "routedTraces": 89,
+  "vias": 55,
+  "allThirtyFittedComponentsUnchanged": true,
+  "mechanicalModels": 8,
+  "capStyles": 11,
+  "pcbMountingHoles": 4,
+  "newAlignmentHoles": 3,
+  "minimumUnrelatedTopTrackClearanceMm": 0.8212999999999996,
+  "crystalBranches": [
+    {
+      "name": "U1_XC1",
+      "lengthMm": 5.733959096295852,
+      "vias": 0
+    },
+    {
+      "name": "U1_XC2",
+      "lengthMm": 5.849969009124063,
+      "vias": 0
+    },
+    {
+      "name": "C1_1",
+      "lengthMm": 1.3301010005234297,
+      "vias": 0
+    },
+    {
+      "name": "C2_1",
+      "lengthMm": 1.8053433884928216,
+      "vias": 0
+    },
+    {
+      "name": "U1_XL1",
+      "lengthMm": 2.621620736724572,
+      "vias": 0
+    },
+    {
+      "name": "U1_XL2",
+      "lengthMm": 4.374956001282802,
+      "vias": 0
+    },
+    {
+      "name": "C11_1",
+      "lengthMm": 1.8012711496278955,
+      "vias": 0
+    },
+    {
+      "name": "C12_1",
+      "lengthMm": 1.8712663515714518,
+      "vias": 0
+    }
+  ],
+  "checks": {
+    "typecheck": {
+      "passed": true,
+      "log": "validation/programming-typecheck.log"
+    },
+    "netlist": {
+      "passed": true,
+      "log": "validation/programming-netlist.log"
+    },
+    "pinSpecification": {
+      "passed": true,
+      "log": "validation/programming-pin-specification.log"
+    },
+    "source": {
+      "passed": true,
+      "log": "validation/programming-source.log"
+    },
+    "schematicPlacement": {
+      "passed": true,
+      "log": "validation/programming-schematic-placement.log"
+    },
+    "pcbPlacement": {
+      "passed": true,
+      "log": "validation/programming-placement.log"
+    },
+    "routingDifficulty": {
+      "passed": true,
+      "log": "validation/programming-routing-difficulty.log"
+    },
+    "routedSourceBuild": {
+      "passed": true,
+      "log": "validation/programming-build.log"
+    },
+    "savedSnapshotBuild": {
+      "passed": true,
+      "log": "validation/programming-snapshot-build.log"
+    },
+    "gerberShorts": {
+      "passed": true,
+      "log": "validation/programming-shorts.log"
+    },
+    "programmingInterface": {
+      "passed": true,
+      "log": "validation/programming-interface.log"
+    },
+    "fittedImports": {
+      "passed": true,
+      "log": "validation/programming-imports.log"
+    },
+    "enclosure": {
+      "passed": true,
+      "log": "validation/programming-enclosure.log"
+    },
+    "allCapStyles": {
+      "passed": true,
+      "log": "validation/programming-assembly.log"
+    },
+    "cloudPrepare": {
+      "passed": true,
+      "log": "validation/programming-cloud-prepare.log"
+    },
+    "cloudRestore": {
+      "passed": true,
+      "log": "validation/programming-cloud-restore.log"
+    },
+    "swdclkLength": {
+      "passed": true,
+      "log": "validation/programming-swdclk-length.log"
+    },
+    "swdioLength": {
+      "passed": true,
+      "log": "validation/programming-swdio-length.log"
+    }
+  },
+  "sha256": {
+    "index.circuit.tsx": "b970e41a586d78056f47f636b8d5edaecb4298a476f39b7851d596ee377117e3",
+    "parts.tsx": "d6bdfe6089e93b3d4f6326d39e03b4c791a9f4f9ad4b783728b7a9c301466395",
+    "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
+    "routed-paths.json": "dd2b4e16820fbbc600a3ead942e7fc8d842bf056bbaaff90130316e81db64f01",
+    "package.json": "cba11a5e838ea70731f324d2671ab44b6508c5076fbab016b43685ae9a65422c",
+    "bun.lock": "e25660f3db1ae4fd419bc5fc5aebd96a2dddc8c94cfc5d28d96853f50fdb0335",
+    "published.circuit.json": "477965d9b998cabe3fa2ca2249051158c21e820e76555e1c320c82579a6fe38d",
+    "PROGRAMMING.md": "97a5d595e89fe2ffa2140ddb902bbadb9b45f29d656ce2677fc31a0a9ff9eb78",
+    "validation/check-programming.mjs": "6c9646f5daaca3544b059c5686089b87feae4275bea39cb44dc6b2d56071faaa",
+    "validation/check-enclosure.mjs": "95b986fe5c83b4190f77743acae1040c01ff27a72ceea8424f3f15e0afffb713",
+    "validation/fitted-component-records.mjs": "192895a5066b39300b734fe7075e3ede4f5f8f43e5be6f44117c90dd59bd2d88",
+    "validation/fitted-component-baseline.json": "e9ae063b5bb8d9997096716bb9e8114317d1f07579ecc84cca07059ffc492d53",
+    "cloud-assets/manifest.json": "4599f275e32e78bf3ee6ee22e4aea72da2fa15ed35bd31aabdbf5d8225733ae9",
+    "dist/index/3d.glb": "b00f53c5a6d9c5052f14c9e0c4003419253799aa7a2ddb2921ac1f0de8086960",
+    "dist/published/3d.glb": "b00f53c5a6d9c5052f14c9e0c4003419253799aa7a2ddb2921ac1f0de8086960"
+  },
+  "physicalProbeFitTested": false,
+  "physicalProgrammingTested": false
+}

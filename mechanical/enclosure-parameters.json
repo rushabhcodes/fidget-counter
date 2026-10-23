@@ -40,8 +40,8 @@
   "retention_flange_outer_radius": 21.0,
   "material": "PLA",
   "return": "tactile switch internal dome only; physical test required",
-  "service": "Pull both opposed tabs outward 0.8 mm and lift the top module; undo four PCB screws for cell access",
-  "publication": "Repository revision 1.0.7",
+  "service": "Release the cap, push the two PCB latch tips outward 0.6 mm, then lift the board; no bolts or screws",
+  "publication": "Inward-hole, bolt-free review draft based on registry 1.0.9",
   "hub_cover_thickness": 0.6,
   "base_guide_outer_radius": 22.0,
   "snap_clip_count": 2,
@@ -58,5 +58,25 @@
   "cap_style_change": "Pull the two base tabs outward, lift out the complete top, snap in another one-piece module",
   "encoder_magnet_per_top_module": 1,
   "cap_mount_hardware_count": 0,
-  "magnet_installation": "One diametrically magnetized diameter 5 x thickness 1.5 mm disc in each module; retain with adhesive after fit and field checks"
+  "magnet_installation": "One diametrically magnetized diameter 5 x thickness 1.5 mm disc in each module; retain with adhesive after fit and field checks",
+  "pcb_retention": "Two clearance-fit PCB snap latches and two recessed locating posts; inward holes with no separate hardware",
+  "pcb_mount": {
+    "radius_mm": 15.2,
+    "angles_deg": [
+      45,
+      135,
+      225,
+      315
+    ],
+    "hole_diameter_mm": 3.0,
+    "copper_keepout_radius_mm": 1.8,
+    "shoulder_radius_mm": 2.25,
+    "locator_radius_mm": 1.1,
+    "locator_height_mm": 0.65,
+    "beam_thickness_mm": 0.6,
+    "beam_width_mm": 1.2,
+    "retaining_outer_radius_mm": 1.8,
+    "axial_float_mm": 0.15,
+    "release_displacement_mm": 0.6
+  }
 }

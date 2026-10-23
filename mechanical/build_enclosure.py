@@ -9,6 +9,7 @@ import argparse, json, math
 import cadquery as cq
 import trimesh
 from shapely.geometry import Polygon, LineString
+from pcb_snap_mounts import make_pcb_mounts
 
 HERE=Path(__file__).resolve().parent
 ap=argparse.ArgumentParser(description=__doc__)
@@ -45,7 +46,8 @@ skirt_inner=P['cap_skirt_inner_radius']
 assert abs(top-P['cap_edge_bottom']-P['grip_height'])<1e-7
 assert P['cap_edge_bottom']-travel-P['snap_pad_top']>=.6
 flange_bottom=9.0; flange_top=9.7; stop_z=flange_bottom-travel
-mounts=[(16.2*math.cos(math.radians(t)),16.2*math.sin(math.radians(t))) for t in [45,135,225,315]]
+mount_spec=P['pcb_mount']
+mounts=[(mount_spec['radius_mm']*math.cos(math.radians(t)),mount_spec['radius_mm']*math.sin(math.radians(t))) for t in mount_spec['angles_deg']]
 
 # Preserve the ordered disc layout and matching bottom tray. Load magnets and
 # backing ring before bonding the tray; subsequent service is from the top.
@@ -59,9 +61,8 @@ base=disk(29,.8,3.1).fuse(disk(P['base_guide_outer_radius'],.8,stop_z-.8))
 base=base.cut(disk(bore,1.5,8.35)).cut(disk(12.25,.7,.9))
 base=base.cut(ring(20.85,28.2,.7,1.7)).cut(ring(22.025,27.225,2.4,.7))
 base=base.cut(disk(P['retention_flange_outer_radius']+.2,stop_z,1.1))
-for x,y in mounts:
-    post=disk(2.2,1.5,pcb_z-1.5,x,y).fuse(disk(1.7,pcb_z,P['pcb_thickness'],x,y)).cut(disk(.65,1.4,7.8,x,y))
-    base=base.fuse(post)
+pcb_posts,pcb_clip_pairs,pcb_lock_audit=make_pcb_mounts(P,mounts)
+base=base.fuse(*pcb_posts)
 # Two long planar cantilevers; print the base flat so bending stays in XY.
 # Pull tabs OUTWARD. This is not a squeeze-to-release latch.
 def extrude_polygon(poly,z,h):
@@ -98,6 +99,9 @@ clips=[snap_clip().rotate((0,0,0),(0,0,1),t) for t in [0,180]]
 base=fixed_base.fuse(*clips).clean()
 release_clips=[snap_clip(P['snap_release_displacement']).rotate((0,0,0),(0,0,1),t) for t in [0,180]]
 released_base=fixed_base.fuse(*release_clips).clean()
+pcb_release_base=base.cut(comp([locked for locked,_ in pcb_clip_pairs])).fuse(
+    comp([released for _,released in pcb_clip_pairs])).clean()
+assert pcb_release_base.isValid() and len(pcb_release_base.Solids())==1
 
 hub=ring(Ri,R,4.0,deck-4.0).fuse(ring(Ri,P['retention_flange_outer_radius'],flange_bottom,flange_top-flange_bottom))
 pusher_bottom=pcb_top+P['switch_height']
@@ -113,6 +117,7 @@ hub=hub.fuse(disk(R,deck-P['hub_cover_thickness'],P['hub_cover_thickness']))
 # roof above it separates the magnet from the interchangeable grip.
 hub=hub.fuse(disk(P['magnet_pocket_diameter']/2,12.1,deck-12.1)).clean()
 magnet=disk(2.5,P['magnet_bottom'],P['magnet_thickness'])
+spacer=disk(2.5,P['magnet_bottom']+P['magnet_thickness'],.2)
 print('Common solids complete; building interchangeable cap grips...',flush=True)
 
 def cap(style):
@@ -167,8 +172,11 @@ grips={s:cap(s) for s in styles}
 caps={s:hub.fuse(sh).clean() for s,sh in grips.items()}
 assert all(sh.isValid() and len(sh.Solids())==1 for sh in caps.values()),'Disconnected integrated top module'
 print('Caps complete; checking rotation and press clearance...',flush=True)
-pcb=disk(P['pcb_diameter']/2,pcb_z,P['pcb_thickness'])
-for x,y in mounts:pcb=pcb.cut(disk(1.8,pcb_z-.1,1.2,x,y))
+pcb_outline=[(P['pcb_diameter']/2*math.cos(i*2*math.pi/128),P['pcb_diameter']/2*math.sin(i*2*math.pi/128)) for i in range(128)]
+pcb=cq.Workplane('XY').workplane(offset=pcb_z).polyline(pcb_outline).close().extrude(P['pcb_thickness']).val()
+for x,y in mounts:pcb=pcb.cut(disk(mount_spec['hole_diameter_mm']/2,pcb_z-.1,P['pcb_thickness']+.2,x,y))
+# Keep the real programming alignment holes in the mechanical PCB reference.
+for x,y in [(-2.54,-13.3),(2.54,-12.284),(2.54,-14.316)]:pcb=pcb.cut(disk(.9906/2,pcb_z-.1,P['pcb_thickness']+.2,x,y))
 holder=cq.importers.importStep(str(HERE/'imports/holder.step')).val().translate((0,0,.01)).rotate((0,0,0),(0,1,0),180).translate((-1.2,0,pcb_z))
 cell=disk(10,pcb_z-1.5-3.2,3.2)
 sensor=box(.824,1.316,.5,z=pcb_top)
@@ -176,21 +184,23 @@ switch_body=box(4.2,2.8,1.4,P['switch_x'],P['switch_y'],pcb_top)
 switch=comp([switch_body,disk(.8,pcb_top+1.4,.5,P['switch_x'],P['switch_y'])])
 pressed_switch=comp([switch_body,disk(.8,pcb_top+1.4,.5-travel,P['switch_x'],P['switch_y'])])
 shield=ring(22.025,27.225,2.4,.7)
-# Board retaining washers are rigid, independent PLA parts. The existing four
-# M1.6 screws secure the PCB; undo them to lift the soldered holder and cell.
-retainer_single=ring(.85,2.2,0,1.0).cut(cq.Solid.makeCone(.85,1.45,.6,cq.Vector(0,0,.4)))
-retainers=comp([retainer_single.translate((x,y,pcb_top)) for x,y in mounts])
-
-physical={'Bottom_Tray':tray,'Stationary_Base':base,**{'Cap_'+s:sh for s,sh in caps.items()},'PCB_Retainer_Print_4':retainer_single}
+physical={'Bottom_Tray':tray,'Stationary_Base':base,**{'Cap_'+s:sh for s,sh in caps.items()}}
 assert all(sh.isValid() and len(sh.Solids())==1 for sh in physical.values()), 'Invalid or disconnected printed part'
-stationary={'Stationary_Base':base,'Bottom_Tray':tray,'PCB':pcb,'Holder':holder,'Cell':cell,'Sensor':sensor,'PCB_Retainers':retainers,'Backing_Ring':shield,'Attachment_Magnets':comp(discs)}
+stationary={'Stationary_Base':base,'Bottom_Tray':tray,'PCB':pcb,'Holder':holder,'Cell':cell,'Sensor':sensor,'Backing_Ring':shield,'Attachment_Magnets':comp(discs)}
+assert overlap_volume(pcb,base)<.002,'PCB does not seat on its support shoulders'
+for locked,released in pcb_clip_pairs:
+    assert overlap_volume(pcb.translate((0,0,.25)),locked)>.002,'PCB lock has no retaining overlap'
+    assert overlap_volume(pcb,released)<.002,'Released PCB lock fouls the seated board'
+pcb_lock_audit['retention_checked_at_lift_mm']=.25
+pcb_lock_audit['seated_base_to_pcb_intersection_mm3']=overlap_volume(pcb,base)
+pcb_lock_audit['released_base_to_pcb_intersection_mm3']=overlap_volume(pcb,pcb_release_base)
 rows=[]
 shared_checks=set()
 for s,shape in caps.items():
     for press in [0,travel/2,travel]:
         button=switch if press==0 else comp([switch_body,disk(.8,pcb_top+1.4,.5-press,P['switch_x'],P['switch_y'])])
         for angle in range(0,360,30):
-            for name,moving in [('Hub',hub),('Magnet',magnet)]:
+            for name,moving in [('Hub',hub),('Magnet',magnet),('Encoder_Spacer',spacer)]:
                 if name!='Cap' and (press,angle,name) in shared_checks:continue
                 sh=moving.rotate((0,0,0),(0,0,1),angle).translate((0,0,-press))
                 for other,fixed in {**stationary,'Button':button}.items():
@@ -210,13 +220,15 @@ for clip in release_clips:
     assert clip.isValid() and len(clip.Solids())==1
     assert overlap_volume(clip,fixed_base.cut(comp([disk(1.7,3.8,3.0,0,23.4),disk(1.7,3.8,3.0,0,-23.4)])))<.002,'Release clip strikes the guide outside its fixed root'
 for lift in [0,.05,.1,.25,.5,.75,1,2,4,8,15,25]:
-    for name,shape in [('Hub',hub),('Magnet',magnet),*[(s,c) for s,c in caps.items()]]:
+    for name,shape in [('Hub',hub),('Magnet',magnet),('Encoder_Spacer',spacer),*[(s,c) for s,c in caps.items()]]:
         overlap=overlap_volume(shape.translate((0,0,lift)),released_base)
         assert overlap<.002,('Top extraction blocked',name,lift,overlap)
     service.append({'lift_mm':lift,'collision_mm3':0,'tabs_outward_mm':P['snap_release_displacement']})
-for lift in [0,.5,1,2,4,6,10,15,24]:
+pcb_lock_audit['extraction_checks']=[]
+for lift in [0,.08,.16,.3,.5,.85,1,2,4,6,10,15,24]:
     for name,shape in [('PCB',pcb),('Holder',holder),('Cell',cell)]:
-        assert overlap_volume(shape.translate((0,0,lift)),base)<.002,('PCB extraction blocked',name,lift)
+        assert overlap_volume(shape.translate((0,0,lift)),pcb_release_base)<.002,('PCB extraction blocked',name,lift)
+    pcb_lock_audit['extraction_checks'].append({'lift_mm':lift,'rigid_collisions':0})
 # Insertion ramp envelope: temporary outward tip displacement clears the flange.
 assert P['snap_hook_inner_radius']+P['snap_release_displacement']>P['retention_flange_outer_radius']+.2-1e-7
 # The curved beam returns only the hook radially. The button's dome supplies
@@ -232,7 +244,7 @@ for s,shape in grips.items():
 
 manifest=[];meshes=[]
 print('CAD checks passed; exporting print parts and assembly states...',flush=True)
-colors={'Bottom_Tray':(.32,.39,.43),'Stationary_Base':(.46,.51,.55),'PCB':(.2,.5,.35),'Holder':(.28,.29,.3),'Cell':(.67,.7,.74),'Sensor':(.15,.15,.17),'PCB_Retainers':(.42,.49,.52),'Backing_Ring':(.58,.61,.64),'Attachment_Magnets':(.29,.59,.69),'Magnet':(.68,.7,.72),'Button':(.56,.57,.60),'Cap_circular':(.17,.45,.58),'Cap_ships_wheel':(.67,.38,.21),'Cap_rounded_triangle':(.32,.51,.40)}
+colors={'Bottom_Tray':(.32,.39,.43),'Stationary_Base':(.46,.51,.55),'PCB':(.2,.5,.35),'Holder':(.28,.29,.3),'Cell':(.67,.7,.74),'Sensor':(.15,.15,.17),'Encoder_Spacer':(.90,.86,.65),'Backing_Ring':(.58,.61,.64),'Attachment_Magnets':(.29,.59,.69),'Magnet':(.68,.7,.72),'Button':(.56,.57,.60),'Cap_circular':(.17,.45,.58),'Cap_ships_wheel':(.67,.38,.21),'Cap_rounded_triangle':(.32,.51,.40)}
 colors.update(dict(zip(['Cap_'+s for s in styles],[(.17,.45,.58),(.67,.38,.21),(.32,.51,.40),(.20,.44,.54),(.66,.39,.32),(.40,.57,.43),(.45,.37,.57),(.17,.46,.45),(.66,.51,.26),(.32,.44,.56),(.66,.35,.36)])))
 for name,sh in physical.items():
     cq.exporters.export(sh,str(OUT/'STEP'/f'{name}.step'))
@@ -251,16 +263,18 @@ for s,shape in caps.items():
     for state in ['Released','Pressed','Exploded']:
         press=travel if state=='Pressed' else 0
         assembly=cq.Assembly(name=s+'_'+state)
-        values={**stationary,'Magnet':magnet,'Button':pressed_switch if press else switch,'Cap_'+s:shape}
+        values={**stationary,'Magnet':magnet,'Encoder_Spacer':spacer,'Button':pressed_switch if press else switch,'Cap_'+s:shape}
         for name,sh in values.items():
-            z=-press if name in ['Magnet','Cap_'+s] else 0
-            if state=='Exploded':z={'Cap_'+s:35,'Magnet':35,'PCB':8,'Holder':8,'Cell':4,'Sensor':8,'Button':8,'PCB_Retainers':9}.get(name,0)
+            z=-press if name in ['Magnet','Encoder_Spacer','Cap_'+s] else 0
+            if state=='Exploded':z={'Cap_'+s:35,'Magnet':35,'Encoder_Spacer':35,'PCB':8,'Holder':8,'Cell':4,'Sensor':8,'Button':8}.get(name,0)
             posed=sh.translate((0,0,z));col=colors.get(name,(.5,.5,.5));assembly.add(posed,name=name,color=cq.Color(*col))
             if state=='Released':
                 vertices,faces=posed.tessellate(.06,.13)
                 meshes.append({'style':s,'name':name,'color':col,'vertices':[list(v.toTuple()) for v in vertices],'faces':[list(f) for f in faces]})
         assembly.save(str(OUT/'Assemblies'/f'{s}_{state}.step'))
 validation={'status':'CAD fit prototype, not physically tested','parameters':P,'printed_parts':manifest,'press_rotation_checks':rows,'snap_release_checks':service,'snap_beam_effective_arc_length_mm':round(length,3),'straight_beam_strain_estimate_percent':round(strain_estimate*100,3),'strain_estimate_note':'Only a sizing estimate for a straight cantilever; curved beam torsion, print anisotropy, root stress and fatigue are not validated','retention_hook_overlap_mm':.5,'retention_upward_float_mm':.05,'release_tabs_outward_mm':.8,'all_caps_full_rotation_envelope':True,'exact_shared_hub_magnet_poses':len(shared_checks),'cap_clearance_method':'All low cap geometry is outside R26.8; hook tops are below the deck and inside R24.084; release pads are 0.65 mm below the pressed grip edge','snap_insertion_note':'Upper hook ramp provides insertion cam; force and automatic re-engagement require printed testing' ,'separate_return_springs':0,'all_cap_styles_share_base_interface':True,'integrated_rotor_and_grip':True,'cap_mount_screws':0,'encoder_magnet_per_top_module':1,'sensor_gaps_mm':{'released':1.8,'pressed':1.8-travel},'physical_checks_required':['Snap insertion, outward-release force and repeated-removal fatigue','Cap return, friction and edge pressing','Retention pull-off load and print tolerances','Actual switch height and electrical closing before stop','Magnet field and BLE calibration','Each module magnet polarity, installed depth and PCB/cell service'], 'electronics_reference':'Centered Hall sensor and inward SW1 at (0,-5) in index.circuit.tsx; includes the matching prescribed routing revision.'}
+validation['pcb_retention']=pcb_lock_audit
+validation['encoder_spacer']={'diameter_mm':5,'thickness_mm':.2,'bottom_z_mm':11.9,'top_z_mm':12.1}
 (OUT/'Validation'/'geometry.json').write_text(json.dumps(validation,indent=2)+'\n')
 (OUT/'Validation'/'scene_meshes.json').write_text(json.dumps(meshes))
 print(json.dumps({'styles':styles,'printed_parts':len(manifest),'press_rotation_samples':len(rows),'output':str(OUT),'status':'CAD checks passed; physical fit testing required'},indent=2),flush=True)

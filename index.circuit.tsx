@@ -1,9 +1,10 @@
 import {Fragment} from "react"
 import {assembly} from "@tscircuit/core"
+import enclosureParameters from "./mechanical/enclosure-parameters.json"
 import {EnclosureAssembly, type CapStyle} from "./enclosure"
 // Select any of the 11 CAP_STYLE_OPTIONS exported by enclosure.tsx.
 const CAP_STYLE: CapStyle = "circular"
-import {NRF52810,TMAG3001,HF_XTAL,LF_XTAL,RF_ANT,CapButton,BatteryHolder} from "./parts"
+import {NRF52810,TMAG3001,HF_XTAL,LF_XTAL,RF_ANT,CapButton,BatteryHolder,TagConnectSwd} from "./parts"
 import {routeBoard} from "./routing"
 import {Cap,Res,Ind} from "./passives"
 import type {PartsEngine,TraceProps} from "@tscircuit/props"
@@ -11,7 +12,8 @@ import type {PartsEngine,TraceProps} from "@tscircuit/props"
 const fixedPartsEngine:PartsEngine={findPart:({sourceComponent})=>sourceComponent.type==="source_component"?sourceComponent.supplier_part_numbers ?? {}:{}}
 const hideText={"& silkscreentext":{visibility:"hidden" as const}}
 const outline=Array.from({length:128},(_,i)=>({x:18.25*Math.cos(i*2*Math.PI/128),y:18.25*Math.sin(i*2*Math.PI/128)}))
-const holes=[45,135,225,315].map(a=>({x:16.2*Math.cos(a*Math.PI/180),y:16.2*Math.sin(a*Math.PI/180)}))
+const mountSpec=enclosureParameters.pcb_mount
+const holes=mountSpec.angles_deg.map(a=>({x:mountSpec.radius_mm*Math.cos(a*Math.PI/180),y:mountSpec.radius_mm*Math.sin(a*Math.PI/180)}))
 const unused=Array.from({length:32},(_,i)=>`P0_${i.toString().padStart(2,"0")}`).filter(p=>!["P0_00","P0_01","P0_21","P0_26","P0_27","P0_28","P0_29"].includes(p)).concat(["NC","DCC"])
 const selector=(s:string)=>s.replace(/^\.([^ .]+)\.([^ .]+)$/, ".$1 > .$2")
 // Coordinates are in the source component's local PCB frame.
@@ -22,9 +24,6 @@ const localRoutes: Record<string,TraceProps["pcbPath"]>={
   {x:.45,y:3.85,via:true,fromLayer:"top",toLayer:"bottom"},{x:.45,y:3.85},
   {x:-.1,y:6},{x:13.5,y:6},{x:14.8,y:-2.9},
   {x:14.8,y:-2.9,via:true,fromLayer:"bottom",toLayer:"top"},{x:14.8,y:-2.9}],
- ".U1.SWDCLK":[{x:3.7,y:-2.2},{x:3.7,y:-2.9},
-  {x:3.7,y:-2.9,via:true,fromLayer:"top",toLayer:"bottom"},{x:3.7,y:-2.9},
-  {x:3.9,y:-3.5},{x:3.9,y:-17.2},{x:9.5,y:-17.2}],
  ".U1.DEC4":[{x:-1.4,y:3.65},{x:-.7,y:3.65},{x:-.7,y:5.5}],
  ".U1.DEC2":[{x:3.8,y:.6},{x:4.4,y:.45}],
  ".U1.DEC3":[{x:4.3,y:1}],
@@ -69,9 +68,11 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
    pcbPath={[{x:-2.999994,y:[1.799844,1.400048,.999998][i]}]}/>
  </Fragment>)}
 
- {holes.map((p,i)=><Fragment key={i}><hole name={`H${i+1}`} pcbX={p.x} pcbY={p.y} diameter={3.6}/></Fragment>)}
- {holes.map((p,i)=><Fragment key={i}><keepout shape="circle" pcbX={p.x} pcbY={p.y}
-  radius={2.2} layers={["top","bottom"]}/></Fragment>)}
+ {holes.map((p,i)=><Fragment key={i}><hole name={`H${i+1}`} pcbX={p.x} pcbY={p.y} diameter={mountSpec.hole_diameter_mm}/></Fragment>)}
+ {/* Only the two above-board retaining lips need an assembly keepout.
+     Recessed locators stay inside their bores; native hole clearance applies. */}
+ {holes.filter((_,i)=>i===0 || i===2).map((p,i)=><Fragment key={i}><keepout shape="circle" pcbX={p.x} pcbY={p.y}
+  radius={mountSpec.copper_keepout_radius_mm} layers={["top","bottom"]}/></Fragment>)}
  <keepout shape="rect" pcbX={0} pcbY={15.8} width={7} height={4.4}
   layers={["top","bottom"]} excludeRefs={[".ANT1"]}/>
  {/* Reserve the underside of these top pads to prevent via drills in the lands. */}
@@ -113,7 +114,7 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
    {x:3.4,y:-1.45},{x:3.4,y:-1.45,via:true,fromLayer:"bottom",toLayer:"top"},{x:3.4,y:-1.45},{x:3.81,y:-1.04}]}/>
  <schematicsheet name="power-debug" displayName="Power and programming" sheetIndex={0}>
   <schematicsection name="power" displayName="CR2032 / LDO mode — DCDCEN = 0"/>
-  <schematicsection name="debug" displayName="SWD pogo pads — underside"/>
+  <schematicsection name="debug" displayName="TC2030-NL / programmer 0.8.0 — remove CR2032"/>
   <schematicbox name="U1 Power" chipRef=".U1" schX={0} schY={1} width={1.96} height={1} schSectionName="power"
    pinLabels={{pin1:"VDD1",pin2:"VDD2",pin3:"VDD3",pin6:"DEC1",pin7:"DEC2",pin8:"DEC3",pin9:"DEC4"}}
    schPinArrangement={{leftSide:["pin1","pin2","pin3"],rightSide:["pin6","pin7","pin8","pin9"]}}/>
@@ -132,10 +133,16 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
   <Cap name="C18" capacitance="100nF" maxDecouplingTraceLength={3} pcbX={-8.2} pcbY={9.4} schX={-5.3} schY={-1.7} schSectionName="power"/>
   <schematicbox name="U1 SWD" chipRef=".U1" schX={11} schY={1} width={2.4} height={.8} schSectionName="debug"
    pinLabels={{pin1:"SWDIO",pin2:"SWDCLK",pin3:"nRESET"}} schPinArrangement={{leftSide:[],rightSide:["pin1","pin2","pin3"]}}/>
-  {[["TP_VDD","VBAT"],["TP_GND","GND"],["TP_SWDIO","SWDIO"],["TP_SWDCLK","SWDCLK"],["TP_RESET","NRESET"]].map(([name,n],i)=><testpoint
-   key={name} name={name} footprintVariant={name==="TP_GND"?"through_hole":"pad"} holeDiameter={name==="TP_GND"?.4:undefined} padDiameter={1.2} layer="bottom" pcbX={-4+i*2} pcbY={-14}
-   doNotPlace pcbSx={hideText} schX={15} schY={i===4?-4:3-i*1.5} schSectionName="debug" connections={{pin1:`net.${n}`}}
-   footprint={name==="TP_GND"?"platedhole_d0.4_pd1.2":"smtpad_circle_d1.2"}><courtyardcircle radius={.75}/></testpoint>)}
+  {/* Exact target footprint and project pinout from the linked programmer.
+      Pin 1 supplies fixed 3.3 V, not VTref. Pin 6 is USB 5 V: leave NC. */}
+  <TagConnectSwd name="J_DEBUG" layer="top" pcbX={0} pcbY={-13.3}
+   pcbSx={hideText} schX={16} schY={1} schSectionName="debug"
+   noConnect={["V5"]} connections={{V3_3:"net.VBAT",SWDIO:"net.SWDIO",
+    NRST:"net.NRESET",SWCLK:"net.SWDCLK",GND:"net.GND"}}/>
+  {/* Keep pours 0.508 mm from the contact edges; only contact fanout traces
+      cross this outer region. The library's inner keepout still blocks traces. */}
+  <keepout shape="rect" pcbX={0} pcbY={-13.3} width={4.3434} height={3.0734}
+   layers={["top"]} allowTraces excludeRefs={[".J_DEBUG"]}/>
   <Res name="R4" pcbSx={hideText} resistance="100k" pcbX={-4.2} pcbY={.7} pcbRotation={180} schX={11} schY={-3.5} schOrientation="vertical"
    schSectionName="debug" connections={{pin1:"net.VBAT",pin2:"net.NRESET"}}/>
   {["VDD1","VDD3"].map(p=><Link key={p} a={`.U1.${p}`} b="net.VBAT"/>)}
@@ -146,7 +153,7 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
   {["C4","C15","C16","C7","C8","C10"].map(c=><G key={c} p={`.${c}.pin2`}/>)}
   <Link a=".U1.DEC1" b=".C5.pin1"/><Link a=".U1.DEC2" b=".C7.pin1"/>
   <Link a=".U1.DEC3" b=".C8.pin1"/><Link a=".U1.DEC4" b=".C10.pin1"/>
-  <Link a=".U1.SWDIO" b="net.SWDIO"/><Link a=".U1.SWDCLK" b=".TP_SWDCLK.pin1"/><Link a=".U1.nRESET" b="net.NRESET"/>
+  <Link a=".U1.SWDIO" b="net.SWDIO"/><Link a=".U1.SWDCLK" b="net.SWDCLK"/><Link a=".U1.nRESET" b="net.NRESET"/>
  </schematicsheet>
  <schematicsheet name="sensor-button" displayName="Rotation and cap press" sheetIndex={1}>
   <schematicsection name="sensor" displayName="TMAG3001A2 — XY angle / address 0x34"/>
@@ -227,14 +234,14 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
  <via name="BT_NEG_JUNCTION" pcbX={-2} pcbY={-11} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <copperpour name="TOP_GND" layer="top" connectsTo="net.GND" clearance={.15} boardEdgeMargin={.35} coveredWithSolderMask/>
  <copperpour name="BOTTOM_GND" layer="bottom" connectsTo="net.GND" clearance={.15} boardEdgeMargin={.35} coveredWithSolderMask/>
- <silkscreentext text="FIDGET / A3" pcbX={0} pcbY={-10.5} fontSize={1.7}/>
+ <silkscreentext text="A4" pcbX={6} pcbY={-6.7} fontSize={1.7}/>
  <silkscreentext text="HALL" pcbX={0} pcbY={-3} fontSize={1.7}/>
  <silkscreentext text="CAP" pcbX={0} pcbY={-8.6} fontSize={1.7}/>
  <silkscreentext text="RF CLEAR" pcbX={4.8} pcbY={13.3} fontSize={1.7}/>
  <silkscreentext text="+" layer="bottom" pcbX={-13} pcbY={-3.8} fontSize={1.7}/>
  <silkscreentext text="-" layer="bottom" pcbX={9.5} pcbY={-3.8} fontSize={1.7}/>
- {["V","G","D","C","R"].map((label,i)=><Fragment key={label}><silkscreentext text={label}
-  layer="bottom" pcbX={-4+i*2} pcbY={-15.8} fontSize={1.7}/></Fragment>)}
+ <silkscreentext text="1" pcbX={-3.7} pcbY={-15.2} fontSize={1.7}/>
+ <silkscreentext text="TC2030" pcbX={0} pcbY={-16.5} fontSize={1.7}/>
 </board>
  <EnclosureAssembly capStyle={CAP_STYLE}/>
 </assembly.device>

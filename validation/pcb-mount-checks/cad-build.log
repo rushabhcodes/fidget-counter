@@ -1,0 +1,37 @@
+Building the guide base and two releasable snap clips...
+Common solids complete; building interchangeable cap grips...
+Caps complete; checking rotation and press clearance...
+Covered 36 press/rotation positions: circular (shared hub checks + cap circular keepout)
+Covered 36 press/rotation positions: ships_wheel (shared hub checks + cap circular keepout)
+Covered 36 press/rotation positions: rounded_triangle (shared hub checks + cap circular keepout)
+Covered 36 press/rotation positions: scalloped_coin (shared hub checks + cap circular keepout)
+Covered 36 press/rotation positions: petal_flower (shared hub checks + cap circular keepout)
+Covered 36 press/rotation positions: four_leaf_clover (shared hub checks + cap circular keepout)
+Covered 36 press/rotation positions: rounded_hexagon (shared hub checks + cap circular keepout)
+Covered 36 press/rotation positions: rounded_square (shared hub checks + cap circular keepout)
+Covered 36 press/rotation positions: wave_rim (shared hub checks + cap circular keepout)
+Covered 36 press/rotation positions: turbine_wheel (shared hub checks + cap circular keepout)
+Covered 36 press/rotation positions: thumb_scoop (shared hub checks + cap circular keepout)
+Checking outward-release and battery-service paths...
+CAD checks passed; exporting print parts and assembly states...
+/home/rushabh/Dev/Fidget Counter/work/assembly-review/cad-venv/lib/python3.12/site-packages/cadquery/utils.py:82: FutureWarning: save will be removed in the next release.
+  warn(f"{f.__name__} will be removed in the next release.", FutureWarning)
+{
+  "styles": [
+    "circular",
+    "ships_wheel",
+    "rounded_triangle",
+    "scalloped_coin",
+    "petal_flower",
+    "four_leaf_clover",
+    "rounded_hexagon",
+    "rounded_square",
+    "wave_rim",
+    "turbine_wheel",
+    "thumb_scoop"
+  ],
+  "printed_parts": 13,
+  "press_rotation_samples": 396,
+  "output": "/home/rushabh/Dev/Fidget Counter/work/assembly-review/revision-1.0.9/mechanical/export",
+  "status": "CAD checks passed; physical fit testing required"
+}

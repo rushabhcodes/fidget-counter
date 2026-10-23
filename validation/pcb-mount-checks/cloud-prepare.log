@@ -1,0 +1,2 @@
+$ bun validation/prepare-cloud-assets.mjs
+Prepared 6 checked artifacts with 198 input hashes

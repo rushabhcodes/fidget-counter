@@ -1,0 +1,154 @@
+{
+  "checkedAt": "2026-10-23T12:50:11.852Z",
+  "passed": true,
+  "revision": "Local inward-hole, bolt-free draft based on 1.0.9",
+  "publication": "Not published",
+  "errors": 0,
+  "warnings": 0,
+  "libraryFindings": 0,
+  "gerberShorts": 0,
+  "pcbMounts": {
+    "oldRadiusMm": 16.2,
+    "radiusMm": 15.2,
+    "radialMoveInwardMm": 1,
+    "oldHoleDiameterMm": 3.6,
+    "holeDiameterMm": 3,
+    "oldNominalEdgeWebMm": 0.25,
+    "nominalEdgeWebMm": 1.55,
+    "centersMm": [
+      [
+        10.748023074035522,
+        10.74802307403552
+      ],
+      [
+        -10.74802307403552,
+        10.748023074035522
+      ],
+      [
+        -10.748023074035524,
+        -10.74802307403552
+      ],
+      [
+        10.748023074035519,
+        -10.748023074035524
+      ]
+    ],
+    "bolts": 0,
+    "retainingLipsAbovePcbMm": 0.15,
+    "rigidLocatorRecessMm": 0.35,
+    "minimumLockedFeatureToHoleMm": 0.20288782289271534,
+    "releaseDisplacementMm": 0.6,
+    "minimumReleasedHookToHoleMm": 0.15835921350012594
+  },
+  "baseToPcbIntersectionMm3": 0,
+  "sourceAndSavedGlbDrillHolesVerified": 7,
+  "printedParts": 13,
+  "capStyles": 11,
+  "pressAndRotationConfigurations": 396,
+  "mechanicalModelsPerSelectedStyle": 8,
+  "fittedComponentsUnchanged": 30,
+  "routedTraces": 89,
+  "vias": 55,
+  "adjustedCopper": "Lower-left SWDIO escape only; supply and crystal routing retained",
+  "checks": {
+    "typecheck": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/typecheck.log"
+    },
+    "netlist": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/netlist.log"
+    },
+    "pin-specification": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/pin-specification.log"
+    },
+    "source": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/source.log"
+    },
+    "schematic-placement": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/schematic-placement.log"
+    },
+    "placement": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/placement.log"
+    },
+    "routing-difficulty": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/routing-difficulty.log"
+    },
+    "build": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/build.log"
+    },
+    "snapshot-build": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/snapshot-build.log"
+    },
+    "pcb-mount-clearance": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/pcb-mount-clearance.log"
+    },
+    "assembly": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/assembly.log"
+    },
+    "enclosure": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/enclosure.log"
+    },
+    "programming": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/programming.log"
+    },
+    "imports": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/imports.log"
+    },
+    "shorts": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/shorts.log"
+    },
+    "cad-build": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/cad-build.log"
+    },
+    "model-export": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/model-export.log"
+    },
+    "cloud-prepare": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/cloud-prepare.log"
+    },
+    "cloud-restore": {
+      "passed": true,
+      "log": "validation/pcb-mount-checks/cloud-restore.log"
+    }
+  },
+  "sha256": {
+    "index.circuit.tsx": "e947889bbe9f81cc15a6b1c3e21bfd93483eb8fa5c4b27bc9463ebd7af885b3a",
+    "parts.tsx": "d6bdfe6089e93b3d4f6326d39e03b4c791a9f4f9ad4b783728b7a9c301466395",
+    "enclosure.tsx": "85f1153460ef13a732d2dfd41e3131b56ae3680f90473d905d1ac57f11794a8b",
+    "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
+    "routed-paths.json": "0eb92daa3eb852fb038b97d17c118d781b920186c370384721a9881db696316d",
+    "published.circuit.json": "8ba1a5a6d128ddbd791b88336e11244136605dc1e6537a22b4b384764bc9efbd",
+    "package.json": "cba11a5e838ea70731f324d2671ab44b6508c5076fbab016b43685ae9a65422c",
+    "mechanical/enclosure-parameters.json": "c104bd901d177e39bc73309aebd4a2a93639fa408f5e335193784d8761538d8b",
+    "mechanical/enclosure-validation.json": "79209945f0bf94691f8b6b13860ee20396ca1a2932841d04850b3c51d810b1af",
+    "mechanical/build_enclosure.py": "0e18ea28d6f63af57b21bb8d130e08254cd53828ff241e4a5e3e24e9d0570fd8",
+    "mechanical/pcb_snap_mounts.py": "c0a2fe02705f0cc1b01ec2e53c043cd0332c36286b2f163e87374d148c0ce731",
+    "mechanical/export_circuit_models.py": "c9027526d65852a3eb0c3d4c197f8d49331d6f71b3a28f76c83f13061236bceb",
+    "mechanical/Circuit_Models/manifest.json": "311cb256463d016e4f825038989b20687781032f9ff6231854920645eae73165",
+    "mechanical/Print_STL/Stationary_Base.stl": "f2524282256d400a376be12c1b12c501e603702682b23f01e32ecb69cd79902e",
+    "mechanical/STEP_Parts/Stationary_Base.step": "3761c282cc92ed28b1bceef0cf71e6199d7e3c016cb53001864266f0e5710916",
+    "validation/check-pcb-mounts.py": "82e43ccb6250265761fd6cfe6d623564ff5c19ed2a6b2e4dcc79781dae86c317",
+    "validation/check-enclosure.mjs": "2c76a5f7c8a938f2eed932472a3483f6ef7ce0bd864bae110d2b5474e11a4e61",
+    "validation/pcb-mount-clearance.json": "e94450b01afa8fb4b2f527cf16c3ded2e70d568b04b2375bf4734d2a53be5c3e",
+    "cloud-assets/manifest.json": "a3b0b8c47f5ba79a746418a0deaca444af5433b1fd9d8e38dc1bce2a67f5c9e9"
+  },
+  "physicalFitTested": false,
+  "latchForceAndFatigueTested": false
+}

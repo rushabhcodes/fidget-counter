@@ -1,0 +1,149 @@
+{
+  "checkedAt": "2026-10-23T14:55:01.686Z",
+  "passed": true,
+  "sourcePackage": "@tsci/tscircuit.standard-jst-programmer@0.8.0",
+  "reference": "https://tscircuit--standard-jst-programmer-v0-8-0.tscircuit.app/#file=circuits%2Fupward.circuit.tsx",
+  "footprint": "TC2030-NL-FP Rev B",
+  "cable": "TC2030-IDC-NL-050",
+  "side": "top",
+  "pads": [
+    {
+      "pin": 1,
+      "signal": "V3_3",
+      "net": "VBAT",
+      "x": -1.27,
+      "y": -13.935,
+      "diameterMm": 0.7874
+    },
+    {
+      "pin": 2,
+      "signal": "SWDIO",
+      "net": "SWDIO",
+      "x": -1.27,
+      "y": -12.665000000000001,
+      "diameterMm": 0.7874
+    },
+    {
+      "pin": 3,
+      "signal": "NRST",
+      "net": "NRESET",
+      "x": 0,
+      "y": -13.935,
+      "diameterMm": 0.7874
+    },
+    {
+      "pin": 4,
+      "signal": "SWCLK",
+      "net": "SWDCLK",
+      "x": 0,
+      "y": -12.665000000000001,
+      "diameterMm": 0.7874
+    },
+    {
+      "pin": 5,
+      "signal": "GND",
+      "net": "GND",
+      "x": 1.27,
+      "y": -13.935,
+      "diameterMm": 0.7874
+    },
+    {
+      "pin": 6,
+      "signal": "V5",
+      "net": "NC",
+      "x": 1.27,
+      "y": -12.665000000000001,
+      "diameterMm": 0.7874
+    }
+  ],
+  "alignmentHoles": [
+    {
+      "type": "pcb_hole",
+      "pcb_hole_id": "pcb_hole_4",
+      "pcb_component_id": "pcb_component_24",
+      "hole_shape": "circle",
+      "hole_diameter": 0.9906,
+      "x": -2.54,
+      "y": -13.3,
+      "is_covered_with_solder_mask": false,
+      "subcircuit_id": "subcircuit_source_group_0"
+    },
+    {
+      "type": "pcb_hole",
+      "pcb_hole_id": "pcb_hole_5",
+      "pcb_component_id": "pcb_component_24",
+      "hole_shape": "circle",
+      "hole_diameter": 0.9906,
+      "x": 2.54,
+      "y": -12.284,
+      "is_covered_with_solder_mask": false,
+      "subcircuit_id": "subcircuit_source_group_0"
+    },
+    {
+      "type": "pcb_hole",
+      "pcb_hole_id": "pcb_hole_6",
+      "pcb_component_id": "pcb_component_24",
+      "hole_shape": "circle",
+      "hole_diameter": 0.9906,
+      "x": 2.54,
+      "y": -14.316,
+      "is_covered_with_solder_mask": false,
+      "subcircuit_id": "subcircuit_source_group_0"
+    }
+  ],
+  "stencilApertures": 0,
+  "pin6Isolated": true,
+  "power": "Pin 1 supplies fixed 3.3 V to VBAT; CR2032 must be removed",
+  "minimumUnrelatedTopTrackClearanceMm": 0.8212999999999996,
+  "minimumUnrelatedViaClearanceMm": 1.088890680448666,
+  "crystalBranches": [
+    {
+      "name": "U1_XC1",
+      "lengthMm": 5.733959096295852,
+      "vias": 0
+    },
+    {
+      "name": "U1_XC2",
+      "lengthMm": 5.849969009124063,
+      "vias": 0
+    },
+    {
+      "name": "C1_1",
+      "lengthMm": 1.3301010005234297,
+      "vias": 0
+    },
+    {
+      "name": "C2_1",
+      "lengthMm": 1.8053433884928216,
+      "vias": 0
+    },
+    {
+      "name": "U1_XL1",
+      "lengthMm": 2.621620736724572,
+      "vias": 0
+    },
+    {
+      "name": "U1_XL2",
+      "lengthMm": 4.374956001282802,
+      "vias": 0
+    },
+    {
+      "name": "C11_1",
+      "lengthMm": 1.8012711496278955,
+      "vias": 0
+    },
+    {
+      "name": "C12_1",
+      "lengthMm": 1.8712663515714518,
+      "vias": 0
+    }
+  ],
+  "probeCourtyardMm": [
+    10.4,
+    7.8
+  ],
+  "probeCourtyardClear": true,
+  "circuitSha256": "bd9f166db6bb0cd346f336928c59b85ffa068a9483a2c6e273ac79fdcdf042f0",
+  "physicalProbeFitTested": false,
+  "physicalProgrammingTested": false
+}

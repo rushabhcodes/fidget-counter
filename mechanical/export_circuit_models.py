@@ -7,6 +7,7 @@ rows=json.loads((root/'export/Validation/scene_meshes.json').read_text());select
 for m in rows:
     if m['name'] not in ['PCB','Holder','Sensor','Button']:selected.setdefault(m['name'],m)
 assert len(selected)==18 and 'Button_Actuator_Reference' not in selected
+assert 'PCB_Retainers' not in selected and 'Encoder_Spacer' in selected
 for name,m in selected.items():
     obj=models/(name+'.obj');mtl=models/(name+'.mtl')
     obj.write_text('mtllib '+name+'.mtl\no '+name+'\n'+''.join('v '+' '.join(f'{x:.7f}' for x in v)+'\n' for v in m['vertices'])+'usemtl '+name+'\ns off\n'+''.join('f '+' '.join(str(i+1) for i in f)+'\n' for f in m['faces']))

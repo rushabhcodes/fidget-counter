@@ -13,8 +13,11 @@ const walk = (path) => readdirSync(path, { withFileTypes: true }).flatMap((item)
 const inputs = [
   ...readdirSync(root).filter((name) => /\.(tsx?|circuit\.json)$/.test(name)),
   "routed-paths.json",
+  "package.json",
+  "bun.lock",
   ...walk(resolve(root, "imports")).map((path) => relative(root, path)),
   ...walk(resolve(root, "mechanical"))
+    .filter((path) => !relative(root, path).startsWith("mechanical/export/") && !path.includes("/__pycache__/"))
     .filter((path) => [".py", ".json", ".stl", ".obj", ".mtl", ".step"].includes(extname(path)))
     .map((path) => relative(root, path)),
 ]

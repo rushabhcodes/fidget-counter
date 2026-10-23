@@ -1,4 +1,4 @@
-# Fidget Counter — One-piece V4 / registry release 1.0.8
+# Fidget Counter — automatic-lock release 1.0.15
 
 All eleven cap options are now complete, single-piece rotor/grip modules. There are no decorative-cap screws, nuts or additional grip-to-hub joint. Each printed top includes the guide sleeve, continuous retention flange, protective underplate, annular switch pusher and blind encoder-magnet pocket. All modules use the same existing two-clip guide base and bottom attachment-magnet tray. The nominal top plane remains 15.2 mm and the gripping edges remain 8 mm deep.
 
@@ -10,21 +10,23 @@ Each top requires its OWN diametrically magnetized Ø5 × 1.5 mm encoder disc. T
 
 Use the same type/grade of encoder disc in each module. Firmware should ignore a missing magnet during removal and re-establish the angular baseline after reattachment, to avoid counting the swap as a turn. That behavior has not been implemented or verified here; counter-reset firmware remains outside this mechanical revision.
 
-## Programming before assembly
-
-Program and verify the populated board before fitting it into the enclosure. The SWD pads are on the underside, and the solid bottom tray has no programming opening. Follow [PROGRAMMING.md](https://github.com/rushabhcodes/fidget-counter/blob/main/PROGRAMMING.md) for the pad orientation, Cortex adapter wiring, power setup and programming procedure.
-
 ## Pressing and battery service
 
 The complete top descends 0.25 mm to the base hard stop. The annular pusher contacts the inward SW1 actuator at every rotation angle, and the switch dome supplies axial return. There is no separate return spring or yellow flexible ring. The base clips retain the module radially and provide 0.05 mm nominal upward float.
 
-For a cell change, release the top as above, remove the four existing M1.6 PCB retaining screws, lift the PCB with its soldered bottom holder, then replace the CR2032. The screw-free change applies to the interchangeable tops; the PCB retainers remain. The matching circuit places SW1 at (0, −5) mm; the Hall sensor stays centered.
+The PCB uses two inward-facing snap latches at the diagonal holes near (+10.748, +10.748) and (−10.748, −10.748) mm. Two recessed locating posts support the remaining holes. All four hole centers move radially inward from 16.2 to 15.2 mm, and the holes shrink from Ø3.6 to Ø3.0 mm. The PCB and printed base read this pattern from the same `pcb_mount` parameter block. Use the revised PCB and base together; the earlier hole pattern is superseded.
+
+Lower the populated board onto all four support shoulders, then press near the two latches until both hooks engage. The printed features within the PCB thickness stay inside the drilled bores: the minimum nominal radial clearance is 0.203 mm. The rigid locators have 0.40 mm radial clearance and stop 0.35 mm below the PCB top. The retaining lips start 0.15 mm above the seated PCB, with 0.30 mm inward retaining overlap. There are no bolts, screws or separate retaining washers.
+
+For a cell change, remove the cap, push BOTH diagonal PCB latch tips radially outward by about 0.60 mm, and lift the board by its edges with the soldered holder and cell. Keep the tips displaced until the board clears them. The prescribed release pose leaves 0.158 mm minimum nominal hook-to-hole clearance. The beam is 0.60 mm thick and 1.20 mm wide; its strain estimate is a sizing calculation, not FEA. Finger access, force, spring-back and repeated release need a printed/populated prototype. SW1 stays at (0, −5) mm and the Hall sensor stays centered.
+
+[The mount section and hole-pattern drawing](previews/pcb-automatic-lock.png) shows the gap above the PCB and the material remaining around each hole. `validation/pcb-mount-clearance.json` checks the actual Circuit JSON drill pattern against the STEP base and checks that the real GLB PCB faces have open bores. It does not use a replacement PCB mesh for the circuit preview.
 
 ## Print and check
 
-Print one Stationary_Base, one Bottom_Tray, four PCB_Retainer_Print_4 parts and any selected Cap_*.stl from mechanical/Print_STL. Each Cap_ file is a COMPLETE top module; do not print or attach the previous separate hub. Supplied STLs are already bed-oriented: the top surface of each cap faces the bed and its guide sleeve faces upward. Use localized PLA support for the base clips and any overhanging features that your slicer cannot bridge. Remove all support from the clip gaps through the underside relief channels before fitting the backing ring and bonding the tray. Use the previous bottom array, backing ring and four PCB fasteners.
+Print one revised Stationary_Base, one Bottom_Tray and any selected Cap_*.stl from mechanical/Print_STL. Each Cap_ file is a COMPLETE top module. Supplied STLs are bed-oriented: the top surface of each cap faces the bed and its guide sleeve faces upward. Keep the PCB latch channels free of support residue. Use localized support for base overhangs that your slicer cannot bridge. Clear both cap-release channels before fitting the backing ring and bonding the tray. Retain the previous bottom magnet array and backing ring.
 
-The CAD checks cover valid single solids, closed STL meshes, the shared guide/flange/pusher through rotation and the 0.25 mm stroke, full-circle grip clearance, two-hook retention, prescribed outward clip release, top extraction and PCB/holder/cell extraction. The clip release pose is a clearance model, not an FEA result or measured strain/force. PLA fatigue, retention strength, tolerances, edge-press tilt and switch return require printed testing. Test one module before printing the full set. After changing shapes, verify smooth rotation, secure retention, correct sensing and complete return after pressing anywhere on the grip.
+The CAD checks cover valid single solids, closed STL meshes, the shared guide/flange/pusher/spacer through rotation and the 0.25 mm stroke, full-circle grip clearance, cap-hook retention, PCB-hook retaining overlap, prescribed release poses, top extraction and thirteen PCB/holder/cell extraction heights. Release poses are clearance models, not FEA or measured force. PLA fatigue, retention strength, tolerances, edge-press tilt and switch return require printed testing. Test one base and one cap before printing the full set. Verify that both PCB hooks automatically return after insertion, retain the board, and can be released for cell changes.
 
 The supplier component models are unchanged. PCB routing and fabrication exports match the inward button position. The previous service collar, PETG return ring, separate rotor hub and cap screws are superseded.
 
@@ -34,4 +36,8 @@ Use Python with mechanical/requirements.txt installed. Run `python mechanical/bu
 
 ## PCB and cell stack
 
-The PCB is Ø36.5 × 1.0 mm at Z7.1–8.1 with four Ø3.6 mounting holes on radius 16.2 mm. BT1 is the exact imported MYOUNG BS-08-B2AA020-R / JLCPCB C964787 underside holder. Its manufacturer maximum height is 5.8 mm; the shorter visual model is not the clearance limit. The CR2032 positive face points toward the solid bottom tray. Insert the cell after reflow. Mounting holes leave a nominal 0.25 mm FR4 edge web requiring CAM acceptance. The diametric encoder-to-sensor gap is nominal 1.8 mm released and 1.55 mm pressed. No firmware is included.
+The PCB is Ø36.5 × 1.0 mm at Z7.1–8.1 with four Ø3.0 mounting holes on radius 15.2 mm. BT1 is the exact imported MYOUNG BS-08-B2AA020-R / JLCPCB C964787 underside holder. Its manufacturer maximum height is 5.8 mm; the shorter visual model is not the clearance limit. The CR2032 positive face points toward the solid bottom tray. Insert the cell after reflow. Mounting holes leave a nominal 1.55 mm FR4 edge web, increased from the earlier 0.25 mm. Manufacturing tolerances and printed fit still need supplier/prototype review. The diametric encoder-to-sensor gap is nominal 1.8 mm released and 1.55 mm pressed. No firmware is included.
+
+## TC2030 programming access — release 1.0.15
+
+The five underside programming pads are replaced by a top-side TC2030-NL target centered at (0, −13.3) mm. It uses six Ø0.7874 mm bare pads and three Ø0.9906 mm alignment holes, with a 10.4 × 7.8 mm probe-access courtyard. The footprint is DNL and adds no assembled height. Remove the cap and release/lift the board before programming so the probe and alignment pins have access; the printed base has no new programming opening. Remove the CR2032 before connecting the linked programmer's fixed 3.3 V supply. Pin 6 (programmer USB 5 V) is isolated on the target. See [PROGRAMMING.md](PROGRAMMING.md).

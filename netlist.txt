@@ -1,7 +1,7 @@
 COMPONENTS:
- - GPIO_SCL: 
- - GPIO_SDA: 
- - GPIO_HALL_INT: 
+ - GPIO_SCL:
+ - GPIO_SDA:
+ - GPIO_HALL_INT:
  - U1: NRF52810-QFAA-R
  - BT1: BT1, source_component
  - C4: 100nF capacitor
@@ -13,11 +13,7 @@ COMPONENTS:
  - C10: 1uF capacitor
  - C16: 100nF capacitor
  - C18: 100nF capacitor
- - TP_VDD: TP_VDD, source_component
- - TP_GND: TP_GND, source_component
- - TP_SWDIO: TP_SWDIO, source_component
- - TP_SWDCLK: TP_SWDCLK, source_component
- - TP_RESET: TP_RESET, source_component
+ - J_DEBUG: J_DEBUG, source_component
  - R4: 100kΩ resistor
  - U2: TMAG3001A2YBGR
  - C6: 100nF capacitor
@@ -39,6 +35,14 @@ COMPONENTS:
  - C13: 0.5pF capacitor
  - C14: 0.5pF capacitor
  - ANT1: RFANT3216120A5T
+ - ONEPIECE_V4_Stationary_Base: ONEPIECE_V4_Stationary_Base, source_component
+ - ONEPIECE_V4_Bottom_Tray: ONEPIECE_V4_Bottom_Tray, source_component
+ - ONEPIECE_V4_Cell: ONEPIECE_V4_Cell, source_component
+ - ONEPIECE_V4_Backing_Ring: ONEPIECE_V4_Backing_Ring, source_component
+ - ONEPIECE_V4_Attachment_Magnets: ONEPIECE_V4_Attachment_Magnets, source_component
+ - ONEPIECE_V4_Magnet: ONEPIECE_V4_Magnet, source_component
+ - ONEPIECE_V4_Encoder_Spacer: ONEPIECE_V4_Encoder_Spacer, source_component
+ - ONEPIECE_V4_Cap_circular: ONEPIECE_V4_Cap_circular, source_component
 
 NET: U1_DEC1
   - U1 DEC1
@@ -58,16 +62,16 @@ NET: U1_DEC4
 
 NET: SWDIO
   - U1 SWDIO
-  - TP_SWDIO pin1
+  - J_DEBUG SWDIO
 
 NET: SWDCLK
   - U1 SWDCLK
-  - TP_SWDCLK pin1
+  - J_DEBUG SWCLK
 
 NET: NRESET
   - U1 P0_21
   - R4 pin2
-  - TP_RESET pin1
+  - J_DEBUG NRST
 
 NET: SCL
   - U2 SCL
@@ -104,7 +108,7 @@ NET: VBAT
   - U1 VDD1
   - C9 pin1
   - R4 pin1
-  - TP_VDD pin1
+  - J_DEBUG V3_3
 
 NET: CAP_PRESS
   - SW1 A1
@@ -165,7 +169,7 @@ NET: GND
   - C15 pin2
   - C4 pin2
   - BT1 pin2 (-)
-  - TP_GND pin1
+  - J_DEBUG GND
   - C1 pin2
   - X1 pin4
   - X1 pin2
@@ -281,20 +285,13 @@ C18 (100nF undefined)
 - pin1: NETS(VBAT)
 - pin2: NETS(GND)
 
-TP_VDD
-- pin1: NETS(VBAT)
-
-TP_GND
-- pin1: NETS(GND)
-
-TP_SWDIO
-- pin1: NETS(SWDIO)
-
-TP_SWDCLK
-- pin1: NETS(SWDCLK)
-
-TP_RESET
-- pin1: NETS(NRESET)
+J_DEBUG (TC2030-NL-FP (DNL))
+- pin1(V3_3): NETS(VBAT)
+- pin2(SWDIO): NETS(SWDIO)
+- pin3(NRST, nRESET): NETS(NRESET)
+- pin4(SWCLK): NETS(SWDCLK)
+- pin5(GND): NETS(GND)
+- pin6(V5): NOT_CONNECTED
 
 R4 (100kΩ undefined)
 - pin1(anode, pos, left): NETS(VBAT)
@@ -387,3 +384,19 @@ C14 (0.5pF undefined)
 ANT1 (RFANT3216120A5T)
 - pin1(feed): NETS(ANT1_feed)
 - pin2(NC): NOT_CONNECTED
+
+ONEPIECE_V4_Stationary_Base
+
+ONEPIECE_V4_Bottom_Tray
+
+ONEPIECE_V4_Cell
+
+ONEPIECE_V4_Backing_Ring
+
+ONEPIECE_V4_Attachment_Magnets
+
+ONEPIECE_V4_Magnet
+
+ONEPIECE_V4_Encoder_Spacer
+
+ONEPIECE_V4_Cap_circular

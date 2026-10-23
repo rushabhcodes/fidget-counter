@@ -1,58 +1,74 @@
-# Programming the Fidget Counter
+# Programming the Fidget Counter — TC2030 release 1.0.15
 
-Program U1 (nRF52810-QFAA) over **Serial Wire Debug (SWD)** using the five existing underside pads. Use a SEGGER J-Link with a 1.27 mm 2×5 Arm Cortex debug adapter and a breakout wired to the pads. A five-probe fixture on 2.00 mm centers is suitable; short, temporarily soldered wires are an alternative for a prototype. Support the board by its edges without loading the components or battery holder.
+Release 1.0.15 uses the **TC2030-NL no-legs footprint**, imported from `@tsci/tscircuit.standard-jst-programmer@0.8.0`. It replaces the custom five-pad row with six Ø0.7874 mm contacts on a 1.27 mm grid and three Ø0.9906 mm non-plated alignment holes. No connector is fitted and no solder paste is applied. Use the **TC2030-IDC-NL-050** cable with the linked [Standard JST programmer 0.8.0](https://tscircuit--standard-jst-programmer-v0-8-0.tscircuit.app/#file=circuits%2Fupward.circuit.tsx), programmer header **J4 TAG**. The footprint follows [Tag-Connect's Rev B drawing](https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/2019/12/TC2030-IDC-NL-Datasheet-Rev-B.pdf).
 
-The board exposes standard SWD **signals** on a custom single-row footprint. It has no fitted 10-pin socket or Tag-Connect footprint, so those cables require a breakout/fixture. No connector or layout change is needed for this procedure.
+**Remove the CR2032 before plugging in this programmer.** Its pin 1 is a fixed **3.3 V output**, not a voltage-sense input. Its pin 6 carries **USB 5 V** and is deliberately unconnected on this board. Do not fit a battery while the programmer supplies the board. This J4 pinout is specific to the linked programmer; a generic six-pin SWD cable may assign pin 6 to SWO instead.
 
-This repository contains the PCB design, **no application firmware, bootloader or flashable HEX**. `bun run build` generates circuit artifacts. Obtain or build a firmware image for this specific board before flashing. Initial programming uses SWD; Bluetooth updates require a compatible bootloader and application installed separately.
+This repository contains the PCB design, **no application firmware, bootloader or flashable HEX**. Obtain a complete firmware image for this board before flashing.
 
-## Access and identify the pads
+## Access and identify the contacts
 
-Program the populated board on the bench before enclosure assembly. For an assembled unit, release the cap by pulling both cap-release tabs outward, then follow [the PCB removal and battery-service instructions](MECHANICAL.md#pressing-and-battery-service) for its enclosure. Lift the PCB with its soldered holder and turn it over. The solid bottom tray provides no programming opening.
+Program before enclosure assembly. For an assembled device, release the cap, push both PCB latch tips outward 0.6 mm and lift the PCB with its holder; see [battery service](MECHANICAL.md#pressing-and-battery-service). Remove the coin cell. The programming contacts are now on the **top face**, centered at **(0, −13.3) mm**, near the edge opposite the antenna. The probe approaches from above and has a clear 10.4 × 7.8 mm courtyard. Hold the no-legs probe in place; use a support that clears the underside holder and protruding alignment pins. A retention clip requires separate underside access.
 
-Look directly at the **underside**, with the antenna end at the top and the programming row at the bottom. The silkscreen reads left to right:
+Viewed from above with the antenna pointing up:
 
 ```text
-                    Antenna end
-                         ↑
-                 PCB underside facing you
+                       Antenna ↑
 
-             R      C      D      G      V
-           RESET  SWDCLK  SWDIO  GND    VBAT
-             ●------●------●------●------●
-                  2.00 mm center spacing
+                         PCB top
+               2 DIO     4 CLK     6 NC (5 V on cable)
+                  ●         ●         ●           ○
+          ○                                       alignment holes
+                  ●         ●         ●           ○
+               1 3V3     3 RESET   5 GND
+                   pin 1 / TC2030 legend
 ```
 
-The row reverses to **V G D C R** in top-view coordinates; do not wire an underside fixture from the top-view order. Each land is Ø1.20 mm. Only GND has a Ø0.40 mm plated hole; the others are undrilled surface pads.
+The asymmetric three-hole pattern keys the probe. Match pin 1 at both the probe and the programmer's unshrouded IDC header before applying USB power. A 2.54 mm IDC plug or a 10-pin Cortex cable does not directly mate with J4.
 
-## Wire a standard Arm Cortex SWD connector
+| TC2030 contact | Programmer 0.8.0 signal | Board net | PCB top-view center, mm |
+|---|---|---|---|
+| 1 | Fixed 3.3 V output | VBAT, same rail as BT1 positive | (−1.27, −13.935) |
+| 2 | SWDIO | U1 physical pin 26 | (−1.27, −12.665) |
+| 3 | Open-drain NRST | NRESET, U1 P0.21 / pin 24; 100 kΩ pull-up | (0, −13.935) |
+| 4 | SWCLK | U1 physical pin 25 | (0, −12.665) |
+| 5 | GND | Board ground | (+1.27, −13.935) |
+| 6 | Fixed USB 5 V output | **NC; isolated pad, no trace** | (+1.27, −12.665) |
 
-The table uses the **1.27 mm 2×5 Cortex connector numbering**, including the missing/key pin 7. Follow the adapter's pin-1 mark; a connector's solder side is mirrored relative to its mating face. The larger J-Link 20-pin connector uses different numbering and needs its Cortex adapter. The signal assignments below follow [SEGGER's Cortex connector pinout](https://kb.segger.com/9-pin_JTAG/SWD_connector).
+The alignment-hole centers are (−2.54, −13.3), (+2.54, −12.284) and (+2.54, −14.316) mm. The library's central keepout blocks routing on both layers. An added top-side keepout clears the ground pours by 0.508 mm from the contact edges; the five fanout branches leave the array outward. The footprint is DNL and adds no assembled height.
 
-| Cortex connector pin | Probe signal | Board pad / legend | PCB top-view center, mm | Connection on this board |
-|---|---|---|---|---|
-| 1 | VTref, target-voltage **input** | TP_VDD / V | (−4, −14) | VBAT; same rail as BT1 positive and U1 VDD |
-| 2 | SWDIO | TP_SWDIO / D | (0, −14) | U1 physical pin 26 |
-| 4 | SWCLK | TP_SWDCLK / C | (+2, −14) | U1 physical pin 25 |
-| 3 and 5 | GND | TP_GND / G | (−2, −14) | Board ground; join both on the breakout |
-| 10 | nRESET | TP_RESET / R | (+4, −14) | U1 P0.21, physical pin 24; 100 kΩ pull-up |
+## Power and flash with the linked programmer
 
-Leave pins 6 (SWO), 8 (TDI) and 9 unconnected for this J-Link SWD hookup; pin 7 is the key. SWO is not routed on this board. nRESET is optional for basic SWD programming: its reset function must first be enabled in the MCU configuration. VTref, GND, SWDIO and SWCLK are the required connections.
+1. Disconnect programmer USB, remove the CR2032 and disconnect any bench supply.
+2. Connect only the TC2030 cable between programmer J4 and J_DEBUG. Leave the JST target connectors empty. J4 bypasses the voltage selector and current monitor; its pin 1 is always 3.3 V when USB is powered. Pin 6 stays unconnected on the target.
+3. Apply USB power and confirm approximately 3.3 V between contacts 1 and 5 before programming. The MCU and sensor accept 3.3 V. Keep the probe stable throughout erase/write/verify.
+4. Use the programmer's version-matched CMSIS-DAP firmware and [OpenOCD](https://openocd.org/pages/getting-openocd.html). The example below uses the **OpenOCD 0.12.0** target path `target/nrf52.cfg`. Current development versions may use `target/nordic/nrf52.cfg`; select the installed path.
 
-## Power the target
+```sh
+# Read/identify the powered target first; require nRF52810.
+openocd -f interface/cmsis-dap.cfg \
+  -c "transport select swd" -f target/nrf52.cfg \
+  -c "adapter speed 1000" -c "reset_config none" \
+  -c "init; halt; flash info 0; shutdown"
 
-**TP_VDD is directly connected to the primary CR2032.** A probe's VTref senses the target rail; it does not normally power the target. Use one of these setups:
+# Programs and erases affected sectors: use the complete board-specific HEX.
+openocd -f interface/cmsis-dap.cfg \
+  -c "transport select swd" -f target/nrf52.cfg \
+  -c "adapter speed 1000" -c "reset_config none" \
+  -c "program {/absolute/path/to/fidget-counter-complete.hex} verify reset exit"
+```
 
-| Setup | Target supply | Probe hookup |
-|---|---|---|
-| Coin-cell powered | Fit a CR2032 in BT1 | Connect VTref to V and GND to G; keep all probe target-power outputs disabled |
-| External bench supply, preferred for repeated programming | **Remove the CR2032**, then connect regulated **3.0 V** positive to V and return to G | Connect VTref to the same V rail; keep other power sources disconnected |
+The `program … verify reset exit` sequence is from [OpenOCD's programming guide](https://openocd.org/doc/html/Flash-Programming.html). The [0.12.0 nRF52 configuration](https://github.com/openocd-org/openocd/blob/v0.12.0/tcl/target/nrf52.cfg) uses a software system reset, so initial flashing does not depend on P0.21 already being configured as nRESET. The command erases sectors that it writes; it does not promise a complete chip erase or preservation of stored calibration/counts. A deliberate full erase or access-protection recovery requires the appropriate tool procedure and loses existing data. Require successful write **and verify** output.
 
-With power off, attach the breakout/probes and check for bridges. Apply power and measure approximately 3.0 V from V to G before connecting to the target in software. Keep the supply stable throughout erase and programming. **Never apply 5 V to V. Remove the CR2032 before connecting any external supply:** this board has no charging or power-isolation circuit. A probe's separately labeled target-power output may be used only if its manual confirms a regulated, compatible voltage and the cell is removed.
+Disconnect USB before removing the probe. Refit the cell only after disconnecting programmer power. Power-cycle the board and verify BLE, angle sensing and count reset with suitable application firmware. No physical target has been flashed as part of this layout change.
 
-After programming, turn off external power before removing temporary wiring or changing the cell. Disconnect the debug probe and power-cycle the board before measuring sleep current.
+## Optional standard Cortex / J-Link adapter
 
-## Install the programming tools
+A SEGGER J-Link can use this same footprint through a correctly wired TC2030 adapter. Its **VTref is an input**, unlike the linked programmer's pin-1 output. Map Cortex 2×5 pins 1→TC2030 1, 2→2, 4→4, 3/5→5 and 10→3; leave TC2030 6 unconnected. Check the adapter pinout against [SEGGER's Cortex connector assignments](https://kb.segger.com/9-pin_JTAG/SWD_connector); do not connect a differently wired cable directly.
+
+With a J-Link, either power from the coin cell and disable all probe power outputs, or remove the cell and supply regulated 3.0–3.3 V through contacts 1 and 5. VTref senses that rail. Never connect two supplies or apply 5 V. The nRF Util procedure below is for **J-Link**, not for the linked CMSIS-DAP programmer.
+
+## Optional J-Link tools
 
 Install the current standalone [Nordic nRF Util](https://docs.nordicsemi.com/r/bundle/nrfutil/page/guides/installing.html/installing-nrf-util-from-the-web-default) executable and put it on `PATH`. Install the SEGGER J-Link software version required by [Nordic's prerequisites](https://docs.nordicsemi.com/r/bundle/nrfutil/page/guides/installing.html/prerequisites), including the appropriate USB drivers/udev rules for your OS. The commands here use the modern nRF Util with its installable `device` command.
 
@@ -84,7 +100,7 @@ Keep readback protection disabled during initial bring-up so programming verific
 | SWDCLK | 25 |
 | Optional nRESET | P0.21 / 24 |
 
-## Detect, program, verify and run
+## Optional J-Link programming
 
 The following examples use a POSIX shell (Linux/macOS). Replace both values with your probe serial number and the absolute path to your board-specific, complete HEX. Run each step only after the preceding command succeeds.
 
@@ -112,7 +128,7 @@ Disconnect the fixture, power-cycle the board, and check the application's docum
 
 ## Recover or troubleshoot
 
-If the probe is absent from `device list`, check USB, J-Link installation and OS permissions. If the probe is present but the MCU cannot be detected, check V-to-G voltage under load, common ground, probe VTref, the **R C D G V** underside order, and spring-contact pressure. Keep wires short and select SWD rather than JTAG if using another tool. A populated prototype is required to validate fixture clearance and contact reliability.
+If the probe is absent from `device list`, check USB, J-Link installation and OS permissions. If the probe is present but the MCU cannot be detected, check V-to-G voltage under load, common ground, probe VTref, the six-contact pin map above, and spring-contact pressure. Keep wires short and select SWD rather than JTAG if using another tool. A populated prototype is required to validate fixture clearance and contact reliability.
 
 If a previously programmed device has access protection enabled, use [Nordic's recovery command](https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/guides/programming_recovery.html) only when loss of its contents is acceptable. **Recovery erases user flash and UICR, including firmware and stored data.** It is not a routine prerequisite for every flash:
 
@@ -124,4 +140,4 @@ After successful recovery, rerun the complete-image programming command above. I
 
 ## Verification status
 
-Documentation checked 21 October 2026 against the 1.0.9 board imported into GitHub in PR #1. Pad names, positions, dimensions, underside orientation and MCU/power connections were cross-checked against `index.circuit.tsx`, `parts.tsx`, `published.circuit.json` and the source-defined underside legend. Connector assignments and nRF Util commands were checked against the linked manufacturer documentation. This documentation change leaves the PCB layout unchanged. No physical target was flashed, and fixture fit and programming reliability remain untested.
+Updated 23 October 2026 for release 1.0.15. Package version, pad/hole geometry and the programmer-specific pinout were checked against the linked 0.8.0 source and saved circuit. See `validation/programming-interface.json` and `validation/pcb-mount-check-summary.json` for the measured layout checks. Probe fit, contact reliability and actual flashing require a populated prototype. These changes are included in release 1.0.15.

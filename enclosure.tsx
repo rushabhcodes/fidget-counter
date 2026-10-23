@@ -3,10 +3,10 @@ import {Fragment} from "react"
 import obj0 from "./mechanical/Circuit_Models/Stationary_Base.obj"
 import obj1 from "./mechanical/Circuit_Models/Bottom_Tray.obj"
 import obj2 from "./mechanical/Circuit_Models/Cell.obj"
-import obj3 from "./mechanical/Circuit_Models/PCB_Retainers.obj"
-import obj4 from "./mechanical/Circuit_Models/Backing_Ring.obj"
-import obj5 from "./mechanical/Circuit_Models/Attachment_Magnets.obj"
-import obj6 from "./mechanical/Circuit_Models/Magnet.obj"
+import obj3 from "./mechanical/Circuit_Models/Backing_Ring.obj"
+import obj4 from "./mechanical/Circuit_Models/Attachment_Magnets.obj"
+import obj5 from "./mechanical/Circuit_Models/Magnet.obj"
+import obj6 from "./mechanical/Circuit_Models/Encoder_Spacer.obj"
 import obj7 from "./mechanical/Circuit_Models/Cap_circular.obj"
 import obj8 from "./mechanical/Circuit_Models/Cap_ships_wheel.obj"
 import obj9 from "./mechanical/Circuit_Models/Cap_rounded_triangle.obj"
@@ -25,10 +25,10 @@ const models = [
   {name:"Stationary_Base",obj:obj0,mtl:"./mechanical/Circuit_Models/Stationary_Base.mtl",style:null},
   {name:"Bottom_Tray",obj:obj1,mtl:"./mechanical/Circuit_Models/Bottom_Tray.mtl",style:null},
   {name:"Cell",obj:obj2,mtl:"./mechanical/Circuit_Models/Cell.mtl",style:null},
-  {name:"PCB_Retainers",obj:obj3,mtl:"./mechanical/Circuit_Models/PCB_Retainers.mtl",style:null},
-  {name:"Backing_Ring",obj:obj4,mtl:"./mechanical/Circuit_Models/Backing_Ring.mtl",style:null},
-  {name:"Attachment_Magnets",obj:obj5,mtl:"./mechanical/Circuit_Models/Attachment_Magnets.mtl",style:null},
-  {name:"Magnet",obj:obj6,mtl:"./mechanical/Circuit_Models/Magnet.mtl",style:null},
+  {name:"Backing_Ring",obj:obj3,mtl:"./mechanical/Circuit_Models/Backing_Ring.mtl",style:null},
+  {name:"Attachment_Magnets",obj:obj4,mtl:"./mechanical/Circuit_Models/Attachment_Magnets.mtl",style:null},
+  {name:"Magnet",obj:obj5,mtl:"./mechanical/Circuit_Models/Magnet.mtl",style:null},
+  {name:"Encoder_Spacer",obj:obj6,mtl:"./mechanical/Circuit_Models/Encoder_Spacer.mtl",style:null},
   {name:"Cap_circular",obj:obj7,mtl:"./mechanical/Circuit_Models/Cap_circular.mtl",style:"circular"},
   {name:"Cap_ships_wheel",obj:obj8,mtl:"./mechanical/Circuit_Models/Cap_ships_wheel.mtl",style:"ships_wheel"},
   {name:"Cap_rounded_triangle",obj:obj9,mtl:"./mechanical/Circuit_Models/Cap_rounded_triangle.mtl",style:"rounded_triangle"},

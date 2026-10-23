@@ -4,8 +4,9 @@
     {
       "file": "Bottom_Tray.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 2463.007,
+      "volume_mm3": 2463.00676855449,
       "extents_mm": [
         58.0,
         58.0,
@@ -16,8 +17,9 @@
     {
       "file": "Cap_circular.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 12246.103,
+      "volume_mm3": 12246.103268069646,
       "extents_mm": [
         61.599674224853516,
         61.599674224853516,
@@ -28,8 +30,9 @@
     {
       "file": "Cap_four_leaf_clover.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 8825.387,
+      "volume_mm3": 8825.387313189085,
       "extents_mm": [
         61.599998474121094,
         61.599998474121094,
@@ -40,8 +43,9 @@
     {
       "file": "Cap_petal_flower.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 9437.879,
+      "volume_mm3": 9437.8785431913,
       "extents_mm": [
         61.599998474121094,
         55.58928680419922,
@@ -52,8 +56,9 @@
     {
       "file": "Cap_rounded_hexagon.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 9605.842,
+      "volume_mm3": 9605.841517668223,
       "extents_mm": [
         61.59720230102539,
         54.55293655395508,
@@ -64,8 +69,9 @@
     {
       "file": "Cap_rounded_square.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 8370.699,
+      "volume_mm3": 8370.698607786484,
       "extents_mm": [
         61.599998474121094,
         61.599998474121094,
@@ -76,8 +82,9 @@
     {
       "file": "Cap_rounded_triangle.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 7390.931,
+      "volume_mm3": 7390.9312652230365,
       "extents_mm": [
         51.79709434509277,
         55.971614837646484,
@@ -88,8 +95,9 @@
     {
       "file": "Cap_scalloped_coin.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 10787.763,
+      "volume_mm3": 10787.763025744236,
       "extents_mm": [
         61.599998474121094,
         61.599998474121094,
@@ -100,8 +108,9 @@
     {
       "file": "Cap_ships_wheel.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 7250.76,
+      "volume_mm3": 7250.759651492809,
       "extents_mm": [
         61.599998474121094,
         58.0,
@@ -112,8 +121,9 @@
     {
       "file": "Cap_thumb_scoop.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 11504.297,
+      "volume_mm3": 11504.296768030283,
       "extents_mm": [
         61.599998474121094,
         58.400001525878906,
@@ -124,8 +134,9 @@
     {
       "file": "Cap_turbine_wheel.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 10180.233,
+      "volume_mm3": 10180.232515315234,
       "extents_mm": [
         60.70000076293945,
         60.70000076293945,
@@ -136,8 +147,9 @@
     {
       "file": "Cap_wave_rim.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 11077.882,
+      "volume_mm3": 11077.881999164923,
       "extents_mm": [
         61.599998474121094,
         61.599998474121094,
@@ -146,39 +158,18 @@
       "sha256": "ea251c199b6016a4cb56bd2f495a9e643d6f03eb9d9fc17d1a33225abf6bc8aa"
     },
     {
-      "file": "PCB_Retainer_Print_4.stl",
-      "closed": true,
-      "components": 1,
-      "volume_mm3": 11.746,
-      "extents_mm": [
-        4.400000095367432,
-        4.400000095367432,
-        1.0
-      ],
-      "sha256": "3ee775ab365918dba5ab1a0998291d20026fcf813021d410171914a037a1e883"
-    },
-    {
       "file": "Stationary_Base.stl",
       "closed": true,
+      "consistent_winding": true,
       "components": 1,
-      "volume_mm3": 4228.204,
+      "volume_mm3": 4212.929838983688,
       "extents_mm": [
         58.0,
         58.0,
         10.050000190734863
       ],
-      "sha256": "6aae7926bdf35da52768c88d6f54f8c64996427ae321abf4c8381c3ec2a4bf32"
+      "sha256": "f2524282256d400a376be12c1b12c501e603702682b23f01e32ecb69cd79902e"
     }
   ],
-  "unchanged_parts": {
-    "Stationary_Base": "Identical STL SHA256 to previous inward-button draft",
-    "Bottom_Tray": "Identical STL SHA256 to previous inward-button draft",
-    "PCB_Retainer_Print_4": "Identical STL SHA256 to previous inward-button draft"
-  },
-  "eleven_cap_models": true,
-  "assembly_step_states": 33,
-  "physically_tested": false,
-  "grip_height_mm": 8.0,
-  "overall_top_plane_mm": 15.2,
-  "actual_pcb_model_unchanged": true
+  "physically_tested": false
 }

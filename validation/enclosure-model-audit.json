@@ -1,5 +1,5 @@
 {
-  "revision": "1.0.7",
+  "revision": "Inward-hole, clearance-fit snap draft based on 1.0.9",
   "selectedStyle": "circular",
   "allCapStyles": [
     "circular",
@@ -15,8 +15,8 @@
     "thumb_scoop"
   ],
   "mechanicalModels": 8,
-  "circuitSha256": "874a0b2e78caac284df2370cc58d322cb904f43cabcca2e0a0a37fa627487f4e",
-  "glbSha256": "a307c229628daaeb6ee75d700e09f423774e6ee4f8386b12343a5ce5fdfcb33c",
+  "circuitSha256": "8ba1a5a6d128ddbd791b88336e11244136605dc1e6537a22b4b384764bc9efbd",
+  "glbSha256": "4123ac47668cc868c135083feea3c3e650244244689c288245a347ff161dfc4d",
   "models": [
     {
       "name": "Stationary_Base",
@@ -62,22 +62,6 @@
           9.9947557,
           -2,
           9.9986888
-        ]
-      ],
-      "maximumBoundsErrorMm": 0
-    },
-    {
-      "name": "PCB_Retainers",
-      "worldBoundsGltfMm": [
-        [
-          -13.6551299,
-          0.5,
-          -13.6548414
-        ],
-        [
-          13.6539761,
-          1.5,
-          13.6548414
         ]
       ],
       "maximumBoundsErrorMm": 0
@@ -131,6 +115,22 @@
       "maximumBoundsErrorMm": 0
     },
     {
+      "name": "Encoder_Spacer",
+      "worldBoundsGltfMm": [
+        [
+          -2.5,
+          4.300000000000001,
+          -2.4996722
+        ],
+        [
+          2.4986889,
+          4.5,
+          2.4996722
+        ]
+      ],
+      "maximumBoundsErrorMm": 0
+    },
+    {
       "name": "Cap_circular",
       "worldBoundsGltfMm": [
         [
@@ -147,7 +147,119 @@
       "maximumBoundsErrorMm": 0
     }
   ],
-  "printParts": 14,
+  "printParts": 13,
   "pressRotationConfigurationsCovered": 396,
-  "physicalTested": false
+  "physicalTested": false,
+  "pcbRetention": {
+    "system": "Two clearance-fit snap latches and two recessed locating posts; no bolts",
+    "pcb_screws": 0,
+    "separate_pcb_retainers": 0,
+    "lock_count": 2,
+    "mount_centers_mm": [
+      [
+        10.748023074035522,
+        10.74802307403552
+      ],
+      [
+        -10.74802307403552,
+        10.748023074035522
+      ],
+      [
+        -10.748023074035524,
+        -10.74802307403552
+      ],
+      [
+        10.748023074035519,
+        -10.748023074035524
+      ]
+    ],
+    "mount_radius_mm": 15.2,
+    "clip_centers_mm": [
+      [
+        10.748023074035522,
+        10.74802307403552
+      ],
+      [
+        -10.748023074035524,
+        -10.74802307403552
+      ]
+    ],
+    "pcb_hole_diameter_mm": 3,
+    "nominal_pcb_edge_web_mm": 1.5500000000000007,
+    "release_direction": "Push both diagonal latch tips radially OUTWARD, then lift the board",
+    "release_displacement_mm": 0.6,
+    "retention_ledge_z_mm": 8.25,
+    "axial_float_mm": 0.15000000000000036,
+    "latch_top_z_mm": 9,
+    "locator_top_z_mm": 7.75,
+    "locator_recess_below_board_top_mm": 0.35,
+    "rigid_locator_to_hole_radial_clearance_mm": 0.3999999999999999,
+    "minimum_locked_feature_to_hole_clearance_mm": 0.20288782289271534,
+    "minimum_released_hook_to_hole_clearance_mm": 0.15835921350012594,
+    "inward_retention_overlap_mm": 0.30000000000000004,
+    "beam_thickness_mm": 0.6,
+    "beam_width_mm": 1.2,
+    "straight_beam_strain_estimate_percent": 1.1851851851851851,
+    "validation_limit": "Prescribed clearance poses; no FEA, measured force, fatigue or printed fit validation",
+    "physical_tested": false,
+    "retention_checked_at_lift_mm": 0.25,
+    "seated_base_to_pcb_intersection_mm3": 0,
+    "released_base_to_pcb_intersection_mm3": 0,
+    "extraction_checks": [
+      {
+        "lift_mm": 0,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 0.08,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 0.16,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 0.3,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 0.5,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 0.85,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 1,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 2,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 4,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 6,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 10,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 15,
+        "rigid_collisions": 0
+      },
+      {
+        "lift_mm": 24,
+        "rigid_collisions": 0
+      }
+    ]
+  },
+  "fittedComponentsUnchangedFrom": "pre-TC2030 automatic-lock 1.0.9 draft",
+  "nativePcbAndBaseClearanceVerified": true
 }

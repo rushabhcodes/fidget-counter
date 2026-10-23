@@ -1,0 +1,3567 @@
+{
+  "provenance": "Automatic-lock 1.0.9 draft before the TC2030 interface edit, backed up 2026-10-23",
+  "components": [
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_chip",
+        "name": "ANT1",
+        "manufacturer_part_number": "RFANT3216120A5T",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C127629"
+          ]
+        }
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 0.02603500000000003,
+          "y": 16.9
+        },
+        "width": 3.9000684,
+        "height": 1.659991599999998,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 0,
+        "display_offset_y": 16.9,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 0.02603500000000003,
+            "y": 16.9,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/RFANT3216120A5T/RFANT3216120A5T.obj",
+          "model_step_url": "./imports/RFANT3216120A5T/RFANT3216120A5T.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": -0.026035000000092623,
+            "y": 0,
+            "z": -0.6
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7999984,
+          "height": 1.6599916,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 1.57607,
+          "y": 16.9,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7999984,
+          "height": 1.6599916,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -1.524,
+          "y": 16.9,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "name": "BT1",
+        "ftype": "simple_power_source",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C964787"
+          ]
+        },
+        "manufacturer_part_number": "BS-08-B2AA020-R",
+        "are_pins_interchangeable": false
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -1.1999999999999993,
+          "y": 0
+        },
+        "width": 27.0998188,
+        "height": 3.7999924,
+        "layer": "bottom",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -1.2,
+        "display_offset_y": 0,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -1.1999999999999993,
+            "y": 0,
+            "z": -0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 180,
+            "z": 0
+          },
+          "model_obj_url": "./imports/BS_08_B2AA020_R/BS_08_B2AA020_R.obj",
+          "model_step_url": "./imports/BS_08_B2AA020_R/BS_08_B2AA020_R.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0.550166499999996,
+            "y": 0.004051299999900948,
+            "z": -0.01
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "bottom",
+          "shape": "rect",
+          "width": 5.6999886,
+          "height": 2.7999944,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 9.4999151,
+          "y": 0,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "bottom",
+          "shape": "rect",
+          "width": 3.499993,
+          "height": 3.7999924,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -12.9999129,
+          "y": 0,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C1",
+        "manufacturer_part_number": "GRM1555C1H120JA01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C76948"
+          ]
+        },
+        "capacitance": 1.2e-11,
+        "display_capacitance": "12pF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 2.3,
+          "y": 7.3
+        },
+        "width": 1.340231,
+        "height": 0.5400039999999997,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 2.3,
+        "display_offset_y": 7.3,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 2.3,
+            "y": 7.3,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
+          "model_step_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 2.720116,
+          "y": 7.3,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 1.8798839999999999,
+          "y": 7.3,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C10",
+        "manufacturer_part_number": "CL10B105KA8NNWC",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C730442"
+          ]
+        },
+        "capacitance": 0.000001,
+        "display_capacitance": "1uF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -7.4,
+          "y": 12
+        },
+        "width": 0.8999982000000006,
+        "height": 2.200046399999998,
+        "layer": "top",
+        "rotation": 90,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -7.4,
+        "display_offset_y": 12,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -7.4,
+            "y": 12,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 90
+          },
+          "model_obj_url": "./imports/CL10B105KA8NNWC/CL10B105KA8NNWC.obj",
+          "model_step_url": "./imports/CL10B105KA8NNWC/CL10B105KA8NNWC.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": 0,
+            "z": -0.4
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.8999982,
+          "height": 0.7999984,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -7.4,
+          "y": 12.700023999999999,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.8999982,
+          "height": 0.7999984,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -7.4,
+          "y": 11.299976000000001,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C11",
+        "manufacturer_part_number": "GRM1555C1H120JA01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C76948"
+          ]
+        },
+        "capacitance": 1.2e-11,
+        "display_capacitance": "12pF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -14.8,
+          "y": 6.7
+        },
+        "width": 0.5400039999999997,
+        "height": 1.340231000000001,
+        "layer": "top",
+        "rotation": 270,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -14.8,
+        "display_offset_y": 6.7,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -14.8,
+            "y": 6.7,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 270
+          },
+          "model_obj_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
+          "model_step_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -14.8,
+          "y": 6.279884,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -14.8,
+          "y": 7.120116,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C12",
+        "manufacturer_part_number": "GRM1555C1H120JA01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C76948"
+          ]
+        },
+        "capacitance": 1.2e-11,
+        "display_capacitance": "12pF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -14.8,
+          "y": 4.6
+        },
+        "width": 0.5400039999999997,
+        "height": 1.3402310000000006,
+        "layer": "top",
+        "rotation": 90,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -14.8,
+        "display_offset_y": 4.6,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -14.8,
+            "y": 4.6,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 90
+          },
+          "model_obj_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
+          "model_step_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -14.8,
+          "y": 5.020116,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -14.8,
+          "y": 4.1798839999999995,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C15",
+        "manufacturer_part_number": "GRM188R60J226ME15D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C440187"
+          ]
+        },
+        "capacitance": 0.000022,
+        "display_capacitance": "22uF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -6,
+          "y": -3.5
+        },
+        "width": 2.2000463999999997,
+        "height": 0.8999981999999997,
+        "layer": "top",
+        "rotation": 180,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -6,
+        "display_offset_y": -3.5,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -6,
+            "y": -3.5,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 180
+          },
+          "model_obj_url": "./imports/GRM188R60J226ME15D/GRM188R60J226ME15D.obj",
+          "model_step_url": "./imports/GRM188R60J226ME15D/GRM188R60J226ME15D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": 0,
+            "z": -0.4
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7999984,
+          "height": 0.8999982,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -6.700024,
+          "y": -3.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7999984,
+          "height": 0.8999982,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -5.299976,
+          "y": -3.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C16",
+        "manufacturer_part_number": "GRM155R71C104KA88D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C71629"
+          ]
+        },
+        "capacitance": 1e-7,
+        "display_capacitance": "100nF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -4.8,
+          "y": 9.9
+        },
+        "width": 0.5400039999999997,
+        "height": 1.3402309999999993,
+        "layer": "top",
+        "rotation": 90,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -4.8,
+        "display_offset_y": 9.9,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -4.8,
+            "y": 9.9,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 90
+          },
+          "model_obj_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.obj",
+          "model_step_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -4.8,
+          "y": 10.320116,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -4.8,
+          "y": 9.479884,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C17",
+        "manufacturer_part_number": "GRM155R71C103KA01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C85735"
+          ]
+        },
+        "capacitance": 1e-8,
+        "display_capacitance": "10nF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 9.5,
+          "y": 0
+        },
+        "width": 0.5400039999999997,
+        "height": 1.3402310000000002,
+        "layer": "top",
+        "rotation": 90,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 9.5,
+        "display_offset_y": 0,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 9.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 90
+          },
+          "model_obj_url": "./imports/GRM155R71C103KA01D/GRM155R71C103KA01D.obj",
+          "model_step_url": "./imports/GRM155R71C103KA01D/GRM155R71C103KA01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 9.5,
+          "y": 0.420116,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 9.5,
+          "y": -0.420116,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C18",
+        "manufacturer_part_number": "GRM155R71C104KA88D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C71629"
+          ]
+        },
+        "capacitance": 1e-7,
+        "max_decoupling_trace_length": 3,
+        "display_capacitance": "100nF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -8.2,
+          "y": 9.4
+        },
+        "width": 1.3402310000000002,
+        "height": 0.5400039999999997,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -8.2,
+        "display_offset_y": 9.4,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -8.2,
+            "y": 9.4,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.obj",
+          "model_step_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -7.779883999999999,
+          "y": 9.4,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -8.620116,
+          "y": 9.4,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C2",
+        "manufacturer_part_number": "GRM1555C1H120JA01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C76948"
+          ]
+        },
+        "capacitance": 1.2e-11,
+        "display_capacitance": "12pF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 0,
+          "y": 10.5
+        },
+        "width": 1.340231,
+        "height": 0.5400039999999997,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 0,
+        "display_offset_y": 10.5,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 0,
+            "y": 10.5,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
+          "model_step_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 0.420116,
+          "y": 10.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -0.420116,
+          "y": 10.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C3",
+        "manufacturer_part_number": "GJM1555C1HR80WB01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C88902"
+          ]
+        },
+        "capacitance": 8e-13,
+        "display_capacitance": "0.8pF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -3.1,
+          "y": 2.4
+        },
+        "width": 0.5400040000000006,
+        "height": 1.3402310000000002,
+        "layer": "top",
+        "rotation": 270,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -3.1,
+        "display_offset_y": 2.4,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -3.1,
+            "y": 2.4,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 270
+          },
+          "model_obj_url": "./imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.obj",
+          "model_step_url": "./imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -3.1,
+          "y": 1.979884,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -3.1,
+          "y": 2.820116,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C4",
+        "manufacturer_part_number": "GRM155R71C104KA88D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C71629"
+          ]
+        },
+        "capacitance": 1e-7,
+        "display_capacitance": "100nF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -10,
+          "y": 0.7
+        },
+        "width": 1.3402309999999993,
+        "height": 0.5400040000000002,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -10,
+        "display_offset_y": 0.7,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -10,
+            "y": 0.7,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.obj",
+          "model_step_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -9.579884,
+          "y": 0.7,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -10.420116,
+          "y": 0.7,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C5",
+        "manufacturer_part_number": "GRM155R71C104KA88D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C71629"
+          ]
+        },
+        "capacitance": 1e-7,
+        "display_capacitance": "100nF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -12.4,
+          "y": 8.42
+        },
+        "width": 1.3402309999999993,
+        "height": 0.5400039999999997,
+        "layer": "top",
+        "rotation": 180,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -12.4,
+        "display_offset_y": 8.42,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -12.4,
+            "y": 8.42,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 180
+          },
+          "model_obj_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.obj",
+          "model_step_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -12.820116,
+          "y": 8.42,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -11.979884,
+          "y": 8.42,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C6",
+        "manufacturer_part_number": "GRM155R71C104KA88D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C71629"
+          ]
+        },
+        "capacitance": 1e-7,
+        "display_capacitance": "100nF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -1.6,
+          "y": 1.2
+        },
+        "width": 1.3402310000000002,
+        "height": 0.5400040000000002,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -1.6,
+        "display_offset_y": 1.2,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -1.6,
+            "y": 1.2,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.obj",
+          "model_step_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -1.1798840000000002,
+          "y": 1.2,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -2.0201160000000002,
+          "y": 1.2,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C7",
+        "manufacturer_part_number": "GRM1555C1H101JA01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C77177"
+          ]
+        },
+        "capacitance": 1e-10,
+        "display_capacitance": "100pF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 0,
+          "y": 5.5
+        },
+        "width": 1.340231,
+        "height": 0.5400039999999997,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 0,
+        "display_offset_y": 5.5,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 0,
+            "y": 5.5,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.obj",
+          "model_step_url": "./imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 0.420116,
+          "y": 5.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -0.420116,
+          "y": 5.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C8",
+        "manufacturer_part_number": "GRM155R71C104KA88D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C71629"
+          ]
+        },
+        "capacitance": 1e-7,
+        "display_capacitance": "100nF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -2.2,
+          "y": 6
+        },
+        "width": 1.340231,
+        "height": 0.5400039999999997,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -2.2,
+        "display_offset_y": 6,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -2.2,
+            "y": 6,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.obj",
+          "model_step_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -1.7798840000000002,
+          "y": 6,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -2.6201160000000003,
+          "y": 6,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C9",
+        "manufacturer_part_number": "GRM188R60J475KE19D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C71631"
+          ]
+        },
+        "capacitance": 0.0000047,
+        "display_capacitance": "4.7uF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -7.5,
+          "y": 0.5
+        },
+        "width": 2.200046399999999,
+        "height": 0.8999982,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -7.5,
+        "display_offset_y": 0.5,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -7.5,
+            "y": 0.5,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM188R60J475KE19D/GRM188R60J475KE19D.obj",
+          "model_step_url": "./imports/GRM188R60J475KE19D/GRM188R60J475KE19D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": 0,
+            "z": -0.4
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7999984,
+          "height": 0.8999982,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -6.799976,
+          "y": 0.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7999984,
+          "height": 0.8999982,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -8.200023999999999,
+          "y": 0.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "name": "L1",
+        "ftype": "simple_inductor",
+        "inductance": "3.9nH",
+        "display_inductance": "3.9nH",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C5452416"
+          ]
+        },
+        "manufacturer_part_number": "LQG15HS3N9B02D",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -2.8,
+          "y": 4.4
+        },
+        "width": 1.379982,
+        "height": 0.5400039999999997,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -2.8,
+        "display_offset_y": 4.4,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -2.8,
+            "y": 4.4,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/LQG15HS3N9B02D/LQG15HS3N9B02D.obj",
+          "model_step_url": "./imports/LQG15HS3N9B02D/LQG15HS3N9B02D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -2.3800109999999997,
+          "y": 4.4,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -3.219989,
+          "y": 4.4,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "name": "L2",
+        "ftype": "simple_inductor",
+        "inductance": "6.8nH",
+        "display_inductance": "6.8nH",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C521064"
+          ]
+        },
+        "manufacturer_part_number": "LQG15HS6N8G02D",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -0.6000000000000001,
+          "y": 4.4
+        },
+        "width": 1.8802604,
+        "height": 0.5400039999999997,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -0.6,
+        "display_offset_y": 4.4,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -0.6000000000000001,
+            "y": 4.4,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/LQG15HS6N8G02D/LQG15HS6N8G02D.obj",
+          "model_step_url": "./imports/LQG15HS6N8G02D/LQG15HS6N8G02D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": 0,
+            "z": -0.26
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7900924,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -0.054915999999999965,
+          "y": 4.4,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7900924,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -1.145084,
+          "y": 4.4,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_resistor",
+        "name": "R1",
+        "manufacturer_part_number": "RC0402FR-0710KL",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C60490"
+          ]
+        },
+        "resistance": 10000,
+        "display_resistance": "10kΩ",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 2.3,
+          "y": 1.5
+        },
+        "width": 1.4312899999999997,
+        "height": 0.5400040000000002,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 2.3,
+        "display_offset_y": 1.5,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 2.3,
+            "y": 1.5,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/RC0402FR_0710KL/RC0402FR_0710KL.obj",
+          "model_step_url": "./imports/RC0402FR_0710KL/RC0402FR_0710KL.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": 0
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.565658,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 2.7328159999999997,
+          "y": 1.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.565658,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 1.867184,
+          "y": 1.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_resistor",
+        "name": "R2",
+        "manufacturer_part_number": "RC0402FR-0710KL",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C60490"
+          ]
+        },
+        "resistance": 10000,
+        "display_resistance": "10kΩ",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 2.3,
+          "y": 0
+        },
+        "width": 1.4312899999999997,
+        "height": 0.540004,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 2.3,
+        "display_offset_y": 0,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 2.3,
+            "y": 0,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/RC0402FR_0710KL/RC0402FR_0710KL.obj",
+          "model_step_url": "./imports/RC0402FR_0710KL/RC0402FR_0710KL.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": 0
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.565658,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 2.7328159999999997,
+          "y": 0,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.565658,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 1.867184,
+          "y": 0,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_resistor",
+        "name": "R3",
+        "manufacturer_part_number": "RC0402FR-0710KL",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C60490"
+          ]
+        },
+        "resistance": 10000,
+        "display_resistance": "10kΩ",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 2.3,
+          "y": -1.5
+        },
+        "width": 1.4312899999999997,
+        "height": 0.5400040000000002,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 2.3,
+        "display_offset_y": -1.5,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 2.3,
+            "y": -1.5,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/RC0402FR_0710KL/RC0402FR_0710KL.obj",
+          "model_step_url": "./imports/RC0402FR_0710KL/RC0402FR_0710KL.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": 0
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.565658,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 2.7328159999999997,
+          "y": -1.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.565658,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 1.867184,
+          "y": -1.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_resistor",
+        "name": "R4",
+        "manufacturer_part_number": "RC0402FR-07100KL",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C60491"
+          ]
+        },
+        "resistance": 100000,
+        "display_resistance": "100kΩ",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -4.2,
+          "y": 0.7
+        },
+        "width": 1.4312900000000002,
+        "height": 0.5400040000000002,
+        "layer": "top",
+        "rotation": 180,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -4.2,
+        "display_offset_y": 0.7,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -4.2,
+            "y": 0.7,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 180
+          },
+          "model_obj_url": "./imports/RC0402FR_07100KL/RC0402FR_07100KL.obj",
+          "model_step_url": "./imports/RC0402FR_07100KL/RC0402FR_07100KL.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": 0
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.565658,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -4.632816,
+          "y": 0.7,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.565658,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -3.7671840000000003,
+          "y": 0.7,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_resistor",
+        "name": "R5",
+        "manufacturer_part_number": "RC0402FR-07100KL",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C60491"
+          ]
+        },
+        "resistance": 100000,
+        "display_resistance": "100kΩ",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 8,
+          "y": 0
+        },
+        "width": 1.4312900000000006,
+        "height": 0.540004,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 8,
+        "display_offset_y": 0,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 8,
+            "y": 0,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/RC0402FR_07100KL/RC0402FR_07100KL.obj",
+          "model_step_url": "./imports/RC0402FR_07100KL/RC0402FR_07100KL.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012700000070253736,
+            "z": 0
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.565658,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 8.432816,
+          "y": 0,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.565658,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 7.567184,
+          "y": 0,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "name": "SW1",
+        "ftype": "simple_push_button",
+        "supplier_part_numbers": {},
+        "manufacturer_part_number": "KMR223NG ULC LFG / Y78B22324FP",
+        "are_pins_interchangeable": true,
+        "internally_connected_source_port_ids": [
+          [
+            "SW1.1",
+            "SW1.4"
+          ],
+          [
+            "SW1.2",
+            "SW1.3"
+          ]
+        ]
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 0,
+          "y": -5
+        },
+        "width": 5.0000662,
+        "height": 2.599943999999999,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 0,
+        "display_offset_y": -5,
+        "pin1_location": "rightside_top"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 0,
+            "y": -5,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/KMR232NGULCLFS/KMR232NGULCLFS.obj",
+          "model_step_url": "./imports/KMR232NGULCLFS/KMR232NGULCLFS.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": -0.00002539999979944696,
+            "y": -0.004974599999973184,
+            "z": -1.42
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.8999982,
+          "height": 0.999998,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 2.050034,
+          "y": -4.200027,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.8999982,
+          "height": 0.999998,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 2.050034,
+          "y": -5.799973,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.8999982,
+          "height": 0.999998,
+          "port_hints": [
+            "pin3"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -2.050034,
+          "y": -5.799973,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.8999982,
+          "height": 0.999998,
+          "port_hints": [
+            "pin4"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -2.050034,
+          "y": -4.200027,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_chip",
+        "name": "U1",
+        "manufacturer_part_number": "NRF52810-QFAA-R",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C141828"
+          ]
+        }
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -7.5,
+          "y": 5
+        },
+        "width": 6.949998800000002,
+        "height": 6.949998800000002,
+        "layer": "top",
+        "rotation": 270,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -7.5,
+        "display_offset_y": 5,
+        "pin1_location": "bottomside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -7.5,
+            "y": 5,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 180
+          },
+          "model_obj_url": "./imports/NRF52810_QFAA_R/NRF52810_QFAA_R.obj",
+          "model_step_url": "./imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": -0.00005079999993995443,
+            "y": -0.00005079999993995443,
+            "z": 0
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 4.5999908,
+          "height": 4.5999908,
+          "port_hints": [
+            "pin49"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -7.49873,
+          "y": 5.0009398,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -9.700148,
+          "y": 2.0000060000000004,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin13"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -9.300098,
+          "y": 2.0000060000000004,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin14"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -8.900048,
+          "y": 2.0000060000000004,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin15"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -8.499998000000001,
+          "y": 2.000006,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin16"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -8.099948000000001,
+          "y": 2.000006,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin17"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -7.700152000000001,
+          "y": 2.000006,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin18"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -7.300102000000001,
+          "y": 2.000006,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin19"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -6.9000520000000005,
+          "y": 2.000006,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin20"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -6.500002,
+          "y": 2.000006,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin21"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -6.099952,
+          "y": 2.0000059999999995,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin22"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -5.700156000000001,
+          "y": 2.0000059999999995,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin23"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -5.300106,
+          "y": 2.0000059999999995,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin24"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -5.3001059999999995,
+          "y": 7.999993999999999,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin37"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -5.700156,
+          "y": 7.999993999999999,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin38"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -6.099952,
+          "y": 7.999993999999999,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin39"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -6.500001999999999,
+          "y": 7.999994,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin40"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -6.900052,
+          "y": 7.999994,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin41"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -7.300102,
+          "y": 7.999994,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin42"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -7.700151999999999,
+          "y": 7.999994,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin43"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -8.099948,
+          "y": 7.999994,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin44"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -8.499998,
+          "y": 7.999994,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin45"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -8.900048,
+          "y": 7.999994000000001,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin46"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -9.300098,
+          "y": 7.999994000000001,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin47"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -9.700147999999999,
+          "y": 7.999994000000001,
+          "radius": 0.0999998,
+          "height": 0.1999996,
+          "width": 0.9500108,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin48"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500005999999999,
+          "y": 7.199894,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin36"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500005999999999,
+          "y": 6.799843999999999,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin35"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500005999999999,
+          "y": 6.400048,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin34"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500006,
+          "y": 5.999998,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin33"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500006,
+          "y": 5.5999479999999995,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin32"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500006,
+          "y": 5.199897999999999,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin31"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500006,
+          "y": 4.799847999999999,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin30"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500006,
+          "y": 4.400052,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin29"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500006,
+          "y": 4.000001999999999,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin28"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500006000000001,
+          "y": 3.5999519999999996,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin27"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500006000000001,
+          "y": 3.199902,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin26"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -4.500006000000001,
+          "y": 2.7998519999999996,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin25"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994000000001,
+          "y": 2.7998520000000005,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin12"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994000000001,
+          "y": 3.1999020000000007,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin11"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994000000001,
+          "y": 3.5999520000000005,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin10"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994000000001,
+          "y": 4.000002,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin9"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994000000001,
+          "y": 4.4000520000000005,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin8"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994000000001,
+          "y": 4.799848000000001,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin7"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994000000001,
+          "y": 5.199898,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin6"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994000000001,
+          "y": 5.599948,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin5"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994000000001,
+          "y": 5.999998000000001,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin4"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994,
+          "y": 6.400048,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin3"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994,
+          "y": 6.799844,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rotated_pill",
+          "x": -10.499994,
+          "y": 7.1998940000000005,
+          "radius": 0.0999998,
+          "height": 0.9500108,
+          "width": 0.1999996,
+          "ccw_rotation": 270,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_chip",
+        "name": "U2",
+        "manufacturer_part_number": "TMAG3001A2YBGR",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C31115089"
+          ]
+        }
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 0,
+          "y": 0
+        },
+        "width": 0.5997956,
+        "height": 1.0000996,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 0,
+        "display_offset_y": 0,
+        "pin1_location": "leftside_top"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/TMAG3001A2YBGR/TMAG3001A2YBGR.obj",
+          "model_step_url": "./imports/TMAG3001A2YBGR/TMAG3001A2YBGR.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.000012699999984988608,
+            "z": -0.478
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "circle",
+          "radius": 0.0999998,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -0.199898,
+          "y": 0.40005,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "circle",
+          "radius": 0.0999998,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -0.199898,
+          "y": 0,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "circle",
+          "radius": 0.0999998,
+          "port_hints": [
+            "pin3"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -0.199898,
+          "y": -0.40005,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "circle",
+          "radius": 0.0999998,
+          "port_hints": [
+            "pin4"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 0.199898,
+          "y": 0.40005,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "circle",
+          "radius": 0.0999998,
+          "port_hints": [
+            "pin5"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 0.199898,
+          "y": 0,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "circle",
+          "radius": 0.0999998,
+          "port_hints": [
+            "pin6"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 0.199898,
+          "y": -0.40005,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "name": "X1",
+        "ftype": "simple_crystal",
+        "manufacturer_part_number": "X201632MKB4SI",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C718072"
+          ]
+        },
+        "frequency": 32000000,
+        "load_capacitance": 8e-12,
+        "pin_variant": "four_pin",
+        "are_pins_interchangeable": false,
+        "internally_connected_source_port_ids": [
+          [
+            "X1.4",
+            "X1.2"
+          ]
+        ]
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -0.00012699999999998823,
+          "y": 7.999999999999999
+        },
+        "width": 1.8998184,
+        "height": 2.300046199999999,
+        "layer": "top",
+        "rotation": 90,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 0,
+        "display_offset_y": 8,
+        "pin1_location": "bottomside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -0.00012699999999998823,
+            "y": 7.999999999999999,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 90
+          },
+          "model_obj_url": "./imports/X201632MKB4SI/X201632MKB4SI.obj",
+          "model_step_url": "./imports/X201632MKB4SI/X201632MKB4SI.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.00011430000006384944,
+            "z": -0.01
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7999984,
+          "height": 0.8999982,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 0.549783,
+          "y": 8.700023999999999,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7999984,
+          "height": 0.8999982,
+          "port_hints": [
+            "pin3"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -0.550037,
+          "y": 8.700023999999999,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7999984,
+          "height": 0.8999982,
+          "port_hints": [
+            "pin4"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -0.550037,
+          "y": 7.299976,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.7999984,
+          "height": 0.8999982,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 0.549783,
+          "y": 7.299976,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "name": "X2",
+        "ftype": "simple_crystal",
+        "manufacturer_part_number": "ABS07-32.768KHZ-9-T",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C179635"
+          ]
+        },
+        "frequency": 32768,
+        "load_capacitance": 9e-12,
+        "pin_variant": "two_pin",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -13,
+          "y": 5.8
+        },
+        "width": 1.6999965999999986,
+        "height": 3.5999166000000002,
+        "layer": "top",
+        "rotation": 270,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -13,
+        "display_offset_y": 5.8,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -13,
+            "y": 5.8,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 270
+          },
+          "model_obj_url": "./imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj",
+          "model_step_url": "./imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": -0.000025400000026820635,
+            "y": -0.00013969999997698324,
+            "z": -0.01
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 1.6999966,
+          "height": 1.0500106,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -13,
+          "y": 4.525047,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 1.6999966,
+          "height": 1.0500106,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -13,
+          "y": 7.074953,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    }
+  ]
+}
