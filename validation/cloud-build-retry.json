@@ -11,7 +11,12 @@
   "archive": {
     "removedFromCloudInputFiles": 102,
     "bytes": 29160452,
-    "preservedOnGitHub": ".archive/v1.0.6"
+    "preservedOnGitHub": ".archive-v1.0.6.zip",
+    "browseOriginalFiles": "https://github.com/rushabhcodes/fidget-counter/tree/2b77ad766bdc5dd5649cf8cec29f7280d64741d3/archive/v1.0.6",
+    "nestedHiddenDirectoryWasImported": true,
+    "zipFiles": 175,
+    "uncompressedBytes": 35069892,
+    "zipSha256": "31db26771cb5871427367cbe13d59ca6b351219a01577307424ddb09df46d24b"
   },
   "guardFix": "Normalize registry-managed release/compiler metadata; verify all other package settings and dependency versions. Check the original lockfile locally, allowing the CI install to regenerate it.",
   "freshCiPassed": true,
