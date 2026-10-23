@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs"
 import { dirname, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { gunzipSync } from "node:zlib"
+import { verifyPackageInput } from "./validation/cloud-package-input.mjs"
 
 // The registry worker has a time limit. Publish the locally checked artifacts
 // without loading the circuit compiler, downloading CAD models, or rebuilding
@@ -17,6 +18,13 @@ const projectPath = (name) => {
 }
 
 console.log("[cloud-build] Verifying source and checked preview artifacts")
+if (manifest.formatVersion !== 2) throw new Error("Unsupported checked preview manifest; run build:cloud:prepare")
+verifyPackageInput({
+  packageJson: JSON.parse(readFileSync(projectPath("package.json"))),
+  lockfile: readFileSync(projectPath("bun.lock")),
+  expected: manifest.packageInput,
+  cloudBootstrap: process.env.TSCIRCUIT_INSIDE_BUILD_COMMAND === "1",
+})
 for (const [name, expectedHash] of Object.entries(manifest.inputs)) {
   if (sha256(readFileSync(projectPath(name))) !== expectedHash) {
     throw new Error(`Stale preview: ${name} changed. Run the local checks, build, and build:cloud:prepare before pushing.`)

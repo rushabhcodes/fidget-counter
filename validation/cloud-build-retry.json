@@ -1,0 +1,38 @@
+{
+  "release": "1.0.15",
+  "checkedAt": "2026-10-23T19:10:43.696264+00:00",
+  "previousFailure": {
+    "packageBuildId": "fdb4df8f-a256-4e7b-b3ef-2d226a53f6e7",
+    "error": "user_code_job_timeout",
+    "onlyPersistedLog": "execution_start",
+    "projectCommandStarted": false
+  },
+  "diagnosis": "The worker stalled before its exec_start checkpoint. Its buffered logs cannot distinguish sandbox provisioning from input staging. The input map included 102 unused archive files (29,160,452 bytes), increasing the staging load.",
+  "archive": {
+    "removedFromCloudInputFiles": 102,
+    "bytes": 29160452,
+    "preservedOnGitHub": ".archive/v1.0.6"
+  },
+  "guardFix": "Normalize registry-managed release/compiler metadata; verify all other package settings and dependency versions. Check the original lockfile locally, allowing the CI install to regenerate it.",
+  "freshCiPassed": true,
+  "cloudBootstrapRegressionChecksPassed": true,
+  "boardAndAllSixPreviewArtifactsUnchanged": true,
+  "logs": [
+    "validation/cloud-build-checks/ci.log",
+    "validation/cloud-build-checks/bootstrap.log"
+  ],
+  "upstreamSources": [
+    "https://github.com/tscircuit/usercode.tscircuit.com/blob/main/src/jobs/execute-job-async.ts",
+    "https://github.com/tscircuit/usercode.tscircuit.com/blob/main/src/utils/job-storage.ts",
+    "https://github.com/tscircuit/usercode.tscircuit.com/blob/main/src/jobs/cloud-tscircuit-package.ts",
+    "https://github.com/tscircuit/cli/blob/main/lib/shared/install-project-dependencies.ts",
+    "https://github.com/tscircuit/api.tscircuit.com/blob/main/lib/github/file-filter.ts"
+  ],
+  "sha256": {
+    "cloud-build.mjs": "05c760e8c5ef821055dbb62f6ce46351c32d4cb0552ff700f4a83f110440e85f",
+    "validation/cloud-package-input.mjs": "eeadd46469991a4b8fcb34c0e9ce12bfc66d230fadbb1be70ecb27a17fa57cce",
+    "validation/check-cloud-build.mjs": "5cf8a85eda34d18fdab042b701fc4fd65616c77770766783fccf413f3bc19d6e",
+    "cloud-assets/manifest.json": "d45476f153559b649cc31144e032063b80dce0be9513f32977018065eee86aae",
+    "published.circuit.json": "bd9f166db6bb0cd346f336928c59b85ffa068a9483a2c6e273ac79fdcdf042f0"
+  }
+}

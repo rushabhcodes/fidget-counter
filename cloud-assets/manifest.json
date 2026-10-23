@@ -1,8 +1,8 @@
 {
-  "formatVersion": 1,
+  "formatVersion": 2,
   "description": "Locally built and checked preview; hashes bind it to the published source and CAD assets.",
   "inputs": {
-    "bun.lock": "8c200f91bb1e2d0b061a46e92dc11ccc620a59d1904c7fe9ca99d2ff062c9560",
+    "cloud-build.mjs": "05c760e8c5ef821055dbb62f6ce46351c32d4cb0552ff700f4a83f110440e85f",
     "enclosure.tsx": "85f1153460ef13a732d2dfd41e3131b56ae3680f90473d905d1ac57f11794a8b",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj": "5cb7b3d39911902565b7d20a63b8be35513c8d72b9d0dca36c801d731893bcf5",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.step": "d8b313a83de060e58141efc987e51c0ad04a3855784f981139dc3698331d1f2d",
@@ -133,12 +133,19 @@
     "mechanical/pcb_snap_mounts.py": "c0a2fe02705f0cc1b01ec2e53c043cd0332c36286b2f163e87374d148c0ce731",
     "mechanical/render_pcb_lock.py": "b58c3bc5852ad709db2cb9fd39e5ee4a873e7d26d11cdce48cd5c6917c8b439a",
     "model-assets.d.ts": "9456883f24ccb7aabd3a84f094f1b87c32756018db28ae45bc2eec59d96fea72",
-    "package.json": "2c741c2dab44f0029a03e2da92599f49feaafc2f45c831b38a66daf92a60f6ce",
     "parts.tsx": "d6bdfe6089e93b3d4f6326d39e03b4c791a9f4f9ad4b783728b7a9c301466395",
     "passives.tsx": "3f2cdbf1cbff6cecd49da9cc3823255437d5a14cd1b8e2b1d41b7044d57d2a5f",
     "published.circuit.json": "bd9f166db6bb0cd346f336928c59b85ffa068a9483a2c6e273ac79fdcdf042f0",
     "routed-paths.json": "0eb92daa3eb852fb038b97d17c118d781b920186c370384721a9881db696316d",
-    "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683"
+    "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
+    "tscircuit.config.json": "b06a5581984b4b61a3c34684ebc22083609921f5a058f7db0e46bbee131855b0",
+    "tsconfig.json": "3369b71950778d4e33593aee7a0389f2f4162946c3abfd8c1ec7c138c16e8276",
+    "validation/cloud-package-input.mjs": "eeadd46469991a4b8fcb34c0e9ce12bfc66d230fadbb1be70ecb27a17fa57cce"
+  },
+  "packageInput": {
+    "sha256": "f7f74067d0efd8295c7f235a2caed39d91e89b2cc574af827a74397eb7fed678",
+    "compilerVersion": "0.0.2748",
+    "localLockfileSha256": "8c200f91bb1e2d0b061a46e92dc11ccc620a59d1904c7fe9ca99d2ff062c9560"
   },
   "artifacts": [
     {

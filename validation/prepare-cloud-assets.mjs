@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs"
 import { dirname, resolve, relative, extname } from "node:path"
 import { fileURLToPath } from "node:url"
 import { gzipSync } from "node:zlib"
+import { getPackageInput } from "./cloud-package-input.mjs"
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
 const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex")
@@ -13,8 +14,10 @@ const walk = (path) => readdirSync(path, { withFileTypes: true }).flatMap((item)
 const inputs = [
   ...readdirSync(root).filter((name) => /\.(tsx?|circuit\.json)$/.test(name)),
   "routed-paths.json",
-  "package.json",
-  "bun.lock",
+  "cloud-build.mjs",
+  "tscircuit.config.json",
+  "tsconfig.json",
+  "validation/cloud-package-input.mjs",
   ...walk(resolve(root, "imports")).map((path) => relative(root, path)),
   ...walk(resolve(root, "mechanical"))
     .filter((path) => !relative(root, path).startsWith("mechanical/export/") && !path.includes("/__pycache__/"))
@@ -22,9 +25,10 @@ const inputs = [
     .map((path) => relative(root, path)),
 ]
 const manifest = {
-  formatVersion: 1,
+  formatVersion: 2,
   description: "Locally built and checked preview; hashes bind it to the published source and CAD assets.",
   inputs: Object.fromEntries([...new Set(inputs)].sort().map((name) => [name, sha256(readFileSync(resolve(root, name)))])),
+  packageInput: getPackageInput(JSON.parse(readFileSync(resolve(root, "package.json"))), readFileSync(resolve(root, "bun.lock"))),
   artifacts: [],
 }
 mkdirSync(resolve(root, "cloud-assets"), { recursive: true })
