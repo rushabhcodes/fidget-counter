@@ -31,13 +31,24 @@ const run = (cloud, expectedError) => {
 
 try {
   const files = new Set([...Object.keys(manifest.inputs), ...manifest.artifacts.map(a => a.source),
-    "cloud-assets/manifest.json", "package.json", "bun.lock"])
+    "cloud-assets/manifest.json", ...manifest.cadInputArchives.map(a => a.source), "package.json", "bun.lock"])
   for (const name of files) {
     const target = resolve(scratch, name)
     mkdirSync(dirname(target), { recursive: true })
     cpSync(resolve(root, name), target)
   }
   run(false)
+
+  // TSCI receives the packed exports; its build must reconstruct exact bytes.
+  for (const name of manifest.cadInputArchives.flatMap(a => a.files)) rmSync(resolve(scratch, name))
+  run(false)
+  for (const name of manifest.cadInputArchives.flatMap(a => a.files))
+    assert.equal(hash(readFileSync(resolve(scratch, name))), manifest.inputs[name])
+  const cadPath = resolve(scratch, manifest.cadInputArchives.flatMap(a => a.files)[0])
+  const cadBytes = readFileSync(cadPath)
+  writeFileSync(cadPath, "changed CAD export")
+  run(false, `${manifest.cadInputArchives.flatMap(a => a.files)[0]} changed`)
+  writeFileSync(cadPath, cadBytes)
 
   // Match the registry's compiler substitution and the subsequent CI install.
   const cloudPackage = structuredClone(originalPackage)

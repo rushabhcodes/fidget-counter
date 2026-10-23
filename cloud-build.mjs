@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { gunzipSync } from "node:zlib"
 import { verifyPackageInput } from "./validation/cloud-package-input.mjs"
+import { restoreCadInputs } from "./validation/restore-cad-inputs.mjs"
 
 // The registry worker has a time limit. Publish the locally checked artifacts
 // without loading the circuit compiler, downloading CAD models, or rebuilding
@@ -25,6 +26,7 @@ verifyPackageInput({
   expected: manifest.packageInput,
   cloudBootstrap: process.env.TSCIRCUIT_INSIDE_BUILD_COMMAND === "1",
 })
+restoreCadInputs(root, manifest)
 for (const [name, expectedHash] of Object.entries(manifest.inputs)) {
   if (sha256(readFileSync(projectPath(name))) !== expectedHash) {
     throw new Error(`Stale preview: ${name} changed. Run the local checks, build, and build:cloud:prepare before pushing.`)

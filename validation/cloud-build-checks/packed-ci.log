@@ -1,0 +1,26 @@
+Found existing package.json.
+Creating .npmrc with tscircuit registry configuration.
+Skipping tscircuit package installation from dependencies (using cloud container version).
+Installing dependencies using bun...
+> bun install
+bun install v1.3.3 (274e01c7)
+
++ @types/react@19.3.0
++ jszip@3.10.1
++ typescript@5.9.3
++ @tsci/seveibar.nrf52810@0.1.3
++ @tsci/tscircuit.standard-jst-programmer@0.8.0
+
+18 packages installed [41.00ms]
+Removed: 1
+Dependencies installed successfully.
+Running: bun cloud-build.mjs
+[cloud-build] Verifying source and checked preview artifacts
+[cloud-build] Verified 140 input files
+[cloud-build] Wrote dist/published/circuit.json (1044300 bytes)
+[cloud-build] Wrote dist/published/pcb.png (99342 bytes)
+[cloud-build] Wrote dist/published/pcb.svg (450185 bytes)
+[cloud-build] Wrote dist/published/schematic.png (30570 bytes)
+[cloud-build] Wrote dist/published/schematic.svg (136954 bytes)
+[cloud-build] Wrote dist/published/3d.glb (10194144 bytes)
+[cloud-build] Complete: checked circuit, PCB, schematic and 3D assembly

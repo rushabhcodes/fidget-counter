@@ -2,7 +2,7 @@
   "formatVersion": 2,
   "description": "Locally built and checked preview; hashes bind it to the published source and CAD assets.",
   "inputs": {
-    "cloud-build.mjs": "05c760e8c5ef821055dbb62f6ce46351c32d4cb0552ff700f4a83f110440e85f",
+    "cloud-build.mjs": "8fd53c7b1f82613b191364dde6b9c7b35f260baa9c17394c49a57b0ad957a368",
     "enclosure.tsx": "85f1153460ef13a732d2dfd41e3131b56ae3680f90473d905d1ac57f11794a8b",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj": "5cb7b3d39911902565b7d20a63b8be35513c8d72b9d0dca36c801d731893bcf5",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.step": "d8b313a83de060e58141efc987e51c0ad04a3855784f981139dc3698331d1f2d",
@@ -140,7 +140,8 @@
     "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
     "tscircuit.config.json": "b06a5581984b4b61a3c34684ebc22083609921f5a058f7db0e46bbee131855b0",
     "tsconfig.json": "3369b71950778d4e33593aee7a0389f2f4162946c3abfd8c1ec7c138c16e8276",
-    "validation/cloud-package-input.mjs": "eeadd46469991a4b8fcb34c0e9ce12bfc66d230fadbb1be70ecb27a17fa57cce"
+    "validation/cloud-package-input.mjs": "eeadd46469991a4b8fcb34c0e9ce12bfc66d230fadbb1be70ecb27a17fa57cce",
+    "validation/restore-cad-inputs.mjs": "ce77c551958cfacd82a3812c17cfa7493d676b46be57c6a73e8934d4917a322b"
   },
   "packageInput": {
     "sha256": "f7f74067d0efd8295c7f235a2caed39d91e89b2cc574af827a74397eb7fed678",
@@ -189,6 +190,82 @@
       "encoding": "gzip-base64",
       "bytes": 10194144,
       "sha256": "4123ac47668cc868c135083feea3c3e650244244689c288245a347ff161dfc4d"
+    }
+  ],
+  "cadInputArchives": [
+    {
+      "source": "cloud-assets/cad-inputs-0.json.gz.b64",
+      "sha256": "a3517872f22aff4926413e7beea2ceb63dbf32c65c89922282e1620d0564abe5",
+      "files": [
+        "mechanical/Print_STL/Bottom_Tray.stl",
+        "mechanical/Print_STL/Cap_circular.stl",
+        "mechanical/Print_STL/Cap_four_leaf_clover.stl",
+        "mechanical/Print_STL/Cap_petal_flower.stl",
+        "mechanical/Print_STL/Cap_rounded_hexagon.stl",
+        "mechanical/Print_STL/Cap_rounded_square.stl",
+        "mechanical/Print_STL/Cap_rounded_triangle.stl",
+        "mechanical/Print_STL/Cap_scalloped_coin.stl",
+        "mechanical/Print_STL/Cap_ships_wheel.stl",
+        "mechanical/Print_STL/Cap_thumb_scoop.stl",
+        "mechanical/Print_STL/Cap_turbine_wheel.stl",
+        "mechanical/Print_STL/Cap_wave_rim.stl",
+        "mechanical/Print_STL/Stationary_Base.stl",
+        "mechanical/STEP_Parts/Bottom_Tray.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-1.json.gz.b64",
+      "sha256": "3f124139b76f7b234c1f340d9e1e7d0ad9b459e78cbea2b2e2cafb5c9467176a",
+      "files": [
+        "mechanical/STEP_Parts/Cap_circular.step",
+        "mechanical/STEP_Parts/Cap_four_leaf_clover.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-2.json.gz.b64",
+      "sha256": "3956da7068f12de5ffff9428cf52617162501cad7540ae07a8d027c1955848a3",
+      "files": [
+        "mechanical/STEP_Parts/Cap_petal_flower.step",
+        "mechanical/STEP_Parts/Cap_rounded_hexagon.step",
+        "mechanical/STEP_Parts/Cap_rounded_square.step",
+        "mechanical/STEP_Parts/Cap_rounded_triangle.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-3.json.gz.b64",
+      "sha256": "5f44cda29e3c6c352e2ea96355ebdc2fcf2106fea0a1955d8f646700eaa5f809",
+      "files": [
+        "mechanical/STEP_Parts/Cap_scalloped_coin.step",
+        "mechanical/STEP_Parts/Cap_ships_wheel.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-4.json.gz.b64",
+      "sha256": "4a55edc63eb9b0289108513de6010100af71b91b4b11dea0680c99c863ff0b3a",
+      "files": [
+        "mechanical/STEP_Parts/Cap_thumb_scoop.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-5.json.gz.b64",
+      "sha256": "27178b16ba6eed954c99a0009b734ccf5153263948106507689ef8a3186c694e",
+      "files": [
+        "mechanical/STEP_Parts/Cap_turbine_wheel.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-6.json.gz.b64",
+      "sha256": "fe982c0896000a03e00b5a6c2bf7ecb781e762ef56a442882afb345e9d669d12",
+      "files": [
+        "mechanical/STEP_Parts/Cap_wave_rim.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-7.json.gz.b64",
+      "sha256": "2be902ee6cc7af97646f13305ef0897094bc3f3bb423a8e8f9be9673a50eb4a7",
+      "files": [
+        "mechanical/STEP_Parts/Stationary_Base.step"
+      ]
     }
   ]
 }

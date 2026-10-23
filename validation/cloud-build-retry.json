@@ -19,7 +19,8 @@
   "boardAndAllSixPreviewArtifactsUnchanged": true,
   "logs": [
     "validation/cloud-build-checks/ci.log",
-    "validation/cloud-build-checks/bootstrap.log"
+    "validation/cloud-build-checks/bootstrap.log",
+    "validation/cloud-build-checks/packed-ci.log"
   ],
   "upstreamSources": [
     "https://github.com/tscircuit/usercode.tscircuit.com/blob/main/src/jobs/execute-job-async.ts",
@@ -29,10 +30,19 @@
     "https://github.com/tscircuit/api.tscircuit.com/blob/main/lib/github/file-filter.ts"
   ],
   "sha256": {
-    "cloud-build.mjs": "05c760e8c5ef821055dbb62f6ce46351c32d4cb0552ff700f4a83f110440e85f",
+    "cloud-build.mjs": "8fd53c7b1f82613b191364dde6b9c7b35f260baa9c17394c49a57b0ad957a368",
     "validation/cloud-package-input.mjs": "eeadd46469991a4b8fcb34c0e9ce12bfc66d230fadbb1be70ecb27a17fa57cce",
-    "validation/check-cloud-build.mjs": "5cf8a85eda34d18fdab042b701fc4fd65616c77770766783fccf413f3bc19d6e",
-    "cloud-assets/manifest.json": "d45476f153559b649cc31144e032063b80dce0be9513f32977018065eee86aae",
+    "validation/restore-cad-inputs.mjs": "ce77c551958cfacd82a3812c17cfa7493d676b46be57c6a73e8934d4917a322b",
+    "validation/check-cloud-build.mjs": "207f4b3bf0792c6f560de30ec3bdc5c4da97bf8591f01c12b066452eae088cbb",
+    "cloud-assets/manifest.json": "9e227492c5b2ffc29a173253b4e1b7ef3f7090cafd3ac05fbfc7eba2cc23e1d5",
     "published.circuit.json": "bd9f166db6bb0cd346f336928c59b85ffa068a9483a2c6e273ac79fdcdf042f0"
+  },
+  "cadInputTransport": {
+    "filesPacked": 26,
+    "archives": 8,
+    "rawBytes": 31669296,
+    "packedBytes": 10846628,
+    "hashCheckedAfterRestore": true,
+    "freshCiInputBytes": 54959276
   }
 }

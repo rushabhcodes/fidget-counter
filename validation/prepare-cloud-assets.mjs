@@ -18,6 +18,7 @@ const inputs = [
   "tscircuit.config.json",
   "tsconfig.json",
   "validation/cloud-package-input.mjs",
+  "validation/restore-cad-inputs.mjs",
   ...walk(resolve(root, "imports")).map((path) => relative(root, path)),
   ...walk(resolve(root, "mechanical"))
     .filter((path) => !relative(root, path).startsWith("mechanical/export/") && !path.includes("/__pycache__/"))
@@ -32,6 +33,30 @@ const manifest = {
   artifacts: [],
 }
 mkdirSync(resolve(root, "cloud-assets"), { recursive: true })
+// Keep the worker's input map small. These manufacturing/CAD exports are
+// restored inside the sandbox before the unchanged source hashes are checked.
+const cadFiles = Object.keys(manifest.inputs).filter(name =>
+  name.startsWith("mechanical/Print_STL/") || name.startsWith("mechanical/STEP_Parts/"))
+const cadGroups = []
+let cadGroup = []
+let cadBytes = 0
+for (const path of cadFiles) {
+  const bytes = readFileSync(resolve(root, path))
+  if (cadBytes + bytes.length > 5_500_000 && cadGroup.length) {
+    cadGroups.push(cadGroup)
+    cadGroup = []
+    cadBytes = 0
+  }
+  cadGroup.push({ path, contentBase64: bytes.toString("base64") })
+  cadBytes += bytes.length
+}
+if (cadGroup.length) cadGroups.push(cadGroup)
+manifest.cadInputArchives = cadGroups.map((entries, index) => {
+  const source = `cloud-assets/cad-inputs-${index}.json.gz.b64`
+  const packed = Buffer.from(gzipSync(JSON.stringify(entries), { level: 9 }).toString("base64") + "\n")
+  writeFileSync(resolve(root, source), packed)
+  return { source, sha256: sha256(packed), files: entries.map(entry => entry.path) }
+})
 for (const name of ["circuit.json", "pcb.png", "pcb.svg", "schematic.png", "schematic.svg", "3d.glb"]) {
   const bytes = readFileSync(resolve(root, "dist/published", name))
   const output = `dist/published/${name}`
