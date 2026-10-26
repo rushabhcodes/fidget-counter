@@ -144,7 +144,7 @@
     "validation/restore-cad-inputs.mjs": "ce77c551958cfacd82a3812c17cfa7493d676b46be57c6a73e8934d4917a322b"
   },
   "packageInput": {
-    "sha256": "f7f74067d0efd8295c7f235a2caed39d91e89b2cc574af827a74397eb7fed678",
+    "sha256": "e777d896dbf7ff5583793d095f52b753239c4c2399d24defc606e70f7708d6f6",
     "compilerVersion": "0.0.2748",
     "localLockfileSha256": "8c200f91bb1e2d0b061a46e92dc11ccc620a59d1904c7fe9ca99d2ff062c9560"
   },
@@ -190,6 +190,13 @@
       "encoding": "gzip-base64",
       "bytes": 10194144,
       "sha256": "4123ac47668cc868c135083feea3c3e650244244689c288245a347ff161dfc4d"
+    },
+    {
+      "source": "cloud-assets/3d.png.gz.b64",
+      "output": "dist/published/3d.png",
+      "encoding": "gzip-base64",
+      "bytes": 65616,
+      "sha256": "37c9fb4d7c87674c462ea1754606eb903c45113b766c7ada19b347fe4868a06c"
     }
   ],
   "cadInputArchives": [
