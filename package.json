@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "dev": "tsci dev",
-    "build": "tsci build published.circuit.json --pcb-png --schematic-png --svgs --glbs --disable-parts-engine",
+    "build": "tsci build published.circuit.json --pcb-png --schematic-png --svgs --glbs --3d-png --disable-parts-engine",
     "build:cloud": "bun cloud-build.mjs",
     "build:cloud:prepare": "bun validation/prepare-cloud-assets.mjs",
     "snapshot": "tsci snapshot",

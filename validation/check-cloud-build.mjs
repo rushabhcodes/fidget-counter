@@ -9,6 +9,8 @@ import { spawnSync } from "node:child_process"
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
 const scratch = mkdtempSync(resolve(tmpdir(), "fidget-cloud-check-"))
 const manifest = JSON.parse(readFileSync(resolve(root, "cloud-assets/manifest.json")))
+for (const output of ["dist/published/3d.glb", "dist/published/3d.png"])
+  assert(manifest.artifacts.some(artifact => artifact.output === output), `Missing 3D preview output: ${output}`)
 const originalPackage = JSON.parse(readFileSync(resolve(root, "package.json")))
 const hash = bytes => createHash("sha256").update(bytes).digest("hex")
 const writePackage = value => writeFileSync(resolve(scratch, "package.json"), JSON.stringify(value, null, 2) + "\n")
@@ -88,7 +90,7 @@ try {
     cwd: scratch, env: { ...process.env, TSCIRCUIT_INSIDE_BUILD_COMMAND: "1" }, encoding: "utf8",
   })
   assert.notEqual(result.status, 0, "A corrupted preview was accepted")
-  console.log("Pass: local and both cloud bootstrap formats restore all six artifacts; changed dependencies, lockfile, source and corrupted assets are rejected")
+  console.log(`Pass: local and both cloud bootstrap formats restore all ${manifest.artifacts.length} artifacts, including the 3D model and preview image; changed dependencies, lockfile, source and corrupted assets are rejected`)
 } finally {
   rmSync(scratch, { recursive: true, force: true })
 }

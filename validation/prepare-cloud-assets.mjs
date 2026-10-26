@@ -57,7 +57,7 @@ manifest.cadInputArchives = cadGroups.map((entries, index) => {
   writeFileSync(resolve(root, source), packed)
   return { source, sha256: sha256(packed), files: entries.map(entry => entry.path) }
 })
-for (const name of ["circuit.json", "pcb.png", "pcb.svg", "schematic.png", "schematic.svg", "3d.glb"]) {
+for (const name of ["circuit.json", "pcb.png", "pcb.svg", "schematic.png", "schematic.svg", "3d.glb", "3d.png"]) {
   const bytes = readFileSync(resolve(root, "dist/published", name))
   const output = `dist/published/${name}`
   let source = "published.circuit.json"
