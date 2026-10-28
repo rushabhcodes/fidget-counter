@@ -424,6 +424,25 @@
           "sha256": "9ebc546bb682b8f1d11121895e15a4aeb793ab8c1d8e24dea64601790a055a3c"
         }
       ]
+    },
+    {
+      "part": "SM05B_SRSS_TB",
+      "jlcpcb": "C136657",
+      "importedAt": "2026-10-29",
+      "source": "Exact footprint from @tsci/tscircuit.standard-jst-programmer@0.8.0; matching supplier CAD cached locally",
+      "sourceUrl": "https://modelcdn.tscircuit.com/easyeda_models/assets/C136657.step?uuid=50fdec209daa46e6a009eae73d7d93b4",
+      "files": [
+        {
+          "path": "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.obj",
+          "bytes": 48913,
+          "sha256": "1b55eaa8e535dbdebf27816238bd3a8d9bba57e3f22416e2ff7283c884bf6d10"
+        },
+        {
+          "path": "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step",
+          "bytes": 1889623,
+          "sha256": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6"
+        }
+      ]
     }
   ],
   "notes": [

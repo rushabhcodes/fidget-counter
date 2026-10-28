@@ -55,13 +55,15 @@
     "imports/RFANT3216120A5T/RFANT3216120A5T.obj": "ba4988b20c73c147f25e669f375ba18952fc7264b4439dea6b34edb862bfbdfb",
     "imports/RFANT3216120A5T/RFANT3216120A5T.step": "44168c6e5d17ffce4789710ef4075cb75102fd74af108ddc5869e7e437d108ab",
     "imports/RFANT3216120A5T/RFANT3216120A5T.tsx": "e14f5ad09e5cc7fd464c1ed9c0852065c8329692e2911bc4f5554e529f43547f",
+    "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.obj": "1b55eaa8e535dbdebf27816238bd3a8d9bba57e3f22416e2ff7283c884bf6d10",
+    "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6",
     "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.obj": "6f173be057eaf9f0a0862da20b531eca856cc867241bce9419154798d4a7f23d",
     "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.step": "fdf0609ecdf3febf5ad11cc6e67910be38daf56d9018bce33ad0c991eaef2aff",
     "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.tsx": "a81e534199e0707e775ec31edf9ec8e3460ac86a71fcd3e3f5772cec216c1c8c",
     "imports/X201632MKB4SI/X201632MKB4SI.obj": "4dc100dd1132d03621c32baea19177e179987dca238440bf56c9a0eb7dc74047",
     "imports/X201632MKB4SI/X201632MKB4SI.step": "40453afb315e093975ba08453ba5105709a4dd71c63128e72ffaea6807aa6cd9",
     "imports/X201632MKB4SI/X201632MKB4SI.tsx": "207540bec9380d92c7d30c2f6e39cfddd9448efa81feaf609108a7d55cc9900e",
-    "index.circuit.tsx": "e947889bbe9f81cc15a6b1c3e21bfd93483eb8fa5c4b27bc9463ebd7af885b3a",
+    "index.circuit.tsx": "98d9e6f23186754b50df7e878497fa79da695a41c01589792182f5cedd1521f0",
     "mechanical/Circuit_Models/Attachment_Magnets.mtl": "2435dd298974549fe7cc9f0b8343561401ebadf591fcb6aa7252dec97a3b00f5",
     "mechanical/Circuit_Models/Attachment_Magnets.obj": "585c556cf8b31a26b69182a3b76c6301fc747c1cfed381183551c3dadabec5d5",
     "mechanical/Circuit_Models/Backing_Ring.mtl": "a8a2a1a44943e4475094c87869d48127bb761b7e8aa5eb7950bbdfa84230bb98",
@@ -133,10 +135,10 @@
     "mechanical/pcb_snap_mounts.py": "c0a2fe02705f0cc1b01ec2e53c043cd0332c36286b2f163e87374d148c0ce731",
     "mechanical/render_pcb_lock.py": "b58c3bc5852ad709db2cb9fd39e5ee4a873e7d26d11cdce48cd5c6917c8b439a",
     "model-assets.d.ts": "9456883f24ccb7aabd3a84f094f1b87c32756018db28ae45bc2eec59d96fea72",
-    "parts.tsx": "d6bdfe6089e93b3d4f6326d39e03b4c791a9f4f9ad4b783728b7a9c301466395",
+    "parts.tsx": "7426cf61e997cae366ff60fe4663cb800a0170d68f461e0ad9b1254784df7b5f",
     "passives.tsx": "3f2cdbf1cbff6cecd49da9cc3823255437d5a14cd1b8e2b1d41b7044d57d2a5f",
-    "published.circuit.json": "bd9f166db6bb0cd346f336928c59b85ffa068a9483a2c6e273ac79fdcdf042f0",
-    "routed-paths.json": "0eb92daa3eb852fb038b97d17c118d781b920186c370384721a9881db696316d",
+    "published.circuit.json": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294",
+    "routed-paths.json": "93ee8284aa3bf2f9e069224a633895f04dc8d1ec24e48cccf7da220322987f08",
     "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
     "tscircuit.config.json": "b06a5581984b4b61a3c34684ebc22083609921f5a058f7db0e46bbee131855b0",
     "tsconfig.json": "3369b71950778d4e33593aee7a0389f2f4162946c3abfd8c1ec7c138c16e8276",
@@ -153,43 +155,43 @@
       "source": "published.circuit.json",
       "output": "dist/published/circuit.json",
       "encoding": "raw",
-      "bytes": 1044300,
-      "sha256": "bd9f166db6bb0cd346f336928c59b85ffa068a9483a2c6e273ac79fdcdf042f0"
+      "bytes": 1031065,
+      "sha256": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294"
     },
     {
       "source": "cloud-assets/pcb.png.gz.b64",
       "output": "dist/published/pcb.png",
       "encoding": "gzip-base64",
-      "bytes": 99342,
-      "sha256": "f4331ea2f3977a63a14b732ebba3bfc554cc37aa9eefa6df4cb8d5f5c23cdabf"
+      "bytes": 96542,
+      "sha256": "73a1f60032325f05c3e39079fbf850c4d9ea09d8603d9a4670479ff68c48749f"
     },
     {
       "source": "cloud-assets/pcb.svg.gz.b64",
       "output": "dist/published/pcb.svg",
       "encoding": "gzip-base64",
-      "bytes": 450185,
-      "sha256": "4ebbdeb6e4d8413c80a00a93d9bec5a6b2fe70058bf98fcb6f6b6ecb4f7bff93"
+      "bytes": 438017,
+      "sha256": "e10119f155c4460665140af7b950aac7bf35a0419d3174398b45a01648bf5caa"
     },
     {
       "source": "cloud-assets/schematic.png.gz.b64",
       "output": "dist/published/schematic.png",
       "encoding": "gzip-base64",
-      "bytes": 30570,
-      "sha256": "998aede54fafb291811ef5de8f1fe5edd492fda032864d8cefba7b3982878271"
+      "bytes": 34173,
+      "sha256": "0e20a549bc4397a450f3b55e37d32d2613f55bd54e044697a8b572b5df4927d8"
     },
     {
       "source": "cloud-assets/schematic.svg.gz.b64",
       "output": "dist/published/schematic.svg",
       "encoding": "gzip-base64",
-      "bytes": 136954,
-      "sha256": "aab50f1b2939550216ef912ae27a1e90e2e2d477340cbc2bc3155396aab6dd37"
+      "bytes": 135703,
+      "sha256": "51126cb54c834ed77bf96180d187118a1b1bf82ad1b851adedb38726ba27c32b"
     },
     {
       "source": "cloud-assets/3d.glb.gz.b64",
       "output": "dist/published/3d.glb",
       "encoding": "gzip-base64",
-      "bytes": 10194144,
-      "sha256": "4123ac47668cc868c135083feea3c3e650244244689c288245a347ff161dfc4d"
+      "bytes": 10322728,
+      "sha256": "47412442521c865253fdd3af032aa374e2fa12ad5122fc1b4bd9da6593010506"
     }
   ],
   "cadInputArchives": [

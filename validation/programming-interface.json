@@ -1,101 +1,67 @@
 {
-  "checkedAt": "2026-10-23T14:55:01.686Z",
+  "checkedAt": "2026-10-28T22:46:48.507Z",
   "passed": true,
   "sourcePackage": "@tsci/tscircuit.standard-jst-programmer@0.8.0",
-  "reference": "https://tscircuit--standard-jst-programmer-v0-8-0.tscircuit.app/#file=circuits%2Fupward.circuit.tsx",
-  "footprint": "TC2030-NL-FP Rev B",
-  "cable": "TC2030-IDC-NL-050",
+  "reference": "https://github.com/tscircuit/standard-jst-programmer",
+  "footprint": "SM05B-SRSS-TB(LF)(SN)",
+  "supplier": "JLCPCB C136657",
+  "matingHousing": "SHR-05V-S-B",
+  "cable": "Straight-through five-way JST-SH, 1.0 mm pitch",
   "side": "top",
+  "entryDirection": "-Y",
   "pads": [
     {
       "pin": 1,
-      "signal": "V3_3",
+      "signal": "VOUT",
       "net": "VBAT",
-      "x": -1.27,
-      "y": -13.935,
-      "diameterMm": 0.7874
+      "x": -1.999615,
+      "y": -11.300118300000001,
+      "widthMm": 0.5999988,
+      "heightMm": 1.5500096
     },
     {
       "pin": 2,
       "signal": "SWDIO",
       "net": "SWDIO",
-      "x": -1.27,
-      "y": -12.665000000000001,
-      "diameterMm": 0.7874
+      "x": -0.998855,
+      "y": -11.300118300000001,
+      "widthMm": 0.5999988,
+      "heightMm": 1.5500096
     },
     {
       "pin": 3,
-      "signal": "NRST",
-      "net": "NRESET",
-      "x": 0,
-      "y": -13.935,
-      "diameterMm": 0.7874
+      "signal": "GND",
+      "net": "GND",
+      "x": 0.000635,
+      "y": -11.300118300000001,
+      "widthMm": 0.5999988,
+      "heightMm": 1.5500096
     },
     {
       "pin": 4,
       "signal": "SWCLK",
       "net": "SWDCLK",
-      "x": 0,
-      "y": -12.665000000000001,
-      "diameterMm": 0.7874
+      "x": 1.000125,
+      "y": -11.300118300000001,
+      "widthMm": 0.5999988,
+      "heightMm": 1.5500096
     },
     {
       "pin": 5,
-      "signal": "GND",
-      "net": "GND",
-      "x": 1.27,
-      "y": -13.935,
-      "diameterMm": 0.7874
-    },
-    {
-      "pin": 6,
-      "signal": "V5",
-      "net": "NC",
-      "x": 1.27,
-      "y": -12.665000000000001,
-      "diameterMm": 0.7874
+      "signal": "NRST",
+      "net": "NRESET",
+      "x": 2.000885,
+      "y": -11.300118300000001,
+      "widthMm": 0.5999988,
+      "heightMm": 1.5500096
     }
   ],
-  "alignmentHoles": [
-    {
-      "type": "pcb_hole",
-      "pcb_hole_id": "pcb_hole_4",
-      "pcb_component_id": "pcb_component_24",
-      "hole_shape": "circle",
-      "hole_diameter": 0.9906,
-      "x": -2.54,
-      "y": -13.3,
-      "is_covered_with_solder_mask": false,
-      "subcircuit_id": "subcircuit_source_group_0"
-    },
-    {
-      "type": "pcb_hole",
-      "pcb_hole_id": "pcb_hole_5",
-      "pcb_component_id": "pcb_component_24",
-      "hole_shape": "circle",
-      "hole_diameter": 0.9906,
-      "x": 2.54,
-      "y": -12.284,
-      "is_covered_with_solder_mask": false,
-      "subcircuit_id": "subcircuit_source_group_0"
-    },
-    {
-      "type": "pcb_hole",
-      "pcb_hole_id": "pcb_hole_6",
-      "pcb_component_id": "pcb_component_24",
-      "hole_shape": "circle",
-      "hole_diameter": 0.9906,
-      "x": 2.54,
-      "y": -14.316,
-      "is_covered_with_solder_mask": false,
-      "subcircuit_id": "subcircuit_source_group_0"
-    }
-  ],
-  "stencilApertures": 0,
-  "pin6Isolated": true,
-  "power": "Pin 1 supplies fixed 3.3 V to VBAT; CR2032 must be removed",
-  "minimumUnrelatedTopTrackClearanceMm": 0.8212999999999996,
-  "minimumUnrelatedViaClearanceMm": 1.088890680448666,
+  "mountingTabs": 2,
+  "alignmentHoles": 0,
+  "stencilApertures": 7,
+  "power": "Pin 1 follows programmer voltage selector; select 3V3 and remove CR2032",
+  "minimumUnrelatedTopTrackClearanceMm": 0.3701135000000019,
+  "minimumUnrelatedViaClearanceMm": 0.5996606698432317,
   "crystalBranches": [
     {
       "name": "U1_XC1",
@@ -138,12 +104,14 @@
       "vias": 0
     }
   ],
-  "probeCourtyardMm": [
-    10.4,
-    7.8
-  ],
-  "probeCourtyardClear": true,
-  "circuitSha256": "bd9f166db6bb0cd346f336928c59b85ffa068a9483a2c6e273ac79fdcdf042f0",
-  "physicalProbeFitTested": false,
+  "courtyardBoundsMm": {
+    "minX": -4.154614999999993,
+    "maxX": 4.143185000000003,
+    "minY": -16.32531830000001,
+    "maxY": -10.288118299999997
+  },
+  "courtyardClear": true,
+  "circuitSha256": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294",
+  "physicalConnectorFitTested": false,
   "physicalProgrammingTested": false
 }

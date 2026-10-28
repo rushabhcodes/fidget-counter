@@ -1,0 +1,12 @@
+circular: 0.730 mm conservative clearance
+ships_wheel: 0.730 mm conservative clearance
+rounded_triangle: 0.730 mm conservative clearance
+scalloped_coin: 0.730 mm conservative clearance
+petal_flower: 0.730 mm conservative clearance
+four_leaf_clover: 0.730 mm conservative clearance
+rounded_hexagon: 0.730 mm conservative clearance
+rounded_square: 0.730 mm conservative clearance
+wave_rim: 0.730 mm conservative clearance
+turbine_wheel: 0.730 mm conservative clearance
+thumb_scoop: 0.730 mm conservative clearance
+Pass: supplier STEP and fitted GLB agree; all eleven caps clear the JST throughout rotation and pressing

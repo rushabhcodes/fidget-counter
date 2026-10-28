@@ -61,33 +61,6 @@
       "diameter_mm": 3,
       "empty_bore_samples": 144,
       "material_rim_samples": 48
-    },
-    {
-      "center_mm": [
-        -2.54,
-        -13.3
-      ],
-      "diameter_mm": 0.9906,
-      "empty_bore_samples": 144,
-      "material_rim_samples": 48
-    },
-    {
-      "center_mm": [
-        2.54,
-        -12.284
-      ],
-      "diameter_mm": 0.9906,
-      "empty_bore_samples": 144,
-      "material_rim_samples": 48
-    },
-    {
-      "center_mm": [
-        2.54,
-        -14.316
-      ],
-      "diameter_mm": 0.9906,
-      "empty_bore_samples": 144,
-      "material_rim_samples": 48
     }
   ],
   "published_glb_holes": [
@@ -126,40 +99,13 @@
       "diameter_mm": 3,
       "empty_bore_samples": 144,
       "material_rim_samples": 48
-    },
-    {
-      "center_mm": [
-        -2.54,
-        -13.3
-      ],
-      "diameter_mm": 0.9906,
-      "empty_bore_samples": 144,
-      "material_rim_samples": 48
-    },
-    {
-      "center_mm": [
-        2.54,
-        -12.284
-      ],
-      "diameter_mm": 0.9906,
-      "empty_bore_samples": 144,
-      "material_rim_samples": 48
-    },
-    {
-      "center_mm": [
-        2.54,
-        -14.316
-      ],
-      "diameter_mm": 0.9906,
-      "empty_bore_samples": 144,
-      "material_rim_samples": 48
     }
   ],
   "sha256": {
-    "dist/index/circuit.json": "bd9f166db6bb0cd346f336928c59b85ffa068a9483a2c6e273ac79fdcdf042f0",
-    "dist/index/3d.glb": "4123ac47668cc868c135083feea3c3e650244244689c288245a347ff161dfc4d",
-    "dist/published/circuit.json": "bd9f166db6bb0cd346f336928c59b85ffa068a9483a2c6e273ac79fdcdf042f0",
-    "dist/published/3d.glb": "4123ac47668cc868c135083feea3c3e650244244689c288245a347ff161dfc4d",
+    "dist/index/circuit.json": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294",
+    "dist/index/3d.glb": "47412442521c865253fdd3af032aa374e2fa12ad5122fc1b4bd9da6593010506",
+    "dist/published/circuit.json": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294",
+    "dist/published/3d.glb": "47412442521c865253fdd3af032aa374e2fa12ad5122fc1b4bd9da6593010506",
     "mechanical/STEP_Parts/Stationary_Base.step": "3761c282cc92ed28b1bceef0cf71e6199d7e3c016cb53001864266f0e5710916"
   }
 }

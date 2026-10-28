@@ -1,0 +1,131 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "connector": "SM05B-SRSS-TB(LF)(SN)",
+  "placement_mm": [
+    0,
+    -13.3
+  ],
+  "envelope_mm": [
+    8.3,
+    6.1,
+    2.92
+  ],
+  "supplier_step_bounds_mm": [
+    [
+      -3.5,
+      -15.937496500000004,
+      8.1
+    ],
+    [
+      3.500000000000001,
+      -10.987496500000002,
+      11.011000099999999
+    ]
+  ],
+  "preview_mesh_bounds_mm": [
+    [
+      -3.5,
+      -15.93749647140503,
+      8.1
+    ],
+    [
+      3.5,
+      -10.987496423721314,
+      11.010000085830688
+    ]
+  ],
+  "base_intersection_mm3": 0.0,
+  "continuous_rotation_deg": 360,
+  "full_press_travel_mm": 0.25,
+  "cap_checks": [
+    {
+      "style": "circular",
+      "pressed_swept_cap_floor_z_mm": 11.75,
+      "conservative_clearance_mm": 0.7300000000000004,
+      "supplier_step_clearance_mm": 0.7389999000000014
+    },
+    {
+      "style": "ships_wheel",
+      "pressed_swept_cap_floor_z_mm": 11.75,
+      "conservative_clearance_mm": 0.7300000000000004,
+      "supplier_step_clearance_mm": 0.7389999000000014
+    },
+    {
+      "style": "rounded_triangle",
+      "pressed_swept_cap_floor_z_mm": 11.75,
+      "conservative_clearance_mm": 0.7300000000000004,
+      "supplier_step_clearance_mm": 0.7389999000000014
+    },
+    {
+      "style": "scalloped_coin",
+      "pressed_swept_cap_floor_z_mm": 11.75,
+      "conservative_clearance_mm": 0.7300000000000004,
+      "supplier_step_clearance_mm": 0.7389999000000014
+    },
+    {
+      "style": "petal_flower",
+      "pressed_swept_cap_floor_z_mm": 11.75,
+      "conservative_clearance_mm": 0.7300000000000004,
+      "supplier_step_clearance_mm": 0.7389999000000014
+    },
+    {
+      "style": "four_leaf_clover",
+      "pressed_swept_cap_floor_z_mm": 11.75,
+      "conservative_clearance_mm": 0.7300000000000004,
+      "supplier_step_clearance_mm": 0.7389999000000014
+    },
+    {
+      "style": "rounded_hexagon",
+      "pressed_swept_cap_floor_z_mm": 11.75,
+      "conservative_clearance_mm": 0.7300000000000004,
+      "supplier_step_clearance_mm": 0.7389999000000014
+    },
+    {
+      "style": "rounded_square",
+      "pressed_swept_cap_floor_z_mm": 11.75,
+      "conservative_clearance_mm": 0.7300000000000004,
+      "supplier_step_clearance_mm": 0.7389999000000014
+    },
+    {
+      "style": "wave_rim",
+      "pressed_swept_cap_floor_z_mm": 11.75,
+      "conservative_clearance_mm": 0.7300000000000004,
+      "supplier_step_clearance_mm": 0.7389999000000014
+    },
+    {
+      "style": "turbine_wheel",
+      "pressed_swept_cap_floor_z_mm": 11.75,
+      "conservative_clearance_mm": 0.7300000000000004,
+      "supplier_step_clearance_mm": 0.7389999000000014
+    },
+    {
+      "style": "thumb_scoop",
+      "pressed_swept_cap_floor_z_mm": 11.7499999,
+      "conservative_clearance_mm": 0.729999900000001,
+      "supplier_step_clearance_mm": 0.738999800000002
+    }
+  ],
+  "minimum_conservative_clearance_mm": 0.729999900000001,
+  "minimum_supplier_step_clearance_mm": 0.738999800000002,
+  "service": "Remove cap and lift PCB for side-entry programming cable access; disconnect cable before refitting.",
+  "sha256": {
+    "dist/index/circuit.json": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294",
+    "dist/index/3d.glb": "47412442521c865253fdd3af032aa374e2fa12ad5122fc1b4bd9da6593010506",
+    "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6",
+    "mechanical/STEP_Parts/Stationary_Base.step": "3761c282cc92ed28b1bceef0cf71e6199d7e3c016cb53001864266f0e5710916",
+    "mechanical/enclosure-parameters.json": "c104bd901d177e39bc73309aebd4a2a93639fa408f5e335193784d8761538d8b",
+    "validation/check-jst-fit.py": "bd700f7f99931009630cd07736a5eb1d8199945d36c0b5f87fbe859d8b489870",
+    "mechanical/STEP_Parts/Cap_circular.step": "1933080aa861b00e687f117551dd1a51ec097da889519623c9646a636a901ca2",
+    "mechanical/STEP_Parts/Cap_ships_wheel.step": "16175035afdceb6bd08e06ea0c4c34568393eb7073aca2b9fbf3ff576d21338d",
+    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "aa84f2955fc5a5b0d5721dc20f2adad3ecf19d67975037e246d4a22904eea501",
+    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "f195c31a56ebdcd3205a9d80f03c9a349cdce4ea67ab7101e1def44c69e685d2",
+    "mechanical/STEP_Parts/Cap_petal_flower.step": "904a396067cc3f87ef5c6dd3dccf2414dc347750e3a7a2af232a64b28f355e7d",
+    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "3f642e4b146ae531d4518ad4af48e7b20d79ce6ac28dd2ebd0e3b7091a037aff",
+    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "c82a27ccfb5d0edfcb5736de9e1b99b218d338dee774ad834bee7448f85f5349",
+    "mechanical/STEP_Parts/Cap_rounded_square.step": "cef540c43c12534255eb37b8eb7466dc67d20f9cd6067fc763959e2112c910ff",
+    "mechanical/STEP_Parts/Cap_wave_rim.step": "193fd82b346be149ab2ff41332079869c25a7fb133decb4c7755be158db26a8e",
+    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "cf34baf0e8c0ae650eba999ea8b95ca41b98a5d6091d61c3c3f8263789a1859b",
+    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "595fe409ec52f0519b862dfaeac3f328881a2389f119099a9cda18e01789c4cf"
+  }
+}

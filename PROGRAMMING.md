@@ -1,48 +1,47 @@
-# Programming the Fidget Counter — TC2030 release 1.0.15
+# Programming the Fidget Counter — five-pin JST-SH, release 1.0.18
 
-Release 1.0.15 uses the **TC2030-NL no-legs footprint**, imported from `@tsci/tscircuit.standard-jst-programmer@0.8.0`. It replaces the custom five-pad row with six Ø0.7874 mm contacts on a 1.27 mm grid and three Ø0.9906 mm non-plated alignment holes. No connector is fitted and no solder paste is applied. Use the **TC2030-IDC-NL-050** cable with the linked [Standard JST programmer 0.8.0](https://tscircuit--standard-jst-programmer-v0-8-0.tscircuit.app/#file=circuits%2Fupward.circuit.tsx), programmer header **J4 TAG**. The footprint follows [Tag-Connect's Rev B drawing](https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/2019/12/TC2030-IDC-NL-Datasheet-Rev-B.pdf).
+J_DEBUG is a fitted **JST SM05B-SRSS-TB(LF)(SN)** side-entry SMT header, with five contacts on a 1.0 mm pitch. It uses `StandardJstSwdResetSide` from `@tsci/tscircuit.standard-jst-programmer@0.8.0`, with its exact imported footprint, supplier identity **JLCPCB C136657**, and cached supplier 3D models. It replaces the six bare Tag-Connect pads and all three alignment holes. All five signal lands and both mounting tabs receive solder paste.
 
-**Remove the CR2032 before plugging in this programmer.** Its pin 1 is a fixed **3.3 V output**, not a voltage-sense input. Its pin 6 carries **USB 5 V** and is deliberately unconnected on this board. Do not fit a battery while the programmer supplies the board. This J4 pinout is specific to the linked programmer; a generic six-pin SWD cable may assign pin 6 to SWO instead.
+Use a **straight-through five-way JST-SH cable** with **SHR-05V-S-B** mating housings between J_DEBUG and **J3 / 5PIN** on the [Standard JST programmer 0.8.0](https://tscircuit--standard-jst-programmer-v0-8-0.tscircuit.app/#file=circuits%2Fprogrammer.circuit.tsx). Check continuity **1→1 through 5→5**; wire colors alone do not identify contacts. [JST's SH drawing](https://www.jst-mfg.com/product/pdf/eng/eSH.pdf) specifies the mating housing and the 7.0 × 4.25 × 2.9 mm header body. The PCB footprint courtyard is approximately 8.30 × 6.04 mm. The five-pin extension follows this programmer's assignment; generic five-pin debug cables may differ.
+
+**Select 3V3 and remove the CR2032 before connecting the programmer.** J3 pin 1 follows the programmer's **3V3 / 5V selector** and is directly connected to this board's VBAT rail; it is not a voltage-sense input. The 5V setting must never be used with this board. Disconnect the cable before changing the selector. The programmer's SWD/reset logic is fixed at 3.3 V. Leave programmer J1, J2 and J4 empty while using J3.
 
 This repository contains the PCB design, **no application firmware, bootloader or flashable HEX**. Obtain a complete firmware image for this board before flashing.
 
 ## Access and identify the contacts
 
-Program before enclosure assembly. For an assembled device, release the cap, push both PCB latch tips outward 0.6 mm and lift the PCB with its holder; see [battery service](MECHANICAL.md#pressing-and-battery-service). Remove the coin cell. The programming contacts are now on the **top face**, centered at **(0, −13.3) mm**, near the edge opposite the antenna. The probe approaches from above and has a clear 10.4 × 7.8 mm courtyard. Hold the no-legs probe in place; use a support that clears the underside holder and protruding alignment pins. A retention clip requires separate underside access.
+Program before enclosure assembly. For an assembled device, release the cap, push both PCB latch tips outward 0.6 mm and lift the PCB with its holder; see [battery service](MECHANICAL.md#pressing-and-battery-service). Remove the coin cell. J_DEBUG stays on the **top face**, centered at **(0, −13.3) mm**, opposite the antenna. Its cable enters horizontally from **−Y**, toward the lower board edge. The base has no cable opening, so lift the PCB before inserting or removing the plug. Disconnect the cable before reseating the PCB and refitting the cap.
 
 Viewed from above with the antenna pointing up:
 
 ```text
                        Antenna ↑
 
-                         PCB top
-               2 DIO     4 CLK     6 NC (5 V on cable)
-                  ●         ●         ●           ○
-          ○                                       alignment holes
-                  ●         ●         ●           ○
-               1 3V3     3 RESET   5 GND
-                   pin 1 / TC2030 legend
+     1 VOUT     2 DIO     3 GND     4 CLK     5 RESET
+        ■         ■         ■         ■         ■
+        ┌───────────────────────────────────────┐
+        │          J_DEBUG: JST-SH 1 mm          │
+        └──────────── cable entry ↓ ────────────┘
 ```
 
-The asymmetric three-hole pattern keys the probe. Match pin 1 at both the probe and the programmer's unshrouded IDC header before applying USB power. A 2.54 mm IDC plug or a 10-pin Cortex cable does not directly mate with J4.
+The marked pin 1 is on the left in this PCB top view. The plug's mating-face view can be mirrored; use JST's contact numbering and a continuity check. The shroud keys the mating housing; a reversed-wire cable is still electrically incorrect.
 
-| TC2030 contact | Programmer 0.8.0 signal | Board net | PCB top-view center, mm |
+| JST contact | Programmer J3 signal | Board connection | PCB solder-land center, mm |
 |---|---|---|---|
-| 1 | Fixed 3.3 V output | VBAT, same rail as BT1 positive | (−1.27, −13.935) |
-| 2 | SWDIO | U1 physical pin 26 | (−1.27, −12.665) |
-| 3 | Open-drain NRST | NRESET, U1 P0.21 / pin 24; 100 kΩ pull-up | (0, −13.935) |
-| 4 | SWCLK | U1 physical pin 25 | (0, −12.665) |
-| 5 | GND | Board ground | (+1.27, −13.935) |
-| 6 | Fixed USB 5 V output | **NC; isolated pad, no trace** | (+1.27, −12.665) |
+| 1 | VOUT; select **3V3** | VBAT, same rail as BT1 positive | (−1.999615, −11.3001183) |
+| 2 | SWDIO | U1 physical pin 26 | (−0.998855, −11.3001183) |
+| 3 | GND | Board ground | (+0.000635, −11.3001183) |
+| 4 | SWCLK | U1 physical pin 25 | (+1.000125, −11.3001183) |
+| 5 | Open-drain NRST | NRESET, U1 P0.21 / pin 24; existing 100 kΩ pull-up | (+2.000885, −11.3001183) |
 
-The alignment-hole centers are (−2.54, −13.3), (+2.54, −12.284) and (+2.54, −14.316) mm. The library's central keepout blocks routing on both layers. An added top-side keepout clears the ground pours by 0.508 mm from the contact edges; the five fanout branches leave the array outward. The footprint is DNL and adds no assembled height.
+The two mechanical solder tabs are not additional signal contacts. There are no programming alignment holes or bare programming test-pad row. The fitted header clears the base and every cap through full rotation and the 0.25 mm press stroke. The supplier STEP gives about **0.74 mm nominal minimum cap-rib clearance**; a 2.92 mm-high conservative courtyard envelope leaves at least **0.73 mm**. Cable mating and printed tolerances still need a prototype.
 
 ## Power and flash with the linked programmer
 
 1. Disconnect programmer USB, remove the CR2032 and disconnect any bench supply.
-2. Connect only the TC2030 cable between programmer J4 and J_DEBUG. Leave the JST target connectors empty. J4 bypasses the voltage selector and current monitor; its pin 1 is always 3.3 V when USB is powered. Pin 6 stays unconnected on the target.
-3. Apply USB power and confirm approximately 3.3 V between contacts 1 and 5 before programming. The MCU and sensor accept 3.3 V. Keep the probe stable throughout erase/write/verify.
-4. Use the programmer's version-matched CMSIS-DAP firmware and [OpenOCD](https://openocd.org/pages/getting-openocd.html). The example below uses the **OpenOCD 0.12.0** target path `target/nrf52.cfg`. Current development versions may use `target/nordic/nrf52.cfg`; select the installed path.
+2. Set the programmer selector to **3V3** with the target cable disconnected. Connect only the straight-through five-pin cable between **J3 / 5PIN** and J_DEBUG.
+3. Apply USB power and confirm approximately **3.3 V between J_DEBUG pins 1 and 3** before programming. Keep the connector fully engaged throughout erase/write/verify.
+4. Use the programmer's version-matched CMSIS-DAP firmware and [OpenOCD](https://openocd.org/pages/getting-openocd.html). The example below uses the **OpenOCD 0.12.0** target path `target/nrf52.cfg`. Current development versions may use `target/nordic/nrf52.cfg`; select the installed path. The initial software-reset procedure does not require nRESET to be enabled in UICR.
 
 ```sh
 # Read/identify the powered target first; require nRF52810.
@@ -60,13 +59,13 @@ openocd -f interface/cmsis-dap.cfg \
 
 The `program … verify reset exit` sequence is from [OpenOCD's programming guide](https://openocd.org/doc/html/Flash-Programming.html). The [0.12.0 nRF52 configuration](https://github.com/openocd-org/openocd/blob/v0.12.0/tcl/target/nrf52.cfg) uses a software system reset, so initial flashing does not depend on P0.21 already being configured as nRESET. The command erases sectors that it writes; it does not promise a complete chip erase or preservation of stored calibration/counts. A deliberate full erase or access-protection recovery requires the appropriate tool procedure and loses existing data. Require successful write **and verify** output.
 
-Disconnect USB before removing the probe. Refit the cell only after disconnecting programmer power. Power-cycle the board and verify BLE, angle sensing and count reset with suitable application firmware. No physical target has been flashed as part of this layout change.
+Disconnect USB before unplugging the JST cable. Refit the cell only after disconnecting programmer power. Power-cycle the board and verify BLE, angle sensing and count reset with suitable application firmware. No physical target has been flashed as part of this layout change.
 
 ## Optional standard Cortex / J-Link adapter
 
-A SEGGER J-Link can use this same footprint through a correctly wired TC2030 adapter. Its **VTref is an input**, unlike the linked programmer's pin-1 output. Map Cortex 2×5 pins 1→TC2030 1, 2→2, 4→4, 3/5→5 and 10→3; leave TC2030 6 unconnected. Check the adapter pinout against [SEGGER's Cortex connector assignments](https://kb.segger.com/9-pin_JTAG/SWD_connector); do not connect a differently wired cable directly.
+A SEGGER J-Link can use J_DEBUG through a correctly wired **five-pin JST-SH adapter**. Its **VTref is an input**, unlike programmer J3's pin-1 power output. Map Cortex 2×5 pins **1→JST 1, 2→JST 2, 4→JST 4, 3/5→JST 3 and 10→JST 5**. Check the adapter against [SEGGER's Cortex connector assignments](https://kb.segger.com/9-pin_JTAG/SWD_connector) and the JST contact numbering before connecting it.
 
-With a J-Link, either power from the coin cell and disable all probe power outputs, or remove the cell and supply regulated 3.0–3.3 V through contacts 1 and 5. VTref senses that rail. Never connect two supplies or apply 5 V. The nRF Util procedure below is for **J-Link**, not for the linked CMSIS-DAP programmer.
+With a J-Link, either power from the coin cell with all probe power outputs disabled, or remove the cell and supply regulated 3.0–3.3 V through JST contacts **1 and 3**. VTref senses that rail. Never connect two supplies or apply 5 V. The nRF Util procedure below is for **J-Link**, not for the linked CMSIS-DAP programmer.
 
 ## Optional J-Link tools
 
@@ -124,11 +123,11 @@ nrfutil device program \
 
 Require a successful programming and verification result. `RESET_SYSTEM` starts the application through SWD without depending on P0.21 already being configured as nRESET. If the image enables readback protection at startup, it may prevent later readback/debugging; leave protection off for this initial procedure. Full erase also removes any previously enabled UICR pin-reset configuration, which must be restored by the new image or the programming tool when needed.
 
-Disconnect the fixture, power-cycle the board, and check the application's documented behavior. With suitable fidget firmware, confirm BLE discovery, Hall angle changes during rotation, and count clearing after a continuous two-second cap press. There is no onboard LED for a generic blink test. Flash verification checks the stored image; it does not verify these application functions.
+Disconnect the cable, power-cycle the board, and check the application's documented behavior. With suitable fidget firmware, confirm BLE discovery, Hall angle changes during rotation, and count clearing after a continuous two-second cap press. There is no onboard LED for a generic blink test. Flash verification checks the stored image; it does not verify these application functions.
 
 ## Recover or troubleshoot
 
-If the probe is absent from `device list`, check USB, J-Link installation and OS permissions. If the probe is present but the MCU cannot be detected, check V-to-G voltage under load, common ground, probe VTref, the six-contact pin map above, and spring-contact pressure. Keep wires short and select SWD rather than JTAG if using another tool. A populated prototype is required to validate fixture clearance and contact reliability.
+If the probe is absent from `device list`, check USB, J-Link installation and OS permissions. If the probe is present but the MCU cannot be detected, check V-to-G voltage under load, common ground, probe VTref, the five-contact pin map above, and full connector engagement. Keep wires short and select SWD rather than JTAG if using another tool. A populated prototype is required to validate cable access and contact reliability.
 
 If a previously programmed device has access protection enabled, use [Nordic's recovery command](https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/guides/programming_recovery.html) only when loss of its contents is acceptable. **Recovery erases user flash and UICR, including firmware and stored data.** It is not a routine prerequisite for every flash:
 
@@ -140,4 +139,4 @@ After successful recovery, rerun the complete-image programming command above. I
 
 ## Verification status
 
-Updated 23 October 2026 for release 1.0.15. Package version, pad/hole geometry and the programmer-specific pinout were checked against the linked 0.8.0 source and saved circuit. See `validation/programming-interface.json` and `validation/pcb-mount-check-summary.json` for the measured layout checks. Probe fit, contact reliability and actual flashing require a populated prototype. These changes are included in release 1.0.15.
+Updated 29 October 2026 for JST-SH release 1.0.18, retaining the enclosure and original fitted components from release 1.0.15. The exact five-pin side-entry footprint and pinout come from `@tsci/tscircuit.standard-jst-programmer@0.8.0`; its matching C136657 supplier OBJ and STEP are cached under `imports/SM05B_SRSS_TB`. See `validation/programming-interface.json` for electrical, copper, stencil and courtyard checks and `validation/jst-connector-clearance.json` for continuous rotation/full-press clearance under all eleven caps. The original thirty fitted components are checked against their existing baseline; J_DEBUG is the thirty-first fitted part. Actual cable insertion, connector retention and flashing need a populated prototype. These checks apply to release 1.0.18.

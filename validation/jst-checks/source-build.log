@@ -1,0 +1,17 @@
+$ tsci build index.circuit.tsx --glbs --disable-parts-engine
+Building 1 file(s)...
+Building index.circuit.tsx...
+Generating circuit JSON...
+Could not save autorouting paths for subcircuit_source_group_0: Only port-anchored wire/via routes can be saved
+Circuit JSON written to dist/index/circuit.json
+Generating GLB models for all builds...
+[index] Converting circuit to GLB...
+[index] Written 3d.glb
+
+Build complete
+  Circuits  1 passed
+  Options   glbs
+  Output    dist
+
+✓ Done
+Build exiting with code 0: build finished successfully

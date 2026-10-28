@@ -1,0 +1,4 @@
+$ bun validation/check-assembly-structure.mjs && bun run check:enclosure
+Pass: all eleven cap selectors render eight mechanical-only models, including the spacer; no screw parts
+$ bun validation/check-enclosure.mjs
+Pass: 8 aligned enclosure models, 11 interchangeable tops, two automatic PCB locks, zero PCB screws; 30 original fitted component records unchanged plus the JST connector

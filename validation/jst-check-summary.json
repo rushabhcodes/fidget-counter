@@ -1,0 +1,259 @@
+{
+  "checkedAt": "2026-10-28T22:53:29.891061+00:00",
+  "passed": true,
+  "baseline": "Release 1.0.15",
+  "publication": "Validated release for rushabhcodes/fidget-counter@1.0.18",
+  "connector": "SM05B-SRSS-TB(LF)(SN)",
+  "sourcePackage": "@tsci/tscircuit.standard-jst-programmer@0.8.0",
+  "placementMm": [
+    0,
+    -13.3
+  ],
+  "pinout": [
+    {
+      "pin": 1,
+      "signal": "VOUT",
+      "net": "VBAT",
+      "x": -1.999615,
+      "y": -11.300118300000001,
+      "widthMm": 0.5999988,
+      "heightMm": 1.5500096
+    },
+    {
+      "pin": 2,
+      "signal": "SWDIO",
+      "net": "SWDIO",
+      "x": -0.998855,
+      "y": -11.300118300000001,
+      "widthMm": 0.5999988,
+      "heightMm": 1.5500096
+    },
+    {
+      "pin": 3,
+      "signal": "GND",
+      "net": "GND",
+      "x": 0.000635,
+      "y": -11.300118300000001,
+      "widthMm": 0.5999988,
+      "heightMm": 1.5500096
+    },
+    {
+      "pin": 4,
+      "signal": "SWCLK",
+      "net": "SWDCLK",
+      "x": 1.000125,
+      "y": -11.300118300000001,
+      "widthMm": 0.5999988,
+      "heightMm": 1.5500096
+    },
+    {
+      "pin": 5,
+      "signal": "NRST",
+      "net": "NRESET",
+      "x": 2.000885,
+      "y": -11.300118300000001,
+      "widthMm": 0.5999988,
+      "heightMm": 1.5500096
+    }
+  ],
+  "circuitErrors": 0,
+  "circuitWarnings": 0,
+  "gerberShorts": 0,
+  "routedTraces": 89,
+  "vias": 53,
+  "fittedComponents": 31,
+  "originalThirtyFittedComponentsUnchanged": true,
+  "electricalAndRoutingPreservation": {
+    "passed": true,
+    "changedRoutedBranches": [
+      "source_net_1_mst13_0",
+      "source_net_0_mst18_0",
+      "source_net_1_holder_0",
+      "source_net_0_holder_0",
+      "jst_swdio",
+      "jst_nreset",
+      "jst_swclk",
+      "jst_power",
+      "jst_ground"
+    ],
+    "preservedRoutedBranches": 39,
+    "nonConnectorPinAssignmentsUnchanged": true,
+    "preservedComponentPinAssignments": 122
+  },
+  "mechanicalModels": 8,
+  "capStyles": 11,
+  "pcbMountingHoles": 4,
+  "programmingAlignmentHoles": 0,
+  "stencilAperturesForConnector": 7,
+  "minimumUnrelatedTopTrackClearanceMm": 0.3701135000000019,
+  "minimumUnrelatedViaClearanceMm": 0.5996606698432317,
+  "minimumSupplierModelCapClearanceMm": 0.738999800000002,
+  "minimumConservativeCapClearanceMm": 0.729999900000001,
+  "continuousRotationDeg": 360,
+  "fullPressTravelMm": 0.25,
+  "checks": {
+    "typecheck": {
+      "passed": true,
+      "command": "bun run typecheck"
+    },
+    "source-build": {
+      "passed": true,
+      "log": "validation/jst-checks/source-build.log"
+    },
+    "snapshot-build": {
+      "passed": true,
+      "log": "validation/jst-checks/snapshot-build.log"
+    },
+    "netlist": {
+      "passed": true,
+      "log": "validation/jst-checks/netlist.log"
+    },
+    "pin-specification": {
+      "passed": true,
+      "log": "validation/jst-checks/pin-specification.log"
+    },
+    "source": {
+      "passed": true,
+      "log": "validation/jst-checks/source.log"
+    },
+    "schematic-placement": {
+      "passed": true,
+      "log": "validation/jst-checks/schematic-placement.log"
+    },
+    "placement": {
+      "passed": true,
+      "log": "validation/jst-checks/placement.log"
+    },
+    "shorts": {
+      "passed": true,
+      "log": "validation/jst-checks/shorts.log"
+    },
+    "programming": {
+      "passed": true,
+      "log": "validation/jst-checks/programming.log"
+    },
+    "imports": {
+      "passed": true,
+      "log": "validation/jst-checks/imports.log"
+    },
+    "connector-fit": {
+      "passed": true,
+      "log": "validation/jst-checks/connector-fit.log"
+    },
+    "pcb-mounts": {
+      "passed": true,
+      "log": "validation/jst-checks/pcb-mounts.log"
+    },
+    "assembly": {
+      "passed": true,
+      "log": "validation/jst-checks/assembly.log"
+    },
+    "assembly-structure": {
+      "passed": true,
+      "log": "validation/jst-checks/assembly-structure.log"
+    },
+    "swdclk-length": {
+      "passed": true,
+      "log": "validation/jst-checks/swdclk-length.log"
+    },
+    "swdio-length": {
+      "passed": true,
+      "log": "validation/jst-checks/swdio-length.log"
+    },
+    "cloud-prepare": {
+      "passed": true,
+      "log": "validation/jst-checks/cloud-prepare.log"
+    },
+    "cloud-restore": {
+      "passed": true,
+      "log": "validation/jst-checks/cloud-restore.log"
+    },
+    "cloud-verification": {
+      "passed": true,
+      "log": "validation/jst-checks/cloud-verification.log"
+    }
+  },
+  "cloudArtifacts": [
+    {
+      "source": "published.circuit.json",
+      "output": "dist/published/circuit.json",
+      "encoding": "raw",
+      "bytes": 1031065,
+      "sha256": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294"
+    },
+    {
+      "source": "cloud-assets/pcb.png.gz.b64",
+      "output": "dist/published/pcb.png",
+      "encoding": "gzip-base64",
+      "bytes": 96542,
+      "sha256": "73a1f60032325f05c3e39079fbf850c4d9ea09d8603d9a4670479ff68c48749f"
+    },
+    {
+      "source": "cloud-assets/pcb.svg.gz.b64",
+      "output": "dist/published/pcb.svg",
+      "encoding": "gzip-base64",
+      "bytes": 438017,
+      "sha256": "e10119f155c4460665140af7b950aac7bf35a0419d3174398b45a01648bf5caa"
+    },
+    {
+      "source": "cloud-assets/schematic.png.gz.b64",
+      "output": "dist/published/schematic.png",
+      "encoding": "gzip-base64",
+      "bytes": 34173,
+      "sha256": "0e20a549bc4397a450f3b55e37d32d2613f55bd54e044697a8b572b5df4927d8"
+    },
+    {
+      "source": "cloud-assets/schematic.svg.gz.b64",
+      "output": "dist/published/schematic.svg",
+      "encoding": "gzip-base64",
+      "bytes": 135703,
+      "sha256": "51126cb54c834ed77bf96180d187118a1b1bf82ad1b851adedb38726ba27c32b"
+    },
+    {
+      "source": "cloud-assets/3d.glb.gz.b64",
+      "output": "dist/published/3d.glb",
+      "encoding": "gzip-base64",
+      "bytes": 10322728,
+      "sha256": "47412442521c865253fdd3af032aa374e2fa12ad5122fc1b4bd9da6593010506"
+    }
+  ],
+  "compilerNote": "The pinned compiler emits its existing notice that the unchanged through_pad branch cannot be serialized as saved autorouting paths. The committed prescribed routes compile successfully; source and saved circuit/GLB artifacts match exactly.",
+  "physicalConnectorFitTested": false,
+  "physicalProgrammingTested": false,
+  "sha256": {
+    "index.circuit.tsx": "98d9e6f23186754b50df7e878497fa79da695a41c01589792182f5cedd1521f0",
+    "parts.tsx": "7426cf61e997cae366ff60fe4663cb800a0170d68f461e0ad9b1254784df7b5f",
+    "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
+    "routed-paths.json": "93ee8284aa3bf2f9e069224a633895f04dc8d1ec24e48cccf7da220322987f08",
+    "published.circuit.json": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294",
+    "BOM.csv": "447e3a4643a38ab788cecd03354e441f85c7a935b19d842f02c0797854867def",
+    "netlist.txt": "a824c6d13e918db7dfeb63ce20590ff0b4042b15eec259e7d4df79421ae64588",
+    "PROGRAMMING.md": "6fed1d01e8926c144a0ac24ad92ec41fc7fdcac883833c0b384e2c6e932a32dc",
+    "README.md": "977a3e26e59d68e0102cec9ede797cc7deb94966445562b263cbabf202d13900",
+    "MECHANICAL.md": "a166aae21281b0f2d85e096ffc12f60a7fda79bd510165eef89369b46d22fb1f",
+    "ASSEMBLY_REVIEW.md": "aa99a34e08178115c2ba0138fdaf57089b2600287e6717a703d46c482883f382",
+    "package.json": "44ce00a2d4281fa784063fb04f39a9f3d24f6ead85e35cb316b8b7962b74cbbc",
+    "bun.lock": "8c200f91bb1e2d0b061a46e92dc11ccc620a59d1904c7fe9ca99d2ff062c9560",
+    "cloud-assets/manifest.json": "9b156ded010426127285429e76bbfb0db41b993cbc78e8a785745d64a60721b6",
+    "validation/check-programming.mjs": "1c275f7b13d5274a0f27be6c1522b4a531f08750d81825c7c6b18cff64946e45",
+    "validation/check-jst-fit.py": "bd700f7f99931009630cd07736a5eb1d8199945d36c0b5f87fbe859d8b489870",
+    "validation/check-enclosure.mjs": "b34ebf5dfeb8268508430f42996d2d31cd1923610fa5d884dbac34a4ddc060e4",
+    "validation/check-imports.mjs": "e7bd5fae7e4a50a3f33bc30a2601d62d3bb2d54c7240e7e7dd34bc249354ba43",
+    "validation/check-pcb-mounts.py": "f4e727513e9f03d7bc9c9f6f16caff1703aafb3a750e0b551d0788532bde9674",
+    "validation/programming-interface.json": "32554413992c1c316fc48e3b6bdbb6c10205f7633968f4400f1521c124ceb89f",
+    "validation/jst-connector-clearance.json": "de3436c69c1b91f05e5ff1abc1cde6e9c399372c9816cd0207f1d504393ce9aa",
+    "validation/pcb-mount-clearance.json": "e941a82db5dc5cab34e86c07e88fb2139a78383ef905a2b44e0c6f2bf48684d2",
+    "validation/jlc-imports.json": "a18ec76e31056078dd2abfcc22d3cedc9539b2869ea1af1b7ca65ca98e5995a8",
+    "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.obj": "1b55eaa8e535dbdebf27816238bd3a8d9bba57e3f22416e2ff7283c884bf6d10",
+    "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6",
+    "dist/index/3d.glb": "47412442521c865253fdd3af032aa374e2fa12ad5122fc1b4bd9da6593010506",
+    "dist/published/3d.glb": "47412442521c865253fdd3af032aa374e2fa12ad5122fc1b4bd9da6593010506",
+    "previews/programming-detail.png": "5bf4aaf5983b74ba72db71149e32238aaa797de5f1f1c5b1798c0143256b8fff",
+    "previews/programming-detail.svg": "9fcc506eee06915ffd1993929494c715893d741a068acf80eabc11f93c785c6c",
+    "previews/programming-schematic.png": "0e20a549bc4397a450f3b55e37d32d2613f55bd54e044697a8b572b5df4927d8",
+    "previews/programming-schematic.svg": "2748e58547149c11eba41132428259eebe80d13a1b29e20a6bd7c4c5d28971ef",
+    "previews/programming-top.png": "70a797a08467b49459a3a222adbec55df55fb6e7a28fe11c20481a031ec7b506",
+    "previews/programming-top.svg": "fb1a916692793184d65cecd7daab9f3c626faec5bec7eb52fd75613820cd740c"
+  },
+  "release": "1.0.18"
+}

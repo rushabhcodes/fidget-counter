@@ -52,9 +52,17 @@ const circuit = JSON.parse(circuitBytes)
 const mountClearance=JSON.parse(readFileSync("validation/pcb-mount-clearance.json"))
 assert(mountClearance.passed && !mountClearance.physical_tested)
 assert(mountClearance.base_to_actual_pcb_intersection_mm3<.002)
-assert.equal(mountClearance.native_glb_holes.length,7)
+assert.equal(mountClearance.native_glb_holes.length,4)
 for(const [file,sha] of Object.entries(mountClearance.sha256))
   assert.equal(hash(readFileSync(file)),sha,`Stale native PCB/base clearance check: ${file}`)
+const connectorClearance=JSON.parse(readFileSync("validation/jst-connector-clearance.json"))
+assert(connectorClearance.passed && !connectorClearance.physical_tested)
+assert.equal(connectorClearance.cap_checks.length,11)
+assert.equal(connectorClearance.continuous_rotation_deg,360)
+assert.equal(connectorClearance.full_press_travel_mm,parameters.button_travel)
+assert(connectorClearance.minimum_conservative_clearance_mm>.7)
+for(const [file,sha] of Object.entries(connectorClearance.sha256))
+  assert.equal(hash(readFileSync(file)),sha,`Stale JST/enclosure clearance check: ${file}`)
 const sources = circuit.filter(e => e.type === "source_component" && e.name?.startsWith("ONEPIECE_V4_"))
 const ids = new Set(sources.map(e => e.source_component_id))
 assert.equal(sources.length,8)
@@ -77,8 +85,9 @@ for(const [x,y] of locks.mount_centers_mm) {
 }
 const fittedBaseline=JSON.parse(readFileSync("validation/fitted-component-baseline.json"))
 assert.equal(fittedBaseline.components.length,30)
-assert.deepEqual(fittedComponentRecords(circuit),fittedBaseline.components,
+assert.deepEqual(fittedComponentRecords(circuit).filter(e=>e.source.name!=="J_DEBUG"),fittedBaseline.components,
   "Fitted component identities, copper footprints, placement or CAD changed from the pre-TC2030 draft")
+assert.equal(fittedComponentRecords(circuit).length,31)
 const component = name => circuit.find(e => e.type === "pcb_component" && e.source_component_id ===
   circuit.find(s => s.type === "source_component" && s.name === name)?.source_component_id)
 assert.deepEqual(component("SW1").center,{x:0,y:-5})
@@ -134,5 +143,6 @@ writeFileSync("work/enclosure-model-audit.json",JSON.stringify({
   printParts:stls.parts.length,pressRotationConfigurationsCovered:396,physicalTested:false,
   pcbRetention:locks,fittedComponentsUnchangedFrom:"pre-TC2030 automatic-lock 1.0.9 draft",
   nativePcbAndBaseClearanceVerified:true,
+  jstConnectorClearance:connectorClearance.minimum_conservative_clearance_mm,
 },null,2)+"\n")
-console.log(`Pass: ${reports.length} aligned enclosure models, 11 interchangeable tops, two automatic PCB locks, zero PCB screws; all 30 fitted component records unchanged`)
+console.log(`Pass: ${reports.length} aligned enclosure models, 11 interchangeable tops, two automatic PCB locks, zero PCB screws; 30 original fitted component records unchanged plus the JST connector`)

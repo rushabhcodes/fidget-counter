@@ -4,7 +4,7 @@ import enclosureParameters from "./mechanical/enclosure-parameters.json"
 import {EnclosureAssembly, type CapStyle} from "./enclosure"
 // Select any of the 11 CAP_STYLE_OPTIONS exported by enclosure.tsx.
 const CAP_STYLE: CapStyle = "circular"
-import {NRF52810,TMAG3001,HF_XTAL,LF_XTAL,RF_ANT,CapButton,BatteryHolder,TagConnectSwd} from "./parts"
+import {NRF52810,TMAG3001,HF_XTAL,LF_XTAL,RF_ANT,CapButton,BatteryHolder,JstSwd} from "./parts"
 import {routeBoard} from "./routing"
 import {Cap,Res,Ind} from "./passives"
 import type {PartsEngine,TraceProps} from "@tscircuit/props"
@@ -114,7 +114,7 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
    {x:3.4,y:-1.45},{x:3.4,y:-1.45,via:true,fromLayer:"bottom",toLayer:"top"},{x:3.4,y:-1.45},{x:3.81,y:-1.04}]}/>
  <schematicsheet name="power-debug" displayName="Power and programming" sheetIndex={0}>
   <schematicsection name="power" displayName="CR2032 / LDO mode — DCDCEN = 0"/>
-  <schematicsection name="debug" displayName="TC2030-NL / programmer 0.8.0 — remove CR2032"/>
+  <schematicsection name="debug" displayName="5-pin JST-SH / 3V3 only — remove CR2032"/>
   <schematicbox name="U1 Power" chipRef=".U1" schX={0} schY={1} width={1.96} height={1} schSectionName="power"
    pinLabels={{pin1:"VDD1",pin2:"VDD2",pin3:"VDD3",pin6:"DEC1",pin7:"DEC2",pin8:"DEC3",pin9:"DEC4"}}
    schPinArrangement={{leftSide:["pin1","pin2","pin3"],rightSide:["pin6","pin7","pin8","pin9"]}}/>
@@ -133,16 +133,12 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
   <Cap name="C18" capacitance="100nF" maxDecouplingTraceLength={3} pcbX={-8.2} pcbY={9.4} schX={-5.3} schY={-1.7} schSectionName="power"/>
   <schematicbox name="U1 SWD" chipRef=".U1" schX={11} schY={1} width={2.4} height={.8} schSectionName="debug"
    pinLabels={{pin1:"SWDIO",pin2:"SWDCLK",pin3:"nRESET"}} schPinArrangement={{leftSide:[],rightSide:["pin1","pin2","pin3"]}}/>
-  {/* Exact target footprint and project pinout from the linked programmer.
-      Pin 1 supplies fixed 3.3 V, not VTref. Pin 6 is USB 5 V: leave NC. */}
-  <TagConnectSwd name="J_DEBUG" layer="top" pcbX={0} pcbY={-13.3}
+  {/* Five-pin side-entry JST-SH. Pin 1 follows the programmer voltage
+      selector: use 3V3 only and remove the CR2032 before connecting. */}
+  <JstSwd name="J_DEBUG" layer="top" pcbX={0} pcbY={-13.3}
    pcbSx={hideText} schX={16} schY={1} schSectionName="debug"
-   noConnect={["V5"]} connections={{V3_3:"net.VBAT",SWDIO:"net.SWDIO",
+   connections={{VOUT:"net.VBAT",SWDIO:"net.SWDIO",
     NRST:"net.NRESET",SWCLK:"net.SWDCLK",GND:"net.GND"}}/>
-  {/* Keep pours 0.508 mm from the contact edges; only contact fanout traces
-      cross this outer region. The library's inner keepout still blocks traces. */}
-  <keepout shape="rect" pcbX={0} pcbY={-13.3} width={4.3434} height={3.0734}
-   layers={["top"]} allowTraces excludeRefs={[".J_DEBUG"]}/>
   <Res name="R4" pcbSx={hideText} resistance="100k" pcbX={-4.2} pcbY={.7} pcbRotation={180} schX={11} schY={-3.5} schOrientation="vertical"
    schSectionName="debug" connections={{pin1:"net.VBAT",pin2:"net.NRESET"}}/>
   {["VDD1","VDD3"].map(p=><Link key={p} a={`.U1.${p}`} b="net.VBAT"/>)}
@@ -230,8 +226,8 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
  <trace name="C12_LOCAL_GND" from=".C12 > .pin2" to=".C12_GND > .top" width={.11} pcbStraightLine/>
  {/* Junction vias retain the existing power-tree routing; these are tented
      routing features, not contacts or separately fitted components. */}
- <via name="BT_POS_JUNCTION" pcbX={2} pcbY={-11} holeDiameter={.3} outerDiameter={.55} connectsTo="net.VBAT"/>
- <via name="BT_NEG_JUNCTION" pcbX={-2} pcbY={-11} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
+ <via name="BT_POS_JUNCTION" pcbX={2} pcbY={-9.4} holeDiameter={.3} outerDiameter={.55} connectsTo="net.VBAT"/>
+ <via name="BT_NEG_JUNCTION" pcbX={-2} pcbY={-9.4} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <copperpour name="TOP_GND" layer="top" connectsTo="net.GND" clearance={.15} boardEdgeMargin={.35} coveredWithSolderMask/>
  <copperpour name="BOTTOM_GND" layer="bottom" connectsTo="net.GND" clearance={.15} boardEdgeMargin={.35} coveredWithSolderMask/>
  <silkscreentext text="A4" pcbX={6} pcbY={-6.7} fontSize={1.7}/>
@@ -240,8 +236,8 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
  <silkscreentext text="RF CLEAR" pcbX={4.8} pcbY={13.3} fontSize={1.7}/>
  <silkscreentext text="+" layer="bottom" pcbX={-13} pcbY={-3.8} fontSize={1.7}/>
  <silkscreentext text="-" layer="bottom" pcbX={9.5} pcbY={-3.8} fontSize={1.7}/>
- <silkscreentext text="1" pcbX={-3.7} pcbY={-15.2} fontSize={1.7}/>
- <silkscreentext text="TC2030" pcbX={0} pcbY={-16.5} fontSize={1.7}/>
+ <silkscreentext text="1" pcbX={-2.8} pcbY={-10.1} fontSize={.7}/>
+ <silkscreentext text="3V3 ONLY" pcbX={0} pcbY={-17} fontSize={.7}/>
 </board>
  <EnclosureAssembly capStyle={CAP_STYLE}/>
 </assembly.device>

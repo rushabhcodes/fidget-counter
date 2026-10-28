@@ -1,6 +1,6 @@
 import {Children,cloneElement,isValidElement} from "react"
-import {StandardTagConnectSwd} from "@tsci/tscircuit.standard-jst-programmer"
-import type {TagConnectProps} from "@tsci/tscircuit.standard-jst-programmer"
+import {StandardJstSwdResetSide} from "@tsci/tscircuit.standard-jst-programmer"
+import type {SwdResetConnectorProps} from "@tsci/tscircuit.standard-jst-programmer"
 import type {ReactElement} from "react"
 import {NRF52810_QFAA_R} from "./imports/NRF52810_QFAA_R/NRF52810_QFAA_R"
 import {TMAG3001A2YBGR} from "./imports/TMAG3001A2YBGR/TMAG3001A2YBGR"
@@ -11,19 +11,27 @@ import {RFANT3216120A5T} from "./imports/RFANT3216120A5T/RFANT3216120A5T"
 import {BS_08_B2AA020_R} from "./imports/BS_08_B2AA020_R/BS_08_B2AA020_R"
 import type { BatteryProps, ChipProps, CrystalProps, PinAttributeMap } from "@tscircuit/props"
 
-// Keep the library's exact TC2030 geometry/pinout. The probe approaches +Z;
-// this target has no lateral cable opening or fitted connector body.
-export const TagConnectSwd=(props:TagConnectProps)=>{
- const target=StandardTagConnectSwd(props)
- return <connector {...target.props} pinAttributes={{
+// Exact five-pin JST-SH side-entry footprint/pinout from programmer 0.8.0.
+// Cache its supplier CAD locally; at rotation 0 the cable enters from -Y.
+export const JstSwd=(props:SwdResetConnectorProps)=>
+ <StandardJstSwdResetSide {...props} pinAttributes={{
   pin1:{requiresPower:true,mustBeConnected:true},
+  VOUT:{requiresPower:true,mustBeConnected:true},
   pin2:{isPassive:true,mustBeConnected:true},
-  pin3:{isPassive:true,mustBeConnected:true},
+  SWDIO:{isPassive:true,mustBeConnected:true},
+  pin3:{requiresGround:true,mustBeConnected:true},
+  GND:{requiresGround:true,mustBeConnected:true},
   pin4:{isPassive:true,mustBeConnected:true},
-  pin5:{requiresGround:true,mustBeConnected:true},
-  pin6:{isPassive:true,doNotConnect:true},
- }} footprint={cloneElement(target.props.footprint,{insertionDirection:"from_above"})}/>
-}
+  SWCLK:{isPassive:true,mustBeConnected:true},
+  pin5:{isPassive:true,mustBeConnected:true},
+  NRST:{isPassive:true,mustBeConnected:true},
+  nRESET:{isPassive:true,mustBeConnected:true},
+ }} cadModel={{
+  objUrl:"./imports/SM05B_SRSS_TB/SM05B_SRSS_TB.obj",
+  stepUrl:"./imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step",
+  pcbRotationOffset:0,
+  modelOriginPosition:{x:2,y:.5124965000000032,z:-.01},
+ }}/>
 
 // Nordic QFAA signal labels; copper and models come from the JLCPCB import.
 export const nrfPins = Object.fromEntries([

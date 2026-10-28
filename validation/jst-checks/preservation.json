@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "changedRoutedBranches": [
+    "source_net_1_mst13_0",
+    "source_net_0_mst18_0",
+    "source_net_1_holder_0",
+    "source_net_0_holder_0",
+    "jst_swdio",
+    "jst_nreset",
+    "jst_swclk",
+    "jst_power",
+    "jst_ground"
+  ],
+  "preservedRoutedBranches": 39,
+  "nonConnectorPinAssignmentsUnchanged": true,
+  "preservedComponentPinAssignments": 122
+}

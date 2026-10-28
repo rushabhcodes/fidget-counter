@@ -1,3 +1,4 @@
+Readable Netlist:
 COMPONENTS:
  - GPIO_SCL:
  - GPIO_SDA:
@@ -108,7 +109,7 @@ NET: VBAT
   - U1 VDD1
   - C9 pin1
   - R4 pin1
-  - J_DEBUG V3_3
+  - J_DEBUG VOUT
 
 NET: CAP_PRESS
   - SW1 A1
@@ -285,13 +286,12 @@ C18 (100nF undefined)
 - pin1: NETS(VBAT)
 - pin2: NETS(GND)
 
-J_DEBUG (TC2030-NL-FP (DNL))
-- pin1(V3_3): NETS(VBAT)
+J_DEBUG (SM05B-SRSS-TB(LF)(SN))
+- pin1(VOUT): NETS(VBAT)
 - pin2(SWDIO): NETS(SWDIO)
-- pin3(NRST, nRESET): NETS(NRESET)
+- pin3(GND): NETS(GND)
 - pin4(SWCLK): NETS(SWDCLK)
-- pin5(GND): NETS(GND)
-- pin6(V5): NOT_CONNECTED
+- pin5(NRST, nRESET): NETS(NRESET)
 
 R4 (100kΩ undefined)
 - pin1(anode, pos, left): NETS(VBAT)

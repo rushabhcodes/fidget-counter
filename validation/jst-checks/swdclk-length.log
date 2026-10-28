@@ -1,0 +1,37 @@
+<TraceLengthAnalysis requestedTarget="net.SWDCLK" resolvedTarget="net.SWDCLK" targetKind="net" traceCount="2" totalLengthMm="27.00" totalStraightLineDistanceMm="15.13">
+  <Trace id="source_trace_24:source_port_95" label="J_DEBUG.SWCLK -&gt; net.SWDCLK" connectionType="via net" lengthMm="19.43" straightLineDistanceMm="7.57">
+    <ConnectedPins>
+      <Pin ref="J_DEBUG.SWCLK" />
+      <Pin ref="U1.SWDCLK" />
+    </ConnectedPins>
+    <PinPositions>
+      <Pin ref="J_DEBUG.SWCLK" x="1.00" y="-11.30" layers="top" />
+      <Pin ref="U1.SWDCLK" x="-4.50" y="2.80" layers="top" />
+    </PinPositions>
+    <Connection kind="via net" target="net.SWDCLK" x="-1.75" y="-4.25" layer="top" />
+    <TraceRequirements none />
+    <Path>
+      <Point x="1.00" y="-11.30" layer="top" kind="endpoint" />
+      <Point x="1.00" y="-10.00" layer="top" kind="track" />
+      <Point x="1.00" y="-10.00" layer="bottom" kind="track" />
+      <Point x="-3.60" y="-10.00" layer="bottom" kind="track" />
+      <Point x="-3.60" y="1.50" layer="bottom" kind="track" />
+      <Point x="-3.80" y="2.10" layer="bottom" kind="track" />
+      <Point x="-3.80" y="2.10" layer="top" kind="via" />
+      <Point x="-3.80" y="2.80" layer="top" kind="track" />
+      <Point x="-4.50" y="2.80" layer="top" kind="endpoint" />
+    </Path>
+  </Trace>
+  <Trace id="source_trace_49:source_port_27" label="U1.SWDCLK -&gt; net.SWDCLK" connectionType="via net" lengthMm="7.57" straightLineDistanceMm="7.57">
+    <ConnectedPins>
+      <Pin ref="U1.SWDCLK" />
+      <Pin ref="J_DEBUG.SWCLK" />
+    </ConnectedPins>
+    <PinPositions>
+      <Pin ref="U1.SWDCLK" x="-4.50" y="2.80" layers="top" />
+      <Pin ref="J_DEBUG.SWCLK" x="1.00" y="-11.30" layers="top" />
+    </PinPositions>
+    <Connection kind="via net" target="net.SWDCLK" x="-1.75" y="-4.25" layer="top" />
+    <TraceRequirements none />
+  </Trace>
+</TraceLengthAnalysis>

@@ -1,0 +1,10 @@
+$ bun cloud-build.mjs
+[cloud-build] Verifying source and checked preview artifacts
+[cloud-build] Verified 142 input files
+[cloud-build] Wrote dist/published/circuit.json (1031065 bytes)
+[cloud-build] Wrote dist/published/pcb.png (96542 bytes)
+[cloud-build] Wrote dist/published/pcb.svg (438017 bytes)
+[cloud-build] Wrote dist/published/schematic.png (34173 bytes)
+[cloud-build] Wrote dist/published/schematic.svg (135703 bytes)
+[cloud-build] Wrote dist/published/3d.glb (10322728 bytes)
+[cloud-build] Complete: checked circuit, PCB, schematic and 3D assembly

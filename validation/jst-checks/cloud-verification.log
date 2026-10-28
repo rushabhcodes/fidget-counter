@@ -1,0 +1,1 @@
+Pass: local and both cloud bootstrap formats restore all six artifacts; changed dependencies, lockfile, source and corrupted assets are rejected
