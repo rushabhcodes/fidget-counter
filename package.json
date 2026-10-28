@@ -1,6 +1,6 @@
 {
   "name": "@tsci/rushabhcodes.fidget-counter",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Circular CR2032-powered nRF52810 BLE fidget rotation counter with TMAG3001 angle sensor",
   "main": "index.circuit.tsx",
   "keywords": [
@@ -19,7 +19,10 @@
     "check:all": "bun verify.mjs",
     "build:source": "tsci build index.circuit.tsx",
     "export:gerbers": "bun export-gerbers.mjs",
-    "check:enclosure": "bun validation/check-enclosure.mjs"
+    "check:enclosure": "bun validation/check-enclosure.mjs",
+    "export:review": "bun validation/export-review-assets.ts && python validation/export-quote-files.py",
+    "build:cloud": "bun cloud-build.mjs",
+    "build:cloud:prepare": "bun validation/prepare-cloud-assets.mjs"
   },
   "devDependencies": {
     "@types/react": "^19.3.0",

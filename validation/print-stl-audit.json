@@ -1,0 +1,142 @@
+[
+  {
+    "file": "mechanical/Print_STL/Bottom_Cover.stl",
+    "sha256": "f769b233294264e3f803bf0cf8a78a124f96100c87d2449963897399178d4f82",
+    "watertight": true,
+    "windingConsistent": true,
+    "boundsMm": [
+      [
+        -29.0,
+        -28.996755599975586,
+        0.0
+      ],
+      [
+        29.0,
+        28.996755599975586,
+        2.1500000953674316
+      ]
+    ],
+    "positiveVolume": true,
+    "triangles": 22676
+  },
+  {
+    "file": "mechanical/Print_STL/Cap_Release_Key_Print_2.stl",
+    "sha256": "f02b73d1f3f6d763d02f450210f8355738713167de76e58aa4e481a4addcfce1",
+    "watertight": true,
+    "windingConsistent": true,
+    "boundsMm": [
+      [
+        0.0,
+        -4.0,
+        0.0
+      ],
+      [
+        19.049999237060547,
+        4.0,
+        2.5
+      ]
+    ],
+    "positiveVolume": true,
+    "triangles": 44
+  },
+  {
+    "file": "mechanical/Print_STL/Flexure_Retention_System.stl",
+    "sha256": "11d1d02adb8d8c18e21fa42f06bf8913ece7c5ce438d2b7ae1c89338ade3caf5",
+    "watertight": true,
+    "windingConsistent": true,
+    "boundsMm": [
+      [
+        -18.299999237060547,
+        -18.298009872436523,
+        1.0000000116860974e-07
+      ],
+      [
+        18.299999237060547,
+        18.298009872436523,
+        2.450000047683716
+      ]
+    ],
+    "positiveVolume": true,
+    "triangles": 17300
+  },
+  {
+    "file": "mechanical/Print_STL/PCB_Lift_Pick.stl",
+    "sha256": "5699d1db105454cebfcbd1087814d0ce485029b3f17ded63ca83c3e5226ebc40",
+    "watertight": true,
+    "windingConsistent": true,
+    "boundsMm": [
+      [
+        0.0,
+        -4.0,
+        0.0
+      ],
+      [
+        20.0,
+        4.0,
+        2.5
+      ]
+    ],
+    "positiveVolume": true,
+    "triangles": 28
+  },
+  {
+    "file": "mechanical/Print_STL/PCB_Spacer_Print_4.stl",
+    "sha256": "7c2db90d2981e347bc046ff1197c5e0bdc074a57dce6154294b002f48ed63c4b",
+    "watertight": true,
+    "windingConsistent": true,
+    "boundsMm": [
+      [
+        -2.200000047683716,
+        -2.199753761291504,
+        0.0
+      ],
+      [
+        2.200000047683716,
+        2.199753761291504,
+        2.5
+      ]
+    ],
+    "positiveVolume": true,
+    "triangles": 1680
+  },
+  {
+    "file": "mechanical/Print_STL/Rotating_Cap.stl",
+    "sha256": "4b6bf2ecdc4611f75544519e110cd253958e24e7bda50f68b5141a41dd7545f0",
+    "watertight": true,
+    "windingConsistent": true,
+    "boundsMm": [
+      [
+        -30.799779891967773,
+        -30.799779891967773,
+        -2.1917140299349572e-16
+      ],
+      [
+        30.799779891967773,
+        30.799779891967773,
+        12.5
+      ]
+    ],
+    "positiveVolume": true,
+    "triangles": 11052
+  },
+  {
+    "file": "mechanical/Print_STL/Stationary_Housing.stl",
+    "sha256": "8932211e35d86dd9a68cdbd9953a34642df29ed2b896e8b73bf44a4d15179ca9",
+    "watertight": true,
+    "windingConsistent": true,
+    "boundsMm": [
+      [
+        -29.0,
+        -28.996755599975586,
+        0.0
+      ],
+      [
+        29.0,
+        28.996755599975586,
+        10.199999809265137
+      ]
+    ],
+    "positiveVolume": true,
+    "triangles": 19424
+  }
+]

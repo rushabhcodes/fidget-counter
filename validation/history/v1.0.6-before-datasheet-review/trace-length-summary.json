@@ -1,0 +1,102 @@
+[
+  {
+    "target": "net.GND",
+    "routedLengthMm": 269.42,
+    "traceCount": 49
+  },
+  {
+    "target": "net.VBAT",
+    "routedLengthMm": 148.07,
+    "traceCount": 16
+  },
+  {
+    "target": "net.SCL",
+    "routedLengthMm": 16.29,
+    "traceCount": 3
+  },
+  {
+    "target": "net.SDA",
+    "routedLengthMm": 20.45,
+    "traceCount": 3
+  },
+  {
+    "target": "net.HALL_INT",
+    "routedLengthMm": 13.71,
+    "traceCount": 2
+  },
+  {
+    "target": "net.SWDIO",
+    "routedLengthMm": 39.02,
+    "traceCount": 2
+  },
+  {
+    "target": "net.SWDCLK",
+    "routedLengthMm": 0,
+    "traceCount": 1
+  },
+  {
+    "target": "net.NRESET",
+    "routedLengthMm": 31.88,
+    "traceCount": 3
+  },
+  {
+    "target": "net.CAP_PRESS",
+    "routedLengthMm": 5.29,
+    "traceCount": 3
+  },
+  {
+    "target": "U1.DEC1",
+    "routedLengthMm": 1.95,
+    "traceCount": 1
+  },
+  {
+    "target": "U1.P0_00",
+    "routedLengthMm": 2.62,
+    "traceCount": 1
+  },
+  {
+    "target": "U1.P0_01",
+    "routedLengthMm": 4.37,
+    "traceCount": 1
+  },
+  {
+    "target": "U1.ANT",
+    "routedLengthMm": 1.39,
+    "traceCount": 1
+  },
+  {
+    "target": "U1.DEC2",
+    "routedLengthMm": 4.1,
+    "traceCount": 1
+  },
+  {
+    "target": "U1.DEC3",
+    "routedLengthMm": 1.88,
+    "traceCount": 1
+  },
+  {
+    "target": "U1.XC1",
+    "routedLengthMm": 5.73,
+    "traceCount": 1
+  },
+  {
+    "target": "U1.XC2",
+    "routedLengthMm": 5.85,
+    "traceCount": 1
+  },
+  {
+    "target": "U1.DEC4",
+    "routedLengthMm": 4.33,
+    "traceCount": 1
+  },
+  {
+    "target": "L1.pin2",
+    "routedLengthMm": 0.57,
+    "traceCount": 1
+  },
+  {
+    "target": "L2.pin2",
+    "routedLengthMm": 20.97,
+    "traceCount": 2
+  }
+]

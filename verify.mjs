@@ -107,6 +107,8 @@ if (clocks.length !== 8) throw new Error(`Expected all eight crystal signal bran
 const sha256 = file => createHash("sha256").update(readFileSync(file)).digest("hex")
 await import("./validation/check-imports.mjs")
 await import("./validation/check-enclosure.mjs")
+// Synchronize the preview/fabrication snapshot only after source checks pass.
+writeFileSync("published.circuit.json",circuitBytes)
 const summary = {
   checkedAt: new Date().toISOString(),
   checks: ["netlist", "pin_specification", "source", "schematic-placement", "placement", "routing-difficulty", "shorts", "trace-length"],

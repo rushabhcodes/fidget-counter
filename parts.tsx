@@ -30,7 +30,7 @@ Object.assign(nrfPinAttributes, {
  pin25:{isInput:true,mustBeConnected:true}, pin26:{isBidirectional:true,mustBeConnected:true},
  pin30:{isBidirectional:true,mustBeConnected:true},
  pin31:{requiresGround:true,mustBeConnected:true},
- pin32:{isOutput:true,providesPower:true,mustBeConnected:true},
+ pin32:{doNotConnect:true,isPassive:true},
  pin33:{isOutput:true,providesPower:true,mustBeConnected:true},
  pin34:{isInput:true,mustBeConnected:true}, pin35:{isInput:true,mustBeConnected:true},
  pin36:{requiresPower:true,mustBeConnected:true,shouldHaveDecouplingCapacitor:true,recommendedDecouplingCapacitorCapacitance:"100nF"},
@@ -56,7 +56,7 @@ export const libraryProps = (element: ReactElement): ChipProps => {
 }
 export const NRF52810 = (props:ChipProps)=><chip
  {...libraryProps(NRF52810_QFAA_R({name:props.name}))}
- pcbRotation={270} pinAttributes={nrfPinAttributes} {...props}/>
+ pcbRotation={270} pinLabels={nrfPins} pinAttributes={nrfPinAttributes} {...props}/>
 
 // EasyEDA numbers the WCSP down columns; retain its A1/B1/C1/A2/B2/C2 mapping.
 export const TMAG3001 = (props:ChipProps)=><chip
@@ -86,7 +86,7 @@ export const RF_ANT=(p:ChipProps)=><chip
 // C221681 is the 3 N variant, so it must not be assigned to this BOM row.
 export const CapButton=(p:ChipProps)=><pushbutton
  {...libraryProps(KMR232NGULCLFS({name:p.name}))}
- manufacturerPartNumber="KMR223NG ULC LFG / Y78B22324FP" supplierPartNumbers={{}}
+ manufacturerPartNumber="KMR223NG ULC LFG / Y78B22324FP" supplierPartNumbers={{lcsc:["C2804637"]}}
  pinLabels={{pin1:["A1"],pin2:["B2"],pin3:["B"],pin4:["A"]}}
  internallyConnectedPins={[["pin1","pin4"],["pin2","pin3"]]}
  {...p}/>

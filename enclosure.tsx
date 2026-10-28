@@ -14,11 +14,16 @@ import obj11 from "./mechanical/Circuit_Models/Phone_Pad.obj"
 import obj12 from "./mechanical/Circuit_Models/Encoder_Shim.obj"
 import obj13 from "./mechanical/Circuit_Models/PCB_Spacers.obj"
 
+import actuatorRing from "./mechanical/Circuit_Models/Actuator_Compliance_Ring.obj"
+import actuatorShim from "./mechanical/Circuit_Models/Actuator_Shim.obj"
+
 // CAD solids use the phone plane as Z=0; the circuit uses the PCB midplane.
 // Keep imported electronics and BT1 on the board; never add their CAD dummies.
 // Bottom attachment uses the ordered-size discs; magnetic performance is untested.
 // The bottom is solid; release the two cap latches to service the board from above.
 const models = [
+  {name:"ENCLOSURE_Actuator_Compliance_Ring",obj:actuatorRing,mtl:"./mechanical/Circuit_Models/Actuator_Compliance_Ring.mtl",translucent:false},
+  {name:"ENCLOSURE_Actuator_Shim",obj:actuatorShim,mtl:"./mechanical/Circuit_Models/Actuator_Shim.mtl",translucent:false},
   {name:"ENCLOSURE_Rotating_Cap",obj:obj0,mtl:"./mechanical/Circuit_Models/Rotating_Cap.mtl",translucent:true},
   {name:"ENCLOSURE_Encoder_Magnet",obj:obj1,mtl:"./mechanical/Circuit_Models/Encoder_Magnet.mtl",translucent:false},
   {name:"ENCLOSURE_Stationary_Housing",obj:obj2,mtl:"./mechanical/Circuit_Models/Stationary_Housing.mtl",translucent:true},

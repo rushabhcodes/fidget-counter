@@ -8,8 +8,7 @@ COMPONENTS:
  - C9: 4.7uF capacitor
  - C15: 22uF capacitor
  - C5: 100nF capacitor
- - C7: 100pF capacitor
- - C8: 100nF capacitor
+ - C8: 100pF capacitor
  - C10: 1uF capacitor
  - C16: 100nF capacitor
  - C18: 100nF capacitor
@@ -39,14 +38,24 @@ COMPONENTS:
  - C13: 0.5pF capacitor
  - C14: 0.5pF capacitor
  - ANT1: RFANT3216120A5T
+ - ENCLOSURE_Actuator_Compliance_Ring: ENCLOSURE_Actuator_Compliance_Ring, source_component
+ - ENCLOSURE_Actuator_Shim: ENCLOSURE_Actuator_Shim, source_component
+ - ENCLOSURE_Rotating_Cap: ENCLOSURE_Rotating_Cap, source_component
+ - ENCLOSURE_Encoder_Magnet: ENCLOSURE_Encoder_Magnet, source_component
+ - ENCLOSURE_Stationary_Housing: ENCLOSURE_Stationary_Housing, source_component
+ - ENCLOSURE_Flexure_Retention_System: ENCLOSURE_Flexure_Retention_System, source_component
+ - ENCLOSURE_CR2032: ENCLOSURE_CR2032, source_component
+ - ENCLOSURE_MagSafe_Magnet_Array: ENCLOSURE_MagSafe_Magnet_Array, source_component
+ - ENCLOSURE_Magnetic_Shield: ENCLOSURE_Magnetic_Shield, source_component
+ - ENCLOSURE_Bottom_Cover: ENCLOSURE_Bottom_Cover, source_component
+ - ENCLOSURE_Flexure_Fasteners: ENCLOSURE_Flexure_Fasteners, source_component
+ - ENCLOSURE_Phone_Pad: ENCLOSURE_Phone_Pad, source_component
+ - ENCLOSURE_Encoder_Shim: ENCLOSURE_Encoder_Shim, source_component
+ - ENCLOSURE_PCB_Spacers: ENCLOSURE_PCB_Spacers, source_component
 
 NET: U1_DEC1
   - U1 DEC1
   - C5 pin1
-
-NET: U1_DEC2
-  - U1 DEC2
-  - C7 pin1
 
 NET: U1_DEC3
   - U1 DEC3
@@ -160,7 +169,6 @@ NET: GND
   - C6 pin2
   - U2 ADDR
   - U2 GND
-  - C7 pin2
   - C16 pin2
   - C15 pin2
   - C4 pin2
@@ -194,10 +202,10 @@ U1 (NRF52810-QFAA-R)
 - pin1(DEC1): NETS(U1_DEC1)
 - pin2(P0_00, XL1): NETS(X2_pos)
 - pin3(P0_01, XL2): NETS(X2_neg)
-- pin4(P0_02, AIN0): NOT_CONNECTED
-- pin5(P0_03, AIN1): NOT_CONNECTED
-- pin6(P0_04, AIN2): NOT_CONNECTED
-- pin7(P0_05, AIN3): NOT_CONNECTED
+- pin4(P0_02): NOT_CONNECTED
+- pin5(P0_03): NOT_CONNECTED
+- pin6(P0_04): NOT_CONNECTED
+- pin7(P0_05): NOT_CONNECTED
 - pin8(P0_06): NOT_CONNECTED
 - pin9(P0_07): NOT_CONNECTED
 - pin10(P0_08): NOT_CONNECTED
@@ -222,7 +230,7 @@ U1 (NRF52810-QFAA-R)
 - pin29(P0_24): NOT_CONNECTED
 - pin30(ANT): NETS(U1_ANT)
 - pin31(VSS2): NETS(GND)
-- pin32(DEC2): NETS(U1_DEC2)
+- pin32(DEC2): NOT_CONNECTED
 - pin33(DEC3): NETS(U1_DEC3)
 - pin34(XC1): NETS(U1_XC1)
 - pin35(XC2): NETS(U1_XC2)
@@ -230,10 +238,10 @@ U1 (NRF52810-QFAA-R)
 - pin37(P0_25): NOT_CONNECTED
 - pin38(P0_26): NETS(SCL)
 - pin39(P0_27): NETS(SDA)
-- pin40(P0_28, AIN4): NETS(HALL_INT)
-- pin41(P0_29, AIN5): NETS(CAP_PRESS)
-- pin42(P0_30, AIN6): NOT_CONNECTED
-- pin43(P0_31, AIN7): NOT_CONNECTED
+- pin40(P0_28): NETS(HALL_INT)
+- pin41(P0_29): NETS(CAP_PRESS)
+- pin42(P0_30): NOT_CONNECTED
+- pin43(P0_31): NOT_CONNECTED
 - pin44(NC): NOT_CONNECTED
 - pin45(VSS1): NETS(GND)
 - pin46(DEC4): NETS(U1_DEC4)
@@ -261,11 +269,7 @@ C5 (100nF undefined)
 - pin1: NETS(U1_DEC1)
 - pin2: NETS(GND)
 
-C7 (100pF undefined)
-- pin1: NETS(U1_DEC2)
-- pin2: NETS(GND)
-
-C8 (100nF undefined)
+C8 (100pF undefined)
 - pin1: NETS(U1_DEC3)
 - pin2: NETS(GND)
 
@@ -387,3 +391,32 @@ C14 (0.5pF undefined)
 ANT1 (RFANT3216120A5T)
 - pin1(feed): NETS(ANT1_feed)
 - pin2(NC): NOT_CONNECTED
+
+ENCLOSURE_Actuator_Compliance_Ring
+
+ENCLOSURE_Actuator_Shim
+
+ENCLOSURE_Rotating_Cap
+
+ENCLOSURE_Encoder_Magnet
+
+ENCLOSURE_Stationary_Housing
+
+ENCLOSURE_Flexure_Retention_System
+
+ENCLOSURE_CR2032
+
+ENCLOSURE_MagSafe_Magnet_Array
+
+ENCLOSURE_Magnetic_Shield
+
+ENCLOSURE_Bottom_Cover
+
+ENCLOSURE_Flexure_Fasteners
+
+ENCLOSURE_Phone_Pad
+
+ENCLOSURE_Encoder_Shim
+
+ENCLOSURE_PCB_Spacers
+

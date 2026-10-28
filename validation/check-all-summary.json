@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-08T13:20:23.657Z",
+  "checkedAt": "2026-10-28T18:59:32.494Z",
   "checks": [
     "netlist",
     "pin_specification",
@@ -12,9 +12,9 @@
   ],
   "errors": 0,
   "warnings": 0,
-  "routedTraces": 89,
-  "vias": 47,
-  "analyzedNetCount": 20,
+  "routedTraces": 80,
+  "vias": 56,
+  "analyzedNetCount": 19,
   "crystalBranches": [
     {
       "name": "U1_XC1",
@@ -58,22 +58,20 @@
     }
   ],
   "sha256": {
-    "index.circuit.tsx": "054a8c548b1a393e66a67450e56a90312112adce681a1ee757d7915ba8242781",
-    "enclosure.tsx": "4bfe1edb79570c80666e6b3c5913e1dd7f0eb863fdbe97c9960a3e7909f5251e",
-    "parts.tsx": "47b85463e132fcc855a49d5c741ccd6e97a0e3e7af9b4a0375d8015f7091dc9f",
+    "index.circuit.tsx": "59584244520961f3daf344e06584dfdf14de3d4bac2e54881ef010235521eee5",
+    "enclosure.tsx": "9335342b003b4cfe1ddb647d950211fb419c3b757f5a4d998964bbb3520eb2b8",
+    "parts.tsx": "c39641e51f5f5dc6e4a3f7f28244618af6d4366c9d1fcae60a69ee45b1850941",
     "passives.tsx": "3f2cdbf1cbff6cecd49da9cc3823255437d5a14cd1b8e2b1d41b7044d57d2a5f",
     "model-assets.d.ts": "9456883f24ccb7aabd3a84f094f1b87c32756018db28ae45bc2eec59d96fea72",
-    "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
-    "routed-paths.json": "2989ec13f4d56ace059bce086b4712ea429f3a001d0705f82393ccab56a3c1ca",
-    "published.circuit.json": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
-    "package.json": "51cceaca4fc68e01e62f8d6498d05c0e73e058ee398b2aa8cffa31eae9041102",
-    "verify.mjs": "b67d00f0cad733ba73514f6ecddd07273b05801d5ca842b757ed3a0099f08d9a",
+    "routing.ts": "15810fe18c5bd0aeb719b08e0e8ae69e207cf506440f2ed775fa463d64762219",
+    "routed-paths.json": "5871c5a7a080817c01b2f9ef96ffc358e544ba8080e826062e2aa631fa7455f4",
+    "published.circuit.json": "98f4ef9a52b51d7c0ac6d6ad2c607dfd4e56a343ee5d3e7f36d51f4eda1001ad",
+    "package.json": "d578e6903a726f46ae2ebe641113204768a9694b17e63b9096e5043321e4759f",
+    "verify.mjs": "620e66c189abb8a095c263355b34c1decf8eaa674ad16b93d759cfcb35cb27be",
     "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
     "export-gerbers.mjs": "449fb40fdae108c9025ac9df21eea2669cb0cbb451fd642337dd72f091652008",
-    "validation/check-enclosure.mjs": "038dd5e8698d576adf544b7cea6f2e1379a4fca932b76c67f68613f7013ee3fc",
-    "mechanical/Circuit_Models/manifest.json": "ba188e79f8288a0a12d50f998b80aab731c335adcf1da823b88831ebad03f073",
-    "dist/index/circuit.json": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073"
-  },
-  "publicationRefreshedFromCheckedSourceBuild": true,
-  "enclosureModelCount": 12
+    "validation/check-enclosure.mjs": "148758742c0790ff2f06f5e4f3696d68effd3dc493e0251311e98382a6c25180",
+    "mechanical/Circuit_Models/manifest.json": "7b9b8f047c04f1436f63017d1520b27bebdf1be4ac024d099b43e53a38b5c6d9",
+    "dist/index/circuit.json": "98f4ef9a52b51d7c0ac6d6ad2c607dfd4e56a343ee5d3e7f36d51f4eda1001ad"
+  }
 }

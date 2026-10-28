@@ -2,7 +2,7 @@
   "parameters_mm": {
     "body_diameter": 42.0,
     "cap_diameter": 61.6,
-    "cap_grip_bottom_z": 1.0,
+    "cap_grip_bottom_z": 1.5,
     "cap_grip_wall": 0.95,
     "cap_edge_rib_count": 88,
     "cap_top_groove_count": 48,
@@ -11,7 +11,7 @@
     "cap_top_groove_inner_radius": 7.0,
     "attachment_flange_diameter": 58.0,
     "overall_height": 14.0,
-    "button_travel": 0.5,
+    "button_travel": 0.9,
     "radial_running_clearance": 0.25,
     "pcb_diameter": 36.5,
     "pcb_thickness": 1.0,
@@ -80,7 +80,25 @@
     "battery_holder_max_height": 5.8,
     "battery_holder_pcb_x": -1.2,
     "battery_holder_pcb_y": 0,
-    "battery_negative_face_depth": 1.5
+    "battery_negative_face_depth": 1.5,
+    "switch_height": 1.9,
+    "switch_height_tolerance": 0.2,
+    "switch_travel_min": 0.15,
+    "switch_travel_max": 0.35,
+    "button_stop_tolerance": 0.05,
+    "actuator_gap_target_min": 0.1,
+    "actuator_gap_target_max": 0.15,
+    "actuator_gap_nominal": 0.125,
+    "actuator_compliance_thickness": 1.2,
+    "actuator_shim_nominal": 0.6,
+    "actuator_shim_min": 0,
+    "actuator_shim_max": 1.2,
+    "actuator_shim_step": 0.05,
+    "actuator_compression_at_operating_force_max": 0.2,
+    "pcb_seating_tolerance": 0.1,
+    "cap_pusher_print_tolerance": 0.1,
+    "actuator_thickness_tolerance": 0.1,
+    "flexure_mount_drop": 0.4
   },
   "manifest": [
     {
@@ -88,16 +106,50 @@
       "print": true,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 8575.897,
+      "volume_mm3": 7624.214,
       "size_mm": [
         61.6,
         61.6,
-        13.0
+        12.5
       ],
       "color": [
         0.13,
         0.19,
         0.26
+      ]
+    },
+    {
+      "name": "Actuator_Compliance_Ring",
+      "print": false,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 200.295,
+      "size_mm": [
+        27.403,
+        27.4,
+        1.203
+      ],
+      "color": [
+        0.55,
+        0.8,
+        0.88
+      ]
+    },
+    {
+      "name": "Actuator_Shim",
+      "print": false,
+      "cad_valid": true,
+      "solids": 1,
+      "volume_mm3": 100.148,
+      "size_mm": [
+        27.403,
+        27.4,
+        0.603
+      ],
+      "color": [
+        0.8,
+        0.8,
+        0.65
       ]
     },
     {
@@ -122,7 +174,7 @@
       "print": true,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 4046.12,
+      "volume_mm3": 4008.961,
       "size_mm": [
         58.0,
         58.0,
@@ -139,11 +191,11 @@
       "print": true,
       "cad_valid": true,
       "solids": 1,
-      "volume_mm3": 283.577,
+      "volume_mm3": 287.648,
       "size_mm": [
         36.6,
         36.6,
-        2.05
+        2.45
       ],
       "color": [
         0.96,
@@ -339,23 +391,45 @@
     "y": -14,
     "pad_diameter": 1.2
   },
-  "button_travel_mm": 0.5,
+  "button_travel_mm": 0.9,
+  "press_tolerance_stack": {
+    "switch_height_tolerance_mm": 0.2,
+    "pcb_seating_tolerance_mm": 0.1,
+    "printed_pusher_tolerance_mm": 0.1,
+    "silicone_thickness_tolerance_mm": 0.1,
+    "unadjusted_worst_case_gap_error_mm": 0.5,
+    "shim_selection_range_mm": [
+      0,
+      1.2
+    ],
+    "required_measured_rest_gap_mm": [
+      0.1,
+      0.15
+    ],
+    "minimum_stop_travel_mm": 0.85,
+    "latest_closure_mm": 0.7,
+    "minimum_closure_margin_mm": 0.14999999999999997,
+    "maximum_required_local_compression_mm": 0.7000000000000001,
+    "material_status": "Silicone candidate; <=0.20 mm compression at 2.5 N and full-stroke force require bench verification and switch manufacturer overload approval",
+    "assembly_adjustment_required": true,
+    "physical_force_and_cycle_tested": false
+  },
   "sensor_gap_released_mm": 1.8,
-  "sensor_gap_pressed_mm": 1.3,
+  "sensor_gap_pressed_mm": 0.9,
   "snap_radial_engagement_mm": 0.25,
   "retention_groove_wall_mm": 0.8000000000000007,
   "skirt_running_clearance_radial_mm": 0.25,
-  "outer_grip_height_mm": 13.0,
+  "outer_grip_height_mm": 12.5,
   "outer_grip_flange_clearance_radial_mm": 0.25,
-  "outer_grip_phone_clearance_pressed_mm": 0.5,
+  "outer_grip_phone_clearance_pressed_mm": 0.6,
   "snap_strain_estimate": 0.01338488994646044,
   "flexure_estimate": {
     "method": "straight cantilever approximation; curved beam and FDM anisotropy not solved",
     "length_mm": 12.645,
     "four_beam_stiffness_n_per_mm": 1.781,
     "rest_force_n": 0.445,
-    "pressed_force_n": 1.335,
-    "surface_strain_estimate": 0.00704
+    "pressed_force_n": 2.048,
+    "surface_strain_estimate": 0.01079
   },
   "magnet_layout_status": "Disc-array mechanical prototype; ordered magnetization, holding force, Hall bias and MagSafe compatibility unverified",
   "encoder_magnet_status": {

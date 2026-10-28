@@ -1,0 +1,16 @@
+{
+  "topology": "grounded coplanar waveguide; bottom reference has local digital crossings",
+  "targetOhms": 50,
+  "traceWidthMm": 0.75,
+  "coplanarGapMm": 0.15,
+  "finishedBoardThicknessMm": 1.0,
+  "copperThicknessMm": 0.035,
+  "dielectricHeightMm": 0.965,
+  "assumedRelativePermittivity": 4.3,
+  "soldermaskIncludedInEstimate": false,
+  "fabricatorStackupConfirmed": false,
+  "impedanceMeasured": false,
+  "reference": "https://qucs.sourceforge.net/tech/node86.html",
+  "status": "Prototype 50-ohm geometry target. Local bottom-reference interruptions require fabricator/EM review and coupon/TDR validation; physical antenna tuning and harmonics remain mandatory.",
+  "continuousBottomReference": false
+}

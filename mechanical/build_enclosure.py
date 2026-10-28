@@ -54,6 +54,7 @@ Rgroove=Rlip+0.3
 pcb_z=P['pcb_bottom_z']; pcb_top=pcb_z+P['pcb_thickness']
 deck_z=P['overall_height']-1.2
 body_top=deck_z-1.8
+flex_z=body_top-P['flexure_mount_drop']
 hard_stop_z=body_top+P['button_travel']
 magnet_z=pcb_top+P['sensor_height']+P['encoder_released_airgap']
 pad=P['phone_pad_thickness']; skin=P['bottom_skin_thickness']
@@ -122,7 +123,15 @@ grooves=[radial_box((groove_inner+groove_outer)/2,groove_outer-groove_inner,
 cap=cap.cut(compound(grooves)).clean()
 # Continuous annular force transfer reaches the one stationary off-axis switch
 # at every rotation angle. The cavity inside it clears the sensor and BLE MCU.
-cap=cap.fuse(annulus(11.6,13.7,pcb_top+2.15,deck_z-(pcb_top+2.15)+0.02))
+# A replaceable silicone ring and selected PET shim provide compliance. The
+# rigid cap shoulder stops against the housing; the switch carries no stop load.
+actuator_bottom=pcb_top+P['switch_height']+P['actuator_gap_nominal']
+actuator_top=actuator_bottom+P['actuator_compliance_thickness']
+pusher_bottom=actuator_top+P['actuator_shim_nominal']
+assert deck_z-pusher_bottom >= 0.8, 'Actuator backing too thin'
+cap=cap.fuse(annulus(11.6,13.7,pusher_bottom,deck_z-pusher_bottom+0.02))
+actuator=annulus(11.6,13.7,actuator_bottom,P['actuator_compliance_thickness'])
+actuator_shim=annulus(11.6,13.7,actuator_top,P['actuator_shim_nominal'])
 pocket_r=(P['encoder_diameter']+P['encoder_pocket_clearance'])/2
 pocket_top=magnet_z+P['encoder_thickness']+P['encoder_roof_shim']
 assert pocket_top<=deck_z, 'Encoder pocket cuts through cap roof'
@@ -140,7 +149,7 @@ housing=disk(Rbase,skin_top,flange_top-skin_top)
 housing=housing.fuse(disk(Rbody,skin_top,body_top-skin_top-0.5))
 housing=housing.fuse(cone(Rbody,Rbody-0.6,body_top-0.5,0.5))
 housing=housing.cut(disk(Rbore,1.5,body_top+1.0))
-housing=housing.cut(annulus(Rbore-0.02,Rgroove,P['snap_lip_top_z']-1.30,1.30))
+housing=housing.cut(annulus(Rbore-0.02,Rgroove,P['snap_lip_top_z']-(P['button_travel']+0.8),P['button_travel']+0.8))
 housing=housing.cut(cone(Rbore,Rbore+0.4,body_top-0.5,0.51))
 housing=housing.cut(disk(12.25,skin_top-0.1,1.5-skin_top+0.2))
 for angle in P['snap_tab_center_degrees']:
@@ -198,14 +207,14 @@ attachment=compound(attachment); shield=compound(shields)
 for x,y in mounts:
     # Shoulder supports PCB, upper column passes through a PCB clearance notch.
     housing=housing.fuse(disk(2.3,1.49,pcb_z-1.49,x,y))
-    housing=housing.fuse(disk(1.55,pcb_z-0.01,body_top-pcb_z+0.01,x,y))
+    housing=housing.fuse(disk(1.55,pcb_z-0.01,flex_z-pcb_z+0.01,x,y))
     housing=housing.cut(disk(0.625,pcb_z+0.85,3.10,x,y))
 # Four perimeter notches engage fixed columns and register PCB rotation.
 housing=housing.clean()
 
 # Replaceable PETG spring insert. Neutral STL is planar under every beam.
 # Assembly shapes represent prescribed elastic deflection, not an FEA result.
-flex_z=body_top; flex_ri=17.1; flex_ro=18.3
+flex_ri=17.1; flex_ro=18.3
 beam_ri=P['flexure_mean_radius']-P['flexure_width']/2
 beam_ro=P['flexure_mean_radius']+P['flexure_width']/2
 fixed_root_degrees=9.0
@@ -290,11 +299,11 @@ encoder_shim=disk(P['encoder_diameter']/2,magnet_z+P['encoder_thickness'],P['enc
 def flat_screw(x,y,head_z,dia,length,head_d):
     head_h=(head_d-dia)/2
     return cone(head_d/2,dia/2,head_z,head_h,x,y).fuse(disk(dia/2,head_z+head_h,length,x,y)).clean()
-flex_screws=compound([flat_screw(x,y,body_top+0.46,1.6,3.0,2.8).rotate((x,y,body_top+0.78),(x+1,y,body_top+0.78),180) for x,y in mounts])
+flex_screws=compound([flat_screw(x,y,flex_z+0.46,1.6,3.0,2.8).rotate((x,y,flex_z+0.78),(x+1,y,flex_z+0.78),180) for x,y in mounts])
 # Four bushings clamp the PCB against its shoulders when the spring insert is
 # screwed down. The board cannot lift toward the encoder when the phone flips.
-pcb_spacers=compound([annulus(1.7,2.2,pcb_top,body_top-pcb_top).translate((x,y,0)) for x,y in mounts])
-spacer_print=annulus(1.7,2.2,0,body_top-pcb_top)
+pcb_spacers=compound([annulus(1.7,2.2,pcb_top,flex_z-pcb_top).translate((x,y,0)) for x,y in mounts])
+spacer_print=annulus(1.7,2.2,0,flex_z-pcb_top)
 cq.exporters.export(spacer_print,str(OUT/'Print_STL'/'PCB_Spacer_Print_4.stl'),tolerance=0.025,angularTolerance=0.06)
 cq.exporters.export(pcb_spacers,str(OUT/'STEP_Parts'/'PCB_Spacer_Bushings.step'))
 # Two reusable flat keys enter the aligned side ports. A shoulder limits inward
@@ -312,12 +321,12 @@ cq.exporters.export(lift_pick,str(OUT/'Print_STL'/'PCB_Lift_Pick.stl'),tolerance
 cq.exporters.export(lift_pick,str(OUT/'STEP_Parts'/'PCB_Lift_Pick.step'))
 
 parts={
- 'Rotating_Cap':cap,'Encoder_Magnet':encoder,'Stationary_Housing':housing,
+ 'Rotating_Cap':cap,'Actuator_Compliance_Ring':actuator,'Actuator_Shim':actuator_shim,'Encoder_Magnet':encoder,'Stationary_Housing':housing,
  'Flexure_Retention_System':released_flex,'PCB_Dummy':pcb_dummy,
  'Angle_Sensor_Dummy':sensor,'BLE_MCU_Dummy':mcu,'Tactile_Switch':switch,
  'CR2032':battery,'Battery_Holder':holder,
  'MagSafe_Magnet_Array':attachment,'Magnetic_Shield':shield,'Bottom_Cover':bottom}
-colors={'Rotating_Cap':(0.13,0.19,0.26),'Encoder_Magnet':(0.88,0.31,0.22),
+colors={'Actuator_Compliance_Ring':(0.55,0.80,0.88),'Actuator_Shim':(0.80,0.80,0.65),'Rotating_Cap':(0.13,0.19,0.26),'Encoder_Magnet':(0.88,0.31,0.22),
  'Stationary_Housing':(0.77,0.82,0.84),'Flexure_Retention_System':(0.96,0.64,0.18),
  'PCB_Dummy':(0.07,0.40,0.28),'Angle_Sensor_Dummy':(0.10,0.12,0.16),
  'BLE_MCU_Dummy':(0.10,0.12,0.16),'Tactile_Switch':(0.68,0.71,0.73),
@@ -330,12 +339,20 @@ states['Pressed']['Rotating_Cap']=cap.translate((0,0,-P['button_travel']))
 states['Pressed']['Encoder_Magnet']=encoder.translate((0,0,-P['button_travel']))
 states['Pressed']['Flexure_Retention_System']=pressed_flex
 states['Pressed']['Tactile_Switch']=pressed_switch
-explode={'Rotating_Cap':66,'Encoder_Magnet':45,'Flexure_Retention_System':30,
+# Prescribed local silicone deformation for collision viewing, not material FEA.
+# An expanded cutter avoids presenting the ring as a rigid body inside SW1.
+pressed_actuator=actuator.translate((0,0,-P['button_travel']))
+pressed_actuator=pressed_actuator.cut(box(2.2,2.2,0.8,12.65,0,pcb_top+1.4))
+states['Pressed']['Actuator_Compliance_Ring']=pressed_actuator
+states['Pressed']['Actuator_Shim']=actuator_shim.translate((0,0,-P['button_travel']))
+explode={'Actuator_Compliance_Ring':58,'Actuator_Shim':61,'Rotating_Cap':66,'Encoder_Magnet':45,'Flexure_Retention_System':30,
  'Angle_Sensor_Dummy':23,'BLE_MCU_Dummy':23,'Tactile_Switch':23,
  'PCB_Dummy':17,'Battery_Holder':17,'CR2032':8,'Stationary_Housing':0,
  'Magnetic_Shield':-14,'MagSafe_Magnet_Array':-28,'Bottom_Cover':-42}
 for n,s in parts.items(): states['Exploded'][n]=s.translate((0,0,explode[n]))
 states['Top_Service']['Rotating_Cap']=cap.translate((-65,0,20))
+states['Top_Service']['Actuator_Compliance_Ring']=actuator.translate((-65,0,20))
+states['Top_Service']['Actuator_Shim']=actuator_shim.translate((-65,0,20))
 states['Top_Service']['Encoder_Magnet']=encoder.translate((-65,0,20))
 states['Top_Service']['Flexure_Retention_System']=released_flex.translate((0,0,30))
 for name in ['PCB_Dummy','Battery_Holder','CR2032','Angle_Sensor_Dummy','BLE_MCU_Dummy','Tactile_Switch']:
@@ -461,6 +478,20 @@ k=P['petg_modulus_estimate_mpa']*P['flexure_width']*P['flexure_thickness']**3/(4
 validation={'parameters_mm':P,'manifest':manifest,'collision_audit':collisions,'contact_fit_estimates':contact_fit,
  'swd_pad_row_mm':{'x':[-4,-2,0,2,4],'y':-14,'pad_diameter':1.2},
  'button_travel_mm':P['button_travel'],
+ 'press_tolerance_stack':{
+   'switch_height_tolerance_mm':P['switch_height_tolerance'],
+   'pcb_seating_tolerance_mm':P['pcb_seating_tolerance'],
+   'printed_pusher_tolerance_mm':P['cap_pusher_print_tolerance'],
+   'silicone_thickness_tolerance_mm':P['actuator_thickness_tolerance'],
+   'unadjusted_worst_case_gap_error_mm':sum(P[k] for k in ['switch_height_tolerance','pcb_seating_tolerance','cap_pusher_print_tolerance','actuator_thickness_tolerance']),
+   'shim_selection_range_mm':[P['actuator_shim_min'],P['actuator_shim_max']],
+   'required_measured_rest_gap_mm':[P['actuator_gap_target_min'],P['actuator_gap_target_max']],
+   'minimum_stop_travel_mm':P['button_travel']-P['button_stop_tolerance'],
+   'latest_closure_mm':P['actuator_gap_target_max']+P['switch_travel_max']+P['actuator_compression_at_operating_force_max'],
+   'minimum_closure_margin_mm':P['button_travel']-P['button_stop_tolerance']-P['actuator_gap_target_max']-P['switch_travel_max']-P['actuator_compression_at_operating_force_max'],
+   'maximum_required_local_compression_mm':P['button_travel']+P['button_stop_tolerance']-P['actuator_gap_target_min']-P['switch_travel_min'],
+   'material_status':'Silicone candidate; <=0.20 mm compression at 2.5 N and full-stroke force require bench verification and switch manufacturer overload approval',
+   'assembly_adjustment_required':True,'physical_force_and_cycle_tested':False},
  'sensor_gap_released_mm':P['encoder_released_airgap'],
  'sensor_gap_pressed_mm':P['encoder_released_airgap']-P['button_travel'],
  'snap_radial_engagement_mm':Rlip-Rbore,'retention_groove_wall_mm':Rbody-Rgroove,

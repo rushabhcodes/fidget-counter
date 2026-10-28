@@ -21,7 +21,7 @@ def export_models(meshes, output, pcb_midplane_z, parameters=None):
     output.mkdir(parents=True, exist_ok=True)
     selected = [m for m in meshes if m["state"] in {"Released", "Detail"}
                 and m["name"] not in EXCLUDED]
-    assert len(selected) == 12
+    assert len(selected) == 14
     manifest = {"units": "mm", "axes": "Z-up", "state": "Released",
                 "pcbMidplaneZMm": pcb_midplane_z, "sourceParameters": parameters,
                 "circuitPositionOffsetMm": [0, 0, -pcb_midplane_z],

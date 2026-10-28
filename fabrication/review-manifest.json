@@ -1,0 +1,36 @@
+{
+  "revision": "1.0.7",
+  "reviewDateLocal": "2026-10-29",
+  "timezone": "Asia/Kolkata",
+  "releaseStatus": "PROTOTYPE_NOT_RELEASED",
+  "circuitSha256": "98f4ef9a52b51d7c0ac6d6ad2c607dfd4e56a343ee5d3e7f36d51f4eda1001ad",
+  "sourceChecks": {
+    "errors": 0,
+    "warnings": 0,
+    "routedTraces": 80,
+    "vias": 56
+  },
+  "qualificationPending": [
+    "resolve/EM-review local digital crossings in bottom RF reference; fabricator stackup and impedance coupon",
+    "VNA antenna tuning and BLE/harmonics with phone and enclosure",
+    "silicone force curve, switch overload and press cycle/print fit test",
+    "assembler confirmation of SW1 exact-MPN supply/consignment",
+    "assembler confirmation of authored CPL rotations and stencil apertures"
+  ],
+  "files": {
+    "BOM.csv": "d94bf6754f69b46f1be11aa79fd160df3bd6bfdd311e1f36558dad2bedb70181",
+    "published.circuit.json": "98f4ef9a52b51d7c0ac6d6ad2c607dfd4e56a343ee5d3e7f36d51f4eda1001ad",
+    "mechanical/enclosure-parameters.json": "66c3c05184be7ce85a2be35266c4b0648e3d88a12aeb29fcc635363dc667c377",
+    "fabrication/Assembly_Position_Reference.csv": "e2f0b872e49c98ca7aeb66ff4f2ae5d0cb146e710f319b4a3b6e2a5aec4ff544",
+    "fabrication/JLCPCB_BOM_Quote_Draft.csv": "0feef5975b25e339c366fa72f885f9d0ae51b3d985926dd7fcd48c5f218ee926",
+    "fabrication/JLCPCB_CPL_Quote_Draft.csv": "9d7c0ad52744e9898aeecb1940f0c9ba68291e3914b78b2453288ee9dcd7c239",
+    "fabrication/Fidget_Counter_RevA_Prototype_Gerbers.zip": "fccec1ef315f2f7ffae3b24ff26b83af5519afce4c054653aa583ecad7255eac",
+    "mechanical/Print_STL/Bottom_Cover.stl": "f769b233294264e3f803bf0cf8a78a124f96100c87d2449963897399178d4f82",
+    "mechanical/Print_STL/Cap_Release_Key_Print_2.stl": "f02b73d1f3f6d763d02f450210f8355738713167de76e58aa4e481a4addcfce1",
+    "mechanical/Print_STL/Flexure_Retention_System.stl": "11d1d02adb8d8c18e21fa42f06bf8913ece7c5ce438d2b7ae1c89338ade3caf5",
+    "mechanical/Print_STL/PCB_Lift_Pick.stl": "5699d1db105454cebfcbd1087814d0ce485029b3f17ded63ca83c3e5226ebc40",
+    "mechanical/Print_STL/PCB_Spacer_Print_4.stl": "7c2db90d2981e347bc046ff1197c5e0bdc074a57dce6154294b002f48ed63c4b",
+    "mechanical/Print_STL/Rotating_Cap.stl": "4b6bf2ecdc4611f75544519e110cd253958e24e7bda50f68b5141a41dd7545f0",
+    "mechanical/Print_STL/Stationary_Housing.stl": "8932211e35d86dd9a68cdbd9953a34642df29ed2b896e8b73bf44a4d15179ca9"
+  }
+}

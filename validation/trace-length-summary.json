@@ -1,12 +1,12 @@
 [
   {
     "target": "net.GND",
-    "routedLengthMm": 269.42,
-    "traceCount": 49
+    "routedLengthMm": 235.23,
+    "traceCount": 48
   },
   {
     "target": "net.VBAT",
-    "routedLengthMm": 148.07,
+    "routedLengthMm": 112.14,
     "traceCount": 16
   },
   {
@@ -26,7 +26,7 @@
   },
   {
     "target": "net.SWDIO",
-    "routedLengthMm": 39.02,
+    "routedLengthMm": 38.64,
     "traceCount": 2
   },
   {
@@ -61,17 +61,12 @@
   },
   {
     "target": "U1.ANT",
-    "routedLengthMm": 1.39,
-    "traceCount": 1
-  },
-  {
-    "target": "U1.DEC2",
-    "routedLengthMm": 4.1,
+    "routedLengthMm": 1.99,
     "traceCount": 1
   },
   {
     "target": "U1.DEC3",
-    "routedLengthMm": 1.88,
+    "routedLengthMm": 4.12,
     "traceCount": 1
   },
   {
@@ -91,12 +86,12 @@
   },
   {
     "target": "L1.pin2",
-    "routedLengthMm": 0.57,
+    "routedLengthMm": 28.8,
     "traceCount": 1
   },
   {
     "target": "L2.pin2",
-    "routedLengthMm": 20.97,
+    "routedLengthMm": 1.75,
     "traceCount": 2
   }
 ]

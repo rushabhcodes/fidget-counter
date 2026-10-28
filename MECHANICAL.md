@@ -1,10 +1,10 @@
-# PCB / enclosure interface — top-access revision 1.0.6
+# PCB / enclosure interface — datasheet-review revision 1.0.7
 
 Coordinates are millimetres in a top view, relative to the rotation axis. The board is Ø36.5 × 1.0 mm, with four Ø3.6 mm nonplated mounting holes at (±11.45513, ±11.45513). Their thin 0.25 mm nominal edge web still requires fabricator acceptance. Printed shoulders and bushings support the board.
 
-The revised enclosure is **14.0 mm high**. PCB bottom/top planes are Z=7.1/8.1. U2 is centered at (0,0); U1 is the 6 × 6 mm QFN at (-7.5,5); SW1 is centered at (12.65,0). The encoder magnet's lower face is Z=10.4, leaving nominal sensor package clearance of 1.8 mm released and 1.3 mm pressed. The cap pocket is Ø5.2 mm with a 0.2 mm roof shim; the magnet lower face stays at Z=10.4 mm. Use a diametrically magnetized neodymium Ø5 × 1.5 mm magnet and calibrate with the final phone and cell installed.
+The revised enclosure is **14.0 mm high**. PCB bottom/top planes are Z=7.1/8.1. U2 is centered at (0,0); U1 is the 6 × 6 mm QFN at (-7.5,5); SW1 is centered at (12.65,0). The encoder magnet's lower face is Z=10.4, leaving nominal sensor package clearance of 1.8 mm released and 0.9 mm pressed. The cap pocket is Ø5.2 mm with a 0.2 mm roof shim; the magnet lower face stays at Z=10.4 mm. Use a diametrically magnetized neodymium Ø5 × 1.5 mm magnet and calibrate with the final phone and cell installed.
 
-The Ø61.6 mm cap retains its full circumference grip, extending down to Z=1.0. Its pressed lower edge remains 0.5 mm above the phone plane. The annular switch pusher uses `pcb_top + 2.15`: nominal 0.25 mm free clearance above the 1.9 mm actuator, followed by nominal 0.25 mm switch displacement during the cap's 0.5 mm travel. Fit-test the switch and printed stack; the tactile switch must not act as the structural stop.
+The Ø61.6 mm cap retains its full circumference grip, extending down to Z=1.5. Its pressed lower edge remains 0.6 mm above the phone plane. The annular pusher now carries a separate OD27.4 / ID23.2 × 1.2 mm compliant silicone ring and a 0–1.2 mm selectable PET shim (0.6 mm nominal). Set the measured resting gap to 0.10–0.15 mm at every angle. Cap stroke is 0.90 ±0.05 mm, with a 0.15 mm calculated worst-case closure margin after adjustment and material qualification. The fixed spring ring sits 0.4 mm lower, with 2.5 mm bushings, to clear the longer stroke. The retention groove is deeper. See REVIEW_FIXES.md for the full tolerance stack and mandatory ring force/switch load tests. The housing shoulder carries the stop load.
 
 ## Commercial CR2032 holder
 
@@ -16,7 +16,7 @@ Insert the CR2032 **positive face toward the solid bottom cover**, negative face
 
 ## Top battery access and cap release
 
-The cap now has **two 0.6 mm PETG latch tongues** instead of six broad retention segments. Two 6 × 3.5 mm windows in the grip line up with two 3 × 1.4 mm radial ports in the housing, at 90° and 270°. The retention roof above the ports remains continuous, so aligning the ports alone does not unlock the cap. The 0.25 mm nominal lip engagement and 0.5 mm button travel are retained. Use PETG for the cap and flexure; repeated release of the thin latches has not been physically tested.
+The cap now has **two 0.6 mm PETG latch tongues** instead of six broad retention segments. Two 6 × 3.5 mm windows in the grip line up with two 3 × 1.4 mm radial ports in the housing, at 90° and 270°. The retention roof above the ports remains continuous, so aligning the ports alone does not unlock the cap. The 0.25 mm nominal lip engagement and 0.90 mm button travel are used. Use PETG for the cap and flexure; repeated release of the thin latches has not been physically tested.
 
 1. Remove the device from the phone. Rotate the cap until both grip windows align with the housing ports.
 2. Insert the two printed `Cap_Release_Key_Print_2` keys through the windows and ports. Press both keys inward until their shoulders meet the housing, then gently lift the cap about 0.5 mm. Withdraw the keys and lift the cap clear. Do not force a latch that does not release; fit-test the port/key pair first.
@@ -32,6 +32,8 @@ There is **no bottom hatch, hatch seam, hatch post or M2 hatch screw**. The bott
 The exported holder STEP contains its unloaded negative spring contact. Its 2.62 mm³ intersection with the nominal cell is reported separately as spring preload geometry; the cell has zero intersection with the rigid holder body. Contact deflection, insertion/removal motion, retention force and printed tolerances require a physical fit test. The top-service STEP illustrates the lifted and flipped board; cell insertion/removal from the spring holder is not a simulated trajectory.
 
 ## Programming and clearance
+
+See [PROGRAMMING.md](PROGRAMMING.md) for the standard 10-pin Cortex SWD adapter wiring, power setup and flashing procedure. Program the board before enclosure assembly when practical; servicing an assembled device requires the top-access removal sequence above.
 
 SWD pads are at Y=-14 and X=-4,-2,0,2,4, ordered VDD, GND, SWDIO, SWDCLK, nRESET in a top view. Viewed directly underneath, their order is **R, C, D, G, V**, matching the legend. Lift the PCB through the top and turn it over for programming. Use a fixture with narrow probes. VDD is a target-voltage reference; remove the primary cell before deliberately powering the board from the programmer.
 

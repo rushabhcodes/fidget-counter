@@ -6,7 +6,7 @@
   "sourceParameters": {
     "body_diameter": 42.0,
     "cap_diameter": 61.6,
-    "cap_grip_bottom_z": 1.0,
+    "cap_grip_bottom_z": 1.5,
     "cap_grip_wall": 0.95,
     "cap_edge_rib_count": 88,
     "cap_top_groove_count": 48,
@@ -15,7 +15,7 @@
     "cap_top_groove_inner_radius": 7.0,
     "attachment_flange_diameter": 58.0,
     "overall_height": 14.0,
-    "button_travel": 0.5,
+    "button_travel": 0.9,
     "radial_running_clearance": 0.25,
     "pcb_diameter": 36.5,
     "pcb_thickness": 1.0,
@@ -84,7 +84,25 @@
     "battery_holder_max_height": 5.8,
     "battery_holder_pcb_x": -1.2,
     "battery_holder_pcb_y": 0,
-    "battery_negative_face_depth": 1.5
+    "battery_negative_face_depth": 1.5,
+    "switch_height": 1.9,
+    "switch_height_tolerance": 0.2,
+    "switch_travel_min": 0.15,
+    "switch_travel_max": 0.35,
+    "button_stop_tolerance": 0.05,
+    "actuator_gap_target_min": 0.1,
+    "actuator_gap_target_max": 0.15,
+    "actuator_gap_nominal": 0.125,
+    "actuator_compliance_thickness": 1.2,
+    "actuator_shim_nominal": 0.6,
+    "actuator_shim_min": 0,
+    "actuator_shim_max": 1.2,
+    "actuator_shim_step": 0.05,
+    "actuator_compression_at_operating_force_max": 0.2,
+    "pcb_seating_tolerance": 0.1,
+    "cap_pusher_print_tolerance": 0.1,
+    "actuator_thickness_tolerance": 0.1,
+    "flexure_mount_drop": 0.4
   },
   "circuitPositionOffsetMm": [
     0,
@@ -109,7 +127,7 @@
         [
           -30.799779031156604,
           -30.799779031156607,
-          1.0
+          1.5
         ],
         [
           30.799779031156604,
@@ -119,8 +137,52 @@
       ],
       "translucent": true,
       "sha256": {
-        "Rotating_Cap.obj": "02f1c24560be2bd5fb3b4bc718bcaf8c906c1bd45b749d9bc4dd7b8c01e32cc3",
+        "Rotating_Cap.obj": "9b36509e6155fbf5c4ac501ddd8afe0dbbe07dbe2045b3ddb301eb33e52a4d8e",
         "Rotating_Cap.mtl": "218a07fe8a060bc2bb21c23ebc49f9f9f036eb098db4e5505aad035265054d04"
+      }
+    },
+    {
+      "name": "Actuator_Compliance_Ring",
+      "vertices": 1684,
+      "triangles": 1680,
+      "boundsMm": [
+        [
+          -13.7,
+          -13.698466994800745,
+          10.125
+        ],
+        [
+          13.7,
+          13.698466994800745,
+          11.325
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "Actuator_Compliance_Ring.obj": "0bb21bb2af79fee36da6227689db6fb8533a05b5df4937bedc484aba75c18f84",
+        "Actuator_Compliance_Ring.mtl": "b82f054df84f9266cc396352997ca1cd3cf49c6246641336accc4d886dce9b99"
+      }
+    },
+    {
+      "name": "Actuator_Shim",
+      "vertices": 1684,
+      "triangles": 1680,
+      "boundsMm": [
+        [
+          -13.7,
+          -13.698466994800745,
+          11.325
+        ],
+        [
+          13.7,
+          13.698466994800745,
+          11.924999999999999
+        ]
+      ],
+      "translucent": false,
+      "sha256": {
+        "Actuator_Shim.obj": "e6bf8cfc7ad5737f3aa4f7abe8f820ff6aff519343d146a43b4dd9523639e59d",
+        "Actuator_Shim.mtl": "4bac09ad974276c2d9f2601998b9974de89a1cac33684dd8a1f378f5eef0524e"
       }
     },
     {
@@ -147,8 +209,8 @@
     },
     {
       "name": "Stationary_Housing",
-      "vertices": 14668,
-      "triangles": 14604,
+      "vertices": 14680,
+      "triangles": 14624,
       "boundsMm": [
         [
           -29.0,
@@ -163,7 +225,7 @@
       ],
       "translucent": true,
       "sha256": {
-        "Stationary_Housing.obj": "a9e843f938f608c9d414fdec7900b71a0961c681e4f894c939fae37024d0088e",
+        "Stationary_Housing.obj": "e884e0bd3fa5fbd2c24619dd23785b1baaed8e6b04083e99657ad05987159675",
         "Stationary_Housing.mtl": "1ab6c1fd3c7f6a80f167617da726b3aeefcff50dac043057f4ce959b83f1b86f"
       }
     },
@@ -175,7 +237,7 @@
         [
           -18.3,
           -18.296511025300465,
-          10.737147648537327
+          10.337147648537327
         ],
         [
           18.3,
@@ -185,7 +247,7 @@
       ],
       "translucent": false,
       "sha256": {
-        "Flexure_Retention_System.obj": "169870a3df3e2ec7bed9f8d508e02961fa206d573e290fdca88d9964cd88db35",
+        "Flexure_Retention_System.obj": "641885603d26ade0329fa7792eb52d66f14d26c8a5aed4624559be55274557d4",
         "Flexure_Retention_System.mtl": "0e01570cefa785d0462fe0000cab1f0278254958e9ef0f91fd82003ab7db2573"
       }
     },
@@ -285,17 +347,17 @@
         [
           -12.855129855222073,
           -12.854853116900166,
-          8.499999999999996
+          8.099999999999996
         ],
         [
           12.85512985522207,
           12.854853116900165,
-          12.1
+          11.7
         ]
       ],
       "translucent": false,
       "sha256": {
-        "Flexure_Fasteners.obj": "6755e8a20451e6f212cc6670f85a23286c6e4478e55b220d9c629044ad8e44e2",
+        "Flexure_Fasteners.obj": "6a5ca86be3ac22854b82dd7cef4e3a27392e5802fc258e461fa03ccd2ac21cb9",
         "Flexure_Fasteners.mtl": "1493a202f6e6bdf583dd98d346217742007deb4ce700d641596266b19055456d"
       }
     },
@@ -356,12 +418,12 @@
         [
           13.655129855222071,
           13.654694980716215,
-          11.0
+          10.6
         ]
       ],
       "translucent": false,
       "sha256": {
-        "PCB_Spacers.obj": "7962d2c8cb4bc2f9aba922d5d4bcc82b8c8b467c94d68af1c33c7b3e62dac8bd",
+        "PCB_Spacers.obj": "ff0b01151a082a22df42f7599aa94021149714d150d68b03d4ee8bceda812a12",
         "PCB_Spacers.mtl": "9747e4b143186089333dc958e95d1c5b47deaa84fa050099df71eb6e213ebce2"
       }
     }

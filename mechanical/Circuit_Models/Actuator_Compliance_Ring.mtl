@@ -1,0 +1,7 @@
+newmtl Actuator_Compliance_Ring
+Ka 0.1 0.1 0.1
+Kd 0.55 0.8 0.88
+Ks 0.15 0.15 0.15
+Ns 20
+d 1
+illum 2

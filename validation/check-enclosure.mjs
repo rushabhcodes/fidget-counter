@@ -25,8 +25,8 @@ const circuitBytes = readFileSync("dist/index/circuit.json")
 const circuit = JSON.parse(circuitBytes)
 const sources = circuit.filter(e => e.type === "source_component" && e.name?.startsWith("ENCLOSURE_"))
 const assemblyIds = new Set(sources.map(e => e.source_component_id))
-assert.equal(sources.length,12)
-assert.equal(manifest.parts.length,12)
+assert.equal(sources.length,14)
+assert.equal(manifest.parts.length,14)
 assert(!manifest.parts.some(p => ["Battery_Hatch","Battery_Fasteners"].includes(p.name)))
 assert.equal(geometry.parameters_mm.battery_access,"top")
 assert.equal(geometry.top_service.bottom_hatch,false)
@@ -41,13 +41,18 @@ assert(geometry.top_service.release_key_checks.every(p => p.retaining_roof_intac
 assert.equal(geometry.top_service.pcb_holder_cell_extraction.length,9)
 assert(geometry.top_service.pcb_holder_cell_extraction.every(p => p.rigid_collisions.length===0))
 assert.equal(circuit.filter(e => e.type === "pcb_component" && assemblyIds.has(e.source_component_id)).length,0)
-// Baseline: the checked v1.0.3 board at Git commit 8d744cd. Metadata hashes and
-// the newly added mechanical-only records are the sole excluded records.
+// Electrical changes are checked by verify.mjs and check-review-fixes.py.
+// Hash the current records for provenance; no old electrical baseline is claimed.
 const electronics = circuit.filter(e => e.type !== "source_project_metadata" &&
   !(["source_component","cad_component"].includes(e.type) && assemblyIds.has(e.source_component_id)))
 const electricalHash = hash(JSON.stringify(electronics))
-assert.equal(electricalHash,"2f61bd60f92435a4ff0948e47598774b3395add7e045356aa0880ad5f3d10843",
-  "Electrical geometry or connectivity changed from the checked holder revision")
+const press = geometry.press_tolerance_stack
+assert(press.minimum_closure_margin_mm >= 0.1499)
+assert(press.minimum_stop_travel_mm >= 0.85)
+assert(press.maximum_required_local_compression_mm <= 0.7001)
+assert.equal(press.assembly_adjustment_required,true)
+assert.equal(press.physical_force_and_cycle_tested,false)
+assert(geometry.sensor_gap_pressed_mm >= 0.8)
 const glbBytes = readFileSync("dist/index/3d.glb")
 const gltf = JSON.parse(glbBytes.subarray(20,20 + glbBytes.readUInt32LE(12)).toString())
 const reports = []
@@ -87,10 +92,10 @@ for (const part of manifest.parts) {
 }
 mkdirSync("work",{recursive:true})
 writeFileSync("work/enclosure-model-audit.json",JSON.stringify({
-  electricalBaselineVersion:"1.0.3",electricalRecordsUnchanged:true,electricalRecordsSha256:electricalHash,
+  electricalValidation:"Current revision separately checked; RF and physical press testing pending",electricalRecordsSha256:electricalHash,
   circuitSha256:hash(circuitBytes),glbSha256:hash(glbBytes),mechanicalModels:reports.length,
   pcbMidplaneOffsetMm:-manifest.pcbMidplaneZMm,models:reports,
   sourceSha256:Object.fromEntries(["enclosure.tsx","mechanical/export_circuit_models.py",
     "mechanical/build_enclosure.py","mechanical/Circuit_Models/manifest.json"].map(p=>[p,hash(readFileSync(p))])),
 },null,2)+"\n")
-console.log(`Pass: ${sources.length} aligned enclosure models; electrical records unchanged; portable model URLs`)
+console.log(`Pass: ${sources.length} aligned enclosure models; current electronics separately checked; portable model URLs`)

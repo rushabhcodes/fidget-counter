@@ -1,0 +1,15 @@
+{
+  "source": "dist/index/3d.glb",
+  "output": "previews/3d.glb",
+  "sourceBytes": 15441332,
+  "outputBytes": 9003968,
+  "sourceSha256": "48ababc615fc8442e47e3cfcb882205f5166c6a31a75308364443e7c9ea11e15",
+  "outputSha256": "2c18d8d9bbba4f438774fea8c7ed245d6eaef805299e6719e0990398565b9df9",
+  "meshCount": 31,
+  "removedOptionalAttributeArrays": 24,
+  "implicitIdentityIndexArrays": 12,
+  "mergedDuplicateBufferViews": 53,
+  "retainedBufferViewsByteIdentical": true,
+  "positionsIndicesAndNodeTransformsUnchanged": true,
+  "normals": "Face normals are derived by the viewer for untextured mechanical models. Electronic model normals and board textures are retained."
+}

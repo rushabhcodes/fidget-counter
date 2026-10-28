@@ -1,13 +1,13 @@
 {
-  "input": "published.circuit.json",
-  "circuitJsonSha256": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
+  "input": "dist/index/circuit.json",
+  "circuitJsonSha256": "98f4ef9a52b51d7c0ac6d6ad2c607dfd4e56a343ee5d3e7f36d51f4eda1001ad",
   "copperChecks": [
     {
       "check": "different-net copper spacing",
       "limitMm": 0.1,
       "minimumMm": 0.105366,
       "nearest": {
-        "a": "pcb_smtpad_87",
+        "a": "pcb_smtpad_85",
         "aRef": "R3",
         "b": "source_net_1_mst13_0:3",
         "bRef": "trace",
@@ -33,7 +33,7 @@
       "limitMm": 0.09,
       "minimumMm": 0.105366,
       "nearest": {
-        "a": "pcb_smtpad_87",
+        "a": "pcb_smtpad_85",
         "aRef": "R3",
         "b": "source_net_1_mst13_0:3",
         "bRef": "trace",
@@ -44,13 +44,13 @@
     {
       "check": "via drill to different-net track",
       "limitMm": 0.2,
-      "minimumMm": 0.233103,
+      "minimumMm": 0.239997,
       "nearest": {
-        "a": "pcb_via_0",
+        "a": "pcb_via_39",
         "aRef": "pcb_via",
-        "b": "pcb_trace_34:1",
-        "bRef": "U1_ANT",
-        "distanceMm": 0.233103
+        "b": "source_net_3_mst1_0:10",
+        "bRef": "GPIO_SDA_ESCAPE",
+        "distanceMm": 0.239997
       },
       "violations": []
     },
@@ -61,7 +61,7 @@
       "nearest": {
         "a": "pcb_plated_hole_1",
         "aRef": "GPIO_SDA",
-        "b": "pcb_via_2",
+        "b": "pcb_via_1",
         "bRef": "pcb_via",
         "distanceMm": 0.407114
       },
@@ -102,7 +102,7 @@
   },
   "minimumMountingWebMm": 0.24938257832721972,
   "drillInventory": {
-    "0.30 mm drill / 0.55 mm land": 50,
+    "0.30 mm drill / 0.55 mm land": 59,
     "3.60 mm NPTH": 4,
     "0.40 mm drill / 1.20 mm land": 1
   },

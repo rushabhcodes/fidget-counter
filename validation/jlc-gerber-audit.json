@@ -1,6 +1,6 @@
 {
-  "circuitJsonSha256": "05c19de10613c65e995cbdfc67bc97db1efc5fe04778525b19a93d671d09d073",
-  "gerberZipSha256": "37cf5f8e586103673d12e0000a9ee4cb7fff6f7ced7105cf92fb2f89140c5f88",
+  "circuitJsonSha256": "98f4ef9a52b51d7c0ac6d6ad2c607dfd4e56a343ee5d3e7f36d51f4eda1001ad",
+  "gerberZipSha256": "fccec1ef315f2f7ffae3b24ff26b83af5519afce4c054653aa583ecad7255eac",
   "sensorMaskBridgeMm": 0.199796,
   "minimumGreenMaskBridgeMm": 0.1,
   "silkscreen": {
@@ -16,9 +16,9 @@
     }
   },
   "boardAreaMm2": 1045.9265459632427,
-  "drillCount": 55,
-  "drillDensityPerSquareMetre": 52584.9546627081,
-  "exposedEnigAreaUpperBoundPercentOfSingleBoardArea": 16.96512618154169,
+  "drillCount": 64,
+  "drillDensityPerSquareMetre": 61189.7654256967,
+  "exposedEnigAreaUpperBoundPercentOfSingleBoardArea": 16.91349703778622,
   "maskCoverageViolations": [],
   "fittedPadsMissingPaste": [],
   "bareOrDnpPadsWithPaste": [],

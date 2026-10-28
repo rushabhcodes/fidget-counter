@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-29",
+  "circuitSha256": "98f4ef9a52b51d7c0ac6d6ad2c607dfd4e56a343ee5d3e7f36d51f4eda1001ad",
+  "dec2Unconnected": true,
+  "dec3CapacitancePf": 100,
+  "c3GroundIslandAreaAfterRemovingVss31Mm2": 0.35763596487917143,
+  "antennaMatchingDistanceToFeedMm": {
+    "L2": 1.9182,
+    "C13": 3.4016,
+    "C14": 2.5107
+  },
+  "rfNominalEstimateOhms": 50.00626637529699,
+  "rfDkSensitivityOhms": {
+    "3.8": 52.4400967956815,
+    "4.3": 50.00626637529699,
+    "4.8": 47.88261947620354
+  },
+  "rfBottomGroundVoidUnderFeedMm2": 1.294042808674477,
+  "rfReferenceInterruptions": [
+    {
+      "areaMm2": 0.38269462654026476,
+      "boundsMm": [
+        -3.1033248818583297,
+        2.715004489520206,
+        -2.0250904895202058,
+        3.4450109979097423
+      ]
+    },
+    {
+      "areaMm2": 0.612048182134212,
+      "boundsMm": [
+        2.7639795248669103,
+        4.34397952486691,
+        3.8730214751330907,
+        5.45302147513309
+      ]
+    },
+    {
+      "areaMm2": 0.2993000000000004,
+      "boundsMm": [
+        3.935000000000001,
+        10.795,
+        4.665000000000002,
+        11.205
+      ]
+    }
+  ],
+  "rfControlledImpedanceQualified": false,
+  "fittedBomParts": 29,
+  "externalValidationPending": [
+    "resolve/EM-review local digital crossings in bottom RF reference; fabricator stackup and impedance coupon",
+    "VNA antenna tuning and BLE/harmonics with phone and enclosure",
+    "silicone force curve, switch overload and press cycle/print fit test",
+    "assembler confirmation of SW1 exact-MPN supply/consignment"
+  ]
+}

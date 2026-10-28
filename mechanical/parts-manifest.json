@@ -4,16 +4,50 @@
     "print": true,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 8575.897,
+    "volume_mm3": 7624.214,
     "size_mm": [
       61.6,
       61.6,
-      13.0
+      12.5
     ],
     "color": [
       0.13,
       0.19,
       0.26
+    ]
+  },
+  {
+    "name": "Actuator_Compliance_Ring",
+    "print": false,
+    "cad_valid": true,
+    "solids": 1,
+    "volume_mm3": 200.295,
+    "size_mm": [
+      27.403,
+      27.4,
+      1.203
+    ],
+    "color": [
+      0.55,
+      0.8,
+      0.88
+    ]
+  },
+  {
+    "name": "Actuator_Shim",
+    "print": false,
+    "cad_valid": true,
+    "solids": 1,
+    "volume_mm3": 100.148,
+    "size_mm": [
+      27.403,
+      27.4,
+      0.603
+    ],
+    "color": [
+      0.8,
+      0.8,
+      0.65
     ]
   },
   {
@@ -38,7 +72,7 @@
     "print": true,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 4046.12,
+    "volume_mm3": 4008.961,
     "size_mm": [
       58.0,
       58.0,
@@ -55,11 +89,11 @@
     "print": true,
     "cad_valid": true,
     "solids": 1,
-    "volume_mm3": 283.577,
+    "volume_mm3": 287.648,
     "size_mm": [
       36.6,
       36.6,
-      2.05
+      2.45
     ],
     "color": [
       0.96,

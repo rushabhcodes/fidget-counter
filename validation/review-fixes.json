@@ -1,0 +1,168 @@
+{
+  "checkedAt": "2026-10-29",
+  "circuitSha256": "98f4ef9a52b51d7c0ac6d6ad2c607dfd4e56a343ee5d3e7f36d51f4eda1001ad",
+  "dec2Unconnected": true,
+  "dec3CapacitancePf": 100,
+  "physicalPinLabels": [
+    {
+      "label": "VDD1",
+      "pin": 13
+    },
+    {
+      "label": "VDD2",
+      "pin": 48
+    },
+    {
+      "label": "VDD3",
+      "pin": 36
+    },
+    {
+      "label": "DEC1",
+      "pin": 1
+    },
+    {
+      "label": "DEC2",
+      "pin": 32
+    },
+    {
+      "label": "DEC3",
+      "pin": 33
+    },
+    {
+      "label": "DEC4",
+      "pin": 46
+    },
+    {
+      "label": "VSS1",
+      "pin": 45
+    },
+    {
+      "label": "VSS2",
+      "pin": 31
+    },
+    {
+      "label": "EP",
+      "pin": 49
+    },
+    {
+      "label": "SWDIO",
+      "pin": 26
+    },
+    {
+      "label": "SWDCLK",
+      "pin": 25
+    },
+    {
+      "label": "nRESET",
+      "pin": 24
+    },
+    {
+      "label": "P0_26",
+      "pin": 38
+    },
+    {
+      "label": "P0_27",
+      "pin": 39
+    },
+    {
+      "label": "P0_28",
+      "pin": 40
+    },
+    {
+      "label": "P0_29",
+      "pin": 41
+    },
+    {
+      "label": "XC1",
+      "pin": 34
+    },
+    {
+      "label": "XC2",
+      "pin": 35
+    },
+    {
+      "label": "XL1",
+      "pin": 2
+    },
+    {
+      "label": "XL2",
+      "pin": 3
+    },
+    {
+      "label": "ANT",
+      "pin": 30
+    }
+  ],
+  "c3GroundIslandAreaAfterRemovingVss31Mm2": 0.35763596487917143,
+  "antennaMatchingDistanceToFeedMm": {
+    "L2": 1.9182,
+    "C13": 3.4016,
+    "C14": 2.5107
+  },
+  "rfNominalEstimateOhms": 50.00626637529699,
+  "rfDkSensitivityOhms": {
+    "3.8": 52.4400967956815,
+    "4.3": 50.00626637529699,
+    "4.8": 47.88261947620354
+  },
+  "rfBottomGroundVoidUnderFeedMm2": 1.294042808674477,
+  "rfReferenceInterruptions": [
+    {
+      "areaMm2": 0.38269462654026476,
+      "boundsMm": [
+        -3.1033248818583297,
+        2.715004489520206,
+        -2.0250904895202058,
+        3.4450109979097423
+      ]
+    },
+    {
+      "areaMm2": 0.612048182134212,
+      "boundsMm": [
+        2.7639795248669103,
+        4.34397952486691,
+        3.8730214751330907,
+        5.45302147513309
+      ]
+    },
+    {
+      "areaMm2": 0.2993000000000004,
+      "boundsMm": [
+        3.935000000000001,
+        10.795,
+        4.665000000000002,
+        11.205
+      ]
+    }
+  ],
+  "rfControlledImpedanceQualified": false,
+  "fittedBomParts": 29,
+  "pressToleranceStack": {
+    "switch_height_tolerance_mm": 0.2,
+    "pcb_seating_tolerance_mm": 0.1,
+    "printed_pusher_tolerance_mm": 0.1,
+    "silicone_thickness_tolerance_mm": 0.1,
+    "unadjusted_worst_case_gap_error_mm": 0.5,
+    "shim_selection_range_mm": [
+      0,
+      1.2
+    ],
+    "required_measured_rest_gap_mm": [
+      0.1,
+      0.15
+    ],
+    "minimum_stop_travel_mm": 0.85,
+    "latest_closure_mm": 0.7,
+    "minimum_closure_margin_mm": 0.14999999999999997,
+    "maximum_required_local_compression_mm": 0.7000000000000001,
+    "material_status": "Silicone candidate; <=0.20 mm compression at 2.5 N and full-stroke force require bench verification and switch manufacturer overload approval",
+    "assembly_adjustment_required": true,
+    "physical_force_and_cycle_tested": false
+  },
+  "externalValidationPending": [
+    "resolve/EM-review local digital crossings in bottom RF reference; fabricator stackup and impedance coupon",
+    "VNA antenna tuning and BLE/harmonics with phone and enclosure",
+    "silicone force curve, switch overload and press cycle/print fit test",
+    "assembler confirmation of SW1 exact-MPN supply/consignment"
+  ]
+}
