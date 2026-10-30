@@ -140,7 +140,7 @@
     "published.circuit.json": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294",
     "routed-paths.json": "93ee8284aa3bf2f9e069224a633895f04dc8d1ec24e48cccf7da220322987f08",
     "routing.ts": "ee97d4441d171079cceb403cd5d48d515ed4762b0446886406c245f02fdd3683",
-    "tscircuit.config.json": "b06a5581984b4b61a3c34684ebc22083609921f5a058f7db0e46bbee131855b0",
+    "tscircuit.config.json": "961f360b4e2d07f76e8dd2d4c11310d8ed655fed0f80ac4c6a63ad3e104f02fa",
     "tsconfig.json": "3369b71950778d4e33593aee7a0389f2f4162946c3abfd8c1ec7c138c16e8276",
     "validation/cloud-package-input.mjs": "eeadd46469991a4b8fcb34c0e9ce12bfc66d230fadbb1be70ecb27a17fa57cce",
     "validation/restore-cad-inputs.mjs": "ce77c551958cfacd82a3812c17cfa7493d676b46be57c6a73e8934d4917a322b"
