@@ -22729,8 +22729,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_31",
-    "model_obj_url": "./mechanical/Circuit_Models/Stationary_Base.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Stationary_Base.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Stationary_Base.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22756,8 +22755,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_32",
-    "model_obj_url": "./mechanical/Circuit_Models/Bottom_Tray.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Bottom_Tray.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Bottom_Tray.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22783,8 +22781,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_33",
-    "model_obj_url": "./mechanical/Circuit_Models/Cell.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Cell.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Cell.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22810,8 +22807,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_34",
-    "model_obj_url": "./mechanical/Circuit_Models/Backing_Ring.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Backing_Ring.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Backing_Ring.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22837,8 +22833,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_35",
-    "model_obj_url": "./mechanical/Circuit_Models/Attachment_Magnets.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Attachment_Magnets.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Attachment_Magnets.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22864,8 +22859,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_36",
-    "model_obj_url": "./mechanical/Circuit_Models/Guide_Fasteners.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Guide_Fasteners.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Guide_Fasteners.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22891,8 +22885,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_37",
-    "model_obj_url": "./mechanical/Circuit_Models/PCB_Fasteners.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/PCB_Fasteners.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/PCB_Fasteners.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22918,8 +22911,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_38",
-    "model_obj_url": "./mechanical/Circuit_Models/Bearing_Carrier.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Bearing_Carrier.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Bearing_Carrier.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22945,8 +22937,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_39",
-    "model_obj_url": "./mechanical/Circuit_Models/Inner_Race_Nut.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Inner_Race_Nut.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Inner_Race_Nut.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22972,8 +22963,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_40",
-    "model_obj_url": "./mechanical/Circuit_Models/Bearing_6708.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Bearing_6708.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Bearing_6708.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22999,8 +22989,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_41",
-    "model_obj_url": "./mechanical/Circuit_Models/Outer_Race_Retainer.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Outer_Race_Retainer.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Outer_Race_Retainer.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23026,8 +23015,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_42",
-    "model_obj_url": "./mechanical/Circuit_Models/Cap_Retainer_Screws.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Cap_Retainer_Screws.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Cap_Retainer_Screws.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23053,8 +23041,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_43",
-    "model_obj_url": "./mechanical/Circuit_Models/Magnet.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Magnet.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Magnet.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23080,8 +23067,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_44",
-    "model_obj_url": "./mechanical/Circuit_Models/Encoder_Spacer.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Encoder_Spacer.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Encoder_Spacer.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23107,8 +23093,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_45",
-    "model_obj_url": "./mechanical/Circuit_Models/Actuator_Ring.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Actuator_Ring.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Actuator_Ring.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23134,8 +23119,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_46",
-    "model_obj_url": "./mechanical/Circuit_Models/Return_Springs.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Return_Springs.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Return_Springs.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23161,8 +23145,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_47",
-    "model_obj_url": "./mechanical/Circuit_Models/Cap_circular.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Cap_circular.mtl",
+    "model_glb_url": "./mechanical/Circuit_Models/Cap_circular.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -45207,6 +45190,6 @@
   },
   {
     "type": "source_project_metadata",
-    "source_filesystem_md5_hash": "a1c5699b5dd1ab2b7e6e2c3753174810"
+    "source_filesystem_md5_hash": "0a2b63b4e795ae1ae23fc2d5ce69cc7f"
   }
 ]
