@@ -39,10 +39,14 @@ const glb=readFileSync('dist/index/3d.glb'),gltf=JSON.parse(glb.subarray(20,20+g
 const reports=[]
 for(const source of sources){
  const name=source.name.replace('BEARING_V5_',''),cad=c.find(x=>x.type==='cad_component'&&x.source_component_id===source.source_component_id)
- assert.equal(cad.model_obj_url,`./mechanical/Circuit_Models/${name}.obj`)
+ assert.equal(cad.model_glb_url,`./mechanical/Circuit_Models/${name}.glb`)
  assert.deepEqual(cad.position,{x:0,y:0,z:-m.pcbMidplaneZMm})
  const bounds=[[Infinity,Infinity,Infinity],[-Infinity,-Infinity,-Infinity]]
- for(const line of readFileSync(`mechanical/Circuit_Models/${name}.obj`,'utf8').split('\n'))if(line.startsWith('v '))line.split(/\s+/).slice(1,4).map(Number).forEach((v,a)=>{bounds[0][a]=Math.min(bounds[0][a],v);bounds[1][a]=Math.max(bounds[1][a],v)})
+ const model=readFileSync(`mechanical/Circuit_Models/${name}.glb`),asset=JSON.parse(model.subarray(20,20+model.readUInt32LE(12)).toString())
+ assert.equal(asset.asset.extras.cadUpAxis,'Z');assert.equal(asset.asset.extras.cadUnits,'mm')
+ for(const node of asset.nodes??[]){assert(!node.translation&&!node.rotation&&!node.scale,'Unexpected source transform');if(node.matrix)assert.deepEqual(node.matrix,[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1])}
+ for(const mesh of asset.meshes)for(const primitive of mesh.primitives){const a=asset.accessors[primitive.attributes.POSITION];for(let axis=0;axis<3;axis++){bounds[0][axis]=Math.min(bounds[0][axis],a.min[axis]);bounds[1][axis]=Math.max(bounds[1][axis],a.max[axis])}}
+
  const node=gltf.nodes.find(n=>n.name===source.name&&Number.isInteger(n.mesh));assert(node,`Missing native mesh ${name}`)
  const actual=[[Infinity,Infinity,Infinity],[-Infinity,-Infinity,-Infinity]]
  for(const primitive of gltf.meshes[node.mesh].primitives){const positions=gltf.accessors[primitive.attributes.POSITION];for(let a=0;a<3;a++){actual[0][a]=Math.min(actual[0][a],positions.min[a]+(node.translation?.[a]??0));actual[1][a]=Math.max(actual[1][a],positions.max[a]+(node.translation?.[a]??0))}}

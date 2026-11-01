@@ -34,7 +34,7 @@ Service from the top: remove the three cap-retainer screws, lift off the cap, un
 ## CAD detail and rendering
 
 Purchased hardware now has modeled construction details in both STEP and native
-OBJ previews: bearing raceways and 0.3 mm edge chamfers, 25 balls, a pocketed
+GLB previews: bearing raceways and 0.3 mm edge chamfers, 25 balls, a pocketed
 stamped cage with rivets, and two non-contact metal shields; helical screw
 threads and cross recesses; chamfered washers and magnets; and a CR2032 positive
 can, insulating gasket and engraved negative lid. Springs have five active turns
@@ -52,7 +52,7 @@ the exact spring SKU and measured force remain open. The cell preserves the
 All 31 fitted electronic parts use their existing supplier STEP geometry in the
 mechanical assemblies, positioned from the native circuit model origin and XYZ
 rotation. They are excluded from the mechanical-only tscircuit models because
-the native PCB already renders them. Material groups distinguish polished balls,
+the native PCB already renders them. Indexed GLB material groups distinguish polished balls,
 brushed shields, nylon screws, elastomer and printed parts. The render script
 uses these actual meshes for assembled, closed-section and exploded views;
 `previews/bearing-detail.png` shows the bearing section separately. The metal
@@ -68,3 +68,8 @@ This avoids the compiler converter assigning the first material to every part.
 Run `python mechanical/build_enclosure.py --style all`, then `python mechanical/export_circuit_models.py`. The CAD builder checks single-solid print parts, closed/wound meshes, the actual holder and JST STEP, PCB seating, guide retention, housing stops, race separation, and three press positions with 24 rotation samples. An axisymmetric structural rotor and exterior-grip keepout establish continuous rotational clearance; sampled angles supplement that envelope. Generated STEP assemblies include released, pressed and exploded states.
 
 The report is `mechanical/enclosure-validation.json`. `validation/check-bearing-hardware.py` additionally checks the new hardware against the native electronics. Meshes and fit calculations are a prototype, not measured strength or endurance. Physical qualification remains necessary for print fits, spring return, off-center pressing, switch force/overtravel and repeated service. The steel bearing and screws also change the magnetic/RF environment: measure Hall angle error and BLE performance with the phone and attachment magnets present. A full-ceramic bearing of the same verified dimensions is an option if steel causes unacceptable disturbance.
+
+The published display assets use the same triangles and CAD coordinates as the
+OBJ references, with original smooth normals and embedded PBR materials. The
+full BRep, STL print parts and movement interfaces are unchanged. This reduces
+publication/renderer memory without decimating the meshes.

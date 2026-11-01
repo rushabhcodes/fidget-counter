@@ -110,8 +110,8 @@
   "minimum_supplier_step_clearance_mm": 2.6889999000000007,
   "service": "Remove top cap screws, cap, inner nut and bearing; unscrew/lift PCB for side-entry access. Disconnect cable before refitting.",
   "sha256": {
-    "dist/index/circuit.json": "6257d18b918f24479f83d39958e82a0fb5ba6b20521bea47368d8a5626395b38",
-    "dist/index/3d.glb": "94535debc289f01e31f77ae82a3484b90230f465558fc4e35a1643a1916e7407",
+    "dist/index/circuit.json": "a166c841f3f26b6414bc83a6b633fe855bedd5053e2f324ecc7da925eb207d41",
+    "dist/index/3d.glb": "9396ec62cf10d2a98dd5d86fae9cad6d54eaa37cfe107a9842b8701414f5f29e",
     "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6",
     "mechanical/STEP_Parts/Stationary_Base.step": "6f2b1d2b62dc0292c55a5412211599ce17f32b3f504ce24b52722f8530eeff53",
     "mechanical/enclosure-parameters.json": "f5f10e456afece55db46863e5c08b808a9143b73c47284f8c41837c54eb0f1b4",

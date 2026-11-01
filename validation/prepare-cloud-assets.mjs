@@ -20,11 +20,15 @@ const inputs = [
   "tsconfig.json",
   "validation/cloud-package-input.mjs",
   "validation/apply-model-materials.mjs",
+  "validation/compact-glb.mjs",
+  "validation/restore-model-normals.mjs",
   "validation/restore-cad-inputs.mjs",
   ...walk(resolve(root, "imports")).map((path) => relative(root, path)),
   ...walk(resolve(root, "mechanical"))
     .filter((path) => !relative(root, path).startsWith("mechanical/export/") && !path.includes("/__pycache__/"))
-    .filter((path) => [".py", ".json", ".stl", ".obj", ".mtl", ".step"].includes(extname(path)))
+    .filter((path) => [".py", ".json", ".stl", ".obj", ".mtl", ".step", ".glb"].includes(extname(path)))
+    // OBJ/MTL references stay in Git; indexed GLB assets are the runtime inputs.
+    .filter((path) => !(relative(root,path).startsWith("mechanical/Circuit_Models/") && [".obj",".mtl"].includes(extname(path))))
     .map((path) => relative(root, path)),
 ]
 const manifest = {

@@ -1,32 +1,32 @@
 import {assembly} from "@tscircuit/core"
 import {Fragment} from "react"
-import obj0 from "./mechanical/Circuit_Models/Stationary_Base.obj"
-import obj1 from "./mechanical/Circuit_Models/Bottom_Tray.obj"
-import obj2 from "./mechanical/Circuit_Models/Cell.obj"
-import obj3 from "./mechanical/Circuit_Models/Backing_Ring.obj"
-import obj4 from "./mechanical/Circuit_Models/Attachment_Magnets.obj"
-import obj5 from "./mechanical/Circuit_Models/Guide_Fasteners.obj"
-import obj6 from "./mechanical/Circuit_Models/PCB_Fasteners.obj"
-import obj7 from "./mechanical/Circuit_Models/Bearing_Carrier.obj"
-import obj8 from "./mechanical/Circuit_Models/Inner_Race_Nut.obj"
-import obj9 from "./mechanical/Circuit_Models/Bearing_6708.obj"
-import obj10 from "./mechanical/Circuit_Models/Outer_Race_Retainer.obj"
-import obj11 from "./mechanical/Circuit_Models/Cap_Retainer_Screws.obj"
-import obj12 from "./mechanical/Circuit_Models/Magnet.obj"
-import obj13 from "./mechanical/Circuit_Models/Encoder_Spacer.obj"
-import obj14 from "./mechanical/Circuit_Models/Actuator_Ring.obj"
-import obj15 from "./mechanical/Circuit_Models/Return_Springs.obj"
-import obj16 from "./mechanical/Circuit_Models/Cap_circular.obj"
-import obj17 from "./mechanical/Circuit_Models/Cap_ships_wheel.obj"
-import obj18 from "./mechanical/Circuit_Models/Cap_rounded_triangle.obj"
-import obj19 from "./mechanical/Circuit_Models/Cap_scalloped_coin.obj"
-import obj20 from "./mechanical/Circuit_Models/Cap_petal_flower.obj"
-import obj21 from "./mechanical/Circuit_Models/Cap_four_leaf_clover.obj"
-import obj22 from "./mechanical/Circuit_Models/Cap_rounded_hexagon.obj"
-import obj23 from "./mechanical/Circuit_Models/Cap_rounded_square.obj"
-import obj24 from "./mechanical/Circuit_Models/Cap_wave_rim.obj"
-import obj25 from "./mechanical/Circuit_Models/Cap_turbine_wheel.obj"
-import obj26 from "./mechanical/Circuit_Models/Cap_thumb_scoop.obj"
+import obj0 from "./mechanical/Circuit_Models/Stationary_Base.glb"
+import obj1 from "./mechanical/Circuit_Models/Bottom_Tray.glb"
+import obj2 from "./mechanical/Circuit_Models/Cell.glb"
+import obj3 from "./mechanical/Circuit_Models/Backing_Ring.glb"
+import obj4 from "./mechanical/Circuit_Models/Attachment_Magnets.glb"
+import obj5 from "./mechanical/Circuit_Models/Guide_Fasteners.glb"
+import obj6 from "./mechanical/Circuit_Models/PCB_Fasteners.glb"
+import obj7 from "./mechanical/Circuit_Models/Bearing_Carrier.glb"
+import obj8 from "./mechanical/Circuit_Models/Inner_Race_Nut.glb"
+import obj9 from "./mechanical/Circuit_Models/Bearing_6708.glb"
+import obj10 from "./mechanical/Circuit_Models/Outer_Race_Retainer.glb"
+import obj11 from "./mechanical/Circuit_Models/Cap_Retainer_Screws.glb"
+import obj12 from "./mechanical/Circuit_Models/Magnet.glb"
+import obj13 from "./mechanical/Circuit_Models/Encoder_Spacer.glb"
+import obj14 from "./mechanical/Circuit_Models/Actuator_Ring.glb"
+import obj15 from "./mechanical/Circuit_Models/Return_Springs.glb"
+import obj16 from "./mechanical/Circuit_Models/Cap_circular.glb"
+import obj17 from "./mechanical/Circuit_Models/Cap_ships_wheel.glb"
+import obj18 from "./mechanical/Circuit_Models/Cap_rounded_triangle.glb"
+import obj19 from "./mechanical/Circuit_Models/Cap_scalloped_coin.glb"
+import obj20 from "./mechanical/Circuit_Models/Cap_petal_flower.glb"
+import obj21 from "./mechanical/Circuit_Models/Cap_four_leaf_clover.glb"
+import obj22 from "./mechanical/Circuit_Models/Cap_rounded_hexagon.glb"
+import obj23 from "./mechanical/Circuit_Models/Cap_rounded_square.glb"
+import obj24 from "./mechanical/Circuit_Models/Cap_wave_rim.glb"
+import obj25 from "./mechanical/Circuit_Models/Cap_turbine_wheel.glb"
+import obj26 from "./mechanical/Circuit_Models/Cap_thumb_scoop.glb"
 
 export const CAP_STYLE_OPTIONS = ["circular", "ships_wheel", "rounded_triangle", "scalloped_coin", "petal_flower", "four_leaf_clover", "rounded_hexagon", "rounded_square", "wave_rim", "turbine_wheel", "thumb_scoop"] as const
 export type CapStyle = typeof CAP_STYLE_OPTIONS[number]
@@ -65,7 +65,7 @@ export const PCB_MIDPLANE_Z_MM = 8.6
 export const EnclosureAssembly = ({capStyle="circular",transparentShell=false}: {capStyle?:CapStyle;transparentShell?:boolean} = {}) => <Fragment>
   {models.filter(m => m.style === null || m.style === capStyle).map(m => <assembly.cadassembly
     key={m.name} name={`BEARING_V5_${m.name}`} displayName={m.name.replace(/_/g," ")}
-    cadModel={{objUrl:m.obj,mtlUrl:m.mtl,modelUnitToMmScale:1,
+    cadModel={{glbUrl:m.obj,modelUnitToMmScale:1,
       modelOriginPosition:{x:0,y:0,z:0},positionOffset:{x:0,y:0,z:-PCB_MIDPLANE_Z_MM},
       rotationOffset:{x:0,y:0,z:0},
       showAsTranslucentModel:transparentShell && (m.style !== null || ["Bottom_Tray","Stationary_Base"].includes(m.name)),

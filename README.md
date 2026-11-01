@@ -64,3 +64,9 @@ The cloud restore uses `published.circuit.json` and checked artifacts tied to so
 Registry publication uses the checked snapshot and six verified artifacts. Large
 cached artifacts are split into request-sized source files and reconstructed
 without changing their SHA-256 hashes. Physical qualification remains open.
+
+Published mechanical display assets use indexed GLB files with embedded materials.
+The companion OBJ/MTL references remain in Git. Display packing retains every
+triangle and pose; `python validation/check-display-geometry.py` checks the
+complete meshes against the validated pre-publication display. The GLB packing
+pass also compares every rendered corner attribute before and after encoding.

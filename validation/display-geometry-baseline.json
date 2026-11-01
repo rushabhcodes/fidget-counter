@@ -1,0 +1,362 @@
+{
+  "source_commit": "5fa112ffc8ffc72a630025258cbf3fa2a7f05daf",
+  "models": {
+    "BEARING_V5_Stationary_Base": {
+      "triangles": 11152,
+      "triangle_sha256": "901a99ba020d3de597097c9841d156044a96a19309f9052b4e940cfbf941377d",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Bottom_Tray": {
+      "triangles": 10472,
+      "triangle_sha256": "d81d77f0e4ba265cc577c4d43a7ba440c545e911579bbf76d941d840270c4ba1",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Cell": {
+      "triangles": 20898,
+      "triangle_sha256": "4a1fe27e4e1e64e724f53adc4ccec964dc8a9e07b7dc08b69499fb8c45bba9f7",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Backing_Ring": {
+      "triangles": 776,
+      "triangle_sha256": "41823444d3b27117e4c6aa9fae4d8551cdc4f87292c38e12e0fa2a01b00b1a6a",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Attachment_Magnets": {
+      "triangles": 18528,
+      "triangle_sha256": "5a19dfae0c9a7501f6133b8c689c05db1150d32931222f8c4ed4dbe168efec01",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Guide_Fasteners": {
+      "triangles": 40446,
+      "triangle_sha256": "a2309fbb19ee55cc7b4996e8e27dd76a713abfa92f2a06d2b2165fdc97e28b96",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_PCB_Fasteners": {
+      "triangles": 45360,
+      "triangle_sha256": "d72a8ddc4933d03abc6a90db21745209c2cccb2012fd91a0b9e242170e71a440",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Bearing_Carrier": {
+      "triangles": 7940,
+      "triangle_sha256": "3126bd2c63edc4276f049c691d520551bf7a3aeb47219023bdc32d781a9e6520",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Inner_Race_Nut": {
+      "triangles": 2734,
+      "triangle_sha256": "397988b02c4801722b00ee09cea0b4822b4c6c3ccb342345a5d1296cc9f243b6",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Bearing_6708": {
+      "triangles": 204948,
+      "triangle_sha256": "816b8b46c90a888c937b276659052f85c4c31a896f3cdc9bff438c3b51d8b7f3",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Outer_Race_Retainer": {
+      "triangles": 1952,
+      "triangle_sha256": "5567f3e3c5d34f83874aa90711b95142af93ec4ef23424ae2a08081dd656d15b",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Cap_Retainer_Screws": {
+      "triangles": 51756,
+      "triangle_sha256": "0f4b5442c18443e8001671fb503855f2d5a547c53fce0af079727148d529ff71",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Magnet": {
+      "triangles": 772,
+      "triangle_sha256": "ab2399fe20e80f17e0cf126e9eb3ecd5fc92688463060c06abe791be6d2305ab",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Encoder_Spacer": {
+      "triangles": 384,
+      "triangle_sha256": "0a96f99e5af64a43a29db0b0f677f583829f1f4d033aaf8a3b7ba700551d1994",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Actuator_Ring": {
+      "triangles": 776,
+      "triangle_sha256": "9ffff5cb8a49fd802364d7379978970122b1d649239ef7b86c7a99cfc6f9eeec",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Return_Springs": {
+      "triangles": 20232,
+      "triangle_sha256": "f544d78e94ff1e4d6b800bba8fb323ea86a778066a1a499f9c1910f40c06188f",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    },
+    "BEARING_V5_Cap_circular": {
+      "triangles": 5844,
+      "triangle_sha256": "de559a7c176616219f6f3a73ca7aade8659929f83eaf495ff1cea2ed337f3fed",
+      "translation": [
+        0,
+        -8.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "matrix": null
+    }
+  }
+}

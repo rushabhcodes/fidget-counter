@@ -496,8 +496,9 @@
     "mechanical/hardware_models.py": "aa216b4c19785e7282e0b5c7e2185af2f91716acd55260927c30be98c2faa10b",
     "mechanical/build_enclosure.py": "3df300f2618f36c724fb077b30fe8cdf36e1d56d33e50dfa4cc7505fea334f20",
     "mechanical/spring_mesh.py": "f34870ba443c391bf0436944b3e081de9f922cc178eb47a5588457818887c6cb",
-    "mechanical/export_circuit_models.py": "e6862d5f77ac6f1ed7af6c409f8c7719f5d1557e6c35494c63dc9f02a4c32e96",
-    "mechanical/mesh_export.py": "a8b20d735f20a3e1d4772e6bf6efee3ef9932b498eb563a32f5e915015368f74"
+    "mechanical/export_circuit_models.py": "23f34b212fa8eaae49f03b3169dc5b3f3c913a58ce9217862f5623f4a7f4ae14",
+    "mechanical/mesh_export.py": "a8b20d735f20a3e1d4772e6bf6efee3ef9932b498eb563a32f5e915015368f74",
+    "mechanical/glb_models.py": "1298685a6f5c6a7ed9368643a653b83f6856c9ebe163b99aa43f0a7ab5a4cc33"
   },
   "limits": [
     "Representative internals, threads and spring turns; confirm purchased SKUs and force curves"
