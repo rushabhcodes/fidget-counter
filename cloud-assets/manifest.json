@@ -147,7 +147,7 @@
     "model-assets.d.ts": "bcd106931f1096dab95359b6d47a67456c3da66efd2f5c0c76e29783cada6463",
     "parts.tsx": "7426cf61e997cae366ff60fe4663cb800a0170d68f461e0ad9b1254784df7b5f",
     "passives.tsx": "3f2cdbf1cbff6cecd49da9cc3823255437d5a14cd1b8e2b1d41b7044d57d2a5f",
-    "published.circuit.json": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
+    "published.circuit.json": "77b18057037f6be7e57600bb0c335aabd7c86de4e43da97f083bf0a8db8ba818",
     "routed-paths.json": "93ee8284aa3bf2f9e069224a633895f04dc8d1ec24e48cccf7da220322987f08",
     "routing-contract.json": "afde27101f7ed90438fdaf149a6fdf0d5a32337e665bb7c8ae6dd696b9569417",
     "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
@@ -170,7 +170,7 @@
       "output": "dist/published/circuit.json",
       "encoding": "raw",
       "bytes": 1062131,
-      "sha256": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d"
+      "sha256": "77b18057037f6be7e57600bb0c335aabd7c86de4e43da97f083bf0a8db8ba818"
     },
     {
       "source": "cloud-assets/pcb.png.gz.b64",

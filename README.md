@@ -50,7 +50,7 @@ bun run build:cloud:prepare
 This remains an unqualified mechanical prototype. CAD clearances and mesh checks do not establish physical spring return, switch force/overtravel, fatigue, Hall sensing or BLE performance. Verify those with the selected bearing, springs, elastomer, phone and magnets before assembled-board ordering. Older validation reports retain their original revision labels and do not certify V5.
 
 The local toolchain is pinned to `tscircuit` **0.0.3047** (package release version
-is 1.0.23; the subsequent ring-seat revision is local and unpublished). The routing contract matches terminals by electrical group and
+is 1.0.24, containing the purchased-ring revision). The routing contract matches terminals by electrical group and
 physical coordinates rather than generated IDs, and rejects changes to copper,
 layers, board geometry, design rules and connectivity. `check:routing` includes
 negative regression cases for those safeguards. The compiler adds three style
@@ -76,4 +76,4 @@ triangle and pose; `python validation/check-display-geometry.py` checks the
 complete meshes against the validated pre-publication display, allowing only the explicitly revised base/tray and attachment assembly. The separate ring audit verifies the new seat and preserves every other print file. The GLB packing
 pass also compares every rendered corner attribute before and after encoding.
 
-[Registry release 1.0.23](https://rushabhcodes--fidget-counter-v1-0-23.tscircuit.app) completed successfully with 163 source files and six exact preview hashes verified against commit `157a36b62ba084e0a812fcc93dbe21a016904da8`. See [publication receipt](validation/published-1.0.23.json). The purchased-ring revision after that milestone is local and has not been published.
+[Registry release 1.0.23](https://rushabhcodes--fidget-counter-v1-0-23.tscircuit.app) completed successfully with 163 source files and six exact preview hashes verified against commit `157a36b62ba084e0a812fcc93dbe21a016904da8`. See [publication receipt](validation/published-1.0.23.json). Version 1.0.24 contains the subsequent purchased-ring revision. Its publication result is verified separately from the 1.0.23 milestone.

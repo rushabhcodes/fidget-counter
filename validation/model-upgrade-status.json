@@ -1,13 +1,13 @@
 {
   "passed": true,
-  "checked_at_utc": "2026-11-01T17:40:50.343873+00:00",
+  "checked_at_utc": "2026-11-01T18:03:18.926332+00:00",
   "physical_tested": false,
   "compiler": {
     "previous": "0.0.2748",
     "current": "0.0.3047",
     "frozen_install_passed": true
   },
-  "package_release_version": "1.0.23",
+  "package_release_version": "1.0.24",
   "branch": "codex/bearing-supported-enclosure",
   "comparison_base_commit": "bee408a87d66915cf3093233c29e224608ce2024",
   "dimensions_mm": {
@@ -67,7 +67,8 @@
     "all_26_GLB_assets_equal_OBJ_triangles": "passed",
     "single_purchased_ring_seat_and_electronics_clearance": "passed",
     "India_candidate_circular_nominal_fit": "passed",
-    "ring_revision_unaffected_triangles_and_poses": "passed"
+    "ring_revision_unaffected_triangles_and_poses": "passed",
+    "publication_exact_circuit_and_mesh_parity": "passed"
   },
   "final_failed_checks": [],
   "known_advisories": {
@@ -96,12 +97,12 @@
     "No physical prototype, strength, endurance or sensor/RF qualification was performed"
   ],
   "source_sha256": {
-    "package.json": "0d92091416e22032683ce008761194b43adce990f5b865f7620b9223019b5fce",
+    "package.json": "7e791a2a1abfc005b921c727b56e7386172ed3faf8fca178cd3c67d560c749c1",
     "bun.lock": "1d9a35aa4691c033b443bab61862a467ae4123a4c183fdba5bee0fe7774b3e7c",
     "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
     "routing-contract.json": "afde27101f7ed90438fdaf149a6fdf0d5a32337e665bb7c8ae6dd696b9569417",
     "enclosure.tsx": "166526661485288f87c373fbea2978623d1300709909bd00e438615d95010dd6",
-    "published.circuit.json": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
+    "published.circuit.json": "77b18057037f6be7e57600bb0c335aabd7c86de4e43da97f083bf0a8db8ba818",
     "mechanical/enclosure-parameters.json": "fb20427906f8dc230a3d722f24bc2f2acd148c8bdcd67b59e84df44531410f8b",
     "mechanical/build_enclosure.py": "26936837b49c3e3c9d980fa6669e34d0012b99125b8ed68ed387b5b85a5a3591",
     "mechanical/hardware_models.py": "6c463731e6a87151fda68936db1aec377984558057593e1b2ca7ab917457bd0d",
@@ -134,7 +135,7 @@
   },
   "display_format": "indexed GLB; source OBJ/MTL references retained in Git",
   "native_display_bytes": 19092836,
-  "current_CAD_publication": "Local purchased-ring revision; not included in the already published 1.0.23 release",
+  "current_CAD_publication": "Prepared for registry 1.0.24; verify terminal hosted result separately from this source snapshot",
   "ring_revision_base_commit": "157a36b62ba084e0a812fcc93dbe21a016904da8",
   "attachment_ring": {
     "passed": true,
@@ -406,5 +407,11 @@
     "outputRenderStreamSha256": "c84f9260d5c3459525d3ccea9c416f823f94dc1ebd90e5027b6399ae63097b6e",
     "verticesBefore": 1437204,
     "verticesAfter": 407428
+  },
+  "publication_target": {
+    "version": "1.0.24",
+    "ring_source_commit": "203ff90452906d8b40341aa827fd7136377171b4",
+    "branch": "codex/bearing-supported-enclosure",
+    "includes_purchased_ring_revision": true
   }
 }

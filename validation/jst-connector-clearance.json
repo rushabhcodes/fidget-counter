@@ -110,7 +110,7 @@
   "minimum_supplier_step_clearance_mm": 2.6889999000000007,
   "service": "Remove top cap screws, cap, inner nut and bearing; unscrew/lift PCB for side-entry access. Disconnect cable before refitting.",
   "sha256": {
-    "dist/index/circuit.json": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
+    "dist/index/circuit.json": "77b18057037f6be7e57600bb0c335aabd7c86de4e43da97f083bf0a8db8ba818",
     "dist/index/3d.glb": "24f758eaffc584f89de24c6a19c44e4f39362c57893a0eff960eda8c7e9e2867",
     "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6",
     "mechanical/STEP_Parts/Stationary_Base.step": "bdba2dd79835167abc042445139a0d464ad045d9df6233a06a5bcb8cdfe4f548",
@@ -127,5 +127,10 @@
     "mechanical/STEP_Parts/Cap_wave_rim.step": "77d06d42795b0f80a01b09dffeaac102a3363cf157fec19d8ac1a623e0c5c030",
     "mechanical/STEP_Parts/Cap_turbine_wheel.step": "6d703d8288f568c9087f2aadb5fdfd8ed0e18ff2b7c999a9164fc0b3d61d3629",
     "mechanical/STEP_Parts/Cap_thumb_scoop.step": "ce95e155ba33d8023f8415edf8879f76337f7ce06c8bd2ed62b4b1d31abfea96"
+  },
+  "publication_revalidation": {
+    "version": "1.0.24",
+    "proof": "validation/publication-input-parity.json",
+    "geometry_unchanged": true
   }
 }

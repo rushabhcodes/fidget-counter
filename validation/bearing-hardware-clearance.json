@@ -509,8 +509,13 @@
     "Elastomer deformation and bearing magnetic/RF influence need physical qualification"
   ],
   "sha256": {
-    "dist/index/circuit.json": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
+    "dist/index/circuit.json": "77b18057037f6be7e57600bb0c335aabd7c86de4e43da97f083bf0a8db8ba818",
     "dist/index/3d.glb": "24f758eaffc584f89de24c6a19c44e4f39362c57893a0eff960eda8c7e9e2867",
     "mechanical/enclosure-parameters.json": "fb20427906f8dc230a3d722f24bc2f2acd148c8bdcd67b59e84df44531410f8b"
+  },
+  "publication_revalidation": {
+    "version": "1.0.24",
+    "proof": "validation/publication-input-parity.json",
+    "geometry_unchanged": true
   }
 }

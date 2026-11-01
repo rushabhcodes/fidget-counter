@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "comparison_commit": "203ff90452906d8b40341aa827fd7136377171b4",
+  "reason": "Publishing version metadata changes only the source filesystem metadata hash. Exact circuit records and complete native GLBs are unchanged; existing geometric clearance calculations apply.",
+  "artifacts": {
+    "dist/index/circuit.json": {
+      "previous_sha256": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
+      "sha256": "77b18057037f6be7e57600bb0c335aabd7c86de4e43da97f083bf0a8db8ba818",
+      "all_nonmetadata_records_identical": true,
+      "ignored_field": "source_project_metadata.source_filesystem_md5_hash"
+    },
+    "dist/published/circuit.json": {
+      "previous_sha256": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
+      "sha256": "77b18057037f6be7e57600bb0c335aabd7c86de4e43da97f083bf0a8db8ba818",
+      "all_nonmetadata_records_identical": true,
+      "ignored_field": "source_project_metadata.source_filesystem_md5_hash"
+    },
+    "dist/index/3d.glb": {
+      "sha256": "24f758eaffc584f89de24c6a19c44e4f39362c57893a0eff960eda8c7e9e2867",
+      "byte_identical": true
+    },
+    "dist/published/3d.glb": {
+      "sha256": "24f758eaffc584f89de24c6a19c44e4f39362c57893a0eff960eda8c7e9e2867",
+      "byte_identical": true
+    }
+  }
+}
