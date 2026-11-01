@@ -1,0 +1,5 @@
+newmtl Actuator_Ring
+Kd 0.7 0.85 0.8
+Ks 0.15 0.15 0.15
+Ns 20
+d 1

@@ -1,0 +1,5 @@
+newmtl Bearing_Carrier
+Kd 0.83 0.54 0.2
+Ks 0.15 0.15 0.15
+Ns 20
+d 1

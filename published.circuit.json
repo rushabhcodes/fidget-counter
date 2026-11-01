@@ -3080,49 +3080,103 @@
     "type": "source_component",
     "source_component_id": "source_component_36",
     "ftype": "subassembly",
-    "name": "ONEPIECE_V4_Stationary_Base"
+    "name": "BEARING_V5_Stationary_Base"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_37",
     "ftype": "subassembly",
-    "name": "ONEPIECE_V4_Bottom_Tray"
+    "name": "BEARING_V5_Bottom_Tray"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_38",
     "ftype": "subassembly",
-    "name": "ONEPIECE_V4_Cell"
+    "name": "BEARING_V5_Cell"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_39",
     "ftype": "subassembly",
-    "name": "ONEPIECE_V4_Backing_Ring"
+    "name": "BEARING_V5_Backing_Ring"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_40",
     "ftype": "subassembly",
-    "name": "ONEPIECE_V4_Attachment_Magnets"
+    "name": "BEARING_V5_Attachment_Magnets"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_41",
     "ftype": "subassembly",
-    "name": "ONEPIECE_V4_Magnet"
+    "name": "BEARING_V5_Guide_Fasteners"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_42",
     "ftype": "subassembly",
-    "name": "ONEPIECE_V4_Encoder_Spacer"
+    "name": "BEARING_V5_PCB_Fasteners"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_43",
     "ftype": "subassembly",
-    "name": "ONEPIECE_V4_Cap_circular"
+    "name": "BEARING_V5_Bearing_Carrier"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_44",
+    "ftype": "subassembly",
+    "name": "BEARING_V5_Inner_Race_Nut"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_45",
+    "ftype": "subassembly",
+    "name": "BEARING_V5_Bearing_6708"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_46",
+    "ftype": "subassembly",
+    "name": "BEARING_V5_Outer_Race_Retainer"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_47",
+    "ftype": "subassembly",
+    "name": "BEARING_V5_Cap_Retainer_Screws"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_48",
+    "ftype": "subassembly",
+    "name": "BEARING_V5_Magnet"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_49",
+    "ftype": "subassembly",
+    "name": "BEARING_V5_Encoder_Spacer"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_50",
+    "ftype": "subassembly",
+    "name": "BEARING_V5_Actuator_Ring"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_51",
+    "ftype": "subassembly",
+    "name": "BEARING_V5_Return_Springs"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_52",
+    "ftype": "subassembly",
+    "name": "BEARING_V5_Cap_circular"
   },
   {
     "type": "source_component_internal_connection",
@@ -21852,7 +21906,7 @@
     "position": {
       "x": 0,
       "y": 0,
-      "z": -7.6
+      "z": -8.6
     },
     "rotation": {
       "x": 0,
@@ -21879,7 +21933,7 @@
     "position": {
       "x": 0,
       "y": 0,
-      "z": -7.6
+      "z": -8.6
     },
     "rotation": {
       "x": 0,
@@ -21906,7 +21960,7 @@
     "position": {
       "x": 0,
       "y": 0,
-      "z": -7.6
+      "z": -8.6
     },
     "rotation": {
       "x": 0,
@@ -21933,7 +21987,7 @@
     "position": {
       "x": 0,
       "y": 0,
-      "z": -7.6
+      "z": -8.6
     },
     "rotation": {
       "x": 0,
@@ -21960,7 +22014,7 @@
     "position": {
       "x": 0,
       "y": 0,
-      "z": -7.6
+      "z": -8.6
     },
     "rotation": {
       "x": 0,
@@ -21982,12 +22036,12 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_36",
-    "model_obj_url": "./mechanical/Circuit_Models/Magnet.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Magnet.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/Guide_Fasteners.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Guide_Fasteners.mtl",
     "position": {
       "x": 0,
       "y": 0,
-      "z": -7.6
+      "z": -8.6
     },
     "rotation": {
       "x": 0,
@@ -22009,12 +22063,12 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_37",
-    "model_obj_url": "./mechanical/Circuit_Models/Encoder_Spacer.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Encoder_Spacer.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/PCB_Fasteners.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/PCB_Fasteners.mtl",
     "position": {
       "x": 0,
       "y": 0,
-      "z": -7.6
+      "z": -8.6
     },
     "rotation": {
       "x": 0,
@@ -22036,12 +22090,12 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_38",
-    "model_obj_url": "./mechanical/Circuit_Models/Cap_circular.obj",
-    "model_mtl_url": "./mechanical/Circuit_Models/Cap_circular.mtl",
+    "model_obj_url": "./mechanical/Circuit_Models/Bearing_Carrier.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Bearing_Carrier.mtl",
     "position": {
       "x": 0,
       "y": 0,
-      "z": -7.6
+      "z": -8.6
     },
     "rotation": {
       "x": 0,
@@ -22050,6 +22104,249 @@
     },
     "layer": "top",
     "source_component_id": "source_component_43",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_39",
+    "model_obj_url": "./mechanical/Circuit_Models/Inner_Race_Nut.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Inner_Race_Nut.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -8.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_44",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_40",
+    "model_obj_url": "./mechanical/Circuit_Models/Bearing_6708.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Bearing_6708.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -8.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_45",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_41",
+    "model_obj_url": "./mechanical/Circuit_Models/Outer_Race_Retainer.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Outer_Race_Retainer.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -8.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_46",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_42",
+    "model_obj_url": "./mechanical/Circuit_Models/Cap_Retainer_Screws.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Cap_Retainer_Screws.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -8.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_47",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_43",
+    "model_obj_url": "./mechanical/Circuit_Models/Magnet.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Magnet.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -8.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_48",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_44",
+    "model_obj_url": "./mechanical/Circuit_Models/Encoder_Spacer.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Encoder_Spacer.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -8.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_49",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_45",
+    "model_obj_url": "./mechanical/Circuit_Models/Actuator_Ring.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Actuator_Ring.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -8.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_50",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_46",
+    "model_obj_url": "./mechanical/Circuit_Models/Return_Springs.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Return_Springs.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -8.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_51",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_47",
+    "model_obj_url": "./mechanical/Circuit_Models/Cap_circular.obj",
+    "model_mtl_url": "./mechanical/Circuit_Models/Cap_circular.mtl",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -8.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_52",
     "model_origin_position": {
       "x": 0,
       "y": 0,
@@ -43989,6 +44286,6 @@
   },
   {
     "type": "source_project_metadata",
-    "source_filesystem_md5_hash": "3322a980a30214bd4c408c1835d74e47"
+    "source_filesystem_md5_hash": "53534aab348e33bff0ee1482aef23649"
   }
 ]

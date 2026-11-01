@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "coupons": [
+    {
+      "file": "Bearing_Housing_Coupon.stl",
+      "sha256": "37e26eadbe15c7a00cfe455506dbe8c4e7d4e8d55a5da340b076ace9f0754065"
+    },
+    {
+      "file": "Bearing_Shaft_Coupon.stl",
+      "sha256": "df0e362f0f4e7775f5dccf6f811e5ff7aaae2c2321d03dcbf28518e53e871775"
+    },
+    {
+      "file": "Guide_Post_Coupon.stl",
+      "sha256": "9cd6a0ba56139c6ea12d2c78b04532527377499f72c3b97bcb7678dacdf3a790"
+    },
+    {
+      "file": "Guide_Bore_Coupon.stl",
+      "sha256": "8b56698788736e211e737f1ba29bf1810e129dfe97605e9dd3d670f69a1c05c1"
+    },
+    {
+      "file": "Inner_Thread_Coupon.stl",
+      "sha256": "99ef09b4e5db7d36fff68d808566d477c105d290b1798ee4576e6345f7c8bdda"
+    },
+    {
+      "file": "Inner_Race_Nut.stl",
+      "sha256": "ed566c3a151d50398e7ec6662fe0cfdff66ab0775e562af247da01237dcd0ce9"
+    }
+  ]
+}

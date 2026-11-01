@@ -1,0 +1,329 @@
+{
+  "passed": true,
+  "physically_tested": false,
+  "parts": [
+    {
+      "name": "Stationary_Base",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3397.318030017516,
+      "file": "Stationary_Base.stl",
+      "sha256": "8c3843ae64e35e333b7a8d6e88ffeda6fd892077268e4f4dd68a496612bb21c9",
+      "bounds_mm": [
+        [
+          -29.0,
+          -29.0,
+          0.7999999999999998
+        ],
+        [
+          29.0,
+          29.0,
+          8.6
+        ]
+      ]
+    },
+    {
+      "name": "Bottom_Tray",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2463.8337011850394,
+      "file": "Bottom_Tray.stl",
+      "sha256": "ccb20de40e0a0f4ae28d1ea71999ac718623cf30fe6a7a6af442dcb58a211788",
+      "bounds_mm": [
+        [
+          -29.0,
+          -29.0,
+          0.2
+        ],
+        [
+          29.0,
+          29.0,
+          2.35
+        ]
+      ]
+    },
+    {
+      "name": "Bearing_Carrier",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1923.0639616296544,
+      "file": "Bearing_Carrier.stl",
+      "sha256": "33fbfcb5d62a2a68352461ff3eaf36aca4c66da23a100e87029265b4ec013f3e",
+      "bounds_mm": [
+        [
+          -21.8,
+          -20.65,
+          3.0
+        ],
+        [
+          20.65,
+          20.65,
+          15.1000001
+        ]
+      ]
+    },
+    {
+      "name": "Inner_Race_Nut",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 526.6591900284933,
+      "file": "Inner_Race_Nut.stl",
+      "sha256": "a62daaf333e4c7f1bab8770a4bd3b0e566af7a19a3a604c6aa962cf4ce0fb91d",
+      "bounds_mm": [
+        [
+          -21.6,
+          -21.6,
+          12.599999899999975
+        ],
+        [
+          21.6,
+          21.6,
+          15.100000190984487
+        ]
+      ]
+    },
+    {
+      "name": "Outer_Race_Retainer",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1094.02822568611,
+      "file": "Outer_Race_Retainer.stl",
+      "sha256": "928b781ef381ea123dadb636af5d0f9c2381e00f9dbf3ad11ffa49901d2537f0",
+      "bounds_mm": [
+        [
+          -28.8,
+          -28.8,
+          5.1
+        ],
+        [
+          28.8,
+          28.8,
+          6.6
+        ]
+      ]
+    },
+    {
+      "name": "Cap_circular",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 13052.528429572294,
+      "file": "Cap_circular.stl",
+      "sha256": "ac71cac8992753f082dacff06a966a03f65bb9fe48f40e8f9517d5d483e26bd8",
+      "bounds_mm": [
+        [
+          -30.800000000000004,
+          -30.8,
+          6.6
+        ],
+        [
+          30.8,
+          30.8,
+          17.2
+        ]
+      ]
+    },
+    {
+      "name": "Cap_ships_wheel",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11149.031940370702,
+      "file": "Cap_ships_wheel.stl",
+      "sha256": "fc63a1ae9969b0bac971352cb0669b72c8aba64c41077affb659cb70de3ef36b",
+      "bounds_mm": [
+        [
+          -30.8,
+          -29.0,
+          6.6
+        ],
+        [
+          30.8,
+          29.0,
+          17.200000000000003
+        ]
+      ]
+    },
+    {
+      "name": "Cap_rounded_triangle",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 10681.115228618108,
+      "file": "Cap_rounded_triangle.stl",
+      "sha256": "c1e8da18c659eb71dd8f1d4830228e89e68f0a0f6f34a713462c43975835ec5a",
+      "bounds_mm": [
+        [
+          -28.8,
+          -28.8,
+          6.6
+        ],
+        [
+          30.797094004482368,
+          28.8,
+          17.2
+        ]
+      ]
+    },
+    {
+      "name": "Cap_scalloped_coin",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11761.729049971707,
+      "file": "Cap_scalloped_coin.stl",
+      "sha256": "67f00494b50c493807fb4ecb4156180f5a723f7f6e6b7db538236b84a6637610",
+      "bounds_mm": [
+        [
+          -30.8,
+          -30.8,
+          6.6
+        ],
+        [
+          30.8,
+          30.8,
+          17.2
+        ]
+      ]
+    },
+    {
+      "name": "Cap_petal_flower",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11225.50361986695,
+      "file": "Cap_petal_flower.stl",
+      "sha256": "b84591aa33b44afbf8369fe0a43d2973905d5e1b6198351df1d682d7e752fe43",
+      "bounds_mm": [
+        [
+          -30.8,
+          -28.8,
+          6.6
+        ],
+        [
+          30.8,
+          28.8,
+          17.2
+        ]
+      ]
+    },
+    {
+      "name": "Cap_four_leaf_clover",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11032.346051836701,
+      "file": "Cap_four_leaf_clover.stl",
+      "sha256": "07a6960c97f88d06282d67ad85f02e7ade81948473ef7064400929816b592ec9",
+      "bounds_mm": [
+        [
+          -30.8,
+          -30.8,
+          6.6
+        ],
+        [
+          30.8,
+          30.8,
+          17.2
+        ]
+      ]
+    },
+    {
+      "name": "Cap_rounded_hexagon",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11082.621357483997,
+      "file": "Cap_rounded_hexagon.stl",
+      "sha256": "5fb9e0162948754db6dccb6de142c25ce4a56ef357faedfe2309800da9f21578",
+      "bounds_mm": [
+        [
+          -30.798601319003673,
+          -28.8,
+          6.6
+        ],
+        [
+          30.798601319003673,
+          28.8,
+          17.2
+        ]
+      ]
+    },
+    {
+      "name": "Cap_rounded_square",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 10831.319728594124,
+      "file": "Cap_rounded_square.stl",
+      "sha256": "af69bf355c03c8bc61331e1552e359f173788f766934b56c6bfe2824469e106d",
+      "bounds_mm": [
+        [
+          -30.8,
+          -30.8,
+          6.6
+        ],
+        [
+          30.8,
+          30.8,
+          17.2
+        ]
+      ]
+    },
+    {
+      "name": "Cap_wave_rim",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11926.61371338774,
+      "file": "Cap_wave_rim.stl",
+      "sha256": "a35786e495a1f4e68f341a777ac633d2f1a31b1edc80efdc4c51718fcceab800",
+      "bounds_mm": [
+        [
+          -30.8,
+          -30.8,
+          6.6
+        ],
+        [
+          30.8,
+          30.8,
+          17.2
+        ]
+      ]
+    },
+    {
+      "name": "Cap_turbine_wheel",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 12897.386971867178,
+      "file": "Cap_turbine_wheel.stl",
+      "sha256": "0e76a3b84d94f7c115624582117d9747cacb0f5831a55db5adc03866bfba6f24",
+      "bounds_mm": [
+        [
+          -30.35,
+          -30.35,
+          6.6
+        ],
+        [
+          30.35,
+          30.35,
+          17.200000100000025
+        ]
+      ]
+    },
+    {
+      "name": "Cap_thumb_scoop",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 12417.272937399599,
+      "file": "Cap_thumb_scoop.stl",
+      "sha256": "b9cc1b988c9efc2648f957253083c3d644db6239bb0d48fb3d3a542e1034a848",
+      "bounds_mm": [
+        [
+          -30.8,
+          -29.2,
+          6.6
+        ],
+        [
+          30.8,
+          29.2,
+          17.200000100000015
+        ]
+      ]
+    }
+  ],
+  "reference_only": [
+    "Actuator_Ring_REFERENCE_ONLY.stl"
+  ]
+}

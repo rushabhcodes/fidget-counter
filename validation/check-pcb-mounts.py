@@ -8,11 +8,12 @@ import trimesh
 root=Path(__file__).resolve().parents[1]
 c=json.loads((root/'dist/index/circuit.json').read_text())
 p=json.loads((root/'mechanical/enclosure-parameters.json').read_text())
-audit=json.loads((root/'mechanical/enclosure-validation.json').read_text())['pcb_retention']
+audit=json.loads((root/'mechanical/enclosure-validation.json').read_text())
+mount_centers=[(p['pcb_mount']['radius_mm']*math.cos(math.radians(a)),p['pcb_mount']['radius_mm']*math.sin(math.radians(a))) for a in p['pcb_mount']['angles_deg']]
 board=next(e for e in c if e['type']=='pcb_board')
 mounts=[e for e in c if e['type']=='pcb_hole' and abs(e['hole_diameter']-p['pcb_mount']['hole_diameter_mm'])<1e-7]
 assert len(mounts)==4
-for x,y in audit['mount_centers_mm']:
+for x,y in mount_centers:
     assert any(math.hypot(h['x']-x,h['y']-y)<1e-6 for h in mounts),'Circuit and base hole patterns differ'
 outline=[(v['x'],v['y']) for v in board['outline']]
 pcb=cq.Workplane('XY').workplane(offset=p['pcb_bottom']).polyline(outline).close().extrude(board['thickness']).val()
@@ -64,17 +65,10 @@ def check_glb(file):
 
 reports=check_glb(root/"dist/index/3d.glb")
 published_reports=check_glb(root/"dist/published/3d.glb")
-assert audit['pcb_screws']==0 and audit['separate_pcb_retainers']==0
-assert audit['minimum_locked_feature_to_hole_clearance_mm']>.2
-assert audit['minimum_released_hook_to_hole_clearance_mm']>.15
-assert audit['locator_recess_below_board_top_mm']>.3
-assert audit['axial_float_mm']>=.15-1e-7
+assert audit['pcb_screws']==4 and audit['flexible_printed_latches']==0
 result={'passed':True,'physical_tested':False,'base_to_actual_pcb_intersection_mm3':intersection,
-    'mount_centers_mm':audit['mount_centers_mm'],'nominal_edge_web_mm':audit['nominal_pcb_edge_web_mm'],
-    'minimum_locked_feature_to_hole_clearance_mm':audit['minimum_locked_feature_to_hole_clearance_mm'],
-    'minimum_released_hook_to_hole_clearance_mm':audit['minimum_released_hook_to_hole_clearance_mm'],
-    'locator_recess_below_board_top_mm':audit['locator_recess_below_board_top_mm'],
-    'retaining_lip_above_board_top_mm':audit['axial_float_mm'],'native_glb_holes':reports,'published_glb_holes':published_reports,
+    'mount_centers_mm':mount_centers,'nominal_edge_web_mm':p['pcb_diameter']/2-p['pcb_mount']['radius_mm']-p['pcb_mount']['hole_diameter_mm']/2,
+    'pcb_screws':4,'native_glb_holes':reports,'published_glb_holes':published_reports,
     'sha256':{str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in [root/'dist/index/circuit.json',root/'dist/index/3d.glb',root/'dist/published/circuit.json',root/'dist/published/3d.glb',root/'mechanical/STEP_Parts/Stationary_Base.step']}}
 (root/'validation/pcb-mount-clearance.json').write_text(json.dumps(result,indent=2)+'\n')
-print('Pass: base has no intersection with real PCB material; all four native mounting holes are open in both GLB faces; no bolts')
+print('Pass: base has no intersection with real PCB material; all four native mounting holes are open in both GLB faces; four nylon PCB screws')

@@ -21,10 +21,7 @@
     ]
   ],
   "nominal_edge_web_mm": 1.5500000000000007,
-  "minimum_locked_feature_to_hole_clearance_mm": 0.20288782289271534,
-  "minimum_released_hook_to_hole_clearance_mm": 0.15835921350012594,
-  "locator_recess_below_board_top_mm": 0.35,
-  "retaining_lip_above_board_top_mm": 0.15000000000000036,
+  "pcb_screws": 4,
   "native_glb_holes": [
     {
       "center_mm": [
@@ -102,10 +99,10 @@
     }
   ],
   "sha256": {
-    "dist/index/circuit.json": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294",
-    "dist/index/3d.glb": "47412442521c865253fdd3af032aa374e2fa12ad5122fc1b4bd9da6593010506",
-    "dist/published/circuit.json": "b1fc2c39aafda88bc906a6d2878c50ac3b4946cecfae3e7a86065ea7ebc0f294",
-    "dist/published/3d.glb": "47412442521c865253fdd3af032aa374e2fa12ad5122fc1b4bd9da6593010506",
-    "mechanical/STEP_Parts/Stationary_Base.step": "3761c282cc92ed28b1bceef0cf71e6199d7e3c016cb53001864266f0e5710916"
+    "dist/index/circuit.json": "95df520adeca50b30624da4cada6ca60fcfa119cf0a3df064c1d8899cccc9448",
+    "dist/index/3d.glb": "d96f3ad51f2a376c23ce1086b5af3d6c00c4cf55adb4e73d031a24aace1184de",
+    "dist/published/circuit.json": "95df520adeca50b30624da4cada6ca60fcfa119cf0a3df064c1d8899cccc9448",
+    "dist/published/3d.glb": "d96f3ad51f2a376c23ce1086b5af3d6c00c4cf55adb4e73d031a24aace1184de",
+    "mechanical/STEP_Parts/Stationary_Base.step": "6f2b1d2b62dc0292c55a5412211599ce17f32b3f504ce24b52722f8530eeff53"
   }
 }

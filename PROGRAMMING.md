@@ -1,4 +1,10 @@
-# Programming the Fidget Counter — five-pin JST-SH, release 1.0.18
+# V5 enclosure access update
+
+For the current bearing enclosure, remove the three TOP cap-retainer screws, lift off the cap, unscrew the inner-race nut and remove the bearing. Remove the four nylon PCB screws and lift the PCB for cable or battery access. The V4 instructions about releasing printed latches below are superseded. Electrical pinout and programmer-power instructions remain valid.
+
+---
+
+# Programming the Fidget Counter — JST-SH PCB with V5 enclosure
 
 J_DEBUG is a fitted **JST SM05B-SRSS-TB(LF)(SN)** side-entry SMT header, with five contacts on a 1.0 mm pitch. It uses `StandardJstSwdResetSide` from `@tsci/tscircuit.standard-jst-programmer@0.8.0`, with its exact imported footprint, supplier identity **JLCPCB C136657**, and cached supplier 3D models. It replaces the six bare Tag-Connect pads and all three alignment holes. All five signal lands and both mounting tabs receive solder paste.
 
@@ -10,7 +16,7 @@ This repository contains the PCB design, **no application firmware, bootloader o
 
 ## Access and identify the contacts
 
-Program before enclosure assembly. For an assembled device, release the cap, push both PCB latch tips outward 0.6 mm and lift the PCB with its holder; see [battery service](MECHANICAL.md#pressing-and-battery-service). Remove the coin cell. J_DEBUG stays on the **top face**, centered at **(0, −13.3) mm**, opposite the antenna. Its cable enters horizontally from **−Y**, toward the lower board edge. The base has no cable opening, so lift the PCB before inserting or removing the plug. Disconnect the cable before reseating the PCB and refitting the cap.
+Program before enclosure assembly. For an assembled V5 device, remove the three top cap screws, lift off the cap, unscrew the inner-race nut and remove the bearing. Remove the four nylon PCB screws and lift the board with its holder; see [the V5 service guide](MECHANICAL.md). Remove the coin cell. J_DEBUG remains on the top face at (0, −13.3) mm with cable entry toward −Y. Lift the PCB for side-entry cable access, then disconnect the cable before reassembly.
 
 Viewed from above with the antenna pointing up:
 
@@ -34,7 +40,7 @@ The marked pin 1 is on the left in this PCB top view. The plug's mating-face vie
 | 4 | SWCLK | U1 physical pin 25 | (+1.000125, −11.3001183) |
 | 5 | Open-drain NRST | NRESET, U1 P0.21 / pin 24; existing 100 kΩ pull-up | (+2.000885, −11.3001183) |
 
-The two mechanical solder tabs are not additional signal contacts. There are no programming alignment holes or bare programming test-pad row. The fitted header clears the base and every cap through full rotation and the 0.25 mm press stroke. The supplier STEP gives about **0.74 mm nominal minimum cap-rib clearance**; a 2.92 mm-high conservative courtyard envelope leaves at least **0.73 mm**. Cable mating and printed tolerances still need a prototype.
+The two mechanical solder tabs are not additional signal contacts. There are no programming alignment holes or bare programming test-pad row. The V5 fitted-header clearance is regenerated against the actual supplier STEP and a conservative 2.92 mm-high courtyard envelope through the full 0.8 mm press stroke. See `validation/jst-connector-clearance.json` for measured CAD results. Cable mating and printed tolerances still need a prototype.
 
 ## Power and flash with the linked programmer
 
@@ -139,4 +145,4 @@ After successful recovery, rerun the complete-image programming command above. I
 
 ## Verification status
 
-Updated 29 October 2026 for JST-SH release 1.0.18, retaining the enclosure and original fitted components from release 1.0.15. The exact five-pin side-entry footprint and pinout come from `@tsci/tscircuit.standard-jst-programmer@0.8.0`; its matching C136657 supplier OBJ and STEP are cached under `imports/SM05B_SRSS_TB`. See `validation/programming-interface.json` for electrical, copper, stencil and courtyard checks and `validation/jst-connector-clearance.json` for continuous rotation/full-press clearance under all eleven caps. The original thirty fitted components are checked against their existing baseline; J_DEBUG is the thirty-first fitted part. Actual cable insertion, connector retention and flashing need a populated prototype. These checks apply to release 1.0.18.
+Updated 29 October 2026 for JST-SH release 1.0.18, retaining the enclosure and original fitted components from release 1.0.15. The exact five-pin side-entry footprint and pinout come from `@tsci/tscircuit.standard-jst-programmer@0.8.0`; its matching C136657 supplier OBJ and STEP are cached under `imports/SM05B_SRSS_TB`. See `validation/programming-interface.json` for electrical, copper, stencil and courtyard checks and `validation/jst-connector-clearance.json` for continuous rotation/full-press clearance under all eleven V5 caps. The original thirty fitted components are checked against their existing baseline; J_DEBUG is the thirty-first fitted part. Actual cable insertion, connector retention and flashing need a populated prototype. The original electrical interface check applies to PCB release 1.0.18; V5 mechanical checks use the current regenerated reports.

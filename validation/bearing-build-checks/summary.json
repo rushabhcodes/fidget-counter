@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "netlist",
+      "input": "index.circuit.tsx",
+      "exit_code": 0,
+      "log": "validation/bearing-build-checks/netlist.log"
+    },
+    {
+      "check": "pin_specification",
+      "input": "dist/index/circuit.json",
+      "exit_code": 0,
+      "log": "validation/bearing-build-checks/pin_specification.log"
+    },
+    {
+      "check": "placement",
+      "input": "dist/index/circuit.json",
+      "exit_code": 0,
+      "log": "validation/bearing-build-checks/placement.log"
+    },
+    {
+      "check": "shorts",
+      "input": "dist/index/circuit.json",
+      "exit_code": 0,
+      "log": "validation/bearing-build-checks/shorts.log"
+    }
+  ]
+}

@@ -1,10 +1,21 @@
-Part,Quantity,Notes
-Stationary_Base,1,Revised base with two cap-release clips; clearance-fit PCB latches and recessed locators; no bolts
-Bottom_Tray,1,PLA; unchanged attachment-disc arrangement
-Selected Cap_*.stl,1 per style,Complete single-piece rotor/grip/pusher; no separate hub
-Encoder magnet,1 per printed top,Diametrically magnetized diameter 5 x thickness 1.5 mm
-Encoder spacer,1 per printed top,Nonmagnetic thickness0.2 mm above the disc
-Attachment magnets,24,Axially magnetized diameter 5 x thickness 1.5 mm; unchanged in fixed base
-Backing ring,1,Existing steel ring; ID44.05 OD54.45 thickness0.7 mm
-CR2032,1,In existing soldered bottom PCB holder
-PCB and components,1,Inward SW1 at x0 y-5 mm; four diameter3.0 mm mounting holes on radius15.2 mm
+Part,Quantity,Specification,Notes
+Stationary_Base,1,V5 PETG Ø58 mm,Solid guide and PCB posts; no release clips
+Bottom_Tray,1,V5 matching tray,Original 24 attachment-magnet pocket layout
+Bearing_Carrier,1,V5 PETG,Nonrotating sliding carrier; three solid guide bores
+Inner_Race_Nut,1,V5 PETG coarse thread,Clamp inner race only; confirm thread coupon fit
+Outer_Race_Retainer,1,V5 PETG,Clamp outer race only; flush screw heads
+Selected Cap_*.stl,1,V5 PETG,Common bearing drum plus selected exterior grip
+Thin-section ball bearing,1,6708 / 61708 nominal ID40 OD50 W6 mm,Verify supplier drawing and sample; inspect shoulder/seal clearances and magnetic/RF effects
+Compression springs,3,OD3 wire0.25 free4 mm nominal rate0.45 N/mm,Matched purchased springs; assembled3.5 pressed2.7 mm; solid height at most2.2 mm; verify actual return force
+Guide retaining screws,3,M2.5 x5 mm low-profile head OD4.7 height1.5 mm maximum,Thread directly into solid pilot posts; confirm screw length and free carrier motion
+Guide washers,3,ID2.7 OD6.5 thickness0.3 mm,Define released stop; do not clamp carrier
+Cap retainer screws,3,M2 x12 mm countersunk head OD3.8 mm maximum,Flush TOP entry; thread into outer-race retainer; check fitted screw length
+PCB screws,4,M2 x4 mm nylon head OD3.8 height1.3 mm maximum,No conductive washer; original four Ø3 mm PCB holes retained
+Annular actuator,1,Silicone OD13 ID7 thickness1.5 mm,REFERENCE STL only; qualify compression/force and shim from measured switch travel
+Actuator adjustment shims,As needed,Nonmagnetic 0.05 mm increments OD13 ID7,0–0.8 mm adjustment range; verify released gap at every angle
+Encoder magnet,1 per cap,Diametrically magnetized Ø5 x1.5 mm,Same polarity/grade in each cap; measure bearing influence
+Encoder spacer,1 per cap,Nonmagnetic Ø5 x0.2 mm,Above encoder disc
+Attachment magnets,24,Axially magnetized Ø5 x1.5 mm,Unchanged fixed array
+Backing ring,1,ID44.05 OD54.45 thickness0.7 mm,Unchanged fixed ring
+CR2032,1,3 V reputable cell,Existing soldered holder; remove before programmer power
+PCB and components,1,Existing Ø36.5 x1.0 mm PCB,Seat at Z8.1–9.1 mm; electrical layout unchanged

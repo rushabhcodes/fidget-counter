@@ -4,6 +4,7 @@ node_modules/
 # Build output
 dist/
 build/
+mechanical/export/
 
 # Environment variables
 .env

@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto"
-import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs"
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from "node:fs"
 import { dirname, resolve, relative, extname } from "node:path"
 import { fileURLToPath } from "node:url"
 import { gzipSync } from "node:zlib"
@@ -57,6 +57,12 @@ manifest.cadInputArchives = cadGroups.map((entries, index) => {
   writeFileSync(resolve(root, source), packed)
   return { source, sha256: sha256(packed), files: entries.map(entry => entry.path) }
 })
+const activeCadArchives = new Set(manifest.cadInputArchives.map(archive => archive.source))
+for (const name of readdirSync(resolve(root, "cloud-assets"))) {
+  const path = `cloud-assets/${name}`
+  if (/^cad-inputs-\d+\.json\.gz\.b64$/.test(name) && !activeCadArchives.has(path))
+    unlinkSync(resolve(root, path))
+}
 for (const name of ["circuit.json", "pcb.png", "pcb.svg", "schematic.png", "schematic.svg", "3d.glb"]) {
   const bytes = readFileSync(resolve(root, "dist/published", name))
   const output = `dist/published/${name}`

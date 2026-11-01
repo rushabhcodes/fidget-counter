@@ -69,8 +69,8 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
  </Fragment>)}
 
  {holes.map((p,i)=><Fragment key={i}><hole name={`H${i+1}`} pcbX={p.x} pcbY={p.y} diameter={mountSpec.hole_diameter_mm}/></Fragment>)}
- {/* Only the two above-board retaining lips need an assembly keepout.
-     Recessed locators stay inside their bores; native hole clearance applies. */}
+ {/* Preserve the existing two mounting keepouts. V5 uses nylon screw heads
+     and two rigid locators inside the existing drills; copper is unchanged. */}
  {holes.filter((_,i)=>i===0 || i===2).map((p,i)=><Fragment key={i}><keepout shape="circle" pcbX={p.x} pcbY={p.y}
   radius={mountSpec.copper_keepout_radius_mm} layers={["top","bottom"]}/></Fragment>)}
  <keepout shape="rect" pcbX={0} pcbY={15.8} width={7} height={4.4}

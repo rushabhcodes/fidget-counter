@@ -46,7 +46,7 @@ assert base_overlap < 1e-6
 rmin = abs(y) - depth / 2
 rmax = max(math.hypot(a, b) for a in (eb.xmin, eb.xmax) for b in (eb.ymin, eb.ymax))
 assert rmin > parameters['pusher_outer_radius']
-assert rmax < parameters['guide_neck_inner_radius']
+assert rmax < parameters['bearing']['bore_mm'] / 2
 annulus = cq.Workplane('XY').circle(rmax + .001).circle(rmin - .001).extrude(20).val()
 reports = []
 for style in parameters['cap_styles']:
@@ -72,7 +72,7 @@ for node in nodes:
     mesh.apply_transform(transform)
     mesh_vertices.append(mesh.vertices)
 mesh_vertices = np.concatenate(mesh_vertices)
-vertices = np.column_stack((-mesh_vertices[:, 0], mesh_vertices[:, 2], mesh_vertices[:, 1] + 7.6))
+vertices = np.column_stack((-mesh_vertices[:, 0], mesh_vertices[:, 2], mesh_vertices[:, 1] + parameters['pcb_bottom'] + parameters['pcb_thickness'] / 2))
 mesh_bounds = np.array([vertices.min(axis=0), vertices.max(axis=0)])
 step_bounds = np.array([[box.xmin, box.ymin, box.zmin], [box.xmax, box.ymax, box.zmax]])
 assert np.max(np.abs(mesh_bounds - step_bounds)) < .02, (mesh_bounds, step_bounds)
@@ -87,7 +87,7 @@ result = {'passed': True, 'physical_tested': False, 'connector': source['manufac
           'full_press_travel_mm': parameters['button_travel'], 'cap_checks': reports,
           'minimum_conservative_clearance_mm': min(r['conservative_clearance_mm'] for r in reports),
           'minimum_supplier_step_clearance_mm': min(r['supplier_step_clearance_mm'] for r in reports),
-          'service': 'Remove cap and lift PCB for side-entry programming cable access; disconnect cable before refitting.',
+          'service': 'Remove top cap screws, cap, inner nut and bearing; unscrew/lift PCB for side-entry access. Disconnect cable before refitting.',
           'sha256': {str(f.relative_to(root)): hashlib.sha256(f.read_bytes()).hexdigest() for f in files}}
 (root / 'validation/jst-connector-clearance.json').write_text(json.dumps(result, indent=2) + '\n')
 print('Pass: supplier STEP and fitted GLB agree; all eleven caps clear the JST throughout rotation and pressing')
