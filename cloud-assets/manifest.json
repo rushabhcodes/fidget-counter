@@ -3,7 +3,7 @@
   "description": "Locally built and checked preview; hashes bind it to the published source and CAD assets.",
   "inputs": {
     "cloud-build.mjs": "d62a5f4df5dca09730fc0c38ce77f46506858cc23a79d3634445e65e59b37463",
-    "enclosure.tsx": "4760633249f5c7f844c3e62947430633dc47a453d709fc11ac926bba9f14c65c",
+    "enclosure.tsx": "166526661485288f87c373fbea2978623d1300709909bd00e438615d95010dd6",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj": "5cb7b3d39911902565b7d20a63b8be35513c8d72b9d0dca36c801d731893bcf5",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.step": "d8b313a83de060e58141efc987e51c0ad04a3855784f981139dc3698331d1f2d",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.tsx": "773a9b178e1e8daba40ec2b7f9804b891397ca47f1fbdabb2cc1f6b101eac994",
@@ -65,11 +65,9 @@
     "imports/X201632MKB4SI/X201632MKB4SI.tsx": "f0558fb79ade1f5a4ffc94483c4d6f460ba6b69a1ebf5ca9fe6da2b83d59864f",
     "index.circuit.tsx": "df9acb0f4078edd96e858f1886b5744617d5d1605c4d38e6bc85105d0e998c23",
     "mechanical/Circuit_Models/Actuator_Ring.glb": "0f515744c8986cf921666f5eb970ef8cff5886034386b26925b53b43f233a6a9",
-    "mechanical/Circuit_Models/Attachment_Magnets.glb": "cfb7d80851185f22c191fe8c03570386b20cd98af68aa1b9da314bc92dd7c809",
-    "mechanical/Circuit_Models/Backing_Ring.glb": "0c017bc05021a4fec7b1526dd7c625bf3b83c85c1da84a9704761fe95de41eb8",
     "mechanical/Circuit_Models/Bearing_6708.glb": "5a79ed20e66ebd7a9247b21e80587c2752402217ab7aaf2e9794887a6bdbc66e",
     "mechanical/Circuit_Models/Bearing_Carrier.glb": "8d1b93e4d9b17a00e537d13823cb715671c559edf2b587b3436c2dbc27b8817b",
-    "mechanical/Circuit_Models/Bottom_Tray.glb": "8d5887d6f67916e1a010c98a08a80aae7d937b70f09db10997926e33b0c37d23",
+    "mechanical/Circuit_Models/Bottom_Tray.glb": "506396e8697cad0423d0034737f2a0c190448739eb36827fc5502a45e4505801",
     "mechanical/Circuit_Models/Cap_Retainer_Screws.glb": "80e9de49ea86345d5ebb5aa88d235e634e59789482c1e2d163efd5bc0c3777ee",
     "mechanical/Circuit_Models/Cap_circular.glb": "05219f07a59f601ce1eee3869ec2abaabcc1873fee7a91435021b99810ecad72",
     "mechanical/Circuit_Models/Cap_four_leaf_clover.glb": "0cc5b5c3d716d15acd7a493e5bf7b2eba78e9204cca27afb1de9a496c48898ab",
@@ -86,15 +84,16 @@
     "mechanical/Circuit_Models/Encoder_Spacer.glb": "e8d25f4dd81d3edfa05a0aa2740c63ca9042cd35beb0bb139ab1a3103f3e3e6a",
     "mechanical/Circuit_Models/Guide_Fasteners.glb": "79f8bbfde16b7bcd14bfb4af1a4f7d8b0ea63c6fb7d48bc836e4a271747d2914",
     "mechanical/Circuit_Models/Inner_Race_Nut.glb": "f5f1fa1f639883787f7cf2c242f07ef7bc183abad06c2bcd494c173a250e5add",
+    "mechanical/Circuit_Models/MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960",
     "mechanical/Circuit_Models/Magnet.glb": "0895b675e4934bae27ad2aebf4479536c4c13940c7167ad2b211583e61da7903",
     "mechanical/Circuit_Models/Outer_Race_Retainer.glb": "4f9443a510f47547f9b71f2c20571bbdeae1bb618b97111e7699afdf3cc8a675",
     "mechanical/Circuit_Models/PCB_Fasteners.glb": "fd55fa39e0f667530a5e9d54933243b333c7165470b78797771a9813788054ec",
     "mechanical/Circuit_Models/Return_Springs.glb": "af0783d667ba5495a3aec071f71451f284ec4fa3d6b2c3ad53db0e1267d8009b",
-    "mechanical/Circuit_Models/Stationary_Base.glb": "474451fa24b8ea6fe0c6c149f614af20d3ae3d8636aaa2c8457198cf56ce10df",
-    "mechanical/Circuit_Models/manifest.json": "ebe921282d36d3156e2517c8a8580a4c7ef10bd04bf4ea63db482a987b9b5244",
+    "mechanical/Circuit_Models/Stationary_Base.glb": "ae979622f85d859bae33f421af450f4ee2cce8983bf4a8a29da533220b186e30",
+    "mechanical/Circuit_Models/manifest.json": "3b217ddec41d772b4996e09915ee9f5ffad5b3c1c5a449654f227c9721e4d2e8",
     "mechanical/Print_STL/Actuator_Ring_REFERENCE_ONLY.stl": "46acdbbc821ed4eb70e0a474d1b4d57c81506d3bf8f6f0d4dedfceb41daa61c8",
     "mechanical/Print_STL/Bearing_Carrier.stl": "33fbfcb5d62a2a68352461ff3eaf36aca4c66da23a100e87029265b4ec013f3e",
-    "mechanical/Print_STL/Bottom_Tray.stl": "ccb20de40e0a0f4ae28d1ea71999ac718623cf30fe6a7a6af442dcb58a211788",
+    "mechanical/Print_STL/Bottom_Tray.stl": "0820edca0e9587225465ca6e244eafaeaafce4c59b48c51a4deeda761f8f0a7f",
     "mechanical/Print_STL/Cap_circular.stl": "ac71cac8992753f082dacff06a966a03f65bb9fe48f40e8f9517d5d483e26bd8",
     "mechanical/Print_STL/Cap_four_leaf_clover.stl": "07a6960c97f88d06282d67ad85f02e7ade81948473ef7064400929816b592ec9",
     "mechanical/Print_STL/Cap_petal_flower.stl": "b84591aa33b44afbf8369fe0a43d2973905d5e1b6198351df1d682d7e752fe43",
@@ -114,10 +113,10 @@
     "mechanical/Print_STL/Coupons/Inner_Thread_Coupon.stl": "99ef09b4e5db7d36fff68d808566d477c105d290b1798ee4576e6345f7c8bdda",
     "mechanical/Print_STL/Inner_Race_Nut.stl": "a62daaf333e4c7f1bab8770a4bd3b0e566af7a19a3a604c6aa962cf4ce0fb91d",
     "mechanical/Print_STL/Outer_Race_Retainer.stl": "928b781ef381ea123dadb636af5d0f9c2381e00f9dbf3ad11ffa49901d2537f0",
-    "mechanical/Print_STL/Stationary_Base.stl": "8c3843ae64e35e333b7a8d6e88ffeda6fd892077268e4f4dd68a496612bb21c9",
+    "mechanical/Print_STL/Stationary_Base.stl": "478d6833aa3622204aee6eb810a036aac73ac412564936ec86ece70778de2e0f",
     "mechanical/STEP_Parts/Actuator_Ring_REFERENCE_ONLY.step": "276389e61b7ec1ff50d67d344887bb7b3a9ff47327b456e58378eecece64b710",
     "mechanical/STEP_Parts/Bearing_Carrier.step": "fc6cd28c229bcf58193a80f18a4e38e8d5740535d4864938ad42c21b8eb3f487",
-    "mechanical/STEP_Parts/Bottom_Tray.step": "db4d3fee058cb1fed450058c5dbf7c22129e8206a7ec5d9fb30ff34283ab7c77",
+    "mechanical/STEP_Parts/Bottom_Tray.step": "b37d57ffe61bf43c5caa8e514a5d68be512d6f685ad0390047ddd84b4a945b36",
     "mechanical/STEP_Parts/Cap_circular.step": "c7b1bb991596bf9128cc0993f53e788ae2769c6837cbc61d40a993ae136257b6",
     "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "288f76be27efe30b0fea6bfd1506df610beb7992e4a2ed5a42d521ed79530d49",
     "mechanical/STEP_Parts/Cap_petal_flower.step": "bc6b1aa470907fb655cc3bdba6cf23824c183caed46ba361b27002a4ee27aa87",
@@ -131,24 +130,24 @@
     "mechanical/STEP_Parts/Cap_wave_rim.step": "77d06d42795b0f80a01b09dffeaac102a3363cf157fec19d8ac1a623e0c5c030",
     "mechanical/STEP_Parts/Inner_Race_Nut.step": "c281991e730b1c908e81b5cf6a66fc98f12f6435ee07f86dec1599eb9ab2c6ec",
     "mechanical/STEP_Parts/Outer_Race_Retainer.step": "ac2816dfdade244041453303a743e8168d98a6b635b0ef74bbab3cd76b180886",
-    "mechanical/STEP_Parts/Stationary_Base.step": "6f2b1d2b62dc0292c55a5412211599ce17f32b3f504ce24b52722f8530eeff53",
-    "mechanical/build_enclosure.py": "3df300f2618f36c724fb077b30fe8cdf36e1d56d33e50dfa4cc7505fea334f20",
+    "mechanical/STEP_Parts/Stationary_Base.step": "bdba2dd79835167abc042445139a0d464ad045d9df6233a06a5bcb8cdfe4f548",
+    "mechanical/build_enclosure.py": "26936837b49c3e3c9d980fa6669e34d0012b99125b8ed68ed387b5b85a5a3591",
     "mechanical/build_fit_coupons.py": "597d0e37b0812683ce42ca91572ec72d8a001b03d8d63f5cabccfdf1b0dcdd45",
-    "mechanical/enclosure-parameters.json": "f5f10e456afece55db46863e5c08b808a9143b73c47284f8c41837c54eb0f1b4",
-    "mechanical/enclosure-validation.json": "6cb06fafeee12190cbd63bf6c394c6d130163474ef60140bb6e2877d5ee8031e",
+    "mechanical/enclosure-parameters.json": "fb20427906f8dc230a3d722f24bc2f2acd148c8bdcd67b59e84df44531410f8b",
+    "mechanical/enclosure-validation.json": "f09c8ec504dc0a2d6b3bad7de32a3e0f682ac34405fd389b213f9ab88ec89f0f",
     "mechanical/export_circuit_models.py": "23f34b212fa8eaae49f03b3169dc5b3f3c913a58ce9217862f5623f4a7f4ae14",
     "mechanical/glb_models.py": "1298685a6f5c6a7ed9368643a653b83f6856c9ebe163b99aa43f0a7ab5a4cc33",
     "mechanical/grip_profiles.py": "9174a977e3c180de3ce6401f4f3e150dffcb60f76b9c904d9fc069522f424ba3",
-    "mechanical/hardware_models.py": "aa216b4c19785e7282e0b5c7e2185af2f91716acd55260927c30be98c2faa10b",
+    "mechanical/hardware_models.py": "6c463731e6a87151fda68936db1aec377984558057593e1b2ca7ab917457bd0d",
     "mechanical/imports/holder.step": "4714a2d39b88797145aacf8a737b9977321a492e45a83ee97f29d933f943d8ec",
     "mechanical/mesh_export.py": "a8b20d735f20a3e1d4772e6bf6efee3ef9932b498eb563a32f5e915015368f74",
-    "mechanical/render_bearing_layout.py": "c18e2b7089a78f06fcb54ba1cf51e553b5948416948a370fec9c6b6189931841",
+    "mechanical/render_bearing_layout.py": "1d466d23e04178ecd0c32f982c9e63274a39f3bc3b3a36d422f7ad8d690f6e94",
     "mechanical/spring_mesh.py": "f34870ba443c391bf0436944b3e081de9f922cc178eb47a5588457818887c6cb",
     "mechanical/sync_checked_exports.py": "f628a83a9cbce005a99919626591c445d69886dfd64883008bdba8462274c770",
     "model-assets.d.ts": "bcd106931f1096dab95359b6d47a67456c3da66efd2f5c0c76e29783cada6463",
     "parts.tsx": "7426cf61e997cae366ff60fe4663cb800a0170d68f461e0ad9b1254784df7b5f",
     "passives.tsx": "3f2cdbf1cbff6cecd49da9cc3823255437d5a14cd1b8e2b1d41b7044d57d2a5f",
-    "published.circuit.json": "a166c841f3f26b6414bc83a6b633fe855bedd5053e2f324ecc7da925eb207d41",
+    "published.circuit.json": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
     "routed-paths.json": "93ee8284aa3bf2f9e069224a633895f04dc8d1ec24e48cccf7da220322987f08",
     "routing-contract.json": "afde27101f7ed90438fdaf149a6fdf0d5a32337e665bb7c8ae6dd696b9569417",
     "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
@@ -170,8 +169,8 @@
       "source": "published.circuit.json",
       "output": "dist/published/circuit.json",
       "encoding": "raw",
-      "bytes": 1062897,
-      "sha256": "a166c841f3f26b6414bc83a6b633fe855bedd5053e2f324ecc7da925eb207d41"
+      "bytes": 1062131,
+      "sha256": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d"
     },
     {
       "source": "cloud-assets/pcb.png.gz.b64",
@@ -211,14 +210,14 @@
       ],
       "output": "dist/published/3d.glb",
       "encoding": "gzip-base64",
-      "bytes": 20114948,
-      "sha256": "9396ec62cf10d2a98dd5d86fae9cad6d54eaa37cfe107a9842b8701414f5f29e"
+      "bytes": 19092836,
+      "sha256": "24f758eaffc584f89de24c6a19c44e4f39362c57893a0eff960eda8c7e9e2867"
     }
   ],
   "cadInputArchives": [
     {
       "source": "cloud-assets/cad-inputs-0.json.gz.b64",
-      "sha256": "64ebc9275eb806a288e090788c4968309c9d6a998525a2d02f2d0093da8752b5",
+      "sha256": "12bc597d7880ffd49341a267c16974fb7b71b513f7b7d29b52933f57162e5e06",
       "files": [
         "mechanical/Print_STL/Actuator_Ring_REFERENCE_ONLY.stl",
         "mechanical/Print_STL/Bearing_Carrier.stl",
@@ -232,18 +231,18 @@
         "mechanical/Print_STL/Cap_scalloped_coin.stl",
         "mechanical/Print_STL/Cap_ships_wheel.stl",
         "mechanical/Print_STL/Cap_thumb_scoop.stl",
-        "mechanical/Print_STL/Cap_turbine_wheel.stl"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-1.json.gz.b64",
-      "sha256": "32224d9c4d56f51d7f5721d235d6907f15d8c0b46d7b52468fc624a42135ae4e",
-      "files": [
+        "mechanical/Print_STL/Cap_turbine_wheel.stl",
         "mechanical/Print_STL/Cap_wave_rim.stl",
         "mechanical/Print_STL/Coupons/Bearing_Housing_Coupon.stl",
         "mechanical/Print_STL/Coupons/Bearing_Shaft_Coupon.stl",
         "mechanical/Print_STL/Coupons/Guide_Bore_Coupon.stl",
-        "mechanical/Print_STL/Coupons/Guide_Post_Coupon.stl",
+        "mechanical/Print_STL/Coupons/Guide_Post_Coupon.stl"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-1.json.gz.b64",
+      "sha256": "e124f22478b727e39f6613d2f768358a785971c1288a8f3713b90277518799b9",
+      "files": [
         "mechanical/Print_STL/Coupons/Inner_Race_Nut.stl",
         "mechanical/Print_STL/Coupons/Inner_Thread_Coupon.stl",
         "mechanical/Print_STL/Inner_Race_Nut.stl",
@@ -252,24 +251,24 @@
         "mechanical/STEP_Parts/Actuator_Ring_REFERENCE_ONLY.step",
         "mechanical/STEP_Parts/Bearing_Carrier.step",
         "mechanical/STEP_Parts/Bottom_Tray.step",
-        "mechanical/STEP_Parts/Cap_circular.step"
+        "mechanical/STEP_Parts/Cap_circular.step",
+        "mechanical/STEP_Parts/Cap_four_leaf_clover.step"
       ]
     },
     {
       "source": "cloud-assets/cad-inputs-2.json.gz.b64",
-      "sha256": "4eaf5d005bf0609be72ea8d0a7d103ca0c1f2667b1741c10ffd8008ac753df67",
+      "sha256": "1fe3f797df89ca286ef31d32ca4ee584825d05b9b956175e4d8fa36a43dd285c",
       "files": [
-        "mechanical/STEP_Parts/Cap_four_leaf_clover.step",
         "mechanical/STEP_Parts/Cap_petal_flower.step",
-        "mechanical/STEP_Parts/Cap_rounded_hexagon.step"
+        "mechanical/STEP_Parts/Cap_rounded_hexagon.step",
+        "mechanical/STEP_Parts/Cap_rounded_square.step",
+        "mechanical/STEP_Parts/Cap_rounded_triangle.step"
       ]
     },
     {
       "source": "cloud-assets/cad-inputs-3.json.gz.b64",
-      "sha256": "9b086df45a4cb9a3c33e21d432f3aff44260aad334b500738450b005e821f27a",
+      "sha256": "3e4f63adbf74db72b5b78c2c08c0d1dcc989a90d7ff12dc60114541d121f941a",
       "files": [
-        "mechanical/STEP_Parts/Cap_rounded_square.step",
-        "mechanical/STEP_Parts/Cap_rounded_triangle.step",
         "mechanical/STEP_Parts/Cap_scalloped_coin.step",
         "mechanical/STEP_Parts/Cap_ships_wheel.step"
       ]
@@ -284,7 +283,7 @@
     },
     {
       "source": "cloud-assets/cad-inputs-5.json.gz.b64",
-      "sha256": "41628c73309029b3742ff2df391d1e6715254196643f5a7559a98c97405a444c",
+      "sha256": "9076309430d027fdb8ef415998c855cedb522402d0976182d880f62fa3af01ac",
       "files": [
         "mechanical/STEP_Parts/Cap_wave_rim.step",
         "mechanical/STEP_Parts/Inner_Race_Nut.step",

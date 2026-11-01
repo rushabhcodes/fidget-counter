@@ -37,7 +37,7 @@
   "material": "PETG for rigid printed parts; purchased metal bearing and springs",
   "return": "Three purchased compression springs; switch is not the cap return spring",
   "service": "Remove the three outer-race retainer screws, lift off the cap, unscrew the inner-race nut, then remove the carrier guide screws and PCB screws",
-  "publication": "Local V5 mechanical prototype; not published or physically qualified",
+  "publication": "Local single-ring revision following published 1.0.23; not physically qualified",
   "hub_cover_thickness": 1.7,
   "cap_style_change": "Undo three countersunk screws to transfer the common bearing assembly to another cap",
   "encoder_magnet_per_top_module": 1,
@@ -134,5 +134,20 @@
     "bore_radius_mm": 18.2,
     "thread_root_radius_mm": 19.5,
     "outer_radius_mm": 21.6
+  },
+  "attachment_ring": {
+    "supplier": "MagnetPrint Hub N52 MagSafe Magnet Ring Kit",
+    "supplier_url": "https://magnetprinthub.com/products/magsafe-magnet-kit",
+    "outside_mm": 54.0,
+    "inside_mm": 45.8,
+    "thickness_mm": 1.9,
+    "supplier_tolerance_mm": 0.05,
+    "magnet_grade": "N52",
+    "magnetization": "Supplier-described one-sided multi-pole Halbach array; working face toward phone",
+    "phone_face_z_mm": 0.4,
+    "radial_clearance_mm": 0.15,
+    "bondline_mm": 0.1,
+    "mounting": "Bond one purchased ring assembly in the open phone-side annular seat; bond tray to base",
+    "qualification": "Nominal supplier envelope only; confirm sample dimensions, working face, peel/shear retention and Hall/RF effects before production"
   }
 }

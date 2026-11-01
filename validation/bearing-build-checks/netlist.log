@@ -42,8 +42,7 @@ COMPONENTS:
  - BEARING_V5_Stationary_Base: BEARING_V5_Stationary_Base, source_component
  - BEARING_V5_Bottom_Tray: BEARING_V5_Bottom_Tray, source_component
  - BEARING_V5_Cell: BEARING_V5_Cell, source_component
- - BEARING_V5_Backing_Ring: BEARING_V5_Backing_Ring, source_component
- - BEARING_V5_Attachment_Magnets: BEARING_V5_Attachment_Magnets, source_component
+ - BEARING_V5_MagSafe_Ring: BEARING_V5_MagSafe_Ring, source_component
  - BEARING_V5_Guide_Fasteners: BEARING_V5_Guide_Fasteners, source_component
  - BEARING_V5_PCB_Fasteners: BEARING_V5_PCB_Fasteners, source_component
  - BEARING_V5_Bearing_Carrier: BEARING_V5_Bearing_Carrier, source_component
@@ -403,9 +402,7 @@ BEARING_V5_Bottom_Tray
 
 BEARING_V5_Cell
 
-BEARING_V5_Backing_Ring
-
-BEARING_V5_Attachment_Magnets
+BEARING_V5_MagSafe_Ring
 
 BEARING_V5_Guide_Fasteners
 

@@ -26,7 +26,9 @@ assert.equal(sources.length,m.modelsPerSelectedStyle)
 assert(!c.some(x=>(x.type==='pcb_component'||x.type==='source_port')&&ids.has(x.source_component_id)))
 const style=readFileSync('index.circuit.tsx','utf8').match(/const CAP_STYLE: CapStyle = "([a-z_]+)"/)[1]
 assert(sources.some(x=>x.name===`BEARING_V5_Cap_${style}`))
-for(const name of ['Bearing_Carrier','Inner_Race_Nut','Bearing_6708','Return_Springs','Guide_Fasteners','PCB_Fasteners'])assert(sources.some(x=>x.name===`BEARING_V5_${name}`))
+for(const name of ['Bearing_Carrier','Inner_Race_Nut','Bearing_6708','Return_Springs','Guide_Fasteners','PCB_Fasteners','MagSafe_Ring'])assert(sources.some(x=>x.name===`BEARING_V5_${name}`))
+assert(!sources.some(x=>['BEARING_V5_Attachment_Magnets','BEARING_V5_Backing_Ring'].includes(x.name)))
+assert.equal(m.modelsPerSelectedStyle,16)
 const baseline=json('validation/fitted-component-baseline.json')
 assert.deepEqual(fittedComponentRecords(c).filter(x=>x.source.name!=='J_DEBUG'),JSON.parse(JSON.stringify(baseline.components),(k,v)=>typeof v==='number'?Math.round(v*1e9)/1e9:v),'Existing fitted electronics changed')
 assert.equal(fittedComponentRecords(c).length,31)
@@ -54,7 +56,7 @@ for(const source of sources){
  const error=Math.max(...actual.flatMap((v,i)=>v.map((n,j)=>Math.abs(n-expected[i][j]))));assert(error<.0001,`Misaligned ${name}: ${error}`)
  reports.push({name,maximumBoundsErrorMm:error})
 }
-for(const file of ['validation/jst-connector-clearance.json','validation/pcb-mount-clearance.json','validation/bearing-hardware-clearance.json']){
+for(const file of ['validation/attachment-ring-audit.json','validation/jst-connector-clearance.json','validation/pcb-mount-clearance.json','validation/bearing-hardware-clearance.json']){
  const report=json(file);assert(report.passed&&!report.physical_tested,file)
  for(const [path,sha] of Object.entries(report.sha256))assert.equal(hash(readFileSync(path)),sha,`Stale clearance result ${path}`)
 }

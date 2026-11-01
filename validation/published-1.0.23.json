@@ -1,0 +1,88 @@
+{
+  "published": true,
+  "version": "1.0.23",
+  "compiler_version": "0.0.3047",
+  "package": "rushabhcodes/fidget-counter",
+  "package_url": "https://tscircuit.com/rushabhcodes/fidget-counter",
+  "release_api_url": "https://registry-api.tscircuit.com/package_releases/get?package_name_with_version=rushabhcodes%2Ffidget-counter%401.0.23",
+  "release_id": "f71f2d0d-feb6-447a-9069-8352615a0c2a",
+  "build_id": "57760956-30dd-4517-905b-54b7dab738e0",
+  "website_url": "https://rushabhcodes--fidget-counter-v1-0-23.tscircuit.app",
+  "website_http_status": 200,
+  "website_script_url": "https://rushabhcodes--fidget-counter-v1-0-23.tscircuit.app/standalone.min.js",
+  "git_commit": "157a36b62ba084e0a812fcc93dbe21a016904da8",
+  "model_source_commit": "5fa112ffc8ffc72a630025258cbf3fa2a7f05daf",
+  "git_branch": "codex/bearing-supported-enclosure",
+  "remote_commit_verified": true,
+  "source_files_verified": 163,
+  "recovered_files": [
+    "mechanical/Circuit_Models/Bearing_6708.glb"
+  ],
+  "build_started_at": "2026-11-01T17:17:58.476Z",
+  "build_completed_at": "2026-11-01T17:22:04.543Z",
+  "build_error": null,
+  "outputs": {
+    "dist/published/pcb.svg": {
+      "sha256": "e10119f155c4460665140af7b950aac7bf35a0419d3174398b45a01648bf5caa",
+      "bytes": 438017,
+      "package_file_id": "6404358e-44fb-41d9-9b57-3ec31b8dc698"
+    },
+    "dist/published/pcb.png": {
+      "sha256": "73a1f60032325f05c3e39079fbf850c4d9ea09d8603d9a4670479ff68c48749f",
+      "bytes": 96542,
+      "package_file_id": "61b75eb6-66e4-4821-ad6b-9fefd442eb76"
+    },
+    "dist/published/circuit.json": {
+      "sha256": "a166c841f3f26b6414bc83a6b633fe855bedd5053e2f324ecc7da925eb207d41",
+      "bytes": 1062897,
+      "package_file_id": "cd76b0ba-19e8-4ccd-b75e-cf07f2058bdd"
+    },
+    "dist/published/schematic.png": {
+      "sha256": "f1b7c38e15aa24dc72b527554e595d4174cc66c99a15a1c2cf08dda5714740ee",
+      "bytes": 34272,
+      "package_file_id": "dd897967-55e4-4e69-873c-65b1490eebe5"
+    },
+    "dist/published/schematic.svg": {
+      "sha256": "05673b732cdec05957847f53069cf30e60bfe3c663ac74db976465457902a9c1",
+      "bytes": 135725,
+      "package_file_id": "c29f9c3d-42fd-4142-b17a-a99ccabc5e17"
+    },
+    "dist/published/3d.glb": {
+      "sha256": "9396ec62cf10d2a98dd5d86fae9cad6d54eaa37cfe107a9842b8701414f5f29e",
+      "bytes": 20114948,
+      "package_file_id": "78f2e138-d973-49de-8cee-0b7119c0ade5"
+    }
+  },
+  "cad_png": {
+    "file": "previews hosted at website_url + /published/3d.png",
+    "width": 480,
+    "height": 320,
+    "bytes": 17449
+  },
+  "PBR_geometry_proof": {
+    "manifestSha256": "ebe921282d36d3156e2517c8a8580a4c7ef10bd04bf4ea63db482a987b9b5244",
+    "geometrySha256": "dc240ab243f04a0dce488fe7b74dcb9277f5dbb029781ebeaacbdd3e9224fe21",
+    "models": 17,
+    "materials": 22,
+    "logicalMaterialGroups": 23
+  },
+  "source_normal_proof": {
+    "models": 17,
+    "corners": 1334910,
+    "originalBinarySha256": "dc240ab243f04a0dce488fe7b74dcb9277f5dbb029781ebeaacbdd3e9224fe21",
+    "restoredBinarySha256": "8244da332ac5ad6013a4689592c7902af18c13b6c0289cd3e2c67a62819e0ffc",
+    "inputPositionStreamSha256": "26b37ef51d984f9359c7fdea4c2097ce11281bba990551f82854e6c6144ca325",
+    "outputPositionStreamSha256": "26b37ef51d984f9359c7fdea4c2097ce11281bba990551f82854e6c6144ca325"
+  },
+  "lossless_compaction_proof": {
+    "originalBinarySha256": "8244da332ac5ad6013a4689592c7902af18c13b6c0289cd3e2c67a62819e0ffc",
+    "compactedBinarySha256": "e429be53a7a9bd487129d09b4082ca29229871bb5eea39f06f0864250ce50042",
+    "inputRenderStreamSha256": "6b7bc1a989d16840e7879b3cb8c450fc4f5a5d51859e7ce7a4835c9b89a2cfc9",
+    "outputRenderStreamSha256": "6b7bc1a989d16840e7879b3cb8c450fc4f5a5d51859e7ce7a4835c9b89a2cfc9",
+    "verticesBefore": 1507362,
+    "verticesAfter": 430559
+  },
+  "physical_tested": false,
+  "physical_caveat": "Nominal reference CAD. Bearing fit, spring/switch forces, endurance and Hall/BLE performance require bench qualification.",
+  "scope": "Published compiler upgrade and realistic bearing/hardware models. The subsequent purchased MagSafe-ring redesign is a separate local revision."
+}

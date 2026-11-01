@@ -6,9 +6,9 @@
       "name": "Stationary_Base",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 3397.318030017516,
+      "volume_mm3": 3126.24657022571,
       "file": "Stationary_Base.stl",
-      "sha256": "8c3843ae64e35e333b7a8d6e88ffeda6fd892077268e4f4dd68a496612bb21c9",
+      "sha256": "478d6833aa3622204aee6eb810a036aac73ac412564936ec86ece70778de2e0f",
       "bounds_mm": [
         [
           -29.0,
@@ -26,19 +26,19 @@
       "name": "Bottom_Tray",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 2463.8337011850394,
+      "volume_mm3": 2454.0915734633327,
       "file": "Bottom_Tray.stl",
-      "sha256": "ccb20de40e0a0f4ae28d1ea71999ac718623cf30fe6a7a6af442dcb58a211788",
+      "sha256": "0820edca0e9587225465ca6e244eafaeaafce4c59b48c51a4deeda761f8f0a7f",
       "bounds_mm": [
         [
           -29.0,
           -29.0,
-          0.2
+          0.19999999999999998
         ],
         [
           29.0,
           29.0,
-          2.35
+          3.0
         ]
       ]
     },

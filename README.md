@@ -9,9 +9,12 @@ The current mechanical draft replaces the snap-fit cap and tiny PCB latches with
 - **0.8 mm whole-cap press**, three purchased return springs and housing hard stops.
 - Three solid guides with screw/washer upward retention; four nylon PCB screws and two short rigid locating collars.
 - Three top-accessible screws retain the cap; eleven exterior grip options share the bearing drum.
-- Original attachment magnets, backing ring, PCB hole pattern, electronics and programming pinout retained. The PCB sits 1 mm higher in the enclosure.
+- One purchased **54 × 45.8 × 1.9 mm N52 MagSafe ring** replaces the 24 attachment discs and separate backing ring. The central encoder magnet remains.
+- PCB hole pattern, electronics and programming pinout retained. The PCB sits 1 mm higher in the enclosure.
 
 [Ploopy Knob](https://ploopyco.github.io/knob/assembly-instructions/) informs the rotation architecture; [Microsoft Surface Dial](https://www.ifixit.com/Teardown/Microsoft+Surface+Dial+Teardown/74808) informs the independent spring return and press action. The CAD is independently authored for this board.
+
+See [ring sourcing and assembly](mechanical/MAGSAFE_RING_SOURCING.md) for the exact US ring and a Mumbai sourcing candidate. The ring seat changes only the base and tray, with no height increase.
 
 See [MECHANICAL.md](MECHANICAL.md) for assembly, print orientation, service and prototype qualification; [mechanical BOM](mechanical/MECHANICAL_BOM.csv) for purchased hardware; and [PROGRAMMING.md](PROGRAMMING.md) for SWD and power precautions. Firmware is not included.
 
@@ -30,6 +33,8 @@ bun validation/check-compiler-upgrade.mjs
 cp dist/index/circuit.json published.circuit.json
 bun run build
 python validation/check-model-detail.py
+python validation/check-attachment-ring.py
+python validation/check-display-geometry.py
 python mechanical/render_bearing_layout.py
 python validation/check-pcb-mounts.py
 python validation/check-jst-fit.py
@@ -45,7 +50,7 @@ bun run build:cloud:prepare
 This remains an unqualified mechanical prototype. CAD clearances and mesh checks do not establish physical spring return, switch force/overtravel, fatigue, Hall sensing or BLE performance. Verify those with the selected bearing, springs, elastomer, phone and magnets before assembled-board ordering. Older validation reports retain their original revision labels and do not certify V5.
 
 The local toolchain is pinned to `tscircuit` **0.0.3047** (package release version
-is 1.0.23). The routing contract matches terminals by electrical group and
+is 1.0.23; the subsequent ring-seat revision is local and unpublished). The routing contract matches terminals by electrical group and
 physical coordinates rather than generated IDs, and rejects changes to copper,
 layers, board geometry, design rules and connectivity. `check:routing` includes
 negative regression cases for those safeguards. The compiler adds three style
@@ -65,8 +70,10 @@ Registry publication uses the checked snapshot and six verified artifacts. Large
 cached artifacts are split into request-sized source files and reconstructed
 without changing their SHA-256 hashes. Physical qualification remains open.
 
-Published mechanical display assets use indexed GLB files with embedded materials.
+Mechanical display assets use indexed GLB files with embedded materials.
 The companion OBJ/MTL references remain in Git. Display packing retains every
 triangle and pose; `python validation/check-display-geometry.py` checks the
-complete meshes against the validated pre-publication display. The GLB packing
+complete meshes against the validated pre-publication display, allowing only the explicitly revised base/tray and attachment assembly. The separate ring audit verifies the new seat and preserves every other print file. The GLB packing
 pass also compares every rendered corner attribute before and after encoding.
+
+[Registry release 1.0.23](https://rushabhcodes--fidget-counter-v1-0-23.tscircuit.app) completed successfully with 163 source files and six exact preview hashes verified against commit `157a36b62ba084e0a812fcc93dbe21a016904da8`. See [publication receipt](validation/published-1.0.23.json). The purchased-ring revision after that milestone is local and has not been published.

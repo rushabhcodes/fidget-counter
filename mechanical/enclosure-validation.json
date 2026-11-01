@@ -40,7 +40,7 @@
     "material": "PETG for rigid printed parts; purchased metal bearing and springs",
     "return": "Three purchased compression springs; switch is not the cap return spring",
     "service": "Remove the three outer-race retainer screws, lift off the cap, unscrew the inner-race nut, then remove the carrier guide screws and PCB screws",
-    "publication": "Local V5 mechanical prototype; not published or physically qualified",
+    "publication": "Local single-ring revision following published 1.0.23; not physically qualified",
     "hub_cover_thickness": 1.7,
     "cap_style_change": "Undo three countersunk screws to transfer the common bearing assembly to another cap",
     "encoder_magnet_per_top_module": 1,
@@ -137,6 +137,21 @@
       "bore_radius_mm": 18.2,
       "thread_root_radius_mm": 19.5,
       "outer_radius_mm": 21.6
+    },
+    "attachment_ring": {
+      "supplier": "MagnetPrint Hub N52 MagSafe Magnet Ring Kit",
+      "supplier_url": "https://magnetprinthub.com/products/magsafe-magnet-kit",
+      "outside_mm": 54.0,
+      "inside_mm": 45.8,
+      "thickness_mm": 1.9,
+      "supplier_tolerance_mm": 0.05,
+      "magnet_grade": "N52",
+      "magnetization": "Supplier-described one-sided multi-pole Halbach array; working face toward phone",
+      "phone_face_z_mm": 0.4,
+      "radial_clearance_mm": 0.15,
+      "bondline_mm": 0.1,
+      "mounting": "Bond one purchased ring assembly in the open phone-side annular seat; bond tray to base",
+      "qualification": "Nominal supplier envelope only; confirm sample dimensions, working face, peel/shear retention and Hall/RF effects before production"
     }
   },
   "printed_parts": [
@@ -144,9 +159,9 @@
       "name": "Stationary_Base",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 3397.318030017516,
+      "volume_mm3": 3126.24657022571,
       "file": "Stationary_Base.stl",
-      "sha256": "8c3843ae64e35e333b7a8d6e88ffeda6fd892077268e4f4dd68a496612bb21c9",
+      "sha256": "478d6833aa3622204aee6eb810a036aac73ac412564936ec86ece70778de2e0f",
       "bounds_mm": [
         [
           -29.0,
@@ -164,19 +179,19 @@
       "name": "Bottom_Tray",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 2463.8337011850394,
+      "volume_mm3": 2454.0915734633327,
       "file": "Bottom_Tray.stl",
-      "sha256": "ccb20de40e0a0f4ae28d1ea71999ac718623cf30fe6a7a6af442dcb58a211788",
+      "sha256": "0820edca0e9587225465ca6e244eafaeaafce4c59b48c51a4deeda761f8f0a7f",
       "bounds_mm": [
         [
           -29.0,
           -29.0,
-          0.2
+          0.19999999999999998
         ],
         [
           29.0,
           29.0,
-          2.35
+          3.0
         ]
       ]
     },
@@ -884,5 +899,25 @@
     "Rotation/press/removal endurance",
     "Bearing and fastener influence on Hall sensing, phone attachment and RF",
     "Actual spring/fastener sourcing"
-  ]
+  ],
+  "attachment_ring": {
+    "supplier": "MagnetPrint Hub N52 MagSafe Magnet Ring Kit",
+    "purchased_assemblies": 1,
+    "individual_magnet_pockets": 0,
+    "separate_backing_rings": 0,
+    "nominal_dimensions_mm": [
+      54.0,
+      45.8,
+      1.9
+    ],
+    "phone_face_setback_mm": 0.2,
+    "radial_clearance_mm": 0.15,
+    "bondline_mm": 0.1,
+    "roof_thickness_mm": 0.6000000000000001,
+    "outer_wall_mm": 0.9000000000000007,
+    "base_roof_mm": 0.75,
+    "tray_base_interference_mm3": 0.0,
+    "physical_qualified": false,
+    "display_note": "Shallow segment grooves indicate a purchased array; internal segment dimensions and magnetization require the supplier drawing."
+  }
 }

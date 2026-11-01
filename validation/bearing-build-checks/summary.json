@@ -25,5 +25,11 @@
       "exit_code": 0,
       "log": "validation/bearing-build-checks/shorts.log"
     }
-  ]
+  ],
+  "checked_at_utc": "2026-11-01T17:40:50.340675+00:00",
+  "source_sha256": {
+    "index.circuit.tsx": "df9acb0f4078edd96e858f1886b5744617d5d1605c4d38e6bc85105d0e998c23",
+    "dist/index/circuit.json": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
+    "published.circuit.json": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d"
+  }
 }

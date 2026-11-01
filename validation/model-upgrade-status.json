@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checked_at_utc": "2026-11-01T17:08:39.635143+00:00",
+  "checked_at_utc": "2026-11-01T17:40:50.343873+00:00",
   "physical_tested": false,
   "compiler": {
     "previous": "0.0.2748",
@@ -14,20 +14,23 @@
     "base_diameter": 58,
     "released_height": 17.2,
     "press_stroke": 0.8,
-    "unchanged_rigid_print_parts": 16
+    "unchanged_rigid_print_parts": 14,
+    "rigid_print_parts": 16,
+    "changed_rigid_print_parts": 2
   },
   "model_detail": {
     "bearing": "25 balls of diameter 2.381 mm, grooved/chamfered races, stamped cage and non-contact metal shields; representative internals",
     "fasteners": "Helical thread roots and recessed cross drives within existing envelopes",
     "battery": "Rolled can, gasket, negative lid and recessed generic CR2032 marking",
     "electronics": "All 31 fitted supplier STEP models, placed using native model origins and XYZ rotations",
-    "spring": "Five active turns plus two close-wound end turns; reference geometry, not a sourced SKU"
+    "spring": "Five active turns plus two close-wound end turns; reference geometry, not a sourced SKU",
+    "attachment_ring": "Purchased nominal 54 x45.8 x1.9 mm N52 array; representative shallow segment grooves; original 24 pockets and separate backing ring removed"
   },
   "counts": {
     "grip_styles": 11,
     "STEP_assembly_exports": 33,
-    "closed_mechanical_meshes": 27,
-    "models_per_selected_style": 17,
+    "closed_mechanical_meshes": 26,
+    "models_per_selected_style": 16,
     "fitted_supplier_STEP_components": 31,
     "routing_regression_tests": 8,
     "pcb_traces": 89,
@@ -60,8 +63,11 @@
     "assembled_cutaway_exploded_visual_inspection": "passed",
     "PBR_material_pass_geometry_unchanged": "passed",
     "complete_display_triangle_pose_equality": "passed",
-    "all_27_GLB_assets_equal_OBJ_triangles": "passed",
-    "lossless_render_corner_attribute_packing": "passed"
+    "lossless_render_corner_attribute_packing": "passed",
+    "all_26_GLB_assets_equal_OBJ_triangles": "passed",
+    "single_purchased_ring_seat_and_electronics_clearance": "passed",
+    "India_candidate_circular_nominal_fit": "passed",
+    "ring_revision_unaffected_triangles_and_poses": "passed"
   },
   "final_failed_checks": [],
   "known_advisories": {
@@ -69,10 +75,11 @@
     "policy": "Exact non-ID fields and geometry are allowlisted; changed or additional warnings fail validation. Copper and its electrical assignment are unchanged."
   },
   "PBR_geometry_proof": {
-    "manifestSha256": "aa12268f8bdf9ac8e026ead426cc39adb43941440311c35d8f9c18214bbd5391",
-    "geometrySha256": "27ad52c4ba0774551366112fa840560f30c5ba219c96069e17566b4c33c3fbed",
-    "models": 17,
-    "materials": 23
+    "manifestSha256": "3b217ddec41d772b4996e09915ee9f5ffad5b3c1c5a449654f227c9721e4d2e8",
+    "geometrySha256": "d8b833dfb14b9168a9b97bfa9a0600be1ef0881668b71a91d2b397a54c1423f4",
+    "models": 16,
+    "materials": 21,
+    "logicalMaterialGroups": 22
   },
   "physical_checks_unrun": [
     "Chosen bearing fits, shoulder lands, seal clearance and corner radii",
@@ -80,7 +87,9 @@
     "Actuator force, switch overtravel and all-angle closure",
     "Rotation/press/removal endurance",
     "Bearing and fastener influence on Hall sensing, phone attachment and RF",
-    "Actual spring/fastener sourcing"
+    "Actual spring/fastener sourcing",
+    "Purchased ring complete dimensions, working-face polarity and intended phone/case compatibility",
+    "Ring and tray adhesive peel/shear retention; changed magnetic field influence on Hall sensing/RF"
   ],
   "limits": [
     "Bearing cage/shields, screw drives/threads and spring turns are representative reference geometry, not certified supplier production CAD",
@@ -91,28 +100,311 @@
     "bun.lock": "1d9a35aa4691c033b443bab61862a467ae4123a4c183fdba5bee0fe7774b3e7c",
     "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
     "routing-contract.json": "afde27101f7ed90438fdaf149a6fdf0d5a32337e665bb7c8ae6dd696b9569417",
-    "enclosure.tsx": "4760633249f5c7f844c3e62947430633dc47a453d709fc11ac926bba9f14c65c",
-    "published.circuit.json": "a166c841f3f26b6414bc83a6b633fe855bedd5053e2f324ecc7da925eb207d41",
-    "mechanical/enclosure-parameters.json": "f5f10e456afece55db46863e5c08b808a9143b73c47284f8c41837c54eb0f1b4",
-    "mechanical/build_enclosure.py": "3df300f2618f36c724fb077b30fe8cdf36e1d56d33e50dfa4cc7505fea334f20",
-    "mechanical/hardware_models.py": "aa216b4c19785e7282e0b5c7e2185af2f91716acd55260927c30be98c2faa10b",
+    "enclosure.tsx": "166526661485288f87c373fbea2978623d1300709909bd00e438615d95010dd6",
+    "published.circuit.json": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
+    "mechanical/enclosure-parameters.json": "fb20427906f8dc230a3d722f24bc2f2acd148c8bdcd67b59e84df44531410f8b",
+    "mechanical/build_enclosure.py": "26936837b49c3e3c9d980fa6669e34d0012b99125b8ed68ed387b5b85a5a3591",
+    "mechanical/hardware_models.py": "6c463731e6a87151fda68936db1aec377984558057593e1b2ca7ab917457bd0d",
     "mechanical/mesh_export.py": "a8b20d735f20a3e1d4772e6bf6efee3ef9932b498eb563a32f5e915015368f74",
     "mechanical/export_circuit_models.py": "23f34b212fa8eaae49f03b3169dc5b3f3c913a58ce9217862f5623f4a7f4ae14",
     "mechanical/spring_mesh.py": "f34870ba443c391bf0436944b3e081de9f922cc178eb47a5588457818887c6cb",
-    "mechanical/render_bearing_layout.py": "c18e2b7089a78f06fcb54ba1cf51e553b5948416948a370fec9c6b6189931841",
+    "mechanical/render_bearing_layout.py": "1d466d23e04178ecd0c32f982c9e63274a39f3bc3b3a36d422f7ad8d690f6e94",
     "validation/apply-model-materials.mjs": "e47f5fe28d64c51604024e5b1af0b120fc7b433bc3137ac91cf7af25f8a766f4",
     "mechanical/glb_models.py": "1298685a6f5c6a7ed9368643a653b83f6856c9ebe163b99aa43f0a7ab5a4cc33",
     "validation/restore-model-normals.mjs": "de22cf2e85da39515f083abdd82b633a104821e728d41b9cc6121ec5d2cb56bd",
     "validation/compact-glb.mjs": "6ad5b29b288615cfbdfe7f4906a5e3ee9cfd58e40c02e49b12500bda1600bc37",
-    "validation/check-display-geometry.py": "c596a7305ddf65c9aa725a42cff07c75467427f6c60acc885a9783861cdf08f4",
-    "validation/display-geometry-baseline.json": "09ff9f19ef5fd2a99c7c90ba92c205097812023f582a6141f7600b56518b08d4"
+    "validation/check-display-geometry.py": "f823da9d907c71d78140c8310383abbfbc1f095f97730ecf9d4f3ce4a9b8b42a",
+    "validation/display-geometry-baseline.json": "09ff9f19ef5fd2a99c7c90ba92c205097812023f582a6141f7600b56518b08d4",
+    "validation/check-attachment-ring.py": "3771f9883bb765ca5aab215c22bbf8a66b8f3ab4f5ef275af4bf89ee8abed666",
+    "validation/check-enclosure.mjs": "2a18ea934cab8df0f33b7b57f091072787ee385e790eb1fced1a92e11aa30522",
+    "mechanical/MAGSAFE_RING_SOURCING.md": "f700d15603d9bdf51952f3d5c6b042fb2ff8243a37ad673a5bb9e2e5e49fd7f9",
+    "mechanical/Circuit_Models/manifest.json": "3b217ddec41d772b4996e09915ee9f5ffad5b3c1c5a449654f227c9721e4d2e8"
   },
   "publication_recovery": {
     "release_version": "1.0.23",
     "previous_build_id": "912b4f01-5521-407f-9fd5-17dd3e013bb7",
     "previous_error": "user_code_job_timeout after 30 minutes",
-    "scope": "Lossless display encoding and source payload reduction; physical CAD and electrical design unchanged"
+    "scope": "Lossless display encoding and source payload reduction; physical CAD and electrical design unchanged",
+    "terminal_status": "completed successfully",
+    "build_id": "57760956-30dd-4517-905b-54b7dab738e0",
+    "completed_at_utc": "2026-11-01T17:22:04.543Z",
+    "published_commit": "157a36b62ba084e0a812fcc93dbe21a016904da8",
+    "website": "https://rushabhcodes--fidget-counter-v1-0-23.tscircuit.app",
+    "new_ring_revision_in_this_release": false
   },
   "display_format": "indexed GLB; source OBJ/MTL references retained in Git",
-  "native_display_bytes": 20114948
+  "native_display_bytes": 19092836,
+  "current_CAD_publication": "Local purchased-ring revision; not included in the already published 1.0.23 release",
+  "ring_revision_base_commit": "157a36b62ba084e0a812fcc93dbe21a016904da8",
+  "attachment_ring": {
+    "passed": true,
+    "physical_tested": false,
+    "source_reference_commit": "157a36b62ba084e0a812fcc93dbe21a016904da8",
+    "purchased_ring_assemblies": 1,
+    "individual_magnet_pockets": 0,
+    "separate_backing_rings": 0,
+    "nominal_ring_mm": [
+      54,
+      45.8,
+      1.9
+    ],
+    "pocket_mm": [
+      54.3,
+      45.5
+    ],
+    "radial_clearance_mm": 0.15,
+    "bondline_mm": 0.1,
+    "face_setback_mm": 0.2,
+    "roof_mm": 0.6000000000000001,
+    "outer_wall_mm": 0.9000000000000007,
+    "changed_printed_files": [
+      "Bottom_Tray.stl",
+      "Stationary_Base.stl"
+    ],
+    "unchanged_printed_files": [
+      "Actuator_Ring_REFERENCE_ONLY.stl",
+      "Bearing_Carrier.stl",
+      "Cap_circular.stl",
+      "Cap_four_leaf_clover.stl",
+      "Cap_petal_flower.stl",
+      "Cap_rounded_hexagon.stl",
+      "Cap_rounded_square.stl",
+      "Cap_rounded_triangle.stl",
+      "Cap_scalloped_coin.stl",
+      "Cap_ships_wheel.stl",
+      "Cap_thumb_scoop.stl",
+      "Cap_turbine_wheel.stl",
+      "Cap_wave_rim.stl",
+      "Inner_Race_Nut.stl",
+      "Outer_Race_Retainer.stl"
+    ],
+    "envelope_mm": {
+      "diameter": 58,
+      "height": 17.2,
+      "press": 0.8
+    },
+    "sha256": {
+      "mechanical/enclosure-parameters.json": "fb20427906f8dc230a3d722f24bc2f2acd148c8bdcd67b59e84df44531410f8b",
+      "mechanical/STEP_Parts/Stationary_Base.step": "bdba2dd79835167abc042445139a0d464ad045d9df6233a06a5bcb8cdfe4f548",
+      "mechanical/STEP_Parts/Bottom_Tray.step": "b37d57ffe61bf43c5caa8e514a5d68be512d6f685ad0390047ddd84b4a945b36",
+      "mechanical/Circuit_Models/MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960"
+    },
+    "unqualified": [
+      "Supplier sample dimensions and working-face polarity",
+      "Adhesive peel/shear retention and tray bond",
+      "Hall error, RF and phone/case compatibility"
+    ],
+    "fitted_electronic_components_checked": 31,
+    "fixed_hardware_clearances": [
+      {
+        "component": "Electronic_U1",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_BT1",
+        "minimum_z_mm": 2.790000000000001,
+        "tray_vertical_gap_mm": -0.20999999999999908,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C4",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C9",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C15",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C5",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C7",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C8",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C10",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C16",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C18",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_J_DEBUG",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_R4",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_U2",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C6",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_R1",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_R2",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_R3",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_SW1",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_R5",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C17",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_X1",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C1",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C2",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_X2",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C11",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C12",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_L1",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_L2",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_C3",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Electronic_ANT1",
+        "minimum_z_mm": 9.1,
+        "tray_vertical_gap_mm": 6.1,
+        "rigid_intersections": 0
+      },
+      {
+        "component": "Cell",
+        "minimum_z_mm": 3.4,
+        "tray_vertical_gap_mm": 0.3999999999999999,
+        "rigid_intersections": 0
+      }
+    ],
+    "source_scene_sha256": "c52b1705bf86f56097dc3251ef26f34395547269ea254f576e9b285d3c41ed5a"
+  },
+  "source_normal_proof": {
+    "models": 16,
+    "corners": 1264752,
+    "originalBinarySha256": "d8b833dfb14b9168a9b97bfa9a0600be1ef0881668b71a91d2b397a54c1423f4",
+    "restoredBinarySha256": "2e9afa174f3fce56c57fac7d89f6eabc630f2d421f8ba34969b1c78f742f3830",
+    "inputPositionStreamSha256": "61b4f4a9d9975d4599830be8ee55f2d68ba1c8a7da957110f4446b746baad2dc",
+    "outputPositionStreamSha256": "61b4f4a9d9975d4599830be8ee55f2d68ba1c8a7da957110f4446b746baad2dc"
+  },
+  "lossless_compaction_proof": {
+    "originalBinarySha256": "2e9afa174f3fce56c57fac7d89f6eabc630f2d421f8ba34969b1c78f742f3830",
+    "compactedBinarySha256": "47045c2eb73f15fb277aa1083172c1ee77999a437c6f49c17ec7a59fb1040843",
+    "inputRenderStreamSha256": "c84f9260d5c3459525d3ccea9c416f823f94dc1ebd90e5027b6399ae63097b6e",
+    "outputRenderStreamSha256": "c84f9260d5c3459525d3ccea9c416f823f94dc1ebd90e5027b6399ae63097b6e",
+    "verticesBefore": 1437204,
+    "verticesAfter": 407428
+  }
 }

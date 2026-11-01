@@ -3102,83 +3102,77 @@
     "type": "source_component",
     "source_component_id": "source_component_39",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Backing_Ring"
+    "name": "BEARING_V5_MagSafe_Ring"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_40",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Attachment_Magnets"
+    "name": "BEARING_V5_Guide_Fasteners"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_41",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Guide_Fasteners"
+    "name": "BEARING_V5_PCB_Fasteners"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_42",
     "ftype": "subassembly",
-    "name": "BEARING_V5_PCB_Fasteners"
+    "name": "BEARING_V5_Bearing_Carrier"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_43",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Bearing_Carrier"
+    "name": "BEARING_V5_Inner_Race_Nut"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_44",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Inner_Race_Nut"
+    "name": "BEARING_V5_Bearing_6708"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_45",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Bearing_6708"
+    "name": "BEARING_V5_Outer_Race_Retainer"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_46",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Outer_Race_Retainer"
+    "name": "BEARING_V5_Cap_Retainer_Screws"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_47",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Cap_Retainer_Screws"
+    "name": "BEARING_V5_Magnet"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_48",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Magnet"
+    "name": "BEARING_V5_Encoder_Spacer"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_49",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Encoder_Spacer"
+    "name": "BEARING_V5_Actuator_Ring"
   },
   {
     "type": "source_component",
     "source_component_id": "source_component_50",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Actuator_Ring"
-  },
-  {
-    "type": "source_component",
-    "source_component_id": "source_component_51",
-    "ftype": "subassembly",
     "name": "BEARING_V5_Return_Springs"
   },
   {
     "type": "source_component",
-    "source_component_id": "source_component_52",
+    "source_component_id": "source_component_51",
     "ftype": "subassembly",
     "name": "BEARING_V5_Cap_circular"
   },
@@ -22807,7 +22801,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_34",
-    "model_glb_url": "./mechanical/Circuit_Models/Backing_Ring.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/MagSafe_Ring.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22833,7 +22827,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_35",
-    "model_glb_url": "./mechanical/Circuit_Models/Attachment_Magnets.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Guide_Fasteners.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22859,7 +22853,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_36",
-    "model_glb_url": "./mechanical/Circuit_Models/Guide_Fasteners.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/PCB_Fasteners.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22885,7 +22879,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_37",
-    "model_glb_url": "./mechanical/Circuit_Models/PCB_Fasteners.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Bearing_Carrier.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22911,7 +22905,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_38",
-    "model_glb_url": "./mechanical/Circuit_Models/Bearing_Carrier.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Inner_Race_Nut.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22937,7 +22931,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_39",
-    "model_glb_url": "./mechanical/Circuit_Models/Inner_Race_Nut.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Bearing_6708.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22963,7 +22957,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_40",
-    "model_glb_url": "./mechanical/Circuit_Models/Bearing_6708.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Outer_Race_Retainer.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -22989,7 +22983,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_41",
-    "model_glb_url": "./mechanical/Circuit_Models/Outer_Race_Retainer.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Cap_Retainer_Screws.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23015,7 +23009,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_42",
-    "model_glb_url": "./mechanical/Circuit_Models/Cap_Retainer_Screws.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Magnet.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23041,7 +23035,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_43",
-    "model_glb_url": "./mechanical/Circuit_Models/Magnet.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Encoder_Spacer.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23067,7 +23061,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_44",
-    "model_glb_url": "./mechanical/Circuit_Models/Encoder_Spacer.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Actuator_Ring.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23093,7 +23087,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_45",
-    "model_glb_url": "./mechanical/Circuit_Models/Actuator_Ring.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Return_Springs.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -23119,32 +23113,6 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_46",
-    "model_glb_url": "./mechanical/Circuit_Models/Return_Springs.glb",
-    "position": {
-      "x": 0,
-      "y": 0,
-      "z": -8.6
-    },
-    "rotation": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "layer": "top",
-    "source_component_id": "source_component_51",
-    "model_origin_position": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "model_unit_to_mm_scale_factor": 1,
-    "model_object_fit": "contain_within_bounds",
-    "anchor_alignment": "center",
-    "show_as_translucent_model": false
-  },
-  {
-    "type": "cad_component",
-    "cad_component_id": "cad_component_47",
     "model_glb_url": "./mechanical/Circuit_Models/Cap_circular.glb",
     "position": {
       "x": 0,
@@ -23157,7 +23125,7 @@
       "z": 0
     },
     "layer": "top",
-    "source_component_id": "source_component_52",
+    "source_component_id": "source_component_51",
     "model_origin_position": {
       "x": 0,
       "y": 0,
@@ -45190,6 +45158,6 @@
   },
   {
     "type": "source_project_metadata",
-    "source_filesystem_md5_hash": "0a2b63b4e795ae1ae23fc2d5ce69cc7f"
+    "source_filesystem_md5_hash": "f697bae51c058b82c5663e23f9de2cd2"
   }
 ]

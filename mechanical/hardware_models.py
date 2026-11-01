@@ -70,6 +70,24 @@ def coin_cell(z):
 
 def magnet(r,z,h):return cq.Workplane(obj=disk(r,z,h)).edges().chamfer(.06).val()
 
+def magsafe_ring(spec):
+ """Purchased-array envelope with representative shallow face segmentation.
+
+ Only the supplier's OD, ID and assembled thickness define the fit. Grooves
+ describe an array visually; they do not claim a certified internal pole map.
+ """
+ ri=spec['inside_mm']/2;ro=spec['outside_mm']/2;z=spec['phone_face_z_mm'];h=spec['thickness_mm']
+ shape=cq.Workplane(obj=ring(ri,ro,z,h)).edges().chamfer(.05).val()
+ middle=(ri+ro)/2
+ grooves=[ring(middle-.025,middle+.025,z-.01,.05)]
+ for angle in range(0,360,10):
+  cutter=cq.Workplane('XY').box(ro-ri+.1,.045,.05).val().translate((middle,0,z+.015)).rotate((0,0,0),(0,0,1),angle)
+  grooves.append(cutter)
+ # Fuse intersecting groove tools before the B-rep subtraction.
+ shape=shape.cut(grooves[0].fuse(*grooves[1:]).clean()).clean()
+ assert shape.isValid() and len(shape.Solids())==1
+ return shape
+
 def spring_path(spec,press=0,segments=280):
  """Seven turns: five active turns and one close-wound turn at each end."""
  height=spec['assembled_length_mm']-press;wire=spec['wire_mm'];radius=(spec['outside_mm']-wire)/2

@@ -1,0 +1,33 @@
+{
+  "status": "Nominal CAD prototype; physical qualification required",
+  "physical_tested": false,
+  "base_diameter_mm": 58,
+  "overall_height_mm": 17.2,
+  "press_travel_mm": 0.8,
+  "attachment_ring": {
+    "supplier": "Magneticks Mumbai \u2014 nominal-fit candidate only",
+    "purchased_assemblies": 1,
+    "individual_magnet_pockets": 0,
+    "separate_backing_rings": 0,
+    "nominal_dimensions_mm": [
+      54.0,
+      46.0,
+      1.0
+    ],
+    "phone_face_setback_mm": 0.2,
+    "radial_clearance_mm": 0.15,
+    "bondline_mm": 0.1,
+    "roof_thickness_mm": 1.5,
+    "outer_wall_mm": 0.9000000000000007,
+    "base_roof_mm": 0.75,
+    "tray_base_interference_mm3": 0.0,
+    "physical_qualified": false,
+    "display_note": "Shallow segment grooves indicate a purchased array; internal segment dimensions and magnetization require the supplier drawing."
+  },
+  "scope": "Isolated circular nominal-fit candidate; does not replace the distributed US reference or qualify supplier polarity",
+  "press_checks": 3,
+  "rotation_checks": 72,
+  "supplier_url": "https://www.magneticks.in/magsafe-magnetic-ring-13003978.html",
+  "parameter_sha256": "43203c7e8006dc636e03219db30093bd52fee47d90a4190a9c0f2c77369dc686",
+  "source_polarity_verified": false
+}

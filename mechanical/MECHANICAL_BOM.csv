@@ -1,6 +1,6 @@
 Part,Quantity,Specification,Notes
 Stationary_Base,1,V5 PETG Ø58 mm,Solid guide and PCB posts; no release clips
-Bottom_Tray,1,V5 matching tray,Original 24 attachment-magnet pocket layout
+Bottom_Tray,1,V5 matching tray,Single open annular seat for one purchased MagSafe ring; bond tray to base
 Bearing_Carrier,1,V5 PETG,Nonrotating sliding carrier; three solid guide bores
 Inner_Race_Nut,1,V5 PETG coarse thread,Clamp inner race only; confirm thread coupon fit
 Outer_Race_Retainer,1,V5 PETG,Clamp outer race only; flush screw heads
@@ -15,7 +15,7 @@ Annular actuator,1,Silicone OD13 ID7 thickness1.5 mm,REFERENCE STL only; qualify
 Actuator adjustment shims,As needed,Nonmagnetic 0.05 mm increments OD13 ID7,0–0.8 mm adjustment range; verify released gap at every angle
 Encoder magnet,1 per cap,Diametrically magnetized Ø5 x1.5 mm,Same polarity/grade in each cap; measure bearing influence
 Encoder spacer,1 per cap,Nonmagnetic Ø5 x0.2 mm,Above encoder disc
-Attachment magnets,24,Axially magnetized Ø5 x1.5 mm,Unchanged fixed array
-Backing ring,1,ID44.05 OD54.45 thickness0.7 mm,Unchanged fixed ring
+MagSafe ring assembly,1,N52 OD54 ID45.8 thickness1.9 mm nominal,MagnetPrint Hub kit; replace 24 discs and old backing ring; working face toward phone; sample qualification required
+Ring and tray adhesive,As required,Nominal ring bondline0.10 mm,Qualify adhesive compatibility and peel/shear load; no tiny retention clips
 CR2032,1,3 V reputable cell,Existing soldered holder; remove before programmer power
 PCB and components,1,Existing Ø36.5 x1.0 mm PCB,Seat at Z8.1–9.1 mm; electrical layout unchanged
