@@ -6,5 +6,5 @@
     "published.circuit.json"
   ],
   "alwaysUseLatestTscircuitOnCloud": true,
-  "buildCommand": "bun cloud-build.mjs"
+  "buildCommand": "bun cloud-build.mjs && tscircuit build published.circuit.json --site --disable-parts-engine"
 }
