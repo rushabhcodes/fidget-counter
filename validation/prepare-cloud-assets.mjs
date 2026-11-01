@@ -14,10 +14,12 @@ const walk = (path) => readdirSync(path, { withFileTypes: true }).flatMap((item)
 const inputs = [
   ...readdirSync(root).filter((name) => /\.(tsx?|circuit\.json)$/.test(name)),
   "routed-paths.json",
+  "routing-contract.json",
   "cloud-build.mjs",
   "tscircuit.config.json",
   "tsconfig.json",
   "validation/cloud-package-input.mjs",
+  "validation/apply-model-materials.mjs",
   "validation/restore-cad-inputs.mjs",
   ...walk(resolve(root, "imports")).map((path) => relative(root, path)),
   ...walk(resolve(root, "mechanical"))

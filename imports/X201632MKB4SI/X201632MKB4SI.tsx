@@ -32,6 +32,8 @@ export const X201632MKB4SI = (props: ImportedCrystalProps) => {
         objUrl: objPath,
         stepUrl: stepPath,
         pcbRotationOffset: 0,
+        // Preserve the validated CAD pose with footprint-origin anchoring.
+        positionOffset: { x: -0.000127, y: 0, z: 0 },
         modelOriginPosition: { x: 0, y: -0.00011430000006384944, z: -0.01 },
       }}
       {...restProps}

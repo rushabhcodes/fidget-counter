@@ -62,12 +62,12 @@ const models = [
 
 // V5 bearing carrier and spring return; CAD coordinates are mm from the phone plane.
 export const PCB_MIDPLANE_Z_MM = 8.6
-export const EnclosureAssembly = ({capStyle="circular"}: {capStyle?:CapStyle} = {}) => <Fragment>
+export const EnclosureAssembly = ({capStyle="circular",transparentShell=false}: {capStyle?:CapStyle;transparentShell?:boolean} = {}) => <Fragment>
   {models.filter(m => m.style === null || m.style === capStyle).map(m => <assembly.cadassembly
     key={m.name} name={`BEARING_V5_${m.name}`} displayName={m.name.replace(/_/g," ")}
     cadModel={{objUrl:m.obj,mtlUrl:m.mtl,modelUnitToMmScale:1,
       modelOriginPosition:{x:0,y:0,z:0},positionOffset:{x:0,y:0,z:-PCB_MIDPLANE_Z_MM},
       rotationOffset:{x:0,y:0,z:0},
-      showAsTranslucentModel:m.style !== null || ["Bottom_Tray","Stationary_Base"].includes(m.name),
+      showAsTranslucentModel:transparentShell && (m.style !== null || ["Bottom_Tray","Stationary_Base"].includes(m.name)),
     }}/>)}
 </Fragment>

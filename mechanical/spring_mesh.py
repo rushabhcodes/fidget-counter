@@ -4,6 +4,7 @@ STEP retains the swept solid. This analytic mesh avoids excessively dense
 OpenCascade triangulation of a thin helical wire in browser previews.
 """
 import math
+from hardware_models import spring_path
 
 
 def make_spring_mesh(parameters, press=0):
@@ -12,14 +13,15 @@ def make_spring_mesh(parameters, press=0):
     height = spec['assembled_length_mm'] - press
     wire = spec['wire_mm'] / 2
     radius = spec['outside_mm'] / 2 - wire
-    segments, sides = 200, 12
+    segments, sides = 280, 12
+    path = spring_path(spec,press,segments)
     for angle in spec['angles_deg']:
         cx = spec['radius_mm'] * math.cos(math.radians(angle))
         cy = spec['radius_mm'] * math.sin(math.radians(angle))
         start = len(vertices)
         for i in range(segments + 1):
-            theta = 10 * math.pi * i / segments
-            center_z = spec['seat_z_mm'] + wire + (height - 2 * wire) * i / segments
+            theta = 14 * math.pi * i / segments
+            center_z = path[i][2]
             for j in range(sides):
                 phi = 2 * math.pi * j / sides
                 r = radius + wire * math.cos(phi)

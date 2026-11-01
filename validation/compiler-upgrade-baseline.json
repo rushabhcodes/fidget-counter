@@ -1,0 +1,40 @@
+{
+  "compiler_version": "0.0.2748",
+  "source_commit": "bee408a",
+  "semantics": {
+    "copper": {
+      "pcb_trace": {
+        "count": 89,
+        "sha256": "7d32b7f4f9dd4734bf4f6fa1fe059a6b3e2f29238763ad6e4741e5d56c699ce2"
+      },
+      "pcb_via": {
+        "count": 53,
+        "sha256": "bf054e724ef225e736fc6e417f6ca96a4715a5757097a6928562c7ab1ebcc710"
+      },
+      "pcb_hole": {
+        "count": 4,
+        "sha256": "f2e8ee21d1b0c4ca2953155d939c59bdaf67b5a9b44c17764ae0f417c492b74f"
+      },
+      "pcb_smtpad": {
+        "count": 126,
+        "sha256": "8635ee11f33089265fe17e93532425b1bb7eb3e0d4f8098ae07e45ee128e3be8"
+      },
+      "pcb_plated_hole": {
+        "count": 3,
+        "sha256": "42bcb005381cad72538c8bba0d27440c42b1c06825cc4be8c7a3430f550c5f09"
+      },
+      "pcb_board": {
+        "count": 1,
+        "sha256": "7ae58eb565cc247ecf25ed17b622f3ac1d743f32d74551041628e5ddd85feeee"
+      }
+    },
+    "connectivity": {
+      "count": 97,
+      "sha256": "9b5131fd10530628b9ab89adbf846c065e1ba574a4e8747050d54e39fd17ac4b"
+    },
+    "fitted": {
+      "count": 31,
+      "sha256": "b5aa4db1a6645d159d0c23361c644a476d61335a44dc4f18c99e241d8be5ea29"
+    }
+  }
+}

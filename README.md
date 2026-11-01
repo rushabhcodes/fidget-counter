@@ -23,10 +23,14 @@ Install the pinned Bun dependencies and Python packages in `mechanical/requireme
 python mechanical/build_enclosure.py --style all
 python mechanical/export_circuit_models.py
 bun run typecheck
+bun run check:routing
 bun run build:source
+bun validation/check-compiler-upgrade.mjs
 # After checking a changed source, refresh the saved snapshot and previews:
 cp dist/index/circuit.json published.circuit.json
 bun run build
+python validation/check-model-detail.py
+python mechanical/render_bearing_layout.py
 python validation/check-pcb-mounts.py
 python validation/check-jst-fit.py
 python validation/check-bearing-hardware.py
@@ -39,5 +43,20 @@ bun run build:cloud:prepare
 `mechanical/Print_STL` contains the sixteen rigid print parts; `Coupons` contains small fit tests. Start with the coupons and circular starter set. `Actuator_Ring_REFERENCE_ONLY.stl` is a silicone geometry reference, **not a rigid print**. Source parameters are in `mechanical/enclosure-parameters.json`. Released, pressed and exploded STEP assemblies are generated under `mechanical/export/Assemblies`.
 
 This is a local mechanical prototype, not a new registry release. CAD clearances and mesh checks do not establish physical spring return, switch force/overtravel, fatigue, Hall sensing or BLE performance. Verify those with the selected bearing, springs, elastomer, phone and magnets before assembled-board ordering. Older validation reports retain their original revision labels and do not certify V5.
+
+The local toolchain is pinned to `tscircuit` **0.0.3047** (package release version
+remains 1.0.22). The routing contract matches terminals by electrical group and
+physical coordinates rather than generated IDs, and rejects changes to copper,
+layers, board geometry, design rules and connectivity. `check:routing` includes
+negative regression cases for those safeguards. The compiler adds three style
+advisories on unchanged legacy segments; an exact geometry-based allowlist records
+them and rejects additional or changed warnings. Two tiny supplier-CAD offsets
+preserve the previously validated poses under the new footprint-origin anchor.
+
+Hardware previews and STEP assemblies now include detailed bearing internals,
+threaded/recessed fasteners, close-wound spring ends and a CR2032 can/gasket/lid.
+All 31 fitted supplier STEP parts appear in the mechanical assemblies. See
+[CAD detail and rendering](MECHANICAL.md#cad-detail-and-rendering) for reference
+sources and the distinction between nominal detail and selected purchased SKUs.
 
 The cloud restore uses `published.circuit.json` and checked artifacts tied to source hashes. Refresh them after a verified source build; see `validation/prepare-cloud-assets.mjs`. Original release history remains in Git and the excluded `.archive-v1.0.6.zip`.

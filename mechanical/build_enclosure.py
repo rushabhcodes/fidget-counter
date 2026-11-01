@@ -10,6 +10,7 @@ import cadquery as cq
 import trimesh
 from grip_profiles import make_grip
 from spring_mesh import make_spring_mesh
+from hardware_models import bearing_6708, screw, washer as detailed_washer, coin_cell, magnet as detailed_magnet, compression_spring
 
 HERE=Path(__file__).resolve().parent; ROOT=HERE.parent
 ap=argparse.ArgumentParser(description=__doc__)
@@ -42,7 +43,7 @@ assert S['assembled_length_mm']-travel>S['maximum_solid_height_mm']
 print('Building the base, solid PCB screw posts and broad press guides...',flush=True)
 tray=disk(29,.2,.6).fuse(ring(21,28.05,.79,1.56));magnets=[]
 for i in range(24):
- x,y=polar(24.625,7.5+i*15);tray=tray.cut(disk(2.625,.8,1.66,x,y));magnets.append(disk(2.5,.85,1.5,x,y))
+ x,y=polar(24.625,7.5+i*15);tray=tray.cut(disk(2.625,.8,1.66,x,y));magnets.append(detailed_magnet(2.5,.85,1.5).translate((x,y,0)))
 tray=tray.clean();shield=ring(22.025,27.225,2.4,.7)
 base=disk(29,.8,3.1).cut(disk(20.85,1.5,3.0))
 base=base.cut(ring(20.85,28.2,.7,1.7)).cut(ring(22.025,27.225,2.4,.7)).fuse(disk(20.85,.8,.7))
@@ -56,15 +57,15 @@ for index,(x,y) in enumerate(mounts):
  # They never flex or retain the board; the purchased nylon screws do that.
  if index in [0,2]:post=post.fuse(disk(1.4,pz,.5,x,y))
  post=post.cut(disk(.8,pz-5,5.6,x,y));base=base.fuse(post)
- pcb_fast.extend([disk(.98,pt-4,4,x,y),disk(1.9,pt,1.3,x,y)])
+ pcb_fast.append(screw(.98,4,1.9,1.3,nylon=True).translate((x,y,pt)))
 guide_fast=[]
 for x,y in guides:
  foot=disk(4.,1.4,G['hard_stop_z_mm']-1.4,x,y)
  post=disk(2.5,G['hard_stop_z_mm'],G['post_top_z_mm']-G['hard_stop_z_mm'],x,y)
  base=base.fuse(foot,post).cut(disk(1.0,1.25,5.1,x,y))
- washer=ring(G['washer_inside_mm']/2,G['washer_outside_mm']/2,G['post_top_z_mm'],G['washer_thickness_mm']).translate((x,y,0))
+ washer=detailed_washer(G['washer_inside_mm']/2,G['washer_outside_mm']/2,G['post_top_z_mm'],G['washer_thickness_mm']).translate((x,y,0))
  z=G['post_top_z_mm']+G['washer_thickness_mm']
- guide_fast.extend([washer,disk(1.2,z-5,5,x,y),disk(G['screw_head_outside_mm']/2,z,G['screw_head_height_mm'],x,y)])
+ guide_fast.extend([washer,screw(1.2,5,G['screw_head_outside_mm']/2,G['screw_head_height_mm']).translate((x,y,z))])
 for x,y in springs_at:
  base=base.cut(disk(1.7,S['seat_z_mm'],3.,x,y)).fuse(disk(2.,.8,S['seat_z_mm']-.8,x,y))
 base=base.clean()
@@ -92,17 +93,14 @@ nut=nut.cut(ridge(N['thread_clearance_mm']))
 for angle in [0,90,180,270]:
  x,y=polar(21.6,angle);nut=nut.cut(box(2.,3.,bt+1.,1.6,x,y).rotate((x,y,0),(x,y,1),angle))
 nut=nut.clean()
-inner=ring(20,20.9,bz,6);outer=ring(24.1,25,bz,6)
-seals=comp([ring(20.95,24.05,bz+.12,.25),ring(20.95,24.05,bt-.37,.25)])
-bearing=comp([inner,outer,seals])
+bearing,inner,outer,seals,bearing_parts=bearing_6708(bz)
 retainer=ring(B['outer_shoulder_inner_radius_mm'],28.8,bz-1.5,1.5)
 cap_holes=[polar(26.8,a) for a in [0,120,240]];cap_fast=[]
 for x,y in cap_holes:
  retainer=retainer.cut(disk(.8,bz-1.6,1.7,x,y))
  # Accessible from the TOP. Bottom-entry screws would be blocked by the base.
  head_bottom=P['overall_height']-1.1
- cap_fast.extend([cq.Solid.makeCone(1.,1.9,1.1,cq.Vector(x,y,head_bottom)),
-                  disk(.98,P['overall_height']-12,10.9,x,y)])
+ cap_fast.append(screw(.98,10.9,1.9,1.1,countersunk=True).translate((x,y,head_bottom)))
 retainer=retainer.clean()
 pusher_z=pt+P['switch_height']+A['free_gap_mm']
 actuator=ring(A['inside_mm']/2,A['outside_mm']/2,pusher_z,A['thickness_mm'])
@@ -110,7 +108,7 @@ hub=ring(B['housing_diameter_mm']/2,28.8,bz,P['cap_deck_bottom']-bz)
 hub=hub.fuse(ring(B['outer_shoulder_inner_radius_mm'],28.8,bt,P['cap_deck_bottom']-bt))
 hub=hub.fuse(disk(26.8,P['cap_deck_bottom'],P['overall_height']-P['cap_deck_bottom']))
 hub=hub.fuse(ring(A['inside_mm']/2,A['outside_mm']/2,pusher_z+A['thickness_mm'],P['cap_deck_bottom']-pusher_z-A['thickness_mm']))
-magnet=disk(P['magnet_diameter']/2,P['magnet_bottom'],P['magnet_thickness']);spacer_z=P['magnet_bottom']+P['magnet_thickness'];spacer=disk(2.5,spacer_z,.2)
+magnet=detailed_magnet(P['magnet_diameter']/2,P['magnet_bottom'],P['magnet_thickness']);spacer_z=P['magnet_bottom']+P['magnet_thickness'];spacer=disk(2.5,spacer_z,.2)
 hub=hub.fuse(ring(2.6,3.5,P['magnet_bottom']-.1,P['cap_deck_bottom']-P['magnet_bottom']+.1)).fuse(disk(3.5,spacer_z+.2,P['cap_deck_bottom']-spacer_z-.2))
 for x,y in cap_holes:
  hub=hub.fuse(disk(2.5,bt,P['overall_height']-bt,x,y))
@@ -119,22 +117,28 @@ for x,y in cap_holes:
 hub=hub.clean();caps={s:hub.fuse(make_grip(s,P)).clean() for s in styles}
 @lru_cache(maxsize=2)
 def springs(press=0):
- shapes=[];height=S['assembled_length_mm']-press
- for x,y in springs_at:
-  wr=S['wire_mm']/2;cr=S['outside_mm']/2-wr
-  path=cq.Wire.makeHelix((height-S['wire_mm'])/5,height-S['wire_mm'],cr)
-  shapes.append(cq.Workplane('XZ').center(cr,0).circle(wr).sweep(path,isFrenet=True).val().translate((x,y,S['seat_z_mm']+wr)))
- return comp(shapes)
+ spring=compression_spring(S,press)
+ return comp(spring.translate((x,y,0)) for x,y in springs_at)
 pcb=disk(P['pcb_diameter']/2,pz,P['pcb_thickness'])
 for x,y in mounts:pcb=pcb.cut(disk(M['hole_diameter_mm']/2,pz-.1,P['pcb_thickness']+.2,x,y))
 holder=cq.importers.importStep(str(HERE/'imports/holder.step')).val().translate((0,0,.01)).rotate((0,0,0),(0,1,0),180).translate((-1.2,0,pz))
-cell=disk(10,pz-4.7,3.2);sensor=box(.824,1.316,pt,.5)
+cell,cell_parts=coin_cell(pz-4.7);sensor=box(.824,1.316,pt,.5)
 switch=comp([box(4.2,2.8,pt,1.4,P['switch_x'],P['switch_y']),disk(.8,pt+1.4,.5,P['switch_x'],P['switch_y'])])
 circuit=json.loads((ROOT/'published.circuit.json').read_text())
-src=next(e for e in circuit if e['type']=='source_component' and e.get('name')=='J_DEBUG')
-jp=next(e for e in circuit if e['type']=='pcb_component' and e.get('source_component_id')==src['source_component_id'])
-jc=next(e for e in circuit if e['type']=='cad_component' and e.get('source_component_id')==src['source_component_id']);org=jc['model_origin_position']
-jst=cq.importers.importStep(str(ROOT/jc['model_step_url'])).val().translate((jp['center']['x']-org['x'],jp['center']['y']-org['y'],pt-org['z']))
+# Place the same supplier STEP models used by the native electronic preview.
+# Model origin is subtracted before XYZ rotation and board-space translation.
+electronics={}; electronic_colors={}
+for cad in (e for e in circuit if e['type']=='cad_component' and e.get('model_step_url')):
+ source=next(e for e in circuit if e['type']=='source_component' and e['source_component_id']==cad['source_component_id'])
+ name=source['name']; org=cad.get('model_origin_position',{}); rot=cad.get('rotation',{}); pos=cad['position']
+ shape=cq.importers.importStep(str(ROOT/cad['model_step_url'])).val().translate(tuple(-org.get(k,0) for k in 'xyz'))
+ for axis,vec in [('x',(1,0,0)),('y',(0,1,0)),('z',(0,0,1))]:
+  if rot.get(axis,0):shape=shape.rotate((0,0,0),vec,rot[axis])
+ shape=shape.translate((pos['x'],pos['y'],pos['z']+mid))
+ electronics['Electronic_'+name]=shape
+ electronic_colors['Electronic_'+name]=(.69,.71,.70) if name=='BT1' else ((.88,.85,.73) if name=='J_DEBUG' else ((.65,.48,.29) if name.startswith('C') else (.16,.17,.18)))
+assert len(electronics)==31
+holder=electronics['Electronic_BT1']; sensor=electronics['Electronic_U2']; switch=electronics['Electronic_SW1'];jst=electronics['Electronic_J_DEBUG']
 jst_box=box(8.3,6.1,pt,2.92,0,-13.3)
 physical={'Stationary_Base':base,'Bottom_Tray':tray,'Bearing_Carrier':carrier,'Inner_Race_Nut':nut,'Outer_Race_Retainer':retainer,**{'Cap_'+s:c for s,c in caps.items()}}
 for name,shape in physical.items():assert shape.isValid() and len(shape.Solids())==1,(name,'Invalid/disconnected printed part',len(shape.Solids()))
@@ -146,7 +150,9 @@ press_checks=[]
 for press in [0,travel/2,travel]:
  for name,shape in moving.items():
   if name=='Actuator_Ring':continue # Force/compression requires material qualification, not rigid CAD.
-  for other,fixed in stationary.items():clear(down(shape,press),fixed,f'{name}/{other} at {press}')
+  # Conservative annular envelope avoids expensive per-ball booleans.
+  checked=ring(20,25,bz,6) if name=='Bearing_6708' else shape
+  for other,fixed in stationary.items():clear(down(checked,press),fixed,f'{name}/{other} at {press}')
  for style,cap in caps.items():
   for name,fixed in stationary.items():clear(down(cap,press),fixed,f'{style}/{name} at {press}')
   clear(down(cap,press),jst_box,f'{style}/JST courtyard at {press}')
@@ -183,18 +189,29 @@ meshes=[];seen_meshes=set()
 for style,cap in caps.items():
  for state in ['Released','Pressed','Exploded']:
   press=travel if state=='Pressed' else 0;assembly=cq.Assembly(name=style+'_'+state)
-  values={**stationary,**moving,'Return_Springs':springs(press),'Cap_'+style:cap}
+  values={**{k:v for k,v in stationary.items() if k not in ['Holder','Sensor','Button','J_DEBUG']},**electronics,**moving,'Return_Springs':springs(press),'Cap_'+style:cap}
   for name,shape in values.items():
    z=-press if name in moving or name.startswith('Cap_') else 0
-   if state=='Exploded':z={'Bearing_Carrier':12,'Inner_Race_Nut':36,'Bearing_6708':22,'Outer_Race_Retainer':6,'Cap_'+style:50,'Magnet':45,'Encoder_Spacer':45,'Actuator_Ring':42,'PCB':5,'Guide_Fasteners':8,'PCB_Fasteners':10,'Cap_Retainer_Screws':6}.get(name,0)
-   posed=shape.translate((0,0,z));color=(.12,.47,.58) if name.startswith('Cap_') else colors.get(name,(.58,.6,.63));assembly.add(posed,name=name,color=cq.Color(*color))
+   if state=='Exploded':z={'Bearing_Carrier':12,'Inner_Race_Nut':36,'Bearing_6708':22,'Outer_Race_Retainer':6,'Cap_'+style:50,'Magnet':45,'Encoder_Spacer':45,'Actuator_Ring':42,'PCB':5,'Guide_Fasteners':8,'PCB_Fasteners':10,'Cap_Retainer_Screws':50}.get(name,5 if name.startswith('Electronic_') else 0)
+   posed=shape.translate((0,0,z));color=(.12,.47,.58) if name.startswith('Cap_') else electronic_colors.get(name,colors.get(name,(.58,.6,.63)))
+   detailed=bearing_parts if name=='Bearing_6708' else (cell_parts if name=='Cell' else None)
+   if detailed:
+    detail=cq.Assembly(name=name)
+    for i,(label,part,part_color,finish) in enumerate(detailed):detail.add(part,name=f'Part_{i}',color=cq.Color(*part_color))
+    assembly.add(detail,name=name,loc=cq.Location(cq.Vector(0,0,z)))
+   else:assembly.add(posed,name=name,color=cq.Color(*color))
    if state=='Released' and name not in seen_meshes:
-    if name=='Return_Springs':vertices,faces=make_spring_mesh(P)
-    else:
-     vv,faces=posed.tessellate(.06,.13);vertices=[list(v.toTuple()) for v in vv]
-    meshes.append({'style':style,'name':name,'color':color,'vertices':vertices,'faces':[list(f) for f in faces]});seen_meshes.add(name)
+    parts=bearing_parts if name=='Bearing_6708' else (cell_parts if name=='Cell' else [(name,posed,color,'nylon' if name=='PCB_Fasteners' else ('steel' if name in ['Guide_Fasteners','Cap_Retainer_Screws','Return_Springs','Backing_Ring','Attachment_Magnets','Magnet'] else 'plastic'))])
+    vertices=[];faces=[];groups=[]
+    for label,part,part_color,finish in parts:
+     if name=='Return_Springs':vv,ff=make_spring_mesh(P)
+     else:
+      vv,ff=part.tessellate(.035,.13);vv=[list(v.toTuple()) for v in vv]
+     start=len(faces);offset=len(vertices);vertices.extend(vv);faces.extend([[i+offset for i in f] for f in ff])
+     groups.append({'label':label,'first_face':start,'face_count':len(ff),'color':part_color,'finish':finish})
+    meshes.append({'style':style,'name':name,'nativeElectronic':name.startswith('Electronic_'),'color':color,'vertices':vertices,'faces':faces,'groups':groups});seen_meshes.add(name)
   assembly.save(str(OUT/'Assemblies'/f'{style}_{state}.step'))
-report={'status':'Nominal CAD prototype; physical qualification required','physical_tested':False,'parameters':P,'printed_parts':manifest,'press_checks':press_checks,'rotation_checks':rotation,'continuous_rotation_deg':360,'rotation_method':'Axisymmetric structural rotor and exterior grip keepout; sampled angles supplement the envelope','base_diameter_mm':58,'overall_height_mm':P['overall_height'],'height_increase_mm':P['overall_height']-15.2,'pcb_midplane_z_mm':mid,'pcb_screws':4,'flexible_printed_latches':0,'return_springs':3,'cap_retainer_screws':3,'press_travel_mm':travel,'guide_engagement_mm':3.,'guide_radial_clearance_mm':.15,'jst_swept_clearance_mm':jst_gap,'sensor_gap_mm':{'released':1.8,'pressed':1.8-travel},'spring_preload_each_n':(S['free_length_mm']-S['assembled_length_mm'])*S['rate_n_per_mm'],'spring_solid_height_clearance_mm':S['assembled_length_mm']-travel-S['maximum_solid_height_mm'],'actuator_qualified':False,'actuator_note':A['qualification'],'references':{'rotation':'https://ploopyco.github.io/knob/assembly-instructions/','press':'https://www.ifixit.com/Teardown/Microsoft+Surface+Dial+Teardown/74808'},'scope':'Independent geometry for this PCB; electrical layout unchanged','physical_checks_required':['Chosen bearing fits, shoulder lands, seal clearance and corner radii','Spring return, tilt and guide friction','Actuator force, switch overtravel and all-angle closure','Rotation/press/removal endurance','Bearing and fastener influence on Hall sensing, phone attachment and RF','Actual spring/fastener sourcing']}
+report={'status':'Nominal CAD prototype; physical qualification required','physical_tested':False,'parameters':P,'printed_parts':manifest,'press_checks':press_checks,'rotation_checks':rotation,'continuous_rotation_deg':360,'rotation_method':'Axisymmetric structural rotor and exterior grip keepout; sampled angles supplement the envelope','base_diameter_mm':58,'overall_height_mm':P['overall_height'],'height_increase_mm':P['overall_height']-15.2,'pcb_midplane_z_mm':mid,'pcb_screws':4,'flexible_printed_latches':0,'return_springs':3,'cap_retainer_screws':3,'press_travel_mm':travel,'guide_engagement_mm':3.,'guide_radial_clearance_mm':.15,'jst_swept_clearance_mm':jst_gap,'sensor_gap_mm':{'released':1.8,'pressed':1.8-travel},'spring_preload_each_n':(S['free_length_mm']-S['assembled_length_mm'])*S['rate_n_per_mm'],'spring_solid_height_clearance_mm':S['assembled_length_mm']-travel-S['maximum_solid_height_mm'],'actuator_qualified':False,'actuator_note':A['qualification'],'references':{'rotation':'https://ploopyco.github.io/knob/assembly-instructions/','press':'https://www.ifixit.com/Teardown/Microsoft+Surface+Dial+Teardown/74808'},'scope':'Independent geometry for this PCB; electrical layout unchanged','model_detail':{'bearing':'25 balls of diameter 2.381 mm, grooved/chamfered races, stamped cage and non-contact metal shields; representative internals','fasteners':'Helical thread roots and recessed cross drives within existing envelopes','battery':'Rolled can, gasket, negative lid and recessed generic CR2032 marking','electronics':'All 31 fitted supplier STEP models, placed using native model origins and XYZ rotations','spring':'Five active turns plus two close-wound end turns; reference geometry, not a sourced SKU'},'detail_reference_urls':['https://www.astbearings.com/catalog/root/6708','https://iskbearing.com/product-details/6708zz','https://www.leespring.com/learn-about-compression-springs','https://www.duracell.com/wp-content/uploads/2016/04/LI2032US10141.pdf'],'physical_checks_required':['Chosen bearing fits, shoulder lands, seal clearance and corner radii','Spring return, tilt and guide friction','Actuator force, switch overtravel and all-angle closure','Rotation/press/removal endurance','Bearing and fastener influence on Hall sensing, phone attachment and RF','Actual spring/fastener sourcing']}
 (OUT/'Validation'/'geometry.json').write_text(json.dumps(report,indent=2)+'\n');(OUT/'Validation'/'scene_meshes.json').write_text(json.dumps(meshes))
 if set(styles)==set(P['cap_styles']):
  from sync_checked_exports import sync_checked_exports

@@ -1,5 +1,7 @@
-newmtl Stationary_Base
+newmtl Stationary_Base_0
 Kd 0.34 0.4 0.45
-Ks 0.15 0.15 0.15
-Ns 20
+Ks 0.22 0.22 0.22
+Ns 35
 d 1
+illum 2
+endmtl

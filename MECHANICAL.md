@@ -31,6 +31,38 @@ The assembly requires one bearing, three matched compression springs, three M2 �
 
 Service from the top: remove the three cap-retainer screws, lift off the cap, unscrew the inner-race nut and lift off the bearing. Remove the PCB screws and lift the PCB/holder for battery service. The guide screws become accessible after removing the PCB. No tiny printed release hooks are used.
 
+## CAD detail and rendering
+
+Purchased hardware now has modeled construction details in both STEP and native
+OBJ previews: bearing raceways and 0.3 mm edge chamfers, 25 balls, a pocketed
+stamped cage with rivets, and two non-contact metal shields; helical screw
+threads and cross recesses; chamfered washers and magnets; and a CR2032 positive
+can, insulating gasket and engraved negative lid. Springs have five active turns
+and one close-wound end turn at each end in both STEP and lightweight preview
+meshes. These details stay inside the existing nominal hardware envelopes.
+
+The bearing ball complement comes from [AST's 6708 catalog](https://www.astbearings.com/catalog/root/6708)
+(25 balls, each Ø2.381 mm); the [ISK 6708ZZ reference](https://iskbearing.com/product-details/6708zz)
+confirms the shielded 40 × 50 × 6 mm envelope. The cage, shield lips and fastener
+drives are representative construction, not supplier production drawings. Spring
+end treatment follows [Lee Spring's reference](https://www.leespring.com/learn-about-compression-springs);
+the exact spring SKU and measured force remain open. The cell preserves the
+[CR2032 20 × 3.2 mm envelope](https://www.duracell.com/wp-content/uploads/2016/04/LI2032US10141.pdf).
+
+All 31 fitted electronic parts use their existing supplier STEP geometry in the
+mechanical assemblies, positioned from the native circuit model origin and XYZ
+rotation. They are excluded from the mechanical-only tscircuit models because
+the native PCB already renders them. Material groups distinguish polished balls,
+brushed shields, nylon screws, elastomer and printed parts. The render script
+uses these actual meshes for assembled, closed-section and exploded views;
+`previews/bearing-detail.png` shows the bearing section separately. The metal
+shields correctly conceal the balls in the complete assembled view. Native models
+default to opaque materials; pass `transparentShell` to `EnclosureAssembly` for
+an optional inspection view. The circuit build applies those PBR finishes to
+the exported GLB by splitting contiguous index ranges; it checks source OBJ
+triangles and verifies the binary geometry buffer remains byte-for-byte identical.
+This avoids the compiler converter assigning the first material to every part.
+
 ## Validation and limits
 
 Run `python mechanical/build_enclosure.py --style all`, then `python mechanical/export_circuit_models.py`. The CAD builder checks single-solid print parts, closed/wound meshes, the actual holder and JST STEP, PCB seating, guide retention, housing stops, race separation, and three press positions with 24 rotation samples. An axisymmetric structural rotor and exterior-grip keepout establish continuous rotational clearance; sampled angles supplement that envelope. Generated STEP assemblies include released, pressed and exploded states.

@@ -1,5 +1,39 @@
-newmtl Bearing_6708
-Kd 0.7 0.73 0.77
-Ks 0.15 0.15 0.15
-Ns 20
+newmtl Bearing_6708_0
+Kd 0.66 0.69 0.72
+Ks 0.65 0.65 0.65
+Ns 90
 d 1
+illum 2
+endmtl
+
+newmtl Bearing_6708_1
+Kd 0.66 0.69 0.72
+Ks 0.65 0.65 0.65
+Ns 90
+d 1
+illum 2
+endmtl
+
+newmtl Bearing_6708_2
+Kd 0.78 0.8 0.82
+Ks 0.9 0.9 0.9
+Ns 180
+d 1
+illum 2
+endmtl
+
+newmtl Bearing_6708_3
+Kd 0.62 0.47 0.25
+Ks 0.65 0.65 0.65
+Ns 90
+d 1
+illum 2
+endmtl
+
+newmtl Bearing_6708_4
+Kd 0.52 0.56 0.59
+Ks 0.65 0.65 0.65
+Ns 90
+d 1
+illum 2
+endmtl

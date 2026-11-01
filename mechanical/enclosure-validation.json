@@ -864,6 +864,19 @@
     "press": "https://www.ifixit.com/Teardown/Microsoft+Surface+Dial+Teardown/74808"
   },
   "scope": "Independent geometry for this PCB; electrical layout unchanged",
+  "model_detail": {
+    "bearing": "25 balls of diameter 2.381 mm, grooved/chamfered races, stamped cage and non-contact metal shields; representative internals",
+    "fasteners": "Helical thread roots and recessed cross drives within existing envelopes",
+    "battery": "Rolled can, gasket, negative lid and recessed generic CR2032 marking",
+    "electronics": "All 31 fitted supplier STEP models, placed using native model origins and XYZ rotations",
+    "spring": "Five active turns plus two close-wound end turns; reference geometry, not a sourced SKU"
+  },
+  "detail_reference_urls": [
+    "https://www.astbearings.com/catalog/root/6708",
+    "https://iskbearing.com/product-details/6708zz",
+    "https://www.leespring.com/learn-about-compression-springs",
+    "https://www.duracell.com/wp-content/uploads/2016/04/LI2032US10141.pdf"
+  ],
   "physical_checks_required": [
     "Chosen bearing fits, shoulder lands, seal clearance and corner radii",
     "Spring return, tilt and guide friction",

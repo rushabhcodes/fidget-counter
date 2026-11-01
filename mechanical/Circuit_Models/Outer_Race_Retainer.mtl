@@ -1,5 +1,7 @@
-newmtl Outer_Race_Retainer
+newmtl Outer_Race_Retainer_0
 Kd 0.12 0.38 0.48
-Ks 0.15 0.15 0.15
-Ns 20
+Ks 0.22 0.22 0.22
+Ns 35
 d 1
+illum 2
+endmtl

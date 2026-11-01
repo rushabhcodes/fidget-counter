@@ -1,5 +1,7 @@
-newmtl Bottom_Tray
+newmtl Bottom_Tray_0
 Kd 0.25 0.3 0.34
-Ks 0.15 0.15 0.15
-Ns 20
+Ks 0.22 0.22 0.22
+Ns 35
 d 1
+illum 2
+endmtl

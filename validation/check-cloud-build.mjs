@@ -83,6 +83,12 @@ try {
   run(true, "index.circuit.tsx changed")
   writeFileSync(resolve(scratch, "index.circuit.tsx"), index)
 
+  const contract = readFileSync(resolve(scratch, "routing-contract.json"))
+  writeFileSync(resolve(scratch, "routing-contract.json"), "{}\n")
+  run(true, "routing-contract.json changed")
+  writeFileSync(resolve(scratch, "routing-contract.json"), contract)
+
+
   writeFileSync(resolve(scratch, "cloud-assets/pcb.png.gz.b64"), Buffer.from("corrupted preview").toString("base64"))
   const result = spawnSync(process.execPath, ["cloud-build.mjs"], {
     cwd: scratch, env: { ...process.env, TSCIRCUIT_INSIDE_BUILD_COMMAND: "1" }, encoding: "utf8",

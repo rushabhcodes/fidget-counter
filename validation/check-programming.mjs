@@ -124,9 +124,19 @@ const crystalBranches=all('source_trace').filter(e=>e.max_length===10&&e.max_via
 })
 assert.equal(crystalBranches.length,8)
 const issues=circuit.filter(e=>/error|warning/.test(e.type))
-assert.equal(issues.length,0,JSON.stringify(issues))
+const styleWarnings=issues.filter(e=>e.type==='pcb_trace_style_warning')
+assert.equal(issues.length-styleWarnings.length,0,JSON.stringify(issues))
+// Core 0.0.2245 adds style advisories to three unchanged legacy segments.
+// Match every non-ID field exactly (to 1 nm); do not hide other warnings/errors.
+const warningRecord=e=>JSON.parse(JSON.stringify(Object.fromEntries(Object.entries(e)
+ .filter(([key])=>!key.endsWith('_id')&&key!=='message'))),(k,v)=>typeof v==='number'?Math.round(v*1e9)/1e9:v)
+const warningKey=e=>JSON.stringify(e,(_,v)=>v&&!Array.isArray(v)&&typeof v==='object'?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a.localeCompare(b))):v)
+const known=JSON.parse(readFileSync('validation/known-trace-style-warnings.json')).warnings
+assert.deepEqual(styleWarnings.map(warningRecord).sort((a,b)=>warningKey(a).localeCompare(warningKey(b))),
+ known.sort((a,b)=>warningKey(a).localeCompare(warningKey(b))),'Trace style advisories changed; review the routing')
 const result={checkedAt:new Date().toISOString(),passed:true,sourcePackage:'@tsci/tscircuit.standard-jst-programmer@0.8.0',
  reference:'https://github.com/tscircuit/standard-jst-programmer',
+ acceptedTraceStyleWarnings:styleWarnings.length,
  footprint:source.manufacturer_part_number,supplier:'JLCPCB C136657',matingHousing:'SHR-05V-S-B',cable:'Straight-through five-way JST-SH, 1.0 mm pitch',side:'top',entryDirection:'-Y',pads:reports,mountingTabs:anchors.length,alignmentHoles:0,
  stencilApertures:paste.length,power:'Pin 1 follows programmer voltage selector; select 3V3 and remove CR2032',
  minimumUnrelatedTopTrackClearanceMm,minimumUnrelatedViaClearanceMm,crystalBranches,courtyardBoundsMm:bounds,courtyardClear:true,

@@ -1,0 +1,505 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "bearing_balls": 25,
+  "ball_diameter_mm": 2.381,
+  "hardware_interpenetrations": 0,
+  "meshes": [
+    {
+      "name": "Stationary_Base",
+      "triangles": 11152,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -28.984791502319933,
+          -28.996197626303335,
+          0.7999999999999998
+        ],
+        [
+          29.0,
+          28.996197626303335,
+          8.6
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Bottom_Tray",
+      "triangles": 10472,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -28.984791502319933,
+          -28.996197626303335,
+          0.2
+        ],
+        [
+          29.0,
+          28.996197626303335,
+          2.35
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cell",
+      "triangles": 20898,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -9.994755690455149,
+          -9.998688836656322,
+          3.4
+        ],
+        [
+          10.0,
+          9.998688836656322,
+          6.6
+        ]
+      ],
+      "material_groups": 3
+    },
+    {
+      "name": "Backing_Ring",
+      "triangles": 776,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -27.210722367264147,
+          -27.221430357796837,
+          2.4
+        ],
+        [
+          27.225,
+          27.221430357796837,
+          3.0999999999999996
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Attachment_Magnets",
+      "triangles": 18528,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -26.91301863394387,
+          -26.914001920494165,
+          0.85
+        ],
+        [
+          26.91432971133008,
+          26.91400192049416,
+          2.35
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Guide_Fasteners",
+      "triangles": 40446,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -7.518809843589517,
+          -19.187350005682934,
+          1.2999999999999998
+        ],
+        [
+          19.75,
+          19.187350005682934,
+          7.8
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "PCB_Fasteners",
+      "triangles": 45360,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -12.647026655222003,
+          -12.647773953000225,
+          5.1
+        ],
+        [
+          12.648023074035523,
+          12.647773953000224,
+          10.4
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Bearing_Carrier",
+      "triangles": 7940,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -21.8,
+          -20.64663443752186,
+          3.0
+        ],
+        [
+          20.65,
+          20.646634437521854,
+          15.100000000000001
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Inner_Race_Nut",
+      "triangles": 2734,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -21.594203895478103,
+          -21.59716788717766,
+          12.6
+        ],
+        [
+          21.6,
+          21.59716788717766,
+          15.100000000000001
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Bearing_6708",
+      "triangles": 204948,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -24.986889226137873,
+          -24.996722091640805,
+          6.599999999999999
+        ],
+        [
+          25.0,
+          24.996722091640805,
+          12.600000000000001
+        ]
+      ],
+      "material_groups": 5
+    },
+    {
+      "name": "Outer_Race_Retainer",
+      "triangles": 1952,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -28.78489638851083,
+          -28.796223849570207,
+          5.1
+        ],
+        [
+          28.8,
+          28.796223849570207,
+          6.6
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_Retainer_Screws",
+      "triangles": 51756,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -15.299003581186492,
+          -25.109231700387653,
+          5.199999999999999
+        ],
+        [
+          28.7,
+          25.10923170038766,
+          17.2
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Magnet",
+      "triangles": 772,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -2.498688922613787,
+          -2.4996722091640806,
+          11.399999999999999
+        ],
+        [
+          2.5,
+          2.4996722091640806,
+          12.899999999999999
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Encoder_Spacer",
+      "triangles": 384,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -2.498688922613787,
+          -2.4996722091640806,
+          12.9
+        ],
+        [
+          2.5,
+          2.4996722091640806,
+          13.1
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Actuator_Ring",
+      "triangles": 776,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -6.496591198795847,
+          -6.499147743826609,
+          11.15
+        ],
+        [
+          6.5,
+          6.499147743826609,
+          12.65
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Return_Springs",
+      "triangles": 20232,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -21.0,
+          -18.387495373796554,
+          1.5
+        ],
+        [
+          11.250000000000002,
+          18.387495373796554,
+          5.0
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_circular",
+      "triangles": 5844,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -30.79983765734622,
+          -30.799837657346217,
+          6.6
+        ],
+        [
+          30.799837657346217,
+          30.799837657346217,
+          17.2
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_ships_wheel",
+      "triangles": 6082,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -30.8,
+          -29.0,
+          6.6
+        ],
+        [
+          30.8,
+          29.0,
+          17.200000000000003
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_rounded_triangle",
+      "triangles": 4450,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -28.78505016311006,
+          -28.796223849570207,
+          6.6
+        ],
+        [
+          30.797094004482368,
+          28.796223849570207,
+          17.2
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_scalloped_coin",
+      "triangles": 6580,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -30.8,
+          -30.8,
+          6.6
+        ],
+        [
+          30.8,
+          30.8,
+          17.2
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_petal_flower",
+      "triangles": 5860,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -30.8,
+          -28.8,
+          6.6
+        ],
+        [
+          30.8,
+          28.8,
+          17.2
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_four_leaf_clover",
+      "triangles": 6782,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -30.8,
+          -30.8,
+          6.6
+        ],
+        [
+          30.8,
+          30.8,
+          17.2
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_rounded_hexagon",
+      "triangles": 4206,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -30.798601319003673,
+          -28.796223849570207,
+          6.6
+        ],
+        [
+          30.798601319003673,
+          28.796223849570207,
+          17.2
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_rounded_square",
+      "triangles": 5754,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -30.8,
+          -30.8,
+          6.6
+        ],
+        [
+          30.8,
+          30.8,
+          17.2
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_wave_rim",
+      "triangles": 6674,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -30.8,
+          -30.8,
+          6.6
+        ],
+        [
+          30.8,
+          30.8,
+          17.2
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_turbine_wheel",
+      "triangles": 5672,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -30.345484067543303,
+          -30.346020619251938,
+          6.6
+        ],
+        [
+          30.35,
+          30.346020619251938,
+          17.2
+        ]
+      ],
+      "material_groups": 1
+    },
+    {
+      "name": "Cap_thumb_scoop",
+      "triangles": 6816,
+      "watertight": true,
+      "bounds_mm": [
+        [
+          -30.8,
+          -29.2,
+          6.6
+        ],
+        [
+          30.8,
+          29.2,
+          17.200000000000003
+        ]
+      ],
+      "material_groups": 1
+    }
+  ],
+  "source_sha256": {
+    "mechanical/hardware_models.py": "aa216b4c19785e7282e0b5c7e2185af2f91716acd55260927c30be98c2faa10b",
+    "mechanical/build_enclosure.py": "3df300f2618f36c724fb077b30fe8cdf36e1d56d33e50dfa4cc7505fea334f20",
+    "mechanical/spring_mesh.py": "f34870ba443c391bf0436944b3e081de9f922cc178eb47a5588457818887c6cb",
+    "mechanical/export_circuit_models.py": "e6862d5f77ac6f1ed7af6c409f8c7719f5d1557e6c35494c63dc9f02a4c32e96",
+    "mechanical/mesh_export.py": "a8b20d735f20a3e1d4772e6bf6efee3ef9932b498eb563a32f5e915015368f74"
+  },
+  "limits": [
+    "Representative internals, threads and spring turns; confirm purchased SKUs and force curves"
+  ]
+}

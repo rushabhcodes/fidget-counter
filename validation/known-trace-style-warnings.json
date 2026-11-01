@@ -1,0 +1,84 @@
+{
+  "compiler_version": "0.0.3047",
+  "reason": "New advisory checks on copper unchanged from registry 1.0.22; preserve the validated routes. Any additional or changed warning fails validation.",
+  "warnings": [
+    {
+      "angle_degrees": 169.304333619,
+      "angle_deviation_degrees": 10.695666381,
+      "angle_tolerance_degrees": 4,
+      "center": {
+        "x": 1.388,
+        "y": 12.95
+      },
+      "end_route_index": 4,
+      "layer": "top",
+      "minimum_segment_length": 5,
+      "nearest_allowed_angle_degrees": 180,
+      "segment_end": {
+        "x": -1.524,
+        "y": 13.5
+      },
+      "segment_length": 5.926970221,
+      "segment_start": {
+        "x": 4.3,
+        "y": 12.4
+      },
+      "start_route_index": 3,
+      "styling_issue_type": "long_segment_at_odd_angle",
+      "type": "pcb_trace_style_warning",
+      "warning_type": "pcb_trace_style_warning"
+    },
+    {
+      "angle_degrees": 219.262472599,
+      "angle_deviation_degrees": 5.737527401,
+      "angle_tolerance_degrees": 4,
+      "center": {
+        "x": 3.74995755,
+        "y": -4.7
+      },
+      "end_route_index": 1,
+      "layer": "bottom",
+      "minimum_segment_length": 5,
+      "nearest_allowed_angle_degrees": 225,
+      "segment_end": {
+        "x": -2,
+        "y": -9.4
+      },
+      "segment_length": 14.852880101,
+      "segment_start": {
+        "x": 9.4999151,
+        "y": 0
+      },
+      "start_route_index": 0,
+      "styling_issue_type": "long_segment_at_odd_angle",
+      "type": "pcb_trace_style_warning",
+      "warning_type": "pcb_trace_style_warning"
+    },
+    {
+      "angle_degrees": 278.310277168,
+      "angle_deviation_degrees": 8.310277168,
+      "angle_tolerance_degrees": 4,
+      "center": {
+        "x": 6.65,
+        "y": 6.55
+      },
+      "end_route_index": 7,
+      "layer": "bottom",
+      "minimum_segment_length": 5,
+      "nearest_allowed_angle_degrees": 270,
+      "segment_end": {
+        "x": 7.3,
+        "y": 2.1
+      },
+      "segment_length": 8.994442729,
+      "segment_start": {
+        "x": 6.0,
+        "y": 11.0
+      },
+      "start_route_index": 6,
+      "styling_issue_type": "long_segment_at_odd_angle",
+      "type": "pcb_trace_style_warning",
+      "warning_type": "pcb_trace_style_warning"
+    }
+  ]
+}

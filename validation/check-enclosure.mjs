@@ -28,7 +28,7 @@ const style=readFileSync('index.circuit.tsx','utf8').match(/const CAP_STYLE: Cap
 assert(sources.some(x=>x.name===`BEARING_V5_Cap_${style}`))
 for(const name of ['Bearing_Carrier','Inner_Race_Nut','Bearing_6708','Return_Springs','Guide_Fasteners','PCB_Fasteners'])assert(sources.some(x=>x.name===`BEARING_V5_${name}`))
 const baseline=json('validation/fitted-component-baseline.json')
-assert.deepEqual(fittedComponentRecords(c).filter(x=>x.source.name!=='J_DEBUG'),baseline.components,'Existing fitted electronics changed')
+assert.deepEqual(fittedComponentRecords(c).filter(x=>x.source.name!=='J_DEBUG'),JSON.parse(JSON.stringify(baseline.components),(k,v)=>typeof v==='number'?Math.round(v*1e9)/1e9:v),'Existing fitted electronics changed')
 assert.equal(fittedComponentRecords(c).length,31)
 const component=name=>c.find(e=>e.type==='pcb_component'&&e.source_component_id===c.find(s=>s.type==='source_component'&&s.name===name)?.source_component_id)
 assert.deepEqual(component('SW1').center,{x:0,y:-5});assert.deepEqual(component('U2').center,{x:0,y:0})

@@ -9,17 +9,29 @@
   "grip_variants": 11,
   "fitted_electronics": 31,
   "checks": {
+    "frozen_lockfile_install": true,
     "typecheck": true,
+    "routing_safeguard_regressions": true,
+    "compiler_electrical_and_geometric_semantics": true,
+    "all_grip_structure": true,
     "source_build": true,
     "snapshot_build": true,
+    "website_build": true,
     "netlist": true,
     "pin_specification": true,
     "placement": true,
     "shorts": true,
     "programming_interface": true,
-    "all_grip_structure": true,
-    "enclosure_native_alignment": true,
-    "cloud_restore": true
+    "all_grip_CAD_rotation_and_press": true,
+    "printed_meshes": true,
+    "hardware_meshes_and_construction": true,
+    "native_model_alignment": true,
+    "PCB_mount_clearance": true,
+    "JST_full_sweep_clearance": true,
+    "all_31_fitted_hardware_clearance": true,
+    "cloud_restore_and_tamper_rejection": true,
+    "assembled_cutaway_exploded_visual_inspection": true,
+    "PBR_material_pass_geometry_unchanged": true
   },
   "limits": [
     "Bearing fits, spring sourcing/return and off-center pressing require physical tests",
@@ -27,9 +39,22 @@
     "Hall sensing and BLE require validation with the new bearing and the intended phone"
   ],
   "source_sha256": {
-    "mechanical/build_enclosure.py": "102002773fde1a9afbcb3b950791372c18404affeab86c3f42f9a44a2f592fa5",
+    "package.json": "d09b23651e2d12abb6535fe3b1ea1a0ec6eda1fcc7691edf5e72627442b72fab",
+    "bun.lock": "1d9a35aa4691c033b443bab61862a467ae4123a4c183fdba5bee0fe7774b3e7c",
+    "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
+    "routing-contract.json": "afde27101f7ed90438fdaf149a6fdf0d5a32337e665bb7c8ae6dd696b9569417",
+    "enclosure.tsx": "f1d7723c45c47e7a305372ca62d108e8f1d47a9463073f4e93fdb5052c30c975",
+    "published.circuit.json": "6257d18b918f24479f83d39958e82a0fb5ba6b20521bea47368d8a5626395b38",
     "mechanical/enclosure-parameters.json": "f5f10e456afece55db46863e5c08b808a9143b73c47284f8c41837c54eb0f1b4",
-    "enclosure.tsx": "3f4fca7b5ff786a29c261b79f1f7ebb241ebb32438a6eed0c4d11190d6104147",
-    "published.circuit.json": "95df520adeca50b30624da4cada6ca60fcfa119cf0a3df064c1d8899cccc9448"
-  }
+    "mechanical/build_enclosure.py": "3df300f2618f36c724fb077b30fe8cdf36e1d56d33e50dfa4cc7505fea334f20",
+    "mechanical/hardware_models.py": "aa216b4c19785e7282e0b5c7e2185af2f91716acd55260927c30be98c2faa10b",
+    "mechanical/mesh_export.py": "a8b20d735f20a3e1d4772e6bf6efee3ef9932b498eb563a32f5e915015368f74",
+    "mechanical/export_circuit_models.py": "e6862d5f77ac6f1ed7af6c409f8c7719f5d1557e6c35494c63dc9f02a4c32e96",
+    "mechanical/spring_mesh.py": "f34870ba443c391bf0436944b3e081de9f922cc178eb47a5588457818887c6cb",
+    "mechanical/render_bearing_layout.py": "c18e2b7089a78f06fcb54ba1cf51e553b5948416948a370fec9c6b6189931841",
+    "validation/apply-model-materials.mjs": "7556c656f207bb68a6dd590707f9f82ce2292240714d84d81901f55b1c3404e2"
+  },
+  "compiler_version": "0.0.3047",
+  "checked_at_utc": "2026-11-01T16:00:06.610373+00:00",
+  "accepted_trace_style_warnings": 3
 }

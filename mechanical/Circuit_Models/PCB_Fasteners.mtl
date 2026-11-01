@@ -1,5 +1,7 @@
-newmtl PCB_Fasteners
+newmtl PCB_Fasteners_0
 Kd 0.58 0.6 0.63
-Ks 0.15 0.15 0.15
-Ns 20
+Ks 0.12 0.12 0.12
+Ns 18
 d 1
+illum 2
+endmtl

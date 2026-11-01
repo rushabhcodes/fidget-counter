@@ -30,6 +30,8 @@ export const RFANT3216120A5T = (props: ChipProps<typeof pinLabels>) => {
         objUrl: objPath,
         stepUrl: stepPath,
         pcbRotationOffset: 0,
+        // Core now anchors at footprint origin; preserve the validated CAD pose.
+        positionOffset: { x: 0.026035, y: 0, z: 0 },
         modelOriginPosition: { x: -0.026035000000092623, y: 0, z: -0.6 },
       }}
       {...props}

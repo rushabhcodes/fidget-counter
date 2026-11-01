@@ -1,5 +1,23 @@
-newmtl Cell
-Kd 0.58 0.6 0.63
-Ks 0.15 0.15 0.15
-Ns 20
+newmtl Cell_0
+Kd 0.66 0.69 0.72
+Ks 0.65 0.65 0.65
+Ns 90
 d 1
+illum 2
+endmtl
+
+newmtl Cell_1
+Kd 0.1 0.11 0.12
+Ks 0.05 0.05 0.05
+Ns 8
+d 1
+illum 2
+endmtl
+
+newmtl Cell_2
+Kd 0.78 0.8 0.82
+Ks 0.65 0.65 0.65
+Ns 90
+d 1
+illum 2
+endmtl

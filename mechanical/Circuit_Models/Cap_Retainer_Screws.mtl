@@ -1,5 +1,7 @@
-newmtl Cap_Retainer_Screws
+newmtl Cap_Retainer_Screws_0
 Kd 0.12 0.47 0.58
-Ks 0.15 0.15 0.15
-Ns 20
+Ks 0.65 0.65 0.65
+Ns 90
 d 1
+illum 2
+endmtl

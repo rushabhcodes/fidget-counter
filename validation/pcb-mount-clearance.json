@@ -99,10 +99,10 @@
     }
   ],
   "sha256": {
-    "dist/index/circuit.json": "95df520adeca50b30624da4cada6ca60fcfa119cf0a3df064c1d8899cccc9448",
-    "dist/index/3d.glb": "d96f3ad51f2a376c23ce1086b5af3d6c00c4cf55adb4e73d031a24aace1184de",
-    "dist/published/circuit.json": "95df520adeca50b30624da4cada6ca60fcfa119cf0a3df064c1d8899cccc9448",
-    "dist/published/3d.glb": "d96f3ad51f2a376c23ce1086b5af3d6c00c4cf55adb4e73d031a24aace1184de",
+    "dist/index/circuit.json": "6257d18b918f24479f83d39958e82a0fb5ba6b20521bea47368d8a5626395b38",
+    "dist/index/3d.glb": "94535debc289f01e31f77ae82a3484b90230f465558fc4e35a1643a1916e7407",
+    "dist/published/circuit.json": "6257d18b918f24479f83d39958e82a0fb5ba6b20521bea47368d8a5626395b38",
+    "dist/published/3d.glb": "94535debc289f01e31f77ae82a3484b90230f465558fc4e35a1643a1916e7407",
     "mechanical/STEP_Parts/Stationary_Base.step": "6f2b1d2b62dc0292c55a5412211599ce17f32b3f504ce24b52722f8530eeff53"
   }
 }

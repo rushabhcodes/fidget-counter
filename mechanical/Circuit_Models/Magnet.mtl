@@ -1,5 +1,7 @@
-newmtl Magnet
+newmtl Magnet_0
 Kd 0.58 0.6 0.63
-Ks 0.15 0.15 0.15
-Ns 20
+Ks 0.65 0.65 0.65
+Ns 90
 d 1
+illum 2
+endmtl
