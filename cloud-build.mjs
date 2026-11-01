@@ -37,10 +37,17 @@ console.log(`[cloud-build] Verified ${Object.keys(manifest.inputs).length} input
 // Validate every artifact before writing any output, so a failed check cannot
 // leave a partially refreshed preview for the registry to collect.
 const artifacts = manifest.artifacts.map((item) => {
-  const stored = readFileSync(projectPath(item.source))
-  const bytes = item.encoding === "gzip-base64"
-    ? gunzipSync(Buffer.from(stored.toString("utf8").trim(), "base64"))
-    : stored
+  const stored = item.sourceParts
+    ? Buffer.concat(item.sourceParts.map(part => readFileSync(projectPath(part))))
+    : readFileSync(projectPath(item.source))
+  let bytes
+  try {
+    bytes = item.encoding === "gzip-base64"
+      ? gunzipSync(Buffer.from(stored.toString("utf8").trim(), "base64"))
+      : stored
+  } catch (error) {
+    throw new Error(`Invalid checked artifact: ${item.source}`, {cause: error})
+  }
   if (bytes.length !== item.bytes || sha256(bytes) !== item.sha256) {
     throw new Error(`Invalid checked artifact: ${item.source}`)
   }

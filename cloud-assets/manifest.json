@@ -2,7 +2,7 @@
   "formatVersion": 2,
   "description": "Locally built and checked preview; hashes bind it to the published source and CAD assets.",
   "inputs": {
-    "cloud-build.mjs": "8fd53c7b1f82613b191364dde6b9c7b35f260baa9c17394c49a57b0ad957a368",
+    "cloud-build.mjs": "d62a5f4df5dca09730fc0c38ce77f46506858cc23a79d3634445e65e59b37463",
     "enclosure.tsx": "f1d7723c45c47e7a305372ca62d108e8f1d47a9463073f4e93fdb5052c30c975",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj": "5cb7b3d39911902565b7d20a63b8be35513c8d72b9d0dca36c801d731893bcf5",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.step": "d8b313a83de060e58141efc987e51c0ad04a3855784f981139dc3698331d1f2d",
@@ -227,6 +227,14 @@
     },
     {
       "source": "cloud-assets/3d.glb.gz.b64",
+      "sourceParts": [
+        "cloud-assets/3d.glb.part-000.gz.b64",
+        "cloud-assets/3d.glb.part-001.gz.b64",
+        "cloud-assets/3d.glb.part-002.gz.b64",
+        "cloud-assets/3d.glb.part-003.gz.b64",
+        "cloud-assets/3d.glb.part-004.gz.b64",
+        "cloud-assets/3d.glb.part-005.gz.b64"
+      ],
       "output": "dist/published/3d.glb",
       "encoding": "gzip-base64",
       "bytes": 54563152,

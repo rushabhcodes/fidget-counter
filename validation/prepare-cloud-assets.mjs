@@ -70,6 +70,7 @@ for (const name of ["circuit.json", "pcb.png", "pcb.svg", "schematic.png", "sche
   const output = `dist/published/${name}`
   let source = "published.circuit.json"
   let encoding = "raw"
+  let sourceParts
   if (name === "circuit.json") {
     if (sha256(bytes) !== sha256(readFileSync(resolve(root, source)))) {
       throw new Error("dist/published/circuit.json differs from published.circuit.json; rebuild the saved snapshot first")
@@ -77,9 +78,28 @@ for (const name of ["circuit.json", "pcb.png", "pcb.svg", "schematic.png", "sche
   } else {
     source = `cloud-assets/${name}.gz.b64`
     encoding = "gzip-base64"
-    writeFileSync(resolve(root, source), gzipSync(bytes, { level: 9 }).toString("base64") + "\n")
+    const encoded = gzipSync(bytes, { level: 9 }).toString("base64") + "\n"
+    // Registry requests have a size limit. Chunk the cached text without
+    // changing a single byte of the reconstructed, checked artifact.
+    const limit = 3_000_000
+    const active = new Set()
+    if (Buffer.byteLength(encoded) > limit) {
+      sourceParts = []
+      for (let start = 0; start < encoded.length; start += limit) {
+        const part = `cloud-assets/${name}.part-${String(sourceParts.length).padStart(3, "0")}.gz.b64`
+        writeFileSync(resolve(root, part), encoded.slice(start, start + limit))
+        sourceParts.push(part); active.add(part)
+      }
+    } else {
+      writeFileSync(resolve(root, source), encoded); active.add(source)
+    }
+    for (const old of readdirSync(resolve(root, "cloud-assets"))) {
+      const path = `cloud-assets/${old}`
+      if ((path === source || (old.startsWith(`${name}.part-`) && old.endsWith(".gz.b64"))) && !active.has(path))
+        unlinkSync(resolve(root, path))
+    }
   }
-  manifest.artifacts.push({ source, output, encoding, bytes: bytes.length, sha256: sha256(bytes) })
+  manifest.artifacts.push({ source, ...(sourceParts ? {sourceParts} : {}), output, encoding, bytes: bytes.length, sha256: sha256(bytes) })
 }
 writeFileSync(resolve(root, "cloud-assets/manifest.json"), JSON.stringify(manifest, null, 2) + "\n")
 console.log(`Prepared ${manifest.artifacts.length} checked artifacts with ${Object.keys(manifest.inputs).length} input hashes`)

@@ -7,10 +7,9 @@
     "current": "0.0.3047",
     "frozen_install_passed": true
   },
-  "package_release_version": "1.0.22",
+  "package_release_version": "1.0.23",
   "branch": "codex/bearing-supported-enclosure",
   "comparison_base_commit": "bee408a87d66915cf3093233c29e224608ce2024",
-  "registry_publication_performed": false,
   "dimensions_mm": {
     "base_diameter": 58,
     "released_height": 17.2,
@@ -85,7 +84,7 @@
     "No physical prototype, strength, endurance or sensor/RF qualification was performed"
   ],
   "source_sha256": {
-    "package.json": "d09b23651e2d12abb6535fe3b1ea1a0ec6eda1fcc7691edf5e72627442b72fab",
+    "package.json": "fbe348a146258a2f1d794ba75e4e0d19470657574e46d20f9f8e6765d78632c8",
     "bun.lock": "1d9a35aa4691c033b443bab61862a467ae4123a4c183fdba5bee0fe7774b3e7c",
     "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
     "routing-contract.json": "afde27101f7ed90438fdaf149a6fdf0d5a32337e665bb7c8ae6dd696b9569417",

@@ -42,10 +42,10 @@ bun run build:cloud:prepare
 
 `mechanical/Print_STL` contains the sixteen rigid print parts; `Coupons` contains small fit tests. Start with the coupons and circular starter set. `Actuator_Ring_REFERENCE_ONLY.stl` is a silicone geometry reference, **not a rigid print**. Source parameters are in `mechanical/enclosure-parameters.json`. Released, pressed and exploded STEP assemblies are generated under `mechanical/export/Assemblies`.
 
-This is a local mechanical prototype, not a new registry release. CAD clearances and mesh checks do not establish physical spring return, switch force/overtravel, fatigue, Hall sensing or BLE performance. Verify those with the selected bearing, springs, elastomer, phone and magnets before assembled-board ordering. Older validation reports retain their original revision labels and do not certify V5.
+This remains an unqualified mechanical prototype. CAD clearances and mesh checks do not establish physical spring return, switch force/overtravel, fatigue, Hall sensing or BLE performance. Verify those with the selected bearing, springs, elastomer, phone and magnets before assembled-board ordering. Older validation reports retain their original revision labels and do not certify V5.
 
 The local toolchain is pinned to `tscircuit` **0.0.3047** (package release version
-remains 1.0.22). The routing contract matches terminals by electrical group and
+is 1.0.23). The routing contract matches terminals by electrical group and
 physical coordinates rather than generated IDs, and rejects changes to copper,
 layers, board geometry, design rules and connectivity. `check:routing` includes
 negative regression cases for those safeguards. The compiler adds three style
@@ -60,3 +60,7 @@ All 31 fitted supplier STEP parts appear in the mechanical assemblies. See
 sources and the distinction between nominal detail and selected purchased SKUs.
 
 The cloud restore uses `published.circuit.json` and checked artifacts tied to source hashes. Refresh them after a verified source build; see `validation/prepare-cloud-assets.mjs`. Original release history remains in Git and the excluded `.archive-v1.0.6.zip`.
+
+Registry publication uses the checked snapshot and six verified artifacts. Large
+cached artifacts are split into request-sized source files and reconstructed
+without changing their SHA-256 hashes. Physical qualification remains open.

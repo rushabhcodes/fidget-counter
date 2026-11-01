@@ -30,7 +30,7 @@ const run = (cloud, expectedError) => {
 }
 
 try {
-  const files = new Set([...Object.keys(manifest.inputs), ...manifest.artifacts.map(a => a.source),
+  const files = new Set([...Object.keys(manifest.inputs), ...manifest.artifacts.flatMap(a => a.sourceParts ?? [a.source]),
     "cloud-assets/manifest.json", ...manifest.cadInputArchives.map(a => a.source), "package.json", "bun.lock"])
   for (const name of files) {
     const target = resolve(scratch, name)
@@ -49,6 +49,14 @@ try {
   writeFileSync(cadPath, "changed CAD export")
   run(false, `${manifest.cadInputArchives.flatMap(a => a.files)[0]} changed`)
   writeFileSync(cadPath, cadBytes)
+
+  const chunked = manifest.artifacts.find(a => a.sourceParts?.length > 1)
+  assert(chunked, "Exercise chunked preview restore")
+  const partPath = resolve(scratch, chunked.sourceParts[0])
+  const partBytes = readFileSync(partPath)
+  writeFileSync(partPath, "corrupted preview chunk")
+  run(false, "Invalid checked artifact")
+  writeFileSync(partPath, partBytes)
 
   // Match the registry's compiler substitution and the subsequent CI install.
   const cloudPackage = structuredClone(originalPackage)
