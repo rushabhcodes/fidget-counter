@@ -1,0 +1,37 @@
+{
+  "physical_tested": false,
+  "basis": "Nominal specified target, not a sourced or measured spring",
+  "parallel_springs": 3,
+  "specified_rate_each_N_per_mm": 0.45,
+  "total_rate_N_per_mm": 1.35,
+  "preload_total_N": 0.675,
+  "full_press_total_N": 1.7550000000000001,
+  "full_press_working_length_mm": 2.7,
+  "solid_clearance_mm": 0.5,
+  "visual_spring_estimated_rate_N_per_mm_at_G70to80GPa": [
+    0.32870022539444027,
+    0.3756574004507889
+  ],
+  "visual_spring_is_force_calibrated": false,
+  "switch": {
+    "manufacturer_part": "KMR223NG ULC LFG / Y78B22324FP",
+    "catalog_force_N": [
+      1.5,
+      2.5
+    ],
+    "catalog_electrical_travel_mm": [
+      0.15,
+      0.35
+    ],
+    "catalog_is_assembled_life_qualification": false,
+    "compliant_actuator_nominal_remaining_deformation_mm": [
+      0.30000000000000004,
+      0.5
+    ],
+    "assembled_force_curve_measured": false,
+    "source": "https://www.ckswitches.com/media/1479/kmr2.pdf",
+    "shared_geometry_only": "KMR232NGULCLFS",
+    "catalog_operations": 200000
+  },
+  "source_parameters_sha256": "d2856b3320326fb6881f46d73e38e0f15c5202e5e118574c6b94346665dbed53"
+}

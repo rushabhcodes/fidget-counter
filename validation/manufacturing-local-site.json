@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "scope": "Local website only; no hosted publication",
+  "html_status": 200,
+  "script_requests": [
+    {
+      "url": "http://127.0.0.1:8127/standalone.min.js",
+      "status": 200,
+      "bytes": 28951027
+    }
+  ]
+}

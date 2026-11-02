@@ -13,11 +13,11 @@
     "turbine_wheel",
     "thumb_scoop"
   ],
-  "modelsPerSelectedStyle": 16,
-  "totalAssets": 26,
+  "modelsPerSelectedStyle": 14,
+  "totalAssets": 24,
   "pcbMidplaneZMm": 8.6,
   "sourceParameters": {
-    "design": "V5 \u2014 bearing-supported rotor with guided full-cap press",
+    "design": "V5 manufacturing review: integrated base and encoder stop",
     "cap_style": "all",
     "cap_styles": [
       "circular",
@@ -55,12 +55,12 @@
     "material": "PETG for rigid printed parts; purchased metal bearing and springs",
     "return": "Three purchased compression springs; switch is not the cap return spring",
     "service": "Remove the three outer-race retainer screws, lift off the cap, unscrew the inner-race nut, then remove the carrier guide screws and PCB screws",
-    "publication": "Local single-ring revision following published 1.0.23; not physically qualified",
+    "publication": "Local manufacturing review candidate after 1.0.24; not production qualified",
     "hub_cover_thickness": 1.7,
     "cap_style_change": "Undo three countersunk screws to transfer the common bearing assembly to another cap",
     "encoder_magnet_per_top_module": 1,
     "cap_mount_hardware_count": 3,
-    "magnet_installation": "One diametrically magnetized diameter 5 x thickness 1.5 mm disc in each module; retain with adhesive after fit and field checks",
+    "magnet_installation": "One diametric diameter5 x1.5 mm disc seated against the integral cap stop at Z12.9; qualify sidewall adhesive after polarity/field checks",
     "pcb_retention": "Four M2 nylon screws on solid posts; no flexible printed latches",
     "pcb_mount": {
       "radius_mm": 15.2,
@@ -79,7 +79,13 @@
       "beam_width_mm": 0,
       "retaining_outer_radius_mm": 0,
       "axial_float_mm": 0,
-      "release_displacement_mm": 0
+      "release_displacement_mm": 0,
+      "screw_indices": [
+        0,
+        1,
+        2,
+        3
+      ]
     },
     "bearing": {
       "designation": "6708-2Z / 61708-2Z",
@@ -165,8 +171,37 @@
       "phone_face_z_mm": 0.4,
       "radial_clearance_mm": 0.15,
       "bondline_mm": 0.1,
-      "mounting": "Bond one purchased ring assembly in the open phone-side annular seat; bond tray to base",
+      "mounting": "Bond one purchased ring assembly into the integrated base; no separate tray bond",
       "qualification": "Nominal supplier envelope only; confirm sample dimensions, working face, peel/shear retention and Hall/RF effects before production"
+    },
+    "encoder_stop": {
+      "mode": "integral_cap",
+      "separate_spacer_count": 0,
+      "seated_top_z_mm": 12.9,
+      "previous_spacer_thickness_mm": 0.2,
+      "retention": "Seat magnet against integral roof; qualify sidewall adhesive in existing 0.1 mm radial gap; no axial glue layer or loose spacer"
+    },
+    "integrated_base": {
+      "separate_tray_count": 0,
+      "separate_tray_bonds": 0,
+      "former_assembly_gaps_filled": true
+    },
+    "pilot_batch": {
+      "quantity_range": [
+        10,
+        50
+      ],
+      "process": "3D printed pilot",
+      "user_confirmed": true
+    },
+    "cap_retainer_joint": {
+      "boss_radius_mm": 1.6,
+      "boss_top_z_mm": 9.6,
+      "socket_radius_mm": 1.8,
+      "socket_roof_z_mm": 9.8,
+      "nominal_thread_overlap_mm": 4.4,
+      "previous_thread_overlap_mm": 1.4,
+      "physical_qualified": false
     }
   },
   "materialGroups": {
@@ -174,24 +209,11 @@
       {
         "label": "Stationary_Base",
         "first_face": 0,
-        "face_count": 10376,
+        "face_count": 10470,
         "color": [
           0.34,
           0.4,
           0.45
-        ],
-        "finish": "plastic"
-      }
-    ],
-    "Bottom_Tray": [
-      {
-        "label": "Bottom_Tray",
-        "first_face": 0,
-        "face_count": 3110,
-        "color": [
-          0.25,
-          0.3,
-          0.34
         ],
         "finish": "plastic"
       }
@@ -357,7 +379,7 @@
       {
         "label": "Outer_Race_Retainer",
         "first_face": 0,
-        "face_count": 1952,
+        "face_count": 3116,
         "color": [
           0.12,
           0.38,
@@ -392,19 +414,6 @@
         "finish": "steel"
       }
     ],
-    "Encoder_Spacer": [
-      {
-        "label": "Encoder_Spacer",
-        "first_face": 0,
-        "face_count": 384,
-        "color": [
-          0.58,
-          0.6,
-          0.63
-        ],
-        "finish": "nylon"
-      }
-    ],
     "Actuator_Ring": [
       {
         "label": "Actuator_Ring",
@@ -435,7 +444,7 @@
       {
         "label": "Cap_circular",
         "first_face": 0,
-        "face_count": 5844,
+        "face_count": 8174,
         "color": [
           0.12,
           0.47,
@@ -448,7 +457,7 @@
       {
         "label": "Cap_ships_wheel",
         "first_face": 0,
-        "face_count": 6082,
+        "face_count": 8582,
         "color": [
           0.12,
           0.47,
@@ -461,7 +470,7 @@
       {
         "label": "Cap_rounded_triangle",
         "first_face": 0,
-        "face_count": 4450,
+        "face_count": 6954,
         "color": [
           0.12,
           0.47,
@@ -474,7 +483,7 @@
       {
         "label": "Cap_scalloped_coin",
         "first_face": 0,
-        "face_count": 6580,
+        "face_count": 9084,
         "color": [
           0.12,
           0.47,
@@ -487,7 +496,7 @@
       {
         "label": "Cap_petal_flower",
         "first_face": 0,
-        "face_count": 5860,
+        "face_count": 8364,
         "color": [
           0.12,
           0.47,
@@ -500,7 +509,7 @@
       {
         "label": "Cap_four_leaf_clover",
         "first_face": 0,
-        "face_count": 6782,
+        "face_count": 8342,
         "color": [
           0.12,
           0.47,
@@ -513,7 +522,7 @@
       {
         "label": "Cap_rounded_hexagon",
         "first_face": 0,
-        "face_count": 4206,
+        "face_count": 6710,
         "color": [
           0.12,
           0.47,
@@ -526,7 +535,7 @@
       {
         "label": "Cap_rounded_square",
         "first_face": 0,
-        "face_count": 5754,
+        "face_count": 7326,
         "color": [
           0.12,
           0.47,
@@ -539,7 +548,7 @@
       {
         "label": "Cap_wave_rim",
         "first_face": 0,
-        "face_count": 6674,
+        "face_count": 9178,
         "color": [
           0.12,
           0.47,
@@ -552,7 +561,7 @@
       {
         "label": "Cap_turbine_wheel",
         "first_face": 0,
-        "face_count": 5672,
+        "face_count": 7592,
         "color": [
           0.12,
           0.47,
@@ -565,7 +574,7 @@
       {
         "label": "Cap_thumb_scoop",
         "first_face": 0,
-        "face_count": 6816,
+        "face_count": 9320,
         "color": [
           0.12,
           0.47,
@@ -576,66 +585,60 @@
     ]
   },
   "modelSha256": {
-    "Cap_wave_rim.glb": "96bab8b7283407e30dcc3955cac0e25cc205f8213f08491bd21938edd604de0d",
-    "Outer_Race_Retainer.glb": "4f9443a510f47547f9b71f2c20571bbdeae1bb618b97111e7699afdf3cc8a675",
-    "Cap_rounded_hexagon.glb": "4a5b308529c7a69e6a9c248a7422821098aad6d527a5fbe0b07e95666e2bb148",
-    "Cap_rounded_square.glb": "5048a9ebf4188ba47ab9141940e2f3bb8fda58895068f84bdffc0e03e8d97b19",
-    "Cap_scalloped_coin.glb": "b8f69434248e3aa7cf9085c6878297210fdb2f065a12b269e9fb51b4d22f3875",
-    "Cap_petal_flower.glb": "b825abf727e0ec10e8bed423191ec53b2df22cf5110eb1df13852a282bbd5984",
+    "Cap_wave_rim.glb": "a76bb0e6644757eb9e5d596aea3e3f2ce41d7db9ead7af8926c5765a78012d15",
+    "Outer_Race_Retainer.glb": "039bfeb7d05e76994b79e66f21d0b5817e3ad07e3634b0f657b258c90b441d58",
+    "Cap_rounded_hexagon.glb": "49e39577b1b9af5398b0f1ac042fcb6fcbb258ba6f4cfb6ea6a2e0eebaf267d3",
+    "Cap_rounded_square.glb": "340dbfdae20f79e1dc5713603f8a999e92eda9c95374d1259690dfe93b33741b",
+    "Cap_scalloped_coin.glb": "10c6e0c7673217498187e94fc3900967902a2b8b5af5b244678b561f61ef5dbb",
+    "Cap_petal_flower.glb": "ccace1716d7b2c87a3debcdf40857850362901751176009b97757b3d58f885c1",
     "Bearing_Carrier.glb": "8d1b93e4d9b17a00e537d13823cb715671c559edf2b587b3436c2dbc27b8817b",
     "MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960",
-    "Cap_four_leaf_clover.glb": "0cc5b5c3d716d15acd7a493e5bf7b2eba78e9204cca27afb1de9a496c48898ab",
+    "Cap_four_leaf_clover.glb": "9fb7b2dc5e7efb430f6e7e62a6a1b722011bafba3671416a23d4e2112ea9c05a",
     "Cell.glb": "8c196ea9390b97c73a4a1c4bcfa5a65918f8dca04c098c93f3da05244ce667b7",
     "Magnet.glb": "0895b675e4934bae27ad2aebf4479536c4c13940c7167ad2b211583e61da7903",
     "Guide_Fasteners.glb": "79f8bbfde16b7bcd14bfb4af1a4f7d8b0ea63c6fb7d48bc836e4a271747d2914",
     "Bearing_6708.glb": "5a79ed20e66ebd7a9247b21e80587c2752402217ab7aaf2e9794887a6bdbc66e",
-    "Stationary_Base.glb": "ae979622f85d859bae33f421af450f4ee2cce8983bf4a8a29da533220b186e30",
-    "Cap_rounded_triangle.glb": "bbf7e0a59b08413fb14751bd6bbc6cbeba794eae2648d3b59083ab9ce0882b96",
-    "Encoder_Spacer.glb": "e8d25f4dd81d3edfa05a0aa2740c63ca9042cd35beb0bb139ab1a3103f3e3e6a",
+    "Stationary_Base.glb": "5d17cd8af148e2b7d25a24d6b6622fc1dec6432e7f41ef5ecc746fcae668c578",
+    "Cap_rounded_triangle.glb": "4483cef2aa5cf2017c12a629e0d9ce075186fc618fe6157415da2ffb00f9a337",
     "Cap_Retainer_Screws.glb": "80e9de49ea86345d5ebb5aa88d235e634e59789482c1e2d163efd5bc0c3777ee",
-    "Cap_turbine_wheel.glb": "e5a251555c39f105ea7414278ab42098182761db91842887ce172b4b1ce4b5f5",
+    "Cap_turbine_wheel.glb": "ecba755ea5547e9ca240559c8374cf4c7005e642b9881a1bb9e143c6e60128a2",
     "Return_Springs.glb": "af0783d667ba5495a3aec071f71451f284ec4fa3d6b2c3ad53db0e1267d8009b",
-    "Cap_ships_wheel.glb": "272a6d3fda70396465f5cef23666f6c40b5665b60a531baeaf7fb3d86ee49ad0",
-    "Cap_thumb_scoop.glb": "018923d453c9c16754dfde2ab99ca302e1cce04e4a847f5c6c29ec468a319ad9",
+    "Cap_ships_wheel.glb": "92663b241680e850f617441b9bd767485fcc1352c740d3382ac6a1ee285934ad",
+    "Cap_thumb_scoop.glb": "7b09823aca53ecd60ebfa11de45976a3f11f21c41ff1025e60f5416365a41461",
     "Inner_Race_Nut.glb": "f5f1fa1f639883787f7cf2c242f07ef7bc183abad06c2bcd494c173a250e5add",
-    "Cap_circular.glb": "05219f07a59f601ce1eee3869ec2abaabcc1873fee7a91435021b99810ecad72",
-    "Bottom_Tray.glb": "506396e8697cad0423d0034737f2a0c190448739eb36827fc5502a45e4505801",
+    "Cap_circular.glb": "5312561feaab6a2520c69231659e198118c0b500aa60f344572a722ccd14a737",
     "PCB_Fasteners.glb": "fd55fa39e0f667530a5e9d54933243b333c7165470b78797771a9813788054ec",
     "Actuator_Ring.glb": "0f515744c8986cf921666f5eb970ef8cff5886034386b26925b53b43f233a6a9"
   },
   "referenceModelSha256": {
-    "Bottom_Tray.mtl": "26193c42520b986a4b09dc10d624318ec1bf4f3b68a4a8ed7127ec5f6388c53d",
-    "Bottom_Tray.obj": "105cfa8004fc040cd3f12d4f55606ae140668e9ba2ad8320d2bde4b99da1b793",
     "Cap_circular.mtl": "735ab8f4da59be14cfd1e2b30ba1ad86c4e2f653c520057766a629deafe8eb3c",
-    "Cap_circular.obj": "e47c3b250977ecb0f3a537a2e9dabdf63613a593007017828feaeb1cac73c1de",
+    "Cap_circular.obj": "94e1a34e8b238b7a7fd031e99bacd2eb9a820e14501f51c585d2ef6cf48be881",
     "Cap_four_leaf_clover.mtl": "d2bd18d547ff71ad27bd57ad696d3267108ccc80a81ceb3bdea3f4da8e7fcd9d",
-    "Cap_four_leaf_clover.obj": "3b54c459a180339b0a07d45fb7f489aec5475fd700e6435ba45369b3f4018187",
+    "Cap_four_leaf_clover.obj": "e0521563a6fa0c1d1e14cbe56a795229bd825a29274b93c3d7e855527f32407d",
     "Cap_petal_flower.mtl": "e28c6cda24fb5f790aa6fc5d3d048b0fa28dbd862c09c471ce8f3081ecf9cf67",
-    "Cap_petal_flower.obj": "4e42a893d8f633f1d11a4f5e6859be9961fab10b1c2c535b21e19480515224b1",
+    "Cap_petal_flower.obj": "60f620a39cc8b00f4628f3e64c3adfe146de54260c28d3c874d45d2f035c03c4",
     "Cap_rounded_hexagon.mtl": "6a35e829c07497ac743beef494b88fd6781b859d02414ec49b3cf96b0aec7217",
-    "Cap_rounded_hexagon.obj": "9889ea1f2ec67522a29275c500cf3f8d952a9b53347061fe467d1cdd94258b02",
+    "Cap_rounded_hexagon.obj": "15dd79dea7b2131abe8d3904a0c3be540dd6ed8bf13ba0ebe772a9b13723fbd2",
     "Cap_rounded_square.mtl": "688fb42951ea0aa68dbd459b3064bf9b1945139e971d4bb5ba3863825bda514d",
-    "Cap_rounded_square.obj": "d0fb8ddf33c148eb7206c2c80180315d1ddeecf247565106776939c9e864a00d",
+    "Cap_rounded_square.obj": "425ac76f30dcb68992ee9fd445e63390aec0e3f267daac1fc8a1cbe5e06b8ad3",
     "Cap_rounded_triangle.mtl": "450db1c11982a144cf1e1ba20e66bf1d804e16c4e7f01e93a96271afc37ca4bf",
-    "Cap_rounded_triangle.obj": "e06798b37606bebb0d8473be8d6dab3669d4a564d019dacbb5b316a0b1ad6896",
+    "Cap_rounded_triangle.obj": "c9137edb38ad101a9b58ca70e556d7dcff35f735054fda106213f9ac1ad20385",
     "Cap_scalloped_coin.mtl": "7d41fff528f126c74b627445bab5bf5af34e7c976691aed4b143f3733528f940",
-    "Cap_scalloped_coin.obj": "aeb81f11140418f60742476270823c5aadbd83f98da149e4cc290b734e38f3c3",
+    "Cap_scalloped_coin.obj": "8e6980ca6bd2002adbdfbc46f2f0f0d899ed0881a6649ad7b46a92f3adf6bd71",
     "Cap_ships_wheel.mtl": "3db7888f919f4a4348db6f9ac8f7506009ab2733fb25e716d47839f8ac9bf4a2",
-    "Cap_ships_wheel.obj": "355081200e429c749e5ebde01b38dabd299f6959379dd6f6be47a57d923dcd2c",
+    "Cap_ships_wheel.obj": "116bf40b09e7f59953bbe2ef990bd56acc71fa117be72a6a9ff4a1f0115a7ece",
     "Cap_thumb_scoop.mtl": "decfb0fb8550f7b004859c5a5cdc1dd12e6c9928acd9a6d9de3c9153078449de",
-    "Cap_thumb_scoop.obj": "198c561cc8c6d04ce0e801ce90b98c56c794bfdc5ba34ff5b9f6998a3c9a9f2a",
+    "Cap_thumb_scoop.obj": "391d61be308a60439166f3856881d4579923750d252beda90dd5adfa19067462",
     "Cap_turbine_wheel.mtl": "e6dfd06267c3e5fbe9d4686bf82da760ff7030f906214574578a39d9bdd7ca09",
-    "Cap_turbine_wheel.obj": "2ece3abab7f42eb3f1dd2010e225f93bca22085e0b257667500c4953626703ed",
+    "Cap_turbine_wheel.obj": "7a7a1d12d6b54ea10087f3bbac590f92594f9a2427c2e2eaa1d28a027f4a503d",
     "Cap_wave_rim.mtl": "6d6d8e203241951f2285c620675b6a71070e58a86da3799ba2faa407d805d5eb",
-    "Cap_wave_rim.obj": "028ac4aa05aa1daf319de921ca2f79becbf32a96cf5019171581afd9a9653e2a",
+    "Cap_wave_rim.obj": "775e3419eda347ca1551d694764f35315a9a0922e5de9c99c98a050c560ee3a4",
     "Cell.mtl": "88722ece3b779b410ef4f47fa3a474e4bd40204545c55a7016886835a7e77c4e",
     "Cell.obj": "d9eeada78f4afb856125602681305366094f6052d3e62a8300949608e53dd958",
-    "Encoder_Spacer.mtl": "edee3e7b1e3e7b9586f65b5eaffe6ccc36a0e6203ddd03ae660bc53c02a5061c",
-    "Encoder_Spacer.obj": "16b9aad168705db2274b17b436c7cdc13f231caefc47bfd0150d9ea948d09b3e",
     "Magnet.mtl": "4ef01bf49aa7af282c154d159281d5eb585f6c40590821a3ebb9cb6711069035",
     "Magnet.obj": "eb5b1e417f03a70051e90e4e12e23cadbdd693f158ea54e8336b02bf3a044bcc",
     "Stationary_Base.mtl": "8870e36cfea3936b83a7b655a335047c337d76fff599a4feac7eb4576db5ffb1",
-    "Stationary_Base.obj": "de14bd5a442e2d25df4e5d405b60d7585afbd7686c876dd397168371b219b22f",
+    "Stationary_Base.obj": "9290058002ab0c6b99c27cfe3ac3ebc42693e2cf8cf1bd3cb90795bcd4a7b6a1",
     "Outer_Race_Retainer.mtl": "553b47151257d3d2cd75b9c86dec37135b6acd3c963725e05f18c53f29573687",
     "Inner_Race_Nut.obj": "afdb58e38663c82c7d2bd6addfd486b6ed676ced9913def00e545794a36460b1",
     "Guide_Fasteners.mtl": "e29981ee1f65e81a3f05148278fd603443364005a75701e8fbe882fada19182a",
@@ -646,7 +649,7 @@
     "Bearing_6708.obj": "1d3f5628d8365b3a2008e09169d783f6b9bd55f522f9a7a3666ad754d82473c5",
     "PCB_Fasteners.mtl": "cc83a66474d2da88e384f5739c31e0483593d19319b6813ab7be1ee83ccf7179",
     "MagSafe_Ring.mtl": "aad5f130109e2255f5f88575bb51aade564e5c7a441a6bce6ea955aba282332f",
-    "Outer_Race_Retainer.obj": "41f0b0de8f473fbd051d3c10c20263a8abb89a52fff42d8f699dda3f4c1af073",
+    "Outer_Race_Retainer.obj": "4a9b4e52a7ade702f2bfcf4531e0d4dec17b2261879770d8d06fc4b84a832124",
     "Actuator_Ring.mtl": "bab7710d020481c9795cd84f87b0144f00b7677edfb08f8b147f9a3b3d4f7000",
     "Return_Springs.mtl": "1e9e0718091f5f17cdda403c5d914b836fcddab4cbc6d1b680d00bafa0d34e02",
     "Inner_Race_Nut.mtl": "1664146cb35d615f408d73a0df983d4250cfa4d98282a818790baa5a7794f7b4",

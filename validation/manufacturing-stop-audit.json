@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "comparison_commit": "7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84",
+  "integral_stop_z_mm": 12.9,
+  "separate_spacers_removed": 1,
+  "magnet_envelope_mm": [
+    11.4,
+    12.9
+  ],
+  "cap_results": [
+    {
+      "style": "circular",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 127.62172861018541,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    },
+    {
+      "style": "ships_wheel",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 120.88597620360545,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    },
+    {
+      "style": "rounded_triangle",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 129.17186822058375,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    },
+    {
+      "style": "scalloped_coin",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 129.17186822057533,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    },
+    {
+      "style": "petal_flower",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 129.17186822057573,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    },
+    {
+      "style": "four_leaf_clover",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 85.67454156112332,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    },
+    {
+      "style": "rounded_hexagon",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 129.17186822058812,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    },
+    {
+      "style": "rounded_square",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 83.75185569280339,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    },
+    {
+      "style": "wave_rim",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 129.17186822057687,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    },
+    {
+      "style": "turbine_wheel",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 108.30841008212329,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    },
+    {
+      "style": "thumb_scoop",
+      "added_stop_volume_mm3": 4.247433267653387,
+      "removed_socket_volume_mm3": 129.17186822058082,
+      "unexpected_volume_mm3": 0.0,
+      "outer_bounds_unchanged": true
+    }
+  ],
+  "part_counts": {
+    "published_1_0_24": {
+      "handled_parts": 29,
+      "screw_drives": 10
+    },
+    "default_candidate": {
+      "handled_parts": 27,
+      "screw_drives": 10
+    },
+    "two_screw_trial": {
+      "handled_parts": 25,
+      "screw_drives": 8
+    }
+  },
+  "limits": [
+    "Adhesive retention must be qualified without adding an axial glue layer",
+    "Two-screw PCB trial requires deflection, retention and shock tests; default remains four"
+  ],
+  "source_sha256": {
+    "mechanical/build_enclosure.py": "52b76fca95e1e1a15108208187a31f4934d643123c7b19e5c17e8936e786f524",
+    "mechanical/enclosure-parameters.json": "d2856b3320326fb6881f46d73e38e0f15c5202e5e118574c6b94346665dbed53",
+    "mechanical/STEP_Parts/Cap_circular.step": "ce75ee9048bc66267292735ffc2441dd68b91738805521eb672837a1cacb275f",
+    "mechanical/STEP_Parts/Cap_ships_wheel.step": "0081c99615fcf9e83e86836c8300f4c5d85f3e6ea35f39cdfac964b148fc563f",
+    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "aa8c518392204df95b6d413acb14277e209f6db173cad23a3e34d4966be4b56f",
+    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "6eead16aa12f1ecb5cd955f72ad20e514a40ce89a580af83e01a0e82f14f7d36",
+    "mechanical/STEP_Parts/Cap_petal_flower.step": "5000b4b8f81f4473827c155136514434788eb22e2945aa61bfea2f827cc0d0e5",
+    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "ba2b683b6a57991cf1f63f68244b7288050708921ae96b4def8d3579cc427eed",
+    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "61c2877da283d90434d0f17dfeb05ed051f965b1642d29d0ba20c733a6bceac7",
+    "mechanical/STEP_Parts/Cap_rounded_square.step": "6d177b4fa34eda7e2cd8a7ad80bb1c58c680a8c7c800829c75b2bf28665b0353",
+    "mechanical/STEP_Parts/Cap_wave_rim.step": "ed71578cdacd1456e72be4fba56a8130cf074fdd007cbde14f44d8325ec99e40",
+    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "df9b94745e8ae4daa57dd54a49130e7591b69f6805e53721f1f2100d9e6160c7",
+    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "2799442540d40f1297c1c65fdf72f53fae0718bcecb5df7920b6666823b1edf3",
+    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "a48d99aafb2421afb7bb61eb2a3de1eebfd8f8ffe8b3d711d5422ec6e7b14391",
+    "mechanical/STEP_Parts/Stationary_Base.step": "29b6506d769b5a456616f538891fb9ee7700e49182ba36c854acf9be51c129ef"
+  },
+  "integrated_base": {
+    "single_valid_solid": true,
+    "added_interface_volume_mm3": 237.4799142091831,
+    "removed_spring_pocket_intrusion_mm3": 0.9768665201088753,
+    "combined_external_bounds_unchanged": true,
+    "separate_tray_removed": true
+  },
+  "retainer_joint": {
+    "nominal_thread_overlap_mm": 4.4,
+    "previous_mm": 1.4,
+    "boss_to_socket_radial_clearance_mm": 0.2,
+    "boss_to_socket_roof_clearance_mm": 0.2,
+    "added_volume_mm3": 54.28672105403281,
+    "physical_joint_tested": false
+  }
+}

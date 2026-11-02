@@ -6,29 +6,9 @@
       "name": "Stationary_Base",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 3126.24657022571,
+      "volume_mm3": 5816.841191377995,
       "file": "Stationary_Base.stl",
-      "sha256": "478d6833aa3622204aee6eb810a036aac73ac412564936ec86ece70778de2e0f",
-      "bounds_mm": [
-        [
-          -29.0,
-          -29.0,
-          0.7999999999999998
-        ],
-        [
-          29.0,
-          29.0,
-          8.6
-        ]
-      ]
-    },
-    {
-      "name": "Bottom_Tray",
-      "valid": true,
-      "solids": 1,
-      "volume_mm3": 2454.0915734633327,
-      "file": "Bottom_Tray.stl",
-      "sha256": "0820edca0e9587225465ca6e244eafaeaafce4c59b48c51a4deeda761f8f0a7f",
+      "sha256": "44d92f1131031219020b5b1a18f6704b1703496d5c9e3187cf268e631b2a80c4",
       "bounds_mm": [
         [
           -29.0,
@@ -38,7 +18,7 @@
         [
           29.0,
           29.0,
-          3.0
+          8.6
         ]
       ]
     },
@@ -86,9 +66,9 @@
       "name": "Outer_Race_Retainer",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 1094.02822568611,
+      "volume_mm3": 1148.3149467401424,
       "file": "Outer_Race_Retainer.stl",
-      "sha256": "928b781ef381ea123dadb636af5d0f9c2381e00f9dbf3ad11ffa49901d2537f0",
+      "sha256": "eb44efef1ae2eb12531c598871c2a568227507b85c0d9bd837f95c596f72d763",
       "bounds_mm": [
         [
           -28.8,
@@ -98,7 +78,7 @@
         [
           28.8,
           28.8,
-          6.6
+          9.6
         ]
       ]
     },
@@ -106,14 +86,14 @@
       "name": "Cap_circular",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 13052.528429572294,
+      "volume_mm3": 12929.154134230817,
       "file": "Cap_circular.stl",
-      "sha256": "ac71cac8992753f082dacff06a966a03f65bb9fe48f40e8f9517d5d483e26bd8",
+      "sha256": "4cd07cfb070c551092b96c2c2f5147574855e327009f39862e5082b4587e288f",
       "bounds_mm": [
         [
           -30.800000000000004,
           -30.8,
-          6.6
+          6.599999999999996
         ],
         [
           30.8,
@@ -126,14 +106,14 @@
       "name": "Cap_ships_wheel",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11149.031940370702,
+      "volume_mm3": 11032.393397437028,
       "file": "Cap_ships_wheel.stl",
-      "sha256": "fc63a1ae9969b0bac971352cb0669b72c8aba64c41077affb659cb70de3ef36b",
+      "sha256": "f6b43fa52a04e477668de4bb4ee19e5ec836d8e3ac425c857722384e87bb26c0",
       "bounds_mm": [
         [
           -30.8,
           -29.0,
-          6.6
+          6.599999999999996
         ],
         [
           30.8,
@@ -146,14 +126,14 @@
       "name": "Cap_rounded_triangle",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 10681.115228618108,
+      "volume_mm3": 10556.190793666477,
       "file": "Cap_rounded_triangle.stl",
-      "sha256": "c1e8da18c659eb71dd8f1d4830228e89e68f0a0f6f34a713462c43975835ec5a",
+      "sha256": "e697bb65234c0f13baf637babc0eee0805037a857f9ead809aeb389552c50a69",
       "bounds_mm": [
         [
           -28.8,
           -28.8,
-          6.6
+          6.599999999999999
         ],
         [
           30.797094004482368,
@@ -166,14 +146,14 @@
       "name": "Cap_scalloped_coin",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11761.729049971707,
+      "volume_mm3": 11636.804615020083,
       "file": "Cap_scalloped_coin.stl",
-      "sha256": "67f00494b50c493807fb4ecb4156180f5a723f7f6e6b7db538236b84a6637610",
+      "sha256": "75e1e09bfff0592978f48ab96f0eb23562f124f8203c4ee2ef51e56cbd5adba4",
       "bounds_mm": [
         [
           -30.8,
           -30.8,
-          6.6
+          6.599999999999999
         ],
         [
           30.8,
@@ -186,14 +166,14 @@
       "name": "Cap_petal_flower",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11225.50361986695,
+      "volume_mm3": 11100.579184915305,
       "file": "Cap_petal_flower.stl",
-      "sha256": "b84591aa33b44afbf8369fe0a43d2973905d5e1b6198351df1d682d7e752fe43",
+      "sha256": "425ac1d3b5bc6a33577270a94e34dbf0fa1cd2485c3bb67e3d54513e0bdcf7b6",
       "bounds_mm": [
         [
           -30.8,
           -28.8,
-          6.6
+          6.599999999999999
         ],
         [
           30.8,
@@ -206,14 +186,14 @@
       "name": "Cap_four_leaf_clover",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11032.346051836701,
+      "volume_mm3": 10950.918943541736,
       "file": "Cap_four_leaf_clover.stl",
-      "sha256": "07a6960c97f88d06282d67ad85f02e7ade81948473ef7064400929816b592ec9",
+      "sha256": "bfe704d5fed77285aaa3688eb40f3db5031b9f065ec57c189742e0d81c82296b",
       "bounds_mm": [
         [
           -30.8,
           -30.8,
-          6.6
+          6.599999999999999
         ],
         [
           30.8,
@@ -226,14 +206,14 @@
       "name": "Cap_rounded_hexagon",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11082.621357483997,
+      "volume_mm3": 10957.696922532361,
       "file": "Cap_rounded_hexagon.stl",
-      "sha256": "5fb9e0162948754db6dccb6de142c25ce4a56ef357faedfe2309800da9f21578",
+      "sha256": "028960105ab2666091715918383a5cb8487a89e07aaa95b08ff20ec4c3ba18c4",
       "bounds_mm": [
         [
           -30.798601319003673,
           -28.8,
-          6.6
+          6.599999999999999
         ],
         [
           30.798601319003673,
@@ -246,14 +226,14 @@
       "name": "Cap_rounded_square",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 10831.319728594124,
+      "volume_mm3": 10751.81530618776,
       "file": "Cap_rounded_square.stl",
-      "sha256": "af69bf355c03c8bc61331e1552e359f173788f766934b56c6bfe2824469e106d",
+      "sha256": "e495b02b0c128d9ff8a27744ba6e3145d653b9f827069f6b6619ea2ad16f9585",
       "bounds_mm": [
         [
           -30.8,
           -30.8,
-          6.6
+          6.599999999999999
         ],
         [
           30.8,
@@ -266,14 +246,14 @@
       "name": "Cap_wave_rim",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11926.61371338774,
+      "volume_mm3": 11801.689278436124,
       "file": "Cap_wave_rim.stl",
-      "sha256": "a35786e495a1f4e68f341a777ac633d2f1a31b1edc80efdc4c51718fcceab800",
+      "sha256": "22a79c7c2c23fabfd2f8a324195b1a19065aed3c813a4234e8bada831433dfe5",
       "bounds_mm": [
         [
           -30.8,
           -30.8,
-          6.6
+          6.599999999999999
         ],
         [
           30.8,
@@ -286,14 +266,14 @@
       "name": "Cap_turbine_wheel",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 12897.386971867178,
+      "volume_mm3": 12793.32599532268,
       "file": "Cap_turbine_wheel.stl",
-      "sha256": "0e76a3b84d94f7c115624582117d9747cacb0f5831a55db5adc03866bfba6f24",
+      "sha256": "a70f0b8cad7f903f72de0a407afab1d26e74c6dbe6c79e7852bb12c37ab76a5a",
       "bounds_mm": [
         [
           -30.35,
           -30.35,
-          6.6
+          6.599999999999999
         ],
         [
           30.35,
@@ -306,14 +286,14 @@
       "name": "Cap_thumb_scoop",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 12417.272937399599,
+      "volume_mm3": 12292.348502448864,
       "file": "Cap_thumb_scoop.stl",
-      "sha256": "b9cc1b988c9efc2648f957253083c3d644db6239bb0d48fb3d3a542e1034a848",
+      "sha256": "6b6508c20142be586ed876f42d78bc29398e3d2277a82d51236a24ded2dd5b63",
       "bounds_mm": [
         [
           -30.8,
           -29.2,
-          6.6
+          6.599999999999996
         ],
         [
           30.8,

@@ -18,17 +18,19 @@ def record(g,b,node):
  return {'triangles':len(t),'triangle_sha256':hashlib.sha256(ordered.tobytes()).hexdigest(),'translation':node.get('translation',[0,0,0]),'rotation':node.get('rotation',[0,0,0,1]),'scale':node.get('scale',[1,1,1]),'matrix':node.get('matrix')}
 def records(path):
  g,b=load(path);return {n['name']:record(g,b,n) for n in g['nodes'] if n.get('name','').startswith('BEARING_V5_')}
-baseline=root/'validation/display-geometry-baseline.json'
+baseline=root/'validation/manufacturing-geometry-baseline.json'
 if '--capture' in sys.argv:
- d=records(root/'work/model-source-before-compact.glb');baseline.write_text(json.dumps({'source_commit':'5fa112ffc8ffc72a630025258cbf3fa2a7f05daf','models':d},indent=2)+'\n');print('Captured',len(d),'validated display meshes')
+ raise SystemExit('The manufacturing baseline is pinned to published commit 7e34fa6; do not overwrite it from candidate output')
 else:
- expected=json.loads(baseline.read_text())['models'];actual=records(root/'dist/index/3d.glb')
- # The purchased-ring revision intentionally replaces exactly these parts.
- # Keep the original baseline to guard every other triangle and model pose.
+ reference=json.loads(baseline.read_text());assert reference['source_commit']=='7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84'
+ expected=reference['models'];actual=records(root/'dist/index/3d.glb')
+ # Compare against the published 1.0.24 assembly. The only model changes in
+ # the default candidate are the bounded base, cap and retainer changes plus
+ # removal of tray/spacer. Every unaffected triangle and all poses are guarded.
  params=json.loads((root/'mechanical/enclosure-parameters.json').read_text())
- changed={'BEARING_V5_Stationary_Base','BEARING_V5_Bottom_Tray'}
- removed={'BEARING_V5_Attachment_Magnets','BEARING_V5_Backing_Ring'}
- added={'BEARING_V5_MagSafe_Ring'}
+ changed={'BEARING_V5_Cap_circular','BEARING_V5_Stationary_Base','BEARING_V5_Outer_Race_Retainer'}
+ removed={'BEARING_V5_Encoder_Spacer','BEARING_V5_Bottom_Tray'}
+ added=set()
  assert params['attachment_ring']['outside_mm']==54.0
  assert set(actual)==(set(expected)-removed)|added
  for name in set(expected)-changed-removed:assert actual[name]==expected[name],name
@@ -49,5 +51,5 @@ else:
    records=np.sort(t.view('V12').reshape(-1,3),axis=1).copy().view('V36').ravel();records.sort();return hashlib.sha256(records.tobytes()).hexdigest()
   assert digest(np.concatenate(tri))==digest(np.asarray(vv,dtype='<f4')[np.asarray(ff)]),asset_path.name
   source_checks.append(asset_path.stem)
- assert len(source_checks)==26
- (root/'work/display-geometry-audit.json').write_text(json.dumps({'passed':True,'method':'Exact original triangle and pose equality outside the explicitly revised ring seat; all source GLBs equal companion OBJ triangles','intentional_changes':sorted(changed|removed|added),'models':actual,'source_assets_verified_against_OBJ':source_checks},indent=2)+'\n');print('Pass: original meshes/poses preserved outside the ring seat; all 26 GLB assets retain every OBJ triangle')
+ assert len(source_checks)==24
+ (root/'work/display-geometry-audit.json').write_text(json.dumps({'passed':True,'method':'Exact published triangle/pose equality outside the integral magnet stop and consolidated base; all source GLBs equal companion OBJ triangles','intentional_changes':sorted(changed|removed|added),'models':actual,'source_assets_verified_against_OBJ':source_checks},indent=2)+'\n');print('Pass: published meshes/poses preserved outside the integral stop and consolidated base; all 24 GLB assets retain every OBJ triangle')

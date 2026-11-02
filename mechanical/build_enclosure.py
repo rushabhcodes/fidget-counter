@@ -16,10 +16,13 @@ HERE=Path(__file__).resolve().parent; ROOT=HERE.parent
 ap=argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--style',default='all');ap.add_argument('--out',type=Path,default=HERE/'export')
 ap.add_argument('--parameters',type=Path,default=HERE/'enclosure-parameters.json')
+ap.add_argument('--assembly-style',default='all',help='Export all assembly STEP variants, or one style while still checking/exporting every requested cap')
 a=ap.parse_args();P=json.loads(a.parameters.read_text());OUT=a.out.resolve()
 for d in ['STEP','STL','Assemblies','Validation']:(OUT/d).mkdir(parents=True,exist_ok=True)
 styles=P['cap_styles'] if a.style=='all' else [a.style]
 assert all(s in P['cap_styles'] for s in styles)
+assembly_styles=styles if a.assembly_style=='all' else [a.assembly_style]
+assert set(assembly_styles)<=set(styles)
 def disk(r,z,h,x=0,y=0):return cq.Workplane('XY').workplane(offset=z).center(x,y).circle(r).extrude(h).val()
 def ring(ri,ro,z,h):return cq.Workplane('XY').workplane(offset=z).circle(ro).circle(ri).extrude(h).val()
 def box(w,d,z,h,x=0,y=0):return cq.Workplane('XY').box(w,d,h).val().translate((x,y,z+h/2))
@@ -34,9 +37,13 @@ def clear(left,right,label):
 def down(shape,press):return shape.translate((0,0,-press))
 travel=P['button_travel'];pz=P['pcb_bottom'];pt=pz+P['pcb_thickness'];mid=pz+P['pcb_thickness']/2
 B=P['bearing'];bz=B['bottom_z_mm'];bt=bz+B['width_mm'];G=P['press_guide'];S=P['return_springs'];N=P['inner_race_nut'];A=P['actuator']
+J=P['cap_retainer_joint']
+assert [J[k] for k in ['boss_radius_mm','boss_top_z_mm','socket_radius_mm','socket_roof_z_mm','nominal_thread_overlap_mm']]==[1.6,9.6,1.8,9.8,4.4],'Revalidate retainer joint before changing its geometry'
 guides=[polar(G['radius_mm'],a) for a in G['angles_deg']]
 springs_at=[polar(S['radius_mm'],a) for a in S['angles_deg']]
 M=P['pcb_mount'];mounts=[polar(M['radius_mm'],a) for a in M['angles_deg']]
+pcb_screw_indices=M.get('screw_indices',[0,1,2,3])
+assert pcb_screw_indices in [[0,1,2,3],[0,2]],'Only the default or opposite-pair PCB trial is supported'
 assert P['base_diameter']==58 and P['overall_height']<=17.2
 assert abs(G['boss_bottom_z_mm']-travel-G['hard_stop_z_mm'])<1e-7
 assert S['assembled_length_mm']-travel>S['maximum_solid_height_mm']
@@ -62,7 +69,7 @@ for index,(x,y) in enumerate(mounts):
  # They never flex or retain the board; the purchased nylon screws do that.
  if index in [0,2]:post=post.fuse(disk(1.4,pz,.5,x,y))
  post=post.cut(disk(.8,pz-5,5.6,x,y));base=base.fuse(post)
- pcb_fast.append(screw(.98,4,1.9,1.3,nylon=True).translate((x,y,pt)))
+ if index in pcb_screw_indices:pcb_fast.append(screw(.98,4,1.9,1.3,nylon=True).translate((x,y,pt)))
 guide_fast=[]
 for x,y in guides:
  foot=disk(4.,1.4,G['hard_stop_z_mm']-1.4,x,y)
@@ -73,6 +80,15 @@ for x,y in guides:
  guide_fast.extend([washer,screw(1.2,5,G['screw_head_outside_mm']/2,G['screw_head_height_mm']).translate((x,y,z))])
 for x,y in springs_at:
  base=base.cut(disk(1.7,S['seat_z_mm'],3.,x,y)).fuse(disk(2.,.8,S['seat_z_mm']-.8,x,y))
+# Base and tray share a material and have no service separation. Merge them,
+# fill their former assembly clearances, and preserve all functional pockets.
+interface_fill=ring(20.85,28.2,.79,2.36)
+# Preserve the original solid guide feet/posts; clearance belongs only in the
+# added annular filler, not through the structural guide supports.
+for x,y in guides:interface_fill=interface_fill.cut(disk(4.4,1.8,2.3,x,y))
+base=base.fuse(tray,interface_fill)
+base=base.cut(ring(ri-R['radial_clearance_mm'],ro+R['radial_clearance_mm'],.1,seat_z-.1))
+for x,y in springs_at:base=base.cut(disk(1.7,S['seat_z_mm'],3.,x,y))
 base=base.clean()
 print('Building carrier, coarse inner-race nut and outer-race retainer...',flush=True)
 carrier=ring(18.65,B['shaft_diameter_mm']/2,5.,bt-5.)
@@ -102,7 +118,10 @@ bearing,inner,outer,seals,bearing_parts=bearing_6708(bz)
 retainer=ring(B['outer_shoulder_inner_radius_mm'],28.8,bz-1.5,1.5)
 cap_holes=[polar(26.8,a) for a in [0,120,240]];cap_fast=[]
 for x,y in cap_holes:
- retainer=retainer.cut(disk(.8,bz-1.6,1.7,x,y))
+ # Integral upper bosses put 4.4 mm of nominal M2 engagement in the same
+ # envelope. The former 1.5 mm ring alone supplied only 1.4 mm engagement.
+ retainer=retainer.fuse(disk(1.6,bz-.02,3.02,x,y))
+ retainer=retainer.cut(disk(.8,bz-1.6,4.8,x,y))
  # Accessible from the TOP. Bottom-entry screws would be blocked by the base.
  head_bottom=P['overall_height']-1.1
  cap_fast.append(screw(.98,10.9,1.9,1.1,countersunk=True).translate((x,y,head_bottom)))
@@ -113,13 +132,29 @@ hub=ring(B['housing_diameter_mm']/2,28.8,bz,P['cap_deck_bottom']-bz)
 hub=hub.fuse(ring(B['outer_shoulder_inner_radius_mm'],28.8,bt,P['cap_deck_bottom']-bt))
 hub=hub.fuse(disk(26.8,P['cap_deck_bottom'],P['overall_height']-P['cap_deck_bottom']))
 hub=hub.fuse(ring(A['inside_mm']/2,A['outside_mm']/2,pusher_z+A['thickness_mm'],P['cap_deck_bottom']-pusher_z-A['thickness_mm']))
-magnet=detailed_magnet(P['magnet_diameter']/2,P['magnet_bottom'],P['magnet_thickness']);spacer_z=P['magnet_bottom']+P['magnet_thickness'];spacer=disk(2.5,spacer_z,.2)
-hub=hub.fuse(ring(2.6,3.5,P['magnet_bottom']-.1,P['cap_deck_bottom']-P['magnet_bottom']+.1)).fuse(disk(3.5,spacer_z+.2,P['cap_deck_bottom']-spacer_z-.2))
+magnet=detailed_magnet(P['magnet_diameter']/2,P['magnet_bottom'],P['magnet_thickness']);magnet_top=P['magnet_bottom']+P['magnet_thickness']
+assert P['encoder_stop']['mode']=='integral_cap' and abs(P['encoder_stop']['seated_top_z_mm']-magnet_top)<1e-7
+# The cap itself now locates the magnet at the same Z. Remove the separate
+# 0.2 mm spacer and bond only in the existing radial pocket clearance.
+hub=hub.fuse(ring(2.6,3.5,P['magnet_bottom']-.1,P['cap_deck_bottom']-P['magnet_bottom']+.1)).fuse(disk(3.5,magnet_top,P['cap_deck_bottom']-magnet_top))
 for x,y in cap_holes:
  hub=hub.fuse(disk(2.5,bt,P['overall_height']-bt,x,y))
  hub=hub.cut(disk(1.1,bz-.1,P['overall_height']-bz+.2,x,y))
+ hub=hub.cut(disk(1.8,bz-.1,3.3,x,y))
  hub=hub.cut(cq.Solid.makeCone(1.1,2.,1.1,cq.Vector(x,y,P['overall_height']-1.1)))
-hub=hub.clean();caps={s:hub.fuse(make_grip(s,P)).clean() for s in styles}
+hub=hub.clean();caps={}
+for style in styles:
+ cap=hub.fuse(make_grip(style,P))
+ # Apply assembly holes AFTER the exterior grip union. Otherwise that union
+ # fills part of the screw bore, head recess and lower boss sockets again.
+ for x,y in cap_holes:
+  cap=cap.cut(disk(1.1,bz-.1,P['overall_height']-bz+.2,x,y))
+  cap=cap.cut(disk(1.8,bz-.1,3.3,x,y))
+  cap=cap.cut(cq.Solid.makeCone(1.1,2.,1.1,cq.Vector(x,y,P['overall_height']-1.1)))
+ caps[style]=cap.clean()
+ screw_envelope=comp(disk(.98,5.2,10.9,x,y).fuse(cq.Solid.makeCone(.98,1.9,1.1,cq.Vector(x,y,16.1))) for x,y in cap_holes)
+ clear(caps[style],retainer,style+' finished cap/retainer bosses')
+ clear(caps[style],screw_envelope,style+' finished cap/screw envelopes')
 @lru_cache(maxsize=2)
 def springs(press=0):
  spring=compression_spring(S,press)
@@ -145,13 +180,13 @@ for cad in (e for e in circuit if e['type']=='cad_component' and e.get('model_st
 assert len(electronics)==31
 holder=electronics['Electronic_BT1']; sensor=electronics['Electronic_U2']; switch=electronics['Electronic_SW1'];jst=electronics['Electronic_J_DEBUG']
 jst_box=box(8.3,6.1,pt,2.92,0,-13.3)
-physical={'Stationary_Base':base,'Bottom_Tray':tray,'Bearing_Carrier':carrier,'Inner_Race_Nut':nut,'Outer_Race_Retainer':retainer,**{'Cap_'+s:c for s,c in caps.items()}}
+physical={'Stationary_Base':base,'Bearing_Carrier':carrier,'Inner_Race_Nut':nut,'Outer_Race_Retainer':retainer,**{'Cap_'+s:c for s,c in caps.items()}}
 for name,shape in physical.items():assert shape.isValid() and len(shape.Solids())==1,(name,'Invalid/disconnected printed part',len(shape.Solids()))
-stationary={'Stationary_Base':base,'Bottom_Tray':tray,'PCB':pcb,'Holder':holder,'Cell':cell,'Sensor':sensor,'Button':switch,'MagSafe_Ring':attachment,'Guide_Fasteners':comp(guide_fast),'PCB_Fasteners':comp(pcb_fast),'J_DEBUG':jst}
-moving={'Bearing_Carrier':carrier,'Inner_Race_Nut':nut,'Bearing_6708':bearing,'Outer_Race_Retainer':retainer,'Cap_Retainer_Screws':comp(cap_fast),'Magnet':magnet,'Encoder_Spacer':spacer,'Actuator_Ring':actuator}
+stationary={'Stationary_Base':base,'PCB':pcb,'Holder':holder,'Cell':cell,'Sensor':sensor,'Button':switch,'MagSafe_Ring':attachment,'Guide_Fasteners':comp(guide_fast),'PCB_Fasteners':comp(pcb_fast),'J_DEBUG':jst}
+moving={'Bearing_Carrier':carrier,'Inner_Race_Nut':nut,'Bearing_6708':bearing,'Outer_Race_Retainer':retainer,'Cap_Retainer_Screws':comp(cap_fast),'Magnet':magnet,'Actuator_Ring':actuator}
 print('Checking PCB, holder, JST, full-cap pressing and bearing-race separation...',flush=True)
 clear(base,pcb,'PCB seating');clear(base,holder,'holder/base');clear(base,cell,'cell/base')
-clear(tray,base,'ring tray/base');clear(tray,attachment,'ring/seat');clear(base,attachment,'ring/base')
+clear(base,attachment,'ring/integrated base')
 assert abs(attachment.BoundingBox().zmin-ring_z)<1e-6
 assert abs(seat_z-attachment.BoundingBox().zmax-R['bondline_mm'])<1e-6
 press_checks=[]
@@ -166,6 +201,7 @@ for press in [0,travel/2,travel]:
   clear(down(cap,press),jst_box,f'{style}/JST courtyard at {press}')
  press_checks.append({'press_mm':press,'rigid_collisions':0})
 for label,left,right in [('carrier/outer race',carrier,outer),('nut/seals',nut,seals),('cap/inner race',hub,inner),('retainer/inner race',retainer,inner),('carrier/nut thread',carrier,nut),('carrier/cap',carrier,hub),('nut/cap',nut,hub)]:clear(left,right,label)
+clear(retainer,hub,'retainer boss/cap socket');clear(retainer,outer,'retainer boss/bearing')
 assert overlap(down(carrier,travel+.03),base)>.01,'No housing hard stop'
 assert overlap(carrier.translate((0,0,.1)),stationary['Guide_Fasteners'])>.01,'No carrier upward retention'
 print('Checking rotation at 24 angles and three press positions...',flush=True)
@@ -196,11 +232,12 @@ colors={'Stationary_Base':(.34,.4,.45),'Bottom_Tray':(.25,.3,.34),'Bearing_Carri
 meshes=[];seen_meshes=set()
 for style,cap in caps.items():
  for state in ['Released','Pressed','Exploded']:
+  if style not in assembly_styles and state!='Released':continue
   press=travel if state=='Pressed' else 0;assembly=cq.Assembly(name=style+'_'+state)
   values={**{k:v for k,v in stationary.items() if k not in ['Holder','Sensor','Button','J_DEBUG']},**electronics,**moving,'Return_Springs':springs(press),'Cap_'+style:cap}
   for name,shape in values.items():
    z=-press if name in moving or name.startswith('Cap_') else 0
-   if state=='Exploded':z={'MagSafe_Ring':-10,'Bottom_Tray':-4,'Bearing_Carrier':12,'Inner_Race_Nut':36,'Bearing_6708':22,'Outer_Race_Retainer':6,'Cap_'+style:50,'Magnet':45,'Encoder_Spacer':45,'Actuator_Ring':42,'PCB':5,'Guide_Fasteners':8,'PCB_Fasteners':10,'Cap_Retainer_Screws':50}.get(name,5 if name.startswith('Electronic_') else 0)
+   if state=='Exploded':z={'MagSafe_Ring':-10,'Bottom_Tray':-4,'Bearing_Carrier':12,'Inner_Race_Nut':36,'Bearing_6708':22,'Outer_Race_Retainer':6,'Cap_'+style:50,'Magnet':45,'Actuator_Ring':42,'PCB':5,'Guide_Fasteners':8,'PCB_Fasteners':10,'Cap_Retainer_Screws':50}.get(name,5 if name.startswith('Electronic_') else 0)
    posed=shape.translate((0,0,z));color=(.12,.47,.58) if name.startswith('Cap_') else electronic_colors.get(name,colors.get(name,(.58,.6,.63)))
    detailed=bearing_parts if name=='Bearing_6708' else (cell_parts if name=='Cell' else None)
    if detailed:
@@ -218,9 +255,13 @@ for style,cap in caps.items():
      start=len(faces);offset=len(vertices);vertices.extend(vv);faces.extend([[i+offset for i in f] for f in ff])
      groups.append({'label':label,'first_face':start,'face_count':len(ff),'color':part_color,'finish':finish})
     meshes.append({'style':style,'name':name,'nativeElectronic':name.startswith('Electronic_'),'color':color,'vertices':vertices,'faces':faces,'groups':groups});seen_meshes.add(name)
-  assembly.save(str(OUT/'Assemblies'/f'{style}_{state}.step'))
+  if style in assembly_styles:assembly.save(str(OUT/'Assemblies'/f'{style}_{state}.step'))
 report={'status':'Nominal CAD prototype; physical qualification required','physical_tested':False,'parameters':P,'printed_parts':manifest,'press_checks':press_checks,'rotation_checks':rotation,'continuous_rotation_deg':360,'rotation_method':'Axisymmetric structural rotor and exterior grip keepout; sampled angles supplement the envelope','base_diameter_mm':58,'overall_height_mm':P['overall_height'],'height_increase_mm':P['overall_height']-15.2,'pcb_midplane_z_mm':mid,'pcb_screws':4,'flexible_printed_latches':0,'return_springs':3,'cap_retainer_screws':3,'press_travel_mm':travel,'guide_engagement_mm':3.,'guide_radial_clearance_mm':.15,'jst_swept_clearance_mm':jst_gap,'sensor_gap_mm':{'released':1.8,'pressed':1.8-travel},'spring_preload_each_n':(S['free_length_mm']-S['assembled_length_mm'])*S['rate_n_per_mm'],'spring_solid_height_clearance_mm':S['assembled_length_mm']-travel-S['maximum_solid_height_mm'],'actuator_qualified':False,'actuator_note':A['qualification'],'references':{'rotation':'https://ploopyco.github.io/knob/assembly-instructions/','press':'https://www.ifixit.com/Teardown/Microsoft+Surface+Dial+Teardown/74808'},'scope':'Independent geometry for this PCB; electrical layout unchanged','model_detail':{'bearing':'25 balls of diameter 2.381 mm, grooved/chamfered races, stamped cage and non-contact metal shields; representative internals','fasteners':'Helical thread roots and recessed cross drives within existing envelopes','battery':'Rolled can, gasket, negative lid and recessed generic CR2032 marking','electronics':'All 31 fitted supplier STEP models, placed using native model origins and XYZ rotations','spring':'Five active turns plus two close-wound end turns; reference geometry, not a sourced SKU'},'detail_reference_urls':['https://www.astbearings.com/catalog/root/6708','https://iskbearing.com/product-details/6708zz','https://www.leespring.com/learn-about-compression-springs','https://www.duracell.com/wp-content/uploads/2016/04/LI2032US10141.pdf'],'physical_checks_required':['Chosen bearing fits, shoulder lands, seal clearance and corner radii','Spring return, tilt and guide friction','Actuator force, switch overtravel and all-angle closure','Rotation/press/removal endurance','Bearing and fastener influence on Hall sensing, phone attachment and RF','Actual spring/fastener sourcing']}
 report['attachment_ring']={'supplier':R['supplier'],'purchased_assemblies':1,'individual_magnet_pockets':0,'separate_backing_rings':0,'nominal_dimensions_mm':[R['outside_mm'],R['inside_mm'],R['thickness_mm']],'phone_face_setback_mm':ring_z-.2,'radial_clearance_mm':R['radial_clearance_mm'],'bondline_mm':R['bondline_mm'],'roof_thickness_mm':3.-seat_z,'outer_wall_mm':28.05-ro-R['radial_clearance_mm'],'base_roof_mm':3.9-3.15,'tray_base_interference_mm3':overlap(tray,base),'physical_qualified':False,'display_note':'Shallow segment grooves indicate a purchased array; internal segment dimensions and magnetization require the supplier drawing.'}
+report['attachment_ring'].update({'roof_thickness_mm':3.9-seat_z,'tray_base_interference_mm3':None,'separate_trays':0,'separate_tray_bonds':0})
+report['assembly_step_styles']=assembly_styles
+report['finished_cap_retainer_and_screw_clearance_checks']=len(caps)
+report.update({'pcb_screws':len(pcb_fast),'pcb_support_posts':4,'pcb_screw_indices':pcb_screw_indices,'separate_encoder_spacers':0,'encoder_stop_z_mm':magnet_top,'handled_parts_per_unit_excluding_adhesive_and_shims':23+len(pcb_fast),'screw_driving_operations':6+len(pcb_fast),'manufacturing_qualified':False})
 (OUT/'Validation'/'geometry.json').write_text(json.dumps(report,indent=2)+'\n');(OUT/'Validation'/'scene_meshes.json').write_text(json.dumps(meshes))
 if set(styles)==set(P['cap_styles']):
  from sync_checked_exports import sync_checked_exports

@@ -103,5 +103,8 @@
     "ring_source_commit": "203ff90452906d8b40341aa827fd7136377171b4",
     "branch": "codex/bearing-supported-enclosure",
     "includes_purchased_ring_revision": true
-  }
+  },
+  "historical_snapshot": true,
+  "historical_source_commit": "7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84",
+  "superseded_for_local_manufacturing_work_by": "validation/manufacturing-review-status.json"
 }

@@ -449,5 +449,19 @@
     "Raw generated TSX, OBJ and STEP files are unmodified. Wrappers omit library silkscreen and add electrical attributes.",
     "SW1 retains the original 2 N KMR223NG ULC LFG. C221681 contributes shared KMR2 geometry only; its supplier ID is not assigned to SW1.",
     "The importer uses the exact EasyEDA footprint, not an approximate generator match."
+  ],
+  "localCadAdaptations": [
+    {
+      "path": "imports/RFANT3216120A5T/RFANT3216120A5T.tsx",
+      "introduced_commit": "5fa112ffc8ffc72a630025258cbf3fa2a7f05daf",
+      "reason": "Compiler footprint-origin anchor compensation; original supplier file reconstructed and hashed by validation/import-provenance.mjs; native fitted poses remain guarded by compiler semantics baseline",
+      "current_sha256": "8489f287fdb3d052b5fe8617e245211732e94e3dcc16e5a8ef6934e2ec161f2c"
+    },
+    {
+      "path": "imports/X201632MKB4SI/X201632MKB4SI.tsx",
+      "introduced_commit": "5fa112ffc8ffc72a630025258cbf3fa2a7f05daf",
+      "reason": "Compiler footprint-origin anchor compensation; original supplier file reconstructed and hashed by validation/import-provenance.mjs; native fitted poses remain guarded by compiler semantics baseline",
+      "current_sha256": "f0558fb79ade1f5a4ffc94483c4d6f460ba6b69a1ebf5ca9fe6da2b83d59864f"
+    }
   ]
 }

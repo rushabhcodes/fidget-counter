@@ -110,27 +110,22 @@
   "minimum_supplier_step_clearance_mm": 2.6889999000000007,
   "service": "Remove top cap screws, cap, inner nut and bearing; unscrew/lift PCB for side-entry access. Disconnect cable before refitting.",
   "sha256": {
-    "dist/index/circuit.json": "77b18057037f6be7e57600bb0c335aabd7c86de4e43da97f083bf0a8db8ba818",
-    "dist/index/3d.glb": "24f758eaffc584f89de24c6a19c44e4f39362c57893a0eff960eda8c7e9e2867",
+    "dist/index/circuit.json": "6323d3ebe994695dfd14e76577d88ac96df8b5581e8d2871863a1f4d2837c694",
+    "dist/index/3d.glb": "c11ff09a8ce438df38c512494730a8b14c1b6089ba8ed8c114e9343c483056ef",
     "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6",
-    "mechanical/STEP_Parts/Stationary_Base.step": "bdba2dd79835167abc042445139a0d464ad045d9df6233a06a5bcb8cdfe4f548",
-    "mechanical/enclosure-parameters.json": "fb20427906f8dc230a3d722f24bc2f2acd148c8bdcd67b59e84df44531410f8b",
+    "mechanical/STEP_Parts/Stationary_Base.step": "29b6506d769b5a456616f538891fb9ee7700e49182ba36c854acf9be51c129ef",
+    "mechanical/enclosure-parameters.json": "d2856b3320326fb6881f46d73e38e0f15c5202e5e118574c6b94346665dbed53",
     "validation/check-jst-fit.py": "365018ca0a4cb04e13433ff31d588eea23771f409e2ee9f477d623a84373390e",
-    "mechanical/STEP_Parts/Cap_circular.step": "c7b1bb991596bf9128cc0993f53e788ae2769c6837cbc61d40a993ae136257b6",
-    "mechanical/STEP_Parts/Cap_ships_wheel.step": "13282fd2e67b511d1103a624de03122d7be59341270d900d7cf15cbf330b18f4",
-    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "3cb6bccdad249b797a7bfd9d2e349d758294ff7341c0ff49a5f291ee463c1cf2",
-    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "5f75933c8370e5a6b9d55b3eab7fe88d0aa37a7b01a572b4f41da9c6920ab171",
-    "mechanical/STEP_Parts/Cap_petal_flower.step": "bc6b1aa470907fb655cc3bdba6cf23824c183caed46ba361b27002a4ee27aa87",
-    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "288f76be27efe30b0fea6bfd1506df610beb7992e4a2ed5a42d521ed79530d49",
-    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "098f1828ac9becc57e093c61203efe80d2851ee01f6717a440bd1e46460d9cf8",
-    "mechanical/STEP_Parts/Cap_rounded_square.step": "71ab1c1d081830a6ae7779341c9b513236335a971b06c15db4e0e24d16cc2fc2",
-    "mechanical/STEP_Parts/Cap_wave_rim.step": "77d06d42795b0f80a01b09dffeaac102a3363cf157fec19d8ac1a623e0c5c030",
-    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "6d703d8288f568c9087f2aadb5fdfd8ed0e18ff2b7c999a9164fc0b3d61d3629",
-    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "ce95e155ba33d8023f8415edf8879f76337f7ce06c8bd2ed62b4b1d31abfea96"
-  },
-  "publication_revalidation": {
-    "version": "1.0.24",
-    "proof": "validation/publication-input-parity.json",
-    "geometry_unchanged": true
+    "mechanical/STEP_Parts/Cap_circular.step": "ce75ee9048bc66267292735ffc2441dd68b91738805521eb672837a1cacb275f",
+    "mechanical/STEP_Parts/Cap_ships_wheel.step": "0081c99615fcf9e83e86836c8300f4c5d85f3e6ea35f39cdfac964b148fc563f",
+    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "aa8c518392204df95b6d413acb14277e209f6db173cad23a3e34d4966be4b56f",
+    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "6eead16aa12f1ecb5cd955f72ad20e514a40ce89a580af83e01a0e82f14f7d36",
+    "mechanical/STEP_Parts/Cap_petal_flower.step": "5000b4b8f81f4473827c155136514434788eb22e2945aa61bfea2f827cc0d0e5",
+    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "ba2b683b6a57991cf1f63f68244b7288050708921ae96b4def8d3579cc427eed",
+    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "61c2877da283d90434d0f17dfeb05ed051f965b1642d29d0ba20c733a6bceac7",
+    "mechanical/STEP_Parts/Cap_rounded_square.step": "6d177b4fa34eda7e2cd8a7ad80bb1c58c680a8c7c800829c75b2bf28665b0353",
+    "mechanical/STEP_Parts/Cap_wave_rim.step": "ed71578cdacd1456e72be4fba56a8130cf074fdd007cbde14f44d8325ec99e40",
+    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "df9b94745e8ae4daa57dd54a49130e7591b69f6805e53721f1f2100d9e6160c7",
+    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "2799442540d40f1297c1c65fdf72f53fae0718bcecb5df7920b6666823b1edf3"
   }
 }

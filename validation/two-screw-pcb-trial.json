@@ -1,0 +1,23 @@
+{
+  "nominal_CAD_passed": true,
+  "production_approved": false,
+  "physical_tested": false,
+  "pcb_screws": 2,
+  "support_posts": 4,
+  "screw_indices": [
+    0,
+    2
+  ],
+  "handled_parts": 25,
+  "screw_drives": 8,
+  "rotation_checks": 72,
+  "stroke_mm": 0.8,
+  "required": [
+    "Board deflection with off-center switch load",
+    "Cell and holder retention under shock",
+    "Repeated battery service and thread durability"
+  ],
+  "parameters_sha256": "113c71c4eebbd9ae472abd43bcfd5841d7c649ebbdbac248bd3319830ece8ce8",
+  "build_geometry_sha256": "36115968292d631c62c2ad8937c3c8c697be0c7cb91ef8d80e6407257908fd8b",
+  "finished_cap_screw_and_boss_clearances_checked": true
+}

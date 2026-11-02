@@ -1,7 +1,7 @@
 {
   "passed": true,
   "physical_tested": false,
-  "source_reference_commit": "157a36b62ba084e0a812fcc93dbe21a016904da8",
+  "source_reference_commit": "7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84",
   "purchased_ring_assemblies": 1,
   "individual_magnet_pockets": 0,
   "separate_backing_rings": 0,
@@ -17,15 +17,9 @@
   "radial_clearance_mm": 0.15,
   "bondline_mm": 0.1,
   "face_setback_mm": 0.2,
-  "roof_mm": 0.6000000000000001,
+  "roof_mm": 1.5,
   "outer_wall_mm": 0.9000000000000007,
   "changed_printed_files": [
-    "Bottom_Tray.stl",
-    "Stationary_Base.stl"
-  ],
-  "unchanged_printed_files": [
-    "Actuator_Ring_REFERENCE_ONLY.stl",
-    "Bearing_Carrier.stl",
     "Cap_circular.stl",
     "Cap_four_leaf_clover.stl",
     "Cap_petal_flower.stl",
@@ -37,8 +31,13 @@
     "Cap_thumb_scoop.stl",
     "Cap_turbine_wheel.stl",
     "Cap_wave_rim.stl",
-    "Inner_Race_Nut.stl",
-    "Outer_Race_Retainer.stl"
+    "Outer_Race_Retainer.stl",
+    "Stationary_Base.stl"
+  ],
+  "unchanged_printed_files": [
+    "Actuator_Ring_REFERENCE_ONLY.stl",
+    "Bearing_Carrier.stl",
+    "Inner_Race_Nut.stl"
   ],
   "envelope_mm": {
     "diameter": 58,
@@ -46,14 +45,13 @@
     "press": 0.8
   },
   "sha256": {
-    "mechanical/enclosure-parameters.json": "fb20427906f8dc230a3d722f24bc2f2acd148c8bdcd67b59e84df44531410f8b",
-    "mechanical/STEP_Parts/Stationary_Base.step": "bdba2dd79835167abc042445139a0d464ad045d9df6233a06a5bcb8cdfe4f548",
-    "mechanical/STEP_Parts/Bottom_Tray.step": "b37d57ffe61bf43c5caa8e514a5d68be512d6f685ad0390047ddd84b4a945b36",
+    "mechanical/enclosure-parameters.json": "d2856b3320326fb6881f46d73e38e0f15c5202e5e118574c6b94346665dbed53",
+    "mechanical/STEP_Parts/Stationary_Base.step": "29b6506d769b5a456616f538891fb9ee7700e49182ba36c854acf9be51c129ef",
     "mechanical/Circuit_Models/MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960"
   },
   "unqualified": [
     "Supplier sample dimensions and working-face polarity",
-    "Adhesive peel/shear retention and tray bond",
+    "Ring adhesive peel/shear retention and printed roof strength",
     "Hall error, RF and phone/case compatibility"
   ],
   "fitted_electronic_components_checked": 31,
@@ -61,195 +59,195 @@
     {
       "component": "Electronic_U1",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_BT1",
       "minimum_z_mm": 2.790000000000001,
-      "tray_vertical_gap_mm": -0.20999999999999908,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C4",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C9",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C15",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C5",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C7",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C8",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C10",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C16",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C18",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_J_DEBUG",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_R4",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_U2",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C6",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_R1",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_R2",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_R3",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_SW1",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_R5",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C17",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_X1",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C1",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C2",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_X2",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C11",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C12",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_L1",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_L2",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C3",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_ANT1",
       "minimum_z_mm": 9.1,
-      "tray_vertical_gap_mm": 6.1,
+      "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Cell",
       "minimum_z_mm": 3.4,
-      "tray_vertical_gap_mm": 0.3999999999999999,
+      "checked_envelope": "Proven enclosing CR2032 cylinder",
       "rigid_intersections": 0
     }
   ],
-  "source_scene_sha256": "c52b1705bf86f56097dc3251ef26f34395547269ea254f576e9b285d3c41ed5a"
+  "source_scene_sha256": "3a0de015cc7ad40c27bc42fbae45d63f3b5d2c8fe2e750dde56f69092d2dd7d2"
 }

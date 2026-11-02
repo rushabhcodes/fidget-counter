@@ -1,11 +1,12 @@
 import {readFileSync, writeFileSync, mkdirSync} from "node:fs"
 import {createHash} from "node:crypto"
+import {verifyImportedFile} from './import-provenance.mjs'
 
 const hash = path => createHash("sha256").update(readFileSync(path)).digest("hex")
 const provenance = JSON.parse(readFileSync("validation/jlc-imports.json"))
-for (const part of provenance.parts) for (const file of part.files) {
-  if (hash(file.path) !== file.sha256) throw new Error(`Imported file changed: ${file.path}`)
-}
+const adaptations=[]
+for (const part of provenance.parts) for (const file of part.files)
+  if (verifyImportedFile(file,readFileSync(file.path))!=='original') adaptations.push(file.path)
 for (const path of ["parts.tsx", "passives.tsx", "index.circuit.tsx"]) {
   if (/<footprint\b/.test(readFileSync(path, "utf8"))) throw new Error(`Hand-authored footprint in ${path}`)
 }
@@ -28,7 +29,7 @@ for (const component of fitted) {
 if (fitted.length !== 31) throw new Error(`Expected 31 fitted parts, got ${fitted.length}`)
 mkdirSync("work", {recursive:true})
 writeFileSync("work/import-model-audit.json", JSON.stringify({importedLibraryTypes:provenance.parts.length,
-  originalImportedFiles:provenance.parts.reduce((n,p) => n + p.files.length,0), fittedParts:fitted.length,
+  originalImportedFiles:provenance.parts.reduce((n,p) => n + p.files.length,0), compilerAnchorCompensations:adaptations, fittedParts:fitted.length,
   exactJlcpcbParts:30, sharedGeometrySwitch:"KMR223NG ULC LFG uses the KMR232NGULCLFS package model; original 2 N MPN retained",
   builtGlbMeshCount:gltf.meshes.length, circuitSha256:hash("dist/index/circuit.json"), glbSha256:hash("dist/index/3d.glb")}, null, 2) + "\n")
 console.log("Pass: original JLC imports, supplier identifiers and all 31 fitted model nodes")
