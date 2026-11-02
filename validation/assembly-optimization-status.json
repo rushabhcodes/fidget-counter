@@ -1,0 +1,268 @@
+{
+  "checked_utc": "2026-11-02T20:25:55.088973+00:00",
+  "scope": "Local V7 standard-bearing/fewer-screws CAD optimization; larger-cell assessment",
+  "comparison_commit": "0397495f30583bb6a4501f5fb0f67bccf0f397aa",
+  "branch": "codex/bearing-supported-enclosure",
+  "physical_tested": false,
+  "manufacturing_qualified": false,
+  "counts": {
+    "rigid_parts_per_unit": 4,
+    "all_product_meshes": 14,
+    "tooling_halves": 2,
+    "fit_coupons": 4,
+    "handled_parts_per_unit_excluding_adhesive_and_shims": 14,
+    "screw_drives": 5,
+    "pcb_screws": 2,
+    "cap_screws": 3,
+    "fitted_electronics": 28
+  },
+  "geometry": {
+    "base_diameter_mm": 58,
+    "top_z_mm": 17.2,
+    "contact_to_top_height_mm": 17.0,
+    "bearing_designation": "6808-ZZ / 61808-2Z",
+    "bearing_mm": [
+      40,
+      52,
+      7
+    ],
+    "bearing_z_mm": [
+      6.1,
+      13.1
+    ],
+    "nut_z_mm": [
+      13.1,
+      15.6
+    ],
+    "cap_deck_bottom_mm": 15.9,
+    "cap_screw_pitch_radius_mm": 27.8,
+    "jst_clearance_mm": 3.879999999999999,
+    "encoder_sensor_gap_mm": 1.8,
+    "pcb_and_encoder_poses_preserved": true,
+    "source_STEP_roundtrip_max_boolean_difference_mm3": 0.0
+  },
+  "battery": {
+    "retained": "3V primary CR2032 20x3.2mm",
+    "reference_nominal_capacity_mah": 225,
+    "larger_candidate": "CR2450 24.5x5mm 620mAh nominal",
+    "decision": "No examined holder is a drop-in replacement; keep current cell rather than alter PCB routing/supports",
+    "details": "mechanical/BATTERY_AND_ASSEMBLY_REVIEW.md",
+    "runtime_measured": false
+  },
+  "checks": {
+    "reproducible-install": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/reproducible-install.log"
+    },
+    "typescript": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/typescript.log"
+    },
+    "routing-guards": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/routing-guards.log"
+    },
+    "import-negative-tests": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/import-negative-tests.log"
+    },
+    "model-export": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/model-export.log"
+    },
+    "bounded-cad": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/bounded-cad.log"
+    },
+    "fixture": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/fixture.log"
+    },
+    "coupons": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/coupons.log"
+    },
+    "actual-slicer": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/actual-slicer.log"
+    },
+    "wall-sections": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/wall-sections.log"
+    },
+    "toolpath-render": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/toolpath-render.log"
+    },
+    "cad-renders": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/cad-renders.log"
+    },
+    "model-detail": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/model-detail.log"
+    },
+    "display-triangle-parity": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/display-triangle-parity.log"
+    },
+    "attachment-ring": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/attachment-ring.log"
+    },
+    "pcb-holes": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/pcb-holes.log"
+    },
+    "jst-clearance": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/jst-clearance.log"
+    },
+    "all-electronics-clearance": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/all-electronics-clearance.log"
+    },
+    "source-build": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/source-build.log"
+    },
+    "electrical-preservation": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/electrical-preservation.log"
+    },
+    "snapshot-build": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/snapshot-build.log"
+    },
+    "import-provenance": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/import-provenance.log"
+    },
+    "programming-interface": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/programming-interface.log"
+    },
+    "all-cap-selectors-and-native-alignment": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/all-cap-selectors-and-native-alignment.log"
+    },
+    "site-build": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/site-build.log"
+    },
+    "cloud-prepare": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/cloud-prepare.log"
+    },
+    "cloud-restore-negative-tests": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/cloud-restore-negative-tests.log"
+    },
+    "cad-build": {
+      "status": "passed",
+      "evidence": "validation/assembly-optimization-checks/cad-build.log"
+    },
+    "circuit-netlist": {
+      "status": "passed",
+      "command": "tsci check netlist index.circuit.tsx",
+      "evidence": "validation/assembly-optimization-checks/circuit-netlist.log"
+    },
+    "circuit-pin_specification": {
+      "status": "passed",
+      "command": "tsci check pin_specification index.circuit.tsx",
+      "evidence": "validation/assembly-optimization-checks/circuit-pin_specification.log"
+    },
+    "circuit-placement": {
+      "status": "passed",
+      "command": "tsci check placement index.circuit.tsx",
+      "evidence": "validation/assembly-optimization-checks/circuit-placement.log"
+    },
+    "circuit-shorts": {
+      "status": "passed",
+      "command": "tsci check shorts index.circuit.tsx",
+      "evidence": "validation/assembly-optimization-checks/circuit-shorts.log"
+    },
+    "circuit-source": {
+      "status": "passed",
+      "command": "tsci check source index.circuit.tsx",
+      "evidence": "validation/assembly-optimization-checks/circuit-source.log"
+    },
+    "circuit-schematic-placement": {
+      "status": "passed",
+      "command": "tsci check schematic-placement index.circuit.tsx",
+      "evidence": "validation/assembly-optimization-checks/circuit-schematic-placement.log"
+    }
+  },
+  "actual_slicer_executed": true,
+  "actual_slicer_parts": 16,
+  "slicer_print_warnings": 0,
+  "wall_sections_checked": 20,
+  "visually_inspected": [
+    "previews/bearing-layout.png",
+    "previews/bearing-detail.png",
+    "previews/assembly-nest.png",
+    "previews/print-slice-inspection.png"
+  ],
+  "resolved_issues": [
+    "Cached Boolean triangulation could create open cap display/print meshes; both now tessellate the distributed STEP solid",
+    "STEP volume integration differs slightly despite zero Boolean shape difference; roundtrip checks geometry/bounds as well as volume",
+    "Lowered bearing left insufficient space for original jig fingers; three shallow outer retainer saddles preserve1mm fingers and0.2mm base-roof clearance",
+    "Empty Boolean differences are no longer passed into subsequent CAD subtraction operations; material-difference safeguards remain active"
+  ],
+  "known_advisories": [
+    "Two retained trace-style advisories in source build",
+    "Retained schematic VBAT decoupler grouping advice"
+  ],
+  "unrun_physical": [
+    "Actual printer/nozzle/PETG coupon fit and support removal",
+    "Two-screw PCB retention/deflection/shock/service life",
+    "Bearing fits/drag/wobble/retention and magnetic effects",
+    "Printed thread torque/pull-out/endurance",
+    "Ring and encoder adhesive/phone attachment qualification",
+    "Populated Hall/BLE test and firmware/runtime measurement",
+    "Measured assembly timing"
+  ],
+  "publication": {
+    "updated_design_published": false,
+    "latest_hosted_release": "1.0.25",
+    "latest_hosted_scope": "Preceding6708/seven-screw rotation-only pilot",
+    "git_push_performed": false,
+    "tsci_push_performed": false
+  },
+  "source_sha256": {
+    "package.json": "3923dc51cc293c6900884da643b9fb8fd0c01f0141df656483353305cd6f0394",
+    "bun.lock": "1d9a35aa4691c033b443bab61862a467ae4123a4c183fdba5bee0fe7774b3e7c",
+    "index.circuit.tsx": "e83b0f948857b7c1d55b48d1cb3de691f7348ae05165333ea601bcb633ca90c0",
+    "enclosure.tsx": "9808f1e035facce56bd48f7af6d063e4a8190f68fcea09a2ae5bd84df343149b",
+    "parts.tsx": "5e8f71d9cb8e102dcf62316e73d5d14cd225b63b12f4a0fc0459437144947ba0",
+    "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
+    "routing-contract.json": "a2ce9667837bbabce0b81959ea1426978023b6e0b9d2dea059e750f90b4578f9",
+    "routed-paths.json": "adc9dbd702e1184accbce928fcd6edf5b86f7bfd4bbb14a739c2ae1826be20d5",
+    "published.circuit.json": "cba73dbde6089d84d0578fca3e40f8feff739864416dca9fcb0c76c6a884b567",
+    "BOM.csv": "06a2ddb90ffc014742b94350aeeec8c0e76688dada33178b558a6459b0617db9",
+    "mechanical/build_enclosure.py": "110f6821efa6341ebdd40ec67cc96241547d824df6e7f9721c9646cc9ff9c24e",
+    "mechanical/hardware_models.py": "cda7c92a022c721a71ca1d37467451093906c85cbfeb408cc6d2a8c2b8f72c5b",
+    "mechanical/grip_profiles.py": "5f8747fd384f8aeefea1154a976a8787c0918e5d9b425c653ca2ce932da83a25",
+    "mechanical/enclosure-parameters.json": "e5da8cfa16869ac991ac20ce3fa1c2cf085a5b4175a2df89542d705df4b7fde7",
+    "mechanical/Circuit_Models/manifest.json": "eeaed1779721dad1abb43a22771ebe6d0fe2f8e4511b408d67d699d3a16913a1",
+    "mechanical/print-ready-manifest.json": "75436de31e388e6e1956a64bcf28d04ee49d742e7a30e2b419d87cb37e10adc5",
+    "mechanical/BATTERY_AND_ASSEMBLY_REVIEW.md": "483b4a13f6b414c1af620adffa9238a09489fa605f56363626aa2415dc3d7790",
+    "mechanical/MANUFACTURING_REVIEW.md": "aa67dcfc55befa230efa3559df1061c89805e6b876973fa6b865033b4b52c42a",
+    "validation/check-assembly-optimization.py": "34e47fc991c5a5b4fd347e18e6aad55bf5d9a783a777e624db188d0a1b0e5473",
+    "validation/rotation-only-cad-audit.json": "60932605142d9b77a53455db709ef6de9897b15caef80503b72b2a10e4b84678",
+    "validation/rotation-only-circuit-audit.json": "ff6845f19185067017a7badae5594ca3d8ff2ce94afc7f16c5e1f05abf26912e",
+    "validation/print-readiness.json": "c181cadd22d1684c5f252233558556904e3f5eed7a1bdf5cd6654bcf34fa48a8",
+    "validation/print-wall-sections.json": "f71f96b082c3afec83b0f906b1cba2cb21fcf3edaea732546a1ff4f24d52b664",
+    "cloud-assets/manifest.json": "c959e53c04a6cffe85d5f2a745a2d3209d22b3f8473cdeef1c1879e61464b65d",
+    "previews/bearing-layout.png": "1d20b0d1ba8ab991e3fd39a9afad78dedf00ab640681e7bbf170017774086b3c",
+    "previews/bearing-detail.png": "11dfdb2d2aba854fc5b3d488f7feeee80bb14af8a31f917a2f0c025dd2b4ac45",
+    "previews/assembly-nest.png": "9ee9326b97e6d21c688aeb81f72d946071df8c40c662facb8cb7f5b2d7d86817",
+    "previews/print-slice-inspection.png": "0f1c01fc33c1065bf475569fdc4aad4f0c70c4e17773f6eadb71c522888a15a0"
+  },
+  "output_sha256": {
+    "dist/index/circuit.json": "cba73dbde6089d84d0578fca3e40f8feff739864416dca9fcb0c76c6a884b567",
+    "dist/index/3d.glb": "775cc8c75e517d3d7ef3f379ce16f7bef00d427a0e1740fb7657bf8c9f36c77f",
+    "dist/published/circuit.json": "cba73dbde6089d84d0578fca3e40f8feff739864416dca9fcb0c76c6a884b567",
+    "dist/published/3d.glb": "775cc8c75e517d3d7ef3f379ce16f7bef00d427a0e1740fb7657bf8c9f36c77f"
+  }
+}

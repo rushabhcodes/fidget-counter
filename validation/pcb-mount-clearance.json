@@ -21,7 +21,7 @@
     ]
   ],
   "nominal_edge_web_mm": 1.5500000000000007,
-  "pcb_screws": 4,
+  "pcb_screws": 2,
   "native_glb_holes": [
     {
       "center_mm": [
@@ -99,15 +99,10 @@
     }
   ],
   "sha256": {
-    "dist/index/circuit.json": "b68f86c6875265fe41219c43221f8e227e96a01acf72b149badf8acf1c5e77c0",
-    "dist/index/3d.glb": "4db86363eb044665f8767555d1ba9ddbdfbe776c836d816357e9ddfdd348d7f3",
-    "dist/published/circuit.json": "b68f86c6875265fe41219c43221f8e227e96a01acf72b149badf8acf1c5e77c0",
-    "dist/published/3d.glb": "4db86363eb044665f8767555d1ba9ddbdfbe776c836d816357e9ddfdd348d7f3",
-    "mechanical/STEP_Parts/Stationary_Base.step": "52ec63da800ce8e4878655a322a307767c88e0bd4d892fb8fcb2e74197169dd6"
-  },
-  "publication_revalidation": {
-    "version": "1.0.25",
-    "proof": "validation/publication-input-parity.json",
-    "geometry_unchanged": true
+    "dist/index/circuit.json": "cba73dbde6089d84d0578fca3e40f8feff739864416dca9fcb0c76c6a884b567",
+    "dist/index/3d.glb": "775cc8c75e517d3d7ef3f379ce16f7bef00d427a0e1740fb7657bf8c9f36c77f",
+    "dist/published/circuit.json": "cba73dbde6089d84d0578fca3e40f8feff739864416dca9fcb0c76c6a884b567",
+    "dist/published/3d.glb": "775cc8c75e517d3d7ef3f379ce16f7bef00d427a0e1740fb7657bf8c9f36c77f",
+    "mechanical/STEP_Parts/Stationary_Base.step": "685d55c90b99e0384ffb4f1d663f1bb45a573afcab399579f41044ab77a7ffae"
   }
 }

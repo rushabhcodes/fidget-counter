@@ -34,7 +34,7 @@ def probe(shape,points,label):
 for style in P['cap_styles']:
  shape=cq.importers.importStep(str(ROOT/'mechanical/STEP_Parts'/('Cap_'+style+'.step'))).val()
  for angle in [0,120,240]:
-  x,y=polar(26.8,angle)
+  x,y=polar(P['cap_retainer_joint']['screw_pitch_radius_mm'],angle)
   for z,start in [(6.9,1.805),(8.,1.805),(9.7,1.805),(17.199,2.005)]:
    points=[]
    for direction in [-45,0,45]:
@@ -45,7 +45,7 @@ for style in P['cap_styles']:
 nut=cq.importers.importStep(str(ROOT/'mechanical/STEP_Parts/Inner_Race_Nut.step')).val()
 for angle in [0,90,180,270]:
  points=[]
- for z in [13.8,14.2,14.9]:
+ for z in [14.3,14.7,15.4]:
   points.extend((*polar(r,angle),z) for r in np.linspace(20.01,20.99,12))
  probe(nut,points,'Nut wall below tool notch is thinner than1mm')
 critical.append({'part':'Inner_Race_Nut','wall_beneath_tool_notches_mm':1.0,'thread_clearance_mm':.15,'pitch_mm':1.2,'print_notch_bridge_width_mm':3.0})

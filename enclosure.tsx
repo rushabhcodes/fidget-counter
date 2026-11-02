@@ -5,7 +5,7 @@ import obj1 from "./mechanical/Circuit_Models/Cell.glb"
 import obj2 from "./mechanical/Circuit_Models/MagSafe_Ring.glb"
 import obj3 from "./mechanical/Circuit_Models/PCB_Fasteners.glb"
 import obj4 from "./mechanical/Circuit_Models/Inner_Race_Nut.glb"
-import obj5 from "./mechanical/Circuit_Models/Bearing_6708.glb"
+import obj5 from "./mechanical/Circuit_Models/Bearing_6808.glb"
 import obj6 from "./mechanical/Circuit_Models/Outer_Race_Retainer.glb"
 import obj7 from "./mechanical/Circuit_Models/Cap_Retainer_Screws.glb"
 import obj8 from "./mechanical/Circuit_Models/Magnet.glb"
@@ -29,7 +29,7 @@ const models = [
   {name:"MagSafe_Ring",obj:obj2,mtl:"./mechanical/Circuit_Models/MagSafe_Ring.mtl",style:null},
   {name:"PCB_Fasteners",obj:obj3,mtl:"./mechanical/Circuit_Models/PCB_Fasteners.mtl",style:null},
   {name:"Inner_Race_Nut",obj:obj4,mtl:"./mechanical/Circuit_Models/Inner_Race_Nut.mtl",style:null},
-  {name:"Bearing_6708",obj:obj5,mtl:"./mechanical/Circuit_Models/Bearing_6708.mtl",style:null},
+  {name:"Bearing_6808",obj:obj5,mtl:"./mechanical/Circuit_Models/Bearing_6808.mtl",style:null},
   {name:"Outer_Race_Retainer",obj:obj6,mtl:"./mechanical/Circuit_Models/Outer_Race_Retainer.mtl",style:null},
   {name:"Cap_Retainer_Screws",obj:obj7,mtl:"./mechanical/Circuit_Models/Cap_Retainer_Screws.mtl",style:null},
   {name:"Magnet",obj:obj8,mtl:"./mechanical/Circuit_Models/Magnet.mtl",style:null},

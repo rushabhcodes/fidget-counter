@@ -49,7 +49,7 @@
     "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
     "routing-contract.json": "a2ce9667837bbabce0b81959ea1426978023b6e0b9d2dea059e750f90b4578f9",
     "routed-paths.json": "adc9dbd702e1184accbce928fcd6edf5b86f7bfd4bbb14a739c2ae1826be20d5",
-    "dist/index/circuit.json": "b68f86c6875265fe41219c43221f8e227e96a01acf72b149badf8acf1c5e77c0",
-    "published.circuit.json": "b68f86c6875265fe41219c43221f8e227e96a01acf72b149badf8acf1c5e77c0"
+    "dist/index/circuit.json": "cba73dbde6089d84d0578fca3e40f8feff739864416dca9fcb0c76c6a884b567",
+    "published.circuit.json": "cba73dbde6089d84d0578fca3e40f8feff739864416dca9fcb0c76c6a884b567"
   }
 }

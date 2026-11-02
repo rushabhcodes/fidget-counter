@@ -3,9 +3,9 @@ Stationary_Base,1,Rotation-only PETG Ø58 mm,Integral fixed bearing shaft and3so
 Inner_Race_Nut,1,Rotation-only PETG coarse thread,Clamp inner race only; confirm thread coupon fit
 Outer_Race_Retainer,1,Rotation-only PETG,Three integral bosses; nominal M2 overlap4.4 mm; qualify torque/pull-out; clamp outer race only
 Selected Cap_*.stl,1,Rotation-only PETG,Common bearing drum plus selected exterior grip
-Thin-section ball bearing,1,6708 / 61708 nominal ID40 OD50 W6 mm,Verify supplier drawing and sample; inspect shoulder/seal clearances and magnetic/RF effects
+Thin-section ball bearing,1,6808-ZZ / 61808-2Z nominal ID40 OD52 W7 mm,Verify supplier drawing and sample; inspect shoulder/seal clearances and magnetic/RF effects
 Cap retainer screws,3,M2 x12 mm countersunk head OD3.8 mm maximum,Flush TOP entry; nominal4.4 mm overlap in bossed retainer; qualify actual screw lead and tightening torque
-PCB screws,4,M2 x4 mm nylon head OD3.8 height1.3 mm maximum,No conductive washer; original four Ø3 mm PCB holes retained
+PCB screws,2,M2 x4 mm nylon head OD3.8 height1.3 mm maximum,No conductive washer; original four Ø3 mm PCB holes retained
 Encoder magnet,1 per cap,Diametrically magnetized Ø5 x1.5 mm,Seat against integral cap roof at Z12.9; qualify sidewall adhesive without axial bondline; measure bearing influence
 MagSafe ring assembly,1,N52 OD54 ID45.8 thickness1.9 mm nominal,MagnetPrint Hub kit; replace 24 discs and old backing ring; working face toward phone; sample qualification required
 Ring adhesive,As required,Nominal ring bondline0.10 mm,One integrated base seat; qualify compatibility and peel/shear load; no tray joint

@@ -14,7 +14,7 @@ parts={p['name']:p for p in report['parts']}
 # Exact audit paths must keep support below the bearing fit and male thread.
 name='Stationary_Base';p=parts[name]
 assert p['support_segments']>0 and p['maximum_support_z_mm']<5.2
-(ROOT/'validation/print-support-clearance.json').write_text(json.dumps({'passed':True,'physical_tested':False,'method':'Actual G-code support heights vs fixed shaft/thread fit region','maximum_base_support_z_mm':p['maximum_support_z_mm'],'bearing_fit_starts_above_bed_mm':6.4,'thread_starts_above_bed_mm':12.4,'limits':['Support cleanup and actual extrusion width remain physical checks']},indent=2)+'\n')
+(ROOT/'validation/print-support-clearance.json').write_text(json.dumps({'passed':True,'physical_tested':False,'method':'Actual G-code support heights vs fixed shaft/thread fit region','maximum_base_support_z_mm':p['maximum_support_z_mm'],'bearing_fit_starts_above_bed_mm':5.9,'thread_starts_above_bed_mm':12.9,'limits':['Support cleanup and actual extrusion width remain physical checks']},indent=2)+'\n')
 
 fig,axes=plt.subplots(3,3,figsize=(18,15),layout='constrained')
 cases=[('Stationary_Base',.2,'Base first layer'),('Stationary_Base',2.3,'Base supported roof'),('Stationary_Base',4.85,'Integrated bearing shoulder'),('Inner_Race_Nut',1.7,'Nut notch roof'),('Outer_Race_Retainer',1.7,'Retainer bosses'),('Cap_circular',4.7,'Default cap bearing housing'),('Cap_four_leaf_clover',1.85,'Noncircular cap supported rim'),('Cap_thumb_scoop',9.05,'Thumb cap supported interior'),('Nest_Left',12.2,'Fixture support finger')]
@@ -30,7 +30,7 @@ for ax,(name,target,title) in zip(axes.flat,cases):
   segments=[[[r[0],r[1]],[r[2],r[3]]] for r in selected]
   if segments:ax.add_collection(LineCollection(segments,colors=colors[category],linewidths=.65 if category=='support' else .8,alpha=.7 if category=='support' else 1))
  ax.autoscale();ax.set_aspect('equal');ax.set_title(f'{title}\nmodel Z{layer:.2f} mm; support projected from Z{support_z:.2f}' if support_z>=0 else f'{title}\nmodel Z{layer:.2f} mm; no lower support')
- if name=='Nest_Left':ax.set_xlim(110,120);ax.set_ylim(132,143)
+ if name=='Nest_Left':ax.margins(.15)  # Follow actual finger paths after fixture orientation changes.
  ax.set_xlabel('X / mm');ax.set_ylabel('Y / mm');ax.grid(alpha=.12)
 fig.suptitle('Actual PrusaSlicer 2.8.1 paths | teal: model, orange: lower support, red: bridge-labelled infill\nGeneric 0.4 mm PETG audit; re-slice for actual printer. Supported bridge labels do not mean a free unsupported span.',fontsize=13)
 dest=ROOT/'previews/print-slice-inspection.png';fig.savefig(dest,dpi=160);print(dest)

@@ -65,10 +65,10 @@ def check_glb(file):
 
 reports=check_glb(root/"dist/index/3d.glb")
 published_reports=check_glb(root/"dist/published/3d.glb")
-assert audit['pcb_screws']==4 and audit['flexible_printed_latches']==0
+assert audit['pcb_screws']==2 and audit['flexible_printed_latches']==0
 result={'passed':True,'physical_tested':False,'base_to_actual_pcb_intersection_mm3':intersection,
     'mount_centers_mm':mount_centers,'nominal_edge_web_mm':p['pcb_diameter']/2-p['pcb_mount']['radius_mm']-p['pcb_mount']['hole_diameter_mm']/2,
-    'pcb_screws':4,'native_glb_holes':reports,'published_glb_holes':published_reports,
+    'pcb_screws':2,'native_glb_holes':reports,'published_glb_holes':published_reports,
     'sha256':{str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in [root/'dist/index/circuit.json',root/'dist/index/3d.glb',root/'dist/published/circuit.json',root/'dist/published/3d.glb',root/'mechanical/STEP_Parts/Stationary_Base.step']}}
 (root/'validation/pcb-mount-clearance.json').write_text(json.dumps(result,indent=2)+'\n')
-print('Pass: base has no intersection with real PCB material; all four native mounting holes are open in both GLB faces; four nylon PCB screws')
+print('Pass: base has no intersection with real PCB material; all four native mounting holes are open in both GLB faces; two opposite nylon PCB screws on four posts')

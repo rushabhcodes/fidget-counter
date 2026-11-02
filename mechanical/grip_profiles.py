@@ -58,11 +58,11 @@ def make_grip(style, parameters):
         shape=shape.cut(disk(skirt_inner,P['cap_edge_bottom']-.1,deck-P['cap_edge_bottom']+.1))
         shape=shape.intersect(disk(radius,P['cap_edge_bottom'],top-P['cap_edge_bottom']))
         if style=='thumb_scoop':
-            # Three 0.6 mm deep spherical dishes, in the upper grip surface.
+            # Three shallow spherical dishes (depth from parameters), in the upper grip surface.
             for angle in [60,180,300]:
-                t=math.radians(angle); sphere=cq.Solid.makeSphere(50,cq.Vector(22*math.cos(t),22*math.sin(t),top+49.4),angleDegrees1=-90,angleDegrees2=90)
+                t=math.radians(angle); sphere=cq.Solid.makeSphere(50,cq.Vector(22*math.cos(t),22*math.sin(t),top+50-P.get('thumb_dish_depth_mm',.6)),angleDegrees1=-90,angleDegrees2=90)
                 shape=shape.cut(sphere)
-    # A common keep-out clears the stationary guide and snap clips during rotation
-    # and the full press stroke, for every interchangeable shape.
+    # A common radial keep-out clears the stationary support during rotation
+    # for every interchangeable shape.
     shape=shape.cut(disk(skirt_inner,P['cap_edge_bottom']-.1,deck-P['cap_edge_bottom']+.1))
     return shape.clean()

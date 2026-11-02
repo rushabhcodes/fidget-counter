@@ -4,7 +4,7 @@
   "coupons": [
     {
       "file": "Bearing_Housing_Coupon.stl",
-      "sha256": "37e26eadbe15c7a00cfe455506dbe8c4e7d4e8d55a5da340b076ace9f0754065"
+      "sha256": "7781db826bc5647035be705b0d90f38719ecf56656a8ab6e4baf1a4f80db42bd"
     },
     {
       "file": "Bearing_Shaft_Coupon.stl",
@@ -16,7 +16,7 @@
     },
     {
       "file": "Inner_Race_Nut.stl",
-      "sha256": "b9003739fdec434517107b17d55854f753aa0f75cfb8f8ce8fdf0ebff95b67d0"
+      "sha256": "74301e3a59b75794bcd0de7a1dda534c85941434f7bf75e1bb06b24b5d5cf63f"
     }
   ]
 }

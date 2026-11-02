@@ -34,6 +34,22 @@ def bearing_6708(z):
  parts=[('Inner race',inner,STEEL,'steel'),('Outer race',outer,STEEL,'steel'),('25 balls',compound(balls),CHROME,'polished'),('Stamped cage',cage,BRASS,'steel'),('ZZ shields',shields,SHIELD,'steel')]
  return compound(p[1] for p in parts),inner,outer,shields,parts
 
+def bearing_6808(z):
+ # AST6808 reference:21balls of3.5mm,40x52x7 envelope,0.3mm corners.
+ # Raceways, cage and ZZ shields are illustrative; verify the chosen brand.
+ mid=z+3.5;groove=cq.Solid.makeTorus(23.,1.77,cq.Vector(0,0,mid))
+ inner=chamfer(ring(20,21.95,z,7),.3).cut(groove).clean()
+ outer=chamfer(ring(24.05,26,z,7),.3).cut(groove)
+ outer=outer.cut(ring(24.,25.73,z+.18,.33)).cut(ring(24.,25.73,z+6.49,.33)).clean()
+ balls=[cq.Solid.makeSphere(1.75,cq.Vector(23*math.cos(i*2*math.pi/21),23*math.sin(i*2*math.pi/21),mid),angleDegrees1=-90) for i in range(21)]
+ cage=compound([ring(21.98,24.02,mid-1.77,.18),ring(21.98,24.02,mid+1.59,.18)])
+ for i in range(21):cage=cage.cut(cq.Solid.makeSphere(1.79,cq.Vector(23*math.cos(i*2*math.pi/21),23*math.sin(i*2*math.pi/21),mid),angleDegrees1=-90))
+ rivets=[disk(.18,mid-1.59,3.18).translate((23*math.cos((i+.5)*2*math.pi/21),23*math.sin((i+.5)*2*math.pi/21),0)) for i in range(21)]
+ cage=compound([cage,*rivets])
+ shields=compound([ring(22.10,25.70,z+.22,.15).fuse(ring(25.35,25.70,z+.20,.28)).clean(),ring(22.10,25.70,z+6.63,.15).fuse(ring(25.35,25.70,z+6.52,.28)).clean()])
+ parts=[('Inner race',inner,STEEL,'steel'),('Outer race',outer,STEEL,'steel'),('21 balls',compound(balls),CHROME,'polished'),('Stamped cage',cage,BRASS,'steel'),('ZZ shields',shields,SHIELD,'steel')]
+ return compound(p[1] for p in parts),inner,outer,shields,parts
+
 @lru_cache(maxsize=8)
 def screw(radius,length,head_radius,head_height,countersunk=False,nylon=False):
  """Screw at origin, underside of head Z0, stem downward, envelope unchanged."""

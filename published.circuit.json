@@ -2909,7 +2909,7 @@
     "type": "source_component",
     "source_component_id": "source_component_38",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Bearing_6708"
+    "name": "BEARING_V5_Bearing_6808"
   },
   {
     "type": "source_component",
@@ -21108,7 +21108,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_33",
-    "model_glb_url": "./mechanical/Circuit_Models/Bearing_6708.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Bearing_6808.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -41661,6 +41661,6 @@
   },
   {
     "type": "source_project_metadata",
-    "source_filesystem_md5_hash": "56b13ffa881b1b673478b7f739cbe453"
+    "source_filesystem_md5_hash": "c110b47695410d7e3513f0ec76112d61"
   }
 ]

@@ -12,7 +12,11 @@ def check(shape,points,label):
 def tube(x,y,radii,zs):return [(x+r*math.cos(math.radians(a)),y+r*math.sin(math.radians(a)),z) for r in radii for z in zs for a in range(0,360,45)]
 results=[]
 retainer=load('Outer_Race_Retainer')
-for angle in [0,120,240]:results.append(check(retainer,tube(*polar(26.8,angle),[.81,1.2,1.59],[7.,8.8]),f'Retainer pilot wall0.8mm at{angle}deg'))
+for angle in [0,120,240]:results.append(check(retainer,tube(*polar(P['cap_retainer_joint']['screw_pitch_radius_mm'],angle),[.81,1.2,1.59],[7.,8.8]),f'Retainer pilot wall0.8mm at{angle}deg'))
+for angle in P['cap_retainer_joint']['fixture_angles_deg']:
+ x,y=polar(28.4,angle);dx,dy=polar(1,angle+90)
+ points=[(x+dx*t,y+dy*t,z) for t in [-1.29,0,1.29] for z in [5.105,5.6,6.095]]
+ results.append(check(retainer,points,f'Retainer fixture saddle roof1mm at{angle}deg'))
 base=load('Stationary_Base');assert len(base.Shells())==1,'Enclosed cavities remain'
 for angle in P['fixed_bearing_support']['angles_deg']:
  x,y=polar(16.5,angle)
@@ -25,7 +29,7 @@ for i,angle in enumerate(P['pcb_mount']['angles_deg']):
  if i in [0,2]:results.append(check(base,tube(x,y,[.81,1.1,1.39],[8.3]),f'Non-retaining locator wall0.6mm at{angle}deg'))
 paths=[ROOT/'mechanical/export/Tooling'/(name+'.step') for name in ['Nest_Left','Nest_Right']]
 nest=cq.Compound.makeCompound([cq.importers.importStep(str(path)).val() for path in paths])
-for angle in [0,120,240]:
+for angle in P['cap_retainer_joint']['fixture_angles_deg']:
  x,y=polar(28.4,angle);dx,dy=polar(1,angle+90)
  points=[(x+dx*offset,y+dy*offset,z) for offset in [-1.29,0,1.29] for z in [4.105,4.6,5.095]]
  results.append(check(nest,points,f'Fixture finger1mm thick2.6mm wide at{angle}deg'))

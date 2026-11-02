@@ -17,7 +17,7 @@
   "totalAssets": 20,
   "pcbMidplaneZMm": 8.6,
   "sourceParameters": {
-    "design": "V6 rotation-only printed pilot: integral fixed bearing support",
+    "design": "V7 rotation-only printed pilot: standard 6808 bearing and two PCB screws",
     "cap_style": "all",
     "cap_styles": [
       "circular",
@@ -36,7 +36,7 @@
     "base_diameter": 58.0,
     "cap_max_diameter": 61.6,
     "overall_height": 17.2,
-    "cap_deck_bottom": 15.5,
+    "cap_deck_bottom": 15.9,
     "cap_edge_bottom": 9.2,
     "grip_height": 8.0,
     "cap_skirt_inner_radius": 26.8,
@@ -48,14 +48,14 @@
     "magnet_bottom": 11.4,
     "magnet_pocket_diameter": 5.2,
     "material": "PETG for four rigid printed parts; purchased metal bearing",
-    "service": "Remove three cap screws, lift cap while leaving outer retainer below bearing; unscrew inner nut and lift bearing before removing PCB screws",
-    "publication": "Rotation-only local candidate after 1.0.24; physically unqualified",
+    "service": "Remove three cap screws, lift cap while leaving outer retainer below bearing; unscrew inner nut and lift bearing before removing two PCB screws",
+    "publication": "Local assembly optimization after verified 1.0.25; physically unqualified",
     "hub_cover_thickness": 1.7,
     "cap_style_change": "Undo three countersunk screws to transfer the common bearing assembly to another cap",
     "encoder_magnet_per_top_module": 1,
     "cap_mount_hardware_count": 3,
     "magnet_installation": "One diametric diameter5 x1.5 mm disc seated against the integral cap stop at Z12.9; qualify sidewall adhesive after polarity/field checks",
-    "pcb_retention": "Four M2 nylon screws on solid posts; no flexible printed latches",
+    "pcb_retention": "Two opposite M2 nylon screws on four solid posts; two rigid locating collars; physical retention qualification required",
     "pcb_mount": {
       "radius_mm": 15.2,
       "angles_deg": [
@@ -76,30 +76,28 @@
       "release_displacement_mm": 0,
       "screw_indices": [
         0,
-        1,
-        2,
-        3
+        2
       ]
     },
     "bearing": {
-      "designation": "6708-2Z / 61708-2Z",
+      "designation": "6808-ZZ / 61808-2Z",
       "bore_mm": 40.0,
-      "outside_mm": 50.0,
-      "width_mm": 6.0,
-      "bottom_z_mm": 6.6,
+      "outside_mm": 52.0,
+      "width_mm": 7.0,
+      "bottom_z_mm": 6.1,
       "shaft_diameter_mm": 39.7,
-      "housing_diameter_mm": 50.2,
+      "housing_diameter_mm": 52.2,
       "inner_shoulder_outer_radius_mm": 20.65,
-      "outer_shoulder_inner_radius_mm": 24.4,
-      "reference": "https://www.skf.com/group/products/rolling-bearings/ball-bearings/deep-groove-ball-bearings/productid-61708",
+      "outer_shoulder_inner_radius_mm": 25.0,
+      "reference": "https://www.astbearings.com/catalog/root/6808",
       "note": "Nominal purchased bearing envelope. Confirm race shoulder lands, corner radii, actual fits and magnetic influence with the chosen supplier/sample."
     },
     "inner_race_nut": {
       "pitch_mm": 1.2,
       "thread_depth_mm": 0.35,
       "thread_clearance_mm": 0.15,
-      "bottom_z_mm": 12.6,
-      "top_z_mm": 15.1,
+      "bottom_z_mm": 13.1,
+      "top_z_mm": 15.6,
       "bore_radius_mm": 18.2,
       "thread_root_radius_mm": 19.5,
       "outer_radius_mm": 21.6,
@@ -148,7 +146,16 @@
       "nominal_thread_overlap_mm": 4.4,
       "previous_thread_overlap_mm": 1.4,
       "physical_qualified": false,
-      "cap_reinforcement_radius_mm": 3.0
+      "cap_reinforcement_radius_mm": 3.0,
+      "screw_pitch_radius_mm": 27.8,
+      "fixture_support_z_mm": 5.1,
+      "fixture_notch_width_mm": 3.0,
+      "fixture_notch_radial_start_mm": 28.0,
+      "fixture_angles_deg": [
+        60,
+        180,
+        300
+      ]
     },
     "print_process": {
       "material": "PETG",
@@ -173,7 +180,8 @@
       "web_bottom_z_mm": 1.4,
       "web_head_bottom_z_mm": 3.0,
       "note": "Three rigid overlapping webs join bearing shaft to the base; no sliding joints, press travel or return parts."
-    }
+    },
+    "thumb_dish_depth_mm": 0.4
   },
   "materialGroups": {
     "Stationary_Base": [
@@ -241,7 +249,7 @@
       {
         "label": "PCB_Fasteners",
         "first_face": 0,
-        "face_count": 45360,
+        "face_count": 22680,
         "color": [
           0.58,
           0.6,
@@ -263,11 +271,11 @@
         "finish": "plastic"
       }
     ],
-    "Bearing_6708": [
+    "Bearing_6808": [
       {
         "label": "Inner race",
         "first_face": 0,
-        "face_count": 6596,
+        "face_count": 7372,
         "color": [
           0.66,
           0.69,
@@ -277,8 +285,8 @@
       },
       {
         "label": "Outer race",
-        "first_face": 6596,
-        "face_count": 11396,
+        "first_face": 7372,
+        "face_count": 12910,
         "color": [
           0.66,
           0.69,
@@ -287,9 +295,9 @@
         "finish": "steel"
       },
       {
-        "label": "25 balls",
-        "first_face": 17992,
-        "face_count": 120550,
+        "label": "21 balls",
+        "first_face": 20282,
+        "face_count": 101262,
         "color": [
           0.78,
           0.8,
@@ -299,8 +307,8 @@
       },
       {
         "label": "Stamped cage",
-        "first_face": 138542,
-        "face_count": 63302,
+        "first_face": 121544,
+        "face_count": 44056,
         "color": [
           0.62,
           0.47,
@@ -310,7 +318,7 @@
       },
       {
         "label": "ZZ shields",
-        "first_face": 201844,
+        "first_face": 165600,
         "face_count": 3104,
         "color": [
           0.52,
@@ -324,7 +332,7 @@
       {
         "label": "Outer_Race_Retainer",
         "first_face": 0,
-        "face_count": 3116,
+        "face_count": 3192,
         "color": [
           0.12,
           0.38,
@@ -363,7 +371,7 @@
       {
         "label": "Cap_circular",
         "first_face": 0,
-        "face_count": 8094,
+        "face_count": 8170,
         "color": [
           0.12,
           0.47,
@@ -376,7 +384,7 @@
       {
         "label": "Cap_ships_wheel",
         "first_face": 0,
-        "face_count": 8472,
+        "face_count": 7972,
         "color": [
           0.12,
           0.47,
@@ -389,7 +397,7 @@
       {
         "label": "Cap_rounded_triangle",
         "first_face": 0,
-        "face_count": 6876,
+        "face_count": 6946,
         "color": [
           0.12,
           0.47,
@@ -402,7 +410,7 @@
       {
         "label": "Cap_scalloped_coin",
         "first_face": 0,
-        "face_count": 9018,
+        "face_count": 9082,
         "color": [
           0.12,
           0.47,
@@ -415,7 +423,7 @@
       {
         "label": "Cap_petal_flower",
         "first_face": 0,
-        "face_count": 8286,
+        "face_count": 8362,
         "color": [
           0.12,
           0.47,
@@ -428,7 +436,7 @@
       {
         "label": "Cap_four_leaf_clover",
         "first_face": 0,
-        "face_count": 8012,
+        "face_count": 8108,
         "color": [
           0.12,
           0.47,
@@ -441,7 +449,7 @@
       {
         "label": "Cap_rounded_hexagon",
         "first_face": 0,
-        "face_count": 6636,
+        "face_count": 6706,
         "color": [
           0.12,
           0.47,
@@ -454,7 +462,7 @@
       {
         "label": "Cap_rounded_square",
         "first_face": 0,
-        "face_count": 7020,
+        "face_count": 7060,
         "color": [
           0.12,
           0.47,
@@ -467,7 +475,7 @@
       {
         "label": "Cap_wave_rim",
         "first_face": 0,
-        "face_count": 8880,
+        "face_count": 8972,
         "color": [
           0.12,
           0.47,
@@ -480,7 +488,7 @@
       {
         "label": "Cap_turbine_wheel",
         "first_face": 0,
-        "face_count": 7524,
+        "face_count": 7548,
         "color": [
           0.12,
           0.47,
@@ -504,67 +512,67 @@
     ]
   },
   "modelSha256": {
-    "Cap_wave_rim.glb": "28c16f689a417f1eb96db7066129f636cb04b11d52f267cf8885ebc57e83e865",
-    "Outer_Race_Retainer.glb": "039bfeb7d05e76994b79e66f21d0b5817e3ad07e3634b0f657b258c90b441d58",
-    "Cap_rounded_hexagon.glb": "6e503eb6be503a00e616067315fb3a2f700084f11ced7124fb2e548411fa762d",
-    "Cap_rounded_square.glb": "92237b7ff77b9bdb796f4066219213a981b1285de7ac828741229404274d833e",
-    "Cap_scalloped_coin.glb": "2a8e97c889f222b657087d8ff7b33593fe2b1b898700140a24ec61772ef03446",
-    "Cap_petal_flower.glb": "a8821bb6991dbe87bb8b813dcbe564b6476303b0d388c47b35d0171ce9214b11",
+    "Cap_wave_rim.glb": "767bfbc29d7996a92c5dc994367539b487d39727d64d1ccb731664a17598f018",
+    "Outer_Race_Retainer.glb": "334d2dc70551efdf444ec5166784ca9dff48da780de47f53cc671366cd72987a",
+    "Cap_rounded_hexagon.glb": "ce05e28947ee1dc8cf272a8c0bb56b3d5a51f2392e5b3f9890eb9ab3c62bb05c",
+    "Cap_rounded_square.glb": "254ee07eca2839383188979e388a560c7464f5dc602b8b28ece0538e49d865f8",
+    "Cap_scalloped_coin.glb": "9b9d4041a12ec13996833cc1524b78dbfcd19a36e040d7b75f7ad18d6741d068",
+    "Cap_petal_flower.glb": "a95e7b72686cff49452a75ce5b6fba7150be8c952e7535071cd016b045f4f786",
     "MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960",
-    "Cap_four_leaf_clover.glb": "41f1686acf86f11d6e5c484e1b9f80641a50fd0b940c27eb25e1901390738641",
+    "Cap_four_leaf_clover.glb": "de0aa7358fa8304cb6b26be4bd1520c7c5542955c661953f1696a4884fee97ca",
     "Cell.glb": "8c196ea9390b97c73a4a1c4bcfa5a65918f8dca04c098c93f3da05244ce667b7",
     "Magnet.glb": "0895b675e4934bae27ad2aebf4479536c4c13940c7167ad2b211583e61da7903",
-    "Bearing_6708.glb": "5a79ed20e66ebd7a9247b21e80587c2752402217ab7aaf2e9794887a6bdbc66e",
-    "Stationary_Base.glb": "c83c8a55dac47bf814f4b5419cb706b7ce01217d88eaefb10fdc76c9a22dc19b",
-    "Cap_rounded_triangle.glb": "e23942fb58d33930739054f84dbd1f6321c2321ae7ee29d14a17f95ddbaca428",
-    "Cap_Retainer_Screws.glb": "80e9de49ea86345d5ebb5aa88d235e634e59789482c1e2d163efd5bc0c3777ee",
-    "Cap_turbine_wheel.glb": "ffc192b544fd1779eabe0bbf7ea2d25d7a359f838a6d7db655f9d6fd3d77d59f",
-    "Cap_ships_wheel.glb": "284858f6915e08e2901d550d4e34893dbd6ba331b890c44dc69421c0c8d26bdb",
-    "Cap_thumb_scoop.glb": "03ec654800191b32fb7a04bd6cbbd1855c6ad0fb88d066b0d533a1a97420d88b",
-    "Inner_Race_Nut.glb": "2651a3edb11c6e735b25055951530c23dc6a13e015136fefede1382dea60c141",
-    "Cap_circular.glb": "ad9f91f828892eef2fb68bf081f2b67cf53b6f2f1711398122397ffe4d6e4355",
-    "PCB_Fasteners.glb": "fd55fa39e0f667530a5e9d54933243b333c7165470b78797771a9813788054ec"
+    "Stationary_Base.glb": "bdbc8e3ccf0d84bb6cb56f7f61a9150b6b18ccb5ef7c49330073de52de848d3c",
+    "Cap_rounded_triangle.glb": "7f845fb28ae59604f08de9254bbc82efd3514ff26b9ca0e3572651c9a44b55c3",
+    "Cap_Retainer_Screws.glb": "cfb636aa893fa1497305b8c9fcdaf597634d1aaaadfb8b1162a4ddfae3b99e4f",
+    "Cap_turbine_wheel.glb": "0279857127b1cbac76c8c5a37c20718f044b7118974d45dfe47a65a2cc518c98",
+    "Cap_ships_wheel.glb": "3f76b91a54d0b9594014ea710c145bd07d41160fa9a62d4433fff806774d8d73",
+    "Cap_thumb_scoop.glb": "d0a09a1227508ee34c5b07ba00177a1da37e70e916536d16aa7cf9108ae23c72",
+    "Inner_Race_Nut.glb": "0d2d1b2d9b17b1de1d3c5745e1b49ef9b65f40cbb445232e951b638c7a990214",
+    "Cap_circular.glb": "7d8e422797a844a5126250742d4826bc07d3f2ea018a819c1d37e0679c53d000",
+    "Bearing_6808.glb": "736f7320e89405017e1a93bb8a8065e15775cf010ce6fa581f8374bafe4fd73c",
+    "PCB_Fasteners.glb": "c7f6d177b3d020dfee02b966ea5849e66142acfa7524b2c6cd2186cea6a6ed94"
   },
   "referenceModelSha256": {
     "Cap_circular.mtl": "735ab8f4da59be14cfd1e2b30ba1ad86c4e2f653c520057766a629deafe8eb3c",
-    "Cap_circular.obj": "11421c9f28e671c4de8ac7dc922a6ebf68d6274ad53a5ae16426c75aae0ad397",
+    "Cap_circular.obj": "76b80a991e1edd438db5965cc20260b6d3505224b15d64ccaa3613183d29fcf3",
     "Cap_four_leaf_clover.mtl": "d2bd18d547ff71ad27bd57ad696d3267108ccc80a81ceb3bdea3f4da8e7fcd9d",
-    "Cap_four_leaf_clover.obj": "4d6798c4e15d35df2fe4c4fe143d78a1c13c38f12a4d1e54772849faa6f77dbc",
+    "Cap_four_leaf_clover.obj": "bc6a3c59e6ac557e14a2e77382f8efe1b06e780132752b2761757d50e3b595b7",
     "Cap_petal_flower.mtl": "e28c6cda24fb5f790aa6fc5d3d048b0fa28dbd862c09c471ce8f3081ecf9cf67",
-    "Cap_petal_flower.obj": "561f8e74f5cb3e75b9d1a4f3c996f2cd887b58e6162ec854329b900b57d79739",
+    "Cap_petal_flower.obj": "29b3fe5ab4360119555414fc65d3a057e388ca4d94c5b4e073821ea7d3f9bc2e",
     "Cap_rounded_hexagon.mtl": "6a35e829c07497ac743beef494b88fd6781b859d02414ec49b3cf96b0aec7217",
-    "Cap_rounded_hexagon.obj": "73635fa13c8547f848fca060e10cf2d2ed78e5776a90eb8d7e0a6f3a409dde33",
+    "Cap_rounded_hexagon.obj": "015263a7c99ce313d1e6d02e71c58ca9dcc58ec830b7cfaf53764bd16e207c6e",
     "Cap_rounded_square.mtl": "688fb42951ea0aa68dbd459b3064bf9b1945139e971d4bb5ba3863825bda514d",
-    "Cap_rounded_square.obj": "2e2d83e5e6027c4b9408b101538f6577772ff27516b221632d4a741d0b7f55a9",
+    "Cap_rounded_square.obj": "af7bf45eb19d45cf19e61093fd16fc6c554376d7f71203bbed08033415b34f43",
     "Cap_rounded_triangle.mtl": "450db1c11982a144cf1e1ba20e66bf1d804e16c4e7f01e93a96271afc37ca4bf",
-    "Cap_rounded_triangle.obj": "d057d37b571a1d0ecac1fd5b24f3812954aa69745af08c5b510af6fae0c27ede",
+    "Cap_rounded_triangle.obj": "b8ce76b771dd1eec090bcde5a0d7e0928f48fc919a43f09359d33842ca0b4d52",
     "Cap_scalloped_coin.mtl": "7d41fff528f126c74b627445bab5bf5af34e7c976691aed4b143f3733528f940",
-    "Cap_scalloped_coin.obj": "8c6ff5cdc3633ebeba3837a6d621f09e84c6f8c7fa6f4dc2b4232ecc4a58a7c2",
+    "Cap_scalloped_coin.obj": "5a8b3bce39faf9fe14104d97fbea9667da0dc01d7af359eba332797e0e38f3e7",
     "Cap_ships_wheel.mtl": "3db7888f919f4a4348db6f9ac8f7506009ab2733fb25e716d47839f8ac9bf4a2",
-    "Cap_ships_wheel.obj": "a6d23a8e4bdc1126d475ef9d46e0d7d15155012d2d76085a35851be31e06723b",
+    "Cap_ships_wheel.obj": "8ab0cbab7815b858c0a1455c19778b0a7c0a0427857f6f0d90786a8bad790ee6",
     "Cap_thumb_scoop.mtl": "decfb0fb8550f7b004859c5a5cdc1dd12e6c9928acd9a6d9de3c9153078449de",
-    "Cap_thumb_scoop.obj": "f4aa937885f6e28a1299e826f7c2f05a52f3e97a03828e570552a96ca640b796",
+    "Cap_thumb_scoop.obj": "cf2d4094c05d7e8b62eee35c692d7a8713ce0414263e2c119d8ba958c697e2b4",
     "Cap_turbine_wheel.mtl": "e6dfd06267c3e5fbe9d4686bf82da760ff7030f906214574578a39d9bdd7ca09",
-    "Cap_turbine_wheel.obj": "868a9a1861590990f070dc80ab69f9cf8d2ffe7e3917db3c20327423f7b7218e",
+    "Cap_turbine_wheel.obj": "f8ef650075b19ab121a981c86a5db6a46531fa974a597fe6949f20121de32499",
     "Cap_wave_rim.mtl": "6d6d8e203241951f2285c620675b6a71070e58a86da3799ba2faa407d805d5eb",
-    "Cap_wave_rim.obj": "6f583c95abd8b39d60b03dd1da968670791e42bde7ac12dccc802dfbf5a952dd",
+    "Cap_wave_rim.obj": "c7674b6252d0134393ec3e1deb5f3457c13b1250f2f2ab6499c6013663a79e53",
     "Cell.mtl": "88722ece3b779b410ef4f47fa3a474e4bd40204545c55a7016886835a7e77c4e",
     "Cell.obj": "d9eeada78f4afb856125602681305366094f6052d3e62a8300949608e53dd958",
     "Magnet.mtl": "4ef01bf49aa7af282c154d159281d5eb585f6c40590821a3ebb9cb6711069035",
     "Magnet.obj": "eb5b1e417f03a70051e90e4e12e23cadbdd693f158ea54e8336b02bf3a044bcc",
     "Stationary_Base.mtl": "8870e36cfea3936b83a7b655a335047c337d76fff599a4feac7eb4576db5ffb1",
-    "Stationary_Base.obj": "93d438d4c4dbf36d687db061933f87ba4632d85e965d4eeda3e116058c792d5b",
+    "Stationary_Base.obj": "d4b83706be8dee52b53533a2e1053f243a00834ecf12740312b7a5ac26131109",
     "Outer_Race_Retainer.mtl": "553b47151257d3d2cd75b9c86dec37135b6acd3c963725e05f18c53f29573687",
-    "Inner_Race_Nut.obj": "6200d38e8cb5aa1fcac902b4eeaeb2c07f414aa16b63bc29c298e3ac6463d74b",
+    "Inner_Race_Nut.obj": "17ff123736fc17df88d5b913ca1cab896a393e2b2b655b3aeff3a76ae61ef647",
     "Cap_Retainer_Screws.mtl": "a0e306e59efc5f65d9fa1e6f2a14f54c4838560d4a7dff3b344ef774b0264cae",
-    "Bearing_6708.obj": "1d3f5628d8365b3a2008e09169d783f6b9bd55f522f9a7a3666ad754d82473c5",
     "PCB_Fasteners.mtl": "cc83a66474d2da88e384f5739c31e0483593d19319b6813ab7be1ee83ccf7179",
+    "Bearing_6808.mtl": "11b875c24d4b2914cf5dcb3086f7e040192d6902e22727bf57d3cbfd741735ad",
     "MagSafe_Ring.mtl": "aad5f130109e2255f5f88575bb51aade564e5c7a441a6bce6ea955aba282332f",
-    "Outer_Race_Retainer.obj": "4a9b4e52a7ade702f2bfcf4531e0d4dec17b2261879770d8d06fc4b84a832124",
+    "Outer_Race_Retainer.obj": "aa6830f0206242b5552960ab2271cc1432eb97972d86b84bd23e29a2a7939af8",
+    "Bearing_6808.obj": "3549d38713d489083fd24932bd0f5a2fdff728875d72fa2889a426fb521f78dd",
     "Inner_Race_Nut.mtl": "1664146cb35d615f408d73a0df983d4250cfa4d98282a818790baa5a7794f7b4",
-    "Bearing_6708.mtl": "84b6a7288c12c1a30c69cc5a612d51004c7a572e076713f74377f3871c4e437a",
-    "Cap_Retainer_Screws.obj": "944f66ad8e3b4f212d2ebd94c43c95b2bbc51f856cb0f14ce51142b69e122faa",
+    "Cap_Retainer_Screws.obj": "c7ad6d031dc3a3ab8b7ed90fbed7b0ba8b2a8fa92202ac65f89026350abd7a7e",
     "MagSafe_Ring.obj": "e8d54b7d68bc8574fa1e2f37df54b67a78622c92a122495b2c17a0e4c5dfeb9b",
-    "PCB_Fasteners.obj": "97259df2b56e41b67005c98caeb7ab0d35a4fb667f1952a829bef7d5c5d450fc"
+    "PCB_Fasteners.obj": "9033851b6043e566ff02794d7a6bf3a20c384a4832421a450294d72fc3fb7cb7"
   }
 }

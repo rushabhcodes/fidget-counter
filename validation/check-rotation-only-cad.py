@@ -3,7 +3,12 @@ from pathlib import Path
 import hashlib,json,math,subprocess
 import cadquery as cq
 ROOT=Path(__file__).resolve().parents[1];COMMIT='6224fc92863964ff770789ec086876e289d29bee'
-P=json.loads((ROOT/'mechanical/enclosure-parameters.json').read_text());TMP=ROOT/'work/rotation-only/old-step';TMP.mkdir(parents=True,exist_ok=True)
+P=json.loads((ROOT/'mechanical/enclosure-parameters.json').read_text());
+if P['design'].startswith('V7'):
+ import runpy
+ runpy.run_path(str(ROOT/'validation/check-assembly-optimization.py'),run_name='__main__')
+ raise SystemExit(0)
+TMP=ROOT/'work/rotation-only/old-step';TMP.mkdir(parents=True,exist_ok=True)
 def old(name):
  f=TMP/(name+'.step');f.write_bytes(subprocess.check_output(['git','show',f'{COMMIT}:mechanical/STEP_Parts/{name}.step'],cwd=ROOT));return cq.importers.importStep(str(f)).val()
 def current(name):return cq.importers.importStep(str(ROOT/'mechanical/STEP_Parts'/(name+'.step'))).val()

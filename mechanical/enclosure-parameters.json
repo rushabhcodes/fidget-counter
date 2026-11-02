@@ -1,5 +1,5 @@
 {
-  "design": "V6 rotation-only printed pilot: integral fixed bearing support",
+  "design": "V7 rotation-only printed pilot: standard 6808 bearing and two PCB screws",
   "cap_style": "all",
   "cap_styles": [
     "circular",
@@ -18,7 +18,7 @@
   "base_diameter": 58.0,
   "cap_max_diameter": 61.6,
   "overall_height": 17.2,
-  "cap_deck_bottom": 15.5,
+  "cap_deck_bottom": 15.9,
   "cap_edge_bottom": 9.2,
   "grip_height": 8.0,
   "cap_skirt_inner_radius": 26.8,
@@ -30,14 +30,14 @@
   "magnet_bottom": 11.4,
   "magnet_pocket_diameter": 5.2,
   "material": "PETG for four rigid printed parts; purchased metal bearing",
-  "service": "Remove three cap screws, lift cap while leaving outer retainer below bearing; unscrew inner nut and lift bearing before removing PCB screws",
-  "publication": "Rotation-only local candidate after 1.0.24; physically unqualified",
+  "service": "Remove three cap screws, lift cap while leaving outer retainer below bearing; unscrew inner nut and lift bearing before removing two PCB screws",
+  "publication": "Local assembly optimization after verified 1.0.25; physically unqualified",
   "hub_cover_thickness": 1.7,
   "cap_style_change": "Undo three countersunk screws to transfer the common bearing assembly to another cap",
   "encoder_magnet_per_top_module": 1,
   "cap_mount_hardware_count": 3,
   "magnet_installation": "One diametric diameter5 x1.5 mm disc seated against the integral cap stop at Z12.9; qualify sidewall adhesive after polarity/field checks",
-  "pcb_retention": "Four M2 nylon screws on solid posts; no flexible printed latches",
+  "pcb_retention": "Two opposite M2 nylon screws on four solid posts; two rigid locating collars; physical retention qualification required",
   "pcb_mount": {
     "radius_mm": 15.2,
     "angles_deg": [
@@ -58,30 +58,28 @@
     "release_displacement_mm": 0,
     "screw_indices": [
       0,
-      1,
-      2,
-      3
+      2
     ]
   },
   "bearing": {
-    "designation": "6708-2Z / 61708-2Z",
+    "designation": "6808-ZZ / 61808-2Z",
     "bore_mm": 40.0,
-    "outside_mm": 50.0,
-    "width_mm": 6.0,
-    "bottom_z_mm": 6.6,
+    "outside_mm": 52.0,
+    "width_mm": 7.0,
+    "bottom_z_mm": 6.1,
     "shaft_diameter_mm": 39.7,
-    "housing_diameter_mm": 50.2,
+    "housing_diameter_mm": 52.2,
     "inner_shoulder_outer_radius_mm": 20.65,
-    "outer_shoulder_inner_radius_mm": 24.4,
-    "reference": "https://www.skf.com/group/products/rolling-bearings/ball-bearings/deep-groove-ball-bearings/productid-61708",
+    "outer_shoulder_inner_radius_mm": 25.0,
+    "reference": "https://www.astbearings.com/catalog/root/6808",
     "note": "Nominal purchased bearing envelope. Confirm race shoulder lands, corner radii, actual fits and magnetic influence with the chosen supplier/sample."
   },
   "inner_race_nut": {
     "pitch_mm": 1.2,
     "thread_depth_mm": 0.35,
     "thread_clearance_mm": 0.15,
-    "bottom_z_mm": 12.6,
-    "top_z_mm": 15.1,
+    "bottom_z_mm": 13.1,
+    "top_z_mm": 15.6,
     "bore_radius_mm": 18.2,
     "thread_root_radius_mm": 19.5,
     "outer_radius_mm": 21.6,
@@ -130,7 +128,16 @@
     "nominal_thread_overlap_mm": 4.4,
     "previous_thread_overlap_mm": 1.4,
     "physical_qualified": false,
-    "cap_reinforcement_radius_mm": 3.0
+    "cap_reinforcement_radius_mm": 3.0,
+    "screw_pitch_radius_mm": 27.8,
+    "fixture_support_z_mm": 5.1,
+    "fixture_notch_width_mm": 3.0,
+    "fixture_notch_radial_start_mm": 28.0,
+    "fixture_angles_deg": [
+      60,
+      180,
+      300
+    ]
   },
   "print_process": {
     "material": "PETG",
@@ -155,5 +162,6 @@
     "web_bottom_z_mm": 1.4,
     "web_head_bottom_z_mm": 3.0,
     "note": "Three rigid overlapping webs join bearing shaft to the base; no sliding joints, press travel or return parts."
-  }
+  },
+  "thumb_dish_depth_mm": 0.4
 }

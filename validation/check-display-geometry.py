@@ -24,13 +24,13 @@ if '--capture' in sys.argv:
 else:
  reference=json.loads(baseline.read_text());assert reference['source_commit']=='7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84'
  expected=reference['models'];actual=records(root/'dist/index/3d.glb')
- # Compare against the published 1.0.24 assembly. The only model changes in
- # the default candidate are the bounded base, cap and retainer changes plus
- # removal of tray/spacer. Every unaffected triangle and all poses are guarded.
+ # Compare against the published 1.0.24 assembly. V7 intentionally changes
+ # the bearing, fasteners and bounded printed interfaces, and removes former
+ # press parts/tray/spacer. Unaffected triangles and retained poses stay guarded.
  params=json.loads((root/'mechanical/enclosure-parameters.json').read_text())
- changed={'BEARING_V5_Cap_circular','BEARING_V5_Stationary_Base','BEARING_V5_Outer_Race_Retainer','BEARING_V5_Inner_Race_Nut'}
- removed={'BEARING_V5_Encoder_Spacer','BEARING_V5_Bottom_Tray','BEARING_V5_Bearing_Carrier','BEARING_V5_Return_Springs','BEARING_V5_Guide_Fasteners','BEARING_V5_Actuator_Ring'}
- added=set()
+ changed={'BEARING_V5_Cap_circular','BEARING_V5_Stationary_Base','BEARING_V5_Outer_Race_Retainer','BEARING_V5_Inner_Race_Nut','BEARING_V5_PCB_Fasteners','BEARING_V5_Cap_Retainer_Screws'}
+ removed={'BEARING_V5_Encoder_Spacer','BEARING_V5_Bottom_Tray','BEARING_V5_Bearing_Carrier','BEARING_V5_Return_Springs','BEARING_V5_Guide_Fasteners','BEARING_V5_Actuator_Ring','BEARING_V5_Bearing_6708'}
+ added={'BEARING_V5_Bearing_6808'}
  assert params['attachment_ring']['outside_mm']==54.0
  assert set(actual)==(set(expected)-removed)|added
  for name in set(expected)-changed-removed:assert actual[name]==expected[name],name
@@ -52,4 +52,4 @@ else:
   assert digest(np.concatenate(tri))==digest(np.asarray(vv,dtype='<f4')[np.asarray(ff)]),asset_path.name
   source_checks.append(asset_path.stem)
  assert len(source_checks)==20
- (root/'work/display-geometry-audit.json').write_text(json.dumps({'passed':True,'method':'Exact published triangle/pose equality outside explicitly bounded fixed base and cap changes; all source GLBs equal companion OBJ triangles','intentional_changes':sorted(changed|removed|added),'models':actual,'source_assets_verified_against_OBJ':source_checks},indent=2)+'\n');print('Pass: published meshes/poses preserved outside the integral stop and consolidated base; all 20 GLB assets retain every OBJ triangle')
+ (root/'work/display-geometry-audit.json').write_text(json.dumps({'passed':True,'method':'Exact published triangle/pose equality outside intentional bearing/fastener/printed-interface changes; all source GLBs equal companion OBJ triangles','intentional_changes':sorted(changed|removed|added),'models':actual,'source_assets_verified_against_OBJ':source_checks},indent=2)+'\n');print('Pass: unchanged models preserve published triangles/poses; intentional6808 and fastener/interface changes checked separately; all20 GLB assets match OBJ triangles')

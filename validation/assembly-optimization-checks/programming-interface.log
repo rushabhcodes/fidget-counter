@@ -1,0 +1,2 @@
+$ bun validation/check-programming.mjs
+Pass: fitted five-pin JST-SH, correct programmer pinout, seven stencil apertures, no legacy programming pads/holes and clear connector courtyard

@@ -19,6 +19,21 @@
       "passed": true
     },
     {
+      "section": "Retainer fixture saddle roof1mm at60deg",
+      "sampled_material_points": 9,
+      "passed": true
+    },
+    {
+      "section": "Retainer fixture saddle roof1mm at180deg",
+      "sampled_material_points": 9,
+      "passed": true
+    },
+    {
+      "section": "Retainer fixture saddle roof1mm at300deg",
+      "sampled_material_points": 9,
+      "passed": true
+    },
+    {
       "section": "Solid fixed bearing web5mm at0deg",
       "sampled_material_points": 96,
       "passed": true
@@ -74,17 +89,17 @@
       "passed": true
     },
     {
-      "section": "Fixture finger1mm thick2.6mm wide at0deg",
+      "section": "Fixture finger1mm thick2.6mm wide at60deg",
       "sampled_material_points": 9,
       "passed": true
     },
     {
-      "section": "Fixture finger1mm thick2.6mm wide at120deg",
+      "section": "Fixture finger1mm thick2.6mm wide at180deg",
       "sampled_material_points": 9,
       "passed": true
     },
     {
-      "section": "Fixture finger1mm thick2.6mm wide at240deg",
+      "section": "Fixture finger1mm thick2.6mm wide at300deg",
       "sampled_material_points": 9,
       "passed": true
     }
@@ -96,11 +111,11 @@
     "Section sampling is not a global minimum-thickness proof of all decorative features"
   ],
   "source_sha256": {
-    "mechanical/export/Tooling/Nest_Left.step": "96ea9e7cce1083b200a810d5fbc060cdacc9186ecadf07f1aaf161b6a824cdca",
-    "mechanical/export/Tooling/Nest_Right.step": "4fe662975de0e62ba27038110fcebb98e664dfe242808e71ab964e39bd168d75",
-    "mechanical/STEP_Parts/Stationary_Base.step": "52ec63da800ce8e4878655a322a307767c88e0bd4d892fb8fcb2e74197169dd6",
-    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "097ecfdbf4924ee69b6819e3cf8fc01b428ff7570e9c3a80e4920c711f7d590c",
-    "mechanical/printing/check_wall_sections.py": "bb052c897e296cf5d4db061a45804f0dba901f20d5fd04bd86f87587de11a39e",
-    "mechanical/enclosure-parameters.json": "4f0c9414d8018e8cb857391791b4d008e5441515b756c0815f79e92b506e50a0"
+    "mechanical/export/Tooling/Nest_Left.step": "1454494213e382c155307fb34fbd9a06d492f84bfc79a6d27b3d992da6d33932",
+    "mechanical/export/Tooling/Nest_Right.step": "89afdf286fbafa7dc165c0891fb1f33242ad5e031e340d849f496c7a6b8a761b",
+    "mechanical/STEP_Parts/Stationary_Base.step": "685d55c90b99e0384ffb4f1d663f1bb45a573afcab399579f41044ab77a7ffae",
+    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "6055712119f9e974e1592c361dd66c092ba9bdd398313f4acb93b4941b46985f",
+    "mechanical/printing/check_wall_sections.py": "5e221e7e51c5c238cf3edca6c864843b93621eb6169dd6fc44777583a0dea45d",
+    "mechanical/enclosure-parameters.json": "e5da8cfa16869ac991ac20ce3fa1c2cf085a5b4175a2df89542d705df4b7fde7"
   }
 }
