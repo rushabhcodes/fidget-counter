@@ -159,6 +159,10 @@
     "native_renders": {
       "status": "passed",
       "evidence": "python mechanical/render_bearing_layout.py; assembled/cutaway/exploded and actual sliced paths viewed"
+    },
+    "publication_geometry_and_circuit_parity": {
+      "status": "passed",
+      "evidence": "validation/publication-input-parity.json; all nonmetadata circuit records and full GLB bytes identical to42279af"
     }
   },
   "known_advisories": [
@@ -173,10 +177,11 @@
     "Measured assembly-time study"
   ],
   "publication": {
-    "new_tscircuit_release": false,
-    "last_hosted_version": "1.0.24",
-    "last_hosted_site": "https://rushabhcodes--fidget-counter-v1-0-24.tscircuit.app",
-    "hosted_scope": "Earlier press-cap ring revision; does not contain this rotation-only change"
+    "release_version": "1.0.25",
+    "verification": "Recorded in a separate hosted-publication receipt; this file records local validation",
+    "previous_hosted_version": "1.0.24",
+    "previous_hosted_scope": "Earlier press-cap ring revision",
+    "release_site": "https://rushabhcodes--fidget-counter-v1-0-25.tscircuit.app"
   },
   "source_sha256": {
     "index.circuit.tsx": "e83b0f948857b7c1d55b48d1cb3de691f7348ae05165333ea601bcb633ca90c0",
@@ -185,7 +190,7 @@
     "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
     "routing-contract.json": "a2ce9667837bbabce0b81959ea1426978023b6e0b9d2dea059e750f90b4578f9",
     "routed-paths.json": "adc9dbd702e1184accbce928fcd6edf5b86f7bfd4bbb14a739c2ae1826be20d5",
-    "published.circuit.json": "fd329fb8f55759bc81c178646d79f21d5210b5b8ecdf8c695198a9713e207895",
+    "published.circuit.json": "b68f86c6875265fe41219c43221f8e227e96a01acf72b149badf8acf1c5e77c0",
     "BOM.csv": "06a2ddb90ffc014742b94350aeeec8c0e76688dada33178b558a6459b0617db9",
     "mechanical/build_enclosure.py": "11ce8ee69b36e2a297ca37ca65fa561970566035117940c1dca955431c628843",
     "mechanical/enclosure-parameters.json": "4f0c9414d8018e8cb857391791b4d008e5441515b756c0815f79e92b506e50a0",
@@ -193,24 +198,26 @@
     "mechanical/sync_checked_exports.py": "3fbaa615ccdd9aa879ef7feff39637c9d0f1aa69b46fefc00ba7ac2fd70ca959",
     "mechanical/print-ready-manifest.json": "2dd3d713f71f67f3a3d460c37c4771d169c51903e32b11cdfd7f0f5ebd402a5a",
     "mechanical/Circuit_Models/manifest.json": "fcc1875e08438d4af9ef81ceec03cef70f2b569b527e74a9252e24538e227935",
-    "cloud-assets/manifest.json": "3ebd3cf40217de89e4d632db2e9618ede704acf910bfb5eab6dc63cf3f680a0f",
+    "cloud-assets/manifest.json": "6f3f560fd088aa5575cfa1df770c25c7b0cb38ea96e09e04735f8a1950318045",
     "validation/rotation-only-cad-audit.json": "bf18b380f0cf3b8a0e711f277f1511572acf6cb21b49b9a54fdd00ae1a9a02fc",
-    "validation/rotation-only-circuit-audit.json": "43421f9060d3cfc86eb3aca3dca603fb836e6f4e06a622075ada94540396d069",
+    "validation/rotation-only-circuit-audit.json": "6141543a46473fa9afaf13e39c21a57022843f0c3869e234782ca3093d4a90f6",
     "validation/rotation-only-references.json": "dda01d9b6743db8d4f88743e3335c556d8d1a98569b65c6ad1fa017b94d4fce5",
     "validation/print-readiness.json": "cc4f32ab5a78688bc4e074d6374d1720a124dbe70e922f996103bc33cc805be8",
     "validation/print-support-clearance.json": "056f1fab501e3dbbd3a475e7cf242b1a86513195fe135eda348ea7bdb0907013",
     "validation/print-wall-sections.json": "20ec565549c57d78e6afcf0f4e80356db25c5d7f352acdc1f4005ec01fe8ce67",
     "validation/attachment-ring-audit.json": "c8c40eab2f6a9d01db6b016522047f5d64505f6467e7e0d8dd8842bd50a84b13",
-    "validation/bearing-hardware-clearance.json": "3104ce45bf77aaaad9b34c399844e47d20bbb591c079fd946224c55848241ce4",
-    "validation/pcb-mount-clearance.json": "74295b35787612a02f3b55089300776c0501cd682930fea88ed789973c666b42",
-    "validation/jst-connector-clearance.json": "2fa3b98a016fcb0f1b69eee485103a932d47dea65e33fb6d3395f935469c2d2d",
+    "validation/bearing-hardware-clearance.json": "f5471dd97a4da79acd0de371491a1774bebee6d623f3df1976346d01d27fbb01",
+    "validation/pcb-mount-clearance.json": "0dcfb8591a67086f3cbf59b4604aa333bbb4995e38bd7857b7120406494a5152",
+    "validation/jst-connector-clearance.json": "bd16fa0200d22e217824b42c617366625377bb63c8579efd383bab10e06b0c73",
     "previews/bearing-layout.png": "89bedf128a6d0d05401808b175f1cab754b2bd9329d40c3a8c58ab1127aaef8d",
-    "previews/print-slice-inspection.png": "9ed1b61c36d384f132e86e2afa0510f8508c0375563ae33fb80d4299d830c5e5"
+    "previews/print-slice-inspection.png": "9ed1b61c36d384f132e86e2afa0510f8508c0375563ae33fb80d4299d830c5e5",
+    "validation/publication-input-parity.json": "5928143fa97a99c9c484ba7a2591528a84f126f1051e583e2772fbc514a55c92"
   },
   "output_sha256": {
-    "dist/index/circuit.json": "fd329fb8f55759bc81c178646d79f21d5210b5b8ecdf8c695198a9713e207895",
+    "dist/index/circuit.json": "b68f86c6875265fe41219c43221f8e227e96a01acf72b149badf8acf1c5e77c0",
     "dist/index/3d.glb": "4db86363eb044665f8767555d1ba9ddbdfbe776c836d816357e9ddfdd348d7f3",
-    "dist/published/circuit.json": "fd329fb8f55759bc81c178646d79f21d5210b5b8ecdf8c695198a9713e207895",
+    "dist/published/circuit.json": "b68f86c6875265fe41219c43221f8e227e96a01acf72b149badf8acf1c5e77c0",
     "dist/published/3d.glb": "4db86363eb044665f8767555d1ba9ddbdfbe776c836d816357e9ddfdd348d7f3"
-  }
+  },
+  "publication_preflight_utc": "2026-11-02T18:24:20.953871+00:00"
 }

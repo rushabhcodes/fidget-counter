@@ -1,31 +1,29 @@
 {
   "passed": true,
   "physical_tested": false,
-  "comparison_commit": "203ff90452906d8b40341aa827fd7136377171b4",
-  "reason": "Publishing version metadata changes only the source filesystem metadata hash. Exact circuit records and complete native GLBs are unchanged; existing geometric clearance calculations apply.",
+  "version": "1.0.25",
+  "comparison_commit": "42279af67c0b7a9fb8951ef8c3397e5d3e281327",
+  "reason": "Release metadata changes only the source filesystem metadata hash. Exact circuit records and complete native GLBs remain unchanged; existing CAD and clearance calculations apply.",
   "artifacts": {
     "dist/index/circuit.json": {
-      "previous_sha256": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
-      "sha256": "77b18057037f6be7e57600bb0c335aabd7c86de4e43da97f083bf0a8db8ba818",
+      "previous_sha256": "fd329fb8f55759bc81c178646d79f21d5210b5b8ecdf8c695198a9713e207895",
+      "sha256": "b68f86c6875265fe41219c43221f8e227e96a01acf72b149badf8acf1c5e77c0",
       "all_nonmetadata_records_identical": true,
       "ignored_field": "source_project_metadata.source_filesystem_md5_hash"
     },
     "dist/published/circuit.json": {
-      "previous_sha256": "c4c1b7934c87209bb0c419118dd735828a0558fd36c80b7bb75f3f8b306d5f7d",
-      "sha256": "77b18057037f6be7e57600bb0c335aabd7c86de4e43da97f083bf0a8db8ba818",
+      "previous_sha256": "fd329fb8f55759bc81c178646d79f21d5210b5b8ecdf8c695198a9713e207895",
+      "sha256": "b68f86c6875265fe41219c43221f8e227e96a01acf72b149badf8acf1c5e77c0",
       "all_nonmetadata_records_identical": true,
       "ignored_field": "source_project_metadata.source_filesystem_md5_hash"
     },
     "dist/index/3d.glb": {
-      "sha256": "24f758eaffc584f89de24c6a19c44e4f39362c57893a0eff960eda8c7e9e2867",
+      "sha256": "4db86363eb044665f8767555d1ba9ddbdfbe776c836d816357e9ddfdd348d7f3",
       "byte_identical": true
     },
     "dist/published/3d.glb": {
-      "sha256": "24f758eaffc584f89de24c6a19c44e4f39362c57893a0eff960eda8c7e9e2867",
+      "sha256": "4db86363eb044665f8767555d1ba9ddbdfbe776c836d816357e9ddfdd348d7f3",
       "byte_identical": true
     }
-  },
-  "historical_snapshot": true,
-  "historical_source_commit": "7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84",
-  "superseded_for_local_manufacturing_work_by": "validation/manufacturing-review-status.json"
+  }
 }
