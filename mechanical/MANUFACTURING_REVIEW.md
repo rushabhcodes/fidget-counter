@@ -1,6 +1,6 @@
 # Printed pilot manufacturing review
 
-Scope: user-confirmed **10–50 units, 3D printed pilot**, reviewed 2 November 2026. This local candidate follows published 1.0.24 (`7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84`); it has not been published. No parts were purchased or suppliers contacted. This is a design-for-assembly recommendation with nominal CAD checks, not manufacturing qualification or a claim of an objectively optimal mechanism.
+Scope: user-confirmed **10–50 units, 3D printed pilot**, reviewed 2 November 2026. The manufacturing review began at local commit2927a38 after published 1.0.24. The print-readiness follow-up adds cap recess reinforcement, fills legacy void slivers, strengthens nut tool notches and supplies checked orientations/support profiles; see [PRINTING.md](printing/PRINTING.md) and `validation/print-ready-status.json`. Registry publication remains outside this step. This candidate follows published 1.0.24 (`7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84`); it has not been published. No parts were purchased or suppliers contacted. This is a design-for-assembly recommendation with nominal CAD checks, not manufacturing qualification or a claim of an objectively optimal mechanism.
 
 ## Recommendation and actual changes
 
@@ -63,7 +63,7 @@ Sources inspected online on 2 November 2026; observations and design inferences 
 
 ## Process, access and tolerance plan
 
-Use PETG, one qualified printer/profile/material lot initially. Start with 0.15 mm layers and at least four walls, then verify actual slicer paths; these settings are a trial starting point, not a strength specification. Caps print top-face down; the base prints phone-face down. The annular seat roof bridges the ring pocket: inspect this underside for sag, not only its outside dimensions. Keep support scars out of guide bores, bearing seats and threads. Print and measure coupons before parts. Do not scale the whole model to fix a bearing fit.
+Use PETG, one qualified printer/profile/material lot initially. Start with 0.15 mm layers and at least four walls, then verify actual slicer paths; these settings are a trial starting point, not a strength specification. Most caps print top-face down; thumb_scoop prints upright with internal supports. The nut uses its wide face down, and the base prints phone-face down with roof supports. The annular seat roof bridges the ring pocket: inspect this underside for sag, not only its outside dimensions. Keep support scars out of guide bores, bearing seats and threads. Print and measure coupons before parts. Do not scale the whole model to fix a bearing fit.
 
 | Interface | Nominal allowance | Required pilot check |
 | --- | --- | --- |

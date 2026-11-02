@@ -28,7 +28,7 @@ else:
  # the default candidate are the bounded base, cap and retainer changes plus
  # removal of tray/spacer. Every unaffected triangle and all poses are guarded.
  params=json.loads((root/'mechanical/enclosure-parameters.json').read_text())
- changed={'BEARING_V5_Cap_circular','BEARING_V5_Stationary_Base','BEARING_V5_Outer_Race_Retainer'}
+ changed={'BEARING_V5_Cap_circular','BEARING_V5_Stationary_Base','BEARING_V5_Outer_Race_Retainer','BEARING_V5_Inner_Race_Nut'}
  removed={'BEARING_V5_Encoder_Spacer','BEARING_V5_Bottom_Tray'}
  added=set()
  assert params['attachment_ring']['outside_mm']==54.0

@@ -7,10 +7,12 @@ root=Path(__file__).resolve().parents[1];sys.path.insert(0,str(root/'mechanical'
 from hardware_models import magsafe_ring
 p=json.loads((root/'mechanical/enclosure-parameters.json').read_text());r=p['attachment_ring']
 old=json.loads(subprocess.check_output(['git','show','7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84:mechanical/enclosure-parameters.json'],cwd=root))
-changed_fields={'design','publication','magnet_installation','encoder_stop','pcb_mount','integrated_base','attachment_ring','pilot_batch','cap_retainer_joint'}
+changed_fields={'design','publication','magnet_installation','encoder_stop','pcb_mount','integrated_base','attachment_ring','pilot_batch','cap_retainer_joint','print_process','inner_race_nut'}
 assert {k:v for k,v in p.items() if k not in changed_fields}=={k:v for k,v in old.items() if k not in changed_fields},'Unrelated mechanical parameters changed'
 assert {k:v for k,v in p['pcb_mount'].items() if k!='screw_indices'}==old['pcb_mount']
 assert {k:v for k,v in r.items() if k!='mounting'}=={k:v for k,v in old['attachment_ring'].items() if k!='mounting'},'Ring fit or supplier envelope changed'
+assert {k:v for k,v in p['inner_race_nut'].items() if k!='tool_notch_depth_mm'}==old['inner_race_nut']
+assert p['inner_race_nut']['tool_notch_depth_mm']==.6
 assert [p['base_diameter'],p['overall_height'],p['button_travel']]==[58,17.2,.8]
 assert [r['outside_mm'],r['inside_mm'],r['thickness_mm']]==[54,45.8,1.9]
 base=cq.importers.importStep(str(root/'mechanical/STEP_Parts/Stationary_Base.step')).val()
@@ -31,7 +33,7 @@ changed=[];unchanged=[]
 for f in sorted((root/'mechanical/Print_STL').glob('*.stl')):
  previous=subprocess.check_output(['git','show',f'7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84:{f.relative_to(root)}'],cwd=root)
  (unchanged if f.read_bytes()==previous else changed).append(f.name)
-assert set(changed)=={'Stationary_Base.stl','Outer_Race_Retainer.stl',*{'Cap_'+style+'.stl' for style in p['cap_styles']}},changed
+assert set(changed)=={'Stationary_Base.stl','Outer_Race_Retainer.stl','Inner_Race_Nut.stl',*{'Cap_'+style+'.stl' for style in p['cap_styles']}},changed
 manifest=json.loads((root/'mechanical/Circuit_Models/manifest.json').read_text())
 assert manifest['modelsPerSelectedStyle']==14 and manifest['totalAssets']==24
 assert 'MagSafe_Ring.glb' in manifest['modelSha256']

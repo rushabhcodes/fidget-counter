@@ -137,7 +137,8 @@
     "top_z_mm": 15.1,
     "bore_radius_mm": 18.2,
     "thread_root_radius_mm": 19.5,
-    "outer_radius_mm": 21.6
+    "outer_radius_mm": 21.6,
+    "tool_notch_depth_mm": 0.6
   },
   "attachment_ring": {
     "supplier": "MagnetPrint Hub N52 MagSafe Magnet Ring Kit",
@@ -181,6 +182,18 @@
     "socket_roof_z_mm": 9.8,
     "nominal_thread_overlap_mm": 4.4,
     "previous_thread_overlap_mm": 1.4,
-    "physical_qualified": false
+    "physical_qualified": false,
+    "cap_reinforcement_radius_mm": 3.0
+  },
+  "print_process": {
+    "material": "PETG",
+    "nozzle_mm": 0.4,
+    "layer_height_mm": 0.15,
+    "minimum_walls": 4,
+    "assumption": "Provisional generic cartesian printer; actual printer/nozzle not yet confirmed",
+    "cap_orientation": "Deck down except thumb_scoop upright with internal supports",
+    "nut_orientation": "Wide notched face down",
+    "carrier_supports": "Required beneath annular shoulder; keep guide bores and thread flanks clear",
+    "fixture_supports": "Required everywhere under retainer fingers; supports may start on the nest pocket floor"
   }
 }

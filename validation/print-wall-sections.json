@@ -1,0 +1,152 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "method": "Material point probes across known critical analytic STEP wall/floor sections; no physical strength inference",
+  "sections": [
+    {
+      "section": "Retainer pilot wall0.8mm at0deg",
+      "sampled_material_points": 48,
+      "passed": true
+    },
+    {
+      "section": "Retainer pilot wall0.8mm at120deg",
+      "sampled_material_points": 48,
+      "passed": true
+    },
+    {
+      "section": "Retainer pilot wall0.8mm at240deg",
+      "sampled_material_points": 48,
+      "passed": true
+    },
+    {
+      "section": "Guide load wall1.35mm at0deg",
+      "sampled_material_points": 48,
+      "passed": true
+    },
+    {
+      "section": "Non-load guide rim0.55mm at0deg",
+      "sampled_material_points": 24,
+      "passed": true
+    },
+    {
+      "section": "Guide load wall1.35mm at105deg",
+      "sampled_material_points": 48,
+      "passed": true
+    },
+    {
+      "section": "Non-load guide rim0.55mm at105deg",
+      "sampled_material_points": 24,
+      "passed": true
+    },
+    {
+      "section": "Guide load wall1.35mm at255deg",
+      "sampled_material_points": 48,
+      "passed": true
+    },
+    {
+      "section": "Non-load guide rim0.55mm at255deg",
+      "sampled_material_points": 24,
+      "passed": true
+    },
+    {
+      "section": "Bearing shaft wall1.2mm",
+      "sampled_material_points": 24,
+      "passed": true
+    },
+    {
+      "section": "Continuous ring bonding roof1.5mm",
+      "sampled_material_points": 72,
+      "passed": true
+    },
+    {
+      "section": "Spring floor1.3mm at60deg",
+      "sampled_material_points": 48,
+      "passed": true
+    },
+    {
+      "section": "Legacy trapped relief filled at60deg",
+      "sampled_material_points": 8,
+      "passed": true
+    },
+    {
+      "section": "Spring floor1.3mm at180deg",
+      "sampled_material_points": 48,
+      "passed": true
+    },
+    {
+      "section": "Legacy trapped relief filled at180deg",
+      "sampled_material_points": 8,
+      "passed": true
+    },
+    {
+      "section": "Spring floor1.3mm at300deg",
+      "sampled_material_points": 48,
+      "passed": true
+    },
+    {
+      "section": "Legacy trapped relief filled at300deg",
+      "sampled_material_points": 8,
+      "passed": true
+    },
+    {
+      "section": "PCB post pilot wall1.45mm at45deg",
+      "sampled_material_points": 24,
+      "passed": true
+    },
+    {
+      "section": "Non-retaining locator wall0.6mm at45deg",
+      "sampled_material_points": 24,
+      "passed": true
+    },
+    {
+      "section": "PCB post pilot wall1.45mm at135deg",
+      "sampled_material_points": 24,
+      "passed": true
+    },
+    {
+      "section": "PCB post pilot wall1.45mm at225deg",
+      "sampled_material_points": 24,
+      "passed": true
+    },
+    {
+      "section": "Non-retaining locator wall0.6mm at225deg",
+      "sampled_material_points": 24,
+      "passed": true
+    },
+    {
+      "section": "PCB post pilot wall1.45mm at315deg",
+      "sampled_material_points": 24,
+      "passed": true
+    },
+    {
+      "section": "Fixture finger1mm thick2.6mm wide at0deg",
+      "sampled_material_points": 9,
+      "passed": true
+    },
+    {
+      "section": "Fixture finger1mm thick2.6mm wide at120deg",
+      "sampled_material_points": 9,
+      "passed": true
+    },
+    {
+      "section": "Fixture finger1mm thick2.6mm wide at240deg",
+      "sampled_material_points": 9,
+      "passed": true
+    }
+  ],
+  "cap_and_nut_wall_checks": "validation/print-readiness.json",
+  "limits": [
+    "Thread forming removes material not represented by the pilot bore",
+    "Single variable-width non-load rims need printer qualification",
+    "Section sampling is not a global minimum-thickness proof of all decorative features"
+  ],
+  "source_sha256": {
+    "mechanical/export/Tooling/Nest_Left.step": "cec35a41e1b10223a91276ed133b184132917c97d2a5b33c9936c7d1cee43ee3",
+    "mechanical/export/Tooling/Nest_Right.step": "33b4a747aa70bf987ae51f272dfb187af0eab282972cc186925751cd9df26e1c",
+    "mechanical/STEP_Parts/Stationary_Base.step": "2a75f677f4dc245abf0855348fe407f836c6522ccf13d4a07c4250b5a2cdee8b",
+    "mechanical/STEP_Parts/Bearing_Carrier.step": "fc6cd28c229bcf58193a80f18a4e38e8d5740535d4864938ad42c21b8eb3f487",
+    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "a48d99aafb2421afb7bb61eb2a3de1eebfd8f8ffe8b3d711d5422ec6e7b14391",
+    "mechanical/printing/check_wall_sections.py": "b01d0a0da29abc155b5383d1c839d5c2a36b6efe41c562cc8235184dbaff8ed8",
+    "mechanical/enclosure-parameters.json": "5cd2659b2a34805481e0925bc33772ac2553e0bae41d1079b015a70baf98d921"
+  }
+}

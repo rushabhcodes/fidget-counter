@@ -1,0 +1,233 @@
+{
+  "scope": "Ready for controlled PETG fit-test prints under the documented0.4mm nozzle profile; not production qualified",
+  "checked_at_utc": "2026-11-02T17:34:40.216673+00:00",
+  "branch": "codex/bearing-supported-enclosure",
+  "print_revision_base_commit": "2927a38037e64a34c4308f1f913ab662e9400f34",
+  "original_geometry_reference_commit": "7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84",
+  "slicer_checks_passed": true,
+  "physical_tested": false,
+  "manufacturing_qualified": false,
+  "slicer": "PrusaSlicer-2.8.1+linux-x64-GTK3-202409181416 based on Slic3r (with GUI support)",
+  "slicer_appimage_source": "https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.8.1/PrusaSlicer-2.8.1%2Blinux-x64-newer-distros-GTK3-202409181416.AppImage",
+  "slicer_appimage_sha256": "565f2f4bd4dbb05904a459d54db1916b6932124709c1d17b5aacfe9f5f2f1b03",
+  "nozzle_mm": 0.4,
+  "layer_mm": 0.15,
+  "first_layer_mm": 0.2,
+  "nominal_line_width_mm": 0.45,
+  "requested_perimeters": 4,
+  "infill_percent": 100,
+  "thick_bridges": false,
+  "printer": "Provisional generic Cartesian220x220x200mm; actual machine profile must be used to re-slice",
+  "counts": {
+    "rigid_alternative_STLs": 15,
+    "rigid_parts_per_unit": 5,
+    "tooling_halves": 2,
+    "coupon_STLs": 6,
+    "cap_variants": 11,
+    "fitted_electronics_preserved": 31,
+    "PCB_holes_preserved": 4,
+    "routing_regressions": 8,
+    "import_provenance_regressions": 4
+  },
+  "fixes": [
+    "Filled three enclosed0.01mm merge voids; base now has one closed boundary",
+    "Reinforced all cap screw recesses to nominal1.2mm outer socket wall/1.0mm countersink rim; internal fits/maximum envelope retained",
+    "Nut notch wall increased to1mm; nut prints wide-face down",
+    "Thumb cap prints upright with cup supports",
+    "Explicit roof/shoulder/rim/fixture supports; base unsupported control warned about long bridges",
+    "Normal layer-height bridge beads protect roof/fixture dimensional intent; no machine G-code shipped"
+  ],
+  "unsupported_control": {
+    "source_commit": "2927a38037e64a34c4308f1f913ab662e9400f34",
+    "base_STL_sha256": "44d92f1131031219020b5b1a18f6704b1703496d5c9e3187cf268e631b2a80c4",
+    "warning": "Floating bridge anchors, Long bridging extrusions",
+    "final_supported_base_has_print_warnings": false
+  },
+  "checks": {
+    "cad": {
+      "status": "passed",
+      "log_sha256": "017a48b95ef74aa00f38905e8bc74debcf5808f4d58407ad9a2c3cacfad4475d"
+    },
+    "solid-proof": {
+      "status": "passed",
+      "log_sha256": "58cb5d40b190ac405e87ca2e130b93381e23931ae3c48bd58a1e53d1f4dc0318"
+    },
+    "tooling": {
+      "status": "passed",
+      "log_sha256": "9915cdd5d29b1dc265ae1e4407c94a5a19d75c5d413f95bc6b704bb12b1389df"
+    },
+    "coupons": {
+      "status": "passed",
+      "log_sha256": "34f49537fde55de42fdafbe9cbc09b1b1d7e6237e24d421c5bfbb72c1ce1567c"
+    },
+    "slicer": {
+      "status": "passed",
+      "log_sha256": "c01db0d36c8c959211508811cb9e49835c8ab045cd31a218527919671b7b4a8d"
+    },
+    "wall-sections": {
+      "status": "passed",
+      "log_sha256": "2d00378afb40651e6b404a5496a5cdae69d30fe1aba266a4d5fc61f9031f47ed"
+    },
+    "slice-views": {
+      "status": "passed",
+      "log_sha256": "40c834e3a5e0ffb931c92da460955faec5c3fb4b653483a0caeaea3c21372fb0"
+    },
+    "models": {
+      "status": "passed",
+      "log_sha256": "ffd7f20bb9548e51bf79e2885689915e9fca9ea11d9cd36b03dcb84b7bd02efa"
+    },
+    "model-detail": {
+      "status": "passed",
+      "log_sha256": "99c32d1b93b447ca05a2a06f373b2c0a54053a76de8d5a5da1f135881bfb5c3b"
+    },
+    "display": {
+      "status": "passed",
+      "log_sha256": "0f3914a9d1955e00c64bc1f21548ec8a42713799f1c2f4e3e352a9f5a8b782ba"
+    },
+    "ring": {
+      "status": "passed",
+      "log_sha256": "06f28bcfdf52ef7b088af7758562b7ac5c1093c130164b23a87923dea47732f0"
+    },
+    "pcb": {
+      "status": "passed",
+      "log_sha256": "3c76eecbe171f4e81729cc88d141b29643f16d17e2e9a0f3dbcb31eb08d95805"
+    },
+    "jst": {
+      "status": "passed",
+      "log_sha256": "047c72052d5afbab51793b46b17c43ccbdc2392f49ef8365a6d6232536befa42"
+    },
+    "hardware": {
+      "status": "passed",
+      "log_sha256": "e1dfa7e7d9627e0581818c4a9157aaefaddc1a7050207629b9f6750569cb5319"
+    },
+    "install": {
+      "status": "passed",
+      "log_sha256": "528b959c2a2c80ce8bde9c9b1758857972825f29a59a216e516941fc94c6c2bc"
+    },
+    "typecheck": {
+      "status": "passed",
+      "log_sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    },
+    "routing": {
+      "status": "passed",
+      "log_sha256": "ab5127abcb3b0411cc2019891c284aa591d5fd9e8822766346348848fa0c6e37"
+    },
+    "import-tests": {
+      "status": "passed",
+      "log_sha256": "9363b8e01c0b335aa0dc21cd165129bdd9c7f5bca4fcdc7c4ebc68fb26d00a3c"
+    },
+    "source-build": {
+      "status": "passed",
+      "log_sha256": "f9ec869cff66cd68bc143bee9ee459dcd04e76a51472f1f7bfce99bfe5266923"
+    },
+    "electrical-proof": {
+      "status": "passed",
+      "log_sha256": "21f68294cddc28afe926f019e79018529052d32d7b3b05f3865840c65dd266d1"
+    },
+    "snapshot-build": {
+      "status": "passed",
+      "log_sha256": "73e4dc38e5e214f9f60a769098efd43b7c18234968559b75af09a69677a8323e"
+    },
+    "site": {
+      "status": "passed",
+      "log_sha256": "5d11741e6dec3bf19a98763977692f96389e054b388614ffcdd4eb2b795d4b99"
+    },
+    "imports": {
+      "status": "passed",
+      "log_sha256": "a8c94635ca5e3163022a9c45a49047a1afa83eef4869f7c7807bd8ebf82fe63e"
+    },
+    "programming": {
+      "status": "passed",
+      "log_sha256": "c374764c8c767c98bc5c65082b68eb3c6e6f98687eba9492248d931ead66892b"
+    },
+    "assembly": {
+      "status": "passed",
+      "log_sha256": "81f4f35224bc8d844d19079e24cc389c8a45e51c2da609a9dcb23095b70b4b27"
+    },
+    "cloud-prepare": {
+      "status": "passed",
+      "log_sha256": "b9201b81c908c317b7eddfe0ba8e4a6ef159b23c49121f53cc813537116d4772"
+    },
+    "cloud-restore": {
+      "status": "passed",
+      "log_sha256": "0afd879941bba821c9578b3b5e6d121c6bc11125e254b4059ce3f4da89fc3c2b"
+    },
+    "renders": {
+      "status": "passed",
+      "log_sha256": "dc0d5deb1c6384749ed1e74c83c6c0174037323ad85924d2903681647aed5b63"
+    }
+  },
+  "visually_inspected": [
+    "Assembled/cutaway/exploded source CAD",
+    "Cap screw/retainer section",
+    "Actual sliced first layers, base roof, carrier shoulder, nut/retainer, default cap, noncircular supported rim, thumb interior and fixture finger"
+  ],
+  "previews": [
+    "previews/bearing-layout.png",
+    "previews/retainer-joint.png",
+    "previews/assembly-nest.png",
+    "previews/print-slice-inspection.png"
+  ],
+  "final_failed_checks": [],
+  "unrun_or_unqualified": [
+    "Actual print, adhesion, extrusion calibration and support removal on user printer/filament",
+    "Physical dimensions and bearing/guide/thread coupon fit",
+    "Thread torque, pull-out and service durability",
+    "Spring and actuator forces/travel, return/tilt and cycle life",
+    "Magnetic axial bias and Hall/count/BLE/power performance with phone/ring/bearing",
+    "Magnet working face, attachment/adhesive retention and drop tests",
+    "Firmware/programming/end-of-line functional qualification",
+    "Measured assembly time, first-pass yield and rework"
+  ],
+  "publication_scope": "GitHub working branch push authorized; no new tsCircuit release or physical order in this step",
+  "source_sha256": {
+    "README.md": "4d67d61780abb55ab14c0ca50e7272034f9d3d940c3b8a5a6a504846b36e1a32",
+    "MECHANICAL.md": "d60c7126152593a140ef4382baca3f57b26373eaa9e62570a166fb57ea691c84",
+    "ASSEMBLY_REVIEW.md": "1649e6729aa6ee6f118ff436a97266bc7a6ed2cad235d256915266a238147458",
+    "package.json": "7e791a2a1abfc005b921c727b56e7386172ed3faf8fca178cd3c67d560c749c1",
+    "bun.lock": "1d9a35aa4691c033b443bab61862a467ae4123a4c183fdba5bee0fe7774b3e7c",
+    "parts.tsx": "7426cf61e997cae366ff60fe4663cb800a0170d68f461e0ad9b1254784df7b5f",
+    "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
+    "routing-contract.json": "afde27101f7ed90438fdaf149a6fdf0d5a32337e665bb7c8ae6dd696b9569417",
+    "enclosure.tsx": "6003bbc04de0204dde441f903d52546a282810ce8f06fdb987aedbeaf8d27a47",
+    "published.circuit.json": "b8e98342831fdff8d769d407f8db34954d2f16d3540545628d9eac5bde391c4e",
+    "mechanical/requirements.txt": "f27ffa7912ea57b2281ecb78d170a44bc958d54e36aebeb61cebc7c9525de3e0",
+    "mechanical/build_enclosure.py": "aea7f698c7e3199c98442d0fee8040a47a5bba3bbadac6399ba8fc7cfc8b7285",
+    "mechanical/enclosure-parameters.json": "5cd2659b2a34805481e0925bc33772ac2553e0bae41d1079b015a70baf98d921",
+    "mechanical/print-ready-manifest.json": "3be82e23e1afd28bc26eccb78f359d61edc9c9ac3c6ae9c5930acf62f99d9d7b",
+    "mechanical/printing/audit_prints.py": "cd1294b98d8ab5ed3c8b5ef86eaf15cc45ff9344292fef8fc60eed7ecbad66bd",
+    "mechanical/printing/check_wall_sections.py": "b01d0a0da29abc155b5383d1c839d5c2a36b6efe41c562cc8235184dbaff8ed8",
+    "mechanical/printing/render_slices.py": "176c83a9a15980260c9c342527ab7f4fa890f930b182c71a554f31d004fa4445",
+    "mechanical/printing/PRINTING.md": "1882450d9d163db2bfa5197d4e8f53e7797397605c074a2c523e5777413b2957",
+    "mechanical/printing/PETG-0.4-audit.ini": "cdd54ff5a859810d4f34b0f6db92a43fc96ff2959344835cb2f9e8e55e67fc2f",
+    "mechanical/printing/supports-everywhere.ini": "246f0953642f99e9e704d3825c9da2d2a3903aa13fe94084cbe35c9e4c563ac5",
+    "mechanical/printing/carrier-shoulder-supports.ini": "f83ade85865a62c70082fa6302019bee755dc269c7dca5d00c834518c4da2db7",
+    "mechanical/tooling/build_assembly_nest.py": "5da79c1a4d8873e1fdadd871eae0faf98447bf929a46f39f61a707d44f860721",
+    "mechanical/Circuit_Models/manifest.json": "27a87a6ec3ce0693d41e60d5cc0ae6950a1aad1f4b8a26e5e5afb06d1b6addb2",
+    "cloud-assets/manifest.json": "495a3eb5b428633a445e979ea3f3ed1a4ec1aad21de55db7720436a8f4414be7",
+    "validation/print-readiness.json": "10784ecabbf31a72fb65956de2817a9a267591b5599885fbfff9d62ddb8a90cb",
+    "validation/print-wall-sections.json": "67a675ec40883a3664ea395d1ded70406fca5bccdc5fadd9d06fcb8d82384e4b",
+    "validation/print-support-clearance.json": "bd3afcee04707f882595a3fdd47df2aaf12e7d19b87263bda3e3941933a17c7b",
+    "validation/manufacturing-stop-audit.json": "74f3a1f45e2c3333d6e33b1836b580ad101ff9579861d2641dcba446bf9b87cc",
+    "validation/attachment-ring-audit.json": "63845f53aa15934e29d265cb1da1d8e150ab13c2246aa14df5f62d4a6889efb0",
+    "validation/pcb-mount-clearance.json": "c14986b4f8ad13ab6763d96d9f080bb4248e9ee9d9925967ff9be6de7cba9810",
+    "validation/jst-connector-clearance.json": "6b07f75cc1279f00dba080e9000a24d61e0c091aa37cbd0045f98fbcf2442bad",
+    "validation/bearing-hardware-clearance.json": "d4bb2d5224201e24e3ea76321457a325f1725ca7e61b00ebd4cddbe475898b6f",
+    "validation/model-detail-audit.json": "8a5b60168dc6f49a6065137b10f01b3c7c1e386a1db412501ff12e858ea30786",
+    "validation/bearing-fit-coupons.json": "0edcf053939218b90d563bd4eadd016a901f0474f9e72f75b8814b68b31c6ec6",
+    "work/compiler-upgrade-audit.json": "f47726d606ff06e8ae79723e122f1fd97cb61828995ac62caf0b3746cf266c3d",
+    "work/display-geometry-audit.json": "ee6b8976b5d795b03025d7706a9cf087531e7a02cc4e2c141561e5e97e48b174",
+    "work/enclosure-model-audit.json": "81ef709787526dee10a5466439dba119ba6e48a64647c4f516ac5d4138dfca0a",
+    "mechanical/export/Tooling/nest-validation.json": "d0627bcce7fc79622c2fd57a07bd91f34de813b86be6844fc5770c9bb93185cc",
+    "previews/bearing-layout.png": "c254b2e80a3f65026f4ecf4503154ebc421a7ea337234cbba6b80dc07b4bffc4",
+    "previews/retainer-joint.png": "0ed14f82980fc9dcaec6864210463a2a4eb51afb1d55b1030cef1d1ba92a813f",
+    "previews/assembly-nest.png": "4c03bd61b018b0d9c8d8d63c30ea7dc58fbe8b50fb90ccff35d3a97ac35e6893",
+    "previews/print-slice-inspection.png": "f309894b1c5aa1e282a12ab755023b772c3ddceef70647986f1082cc9e7f0a1f"
+  },
+  "output_sha256": {
+    "dist/index/circuit.json": "b8e98342831fdff8d769d407f8db34954d2f16d3540545628d9eac5bde391c4e",
+    "dist/index/3d.glb": "72c88d3b9d8a7bbdb9ab4b9912cda3a8393da6895f8d5dfdea3dac6757c0c6b6",
+    "dist/published/circuit.json": "b8e98342831fdff8d769d407f8db34954d2f16d3540545628d9eac5bde391c4e",
+    "dist/published/3d.glb": "72c88d3b9d8a7bbdb9ab4b9912cda3a8393da6895f8d5dfdea3dac6757c0c6b6"
+  }
+}

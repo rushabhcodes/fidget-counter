@@ -274,5 +274,8 @@
     "dist/published/3d.glb": "c11ff09a8ce438df38c512494730a8b14c1b6089ba8ed8c114e9343c483056ef",
     "dist/index.html": "4a06e1a1c155e847553c3e46a9b961e6d53fd89640c0dd7a5091dc2dde9834e5",
     "dist/standalone.min.js": "0943c05de15cc94a9b352f8c84d9891778a9c469fb567b9c88da93c5837850af"
-  }
+  },
+  "historical_snapshot": true,
+  "historical_source_commit": "2927a38037e64a34c4308f1f913ab662e9400f34",
+  "superseded_by": "validation/print-ready-status.json"
 }

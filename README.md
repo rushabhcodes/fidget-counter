@@ -16,6 +16,8 @@ The current mechanical draft replaces the snap-fit cap and tiny PCB latches with
 
 See [ring sourcing and assembly](mechanical/MAGSAFE_RING_SOURCING.md) for the exact US ring and a Mumbai sourcing candidate. The local manufacturing candidate combines the base and tray and replaces the encoder spacer with an integral cap stop. It adds retainer bosses without increasing height. See [the manufacturing review](mechanical/MANUFACTURING_REVIEW.md) for the 10–50-unit printed pilot.
 
+For print files, orientation and mandatory supports, start with [PETG printing instructions](mechanical/printing/PRINTING.md) and the [printable manifest](mechanical/print-ready-manifest.json).
+
 See [MECHANICAL.md](MECHANICAL.md) for assembly, print orientation, service and prototype qualification; [mechanical BOM](mechanical/MECHANICAL_BOM.csv) for purchased hardware; and [PROGRAMMING.md](PROGRAMMING.md) for SWD and power precautions. Firmware is not included.
 
 ## Build and check
@@ -24,6 +26,9 @@ Install the pinned Bun dependencies and Python packages in `mechanical/requireme
 
 ```sh
 python mechanical/build_enclosure.py --style all --assembly-style circular
+python mechanical/tooling/build_assembly_nest.py
+python mechanical/build_fit_coupons.py
+python mechanical/printing/audit_prints.py --slicer /path/to/prusa-slicer
 python mechanical/export_circuit_models.py
 bun run typecheck
 bun run check:routing
@@ -51,7 +56,7 @@ bun run build:cloud:prepare
 
 `mechanical/Print_STL` contains fifteen rigid print files: four common parts and eleven cap options; a unit uses five; `Coupons` contains small fit tests. Start with the coupons and circular starter set. `Actuator_Ring_REFERENCE_ONLY.stl` is a silicone geometry reference, **not a rigid print**. Source parameters are in `mechanical/enclosure-parameters.json`. Released, pressed and exploded STEP assemblies are generated under `mechanical/export/Assemblies`.
 
-The local review evidence is [manufacturing-review-status.json](validation/manufacturing-review-status.json); [assembly timing worksheet](mechanical/ASSEMBLY_TIME_STUDY.csv) deliberately has no measured times.
+The current print-readiness evidence is [print-ready-status.json](validation/print-ready-status.json). The earlier [manufacturing review](validation/manufacturing-review-status.json) is labelled historical; [assembly timing worksheet](mechanical/ASSEMBLY_TIME_STUDY.csv) deliberately has no measured times.
 
 This remains an unqualified mechanical prototype. CAD clearances and mesh checks do not establish physical spring return, switch force/overtravel, fatigue, Hall sensing or BLE performance. Verify those with the selected bearing, springs, elastomer, phone and magnets before assembled-board ordering. Older validation reports retain their original revision labels and do not certify V5.
 

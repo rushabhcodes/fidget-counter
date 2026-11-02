@@ -99,10 +99,10 @@
     }
   ],
   "sha256": {
-    "dist/index/circuit.json": "6323d3ebe994695dfd14e76577d88ac96df8b5581e8d2871863a1f4d2837c694",
-    "dist/index/3d.glb": "c11ff09a8ce438df38c512494730a8b14c1b6089ba8ed8c114e9343c483056ef",
-    "dist/published/circuit.json": "6323d3ebe994695dfd14e76577d88ac96df8b5581e8d2871863a1f4d2837c694",
-    "dist/published/3d.glb": "c11ff09a8ce438df38c512494730a8b14c1b6089ba8ed8c114e9343c483056ef",
-    "mechanical/STEP_Parts/Stationary_Base.step": "29b6506d769b5a456616f538891fb9ee7700e49182ba36c854acf9be51c129ef"
+    "dist/index/circuit.json": "b8e98342831fdff8d769d407f8db34954d2f16d3540545628d9eac5bde391c4e",
+    "dist/index/3d.glb": "72c88d3b9d8a7bbdb9ab4b9912cda3a8393da6895f8d5dfdea3dac6757c0c6b6",
+    "dist/published/circuit.json": "b8e98342831fdff8d769d407f8db34954d2f16d3540545628d9eac5bde391c4e",
+    "dist/published/3d.glb": "72c88d3b9d8a7bbdb9ab4b9912cda3a8393da6895f8d5dfdea3dac6757c0c6b6",
+    "mechanical/STEP_Parts/Stationary_Base.step": "2a75f677f4dc245abf0855348fe407f836c6522ccf13d4a07c4250b5a2cdee8b"
   }
 }

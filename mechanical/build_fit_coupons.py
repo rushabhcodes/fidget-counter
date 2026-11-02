@@ -14,6 +14,7 @@ parts['Inner_Thread_Coupon']=carrier.intersect(cq.Solid.makeCylinder(20,2.5,cq.V
 parts['Inner_Race_Nut']=cq.importers.importStep(str(r/'STEP_Parts/Inner_Race_Nut.step')).val()
 reports=[]
 for name,shape in parts.items():
+ if name=='Inner_Race_Nut':shape=shape.rotate((0,0,0),(1,0,0),180)
  shape=shape.translate((0,0,-shape.BoundingBox().zmin));file=out/f'{name}.stl';cq.exporters.export(shape,str(file),tolerance=.025,angularTolerance=.09)
  m=trimesh.load_mesh(file,process=True);mask=m.nondegenerate_faces(height=1e-6)
  if not mask.all():m.update_faces(mask);m.remove_unreferenced_vertices();m.export(file)

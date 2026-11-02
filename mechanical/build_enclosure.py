@@ -55,7 +55,8 @@ assert seat_z<=2.4+1e-7 and 3.0-seat_z>=.6-1e-7
 # integral 0.6 mm roof joins the inner and outer walls; no brittle retaining tabs.
 tray=disk(29,.2,.6).fuse(ring(21,28.05,.79,2.21))
 tray=tray.cut(ring(ri-R['radial_clearance_mm'],ro+R['radial_clearance_mm'],.1,seat_z-.1))
-for x,y in springs_at:tray=tray.cut(disk(2.15,.79,.76,x,y))
+# The former separate tray needed spring reliefs. In the integrated base they
+# leave three enclosed 0.01 mm slivers; final spring bores are cut below instead.
 tray=tray.clean();attachment=magsafe_ring(R)
 base=disk(29,.8,3.1).cut(disk(20.85,1.5,3.0))
 base=base.cut(ring(20.85,28.2,.7,2.45)).fuse(disk(20.85,.8,.7))
@@ -112,7 +113,7 @@ nut=ring(root_r+.05,N['outer_radius_mm'],bt+.3,2.2)
 nut=nut.fuse(ring(root_r+.05,B['inner_shoulder_outer_radius_mm'],bt,.3))
 nut=nut.cut(ridge(N['thread_clearance_mm']))
 for angle in [0,90,180,270]:
- x,y=polar(21.6,angle);nut=nut.cut(box(2.,3.,bt+1.,1.6,x,y).rotate((x,y,0),(x,y,1),angle))
+ x,y=polar(N['outer_radius_mm']+1.-N['tool_notch_depth_mm'],angle);nut=nut.cut(box(2.,3.,bt+1.,1.6,x,y).rotate((x,y,0),(x,y,1),angle))
 nut=nut.clean()
 bearing,inner,outer,seals,bearing_parts=bearing_6708(bz)
 retainer=ring(B['outer_shoulder_inner_radius_mm'],28.8,bz-1.5,1.5)
@@ -139,6 +140,17 @@ assert P['encoder_stop']['mode']=='integral_cap' and abs(P['encoder_stop']['seat
 hub=hub.fuse(ring(2.6,3.5,P['magnet_bottom']-.1,P['cap_deck_bottom']-P['magnet_bottom']+.1)).fuse(disk(3.5,magnet_top,P['cap_deck_bottom']-magnet_top))
 for x,y in cap_holes:
  hub=hub.fuse(disk(2.5,bt,P['overall_height']-bt,x,y))
+ hub=hub.cut(disk(1.1,bz-.1,P['overall_height']-bz+.2,x,y))
+ hub=hub.cut(disk(1.8,bz-.1,3.3,x,y))
+ hub=hub.cut(cq.Solid.makeCone(1.1,2.,1.1,cq.Vector(x,y,P['overall_height']-1.1)))
+# Vertical pads retain at least 1.0 mm around the countersinks and 1.2 mm
+# outside the lower sockets. Clip their inner faces to the existing stepped
+# bearing bore; extend the complete pads through the grip/deck union above it.
+reinforcement=comp(disk(J['cap_reinforcement_radius_mm'],bz,P['overall_height']-bz,x,y) for x,y in cap_holes)
+reinforcement=reinforcement.cut(disk(B['housing_diameter_mm']/2,bz-.1,bt-bz+.1))
+reinforcement=reinforcement.cut(disk(B['outer_shoulder_inner_radius_mm'],bt,P['cap_deck_bottom']-bt))
+hub=hub.fuse(reinforcement)
+for x,y in cap_holes:
  hub=hub.cut(disk(1.1,bz-.1,P['overall_height']-bz+.2,x,y))
  hub=hub.cut(disk(1.8,bz-.1,3.3,x,y))
  hub=hub.cut(cq.Solid.makeCone(1.1,2.,1.1,cq.Vector(x,y,P['overall_height']-1.1)))
@@ -219,7 +231,10 @@ print('Exporting printable STLs and released/pressed/exploded STEP assemblies...
 manifest=[]
 for name,shape in physical.items():
  cq.exporters.export(shape,str(OUT/'STEP'/f'{name}.step'))
- oriented=shape.rotate((0,0,0),(1,0,0),180) if name.startswith('Cap_') else shape
+ # The shallow thumb dishes face upwards and need internal cup supports.
+ # All other caps print deck-down. Flip the nut so its wide face is on the bed.
+ invert=(name.startswith('Cap_') and name!='Cap_thumb_scoop') or name=='Inner_Race_Nut'
+ oriented=shape.rotate((0,0,0),(1,0,0),180) if invert else shape
  oriented=oriented.translate((0,0,-oriented.BoundingBox().zmin));path=OUT/'STL'/f'{name}.stl'
  cq.exporters.export(oriented,str(path),tolerance=.035,angularTolerance=.09)
  mesh=trimesh.load_mesh(path,process=True);mask=mesh.nondegenerate_faces(height=1e-6)

@@ -3,7 +3,7 @@ Tooling only. Clamp the two halves gently in a vice; open by >=3 mm per side to 
 Do not press/test the button while the retainer supports are engaged.
 """
 from pathlib import Path
-import json,math,hashlib
+import json,math,hashlib,shutil
 import cadquery as cq
 import trimesh
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'mechanical/export/Tooling';OUT.mkdir(exist_ok=True)
@@ -26,6 +26,8 @@ for name,shape in [('Nest_Left',left),('Nest_Right',right)]:
  cq.exporters.export(shape,str(OUT/(name+'.step')))
  oriented=shape.translate((0,0,8));f=OUT/(name+'.stl');cq.exporters.export(oriented,str(f),tolerance=.035,angularTolerance=.09)
  mesh=trimesh.load_mesh(f,process=True);assert mesh.is_watertight and mesh.is_winding_consistent and mesh.volume>0,name
+ distributed=ROOT/'mechanical/Print_STL/Tooling';distributed.mkdir(exist_ok=True)
+ shutil.copyfile(f,distributed/f.name)
 # Exact contact/clearance against every rigid product STEP, all cap variants.
 checks=[]
 for f in (ROOT/'mechanical/STEP_Parts').glob('*.step'):

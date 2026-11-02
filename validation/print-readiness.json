@@ -1,0 +1,1006 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "manufacturing_qualified": false,
+  "actual_slicer_executed": true,
+  "slicer": "PrusaSlicer-2.8.1+linux-x64-GTK3-202409181416 based on Slic3r (with GUI support)",
+  "slicer_launcher_sha256": "f4770f07db9f5c9611c6022667e2d129b164da8cd22334e467e60def39a5e76f",
+  "parts_checked": 17,
+  "critical_wall_checks": [
+    {
+      "part": "Cap_circular",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Cap_ships_wheel",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Cap_rounded_triangle",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Cap_scalloped_coin",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Cap_petal_flower",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Cap_four_leaf_clover",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Cap_rounded_hexagon",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Cap_rounded_square",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Cap_wave_rim",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Cap_turbine_wheel",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Cap_thumb_scoop",
+      "lower_socket_outer_wall_mm": 1.2,
+      "top_countersink_outer_wall_mm": 1.0,
+      "method": "Exact STEP material probes on three bosses at four heights and three outward directions"
+    },
+    {
+      "part": "Inner_Race_Nut",
+      "wall_beneath_tool_notches_mm": 1.0,
+      "thread_clearance_mm": 0.15,
+      "pitch_mm": 1.2,
+      "print_notch_bridge_width_mm": 3.0
+    },
+    {
+      "part": "Outer_Race_Retainer",
+      "boss_pilot_wall_mm": 0.8,
+      "threaded_wall_and_pullout": "Unqualified; test with actual M2 fastener"
+    },
+    {
+      "part": "Bearing_Carrier",
+      "guide_load_wall_mm": 1.35,
+      "non_load_counterbore_rim_mm": 0.55,
+      "shaft_wall_mm": 1.2,
+      "thread_radial_depth_mm": 0.35,
+      "limit": "Connected thread detail; actual thread coupon must be tested"
+    },
+    {
+      "part": "Stationary_Base",
+      "ring_roof_mm": 1.5,
+      "spring_floor_mm": 1.3,
+      "PCB_post_pilot_wall_mm": 1.45,
+      "non_retaining_locator_wall_mm": 0.6,
+      "ring_roof_supports": "Required; unsupported annulus creates long tangential bridges despite4.4mm radial width"
+    },
+    {
+      "part": "Nest_Left/Nest_Right",
+      "support_finger_thickness_mm": 1.0,
+      "finger_width_mm": 2.6,
+      "support_requirement": "Everywhere, including from pocket floor; not build-plate-only"
+    }
+  ],
+  "parts": [
+    {
+      "name": "Stationary_Base",
+      "role": "common product",
+      "file": "mechanical/Print_STL/Stationary_Base.stl",
+      "quantity_per_default_unit": 1,
+      "supports": "everywhere",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/supports-everywhere.ini"
+      ],
+      "orientation": "as supplied",
+      "sha256": "4ef607dfb127f5cc671a171373480c65c27ff980b8f16a79a01d6fb801583e51",
+      "STEP_file": "mechanical/STEP_Parts/Stationary_Base.step",
+      "STEP_sha256": "2a75f677f4dc245abf0855348fe407f836c6522ccf13d4a07c4250b5a2cdee8b",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 6.920921202314294e-07,
+      "bed_contact_area_at_0_1mm_mm2": 1951.6560219294686,
+      "bounds_mm": [
+        [
+          -29.0,
+          -29.0,
+          0.0
+        ],
+        [
+          29.0,
+          29.0,
+          8.399999618530273
+        ]
+      ],
+      "slicer_execution_seconds": 3.694,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "52295681f57addda4b982b039b7461fb8afa722664acfef0495d364e894d041b",
+      "layers": 62,
+      "extrusion_types": {
+        "Skirt/Brim": 615,
+        "Support material": 875,
+        "Perimeter": 30072,
+        "External perimeter": 21314,
+        "Solid infill": 8750,
+        "Internal infill": 20,
+        "Top solid infill": 1026,
+        "Support material interface": 1629,
+        "Bridge infill": 599
+      },
+      "positive_XY_extrusion_segments": 64900,
+      "support_segments": 2504,
+      "maximum_support_z_mm": 1.95,
+      "maximum_bridge_line_mm": 31.289886321301978,
+      "slicer_estimated_mass_only": "filament used [g] = 8.30",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 1h 5m 54s"
+    },
+    {
+      "name": "Bearing_Carrier",
+      "role": "common product",
+      "file": "mechanical/Print_STL/Bearing_Carrier.stl",
+      "quantity_per_default_unit": 1,
+      "supports": "shoulders",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/carrier-shoulder-supports.ini"
+      ],
+      "orientation": "as supplied",
+      "sha256": "33fbfcb5d62a2a68352461ff3eaf36aca4c66da23a100e87029265b4ec013f3e",
+      "STEP_file": "mechanical/STEP_Parts/Bearing_Carrier.step",
+      "STEP_sha256": "fc6cd28c229bcf58193a80f18a4e38e8d5740535d4864938ad42c21b8eb3f487",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 6.33396089065791e-07,
+      "bed_contact_area_at_0_1mm_mm2": 84.58426882570006,
+      "bounds_mm": [
+        [
+          -21.799423217773438,
+          -20.647159576416016,
+          0.0
+        ],
+        [
+          20.644983291625977,
+          20.647159576416016,
+          12.100000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 3.098,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "961a866c5c97ec07b5e99eea7eaaf5c4e7fb1e5e816af579a2a9ada378d26863",
+      "layers": 86,
+      "extrusion_types": {
+        "Skirt/Brim": 749,
+        "Support material": 1213,
+        "External perimeter": 22396,
+        "Perimeter": 15875,
+        "Support material interface": 1156,
+        "Overhang perimeter": 938,
+        "Bridge infill": 29,
+        "Solid infill": 376,
+        "Top solid infill": 27
+      },
+      "positive_XY_extrusion_segments": 42759,
+      "support_segments": 2369,
+      "maximum_support_z_mm": 1.8,
+      "maximum_bridge_line_mm": 1.0809722475623575,
+      "slicer_estimated_mass_only": "filament used [g] = 2.99",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 27m 46s"
+    },
+    {
+      "name": "Inner_Race_Nut",
+      "role": "common product",
+      "file": "mechanical/Print_STL/Inner_Race_Nut.stl",
+      "quantity_per_default_unit": 1,
+      "supports": "none",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ],
+      "orientation": "wide notched face down",
+      "sha256": "2e47c2c50ff846f12c6e5f5357640940978e38916b72dddf6e6596f34f5be4c4",
+      "STEP_file": "mechanical/STEP_Parts/Inner_Race_Nut.step",
+      "STEP_sha256": "68594f8d3d8d571fb1ff8ab84d2323640cb425de744b39b3ce427bb5760c9c17",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 9.232308050520696e-07,
+      "bed_contact_area_at_0_1mm_mm2": 245.82310318102986,
+      "bounds_mm": [
+        [
+          -21.600000381469727,
+          -21.600000381469727,
+          1.9098447978649347e-07
+        ],
+        [
+          21.600000381469727,
+          21.600000381469727,
+          2.500000238418579
+        ]
+      ],
+      "slicer_execution_seconds": 0.464,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "cbebc383d4d9d4338a318853a212e226e37f2c4712390ba5a19ec6526184568a",
+      "layers": 16,
+      "extrusion_types": {
+        "Skirt/Brim": 624,
+        "External perimeter": 4700,
+        "Perimeter": 4657,
+        "Overhang perimeter": 12
+      },
+      "positive_XY_extrusion_segments": 9993,
+      "support_segments": 0,
+      "maximum_support_z_mm": 0,
+      "maximum_bridge_line_mm": 0,
+      "slicer_estimated_mass_only": "filament used [g] = 0.78",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 7m 5s"
+    },
+    {
+      "name": "Outer_Race_Retainer",
+      "role": "common product",
+      "file": "mechanical/Print_STL/Outer_Race_Retainer.stl",
+      "quantity_per_default_unit": 1,
+      "supports": "none",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ],
+      "orientation": "as supplied",
+      "sha256": "eb44efef1ae2eb12531c598871c2a568227507b85c0d9bd837f95c596f72d763",
+      "STEP_file": "mechanical/STEP_Parts/Outer_Race_Retainer.step",
+      "STEP_sha256": "a48d99aafb2421afb7bb61eb2a3de1eebfd8f8ffe8b3d711d5422ec6e7b14391",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 9.092698860942604e-07,
+      "bed_contact_area_at_0_1mm_mm2": 729.1073069758618,
+      "bounds_mm": [
+        [
+          -28.799999237060547,
+          -28.799999237060547,
+          0.0
+        ],
+        [
+          28.799999237060547,
+          28.799999237060547,
+          4.5
+        ]
+      ],
+      "slicer_execution_seconds": 0.985,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "b4f6fc86eaead040b4d3fdc63ee945535a706d966d18ee1654d5cc19a62f1c11",
+      "layers": 30,
+      "extrusion_types": {
+        "Skirt/Brim": 615,
+        "Perimeter": 9402,
+        "External perimeter": 5637,
+        "Solid infill": 3807,
+        "Top solid infill": 490
+      },
+      "positive_XY_extrusion_segments": 19951,
+      "support_segments": 0,
+      "maximum_support_z_mm": 0,
+      "maximum_bridge_line_mm": 0,
+      "slicer_estimated_mass_only": "filament used [g] = 1.72",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 15m 43s"
+    },
+    {
+      "name": "Cap_circular",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_circular.stl",
+      "quantity_per_default_unit": 1,
+      "supports": "none",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ],
+      "orientation": "deck down",
+      "sha256": "5cbb9d8c4345b11112bcfc961ff53dfa9e95c9913de5f16fef7767e0570b9eea",
+      "STEP_file": "mechanical/STEP_Parts/Cap_circular.step",
+      "STEP_sha256": "0ac6179cc16dff18a6d444018f8041807728cfaa891ea4b487f627ca55a774d4",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 7.8694745919854e-07,
+      "bed_contact_area_at_0_1mm_mm2": 2859.7469056830178,
+      "bounds_mm": [
+        [
+          -30.799837112426758,
+          -30.799837112426758,
+          -2.4492937051703357e-16
+        ],
+        [
+          30.799837112426758,
+          30.799837112426758,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 4.159,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "1cff2f0e0a214bd05c89d822b171e0d2366d09f8426aa51c9e4e4e2e75f95fb0",
+      "layers": 70,
+      "extrusion_types": {
+        "Skirt/Brim": 2104,
+        "Perimeter": 78441,
+        "External perimeter": 47969,
+        "Solid infill": 10743,
+        "Bridge infill": 798,
+        "Internal infill": 22234,
+        "Top solid infill": 501
+      },
+      "positive_XY_extrusion_segments": 162790,
+      "support_segments": 0,
+      "maximum_support_z_mm": 0,
+      "maximum_bridge_line_mm": 4.317594237535524,
+      "slicer_estimated_mass_only": "filament used [g] = 16.81",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 2h 20m 17s"
+    },
+    {
+      "name": "Cap_ships_wheel",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_ships_wheel.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "early-rim",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/carrier-shoulder-supports.ini"
+      ],
+      "orientation": "deck down",
+      "sha256": "41a60c71728777aff20a5c1925b6c7ce6fd0c2b24171d3dc92839896b85b9995",
+      "STEP_file": "mechanical/STEP_Parts/Cap_ships_wheel.step",
+      "STEP_sha256": "cc1ad21bd3726f290c5ef9dd62132c13453715f923929701d08bbe8c7f7f8f2d",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 7.991538909424363e-07,
+      "bed_contact_area_at_0_1mm_mm2": 2620.7240169489987,
+      "bounds_mm": [
+        [
+          -30.799999237060547,
+          -29.0,
+          0.0
+        ],
+        [
+          30.799999237060547,
+          29.0,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 5.299,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "0e9853c3bed3041a48e1832f8028457db762305fe985c76c638775436dfcb629",
+      "layers": 75,
+      "extrusion_types": {
+        "Skirt/Brim": 1064,
+        "Support material interface": 193,
+        "Support material": 27,
+        "External perimeter": 32436,
+        "Perimeter": 82877,
+        "Solid infill": 14955,
+        "Internal infill": 7905,
+        "Top solid infill": 541,
+        "Bridge infill": 561
+      },
+      "positive_XY_extrusion_segments": 140559,
+      "support_segments": 220,
+      "maximum_support_z_mm": 0.9,
+      "maximum_bridge_line_mm": 13.109841570362326,
+      "slicer_estimated_mass_only": "filament used [g] = 14.41",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 1h 50m 35s"
+    },
+    {
+      "name": "Cap_rounded_triangle",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_rounded_triangle.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "early-rim",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/carrier-shoulder-supports.ini"
+      ],
+      "orientation": "deck down",
+      "sha256": "4340f9367c822234ebf64b7327f8bc8a75769fc2b5c7ea4f8eab0b8bd8e88c0f",
+      "STEP_file": "mechanical/STEP_Parts/Cap_rounded_triangle.step",
+      "STEP_sha256": "c94dcf8b5e95747f1f7ae7776b8fb51707b927913a1c18c23a03a2196ba9bcf0",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 8.499346867659468e-07,
+      "bed_contact_area_at_0_1mm_mm2": 2375.9239045979734,
+      "bounds_mm": [
+        [
+          -28.799999237060547,
+          -28.79938507080078,
+          -2.4492937051703357e-16
+        ],
+        [
+          30.797094345092773,
+          28.79938507080078,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 3.416,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "67942991b7d0d18f018a56e12e430b8e502dec74240d331989536f4fd4193d75",
+      "layers": 77,
+      "extrusion_types": {
+        "Skirt/Brim": 803,
+        "Support material interface": 1552,
+        "Support material": 893,
+        "Perimeter": 73583,
+        "External perimeter": 26270,
+        "Solid infill": 11355,
+        "Internal infill": 6609,
+        "Top solid infill": 514,
+        "Overhang perimeter": 405,
+        "Bridge infill": 314
+      },
+      "positive_XY_extrusion_segments": 122298,
+      "support_segments": 2445,
+      "maximum_support_z_mm": 1.5,
+      "maximum_bridge_line_mm": 12.52908456352659,
+      "slicer_estimated_mass_only": "filament used [g] = 14.02",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 1h 46m 10s"
+    },
+    {
+      "name": "Cap_scalloped_coin",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_scalloped_coin.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "none",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ],
+      "orientation": "deck down",
+      "sha256": "600d3fef9b1049f0005ab1e5872e2071f35cbf2ae903e86423693d369e0722fd",
+      "STEP_file": "mechanical/STEP_Parts/Cap_scalloped_coin.step",
+      "STEP_sha256": "2a3581ad8e1e79aef080eebbd734825f99414959fff7f74d7ecbc23bdfed113a",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 9.236502603364436e-07,
+      "bed_contact_area_at_0_1mm_mm2": 2683.834812415613,
+      "bounds_mm": [
+        [
+          -30.799999237060547,
+          -30.799999237060547,
+          -2.4492937051703357e-16
+        ],
+        [
+          30.799999237060547,
+          30.799999237060547,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 3.142,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "852a568fed9b8c4c9b6d26bf8390da4261dbef7c763320fd690a260587434f14",
+      "layers": 70,
+      "extrusion_types": {
+        "Skirt/Brim": 1058,
+        "Perimeter": 87701,
+        "External perimeter": 30399,
+        "Solid infill": 16646,
+        "Internal infill": 11172,
+        "Top solid infill": 716,
+        "Overhang perimeter": 36
+      },
+      "positive_XY_extrusion_segments": 147728,
+      "support_segments": 0,
+      "maximum_support_z_mm": 0,
+      "maximum_bridge_line_mm": 0,
+      "slicer_estimated_mass_only": "filament used [g] = 15.11",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 1h 55m 6s"
+    },
+    {
+      "name": "Cap_petal_flower",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_petal_flower.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "early-rim",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/carrier-shoulder-supports.ini"
+      ],
+      "orientation": "deck down",
+      "sha256": "5ff83fb8af6d2b3e52bd51f3d0cf7882ae09eb0ee1febc1708717e6114af3ce4",
+      "STEP_file": "mechanical/STEP_Parts/Cap_petal_flower.step",
+      "STEP_sha256": "cb6d532c72489e01754ab914704a4d62efcfba3522320db317ee334ad8bc1115",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 7.412402089204637e-07,
+      "bed_contact_area_at_0_1mm_mm2": 2523.1128380951895,
+      "bounds_mm": [
+        [
+          -30.799999237060547,
+          -28.799999237060547,
+          -2.4492937051703357e-16
+        ],
+        [
+          30.799999237060547,
+          28.799999237060547,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 3.103,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "bd15c8816c23fd01e96dacd0685d8e81da86bbced697846058d030756b3b5119",
+      "layers": 77,
+      "extrusion_types": {
+        "Skirt/Brim": 835,
+        "Support material interface": 1038,
+        "Support material": 508,
+        "Perimeter": 81975,
+        "External perimeter": 29034,
+        "Solid infill": 14353,
+        "Internal infill": 8651,
+        "Top solid infill": 606,
+        "Overhang perimeter": 252,
+        "Bridge infill": 144
+      },
+      "positive_XY_extrusion_segments": 137396,
+      "support_segments": 1546,
+      "maximum_support_z_mm": 1.5,
+      "maximum_bridge_line_mm": 13.57125023717417,
+      "slicer_estimated_mass_only": "filament used [g] = 14.60",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 1h 50m 36s"
+    },
+    {
+      "name": "Cap_four_leaf_clover",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_four_leaf_clover.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "early-rim",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/carrier-shoulder-supports.ini"
+      ],
+      "orientation": "deck down",
+      "sha256": "3f1e1ccaa43153f225e819c6dcab2b678dd74309e166d4d3ee60ddcb3a6c6075",
+      "STEP_file": "mechanical/STEP_Parts/Cap_four_leaf_clover.step",
+      "STEP_sha256": "7826d2b7238958ac71ececd5c895f4e9c3bd1f513822cb5f00bc77ae49a92717",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 9.471334219092382e-07,
+      "bed_contact_area_at_0_1mm_mm2": 2499.513880912585,
+      "bounds_mm": [
+        [
+          -30.799999237060547,
+          -30.799999237060547,
+          -3.6738765008888675e-16
+        ],
+        [
+          30.799999237060547,
+          30.799999237060547,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 3.449,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "df4aa9a48692ae8fc4dea08af32d57771fcc1a53ac74706ed5dddc2dfecaf8cf",
+      "layers": 77,
+      "extrusion_types": {
+        "Skirt/Brim": 867,
+        "Support material interface": 1020,
+        "Support material": 606,
+        "External perimeter": 28234,
+        "Perimeter": 75490,
+        "Solid infill": 14112,
+        "Internal infill": 8259,
+        "Top solid infill": 630,
+        "Overhang perimeter": 278,
+        "Bridge infill": 141
+      },
+      "positive_XY_extrusion_segments": 129637,
+      "support_segments": 1626,
+      "maximum_support_z_mm": 1.5,
+      "maximum_bridge_line_mm": 12.810602366789782,
+      "slicer_estimated_mass_only": "filament used [g] = 14.49",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 1h 48m 2s"
+    },
+    {
+      "name": "Cap_rounded_hexagon",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_rounded_hexagon.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "none",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ],
+      "orientation": "deck down",
+      "sha256": "f979dd2c042fbd7e0e1aa55ac3145bb92ad419b95d22c29141278dc310f18ca2",
+      "STEP_file": "mechanical/STEP_Parts/Cap_rounded_hexagon.step",
+      "STEP_sha256": "c65506d3e72a62a3e06959c553f5dc93a36986c2f6e60f5c1feba99713aaa8bf",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 1.1720517530651307e-06,
+      "bed_contact_area_at_0_1mm_mm2": 2536.0946329470353,
+      "bounds_mm": [
+        [
+          -30.798601150512695,
+          -28.79938507080078,
+          -2.4492937051703357e-16
+        ],
+        [
+          30.798601150512695,
+          28.79938507080078,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 2.608,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "8f12411cf4ad1e1830a5fffa1de80759bf093769e524a99fe12520700f1fba9c",
+      "layers": 70,
+      "extrusion_types": {
+        "Skirt/Brim": 338,
+        "Perimeter": 69234,
+        "External perimeter": 24207,
+        "Solid infill": 11745,
+        "Internal infill": 8358,
+        "Top solid infill": 568,
+        "Overhang perimeter": 186
+      },
+      "positive_XY_extrusion_segments": 114636,
+      "support_segments": 0,
+      "maximum_support_z_mm": 0,
+      "maximum_bridge_line_mm": 0,
+      "slicer_estimated_mass_only": "filament used [g] = 14.20",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 1h 46m 45s"
+    },
+    {
+      "name": "Cap_rounded_square",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_rounded_square.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "early-rim",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/carrier-shoulder-supports.ini"
+      ],
+      "orientation": "deck down",
+      "sha256": "eabb6fe4d84e8c436188c9cfd776274f21f38f2ffdfd3fe99c89ca7101c0eae3",
+      "STEP_file": "mechanical/STEP_Parts/Cap_rounded_square.step",
+      "STEP_sha256": "c53592b1370a6a003b95cc01a02945c6b84239476571b891c2ad0b8027c02fca",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 8.249553129099487e-07,
+      "bed_contact_area_at_0_1mm_mm2": 2447.3986092687633,
+      "bounds_mm": [
+        [
+          -30.799999237060547,
+          -30.799999237060547,
+          -3.673716358722277e-16
+        ],
+        [
+          30.799999237060547,
+          30.799999237060547,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 3.178,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "27a8dd684a1b280c29ffc82d5710744fcd4f054647607f6af1e169c29252c3ed",
+      "layers": 77,
+      "extrusion_types": {
+        "Skirt/Brim": 855,
+        "Support material interface": 1202,
+        "Support material": 729,
+        "Perimeter": 72511,
+        "External perimeter": 27507,
+        "Solid infill": 12825,
+        "Internal infill": 7405,
+        "Top solid infill": 607,
+        "Overhang perimeter": 335,
+        "Bridge infill": 179
+      },
+      "positive_XY_extrusion_segments": 124155,
+      "support_segments": 1931,
+      "maximum_support_z_mm": 1.5,
+      "maximum_bridge_line_mm": 12.738040194629642,
+      "slicer_estimated_mass_only": "filament used [g] = 14.27",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 1h 47m 0s"
+    },
+    {
+      "name": "Cap_wave_rim",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_wave_rim.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "none",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ],
+      "orientation": "deck down",
+      "sha256": "5e4bdf802acd889b10da8e0374332e77a02f4124663bb2061bdaeb13ee2953c7",
+      "STEP_file": "mechanical/STEP_Parts/Cap_wave_rim.step",
+      "STEP_sha256": "ab1f23a2922e74e47f893003c11c575bbbd8a659e414ab44141e5cf23518c129",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 9.650085991699184e-07,
+      "bed_contact_area_at_0_1mm_mm2": 2725.1696544664887,
+      "bounds_mm": [
+        [
+          -30.799999237060547,
+          -30.799999237060547,
+          -3.673119200494463e-16
+        ],
+        [
+          30.799999237060547,
+          30.799999237060547,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 2.974,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "5534d04aa1dfbf54a8ebd11afe248798e2c39da236008b9607026ea36467e1d0",
+      "layers": 70,
+      "extrusion_types": {
+        "Skirt/Brim": 789,
+        "Perimeter": 76735,
+        "External perimeter": 28452,
+        "Solid infill": 18860,
+        "Internal infill": 11888,
+        "Top solid infill": 724
+      },
+      "positive_XY_extrusion_segments": 137448,
+      "support_segments": 0,
+      "maximum_support_z_mm": 0,
+      "maximum_bridge_line_mm": 0,
+      "slicer_estimated_mass_only": "filament used [g] = 15.40",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 1h 54m 39s"
+    },
+    {
+      "name": "Cap_turbine_wheel",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_turbine_wheel.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "none",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ],
+      "orientation": "deck down",
+      "sha256": "3feab804aa519c02dfca312a5954de55c328394ac18b78fb08616fdbfbbc5123",
+      "STEP_file": "mechanical/STEP_Parts/Cap_turbine_wheel.step",
+      "STEP_sha256": "d09ee5bc89170c3144a30719ac3e8be7d88823681e0ffc9fcd1b39b352cc9afd",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 7.797071999185039e-07,
+      "bed_contact_area_at_0_1mm_mm2": 2838.0741683055353,
+      "bounds_mm": [
+        [
+          -30.350000381469727,
+          -30.350000381469727,
+          1.0000002248489182e-07
+        ],
+        [
+          30.350000381469727,
+          30.350000381469727,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 2.933,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "013122aec32218f4236f39eaa31e9491292be62dc48f0bcb20e63dabcb246d43",
+      "layers": 70,
+      "extrusion_types": {
+        "Skirt/Brim": 711,
+        "Perimeter": 80412,
+        "External perimeter": 28773,
+        "Solid infill": 13349,
+        "Internal infill": 18447,
+        "Top solid infill": 547,
+        "Bridge infill": 815
+      },
+      "positive_XY_extrusion_segments": 143054,
+      "support_segments": 0,
+      "maximum_support_z_mm": 0,
+      "maximum_bridge_line_mm": 2.838020789212093,
+      "slicer_estimated_mass_only": "filament used [g] = 16.64",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 2h 5m 39s"
+    },
+    {
+      "name": "Cap_thumb_scoop",
+      "role": "cap alternative",
+      "file": "mechanical/Print_STL/Cap_thumb_scoop.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "everywhere",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/supports-everywhere.ini"
+      ],
+      "orientation": "upright, cup supported",
+      "sha256": "f25b98ad11ed7609dcd62006cc6d06798ca5b5b10fa488e8d218c5e8e42f7e77",
+      "STEP_file": "mechanical/STEP_Parts/Cap_thumb_scoop.step",
+      "STEP_sha256": "1cd47ad132a3a217eb43015f6f40c9a7d4a39306b62ffbc333772f146b9d8928",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 8.344831789509249e-07,
+      "bed_contact_area_at_0_1mm_mm2": 605.7449763746279,
+      "bounds_mm": [
+        [
+          -30.799999237060547,
+          -29.200000762939453,
+          -1.415440097511913e-16
+        ],
+        [
+          30.799999237060547,
+          29.200000762939453,
+          10.600000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 3.875,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "629e64350bf623e24ebeedae8eb6db6f5036d8a9a65402e366a4c47dc7569320",
+      "layers": 100,
+      "extrusion_types": {
+        "Skirt/Brim": 730,
+        "Support material": 6337,
+        "External perimeter": 24578,
+        "Perimeter": 67756,
+        "Support material interface": 4786,
+        "Overhang perimeter": 966,
+        "Solid infill": 11155,
+        "Bridge infill": 696,
+        "Internal infill": 22228,
+        "Top solid infill": 747
+      },
+      "positive_XY_extrusion_segments": 139979,
+      "support_segments": 11123,
+      "maximum_support_z_mm": 8.7,
+      "maximum_bridge_line_mm": 51.03041054116652,
+      "slicer_estimated_mass_only": "filament used [g] = 21.79",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 2h 36m 58s"
+    },
+    {
+      "name": "Nest_Left",
+      "role": "tooling",
+      "file": "mechanical/Print_STL/Tooling/Nest_Left.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "everywhere",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/supports-everywhere.ini"
+      ],
+      "orientation": "as supplied",
+      "sha256": "e8c72c6e0b10578b4bf697f0bb762d3ff55ad6fed0375afb8ff2c3a417bf8824",
+      "STEP_file": "mechanical/export/Tooling/Nest_Left.step",
+      "STEP_sha256": "cec35a41e1b10223a91276ed133b184132917c97d2a5b33c9936c7d1cee43ee3",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 1.5516222633549698e-06,
+      "bed_contact_area_at_0_1mm_mm2": 3200.0,
+      "bounds_mm": [
+        [
+          -40.0,
+          -40.0,
+          0.0
+        ],
+        [
+          7.219352441973758e-15,
+          40.0,
+          13.100000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 0.74,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "78bee54e74441aef1471d176c7637d4eae34effaa04966543560a953d88ecc57",
+      "layers": 99,
+      "extrusion_types": {
+        "Skirt/Brim": 149,
+        "Perimeter": 6182,
+        "External perimeter": 2190,
+        "Solid infill": 9760,
+        "Internal infill": 21270,
+        "Top solid infill": 884,
+        "Support material interface": 135,
+        "Support material": 48,
+        "Overhang perimeter": 16
+      },
+      "positive_XY_extrusion_segments": 40634,
+      "support_segments": 183,
+      "maximum_support_z_mm": 11.85,
+      "maximum_bridge_line_mm": 0,
+      "slicer_estimated_mass_only": "filament used [g] = 36.73",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 3h 28m 25s"
+    },
+    {
+      "name": "Nest_Right",
+      "role": "tooling",
+      "file": "mechanical/Print_STL/Tooling/Nest_Right.stl",
+      "quantity_per_default_unit": 0,
+      "supports": "everywhere",
+      "support_profile": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/supports-everywhere.ini"
+      ],
+      "orientation": "as supplied",
+      "sha256": "3df9a1d490fabc2df89364f6eed19103f8dee515d6db9fc941b932f8a65976c0",
+      "STEP_file": "mechanical/export/Tooling/Nest_Right.step",
+      "STEP_sha256": "33b4a747aa70bf987ae51f272dfb187af0eab282972cc186925751cd9df26e1c",
+      "single_closed_mesh": true,
+      "source_STEP_surface_error_mm": 1.2050454913534428e-06,
+      "bed_contact_area_at_0_1mm_mm2": 3200.0,
+      "bounds_mm": [
+        [
+          -5.363953029034578e-15,
+          -40.0,
+          0.0
+        ],
+        [
+          40.0,
+          40.0,
+          13.100000381469727
+        ]
+      ],
+      "slicer_execution_seconds": 0.553,
+      "slicer_exit_code": 0,
+      "slicer_warnings": [],
+      "gcode_sha256": "2cd2c0f42abe3653506c002a03204371bb61d4c6fbe15503dd638c5a6a9619d3",
+      "layers": 99,
+      "extrusion_types": {
+        "Skirt/Brim": 149,
+        "Perimeter": 5959,
+        "External perimeter": 2060,
+        "Solid infill": 9832,
+        "Internal infill": 21247,
+        "Top solid infill": 884,
+        "Support material interface": 83,
+        "Support material": 28,
+        "Overhang perimeter": 6
+      },
+      "positive_XY_extrusion_segments": 40248,
+      "support_segments": 111,
+      "maximum_support_z_mm": 11.85,
+      "maximum_bridge_line_mm": 0,
+      "slicer_estimated_mass_only": "filament used [g] = 36.68",
+      "slicer_estimated_time_only": "estimated printing time (silent mode) = 3h 27m 21s"
+    }
+  ],
+  "remaining_physical_tests": [
+    "Printer/nozzle/filament process and coupon fit",
+    "Support removal and mating/bonding surface finish",
+    "Printed thread torque/pull-out/life",
+    "Spring/actuator/magnetic/adhesive/firmware production gates"
+  ],
+  "source_sha256": {
+    "mechanical/printing/audit_prints.py": "cd1294b98d8ab5ed3c8b5ef86eaf15cc45ff9344292fef8fc60eed7ecbad66bd",
+    "mechanical/build_enclosure.py": "aea7f698c7e3199c98442d0fee8040a47a5bba3bbadac6399ba8fc7cfc8b7285",
+    "mechanical/enclosure-parameters.json": "5cd2659b2a34805481e0925bc33772ac2553e0bae41d1079b015a70baf98d921",
+    "mechanical/printing/PETG-0.4-audit.ini": "cdd54ff5a859810d4f34b0f6db92a43fc96ff2959344835cb2f9e8e55e67fc2f",
+    "mechanical/printing/supports-everywhere.ini": "246f0953642f99e9e704d3825c9da2d2a3903aa13fe94084cbe35c9e4c563ac5",
+    "mechanical/printing/carrier-shoulder-supports.ini": "f83ade85865a62c70082fa6302019bee755dc269c7dca5d00c834518c4da2db7",
+    "mechanical/Print_STL/Stationary_Base.stl": "4ef607dfb127f5cc671a171373480c65c27ff980b8f16a79a01d6fb801583e51",
+    "mechanical/Print_STL/Bearing_Carrier.stl": "33fbfcb5d62a2a68352461ff3eaf36aca4c66da23a100e87029265b4ec013f3e",
+    "mechanical/Print_STL/Inner_Race_Nut.stl": "2e47c2c50ff846f12c6e5f5357640940978e38916b72dddf6e6596f34f5be4c4",
+    "mechanical/Print_STL/Outer_Race_Retainer.stl": "eb44efef1ae2eb12531c598871c2a568227507b85c0d9bd837f95c596f72d763",
+    "mechanical/Print_STL/Cap_circular.stl": "5cbb9d8c4345b11112bcfc961ff53dfa9e95c9913de5f16fef7767e0570b9eea",
+    "mechanical/Print_STL/Cap_ships_wheel.stl": "41a60c71728777aff20a5c1925b6c7ce6fd0c2b24171d3dc92839896b85b9995",
+    "mechanical/Print_STL/Cap_rounded_triangle.stl": "4340f9367c822234ebf64b7327f8bc8a75769fc2b5c7ea4f8eab0b8bd8e88c0f",
+    "mechanical/Print_STL/Cap_scalloped_coin.stl": "600d3fef9b1049f0005ab1e5872e2071f35cbf2ae903e86423693d369e0722fd",
+    "mechanical/Print_STL/Cap_petal_flower.stl": "5ff83fb8af6d2b3e52bd51f3d0cf7882ae09eb0ee1febc1708717e6114af3ce4",
+    "mechanical/Print_STL/Cap_four_leaf_clover.stl": "3f1e1ccaa43153f225e819c6dcab2b678dd74309e166d4d3ee60ddcb3a6c6075",
+    "mechanical/Print_STL/Cap_rounded_hexagon.stl": "f979dd2c042fbd7e0e1aa55ac3145bb92ad419b95d22c29141278dc310f18ca2",
+    "mechanical/Print_STL/Cap_rounded_square.stl": "eabb6fe4d84e8c436188c9cfd776274f21f38f2ffdfd3fe99c89ca7101c0eae3",
+    "mechanical/Print_STL/Cap_wave_rim.stl": "5e4bdf802acd889b10da8e0374332e77a02f4124663bb2061bdaeb13ee2953c7",
+    "mechanical/Print_STL/Cap_turbine_wheel.stl": "3feab804aa519c02dfca312a5954de55c328394ac18b78fb08616fdbfbbc5123",
+    "mechanical/Print_STL/Cap_thumb_scoop.stl": "f25b98ad11ed7609dcd62006cc6d06798ca5b5b10fa488e8d218c5e8e42f7e77",
+    "mechanical/Print_STL/Tooling/Nest_Left.stl": "e8c72c6e0b10578b4bf697f0bb762d3ff55ad6fed0375afb8ff2c3a417bf8824",
+    "mechanical/Print_STL/Tooling/Nest_Right.stl": "3df9a1d490fabc2df89364f6eed19103f8dee515d6db9fc941b932f8a65976c0"
+  }
+}

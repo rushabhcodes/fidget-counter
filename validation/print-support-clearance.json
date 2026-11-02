@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "method": "Actual G-code line-segment distances including0.2mm support bead radius vs guide bores; source STL bounding-box centering matches CLI--center",
+  "carrier_guide_support_clearances": [
+    {
+      "guide_angle_deg": 0,
+      "support_bead_to_bore_clearance_mm": 1.5680994621897655
+    },
+    {
+      "guide_angle_deg": 105,
+      "support_bead_to_bore_clearance_mm": 1.5675124993228537
+    },
+    {
+      "guide_angle_deg": 255,
+      "support_bead_to_bore_clearance_mm": 1.5675124993228537
+    }
+  ],
+  "maximum_carrier_support_z_mm": 1.8,
+  "limits": [
+    "Cleanup and actual printer extrusion width remain physical checks"
+  ]
+}
