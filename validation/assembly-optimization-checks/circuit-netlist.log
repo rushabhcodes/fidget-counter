@@ -3,9 +3,9 @@ Warnings: 0
 
 Readable Netlist:
 COMPONENTS:
- - GPIO_SCL: 
- - GPIO_SDA: 
- - GPIO_HALL_INT: 
+ - GPIO_SCL:
+ - GPIO_SDA:
+ - GPIO_HALL_INT:
  - U1: NRF52810-QFAA-R
  - BT1: BT1, source_component
  - C4: 100nF capacitor
@@ -381,4 +381,3 @@ BEARING_V5_Cap_Retainer_Screws
 BEARING_V5_Magnet
 
 BEARING_V5_Cap_circular
-
