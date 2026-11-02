@@ -19,33 +19,18 @@
       "passed": true
     },
     {
-      "section": "Guide load wall1.35mm at0deg",
-      "sampled_material_points": 48,
+      "section": "Solid fixed bearing web5mm at0deg",
+      "sampled_material_points": 96,
       "passed": true
     },
     {
-      "section": "Non-load guide rim0.55mm at0deg",
-      "sampled_material_points": 24,
+      "section": "Solid fixed bearing web5mm at105deg",
+      "sampled_material_points": 96,
       "passed": true
     },
     {
-      "section": "Guide load wall1.35mm at105deg",
-      "sampled_material_points": 48,
-      "passed": true
-    },
-    {
-      "section": "Non-load guide rim0.55mm at105deg",
-      "sampled_material_points": 24,
-      "passed": true
-    },
-    {
-      "section": "Guide load wall1.35mm at255deg",
-      "sampled_material_points": 48,
-      "passed": true
-    },
-    {
-      "section": "Non-load guide rim0.55mm at255deg",
-      "sampled_material_points": 24,
+      "section": "Solid fixed bearing web5mm at255deg",
+      "sampled_material_points": 96,
       "passed": true
     },
     {
@@ -56,36 +41,6 @@
     {
       "section": "Continuous ring bonding roof1.5mm",
       "sampled_material_points": 72,
-      "passed": true
-    },
-    {
-      "section": "Spring floor1.3mm at60deg",
-      "sampled_material_points": 48,
-      "passed": true
-    },
-    {
-      "section": "Legacy trapped relief filled at60deg",
-      "sampled_material_points": 8,
-      "passed": true
-    },
-    {
-      "section": "Spring floor1.3mm at180deg",
-      "sampled_material_points": 48,
-      "passed": true
-    },
-    {
-      "section": "Legacy trapped relief filled at180deg",
-      "sampled_material_points": 8,
-      "passed": true
-    },
-    {
-      "section": "Spring floor1.3mm at300deg",
-      "sampled_material_points": 48,
-      "passed": true
-    },
-    {
-      "section": "Legacy trapped relief filled at300deg",
-      "sampled_material_points": 8,
       "passed": true
     },
     {
@@ -141,12 +96,11 @@
     "Section sampling is not a global minimum-thickness proof of all decorative features"
   ],
   "source_sha256": {
-    "mechanical/export/Tooling/Nest_Left.step": "cec35a41e1b10223a91276ed133b184132917c97d2a5b33c9936c7d1cee43ee3",
-    "mechanical/export/Tooling/Nest_Right.step": "33b4a747aa70bf987ae51f272dfb187af0eab282972cc186925751cd9df26e1c",
-    "mechanical/STEP_Parts/Stationary_Base.step": "2a75f677f4dc245abf0855348fe407f836c6522ccf13d4a07c4250b5a2cdee8b",
-    "mechanical/STEP_Parts/Bearing_Carrier.step": "fc6cd28c229bcf58193a80f18a4e38e8d5740535d4864938ad42c21b8eb3f487",
-    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "a48d99aafb2421afb7bb61eb2a3de1eebfd8f8ffe8b3d711d5422ec6e7b14391",
-    "mechanical/printing/check_wall_sections.py": "b01d0a0da29abc155b5383d1c839d5c2a36b6efe41c562cc8235184dbaff8ed8",
-    "mechanical/enclosure-parameters.json": "5cd2659b2a34805481e0925bc33772ac2553e0bae41d1079b015a70baf98d921"
+    "mechanical/export/Tooling/Nest_Left.step": "96ea9e7cce1083b200a810d5fbc060cdacc9186ecadf07f1aaf161b6a824cdca",
+    "mechanical/export/Tooling/Nest_Right.step": "4fe662975de0e62ba27038110fcebb98e664dfe242808e71ab964e39bd168d75",
+    "mechanical/STEP_Parts/Stationary_Base.step": "52ec63da800ce8e4878655a322a307767c88e0bd4d892fb8fcb2e74197169dd6",
+    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "097ecfdbf4924ee69b6819e3cf8fc01b428ff7570e9c3a80e4920c711f7d590c",
+    "mechanical/printing/check_wall_sections.py": "bb052c897e296cf5d4db061a45804f0dba901f20d5fd04bd86f87587de11a39e",
+    "mechanical/enclosure-parameters.json": "4f0c9414d8018e8cb857391791b4d008e5441515b756c0815f79e92b506e50a0"
   }
 }

@@ -1,6 +1,6 @@
 # Purchased MagSafe attachment ring
 
-The local ring revision replaces the 24 separate attachment discs and their separate backing ring with one purchased MagSafe ring assembly. The central diametrically magnetized encoder disc remains essential to rotation sensing. Base diameter stays 58 mm, overall height 17.2 mm, and whole-cap travel 0.8 mm.
+The local ring revision replaces the 24 separate attachment discs and their separate backing ring with one purchased MagSafe ring assembly. The central diametrically magnetized encoder disc remains essential to rotation sensing. Base diameter stays 58 mm, overall height 17.2 mm, and the current revision is rotation-only without axial press travel.
 
 Supplier pages were checked on 1 November 2026. Prices, stock and delivery are supplier listings, not a confirmed quotation or order.
 

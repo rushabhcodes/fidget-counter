@@ -42,10 +42,10 @@ assert base_overlap < 1e-6
 
 # The annulus contains the envelope at every rotation angle. Intersecting each
 # complete cap with it bounds the minimum height over a continuous 360-degree
-# sweep, including all internal reinforcing spokes and the full button stroke.
+# sweep, including all internal reinforcing spokes and the fixed cap height.
 rmin = abs(y) - depth / 2
 rmax = max(math.hypot(a, b) for a in (eb.xmin, eb.xmax) for b in (eb.ymin, eb.ymax))
-assert rmin > parameters['pusher_outer_radius']
+assert rmin > parameters['magnet_diameter']/2
 assert rmax < parameters['bearing']['bore_mm'] / 2
 annulus = cq.Workplane('XY').circle(rmax + .001).circle(rmin - .001).extrude(20).val()
 reports = []
@@ -53,10 +53,10 @@ for style in parameters['cap_styles']:
     cap = cq.importers.importStep(str(root / f'mechanical/STEP_Parts/Cap_{style}.step')).val()
     swept_material = cap.intersect(annulus)
     assert swept_material.Volume() > 0
-    floor = swept_material.BoundingBox().zmin - parameters['button_travel']
+    floor = swept_material.BoundingBox().zmin
     gap = floor - eb.zmax
     assert gap > .7, (style, gap)
-    reports.append({'style': style, 'pressed_swept_cap_floor_z_mm': floor,
+    reports.append({'style': style, 'rotation_swept_cap_floor_z_mm': floor,
                     'conservative_clearance_mm': gap, 'supplier_step_clearance_mm': floor - box.zmax})
     print(f'{style}: {gap:.3f} mm conservative clearance', flush=True)
 
@@ -84,10 +84,10 @@ result = {'passed': True, 'physical_tested': False, 'connector': source['manufac
           'placement_mm': [x, y], 'envelope_mm': [width, depth, height],
           'supplier_step_bounds_mm': step_bounds.tolist(), 'preview_mesh_bounds_mm': mesh_bounds.tolist(),
           'base_intersection_mm3': base_overlap, 'continuous_rotation_deg': 360,
-          'full_press_travel_mm': parameters['button_travel'], 'cap_checks': reports,
+          'full_press_travel_mm': 0, 'cap_checks': reports,
           'minimum_conservative_clearance_mm': min(r['conservative_clearance_mm'] for r in reports),
           'minimum_supplier_step_clearance_mm': min(r['supplier_step_clearance_mm'] for r in reports),
           'service': 'Remove top cap screws, cap, inner nut and bearing; unscrew/lift PCB for side-entry access. Disconnect cable before refitting.',
           'sha256': {str(f.relative_to(root)): hashlib.sha256(f.read_bytes()).hexdigest() for f in files}}
 (root / 'validation/jst-connector-clearance.json').write_text(json.dumps(result, indent=2) + '\n')
-print('Pass: supplier STEP and fitted GLB agree; all eleven caps clear the JST throughout rotation and pressing')
+print('Pass: supplier STEP and fitted GLB agree; all eleven caps clear the JST throughout rotation')

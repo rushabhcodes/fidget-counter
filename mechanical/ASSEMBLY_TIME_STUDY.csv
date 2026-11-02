@@ -1,13 +1,9 @@
-Operation,Published_1_0_24,Default_candidate,Estimated_removed_touch_seconds_low,Estimated_removed_touch_seconds_high,Measured_seconds,Rework_seconds,Operator_and_unit,Notes
-Tray surface preparation adhesive alignment and handling,Required,Removed,40,90,,,,Planning hypothesis only; cure excluded
-Encoder spacer handling,Required,Removed,5,15,,,,Planning hypothesis only
-Ring bonding,Required,Required,,,,,,Log preparation handling and cure separately
-Encoder and actuator bonding,Required,Required,,,,,,Record exact qualified material and adhesive
-Program test and load battery,Required,Required,,,,,,Program unpowered without cell; firmware currently absent
-Springs carrier and guide retainers,3 coils 3 screws 3 washers,Same,,,,,,Measure off-center return before board installation
-PCB installation,4 screws,4 screws,,,,,,Two-screw trial has separate unqualified configuration
-Retainer bearing and inner nut,Retainer must precede bearing,Split nest supports retainer,,,,,,Measure handling failure and rework rates
-Cap screws,3,3,,,,,,Remove split nest before press test
-Final gap force Hall BLE and attachment tests,Required,Required,,,,,,No established complete cycle time
-Optional two PCB screws removed,4 screws,2 only in trial,16,30,,,,Excluded from default estimate; trial needs retention and deflection qualification
-Printed pilot hole preparation,Required if needed,Required if needed,,,,,,Record drilling tapping and any added labor; not included in estimated savings
+Operation,Quantity,Measured_seconds,Rework_seconds,Operator_and_unit,Notes
+Kitting and print cleanup,4prints,,,,Record support and pilot preparation separately
+Ring bonding,1,,,,Log handling and cure separately
+Encoder magnet bonding,1,,,,Sidewall bond against integral stop
+Program test and load cell,1PCBA,,,,No cell while programming; firmware absent
+PCB installation,4screws,,,,Qualified nylon screw torque
+Retainer bearing and nut,3parts,,,,Retainer before bearing; use split nest
+Cap installation,3screws,,,,Qualified torque and head flushness
+Final inspection and functional test,1unit,,,,Rotation retention Hall BLE and attachment

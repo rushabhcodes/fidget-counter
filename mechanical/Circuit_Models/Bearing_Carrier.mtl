@@ -1,7 +1,0 @@
-newmtl Bearing_Carrier_0
-Kd 0.83 0.54 0.2
-Ks 0.22 0.22 0.22
-Ns 35
-d 1
-illum 2
-endmtl

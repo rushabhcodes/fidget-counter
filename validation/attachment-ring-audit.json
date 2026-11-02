@@ -19,34 +19,14 @@
   "face_setback_mm": 0.2,
   "roof_mm": 1.5,
   "outer_wall_mm": 0.9000000000000007,
-  "changed_printed_files": [
-    "Cap_circular.stl",
-    "Cap_four_leaf_clover.stl",
-    "Cap_petal_flower.stl",
-    "Cap_rounded_hexagon.stl",
-    "Cap_rounded_square.stl",
-    "Cap_rounded_triangle.stl",
-    "Cap_scalloped_coin.stl",
-    "Cap_ships_wheel.stl",
-    "Cap_thumb_scoop.stl",
-    "Cap_turbine_wheel.stl",
-    "Cap_wave_rim.stl",
-    "Inner_Race_Nut.stl",
-    "Outer_Race_Retainer.stl",
-    "Stationary_Base.stl"
-  ],
-  "unchanged_printed_files": [
-    "Actuator_Ring_REFERENCE_ONLY.stl",
-    "Bearing_Carrier.stl"
-  ],
   "envelope_mm": {
     "diameter": 58,
     "height": 17.2,
-    "press": 0.8
+    "press": 0
   },
   "sha256": {
-    "mechanical/enclosure-parameters.json": "5cd2659b2a34805481e0925bc33772ac2553e0bae41d1079b015a70baf98d921",
-    "mechanical/STEP_Parts/Stationary_Base.step": "2a75f677f4dc245abf0855348fe407f836c6522ccf13d4a07c4250b5a2cdee8b",
+    "mechanical/enclosure-parameters.json": "4f0c9414d8018e8cb857391791b4d008e5441515b756c0815f79e92b506e50a0",
+    "mechanical/STEP_Parts/Stationary_Base.step": "52ec63da800ce8e4878655a322a307767c88e0bd4d892fb8fcb2e74197169dd6",
     "mechanical/Circuit_Models/MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960"
   },
   "unqualified": [
@@ -54,7 +34,7 @@
     "Ring adhesive peel/shear retention and printed roof strength",
     "Hall error, RF and phone/case compatibility"
   ],
-  "fitted_electronic_components_checked": 31,
+  "fitted_electronic_components_checked": 28,
   "fixed_hardware_clearances": [
     {
       "component": "Electronic_U1",
@@ -165,24 +145,6 @@
       "rigid_intersections": 0
     },
     {
-      "component": "Electronic_SW1",
-      "minimum_z_mm": 9.1,
-      "checked_envelope": "Fitted mesh AABB",
-      "rigid_intersections": 0
-    },
-    {
-      "component": "Electronic_R5",
-      "minimum_z_mm": 9.1,
-      "checked_envelope": "Fitted mesh AABB",
-      "rigid_intersections": 0
-    },
-    {
-      "component": "Electronic_C17",
-      "minimum_z_mm": 9.1,
-      "checked_envelope": "Fitted mesh AABB",
-      "rigid_intersections": 0
-    },
-    {
       "component": "Electronic_X1",
       "minimum_z_mm": 9.1,
       "checked_envelope": "Fitted mesh AABB",
@@ -249,5 +211,5 @@
       "rigid_intersections": 0
     }
   ],
-  "source_scene_sha256": "dfdd6c423336bc2db3acc39a4904a430fdd76c5a683640bc052a2e3cda55cccb"
+  "source_scene_sha256": "ab1cb84c5c69d148aaac30318ec161ccee3cb42f0c91324e51cb12725b505ff9"
 }

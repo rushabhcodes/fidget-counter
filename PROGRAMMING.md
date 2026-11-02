@@ -1,3 +1,5 @@
+> Current RevB is rotation-only. SW1, R5, C17 and CAP_PRESS are removed; P0.29 is explicitly unused. The five-pin programmer and R4/nRESET remain. No firmware or physical count-clear input is supplied.
+
 # V5 enclosure access update
 
 For the current bearing enclosure, remove the three TOP cap-retainer screws, lift off the cap, unscrew the inner-race nut and remove the bearing. Remove the four nylon PCB screws and lift the PCB for cable or battery access. The V4 instructions about releasing printed latches below are superseded. Electrical pinout and programmer-power instructions remain valid.
@@ -100,7 +102,7 @@ Keep readback protection disabled during initial bring-up so programming verific
 | I2C SCL | P0.26 / 38 |
 | I2C SDA | P0.27 / 39 |
 | Hall interrupt | P0.28 / 40 |
-| Cap press (SW1 at X=0, Y=−5 mm) | P0.29 / 41 |
+| P0.29 / pin41 | Unused in rotation-only RevB; no cap button |
 | SWDIO | 26 |
 | SWDCLK | 25 |
 | Optional nRESET | P0.21 / 24 |
@@ -129,7 +131,7 @@ nrfutil device program \
 
 Require a successful programming and verification result. `RESET_SYSTEM` starts the application through SWD without depending on P0.21 already being configured as nRESET. If the image enables readback protection at startup, it may prevent later readback/debugging; leave protection off for this initial procedure. Full erase also removes any previously enabled UICR pin-reset configuration, which must be restored by the new image or the programming tool when needed.
 
-Disconnect the cable, power-cycle the board, and check the application's documented behavior. With suitable fidget firmware, confirm BLE discovery, Hall angle changes during rotation, and count clearing after a continuous two-second cap press. There is no onboard LED for a generic blink test. Flash verification checks the stored image; it does not verify these application functions.
+Disconnect the cable, power-cycle the board, and check the application's documented behavior. With suitable fidget firmware, confirm BLE discovery, Hall angle changes during rotation, and count accuracy using the chosen application. There is no cap button or physical count-clear action in RevB. There is no onboard LED for a generic blink test. Flash verification checks the stored image; it does not verify these application functions.
 
 ## Recover or troubleshoot
 
@@ -141,8 +143,8 @@ If a previously programmed device has access protection enabled, use [Nordic's r
 nrfutil device recover --serial-number "$FIDGET_PROBE_SN"
 ```
 
-After successful recovery, rerun the complete-image programming command above. If verification succeeds but the application does not run, check the firmware target, complete image/stack, clock configuration, DCDCEN=0 and board pin map. Holding the cap button does not enter a factory bootloader.
+After successful recovery, rerun the complete-image programming command above. If verification succeeds but the application does not run, check the firmware target, complete image/stack, clock configuration, DCDCEN=0 and board pin map. There is no cap button or onboard bootloader-entry input.
 
 ## Verification status
 
-Updated 29 October 2026 for JST-SH release 1.0.18, retaining the enclosure and original fitted components from release 1.0.15. The exact five-pin side-entry footprint and pinout come from `@tsci/tscircuit.standard-jst-programmer@0.8.0`; its matching C136657 supplier OBJ and STEP are cached under `imports/SM05B_SRSS_TB`. See `validation/programming-interface.json` for electrical, copper, stencil and courtyard checks and `validation/jst-connector-clearance.json` for continuous rotation/full-press clearance under all eleven V5 caps. The original thirty fitted components are checked against their existing baseline; J_DEBUG is the thirty-first fitted part. Actual cable insertion, connector retention and flashing need a populated prototype. The original electrical interface check applies to PCB release 1.0.18; V5 mechanical checks use the current regenerated reports.
+Updated 29 October 2026 for JST-SH release 1.0.18, retaining the enclosure and original fitted components from release 1.0.15. The exact five-pin side-entry footprint and pinout come from `@tsci/tscircuit.standard-jst-programmer@0.8.0`; its matching C136657 supplier OBJ and STEP are cached under `imports/SM05B_SRSS_TB`. See `validation/programming-interface.json` for electrical, copper, stencil and courtyard checks and `validation/jst-connector-clearance.json` for continuous rotation clearance under all eleven V5 caps. Current RevB retains28 fitted parts after removing SW1/R5/C17; check-rotation-only.mjs compares every retained part and surviving copper record to6224fc9. Actual cable insertion, connector retention and flashing need a populated prototype. The original electrical interface check applies to PCB release 1.0.18; V5 mechanical checks use the current regenerated reports.

@@ -43,7 +43,7 @@ describe("prescribed routing across compiler versions",()=>{
   const result=await output(value)
   assert.deepEqual(result.map(t=>t.route.map(({start_pcb_port_id,end_pcb_port_id,...geometry})=>geometry)),
    paths.traces.map(t=>t.route.map(({start_pcb_port_id,end_pcb_port_id,...geometry})=>geometry)))
-  assert.deepEqual(portRefs(result),portRefs(paths.traces).map(id=>Number(id.replace("pcb_port_",""))>=151?id:`pcb_port_${Number(id.replace("pcb_port_",""))+1000}`))
+  assert.deepEqual(portRefs(result),portRefs(paths.traces).map(id=>contract.auxiliaryVias.some(v=>v.ports.includes(id))?id:`pcb_port_${Number(id.replace("pcb_port_",""))+1000}`))
  })
  test("rejects moved pads",async()=>{
   const value=input();value.connections[0].pointsToConnect[0].x+=.01
@@ -68,7 +68,7 @@ describe("prescribed routing across compiler versions",()=>{
  })
  test("rejects unidentifiable through-via port renumbering",async()=>{
   const value=input()
-  for(const o of value.obstacles)o.connectedTo=o.connectedTo.map((id)=>id==="pcb_port_151"?"pcb_port_999":id)
+  for(const o of value.obstacles)o.connectedTo=o.connectedTo.map((id)=>id===contract.auxiliaryVias[0].ports[0]?"pcb_port_999":id)
   await assert.rejects(output(value),/through-via terminals changed/)
  })
 })

@@ -118,28 +118,6 @@
       ]
     },
     {
-      "part": "GRM155R71C103KA01D",
-      "jlcpcb": "C85735",
-      "command": "tsci import --jlcpcb --download --use-exact-footprint C85735",
-      "files": [
-        {
-          "path": "imports/GRM155R71C103KA01D/GRM155R71C103KA01D.tsx",
-          "bytes": 2825,
-          "sha256": "54a0d4f426cae84baec8a7b049928fc37177cc117768b10f3ae3a30b4df8e518"
-        },
-        {
-          "path": "imports/GRM155R71C103KA01D/GRM155R71C103KA01D.obj",
-          "bytes": 55992,
-          "sha256": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d"
-        },
-        {
-          "path": "imports/GRM155R71C103KA01D/GRM155R71C103KA01D.step",
-          "bytes": 1481985,
-          "sha256": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14"
-        }
-      ]
-    },
-    {
       "part": "GRM155R71C104KA88D",
       "jlcpcb": "C71629",
       "command": "tsci import --jlcpcb --download --use-exact-footprint C71629",
@@ -202,28 +180,6 @@
           "path": "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.step",
           "bytes": 1468156,
           "sha256": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110"
-        }
-      ]
-    },
-    {
-      "part": "KMR232NGULCLFS",
-      "jlcpcb": "C221681",
-      "command": "tsci import --jlcpcb --download --use-exact-footprint C221681",
-      "files": [
-        {
-          "path": "imports/KMR232NGULCLFS/KMR232NGULCLFS.tsx",
-          "bytes": 3095,
-          "sha256": "c3e502b06ece9a5efec854cfad768bf7915729db65afc82be716fc056f7b0173"
-        },
-        {
-          "path": "imports/KMR232NGULCLFS/KMR232NGULCLFS.obj",
-          "bytes": 214298,
-          "sha256": "97d09f9cc9cc53195e913724a2a04a139efb3ed3d8f13a538b83a1d64b5ee6ad"
-        },
-        {
-          "path": "imports/KMR232NGULCLFS/KMR232NGULCLFS.step",
-          "bytes": 1692662,
-          "sha256": "62738609d38cdfb03321b20f50e4c82b8ef03905bfebe44e02ed1d5909f6c22c"
         }
       ]
     },
@@ -447,7 +403,6 @@
   ],
   "notes": [
     "Raw generated TSX, OBJ and STEP files are unmodified. Wrappers omit library silkscreen and add electrical attributes.",
-    "SW1 retains the original 2 N KMR223NG ULC LFG. C221681 contributes shared KMR2 geometry only; its supplier ID is not assigned to SW1.",
     "The importer uses the exact EasyEDA footprint, not an approximate generator match."
   ],
   "localCadAdaptations": [

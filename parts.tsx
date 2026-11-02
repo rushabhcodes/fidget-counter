@@ -6,7 +6,6 @@ import {NRF52810_QFAA_R} from "./imports/NRF52810_QFAA_R/NRF52810_QFAA_R"
 import {TMAG3001A2YBGR} from "./imports/TMAG3001A2YBGR/TMAG3001A2YBGR"
 import {X201632MKB4SI} from "./imports/X201632MKB4SI/X201632MKB4SI"
 import {ABS07_32_768KHZ_9_T} from "./imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T"
-import {KMR232NGULCLFS} from "./imports/KMR232NGULCLFS/KMR232NGULCLFS"
 import {RFANT3216120A5T} from "./imports/RFANT3216120A5T/RFANT3216120A5T"
 import {BS_08_B2AA020_R} from "./imports/BS_08_B2AA020_R/BS_08_B2AA020_R"
 import type { BatteryProps, ChipProps, CrystalProps, PinAttributeMap } from "@tscircuit/props"
@@ -61,7 +60,6 @@ Object.assign(nrfPinAttributes, {
  pin38:{isBidirectional:true,isGpio:true,activeCapability:"i2c_scl",canUseOpenDrain:true,isUsingOpenDrain:true,needsExternalPullup:true,mustBeConnected:true},
  pin39:{isBidirectional:true,isGpio:true,activeCapability:"i2c_sda",canUseOpenDrain:true,isUsingOpenDrain:true,needsExternalPullup:true,mustBeConnected:true},
  pin40:{isInput:true,isGpio:true,needsExternalPullup:true,mustBeConnected:true},
- pin41:{isInput:true,isGpio:true,needsExternalPullup:true,mustBeConnected:true},
  pin44:{doNotConnect:true,isPassive:true},
  pin45:{requiresGround:true,mustBeConnected:true},
  pin46:{isOutput:true,providesPower:true,mustBeConnected:true},
@@ -106,14 +104,6 @@ export const RF_ANT=(p:ChipProps)=><chip
  {...libraryProps(RFANT3216120A5T({name:p.name}))}
  pinLabels={{pin1:["feed"],pin2:["NC"]}} noConnect={["pin2"]}
  pinAttributes={{pin1:{isPassive:true,mustBeConnected:true},pin2:{isPassive:true}}} {...p}/>
-// Shared KMR2 package geometry from C221681. Keep the existing 2 N ULC part;
-// C221681 is the 3 N variant, so it must not be assigned to this BOM row.
-export const CapButton=(p:ChipProps)=><pushbutton
- {...libraryProps(KMR232NGULCLFS({name:p.name}))}
- manufacturerPartNumber="KMR223NG ULC LFG / Y78B22324FP" supplierPartNumbers={{}}
- pinLabels={{pin1:["A1"],pin2:["B2"],pin3:["B"],pin4:["A"]}}
- internallyConnectedPins={[["pin1","pin4"],["pin2","pin3"]]}
- {...p}/>
 // Complete two-terminal holder: unmodified JLCPCB copper and model, fitted below
 // the PCB. Pin 1 is the positive contact, matching the imported polarity marker.
 export const BatteryHolder=(p:BatteryProps)=><battery

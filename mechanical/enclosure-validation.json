@@ -1,8 +1,9 @@
 {
-  "status": "Nominal CAD prototype; physical qualification required",
+  "status": "Nominal rotation-only CAD pilot; physical qualification required",
   "physical_tested": false,
+  "manufacturing_qualified": false,
   "parameters": {
-    "design": "V5 manufacturing review: integrated base and encoder stop",
+    "design": "V6 rotation-only printed pilot: integral fixed bearing support",
     "cap_style": "all",
     "cap_styles": [
       "circular",
@@ -28,19 +29,13 @@
     "pcb_diameter": 36.5,
     "pcb_bottom": 8.1,
     "pcb_thickness": 1.0,
-    "switch_x": 0.0,
-    "switch_y": -5.0,
-    "switch_height": 1.9,
-    "button_travel": 0.8,
     "magnet_diameter": 5.0,
     "magnet_thickness": 1.5,
     "magnet_bottom": 11.4,
     "magnet_pocket_diameter": 5.2,
-    "pusher_outer_radius": 6.1,
-    "material": "PETG for rigid printed parts; purchased metal bearing and springs",
-    "return": "Three purchased compression springs; switch is not the cap return spring",
-    "service": "Remove the three outer-race retainer screws, lift off the cap, unscrew the inner-race nut, then remove the carrier guide screws and PCB screws",
-    "publication": "Local manufacturing review candidate after 1.0.24; not production qualified",
+    "material": "PETG for four rigid printed parts; purchased metal bearing",
+    "service": "Remove three cap screws, lift cap while leaving outer retainer below bearing; unscrew inner nut and lift bearing before removing PCB screws",
+    "publication": "Rotation-only local candidate after 1.0.24; physically unqualified",
     "hub_cover_thickness": 1.7,
     "cap_style_change": "Undo three countersunk screws to transfer the common bearing assembly to another cap",
     "encoder_magnet_per_top_module": 1,
@@ -84,55 +79,6 @@
       "outer_shoulder_inner_radius_mm": 24.4,
       "reference": "https://www.skf.com/group/products/rolling-bearings/ball-bearings/deep-groove-ball-bearings/productid-61708",
       "note": "Nominal purchased bearing envelope. Confirm race shoulder lands, corner radii, actual fits and magnetic influence with the chosen supplier/sample."
-    },
-    "press_guide": {
-      "radius_mm": 16.5,
-      "angles_deg": [
-        0,
-        105,
-        255
-      ],
-      "post_diameter_mm": 5.0,
-      "bore_diameter_mm": 5.3,
-      "boss_diameter_mm": 8.0,
-      "post_top_z_mm": 6.0,
-      "boss_bottom_z_mm": 3.0,
-      "hard_stop_z_mm": 2.2,
-      "washer_outside_mm": 6.5,
-      "washer_inside_mm": 2.7,
-      "washer_thickness_mm": 0.3,
-      "screw_head_outside_mm": 4.7,
-      "screw_head_height_mm": 1.5
-    },
-    "return_springs": {
-      "quantity": 3,
-      "radius_mm": 19.5,
-      "angles_deg": [
-        60,
-        180,
-        300
-      ],
-      "outside_mm": 3.0,
-      "wire_mm": 0.25,
-      "free_length_mm": 4.0,
-      "assembled_length_mm": 3.5,
-      "seat_z_mm": 1.5,
-      "rate_n_per_mm": 0.45,
-      "maximum_solid_height_mm": 2.2,
-      "note": "Purchase matched springs meeting these dimensions/force requirements; actual force and return must be measured."
-    },
-    "actuator": {
-      "outside_mm": 13.0,
-      "inside_mm": 7.0,
-      "thickness_mm": 1.5,
-      "free_gap_mm": 0.15,
-      "shim_step_mm": 0.05,
-      "shim_range_mm": [
-        0,
-        0.8
-      ],
-      "material": "Silicone elastomer; shape-reference STL is not a rigid print part",
-      "qualification": "Select material and shims from measured assembled switch travel and force; maximum switch load and ring compression remain unqualified."
     },
     "inner_race_nut": {
       "pitch_mm": 1.2,
@@ -198,8 +144,21 @@
       "assumption": "Provisional generic cartesian printer; actual printer/nozzle not yet confirmed",
       "cap_orientation": "Deck down except thumb_scoop upright with internal supports",
       "nut_orientation": "Wide notched face down",
-      "carrier_supports": "Required beneath annular shoulder; keep guide bores and thread flanks clear",
-      "fixture_supports": "Required everywhere under retainer fingers; supports may start on the nest pocket floor"
+      "fixture_supports": "Required everywhere under retainer fingers; supports may start on the nest pocket floor",
+      "base_supports": "Supports everywhere beneath attachment-ring roof and fixed bearing shoulder; remove all supports before installing bearing or magnets"
+    },
+    "fixed_bearing_support": {
+      "radius_mm": 16.5,
+      "angles_deg": [
+        0,
+        105,
+        255
+      ],
+      "web_stem_radius_mm": 2.5,
+      "web_foot_radius_mm": 4.0,
+      "web_bottom_z_mm": 1.4,
+      "web_head_bottom_z_mm": 3.0,
+      "note": "Three rigid overlapping webs join bearing shaft to the base; no sliding joints, press travel or return parts."
     }
   },
   "printed_parts": [
@@ -207,9 +166,9 @@
       "name": "Stationary_Base",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 5817.218569151826,
+      "volume_mm3": 7890.80829079602,
       "file": "Stationary_Base.stl",
-      "sha256": "4ef607dfb127f5cc671a171373480c65c27ff980b8f16a79a01d6fb801583e51",
+      "sha256": "86fdad8f155a8c2f8aec794390a8a188e3e04f10c911882b3aa0895edd8b1e23",
       "bounds_mm": [
         [
           -29.0,
@@ -219,26 +178,6 @@
         [
           29.0,
           29.0,
-          8.6
-        ]
-      ]
-    },
-    {
-      "name": "Bearing_Carrier",
-      "valid": true,
-      "solids": 1,
-      "volume_mm3": 1923.0639616296544,
-      "file": "Bearing_Carrier.stl",
-      "sha256": "33fbfcb5d62a2a68352461ff3eaf36aca4c66da23a100e87029265b4ec013f3e",
-      "bounds_mm": [
-        [
-          -21.8,
-          -20.65,
-          3.0
-        ],
-        [
-          20.65,
-          20.65,
           15.1000001
         ]
       ]
@@ -287,9 +226,9 @@
       "name": "Cap_circular",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 12954.379813826026,
+      "volume_mm3": 12685.773641944072,
       "file": "Cap_circular.stl",
-      "sha256": "5cbb9d8c4345b11112bcfc961ff53dfa9e95c9913de5f16fef7767e0570b9eea",
+      "sha256": "0ebb71a4add9e5c4e8fe3923c2c73e34608875a11f656d196f5b8f7da3f3461a",
       "bounds_mm": [
         [
           -30.800000000000004,
@@ -307,9 +246,9 @@
       "name": "Cap_ships_wheel",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11060.297794056809,
+      "volume_mm3": 10791.691622174872,
       "file": "Cap_ships_wheel.stl",
-      "sha256": "41a60c71728777aff20a5c1925b6c7ce6fd0c2b24171d3dc92839896b85b9995",
+      "sha256": "4b862ac9585d97be5fbb7ee16582cf3e22bba89a11c295d86ef64123bec7048d",
       "bounds_mm": [
         [
           -30.8,
@@ -327,9 +266,9 @@
       "name": "Cap_rounded_triangle",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 10581.416473261803,
+      "volume_mm3": 10312.810301379874,
       "file": "Cap_rounded_triangle.stl",
-      "sha256": "4340f9367c822234ebf64b7327f8bc8a75769fc2b5c7ea4f8eab0b8bd8e88c0f",
+      "sha256": "c4bebe51e8e34e5314d86ac68af320f19fca26d693816fb0ebb27da9e63c2cd5",
       "bounds_mm": [
         [
           -28.8,
@@ -347,9 +286,9 @@
       "name": "Cap_scalloped_coin",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11662.03029461539,
+      "volume_mm3": 11393.424122733431,
       "file": "Cap_scalloped_coin.stl",
-      "sha256": "600d3fef9b1049f0005ab1e5872e2071f35cbf2ae903e86423693d369e0722fd",
+      "sha256": "7030a9b3649e87ffbf59318f8e14abd422236a9528d9f62642e66d5e72ba04fa",
       "bounds_mm": [
         [
           -30.8,
@@ -367,9 +306,9 @@
       "name": "Cap_petal_flower",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11125.804864510608,
+      "volume_mm3": 10857.198692628668,
       "file": "Cap_petal_flower.stl",
-      "sha256": "5ff83fb8af6d2b3e52bd51f3d0cf7882ae09eb0ee1febc1708717e6114af3ce4",
+      "sha256": "cc87f56080ffa1ef3073a08570f5a2c0ee2f1a48c458231b0a4c2745e1dc02c0",
       "bounds_mm": [
         [
           -30.8,
@@ -387,9 +326,9 @@
       "name": "Cap_four_leaf_clover",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11025.542527023455,
+      "volume_mm3": 10756.936355141514,
       "file": "Cap_four_leaf_clover.stl",
-      "sha256": "3f1e1ccaa43153f225e819c6dcab2b678dd74309e166d4d3ee60ddcb3a6c6075",
+      "sha256": "bf6f6679e933d42cf8adec5a1d2d189219e0f65a57e9ae61e0bd1684f9e3ceaa",
       "bounds_mm": [
         [
           -30.8,
@@ -407,9 +346,9 @@
       "name": "Cap_rounded_hexagon",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 10982.922602127728,
+      "volume_mm3": 10714.316430245799,
       "file": "Cap_rounded_hexagon.stl",
-      "sha256": "f979dd2c042fbd7e0e1aa55ac3145bb92ad419b95d22c29141278dc310f18ca2",
+      "sha256": "809d23cd266f8b071fc927fde1d43f1a19c2883ecc71b7d033ebdf78b8e573a0",
       "bounds_mm": [
         [
           -30.798601319003673,
@@ -427,9 +366,9 @@
       "name": "Cap_rounded_square",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 10826.79233015815,
+      "volume_mm3": 10558.18615827622,
       "file": "Cap_rounded_square.stl",
-      "sha256": "eabb6fe4d84e8c436188c9cfd776274f21f38f2ffdfd3fe99c89ca7101c0eae3",
+      "sha256": "855a6bdbfdb08ebab7f856764c6412c8dae5ac28857fefee58c722425c6c53d8",
       "bounds_mm": [
         [
           -30.8,
@@ -447,9 +386,9 @@
       "name": "Cap_wave_rim",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 11857.983016692371,
+      "volume_mm3": 11589.376844810442,
       "file": "Cap_wave_rim.stl",
-      "sha256": "5e4bdf802acd889b10da8e0374332e77a02f4124663bb2061bdaeb13ee2953c7",
+      "sha256": "30988e89406b9b70b8e8c0281832fcfe145236ee385596dc82f5d05e324e208e",
       "bounds_mm": [
         [
           -30.8,
@@ -467,9 +406,9 @@
       "name": "Cap_turbine_wheel",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 12819.238453925364,
+      "volume_mm3": 12550.632282043367,
       "file": "Cap_turbine_wheel.stl",
-      "sha256": "3feab804aa519c02dfca312a5954de55c328394ac18b78fb08616fdbfbbc5123",
+      "sha256": "a22699cf36421b3ebc674bd89ed3e3163f868969fd43d05f03e22a806fc7ccbf",
       "bounds_mm": [
         [
           -30.35,
@@ -487,9 +426,9 @@
       "name": "Cap_thumb_scoop",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 12317.574182047427,
+      "volume_mm3": 12048.968010165454,
       "file": "Cap_thumb_scoop.stl",
-      "sha256": "f25b98ad11ed7609dcd62006cc6d06798ca5b5b10fa488e8d218c5e8e42f7e77",
+      "sha256": "85069d7427c6b395b37dedef05e03cb37aada4c5b0cd41550e82df76954483c3",
       "bounds_mm": [
         [
           -30.8,
@@ -504,429 +443,146 @@
       ]
     }
   ],
-  "press_checks": [
-    {
-      "press_mm": 0,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "rigid_collisions": 0
-    }
-  ],
   "rotation_checks": [
     {
-      "press_mm": 0,
       "angle_deg": 0,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 15,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 30,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 45,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 60,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 75,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 90,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 105,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 120,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 135,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 150,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 165,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 180,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 195,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 210,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 225,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 240,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 255,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 270,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 285,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 300,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 315,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
       "angle_deg": 330,
       "rigid_collisions": 0
     },
     {
-      "press_mm": 0,
-      "angle_deg": 345,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 0,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 15,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 30,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 45,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 60,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 75,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 90,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 105,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 120,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 135,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 150,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 165,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 180,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 195,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 210,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 225,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 240,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 255,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 270,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 285,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 300,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 315,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 330,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.4,
-      "angle_deg": 345,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 0,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 15,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 30,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 45,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 60,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 75,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 90,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 105,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 120,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 135,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 150,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 165,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 180,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 195,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 210,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 225,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 240,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 255,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 270,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 285,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 300,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 315,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
-      "angle_deg": 330,
-      "rigid_collisions": 0
-    },
-    {
-      "press_mm": 0.8,
       "angle_deg": 345,
       "rigid_collisions": 0
     }
   ],
   "continuous_rotation_deg": 360,
-  "rotation_method": "Axisymmetric structural rotor and exterior grip keepout; sampled angles supplement the envelope",
+  "rotation_method": "Axisymmetric stepped rotor and exterior grip keepout, supplemented by24 sampled final-hub angles",
   "base_diameter_mm": 58,
   "overall_height_mm": 17.2,
   "height_increase_mm": 2.0,
   "pcb_midplane_z_mm": 8.6,
   "pcb_screws": 4,
+  "pcb_support_posts": 4,
+  "pcb_screw_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
   "flexible_printed_latches": 0,
-  "return_springs": 3,
+  "return_springs": 0,
+  "press_travel_mm": 0,
   "cap_retainer_screws": 3,
-  "press_travel_mm": 0.8,
-  "guide_engagement_mm": 3.0,
-  "guide_radial_clearance_mm": 0.15,
-  "jst_swept_clearance_mm": 2.679999999999998,
-  "sensor_gap_mm": {
-    "released": 1.8,
-    "pressed": 1.0
-  },
-  "spring_preload_each_n": 0.225,
-  "spring_solid_height_clearance_mm": 0.5,
-  "actuator_qualified": false,
-  "actuator_note": "Select material and shims from measured assembled switch travel and force; maximum switch load and ring compression remain unqualified.",
+  "jst_swept_clearance_mm": 3.4799999999999986,
+  "sensor_gap_mm": 1.8,
+  "separate_encoder_spacers": 0,
+  "encoder_stop_z_mm": 12.9,
+  "handled_parts_per_unit_excluding_adhesive_and_shims": 16,
+  "screw_driving_operations": 7,
+  "finished_cap_retainer_and_screw_clearance_checks": 11,
+  "assembly_step_styles": [
+    "circular"
+  ],
   "references": {
     "rotation": "https://ploopyco.github.io/knob/assembly-instructions/",
-    "press": "https://www.ifixit.com/Teardown/Microsoft+Surface+Dial+Teardown/74808"
+    "bearing": "https://ploopyco.github.io/knob/appendices/hardware/"
   },
-  "scope": "Independent geometry for this PCB; electrical layout unchanged",
+  "scope": "Rotation only; SW1, R5 and C17 removed. SWD hardware reset retained. No firmware included.",
   "model_detail": {
-    "bearing": "25 balls of diameter 2.381 mm, grooved/chamfered races, stamped cage and non-contact metal shields; representative internals",
-    "fasteners": "Helical thread roots and recessed cross drives within existing envelopes",
-    "battery": "Rolled can, gasket, negative lid and recessed generic CR2032 marking",
-    "electronics": "All 31 fitted supplier STEP models, placed using native model origins and XYZ rotations",
-    "spring": "Five active turns plus two close-wound end turns; reference geometry, not a sourced SKU"
+    "bearing": "25 balls, grooved/chamfered races, cage and shields; representative internals",
+    "electronics": "All28 retained supplier STEP models at native poses"
   },
-  "detail_reference_urls": [
-    "https://www.astbearings.com/catalog/root/6708",
-    "https://iskbearing.com/product-details/6708zz",
-    "https://www.leespring.com/learn-about-compression-springs",
-    "https://www.duracell.com/wp-content/uploads/2016/04/LI2032US10141.pdf"
-  ],
   "physical_checks_required": [
-    "Chosen bearing fits, shoulder lands, seal clearance and corner radii",
-    "Spring return, tilt and guide friction",
-    "Actuator force, switch overtravel and all-angle closure",
-    "Rotation/press/removal endurance",
-    "Bearing and fastener influence on Hall sensing, phone attachment and RF",
-    "Actual spring/fastener sourcing"
+    "Printed bearing shaft/housing/thread coupon fit and support removal",
+    "Bearing axial retention, rotational drag and cap screw strength",
+    "Magnet retention, Hall calibration, phone attachment and RF",
+    "Rotation/removal endurance, assembly timing and firmware"
   ],
   "attachment_ring": {
     "supplier": "MagnetPrint Hub N52 MagSafe Magnet Ring Kit",
@@ -943,27 +599,9 @@
     "bondline_mm": 0.1,
     "roof_thickness_mm": 1.5,
     "outer_wall_mm": 0.9000000000000007,
-    "base_roof_mm": 0.75,
-    "tray_base_interference_mm3": null,
     "physical_qualified": false,
-    "display_note": "Shallow segment grooves indicate a purchased array; internal segment dimensions and magnetization require the supplier drawing.",
     "separate_trays": 0,
-    "separate_tray_bonds": 0
-  },
-  "assembly_step_styles": [
-    "circular"
-  ],
-  "finished_cap_retainer_and_screw_clearance_checks": 11,
-  "pcb_support_posts": 4,
-  "pcb_screw_indices": [
-    0,
-    1,
-    2,
-    3
-  ],
-  "separate_encoder_spacers": 0,
-  "encoder_stop_z_mm": 12.9,
-  "handled_parts_per_unit_excluding_adhesive_and_shims": 27,
-  "screw_driving_operations": 10,
-  "manufacturing_qualified": false
+    "separate_tray_bonds": 0,
+    "display_note": "Purchased segmented ring reference; confirm supplier dimensions and working face."
+  }
 }

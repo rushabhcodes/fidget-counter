@@ -1,4 +1,4 @@
-"""Export V5 mechanical models beside the actual native routed PCB."""
+"""Export rotation-only mechanical models beside the actual native routed PCB."""
 from pathlib import Path
 import hashlib,json
 import numpy as np
@@ -40,7 +40,7 @@ lines+=['','export const CAP_STYLE_OPTIONS = '+json.dumps(p['cap_styles'])+' as 
 for i,name in enumerate(selected):
  style=name.removeprefix('Cap_') if name.startswith('Cap_') and name.removeprefix('Cap_') in p['cap_styles'] else None
  lines.append('  {name:'+json.dumps(name)+',obj:obj'+str(i)+',mtl:'+json.dumps('./mechanical/Circuit_Models/'+name+'.mtl')+',style:'+json.dumps(style)+'},')
-lines += [']','','// V5 bearing carrier and spring return; CAD coordinates are mm from the phone plane.',f'export const PCB_MIDPLANE_Z_MM = {mid}','export const EnclosureAssembly = ({capStyle="circular",transparentShell=false}: {capStyle?:CapStyle;transparentShell?:boolean} = {}) => <Fragment>',
+lines += [']','','// Fixed bearing support and rotation-only cap; CAD coordinates are mm from the phone plane.',f'export const PCB_MIDPLANE_Z_MM = {mid}','export const EnclosureAssembly = ({capStyle="circular",transparentShell=false}: {capStyle?:CapStyle;transparentShell?:boolean} = {}) => <Fragment>',
  '  {models.filter(m => m.style === null || m.style === capStyle).map(m => <assembly.cadassembly',
  '    key={m.name} name={`BEARING_V5_${m.name}`} displayName={m.name.replace(/_/g," ")}',
  '    cadModel={{glbUrl:m.obj,modelUnitToMmScale:1,',

@@ -1,4 +1,7 @@
 {
+  "historical": true,
+  "applies_to_commit": "6224fc92863964ff770789ec086876e289d29bee",
+  "superseded_by": "validation/rotation-only-status.json",
   "scope": "Ready for controlled PETG fit-test prints under the documented0.4mm nozzle profile; not production qualified",
   "checked_at_utc": "2026-11-02T17:34:40.216673+00:00",
   "branch": "codex/bearing-supported-enclosure",

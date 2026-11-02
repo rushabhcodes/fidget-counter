@@ -1,5 +1,5 @@
 {
-  "design": "V5 manufacturing review: integrated base and encoder stop",
+  "design": "V6 rotation-only printed pilot: integral fixed bearing support",
   "cap_style": "all",
   "cap_styles": [
     "circular",
@@ -25,19 +25,13 @@
   "pcb_diameter": 36.5,
   "pcb_bottom": 8.1,
   "pcb_thickness": 1.0,
-  "switch_x": 0.0,
-  "switch_y": -5.0,
-  "switch_height": 1.9,
-  "button_travel": 0.8,
   "magnet_diameter": 5.0,
   "magnet_thickness": 1.5,
   "magnet_bottom": 11.4,
   "magnet_pocket_diameter": 5.2,
-  "pusher_outer_radius": 6.1,
-  "material": "PETG for rigid printed parts; purchased metal bearing and springs",
-  "return": "Three purchased compression springs; switch is not the cap return spring",
-  "service": "Remove the three outer-race retainer screws, lift off the cap, unscrew the inner-race nut, then remove the carrier guide screws and PCB screws",
-  "publication": "Local manufacturing review candidate after 1.0.24; not production qualified",
+  "material": "PETG for four rigid printed parts; purchased metal bearing",
+  "service": "Remove three cap screws, lift cap while leaving outer retainer below bearing; unscrew inner nut and lift bearing before removing PCB screws",
+  "publication": "Rotation-only local candidate after 1.0.24; physically unqualified",
   "hub_cover_thickness": 1.7,
   "cap_style_change": "Undo three countersunk screws to transfer the common bearing assembly to another cap",
   "encoder_magnet_per_top_module": 1,
@@ -81,55 +75,6 @@
     "outer_shoulder_inner_radius_mm": 24.4,
     "reference": "https://www.skf.com/group/products/rolling-bearings/ball-bearings/deep-groove-ball-bearings/productid-61708",
     "note": "Nominal purchased bearing envelope. Confirm race shoulder lands, corner radii, actual fits and magnetic influence with the chosen supplier/sample."
-  },
-  "press_guide": {
-    "radius_mm": 16.5,
-    "angles_deg": [
-      0,
-      105,
-      255
-    ],
-    "post_diameter_mm": 5.0,
-    "bore_diameter_mm": 5.3,
-    "boss_diameter_mm": 8.0,
-    "post_top_z_mm": 6.0,
-    "boss_bottom_z_mm": 3.0,
-    "hard_stop_z_mm": 2.2,
-    "washer_outside_mm": 6.5,
-    "washer_inside_mm": 2.7,
-    "washer_thickness_mm": 0.3,
-    "screw_head_outside_mm": 4.7,
-    "screw_head_height_mm": 1.5
-  },
-  "return_springs": {
-    "quantity": 3,
-    "radius_mm": 19.5,
-    "angles_deg": [
-      60,
-      180,
-      300
-    ],
-    "outside_mm": 3.0,
-    "wire_mm": 0.25,
-    "free_length_mm": 4.0,
-    "assembled_length_mm": 3.5,
-    "seat_z_mm": 1.5,
-    "rate_n_per_mm": 0.45,
-    "maximum_solid_height_mm": 2.2,
-    "note": "Purchase matched springs meeting these dimensions/force requirements; actual force and return must be measured."
-  },
-  "actuator": {
-    "outside_mm": 13.0,
-    "inside_mm": 7.0,
-    "thickness_mm": 1.5,
-    "free_gap_mm": 0.15,
-    "shim_step_mm": 0.05,
-    "shim_range_mm": [
-      0,
-      0.8
-    ],
-    "material": "Silicone elastomer; shape-reference STL is not a rigid print part",
-    "qualification": "Select material and shims from measured assembled switch travel and force; maximum switch load and ring compression remain unqualified."
   },
   "inner_race_nut": {
     "pitch_mm": 1.2,
@@ -195,7 +140,20 @@
     "assumption": "Provisional generic cartesian printer; actual printer/nozzle not yet confirmed",
     "cap_orientation": "Deck down except thumb_scoop upright with internal supports",
     "nut_orientation": "Wide notched face down",
-    "carrier_supports": "Required beneath annular shoulder; keep guide bores and thread flanks clear",
-    "fixture_supports": "Required everywhere under retainer fingers; supports may start on the nest pocket floor"
+    "fixture_supports": "Required everywhere under retainer fingers; supports may start on the nest pocket floor",
+    "base_supports": "Supports everywhere beneath attachment-ring roof and fixed bearing shoulder; remove all supports before installing bearing or magnets"
+  },
+  "fixed_bearing_support": {
+    "radius_mm": 16.5,
+    "angles_deg": [
+      0,
+      105,
+      255
+    ],
+    "web_stem_radius_mm": 2.5,
+    "web_foot_radius_mm": 4.0,
+    "web_bottom_z_mm": 1.4,
+    "web_head_bottom_z_mm": 3.0,
+    "note": "Three rigid overlapping webs join bearing shaft to the base; no sliding joints, press travel or return parts."
   }
 }

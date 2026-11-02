@@ -1,0 +1,216 @@
+{
+  "checked_utc": "2026-11-02T18:15:54.292424+00:00",
+  "scope": "Rotation-only RevB; controlled PETG fit-test print candidate",
+  "comparison_commit": "6224fc92863964ff770789ec086876e289d29bee",
+  "branch": "codex/bearing-supported-enclosure",
+  "physical_tested": false,
+  "manufacturing_qualified": false,
+  "removed": [
+    "SW1",
+    "R5",
+    "C17",
+    "CAP_PRESS copper",
+    "sliding carrier",
+    "three springs",
+    "three guide screws and washers",
+    "annular silicone actuator",
+    "cap pusher"
+  ],
+  "counts": {
+    "default_rigid_parts": 4,
+    "all_rigid_product_alternatives": 14,
+    "tooling_halves": 2,
+    "fit_coupons": 4,
+    "handled_parts_per_unit_excluding_adhesive": 16,
+    "screw_drives": 7,
+    "fitted_electronics": 28
+  },
+  "preserved": {
+    "base_diameter_mm": 58,
+    "top_datum_z_mm": 17.2,
+    "contact_to_top_height_mm": 17.0,
+    "encoder_magnet_bottom_z_mm": 11.4,
+    "encoder_sensor_gap_mm": 1.8,
+    "bearing_mm": [
+      40,
+      50,
+      6
+    ],
+    "attachment_ring_mm": [
+      54,
+      45.8,
+      1.9
+    ],
+    "pcb_and_swd_hardware_reset": true
+  },
+  "checks": {
+    "reproducible_install": {
+      "status": "passed",
+      "evidence": "bun install --frozen-lockfile"
+    },
+    "typescript": {
+      "status": "passed",
+      "evidence": "bun run typecheck"
+    },
+    "routing_safeguards": {
+      "status": "passed",
+      "evidence": "bun run check:routing (8 passing; includes changed copper/net/layer/location and auxiliary-via rejection)"
+    },
+    "import_provenance": {
+      "status": "passed",
+      "evidence": "bun test validation/import-provenance.test.mjs (4 passing)"
+    },
+    "source_build": {
+      "status": "passed",
+      "evidence": "bun run build:source"
+    },
+    "intentional_electrical_removal": {
+      "status": "passed",
+      "evidence": "bun validation/check-rotation-only.mjs"
+    },
+    "saved_snapshot_build": {
+      "status": "passed",
+      "evidence": "bun run build"
+    },
+    "website": {
+      "status": "passed",
+      "evidence": "tsci build published.circuit.json --site --disable-parts-engine"
+    },
+    "pcb_diagnostics": {
+      "status": "passed",
+      "evidence": "tsci check netlist, pin_specification, placement, shorts and source"
+    },
+    "schematic_placement": {
+      "status": "passed",
+      "evidence": "tsci check schematic-placement (exit0; retained VBAT decoupler grouping advisory, not new copper)"
+    },
+    "assembly_cad": {
+      "status": "passed",
+      "evidence": "python mechanical/build_enclosure.py --style all --assembly-style circular"
+    },
+    "bounded_cad_differences": {
+      "status": "passed",
+      "evidence": "python validation/check-rotation-only-cad.py"
+    },
+    "fixture": {
+      "status": "passed",
+      "evidence": "python mechanical/tooling/build_assembly_nest.py"
+    },
+    "fit_coupons": {
+      "status": "passed",
+      "evidence": "python mechanical/build_fit_coupons.py"
+    },
+    "actual_slicing": {
+      "status": "passed",
+      "evidence": "python mechanical/printing/audit_prints.py --slicer /workspace/.tools/bin/prusa-slicer (16 parts,0 warnings)"
+    },
+    "wall_sections": {
+      "status": "passed",
+      "evidence": "python mechanical/printing/check_wall_sections.py (17 common/tooling sections plus11 cap and nut checks)"
+    },
+    "toolpaths": {
+      "status": "passed",
+      "evidence": "python mechanical/printing/render_slices.py (base support maxZ4.8mm; bearing fit startsZ6.4mm above bed)"
+    },
+    "model_detail": {
+      "status": "passed",
+      "evidence": "python validation/check-model-detail.py"
+    },
+    "attachment_ring": {
+      "status": "passed",
+      "evidence": "python validation/check-attachment-ring.py"
+    },
+    "display_mesh_pose": {
+      "status": "passed",
+      "evidence": "python validation/check-display-geometry.py"
+    },
+    "pcb_holes": {
+      "status": "passed",
+      "evidence": "python validation/check-pcb-mounts.py"
+    },
+    "jst_clearance": {
+      "status": "passed",
+      "evidence": "python validation/check-jst-fit.py (minimum3.48mm continuous-rotation courtyard gap)"
+    },
+    "all_electronics_clearance": {
+      "status": "passed",
+      "evidence": "python validation/check-bearing-hardware.py (28 native component envelopes)"
+    },
+    "imports": {
+      "status": "passed",
+      "evidence": "bun validation/check-imports.mjs"
+    },
+    "programming": {
+      "status": "passed",
+      "evidence": "bun run check:programming"
+    },
+    "all_cap_selectors_and_native_alignment": {
+      "status": "passed",
+      "evidence": "bun run check:assembly (11 selectors,10 mechanical models each)"
+    },
+    "cloud_artifact_preparation": {
+      "status": "passed",
+      "evidence": "bun run build:cloud:prepare (6 artifacts,144 input hashes)"
+    },
+    "cloud_restore_and_tamper_safeguards": {
+      "status": "passed",
+      "evidence": "bun validation/check-cloud-build.mjs"
+    },
+    "native_renders": {
+      "status": "passed",
+      "evidence": "python mechanical/render_bearing_layout.py; assembled/cutaway/exploded and actual sliced paths viewed"
+    }
+  },
+  "known_advisories": [
+    "Two exactly allowlisted retained trace-style advisories",
+    "Schematic VBAT decoupler grouping advice; electrical connections preserved"
+  ],
+  "unrun": [
+    "Physical print and support-removal trial on actual printer",
+    "Fit, thread/fastener strength, bearing drag/wobble/retention and endurance",
+    "Adhesive and magnetic/RF qualification with selected phone/case",
+    "Firmware, count-clear UX and populated functional test",
+    "Measured assembly-time study"
+  ],
+  "publication": {
+    "new_tscircuit_release": false,
+    "last_hosted_version": "1.0.24",
+    "last_hosted_site": "https://rushabhcodes--fidget-counter-v1-0-24.tscircuit.app",
+    "hosted_scope": "Earlier press-cap ring revision; does not contain this rotation-only change"
+  },
+  "source_sha256": {
+    "index.circuit.tsx": "e83b0f948857b7c1d55b48d1cb3de691f7348ae05165333ea601bcb633ca90c0",
+    "parts.tsx": "5e8f71d9cb8e102dcf62316e73d5d14cd225b63b12f4a0fc0459437144947ba0",
+    "passives.tsx": "fb096d385bb3c259deae63b948c3ae2eedf19c5fbb3c2bdd3e7eb3e042b41bb4",
+    "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
+    "routing-contract.json": "a2ce9667837bbabce0b81959ea1426978023b6e0b9d2dea059e750f90b4578f9",
+    "routed-paths.json": "adc9dbd702e1184accbce928fcd6edf5b86f7bfd4bbb14a739c2ae1826be20d5",
+    "published.circuit.json": "fd329fb8f55759bc81c178646d79f21d5210b5b8ecdf8c695198a9713e207895",
+    "BOM.csv": "06a2ddb90ffc014742b94350aeeec8c0e76688dada33178b558a6459b0617db9",
+    "mechanical/build_enclosure.py": "11ce8ee69b36e2a297ca37ca65fa561970566035117940c1dca955431c628843",
+    "mechanical/enclosure-parameters.json": "4f0c9414d8018e8cb857391791b4d008e5441515b756c0815f79e92b506e50a0",
+    "mechanical/export_circuit_models.py": "71d17ba8bef55a01016a39d2d9d88063fc2ed25f2ac7c3d323845762aa7cae89",
+    "mechanical/sync_checked_exports.py": "3fbaa615ccdd9aa879ef7feff39637c9d0f1aa69b46fefc00ba7ac2fd70ca959",
+    "mechanical/print-ready-manifest.json": "2dd3d713f71f67f3a3d460c37c4771d169c51903e32b11cdfd7f0f5ebd402a5a",
+    "mechanical/Circuit_Models/manifest.json": "fcc1875e08438d4af9ef81ceec03cef70f2b569b527e74a9252e24538e227935",
+    "cloud-assets/manifest.json": "3ebd3cf40217de89e4d632db2e9618ede704acf910bfb5eab6dc63cf3f680a0f",
+    "validation/rotation-only-cad-audit.json": "bf18b380f0cf3b8a0e711f277f1511572acf6cb21b49b9a54fdd00ae1a9a02fc",
+    "validation/rotation-only-circuit-audit.json": "43421f9060d3cfc86eb3aca3dca603fb836e6f4e06a622075ada94540396d069",
+    "validation/rotation-only-references.json": "dda01d9b6743db8d4f88743e3335c556d8d1a98569b65c6ad1fa017b94d4fce5",
+    "validation/print-readiness.json": "cc4f32ab5a78688bc4e074d6374d1720a124dbe70e922f996103bc33cc805be8",
+    "validation/print-support-clearance.json": "056f1fab501e3dbbd3a475e7cf242b1a86513195fe135eda348ea7bdb0907013",
+    "validation/print-wall-sections.json": "20ec565549c57d78e6afcf0f4e80356db25c5d7f352acdc1f4005ec01fe8ce67",
+    "validation/attachment-ring-audit.json": "c8c40eab2f6a9d01db6b016522047f5d64505f6467e7e0d8dd8842bd50a84b13",
+    "validation/bearing-hardware-clearance.json": "3104ce45bf77aaaad9b34c399844e47d20bbb591c079fd946224c55848241ce4",
+    "validation/pcb-mount-clearance.json": "74295b35787612a02f3b55089300776c0501cd682930fea88ed789973c666b42",
+    "validation/jst-connector-clearance.json": "2fa3b98a016fcb0f1b69eee485103a932d47dea65e33fb6d3395f935469c2d2d",
+    "previews/bearing-layout.png": "89bedf128a6d0d05401808b175f1cab754b2bd9329d40c3a8c58ab1127aaef8d",
+    "previews/print-slice-inspection.png": "9ed1b61c36d384f132e86e2afa0510f8508c0375563ae33fb80d4299d830c5e5"
+  },
+  "output_sha256": {
+    "dist/index/circuit.json": "fd329fb8f55759bc81c178646d79f21d5210b5b8ecdf8c695198a9713e207895",
+    "dist/index/3d.glb": "4db86363eb044665f8767555d1ba9ddbdfbe776c836d816357e9ddfdd348d7f3",
+    "dist/published/circuit.json": "fd329fb8f55759bc81c178646d79f21d5210b5b8ecdf8c695198a9713e207895",
+    "dist/published/3d.glb": "4db86363eb044665f8767555d1ba9ddbdfbe776c836d816357e9ddfdd348d7f3"
+  }
+}

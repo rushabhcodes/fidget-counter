@@ -1,6 +1,6 @@
 """Split manufacturing nest: locate the housing and hold the retainer BEFORE bearing insertion.
 Tooling only. Clamp the two halves gently in a vice; open by >=3 mm per side to eject.
-Do not press/test the button while the retainer supports are engaged.
+Remove tooling before rotational drag checks.
 """
 from pathlib import Path
 import json,math,hashlib,shutil
@@ -36,13 +36,13 @@ for f in (ROOT/'mechanical/STEP_Parts').glob('*.step'):
 sweep=cq.Workplane('XY').workplane(offset=.201).circle(29.05).extrude(12).val()
 for name,half,shift in [('left',left,-3),('right',right,3)]:
  volume=half.translate((shift,0,0)).intersect(sweep).Volume();assert volume<.002,(name,'cannot eject',volume)
-# The supports contact only the underside of the retainer, at its released Z.
+# The supports contact only the underside of the retainer, at its fixed Z.
 retainer=cq.importers.importStep(str(ROOT/'mechanical/STEP_Parts/Outer_Race_Retainer.step')).val()
 for angle in [0,120,240]:
  t=math.radians(angle);x,y=28.4*math.cos(t),28.4*math.sin(t)
  assert nest.isInside(cq.Vector(x,y,z-.05),1e-6) and retainer.isInside(cq.Vector(x,y,z+.05),1e-6),angle
 assert left.intersect(right).Volume()<.002
-report={'passed':True,'tooling_physical_tested':False,'product_geometry_modified':False,'purpose':'Support loose outer-race retainer at Z5.1 before bearing insertion and cap screw starting','retainer_support_z_mm':z,'housing_radial_clearance_mm':.2,'minimum_opening_per_half_mm':3.0,'clearance_checks':checks,'use':['Clamp halves gently in a nonmagnetic or suitably isolated vice','Place base and retainer before installing bearing','Align JST direction with the visual mark; it is not a mechanical orientation key','Start all three cap screws before applying qualified torque','Open both halves by at least3 mm and lift product','Perform full press/rotation tests only AFTER removing the fixture'],'limits':['Tooling print fit and handling are untested','Supports deliberately prevent full cap pressing while engaged','No torque or pull-out strength qualification is implied'],'files':{f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in OUT.iterdir() if f.suffix in ['.step','.stl']}}
+report={'passed':True,'tooling_physical_tested':False,'product_geometry_modified':False,'purpose':'Support loose outer-race retainer at Z5.1 before bearing insertion and cap screw starting','retainer_support_z_mm':z,'housing_radial_clearance_mm':.2,'minimum_opening_per_half_mm':3.0,'clearance_checks':checks,'use':['Clamp halves gently in a nonmagnetic or suitably isolated vice','Place base and retainer before installing bearing','Align JST direction with the visual mark; it is not a mechanical orientation key','Start all three cap screws before applying qualified torque','Open both halves by at least3 mm and lift product','Perform rotation tests only AFTER removing the fixture'],'limits':['Tooling print fit and handling are untested','No torque or pull-out strength qualification is implied'],'files':{f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in OUT.iterdir() if f.suffix in ['.step','.stl']}}
 report['source_sha256']={str(f.relative_to(ROOT)):hashlib.sha256(f.read_bytes()).hexdigest() for f in [Path(__file__),ROOT/'mechanical/enclosure-parameters.json',*sorted((ROOT/'mechanical/STEP_Parts').glob('*.step'))]}
 (OUT/'nest-validation.json').write_text(json.dumps(report,indent=2)+'\n')
 print('Pass: two closed split-nest halves; all product STEP envelopes clear; retainer supported; 3 mm opening clears ejection')

@@ -292,54 +292,6 @@
       "rigid_intersections": 0
     },
     {
-      "component": "SW1",
-      "bounds_mm": [
-        [
-          -2.2999746799468994,
-          -6.405025362968445,
-          9.1
-        ],
-        [
-          2.300025463104248,
-          -3.595025420188904,
-          11.019999957084655
-        ]
-      ],
-      "rigid_intersections": 0
-    },
-    {
-      "component": "R5",
-      "bounds_mm": [
-        [
-          7.5,
-          -0.24998730421066284,
-          9.1
-        ],
-        [
-          8.5,
-          0.25001269578933716,
-          9.460000014305114
-        ]
-      ],
-      "rigid_intersections": 0
-    },
-    {
-      "component": "C17",
-      "bounds_mm": [
-        [
-          9.249987304210663,
-          -0.5,
-          9.1
-        ],
-        [
-          9.749987304210663,
-          0.5,
-          9.6
-        ]
-      ],
-      "rigid_intersections": 0
-    },
-    {
       "component": "X1",
       "bounds_mm": [
         [
@@ -500,17 +452,16 @@
       "rigid_intersections": 0
     }
   ],
-  "structural_parts": 25,
-  "press_positions_mm": [
-    0,
-    0.8
+  "structural_parts": 18,
+  "axial_positions_mm": [
+    0
   ],
   "limits": [
-    "Elastomer deformation and bearing magnetic/RF influence need physical qualification"
+    "Bearing magnetic/RF influence need physical qualification"
   ],
   "sha256": {
-    "dist/index/circuit.json": "b8e98342831fdff8d769d407f8db34954d2f16d3540545628d9eac5bde391c4e",
-    "dist/index/3d.glb": "72c88d3b9d8a7bbdb9ab4b9912cda3a8393da6895f8d5dfdea3dac6757c0c6b6",
-    "mechanical/enclosure-parameters.json": "5cd2659b2a34805481e0925bc33772ac2553e0bae41d1079b015a70baf98d921"
+    "dist/index/circuit.json": "fd329fb8f55759bc81c178646d79f21d5210b5b8ecdf8c695198a9713e207895",
+    "dist/index/3d.glb": "4db86363eb044665f8767555d1ba9ddbdfbe776c836d816357e9ddfdd348d7f3",
+    "mechanical/enclosure-parameters.json": "4f0c9414d8018e8cb857391791b4d008e5441515b756c0815f79e92b506e50a0"
   }
 }

@@ -29,7 +29,7 @@ else:
  # removal of tray/spacer. Every unaffected triangle and all poses are guarded.
  params=json.loads((root/'mechanical/enclosure-parameters.json').read_text())
  changed={'BEARING_V5_Cap_circular','BEARING_V5_Stationary_Base','BEARING_V5_Outer_Race_Retainer','BEARING_V5_Inner_Race_Nut'}
- removed={'BEARING_V5_Encoder_Spacer','BEARING_V5_Bottom_Tray'}
+ removed={'BEARING_V5_Encoder_Spacer','BEARING_V5_Bottom_Tray','BEARING_V5_Bearing_Carrier','BEARING_V5_Return_Springs','BEARING_V5_Guide_Fasteners','BEARING_V5_Actuator_Ring'}
  added=set()
  assert params['attachment_ring']['outside_mm']==54.0
  assert set(actual)==(set(expected)-removed)|added
@@ -51,5 +51,5 @@ else:
    records=np.sort(t.view('V12').reshape(-1,3),axis=1).copy().view('V36').ravel();records.sort();return hashlib.sha256(records.tobytes()).hexdigest()
   assert digest(np.concatenate(tri))==digest(np.asarray(vv,dtype='<f4')[np.asarray(ff)]),asset_path.name
   source_checks.append(asset_path.stem)
- assert len(source_checks)==24
- (root/'work/display-geometry-audit.json').write_text(json.dumps({'passed':True,'method':'Exact published triangle/pose equality outside the integral magnet stop and consolidated base; all source GLBs equal companion OBJ triangles','intentional_changes':sorted(changed|removed|added),'models':actual,'source_assets_verified_against_OBJ':source_checks},indent=2)+'\n');print('Pass: published meshes/poses preserved outside the integral stop and consolidated base; all 24 GLB assets retain every OBJ triangle')
+ assert len(source_checks)==20
+ (root/'work/display-geometry-audit.json').write_text(json.dumps({'passed':True,'method':'Exact published triangle/pose equality outside explicitly bounded fixed base and cap changes; all source GLBs equal companion OBJ triangles','intentional_changes':sorted(changed|removed|added),'models':actual,'source_assets_verified_against_OBJ':source_checks},indent=2)+'\n');print('Pass: published meshes/poses preserved outside the integral stop and consolidated base; all 20 GLB assets retain every OBJ triangle')

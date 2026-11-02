@@ -11,26 +11,13 @@ ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'work/print-readiness'
 report=json.loads((ROOT/'validation/print-readiness.json').read_text())
 parts={p['name']:p for p in report['parts']}
 
-# Carrier supports must not be generated inside the three finished guide bores.
-name='Bearing_Carrier';rows=json.loads((OUT/(name+'-paths.json')).read_text());p=parts[name]
-bounds=np.asarray(p['bounds_mm']);shift=np.array([110,110])-(bounds[0,:2]+bounds[1,:2])/2
-supports=np.asarray([[*r[:4],r[4]] for r in rows if r[5].startswith('Support material')])
-assert len(supports)>0
-clearances=[]
-for angle in [0,105,255]:
- t=math.radians(angle);center=np.array([16.5*math.cos(t),16.5*math.sin(t)])+shift
- aa=supports[:,:2];bb=supports[:,2:4];ab=bb-aa
- fraction=np.clip(np.sum((center-aa)*ab,axis=1)/np.maximum(np.sum(ab*ab,axis=1),1e-12),0,1)
- distance=np.linalg.norm(aa+ab*fraction[:,None]-center,axis=1)
- # Positive clearance includes the 0.2 mm half width of a support bead.
- clearance=float(distance.min()-2.65-.2)
- assert clearance>0,(angle,'Support touches guide bore',clearance)
- clearances.append({'guide_angle_deg':angle,'support_bead_to_bore_clearance_mm':clearance})
-assert p['maximum_support_z_mm']<4,'Support entered upper bearing shaft/thread region'
-(ROOT/'validation/print-support-clearance.json').write_text(json.dumps({'passed':True,'physical_tested':False,'method':'Actual G-code line-segment distances including0.2mm support bead radius vs guide bores; source STL bounding-box centering matches CLI--center','carrier_guide_support_clearances':clearances,'maximum_carrier_support_z_mm':p['maximum_support_z_mm'],'limits':['Cleanup and actual printer extrusion width remain physical checks']},indent=2)+'\n')
+# Exact audit paths must keep support below the bearing fit and male thread.
+name='Stationary_Base';p=parts[name]
+assert p['support_segments']>0 and p['maximum_support_z_mm']<5.2
+(ROOT/'validation/print-support-clearance.json').write_text(json.dumps({'passed':True,'physical_tested':False,'method':'Actual G-code support heights vs fixed shaft/thread fit region','maximum_base_support_z_mm':p['maximum_support_z_mm'],'bearing_fit_starts_above_bed_mm':6.4,'thread_starts_above_bed_mm':12.4,'limits':['Support cleanup and actual extrusion width remain physical checks']},indent=2)+'\n')
 
 fig,axes=plt.subplots(3,3,figsize=(18,15),layout='constrained')
-cases=[('Stationary_Base',.2,'Base first layer'),('Stationary_Base',2.3,'Base supported roof'),('Bearing_Carrier',2.15,'Carrier shoulder'),('Inner_Race_Nut',1.7,'Nut notch roof'),('Outer_Race_Retainer',1.7,'Retainer bosses'),('Cap_circular',4.7,'Default cap bearing housing'),('Cap_four_leaf_clover',1.85,'Noncircular cap supported rim'),('Cap_thumb_scoop',9.05,'Thumb cap supported interior'),('Nest_Left',12.2,'Fixture support finger')]
+cases=[('Stationary_Base',.2,'Base first layer'),('Stationary_Base',2.3,'Base supported roof'),('Stationary_Base',4.85,'Integrated bearing shoulder'),('Inner_Race_Nut',1.7,'Nut notch roof'),('Outer_Race_Retainer',1.7,'Retainer bosses'),('Cap_circular',4.7,'Default cap bearing housing'),('Cap_four_leaf_clover',1.85,'Noncircular cap supported rim'),('Cap_thumb_scoop',9.05,'Thumb cap supported interior'),('Nest_Left',12.2,'Fixture support finger')]
 colors={'model':'#167d96','support':'#e99425','bridge':'#c94745'}
 for ax,(name,target,title) in zip(axes.flat,cases):
  rows=json.loads((OUT/(name+'-paths.json')).read_text())

@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-11-02T17:19:05.934Z",
+  "checkedAt": "2026-11-02T18:12:52.971Z",
   "passed": true,
   "sourcePackage": "@tsci/tscircuit.standard-jst-programmer@0.8.0",
   "reference": "https://github.com/tscircuit/standard-jst-programmer",
-  "acceptedTraceStyleWarnings": 3,
+  "acceptedTraceStyleWarnings": 2,
   "footprint": "SM05B-SRSS-TB(LF)(SN)",
   "supplier": "JLCPCB C136657",
   "matingHousing": "SHR-05V-S-B",
@@ -112,7 +112,7 @@
     "maxY": -10.288118299999997
   },
   "courtyardClear": true,
-  "circuitSha256": "b8e98342831fdff8d769d407f8db34954d2f16d3540545628d9eac5bde391c4e",
+  "circuitSha256": "fd329fb8f55759bc81c178646d79f21d5210b5b8ecdf8c695198a9713e207895",
   "physicalConnectorFitTested": false,
   "physicalProgrammingTested": false
 }

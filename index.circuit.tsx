@@ -4,7 +4,7 @@ import enclosureParameters from "./mechanical/enclosure-parameters.json"
 import {EnclosureAssembly, type CapStyle} from "./enclosure"
 // Select any of the 11 CAP_STYLE_OPTIONS exported by enclosure.tsx.
 const CAP_STYLE: CapStyle = "circular"
-import {NRF52810,TMAG3001,HF_XTAL,LF_XTAL,RF_ANT,CapButton,BatteryHolder,JstSwd} from "./parts"
+import {NRF52810,TMAG3001,HF_XTAL,LF_XTAL,RF_ANT,BatteryHolder,JstSwd} from "./parts"
 import {routeBoard} from "./routing"
 import {Cap,Res,Ind} from "./passives"
 import type {PartsEngine,TraceProps} from "@tscircuit/props"
@@ -14,16 +14,12 @@ const hideText={"& silkscreentext":{visibility:"hidden" as const}}
 const outline=Array.from({length:128},(_,i)=>({x:18.25*Math.cos(i*2*Math.PI/128),y:18.25*Math.sin(i*2*Math.PI/128)}))
 const mountSpec=enclosureParameters.pcb_mount
 const holes=mountSpec.angles_deg.map(a=>({x:mountSpec.radius_mm*Math.cos(a*Math.PI/180),y:mountSpec.radius_mm*Math.sin(a*Math.PI/180)}))
-const unused=Array.from({length:32},(_,i)=>`P0_${i.toString().padStart(2,"0")}`).filter(p=>!["P0_00","P0_01","P0_21","P0_26","P0_27","P0_28","P0_29"].includes(p)).concat(["NC","DCC"])
+const unused=Array.from({length:32},(_,i)=>`P0_${i.toString().padStart(2,"0")}`).filter(p=>!["P0_00","P0_01","P0_21","P0_26","P0_27","P0_28"].includes(p)).concat(["NC","DCC"])
 const selector=(s:string)=>s.replace(/^\.([^ .]+)\.([^ .]+)$/, ".$1 > .$2")
 // Coordinates are in the source component's local PCB frame.
 const localRoutes: Record<string,TraceProps["pcbPath"]>={
  ".U1.ANT":[{x:3.5,y:-.2},{x:3.71,y:-.4}],
  ".C3.pin1":[{x:-.75,y:.15},{x:-1.5,y:.15}],
- ".U1.P0_29":[{x:.6,y:3.7},{x:.45,y:3.85},
-  {x:.45,y:3.85,via:true,fromLayer:"top",toLayer:"bottom"},{x:.45,y:3.85},
-  {x:-.1,y:6},{x:13.5,y:6},{x:14.8,y:-2.9},
-  {x:14.8,y:-2.9,via:true,fromLayer:"bottom",toLayer:"top"},{x:14.8,y:-2.9}],
  ".U1.DEC4":[{x:-1.4,y:3.65},{x:-.7,y:3.65},{x:-.7,y:5.5}],
  ".U1.DEC2":[{x:3.8,y:.6},{x:4.4,y:.45}],
  ".U1.DEC3":[{x:4.3,y:1}],
@@ -46,7 +42,7 @@ const Link=({a,b,w=.11}:{a:string,b:string,w?:number})=>{
 }
 const G=({p}:{p:string})=><Link a={p} b="net.GND"/>
 export default ()=> <assembly.device name="FIDGET_COUNTER">
- <board name="FIDGET_COUNTER_REVA" title="MagSafe BLE Fidget Counter — PCB Rev A"
+ <board name="FIDGET_COUNTER_REVB" title="MagSafe BLE Fidget Counter — PCB Rev B rotation only"
  outline={outline} thickness={1} layers={2} solderMaskColor="green" doubleSidedAssembly
  partsEngine={fixedPartsEngine}
  defaultViaTenting="top_and_bottom_tented" isViaInPadAllowed={false} schLayout={{layoutMode:"relative"}}
@@ -90,9 +86,6 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
  <trace name="C9_LOCAL_GND" from=".C9 > .pin2" to=".C9_GND > .top" width={.11} pcbStraightLine/>
  <via name="C18_GND" pcbX={-6.8} pcbY={10.2} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <trace name="C18_LOCAL_GND" from=".C18 > .pin2" to=".C18_GND > .top" width={.11} pcbStraightLine maxLength={1.5}/>
- <via name="C17_GND" pcbX={10.4} pcbY={2.1} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
- <trace name="C17_LOCAL_GND" from=".C17 > .pin2" to=".C17_GND > .top" width={.11}
-  pcbPathRelativeTo=".C17 > .pin2" pcbPath={[{x:2.1,y:-.9}]}/>
  <via name="C5_GND" pcbX={-13.4} pcbY={8.8} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <trace name="C5_LOCAL_GND" from=".C5 > .pin2" to=".C5_GND > .top" width={.11}
   pcbPathRelativeTo=".C5 > .pin2" pcbPath={[{x:1,y:-.5}]}/>
@@ -151,9 +144,8 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
   <Link a=".U1.DEC3" b=".C8.pin1"/><Link a=".U1.DEC4" b=".C10.pin1"/>
   <Link a=".U1.SWDIO" b="net.SWDIO"/><Link a=".U1.SWDCLK" b="net.SWDCLK"/><Link a=".U1.nRESET" b="net.NRESET"/>
  </schematicsheet>
- <schematicsheet name="sensor-button" displayName="Rotation and cap press" sheetIndex={1}>
+ <schematicsheet name="sensor" displayName="Rotation sensing" sheetIndex={1}>
   <schematicsection name="sensor" displayName="TMAG3001A2 — XY angle / address 0x34"/>
-  <schematicsection name="button" displayName="Cap press — hold 2 seconds to clear count"/>
   <schematicbox name="U1 Sensor GPIO" chipRef=".U1" schX={-6} schY={1} width={2.6} height={.8} schSectionName="sensor"
    pinLabels={{pin1:"P0_26",pin2:"P0_27",pin3:"P0_28"}} schPinArrangement={{leftSide:[],rightSide:["pin1","pin2","pin3"]}}/>
   <TMAG3001 name="U2" pcbX={0} pcbY={0} schX={1} schY={1} schSectionName="sensor" schWidth={1.58} schHeight={.8}
@@ -171,16 +163,6 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
     {x:-5.7,y:6.1},{x:-6.65,y:9.45}]}/>
   <Link a=".U2.VCC" b="net.VBAT"/><G p=".U2.GND"/><G p=".U2.ADDR"/>
   <Link a=".C6.pin1" b="net.VBAT"/><G p=".C6.pin2"/>
-  <schematicbox name="U1 Cap GPIO" chipRef=".U1" schX={-4} schY={-4} width={2.6} height={.4} schSectionName="button"
-   pinLabels={{pin1:"P0_29"}} schPinArrangement={{leftSide:[],rightSide:["pin1"]}}/>
-  <CapButton name="SW1" pcbX={0} pcbY={-5} pcbRotation={0} schX={1} schY={-4} schSectionName="button"/>
-  <Res name="R5" pcbSx={hideText} resistance="100k" pcbX={8} pcbY={0} schX={-1} schY={-2}
-   schOrientation="vertical" schSectionName="button" connections={{pin1:"net.VBAT",pin2:"net.CAP_PRESS"}}/>
-  <Cap name="C17" capacitance="10nF" pcbX={9.5} pcbY={0} pcbRotation={90} schX={4} schY={-4} schSectionName="button"/>
-  <Link a=".U1.P0_29" b=".R5.pin2"/><Link a=".SW1.A" b="net.CAP_PRESS"/><G p=".SW1.B"/>
-  <trace name="CAP_FILTER_LOCAL" from=".R5 > .pin2" to=".C17 > .pin1" width={.11}
-   pcbPathRelativeTo=".R5 > .pin2" pcbPath={[{x:1,y:-.25}]}/>
-  <Link a=".C17.pin1" b="net.CAP_PRESS"/>
  </schematicsheet>
  <schematicsheet name="clocks" displayName="Clock sources" sheetIndex={2}>
   <schematicsection name="hf" displayName="32 MHz — initial 12 pF load caps"/>
@@ -230,9 +212,8 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
  <via name="BT_NEG_JUNCTION" pcbX={-2} pcbY={-9.4} holeDiameter={.3} outerDiameter={.55} connectsTo="net.GND"/>
  <copperpour name="TOP_GND" layer="top" connectsTo="net.GND" clearance={.15} boardEdgeMargin={.35} coveredWithSolderMask/>
  <copperpour name="BOTTOM_GND" layer="bottom" connectsTo="net.GND" clearance={.15} boardEdgeMargin={.35} coveredWithSolderMask/>
- <silkscreentext text="A4" pcbX={6} pcbY={-6.7} fontSize={1.7}/>
+ <silkscreentext text="B1" pcbX={6} pcbY={-6.7} fontSize={1.7}/>
  <silkscreentext text="HALL" pcbX={0} pcbY={-3} fontSize={1.7}/>
- <silkscreentext text="CAP" pcbX={0} pcbY={-8.6} fontSize={1.7}/>
  <silkscreentext text="RF CLEAR" pcbX={4.8} pcbY={13.3} fontSize={1.7}/>
  <silkscreentext text="+" layer="bottom" pcbX={-13} pcbY={-3.8} fontSize={1.7}/>
  <silkscreentext text="-" layer="bottom" pcbX={9.5} pcbY={-3.8} fontSize={1.7}/>

@@ -1,89 +1,57 @@
-# MagSafe BLE Fidget Counter — V5 bearing enclosure
+# MagSafe BLE fidget counter — rotation-only pilot
 
-A CR2032-powered nRF52810 rotation counter with a centered TMAG3001 magnetic angle sensor, interchangeable grips and a five-pin JST-SH programming connector.
+A CR2032-powered nRF52810 rotation counter with a centered TMAG3001 angle sensor, hollow bearing-supported cap, interchangeable grips and a five-pin JST-SH programming connector. Firmware is not included.
 
-The current mechanical draft replaces the snap-fit cap and tiny PCB latches with a **bearing-supported rotor and a separately guided full-cap press**:
+The current RevB design removes the whole-cap push action. The bearing shaft is integral with the stationary base: there are no return springs, sliding carrier, guide screws/washers, silicone actuator or pusher. SW1, its R5 pull-up, C17 filter and CAP_PRESS copper are removed from the PCB. U1 P0.29 is explicitly unused. The programmer's independent nRESET connection and R4 remain.
 
-- **Base Ø58 mm**, unchanged; **height 17.2 mm**, 2.0 mm above V4.
-- Nominal **40 × 50 × 6 mm** purchased bearing around the Ø36.5 mm PCB.
-- **0.8 mm whole-cap press**, three purchased return springs and housing hard stops.
-- Three solid guides with screw/washer upward retention; four nylon PCB screws and two short rigid locating collars.
-- Three top-accessible screws retain the cap; eleven exterior grip options share the bearing drum.
-- One purchased **54 × 45.8 × 1.9 mm N52 MagSafe ring** replaces the 24 attachment discs and separate backing ring. The central encoder magnet remains.
-- PCB hole pattern, electronics and programming pinout retained. The PCB sits 1 mm higher in the enclosure.
+A unit uses **four rigid prints, seven screws and 16 handled parts** including the PCBA, cell, bearing and two magnet assemblies. Adhesive and tooling are excluded from that count. The prior press pilot used five rigid prints, ten screws and 27 handled parts. Assembly-time savings are estimates until measured.
 
-[Ploopy Knob](https://ploopyco.github.io/knob/assembly-instructions/) informs the rotation architecture; [Microsoft Surface Dial](https://www.ifixit.com/Teardown/Microsoft+Surface+Dial+Teardown/74808) informs the independent spring return and press action. The CAD is independently authored for this board.
+The base remains Ø58 mm and the cap top remains at Z17.2 mm (17.0 mm above the phone-contact face). The 40×50×6 mm bearing, Ø36.5×1 mm PCB, encoder magnet position, purchased 54×45.8×1.9 mm attachment ring and eleven grip envelopes are retained. These ring dimensions describe the selected supplier reference; verify the sample and working face before buying a batch.
 
-See [ring sourcing and assembly](mechanical/MAGSAFE_RING_SOURCING.md) for the exact US ring and a Mumbai sourcing candidate. The local manufacturing candidate combines the base and tray and replaces the encoder spacer with an integral cap stop. It adds retainer bosses without increasing height. See [the manufacturing review](mechanical/MANUFACTURING_REVIEW.md) for the 10–50-unit printed pilot.
+[Ploopy Knob assembly](https://ploopyco.github.io/knob/assembly-instructions/) is the rotation reference. Its fixed housing, rotating top and purchased bearing support the simpler architecture. Its [6705ZZ bearing](https://ploopyco.github.io/knob/appendices/hardware/) is too small for this PCB; our CAD is independent. The prior Surface Dial press reference is historical and no longer describes this product.
 
-For print files, orientation and mandatory supports, start with [PETG printing instructions](mechanical/printing/PRINTING.md) and the [printable manifest](mechanical/print-ready-manifest.json).
+Start with [printing instructions](mechanical/printing/PRINTING.md), the [print manifest](mechanical/print-ready-manifest.json), [assembly guide](MECHANICAL.md), [mechanical BOM](mechanical/MECHANICAL_BOM.csv), [pilot review](mechanical/MANUFACTURING_REVIEW.md) and [programming guide](PROGRAMMING.md). Print one circular fit prototype and its coupons before a 10–50-unit batch. CAD and slicing do not prove printed fit, thread strength, adhesive retention, magnetic sensing or RF performance.
 
-See [MECHANICAL.md](MECHANICAL.md) for assembly, print orientation, service and prototype qualification; [mechanical BOM](mechanical/MECHANICAL_BOM.csv) for purchased hardware; and [PROGRAMMING.md](PROGRAMMING.md) for SWD and power precautions. Firmware is not included.
+## Rebuild and validate
 
-## Build and check
-
-Install the pinned Bun dependencies and Python packages in `mechanical/requirements.txt`. Then run:
+Use the pinned Bun lockfile and Python requirements. With a working PrusaSlicer CLI:
 
 ```sh
-python mechanical/build_enclosure.py --style all --assembly-style circular
-python mechanical/tooling/build_assembly_nest.py
-python mechanical/build_fit_coupons.py
-python mechanical/printing/audit_prints.py --slicer /path/to/prusa-slicer
-python mechanical/export_circuit_models.py
+bun install --frozen-lockfile
 bun run typecheck
 bun run check:routing
 bun test validation/import-provenance.test.mjs
 bun run build:source
-bun validation/check-compiler-upgrade.mjs
-bun validation/check-imports.mjs
-# After checking a changed source, refresh the saved snapshot and previews:
+bun validation/check-rotation-only.mjs
+cp dist/index/circuit.json published.circuit.json
+python mechanical/build_enclosure.py --style all --assembly-style circular
+python mechanical/tooling/build_assembly_nest.py
+python mechanical/build_fit_coupons.py
+python mechanical/printing/audit_prints.py --slicer /path/to/prusa-slicer
+python mechanical/printing/check_wall_sections.py
+python mechanical/printing/render_slices.py
+python mechanical/export_circuit_models.py
+bun run build:source
+bun validation/check-rotation-only.mjs
 cp dist/index/circuit.json published.circuit.json
 bun run build
-python validation/check-manufacturing-stop.py
-python mechanical/tooling/build_assembly_nest.py
+python validation/check-rotation-only-cad.py
 python validation/check-model-detail.py
 python validation/check-attachment-ring.py
 python validation/check-display-geometry.py
-python mechanical/render_bearing_layout.py
 python validation/check-pcb-mounts.py
 python validation/check-jst-fit.py
 python validation/check-bearing-hardware.py
+bun validation/check-imports.mjs
 bun run check:programming
 bun run check:assembly
-python mechanical/build_fit_coupons.py
+python mechanical/render_bearing_layout.py
 bun run build:cloud:prepare
+bun validation/check-cloud-build.mjs
 ```
 
-`mechanical/Print_STL` contains fifteen rigid print files: four common parts and eleven cap options; a unit uses five; `Coupons` contains small fit tests. Start with the coupons and circular starter set. `Actuator_Ring_REFERENCE_ONLY.stl` is a silicone geometry reference, **not a rigid print**. Source parameters are in `mechanical/enclosure-parameters.json`. Released, pressed and exploded STEP assemblies are generated under `mechanical/export/Assemblies`.
+`mechanical/Print_STL` contains three common product parts and eleven alternative caps. Use exactly one cap per unit. Four fit coupons and two split-nest halves are separate calibration/tooling prints. Purchased/display parts are excluded. Assemblies are generated as assembled and exploded STEP files, with no pressed state.
 
-The current print-readiness evidence is [print-ready-status.json](validation/print-ready-status.json). The earlier [manufacturing review](validation/manufacturing-review-status.json) is labelled historical; [assembly timing worksheet](mechanical/ASSEMBLY_TIME_STUDY.csv) deliberately has no measured times.
+The compiler remains pinned to tscircuit 0.0.3047. The router retains its failing safeguards for changes to physical terminals, net membership, layers, existing copper, widths, obstacles and board rules. The rotation-only regression compares retained electronics and every surviving copper record against commit `6224fc9`. Two unchanged legacy trace-style advisories are exactly allowlisted; new advisories fail validation.
 
-This remains an unqualified mechanical prototype. CAD clearances and mesh checks do not establish physical spring return, switch force/overtravel, fatigue, Hall sensing or BLE performance. Verify those with the selected bearing, springs, elastomer, phone and magnets before assembled-board ordering. Older validation reports retain their original revision labels and do not certify V5.
-
-The local toolchain is pinned to `tscircuit` **0.0.3047** (package metadata remains at published 1.0.24; the manufacturing candidate is local and unpublished). The routing contract matches terminals by electrical group and
-physical coordinates rather than generated IDs, and rejects changes to copper,
-layers, board geometry, design rules and connectivity. `check:routing` includes
-negative regression cases for those safeguards. The compiler adds three style
-advisories on unchanged legacy segments; an exact geometry-based allowlist records
-them and rejects additional or changed warnings. Two tiny supplier-CAD offsets
-preserve the previously validated poses under the new footprint-origin anchor.
-
-Hardware previews and STEP assemblies now include detailed bearing internals,
-threaded/recessed fasteners, close-wound spring ends and a CR2032 can/gasket/lid.
-All 31 fitted supplier STEP parts appear in the mechanical assemblies. See
-[CAD detail and rendering](MECHANICAL.md#cad-detail-and-rendering) for reference
-sources and the distinction between nominal detail and selected purchased SKUs.
-
-The cloud restore uses `published.circuit.json` and checked artifacts tied to source hashes. Refresh them after a verified source build; see `validation/prepare-cloud-assets.mjs`. Original release history remains in Git and the excluded `.archive-v1.0.6.zip`.
-
-Registry publication uses the checked snapshot and six verified artifacts. Large
-cached artifacts are split into request-sized source files and reconstructed
-without changing their SHA-256 hashes. Physical qualification remains open.
-
-Mechanical display assets use indexed GLB files with embedded materials.
-The companion OBJ/MTL references remain in Git. Display packing retains every
-triangle and pose; `python validation/check-display-geometry.py` checks the
-complete meshes against the validated pre-publication display, allowing only the bounded manufacturing changes to base, cap and retainer and removal of tray/spacer. The manufacturing Boolean audit checks each changed solid against published 1.0.24; the ring audit verifies the seat and all fitted electronics. The GLB packing
-pass also compares every rendered corner attribute before and after encoding.
-
-[Registry release 1.0.23](https://rushabhcodes--fidget-counter-v1-0-23.tscircuit.app) completed successfully with 163 source files and six exact preview hashes verified against commit `157a36b62ba084e0a812fcc93dbe21a016904da8`. See [publication receipt](validation/published-1.0.23.json). Version 1.0.24 contains the subsequent purchased-ring revision. Its publication result is verified separately from the 1.0.23 milestone.
+The last hosted release is **1.0.24**, which contains the earlier press mechanism. The source/printable revision and its validation status are separate from that release. Historical compiler, manufacturing and publication reports retain their original revision labels; they do not certify the rotation-only pilot. The active evidence is `validation/rotation-only-status.json`, `validation/rotation-only-cad-audit.json` and `validation/print-readiness.json`.
