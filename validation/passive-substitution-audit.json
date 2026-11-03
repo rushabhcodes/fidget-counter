@@ -3,10 +3,20 @@
   "approved_new_routing": true,
   "compiler": "0.0.3060",
   "comparison_commit": "a7c29c470c439e6f4e35314b9c68bba5c8d8c100",
-  "all_28_fitted_values_lands_layers_poses_preserved": true,
+  "fitted_components": 27,
+  "nordic_electrical_correction": {
+    "passed": true,
+    "fitted_components": 27,
+    "DEC2_pin32": "unconnected",
+    "DEC3_pin33": "100pF C8 / C77177",
+    "C3_return": "dedicated top trace through VSS31; actual copper isolation checked independently",
+    "schematic_physical_pin_numbers": true,
+    "physical_qualified": false
+  },
+  "other_25_fitted_values_lands_layers_poses_preserved": true,
   "routing_changed_intentionally": true,
   "physical_tested": false,
-  "reference_sha256": "11da1b900798c83263fd8c587c272b175bcf98745caa4dbf6d49083043488811",
+  "reference_sha256": "32ffb9be4daad5c4c5a16d60109dbcc159f2ca5c73c68f9765d56c974a159632",
   "substitutions": [
     {
       "refs": [
@@ -43,7 +53,8 @@
     }
   ],
   "changed_fitted_identities": 6,
-  "all_28_values_lands_poses_preserved": true,
+  "other_25_values_lands_poses_preserved": true,
+  "bounded_nordic_electrical_correction": true,
   "all_routed_traces_pads_vias_connectivity_layers_masks_preserved": false,
   "approved_fresh_routing": true,
   "supplier_obj_step_bytes_identical": true,
@@ -59,10 +70,10 @@
     "report": "validation/print-readiness.json"
   },
   "source_sha256": {
-    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
+    "published.circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
     "passives.tsx": "e05181fcf99b2751941c16d8f43a81e541126daf283731244e9f65b1783d8ec3",
     "validation/passive-substitutions.mjs": "5a67f0b875600c1ff91e13558e0f819def4e24951c6124938e2b317cff2f8b68",
-    "validation/check-passive-substitutions.mjs": "7fa0265222dc98605c5125822cc28344bb5410d5a50bd1c5ada69555538de736",
+    "validation/check-passive-substitutions.mjs": "5a1871ee1b32aeabe7817a52a0c84e0d03a844043a7b5ef413af2baee35a24b8",
     "validation/jlc-imports.json": "a5633a0320c0ae2549522b9e7ce5b6b730d55d97bae75777bfac6e65733f240f",
     "imports/A_0402CG120J500NT/A_0402CG120J500NT.tsx": "4edceabbf1b58b6a41fde1d70f4a7eba949d668ec72eb1414edd8d386432928e",
     "imports/A_0402CG120J500NT/A_0402CG120J500NT.obj": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d",
@@ -73,10 +84,10 @@
     "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.tsx": "47f261b0aac5b5e7fbeb80d7f9ccba1339d10ef95d6c7819d2ac34897b279b6d",
     "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.obj": "b47da88d07499fc647a8d2ea4052a7f2f80ba43a034606f1f9e9120313059fc9",
     "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.step": "a9e3440491fe778b6cd506a9af4fe608b51e57c361087ef1028b5c09c77fc199",
-    "validation/check-fresh-routing.mjs": "f062ddd7e4628b36e6607b3d00382c5d4dc26b23f29ca46938f4991bb7654ba8",
-    "validation/fresh-routing-reference.json": "11da1b900798c83263fd8c587c272b175bcf98745caa4dbf6d49083043488811",
-    "dist/index/3d.glb": "85b978ecc119ac678620268a8e742dbbd78c33c6f8c72320067dfe32379bae4d",
-    "validation/pushfit-cad-audit.json": "57a84530fa946368322c6d812cf9eedcb9be50b6c299193729139ff8e4f27f13",
+    "validation/check-fresh-routing.mjs": "88138876570607c40e278838b43b4b3b2bdf4fed52a632191faa606b1ddde35a",
+    "validation/fresh-routing-reference.json": "32ffb9be4daad5c4c5a16d60109dbcc159f2ca5c73c68f9765d56c974a159632",
+    "dist/index/3d.glb": "e2a8c90c4411993717b37d5dd791244016c8b48fbdc544d61976367f21874463",
+    "validation/pushfit-cad-audit.json": "e6eecc959b310bd79e842e5b0338f5e4cd54f110a3f51ab7853cbcd2fd976511",
     "mechanical/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec"
   }
 }

@@ -100,32 +100,16 @@
       "rigid_intersections": 0
     },
     {
-      "component": "C7",
-      "bounds_mm": [
-        [
-          -0.5,
-          5.250012695789337,
-          11.6
-        ],
-        [
-          0.5,
-          5.750012695789337,
-          12.1
-        ]
-      ],
-      "rigid_intersections": 0
-    },
-    {
       "component": "C8",
       "bounds_mm": [
         [
-          -2.7,
-          5.750012695789337,
+          -3.2,
+          6.550012695789337,
           11.6
         ],
         [
-          -1.7000000000000002,
-          6.250012695789337,
+          -2.2,
+          7.050012695789337,
           12.1
         ]
       ],
@@ -423,13 +407,13 @@
       "component": "C3",
       "bounds_mm": [
         [
-          -3.349987304210663,
-          1.9,
+          -3.34,
+          5.209987304210663,
           11.6
         ],
         [
-          -2.849987304210663,
-          2.9,
+          -2.34,
+          5.709987304210663,
           12.1
         ]
       ],
@@ -460,10 +444,10 @@
     "Bearing magnetic/RF influence need physical qualification"
   ],
   "sha256": {
-    "dist/index/circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
-    "dist/index/3d.glb": "85b978ecc119ac678620268a8e742dbbd78c33c6f8c72320067dfe32379bae4d",
+    "dist/index/circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
+    "dist/index/3d.glb": "e2a8c90c4411993717b37d5dd791244016c8b48fbdc544d61976367f21874463",
     "mechanical/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec",
-    "validation/check-bearing-hardware.py": "506f7f2e93701d1460fd0ce8d79faa9e8377fbbcefdb80d7b215318f9af467e7",
+    "validation/check-bearing-hardware.py": "de608e0baa738f97dfd9b91ff61c66a3a0ab9ffc1ae08efc8cba803760dc1703",
     "mechanical/hardware_models.py": "cc7779f3d393011b726865e31ef664cbc83cf4b86ab12543a0f66a8fb7d29283",
     "imports/BS_24_B4AA014/BS_24_B4AA014.step": "1446db6fa5286480ba989cfd709c9e0429209990297f99abe7f51daebc1a0f6a"
   }

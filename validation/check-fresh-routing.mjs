@@ -3,6 +3,7 @@ import{execFileSync}from'node:child_process'
 import{readFileSync,writeFileSync}from'node:fs'
 import{createHash}from'node:crypto'
 import{fittedComponentRecords}from'./fitted-component-records.mjs'
+import{approvedNordicFittedRecords,approvedNordicPins,approvedNordicPartition,verifyNordicElectrical}from'./nordic-electrical-revision.mjs'
 const canonical=v=>JSON.stringify(v,(_,x)=>typeof x==='number'?Math.round(x*1e9)/1e9:x&&!Array.isArray(x)&&typeof x==='object'?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a.localeCompare(b))):x)
 export function freshRoutingSignature(c){
  const ss=new Map(c.filter(e=>e.type==='source_component').map(e=>[e.source_component_id,e.name]));
@@ -27,11 +28,12 @@ export function logicalNetPartition(c){
 const old=()=>JSON.parse(execFileSync('git',['show','a7c29c470c439e6f4e35314b9c68bba5c8d8c100:published.circuit.json'],{maxBuffer:16e6}));
 export function verifyFreshRouting(c){
  const ref=JSON.parse(readFileSync('validation/fresh-routing-reference.json'));assert.equal(ref.compiler,'0.0.3060');assert.equal(JSON.parse(readFileSync('package.json')).dependencies.tscircuit,ref.compiler);
- const baseline=old();assert.deepEqual(fittedComponentRecords(c),fittedComponentRecords(baseline),'Fitted identity, value, land, layer or CAD pose changed');
- assert.deepEqual(logicalNetPartition(c),logicalNetPartition(baseline),'Actual component-pin net membership changed');
- assert.deepEqual(freshRoutingSignature(c).pins,freshRoutingSignature(baseline).pins,'Real electrical pin attributes changed');
+ const baseline=old();assert.deepEqual(fittedComponentRecords(c),approvedNordicFittedRecords(fittedComponentRecords(baseline)),'Fitted identity, value, land, layer or CAD pose changed beyond the bounded Nordic correction');
+ assert.deepEqual(logicalNetPartition(c),approvedNordicPartition(logicalNetPartition(baseline)),'Actual component-pin net membership changed');
+ assert.deepEqual(freshRoutingSignature(c).pins,approvedNordicPins(freshRoutingSignature(baseline).pins),'Real electrical pin attributes changed');
+ const nordic=verifyNordicElectrical(c);
  assert.deepEqual(freshRoutingSignature(c),ref.signature,'Approved new copper, connectivity, constraints, layers or fixed geometry changed');
  assert(!c.some(e=>e.type.endsWith('_error')),'New routing has circuit errors');
- return {passed:true,approved_new_routing:true,compiler:ref.compiler,comparison_commit:'a7c29c470c439e6f4e35314b9c68bba5c8d8c100',all_28_fitted_values_lands_layers_poses_preserved:true,routing_changed_intentionally:true,physical_tested:false,reference_sha256:createHash('sha256').update(readFileSync('validation/fresh-routing-reference.json')).digest('hex')}
+ return {passed:true,approved_new_routing:true,compiler:ref.compiler,comparison_commit:'a7c29c470c439e6f4e35314b9c68bba5c8d8c100',fitted_components:27,nordic_electrical_correction:nordic,other_25_fitted_values_lands_layers_poses_preserved:true,routing_changed_intentionally:true,physical_tested:false,reference_sha256:createHash('sha256').update(readFileSync('validation/fresh-routing-reference.json')).digest('hex')}
 }
-if(import.meta.main){const report=verifyFreshRouting(JSON.parse(readFileSync(process.argv[2]??'published.circuit.json')));report.source_sha256=Object.fromEntries(['index.circuit.tsx','published.circuit.json','critical-routes.json','routing.ts','routing-contract.json','routed-paths.json','validation/check-fresh-routing.mjs','validation/fresh-routing-reference.json','validation/fitted-component-records.mjs'].map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')]));writeFileSync('validation/fresh-routing-audit.json',JSON.stringify(report,null,2)+'\n');console.log('PASS: approved fresh routing; all28 fitted geometries and actual pin-net partitions preserved; fixed copper/constraints/layers fail closed')}
+if(import.meta.main){const report=verifyFreshRouting(JSON.parse(readFileSync(process.argv[2]??'published.circuit.json')));report.source_sha256=Object.fromEntries(['index.circuit.tsx','published.circuit.json','critical-routes.json','routing.ts','routing-contract.json','routed-paths.json','validation/check-fresh-routing.mjs','validation/fresh-routing-reference.json','validation/fitted-component-records.mjs','validation/nordic-electrical-revision.mjs','validation/nordic-electrical-reference.json'].map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')]));writeFileSync('validation/fresh-routing-audit.json',JSON.stringify(report,null,2)+'\n');console.log('PASS: bounded Nordic correction;27 fitted parts; fixed copper, constraints, pin attributes and layers fail closed')}

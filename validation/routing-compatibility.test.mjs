@@ -6,8 +6,10 @@ import {routeBoard} from "../routing"
 
 const input=()=>{
  const value=structuredClone(contract.geometry)
- value.connections=JSON.parse(paths.expectedPhaseSignature).map((c)=>({name:c.name,
-  width:.11,nominalTraceWidth:.11,pointsToConnect:c.points}))
+ value.connections=JSON.parse(paths.expectedPhaseSignature).map((c)=>{
+  const approved=contract.geometry.connections.find(x=>x.name===c.name)
+  return {name:c.name,width:approved.width,nominalTraceWidth:approved.nominalTraceWidth,pointsToConnect:c.points}
+ })
  for(const via of contract.auxiliaryVias){
   const o=value.obstacles.find((o)=>o.shape==="circle"&&o.center.x===via.center.x&&o.center.y===via.center.y)
   o.connectedTo.push(...via.ports)

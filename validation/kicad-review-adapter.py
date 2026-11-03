@@ -1,10 +1,34 @@
-"""KiCad9 review adapter: syntax/tolerance metadata only; never refill copper."""
+"""KiCad9 review adapter: syntax and fill topology; never refill copper.
+
+Union existing fragmented filled polygons, preserve every hole, and encode them
+as native bridged contours. The independent checker enforces1nm copper parity,
+the native integer-coordinate resolution. No electrical error is waived.
+"""
 from pathlib import Path
 import json,re,sys,subprocess,shutil
 import pcbnew
 source=Path(sys.argv[1]);out=Path(sys.argv[2]);out.parent.mkdir(parents=True,exist_ok=True)
 text=source.read_text();text,n=re.subn(r'\(tenting\s+\(front yes\)\s+\(back yes\)\s*\)','(tenting front back)',text)
 out.write_text(text);b=pcbnew.LoadBoard(str(out))
+zones=[]
+def points_nm(v):return [[v.CPoint(i).x,v.CPoint(i).y]for i in range(v.PointCount())]
+for zi,z in enumerate(b.Zones()):
+ if z.GetIsRuleArea():continue
+ p=z.GetFilledPolysList(z.GetLayer())
+ zones.append({'zone_index':zi,'fragments':[{'outer':points_nm(p.COutline(i)),'holes':[points_nm(p.CHole(i,j))for j in range(p.HoleCount(i))]}for i in range(p.OutlineCount())]})
+coalesced=json.loads(subprocess.check_output(['python',str(Path(__file__).with_name('coalesce-native-fills.py'))],input=json.dumps(zones),text=True))
+for row in coalesced:
+ z=list(b.Zones())[row['zone_index']];p=pcbnew.SHAPE_POLY_SET()
+ for poly in row['polygons']:
+  oi=p.NewOutline()
+  for x,y in poly['outer']:p.Append(round(x),round(y),oi)
+  for ring in poly['holes']:
+   hi=p.NewHole(oi)
+   for x,y in ring:p.Append(round(x),round(y),oi,hi)
+ # Native files serialize filled outlines. Fracture bridges holes into those
+ # outlines; omitting this step would silently fill the holes on serialization.
+ p.Fracture();z.SetFilledPolysList(z.GetLayer(),p);z.SetNeedRefill(False);z.SetIsFilled(True)
+out.with_suffix('.fill-topology.json').write_text(json.dumps({'method':'Union existing native fragments; preserve holes as bridged contours; no refill','native_coordinate_grid_nm':1,'zones':[{'zone_index':r['zone_index'],'fragments_before':r['fragments_before'],'contours_after':len(r['polygons'])}for r in coalesced]},indent=2)+'\n')
 for z in b.Zones():
  if not z.GetIsRuleArea():z.SetLocalClearance(pcbnew.FromMM(.10))
 pcbnew.SaveBoard(str(out),b)

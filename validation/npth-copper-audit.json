@@ -24,9 +24,9 @@
   ],
   "source_sha256": {
     "validation/check-npth-copper.py": "f5501018840739c43908024437b8ecec7e5c2434feddf90546d9318a85863746",
-    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
-    "index.circuit.tsx": "b5b0683f26710e70fac6ea8ed9a6a06440814ae98b87890450b6b4d0e85fac36",
-    "validation/check-fresh-routing.mjs": "f062ddd7e4628b36e6607b3d00382c5d4dc26b23f29ca46938f4991bb7654ba8",
-    "validation/fresh-routing-reference.json": "11da1b900798c83263fd8c587c272b175bcf98745caa4dbf6d49083043488811"
+    "published.circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
+    "index.circuit.tsx": "290f4d6b344b40047fc70f8cd59ba1adb912fa1dc49407abb08d5cfb3f07205d",
+    "validation/check-fresh-routing.mjs": "88138876570607c40e278838b43b4b3b2bdf4fed52a632191faa606b1ddde35a",
+    "validation/fresh-routing-reference.json": "32ffb9be4daad5c4c5a16d60109dbcc159f2ca5c73c68f9765d56c974a159632"
   }
 }

@@ -1,0 +1,466 @@
+{
+  "comparison_commit": "c9d97fc90c887e0ec1b8b791a12053a8644d82ad",
+  "reason": "Nordic nRF52810 PS v1.3 sections7.3.1 and7.3.9: DEC2 NC, DEC3 100pF, C3 local VSS31 return",
+  "before": [
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C3",
+        "manufacturer_part_number": "GJM1555C1HR80WB01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C88902"
+          ]
+        },
+        "capacitance": 0,
+        "display_capacitance": "0.8pF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -3.1,
+          "y": 2.4
+        },
+        "width": 0.540004,
+        "height": 1.340231,
+        "layer": "top",
+        "rotation": 270,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -3.1,
+        "display_offset_y": 2.4,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -3.1,
+            "y": 2.4,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 270
+          },
+          "model_obj_url": "./imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.obj",
+          "model_step_url": "./imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.0000127,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -3.1,
+          "y": 1.979884,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.540004,
+          "height": 0.499999,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -3.1,
+          "y": 2.820116,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C7",
+        "manufacturer_part_number": "GRM1555C1H101JA01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C77177"
+          ]
+        },
+        "capacitance": 0,
+        "display_capacitance": "100pF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": 0,
+          "y": 5.5
+        },
+        "width": 1.340231,
+        "height": 0.540004,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": 0,
+        "display_offset_y": 5.5,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": 0,
+            "y": 5.5,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.obj",
+          "model_step_url": "./imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.0000127,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": 0.420116,
+          "y": 5.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -0.420116,
+          "y": 5.5,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C8",
+        "manufacturer_part_number": "GRM155R71C104KA88D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C71629"
+          ]
+        },
+        "capacitance": 1e-7,
+        "display_capacitance": "100nF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -2.2,
+          "y": 6
+        },
+        "width": 1.340231,
+        "height": 0.540004,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -2.2,
+        "display_offset_y": 6,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -2.2,
+            "y": 6,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.obj",
+          "model_step_url": "./imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.0000127,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -1.779884,
+          "y": 6,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -2.620116,
+          "y": 6,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C3",
+        "manufacturer_part_number": "GJM1555C1HR80WB01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C88902"
+          ]
+        },
+        "capacitance": 0,
+        "display_capacitance": "0.8pF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -2.84,
+          "y": 5.46
+        },
+        "width": 1.340231,
+        "height": 0.540004,
+        "layer": "top",
+        "rotation": 180,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -2.84,
+        "display_offset_y": 5.46,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -2.84,
+            "y": 5.46,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 180
+          },
+          "model_obj_url": "./imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.obj",
+          "model_step_url": "./imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.0000127,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -3.260116,
+          "y": 5.46,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -2.419884,
+          "y": 5.46,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "source_component",
+        "ftype": "simple_capacitor",
+        "name": "C8",
+        "manufacturer_part_number": "GRM1555C1H101JA01D",
+        "supplier_part_numbers": {
+          "jlcpcb": [
+            "C77177"
+          ]
+        },
+        "capacitance": 0,
+        "display_capacitance": "100pF",
+        "are_pins_interchangeable": true
+      },
+      "pcb": {
+        "type": "pcb_component",
+        "center": {
+          "x": -2.7,
+          "y": 6.8
+        },
+        "width": 1.340231,
+        "height": 0.540004,
+        "layer": "top",
+        "rotation": 0,
+        "subcircuit_id": "subcircuit_source_group_0",
+        "do_not_place": false,
+        "obstructs_within_bounds": true,
+        "is_allowed_to_be_off_board": false,
+        "position_mode": "relative_to_group_anchor",
+        "positioned_relative_to_pcb_board_id": "pcb_board_0",
+        "display_offset_x": -2.7,
+        "display_offset_y": 6.8,
+        "pin1_location": "topside_left"
+      },
+      "cad": [
+        {
+          "type": "cad_component",
+          "position": {
+            "x": -2.7,
+            "y": 6.8,
+            "z": 0.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "model_obj_url": "./imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.obj",
+          "model_step_url": "./imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.step",
+          "model_origin_alignment": "center_of_component_on_board_surface",
+          "anchor_alignment": "center_of_component_on_board_surface",
+          "model_origin_position": {
+            "x": 0,
+            "y": -0.0000127,
+            "z": -0.25
+          }
+        }
+      ],
+      "pads": [
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin2"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -2.279884,
+          "y": 6.8,
+          "subcircuit_id": "subcircuit_source_group_0"
+        },
+        {
+          "type": "pcb_smtpad",
+          "layer": "top",
+          "shape": "rect",
+          "width": 0.499999,
+          "height": 0.540004,
+          "port_hints": [
+            "pin1"
+          ],
+          "is_covered_with_solder_mask": false,
+          "x": -3.120116,
+          "y": 6.8,
+          "subcircuit_id": "subcircuit_source_group_0"
+        }
+      ]
+    }
+  ],
+  "before_pins": [
+    "{\"is_output\":true,\"must_be_connected\":true,\"pin_number\":32,\"port_hints\":[\"DEC2\",\"pin32\",\"32\"],\"provides_power\":true,\"terminal\":\"U1.32\",\"type\":\"source_port\"}",
+    "{\"pin_number\":1,\"port_hints\":[\"pin1\",\"1\"],\"terminal\":\"C7.1\",\"type\":\"source_port\"}",
+    "{\"pin_number\":2,\"port_hints\":[\"pin2\",\"2\"],\"terminal\":\"C7.2\",\"type\":\"source_port\"}"
+  ],
+  "after_pins": [
+    "{\"do_not_connect\":true,\"is_passive\":true,\"pin_number\":32,\"port_hints\":[\"DEC2\",\"pin32\",\"32\"],\"terminal\":\"U1.32\",\"type\":\"source_port\"}"
+  ]
+}

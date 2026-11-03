@@ -25,7 +25,7 @@ export const records=c=>{
 }
 const sorted=(items,f)=>items.map(f).sort()
 export function verifyCr2450Circuit(current,old=baseline()){
- if(existsSync('validation/fresh-routing-reference.json'))return {...verifyFreshRouting(current),fitted_components:28,retained_fitted_geometry:28,all_electrical_connectivity_and_pin_attributes_preserved:true,unchanged_other_copper:false,changed_holder:'C7525448 BS-24-B4AA014',firmware_provided:false}
+ if(existsSync('validation/fresh-routing-reference.json'))return {...verifyFreshRouting(current),fitted_components:27,retained_fitted_geometry:25,bounded_nordic_electrical_correction:true,unchanged_other_copper:false,changed_holder:'C7525448 BS-24-B4AA014',firmware_provided:false}
  const a=records(old),b=records(current)
  const prior=fittedComponentRecords(old),now=fittedComponentRecords(current)
  assert.equal(now.length,28)
@@ -93,6 +93,6 @@ export function runCr2450Check(){
  if(report.approved_new_routing)files.push('validation/check-fresh-routing.mjs','validation/fresh-routing-reference.json')
  report.source_sha256=Object.fromEntries(files.map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')]))
  writeFileSync('validation/cr2450-circuit-audit.json',JSON.stringify(report,null,2)+'\n')
- console.log(report.approved_new_routing?'PASS: CR2450 assembly and all28 fitted geometries retained; approved fresh routing and pin-net partition verified':'PASS: historical CR2450 circuit revision preserved')
+ console.log(report.approved_new_routing?'PASS: CR2450 assembly and 27 fitted parts; bounded Nordic correction; approved fresh routing and pin-net partition verified':'PASS: historical CR2450 circuit revision preserved')
 }
 if(import.meta.main)runCr2450Check()

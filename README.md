@@ -2,6 +2,8 @@
 
 A rotation-only fidget counter with an nRF52810 MCU, TMAG3001A2 angle sensor, CR2450 cell and hollow rotating cap. **One complete turn in either direction counts as one fidget.** Backtracking cancels an unfinished turn.
 
+**1.0.30 corrects the DEC2/DEC3 bypass network and C3 RF ground return from1.0.29. Use the current fabrication bundle.** The [review resolution](validation/AI_REVIEW_RESOLUTION.md) records the fixes and the RF/printed-retention tests still required before production.
+
 The current RevC pilot uses **two printed parts, two PCB screws and nine handled parts**, excluding adhesive/tools. It uses a6808-ZZ/61808-2Z bearing,40×52×7mm. The base isØ58mm, maximum capØ61.6mm and height16.4mm above the phone-contact face. There is no cap button, spring or top screw. The cap has a1.3mm nominal deck and1.2mm local encoder roof, with0.78mm conservative clearance above the programming connector. See the [compact-cap review](mechanical/COMPACT_CAP_REVIEW.md).
 
 ## Build, program and assemble
@@ -16,11 +18,11 @@ Firmware source, a custom RevC board definition, logic tests, BLE reader/reset c
 
 ## What to buy
 
-Quantities are per device with one cap, except shared consumables/tools. Buy the specified dimensions. The PCBA quote must include all28 FIT components, including the soldered battery holder and JST programming header; the loose cell is purchased separately. Supplier listings are examples, not reserved stock or qualified substitutes.
+Quantities are per device with one cap, except shared consumables/tools. Buy the specified dimensions. The PCBA quote must include all27 FIT components, including the soldered battery holder and JST programming header; the loose cell is purchased separately. Supplier listings are examples, not reserved stock or qualified substitutes.
 
 | Item | Quantity | Required specification | Supplier links and fit notes |
 | --- | ---: | --- | --- |
-| Custom assembled PCB | 1 | RevC Ø36.5 × 1.0 mm PCB with the 28 fitted components in [BOM.csv](BOM.csv) | [JLCPCB assembly service](https://jlcpcb.com/pcb-assembly). This is a custom fabrication/assembly quote, not a stock product. If all **FIT** rows are assembled, BT1's battery holder, J_DEBUG and the other electronics are already included; do not buy those again as loose mechanical parts. |
+| Custom assembled PCB | 1 | RevC Ø36.5 × 1.0 mm PCB with the 27 fitted components in [BOM.csv](BOM.csv) | [JLCPCB assembly service](https://jlcpcb.com/pcb-assembly). This is a custom fabrication/assembly quote, not a stock product. If all **FIT** rows are assembled, BT1's battery holder, J_DEBUG and the other electronics are already included; do not buy those again as loose mechanical parts. |
 | Thin-section bearing | 1 | **6808-ZZ / 61808-2Z, 40 × 52 × 7 mm**, chrome steel, two metal shields | [India: HMS](https://www.hmsbearings.co.in/68-series-deep-groove-ball-bearing.html) · [India: BM3/Moglix](https://www.moglix.com/bm3-6808-zz-chrome-steel-deep-groove-ball-bearing-40x52x7-mm/mp/msn8klp8p8yr5v) · [India: NTN/Bearing House](https://bearinghouse.in/shop/ntn-6808zz-deep-groove-ball-bearings/) · [US: JSB](https://jsbgreatbearings.com/product/6808-zz-two-side-metal-shields-bearing-6808-rs-ball-bearings-6808-rs/). See the price/stock comparison below. Supplier drawing and samples must establish race contact, fit, drag and play; 2RS variants require their own drag evaluation. |
 | MagSafe magnetic ring assembly | 1 | Current seat: **N52, OD54 × ID45.8 × 1.9 mm**, complete magnetic array with working face toward the phone | [Default reference: MagnetPrint Hub kit](https://magnetprinthub.com/products/magsafe-magnet-kit). [India alternative: Magneticks](https://www.magneticks.in/magsafe-magnetic-ring-13003978.html) lists a **1.0 mm** ring and requires a changed seat depth; it is not the current 1.9 mm part. See [ring sourcing](mechanical/MAGSAFE_RING_SOURCING.md). |
 | Encoder magnet | 1 per cap | **Ø5 × 1.5 mm, diametrically magnetized neodymium disc** | [BUYNEOMAGNETS exact-size diametric N38 example, 50-pack](https://www.buyneomagnets.com/p/5mm-x-1-5mm-diametrically-magnetized-neodymium-disc-magnet-n38-rare-earth-diametric-magnets-50-pack/). Size/pole-direction match the reference; magnetic grade and Hall performance still need sample testing. India delivery is unverified. Ordinary axially magnetized discs are not equivalent. |
@@ -44,9 +46,9 @@ Select3V3 and remove the CR2450 before powered programming. J_DEBUG pins are1=VB
 
 ## Files for the pilot
 
-[Print pilot ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/bearing-supported-enclosure/manufacturing/fidget-counter-print-pilot-1.0.29.zip) · [Fabrication ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/bearing-supported-enclosure/manufacturing/fidget-counter-fabrication-1.0.29.zip) · [Package contents](manufacturing/README.md)
+[Print pilot ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/bearing-supported-enclosure/manufacturing/fidget-counter-print-pilot-1.0.30.zip) · [Fabrication ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/bearing-supported-enclosure/manufacturing/fidget-counter-fabrication-1.0.30.zip) · [Package contents](manufacturing/README.md)
 
-These versioned ZIPs contain the checked1.0.29 hardware files. Get the current assembly/programming instructions and firmware separately from this branch. Use the fabrication ZIP's BOM/CPL/Gerbers for the PCBA quote; its verified supplier rotations and paste/mask preparation matter.
+These versioned ZIPs contain the checked1.0.30 hardware files. Get the current assembly/programming instructions and firmware separately from this branch. Use the fabrication ZIP's BOM/CPL/Gerbers for the PCBA quote; its verified supplier rotations and paste/mask preparation matter.
 
 Editable CAD, current STL/STEP/GLB exports and the [print manifest](mechanical/print-ready-manifest.json) are retained. [Mechanical details](MECHANICAL.md), [mechanical BOM](mechanical/MECHANICAL_BOM.csv), [pilot review](mechanical/MANUFACTURING_REVIEW.md) and [PCB review](validation/FABRICATION_REVIEW.md) give the engineering evidence.
 
@@ -67,6 +69,7 @@ bun test
 bun run build:source
 cp dist/index/circuit.json published.circuit.json
 bun validation/check-fresh-routing.mjs
+python validation/check-nordic-rf.py
 bun validation/check-source-snapshot.mjs
 bun validation/run-fabrication-review.mjs
 python validation/check-gerber-parity.py

@@ -1,7 +1,7 @@
 {
   "passed": true,
   "physical_tested": false,
-  "method": "Continuous Z-prism of drilled PCB;27 supplier STEP AABB prisms and two proven height-sliced holder-body prisms; cylindrical cell sweep",
+  "method": "Continuous Z-prism of drilled PCB;26 supplier STEP AABB prisms and two proven height-sliced holder-body prisms; cylindrical cell sweep",
   "motion_upward_from_seated_mm": 20.0,
   "previous_comparison_commit": "bab8aa4b2011a14873aea0a3094a3c7ed4d9e685",
   "previous_obstruction_volume_mm3": 13.263488470285267,
@@ -40,11 +40,6 @@
     },
     {
       "component": "C5",
-      "swept_intersection_mm3": 0.0,
-      "conservative_envelope": "Supplier STEP AABB"
-    },
-    {
-      "component": "C7",
       "swept_intersection_mm3": 0.0,
       "conservative_envelope": "Supplier STEP AABB"
     },
@@ -160,11 +155,11 @@
     "Battery/holder and populated board physical fit"
   ],
   "source_sha256": {
-    "validation/check-pcb-insertion.py": "8d81f94f33c73a22851e0eb17e27f7534524ace763f9ba1c06f6a406e224f340",
-    "mechanical/build_enclosure.py": "0fe26eeb4ad1b3a3ffad466ac229823c5ff343feeeb5d6b2372c031ed94196bf",
+    "validation/check-pcb-insertion.py": "85e0ef7d077fe405f7387e81536f0cca828eba59a763f6e7b619c10dd924e7ab",
+    "mechanical/build_enclosure.py": "d84408f82438efe5554534f647972ac49de9252bd2fe67a3e9f8f4ea1f6a7c32",
     "mechanical/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec",
-    "mechanical/STEP_Parts/Stationary_Base.step": "9c9b52e046ff8a71d28181f0b584955640660a92edde7ab1372732ee54659571",
-    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
+    "mechanical/STEP_Parts/Stationary_Base.step": "97a485258f61aee789dde9ab2957f2351f0e246bcbc0e503a8df9cf7be04463b",
+    "published.circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
     "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step": "757179567becc0f67f627e24efc67b4d8b556002f4b336735358f6716bbd37ad",
     "imports/BS_24_B4AA014/BS_24_B4AA014.step": "1446db6fa5286480ba989cfd709c9e0429209990297f99abe7f51daebc1a0f6a",
     "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
@@ -184,6 +179,6 @@
     "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
     "imports/RFANT3216120A5T/RFANT3216120A5T.step": "44168c6e5d17ffce4789710ef4075cb75102fd74af108ddc5869e7e437d108ab",
     "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f",
-    "validation/pushfit-cad-audit.json": "57a84530fa946368322c6d812cf9eedcb9be50b6c299193729139ff8e4f27f13"
+    "validation/pushfit-cad-audit.json": "e6eecc959b310bd79e842e5b0338f5e4cd54f110a3f51ab7853cbcd2fd976511"
   }
 }

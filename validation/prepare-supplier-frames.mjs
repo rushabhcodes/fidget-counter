@@ -24,7 +24,7 @@ for(const s of c.filter((e)=>e.type==='source_component'&&e.supplier_part_number
 const recompute=structuredClone(c);for(const e of recompute)if(e.type==='pcb_component')delete e.supplier_pin1_location_map
 const prepared=await populatePartOrientationMetadata(recompute,{supplier:'jlcpcb',partsEngine:{fetchPartCircuitJson:async({supplierPartNumber})=>frames.get(supplierPartNumber)}})
 const rows=convertCircuitJsonToPickAndPlaceRows(prepared,{supplier:'jlcpcb',requireSupplierRotation:true})
-if(rows.length!==28||rows.find(r=>r.designator==='BT1')?.layer!=='bottom')throw Error('Fitted assembly selection changed')
+if(rows.length!==27||rows.find(r=>r.designator==='BT1')?.layer!=='bottom')throw Error('Fitted assembly selection changed')
 writeFileSync(resolve(out,'prepared.circuit.json'),JSON.stringify(prepared,null,2)+'\n');writeFileSync(resolve(out,'cpl.csv'),convertCircuitJsonToPickAndPlaceCsv(prepared,{supplier:'jlcpcb',requireSupplierRotation:true}));writeFileSync(resolve(out,'supplier-frames.json'),JSON.stringify(proof,null,2)+'\n')
 for(const e of c)if(e.type==='pcb_component'&&e.supplier_pin1_location_map)assert.deepEqual(e.supplier_pin1_location_map,prepared.find(p=>p.type==='pcb_component'&&p.pcb_component_id===e.pcb_component_id).supplier_pin1_location_map,'Stored supplier orientation differs from raw import')
 const stripped=structuredClone(prepared);for(const e of stripped)if(e.type==='pcb_component')delete e.supplier_pin1_location_map
@@ -34,4 +34,4 @@ assert.deepEqual(stripped,original,'Orientation enrichment changed physical geom
 const sourceNames=new Map(c.filter((e)=>e.type==='source_component').map((e)=>[e.source_component_id,e.name]))
 const adjustments=rows.flatMap(row=>{const p=c.find((e)=>e.type==='pcb_component'&&sourceNames.get(e.source_component_id)===row.designator);return p.rotation===row.rotation?[]:[{designator:row.designator,layer:row.layer,authored_rotation:p.rotation,jlcpcb_rotation:row.rotation}]})
 writeFileSync(resolve(out,'orientation-audit.json'),JSON.stringify({passed:true,physical_qualified:false,source_circuit_sha256:createHash('sha256').update(readFileSync(input)).digest('hex'),fitted_rows:rows.length,supplier_frame_types:frames.size,adjustments,limits:['Verify BT1 pin1 positive and all polarized parts in JLCPCB assembly preview before approving the order']},null,2)+'\n')
-console.log('PASS:28 strict supplier-frame placement rotations; raw import provenance retained; physical assembly-preview approval remains required')
+console.log('PASS:27 strict supplier-frame placement rotations; raw import provenance retained; physical assembly-preview approval remains required')

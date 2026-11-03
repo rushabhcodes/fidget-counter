@@ -26,7 +26,7 @@
   },
   "sha256": {
     "mechanical/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec",
-    "mechanical/STEP_Parts/Stationary_Base.step": "9c9b52e046ff8a71d28181f0b584955640660a92edde7ab1372732ee54659571",
+    "mechanical/STEP_Parts/Stationary_Base.step": "97a485258f61aee789dde9ab2957f2351f0e246bcbc0e503a8df9cf7be04463b",
     "mechanical/Circuit_Models/MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960"
   },
   "unqualified": [
@@ -34,7 +34,7 @@
     "Ring adhesive peel/shear retention and printed roof strength",
     "Hall error, RF and phone/case compatibility"
   ],
-  "fitted_electronic_components_checked": 28,
+  "fitted_electronic_components_checked": 27,
   "fixed_hardware_clearances": [
     {
       "component": "Electronic_U1",
@@ -68,12 +68,6 @@
     },
     {
       "component": "Electronic_C5",
-      "minimum_z_mm": 11.6,
-      "checked_envelope": "Fitted mesh AABB",
-      "rigid_intersections": 0
-    },
-    {
-      "component": "Electronic_C7",
       "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
@@ -211,5 +205,5 @@
       "rigid_intersections": 0
     }
   ],
-  "source_scene_sha256": "de265856582b833c47987d543e935e23f0318af4df4d85e2e753f46bfdcf50db"
+  "source_scene_sha256": "5614381e13321c87b09d6ea384e8cf5228e646937cb1c3fbf0cd6eee999e1fed"
 }

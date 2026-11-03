@@ -22,7 +22,7 @@ Lowering this same1.3mm deck by1.0mm would leave only0.38mm JST clearance and0.8
 
 ## Validation
 
-The reference is the digitally checked push-fit CAD at b300e196ec7e3ff56dc7dc9638462b9cf52ab772. The compact validator compares each entire finished cap against a translated former solid, restoring only the established bearing plane and fixed encoder pocket. It rejects unexplained material changes, changed parameters, base modifications and encoder-stop cuts. It also checks each closed STEP/STL, unchanged XY envelopes and full swept connector clearance. The CAD builder independently checks all28 supplier STEP electronics, the cell, bearing races and24 sampled rotor angles, with axisymmetric interfaces providing the continuous-rotation argument.
+The reference is the digitally checked push-fit CAD at b300e196ec7e3ff56dc7dc9638462b9cf52ab772. The compact validator compares each entire finished cap against a translated former solid, restoring only the established bearing plane and fixed encoder pocket. It rejects unexplained material changes, changed parameters, base modifications and encoder-stop cuts. It also checks each closed STEP/STL, unchanged XY envelopes and full swept connector clearance. The CAD builder independently checks all27 supplier STEP electronics, the cell, bearing races and24 sampled rotor angles, with axisymmetric interfaces providing the continuous-rotation argument.
 
 Use the current validation/compact-cap-audit.json, pushfit-cad-audit.json, encoder-gap-audit.json, jst-connector-clearance.json and print-readiness.json for measured digital results. Rebuild with:
 

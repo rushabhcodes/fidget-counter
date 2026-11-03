@@ -12,7 +12,7 @@ mid=p['pcb_bottom']+p['pcb_thickness']/2
 c=json.loads((root/'dist/index/circuit.json').read_text())
 sources={e['source_component_id']:e for e in c if e['type']=='source_component'}
 names=[sources[e['source_component_id']]['name'] for e in c if e['type']=='pcb_component' and not e.get('do_not_place') and e.get('source_component_id') in sources]
-assert len(names)==28
+assert len(names)==27
 scene=trimesh.load(root/'dist/index/3d.glb',force='scene')
 parts={name:cq.importers.importStep(str(root/'mechanical/STEP_Parts'/f'{name}.step')).val() for name in ['Stationary_Base',*([] if p.get('cap_retention',{}).get('mode')=='push_fit' else ['Inner_Race_Nut','Outer_Race_Retainer']),*['Cap_'+s for s in p['cap_styles']]]}
 exact_hardware={}

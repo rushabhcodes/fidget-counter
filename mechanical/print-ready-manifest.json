@@ -57,7 +57,7 @@
       "orientation": "as supplied",
       "sha256": "237609e4cf2c135538fe225450e38ee59b189b6b4552fee1416795b4ebba6799",
       "STEP_file": "mechanical/STEP_Parts/Stationary_Base.step",
-      "STEP_sha256": "9c9b52e046ff8a71d28181f0b584955640660a92edde7ab1372732ee54659571",
+      "STEP_sha256": "97a485258f61aee789dde9ab2957f2351f0e246bcbc0e503a8df9cf7be04463b",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 5.350491281133843e-07,
       "bed_contact_area_at_0_1mm_mm2": 1951.6560219294704,
@@ -73,10 +73,10 @@
           12.899999618530273
         ]
       ],
-      "slicer_execution_seconds": 10.655,
+      "slicer_execution_seconds": 6.867,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "77fed83667690458e4668929955c84b6d3f51aaa5be46ffc9508b94dae87b3b8",
+      "gcode_sha256": "3b238f57f9856b888d9d8c89b1e04866e69abd4d5d1da5af12d28c5520648d9f",
       "layers": 111,
       "extrusion_types": {
         "Skirt/Brim": 615,
@@ -109,7 +109,7 @@
       "orientation": "deck down",
       "sha256": "2faf2d3eb9862dded97681c0c0bb46bba1af5e3a3cabe973581ce2f61b03e40c",
       "STEP_file": "mechanical/STEP_Parts/Cap_circular.step",
-      "STEP_sha256": "5381495e818682e97b14763309399bd7efb76e509deed00b6e6fa9855f07f17d",
+      "STEP_sha256": "7557517b57122c0a9ae697f9e130fe2118c93817622b0f432c7442a98578909f",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 1.0465942273573975e-06,
       "bed_contact_area_at_0_1mm_mm2": 2892.723584330868,
@@ -125,10 +125,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 4.859,
+      "slicer_execution_seconds": 4.967,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "7fab33259b68198d9ab07a192a34db4b2d8a3a7d5a127ce1716992dfbbea936b",
+      "gcode_sha256": "7ffc4fd1dbd3b77b7a2c6cc820b8b14f367b1a0df57e4623d08a958badb7218e",
       "layers": 70,
       "extrusion_types": {
         "Skirt/Brim": 2109,
@@ -159,7 +159,7 @@
       "orientation": "deck down",
       "sha256": "7074a880c4a031a8c2f91590d8886cca00c212c34474f810ca64e88296891925",
       "STEP_file": "mechanical/STEP_Parts/Cap_ships_wheel.step",
-      "STEP_sha256": "2d9c73c37e9d55d111e2aa8865dce96fc723e38cef4728057d32a565415e4365",
+      "STEP_sha256": "3be76804ae6c667de783071b314bd41c504dc5ea0635b84f1a58819757931626",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 9.040691667709094e-07,
       "bed_contact_area_at_0_1mm_mm2": 2654.7824800897774,
@@ -175,10 +175,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 4.367,
+      "slicer_execution_seconds": 4.639,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "9f4b8945e2b7162625011627dfafc4f86da3db78ed20bbeb6f6e8c0d00876482",
+      "gcode_sha256": "0f7ebe0f620cee23363a1695ad99296a9c88bb2f0e519235796bff34cba5fab1",
       "layers": 70,
       "extrusion_types": {
         "Skirt/Brim": 1065,
@@ -209,7 +209,7 @@
       "orientation": "deck down",
       "sha256": "6bd3ad01638bb9ca3ba1c7d9101a79442a973a614415e0faf909d7dd6d873cf7",
       "STEP_file": "mechanical/STEP_Parts/Cap_rounded_triangle.step",
-      "STEP_sha256": "44ed7c91d28b02974941ab152e8f16706e32617d76fbe5a29a4109174454f3f2",
+      "STEP_sha256": "95c53d8e2b94a65e126bf58d7ffbd43fc6eacc6f6c2e87cae74a0a20ed9fdd44",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 9.04069165124136e-07,
       "bed_contact_area_at_0_1mm_mm2": 2410.5835034396728,
@@ -225,10 +225,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 2.75,
+      "slicer_execution_seconds": 3.076,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "1e0b77f4ff147204ace93430e35ca4a11193586de2ebab1b7d2ca08044d39af7",
+      "gcode_sha256": "f28105e8d7f82abb1801fe051a6897a0621c1383b5019abb5d015a0298a79d73",
       "layers": 73,
       "extrusion_types": {
         "Skirt/Brim": 801,
@@ -261,7 +261,7 @@
       "orientation": "deck down",
       "sha256": "ff9e683fa67ad9df93aac6b932a6ad5a4a4cb9edf09d739835d9e78beb3ac335",
       "STEP_file": "mechanical/STEP_Parts/Cap_scalloped_coin.step",
-      "STEP_sha256": "92494c1147c2a98942c638b07eee2fede26a442ff8232ece343e7468aaa4ae03",
+      "STEP_sha256": "378c84e2f27cac624f455db155b06acfb7e3a28af6c2f35d5c1aa7354a8c6d5c",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 1.0465942410442253e-06,
       "bed_contact_area_at_0_1mm_mm2": 2718.4944113060337,
@@ -277,10 +277,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 3.569,
+      "slicer_execution_seconds": 2.21,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "a86694760fd87380db1bde73f355541b2517bc60ecd43d5cfc75b075fe5d3cf9",
+      "gcode_sha256": "6a751c1c8104205b12d4ee1004c4740233d833714b91fd35aa4cca3efc54acdb",
       "layers": 70,
       "extrusion_types": {
         "Skirt/Brim": 1038,
@@ -311,7 +311,7 @@
       "orientation": "deck down",
       "sha256": "9ba03546f81f1e025b057da6227b0fe18def21a3d20838527ba9208df3d2a689",
       "STEP_file": "mechanical/STEP_Parts/Cap_petal_flower.step",
-      "STEP_sha256": "9e33f2deeaea8ec9eaf166bfa414465785f90b46dd4e212629ff4424371a6844",
+      "STEP_sha256": "2cf7b3fa08f91bd0e741d9aea5734483076105c4cc85feaa28ba5f0de516d79d",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 8.766148860648959e-07,
       "bed_contact_area_at_0_1mm_mm2": 2557.772436915343,
@@ -327,10 +327,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 2.242,
+      "slicer_execution_seconds": 2.019,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "33ae507e17a454da8287de59dd60ff9392e02c5bebb18657aa5e438883206b4d",
+      "gcode_sha256": "5d961ebfc80212310a20d0c25803cbf3da9d3f42536f4151e6f6384fe22465d7",
       "layers": 73,
       "extrusion_types": {
         "Skirt/Brim": 835,
@@ -364,7 +364,7 @@
       "orientation": "deck down",
       "sha256": "a9d27ae86ede79efaeea0ae7bfce0ba3c411099223d8441816bde09a76594ef6",
       "STEP_file": "mechanical/STEP_Parts/Cap_four_leaf_clover.step",
-      "STEP_sha256": "370481b746b9c2b76997356b763b44fe1963e71a6a50a36cbb74e23ad7a2be91",
+      "STEP_sha256": "25a3d703357f7cbac357b6b36ce45e394248613e9038387c809ac2c97397893a",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 9.510358745567462e-07,
       "bed_contact_area_at_0_1mm_mm2": 2505.404999320684,
@@ -380,10 +380,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 2.115,
+      "slicer_execution_seconds": 2.006,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "baafcca80c1d3dffa95d5089661354c68a2bd9076ff1b0eb7e4e8eab54d3a79e",
+      "gcode_sha256": "37ef27ee46071e9b8ad3baea048fb4703db086aa37f598815a46eb5ad5e064d8",
       "layers": 73,
       "extrusion_types": {
         "Skirt/Brim": 737,
@@ -416,7 +416,7 @@
       "orientation": "deck down",
       "sha256": "71e4d46f39b05306191fec4a9c4290f8054206428b873301c7e12c89a1d6844c",
       "STEP_file": "mechanical/STEP_Parts/Cap_rounded_hexagon.step",
-      "STEP_sha256": "b432487d71012d2412967133bd18b98572af8b6c91988505479f3529167f7b38",
+      "STEP_sha256": "2f04ad6914a0ca20d9a0811207be5240aa5a92a63f46a4ffceb45e17b13a5351",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 1.0465942273573975e-06,
       "bed_contact_area_at_0_1mm_mm2": 2570.7542323371053,
@@ -432,10 +432,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 1.514,
+      "slicer_execution_seconds": 1.435,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "27b808fdd674b6fb410b4b8f3d8ebdc73e0b7b4cade524804aedbbaf3d4694b5",
+      "gcode_sha256": "c49b081e753f6058347f0e99e8795c1f4ec109c52dc1e9c89561d171f31010a2",
       "layers": 70,
       "extrusion_types": {
         "Skirt/Brim": 336,
@@ -466,7 +466,7 @@
       "orientation": "deck down",
       "sha256": "413364588682f1b515e5646806067b91ec4b848de142aa87a5b8975f048b02d4",
       "STEP_file": "mechanical/STEP_Parts/Cap_rounded_square.step",
-      "STEP_sha256": "2504510ee1f5a22a36b225df622a31defa0519815b7251a4aac19fc8a9838d9d",
+      "STEP_sha256": "559fc30609566977c442b5bb15da8865130af13dc66e975e99fa60b599ee68d6",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 9.040691656730604e-07,
       "bed_contact_area_at_0_1mm_mm2": 2453.071414132014,
@@ -482,10 +482,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 2.146,
+      "slicer_execution_seconds": 1.811,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "6691b9f0441d086ead03bcb3393e362f575b3ab758123466af4edcfcb9280068",
+      "gcode_sha256": "172c32f40752d82ae74a4a35c738bd79b5cbabc4ec1fd4b5fd6e154de0a5be9e",
       "layers": 73,
       "extrusion_types": {
         "Skirt/Brim": 715,
@@ -518,7 +518,7 @@
       "orientation": "deck down",
       "sha256": "5373ca46f76bcc949844eb2e91da4d5ae253e8eada57d9ac99950b618e1774ff",
       "STEP_file": "mechanical/STEP_Parts/Cap_wave_rim.step",
-      "STEP_sha256": "a25f175a26c62f893108c1d7ed12aa55bf665c7f4204983994c69df9c5e1642d",
+      "STEP_sha256": "a6f9559dd1c30fcf4d272f080faf422abc6b91a238978f618843f1c85e033629",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 8.309227482756762e-07,
       "bed_contact_area_at_0_1mm_mm2": 2754.7592825622296,
@@ -534,10 +534,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 2.512,
+      "slicer_execution_seconds": 2.173,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "23cb14fca5664acf05fe73d8999afb4cc3ba7fc180578b4257d80a5f562ca344",
+      "gcode_sha256": "2dd1f2f0d680f92e1c1fb0ac6b990fbbf982042cf1ce2819d71e25031f82355a",
       "layers": 70,
       "extrusion_types": {
         "Skirt/Brim": 735,
@@ -566,7 +566,7 @@
       "orientation": "deck down",
       "sha256": "0fff12639b37ba8b82aa67edc8219eb615a495b9f54e54711e1b02a8dc0ca6ac",
       "STEP_file": "mechanical/STEP_Parts/Cap_turbine_wheel.step",
-      "STEP_sha256": "b10f0c5cd5392bf3a24ae3901605116c73da92468a85295d4bbfcd1d0c46a3b7",
+      "STEP_sha256": "3d1d45c05282a73d4333fdf06e4260ea4d9f5fe7a4c315e83f134ef98cbc63b6",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 9.040691667709094e-07,
       "bed_contact_area_at_0_1mm_mm2": 2870.3264964762507,
@@ -582,10 +582,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 2.191,
+      "slicer_execution_seconds": 2.032,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "8a9cb747c3ebd62ea8c9beafba4f70994a7d1e8eff1dfb55362755b171e1dfb4",
+      "gcode_sha256": "f8d8d79c4e36aeeabed87cb13a864ceaa8bb3677ba524ecb02feadf6ffafdcbe",
       "layers": 70,
       "extrusion_types": {
         "Skirt/Brim": 715,
@@ -616,7 +616,7 @@
       "orientation": "upright, cup supported",
       "sha256": "c8410c846980ff2bddf38cd12198f17ee541a0e3b00995b63e87a0543c1e5b41",
       "STEP_file": "mechanical/STEP_Parts/Cap_thumb_scoop.step",
-      "STEP_sha256": "1814749d991091a8782b7f8ff85b997506ddfc0d2c74111747dc72af110781f6",
+      "STEP_sha256": "19a67ed1fcaf9a2116e4e133326c90dc0490bec679e9f01ab4fbeef8a05328df",
       "single_closed_mesh": true,
       "source_STEP_surface_error_mm": 9.040691639410023e-07,
       "bed_contact_area_at_0_1mm_mm2": 485.9648796263168,
@@ -632,10 +632,10 @@
           10.5
         ]
       ],
-      "slicer_execution_seconds": 3.378,
+      "slicer_execution_seconds": 2.95,
       "slicer_exit_code": 0,
       "slicer_warnings": [],
-      "gcode_sha256": "a9dc596a8a0adddf854ab042a78b31a30e08713babe8d3f6052cd7b8d103785f",
+      "gcode_sha256": "3398f1431dea1e0d57b4b7b46bd3b47c0357ab6a56e2b522f6a43e97845edb6f",
       "layers": 100,
       "extrusion_types": {
         "Skirt/Brim": 614,

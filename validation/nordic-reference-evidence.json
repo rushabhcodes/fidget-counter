@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Nordic Semiconductor",
+  "document": "nRF52810 Product Specification v1.3,4430_161,2019-01-31",
+  "source_url": "https://datasheet.lcsc.com/datasheet/pdf/8aa971f7927db652602461b49c88d682.pdf?productCode=C141828",
+  "sha256": "8af65ef8e8a993b852eb808a4caf25b2f68061adb9b2f9423944543e6247a9fe",
+  "accessed_utc": "2026-11-03",
+  "visually_inspected_pdf_pages": [
+    396,
+    405
+  ],
+  "requirements": {
+    "7.3.1_page396": "QFAA LDO: DEC2/pin32 unconnected, DEC3/pin33 100pF",
+    "7.3.9_page405": "C3 not directly connected to ground plane; grounded via VSS pin31"
+  },
+  "scope": "Manufacturer PDF retrieved from distributor; Nordic reference-layout download listed on official product page but blob host denied by runtime proxy; native Altium reference files not downloaded. The revised design implements the documented return topology, not an asserted exact RF-layout copy."
+}

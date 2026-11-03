@@ -54,7 +54,7 @@ Object.assign(nrfPinAttributes, {
  pin25:{isInput:true,mustBeConnected:true}, pin26:{isBidirectional:true,mustBeConnected:true},
  pin30:{isBidirectional:true,mustBeConnected:true},
  pin31:{requiresGround:true,mustBeConnected:true},
- pin32:{isOutput:true,providesPower:true,mustBeConnected:true},
+ pin32:{doNotConnect:true,isPassive:true},
  pin33:{isOutput:true,providesPower:true,mustBeConnected:true},
  pin34:{isInput:true,mustBeConnected:true}, pin35:{isInput:true,mustBeConnected:true},
  pin36:{requiresPower:true,mustBeConnected:true,shouldHaveDecouplingCapacitor:true,recommendedDecouplingCapacitorCapacitance:"100nF"},

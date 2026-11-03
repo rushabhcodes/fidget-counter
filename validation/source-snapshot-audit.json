@@ -1,19 +1,19 @@
 {
   "passed": true,
   "method": "Exact ordered circuit records; exclude only descriptive source_project_metadata filesystem hash",
-  "records": 1154,
-  "source_circuit_sha256": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
-  "saved_circuit_sha256": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
+  "records": 1140,
+  "source_circuit_sha256": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
+  "saved_circuit_sha256": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
   "source_sha256": {
     "validation/check-source-snapshot.mjs": "a400e4e850f57f25e399bb0db2b77836b7427c806bb99c5783c0dcf9783b8d48",
-    "index.circuit.tsx": "b5b0683f26710e70fac6ea8ed9a6a06440814ae98b87890450b6b4d0e85fac36",
-    "parts.tsx": "56a8b3993d257c0ccef55a84c9814b689182a9dc754bff06afe089d9543c7915",
+    "index.circuit.tsx": "290f4d6b344b40047fc70f8cd59ba1adb912fa1dc49407abb08d5cfb3f07205d",
+    "parts.tsx": "a9ec52070d608a8c4592ce5c03db64cd490dec67b0fb349cfe4a4e489859d341",
     "passives.tsx": "e05181fcf99b2751941c16d8f43a81e541126daf283731244e9f65b1783d8ec3",
     "enclosure.tsx": "b3debb234bba50e293384e310cc28952ef4932b393bdf4cf9823e4ba5e3815ed",
-    "critical-routes.json": "8b69441832212e8d6191ce7a895b5b07e5f994482ead347d40fe27e0a8517d57",
+    "critical-routes.json": "2f36c75f8944a02d58dcbf8101bcb76a712b0696ab9e0b7cd99e2bf7cc5b1183",
     "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
-    "routing-contract.json": "9d07db83253c47a6c225e247d56c4e4f8b2854a91abb35ccd36fb700dbc6914f",
-    "routed-paths.json": "15e56aacf02145312c9d9fa9d284c02a6a642f087a6f787b0e6c0f7d5d7ccb41",
-    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd"
+    "routing-contract.json": "e10878708c2a3848c783903cc28d4a49383b8b7ebccd5dddc7ad22ae24321fe6",
+    "routed-paths.json": "d4999f467bc281096ce6be13c772242ff28e47b0304c0b82945d44aeed5016ea",
+    "published.circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd"
   }
 }

@@ -31,7 +31,7 @@ conductor_strip=box(-17.25,-3.6,17.25,3.6);assert not conductor_strip.intersects
 assert not Point(0,0).buffer(spec['diameter_mm']/2).intersects(rfshape),'Cell enters antenna copper reserve'
 plastic_rf_overlap=outline.intersection(rfshape).area
 others=[e for e in C if e['type']=='pcb_component'and not e.get('do_not_place')and e.get('source_component_id')!=sid and any(s['type']=='source_component'and s['source_component_id']==e.get('source_component_id') for s in C)]
-assert len(others)==27 and all(e['layer']=='top'for e in others),'New bottom fitted part requires a holder-body clearance check'
+assert len(others)==26 and all(e['layer']=='top'for e in others),'New bottom fitted part requires a holder-body clearance check'
 base=cq.importers.importStep(str(R/'mechanical/STEP_Parts/Stationary_Base.step')).val();assert base.intersect(holder).Volume()<.002
 post_gaps=[]
 for a in P['pcb_mount']['angles_deg']:

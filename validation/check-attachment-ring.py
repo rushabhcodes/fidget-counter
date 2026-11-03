@@ -32,7 +32,7 @@ assert 'MagSafe_Ring.glb' in manifest['modelSha256']
 assert not any(n.startswith(('Backing_Ring','Attachment_Magnets')) for n in manifest['modelSha256'])
 rows=json.loads((root/'mechanical/export/Validation/scene_meshes.json').read_text())
 electronics=[row for row in rows if row.get('nativeElectronic')]
-assert len(electronics)==28
+assert len(electronics)==27
 clearances=[]
 for row in [*electronics,next(row for row in rows if row['name']=='Cell')]:
  v=np.asarray(row['vertices']);low=v.min(axis=0);high=v.max(axis=0)
@@ -59,8 +59,8 @@ for row in [*electronics,next(row for row in rows if row['name']=='Cell')]:
  clearances.append({'component':row['name'],'minimum_z_mm':float(low[2]),'checked_envelope':'Proven enclosing '+p['battery']['standard']+' cylinder' if row['name']=='Cell' else ('AABB broad phase; exact supplier STEP narrow phase'if row['name']=='Electronic_BT1'else'Fitted mesh AABB'),'rigid_intersections':0})
 report={'passed':True,'physical_tested':False,'source_reference_commit':'157a36b62ba084e0a812fcc93dbe21a016904da8','purchased_ring_assemblies':1,'individual_magnet_pockets':0,'separate_backing_rings':0,'nominal_ring_mm':[54,45.8,1.9],'pocket_mm':[2*(ro+r['radial_clearance_mm']),2*(ri-r['radial_clearance_mm'])],'radial_clearance_mm':r['radial_clearance_mm'],'bondline_mm':r['bondline_mm'],'face_setback_mm':z-.2,'roof_mm':3.9-seat,'outer_wall_mm':28.05-ro-r['radial_clearance_mm'],'envelope_mm':{'diameter':58,'height':p['overall_height'],'press':0},'sha256':{str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in [root/'mechanical/enclosure-parameters.json',root/'mechanical/STEP_Parts/Stationary_Base.step',root/'mechanical/Circuit_Models/MagSafe_Ring.glb']},'unqualified':['Supplier sample dimensions and working-face polarity','Ring adhesive peel/shear retention and printed roof strength','Hall error, RF and phone/case compatibility']}
 report['source_reference_commit']='7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84'
-report['fitted_electronic_components_checked']=28
+report['fitted_electronic_components_checked']=27
 report['fixed_hardware_clearances']=clearances
 report['source_scene_sha256']=hashlib.sha256((root/'mechanical/export/Validation/scene_meshes.json').read_bytes()).hexdigest()
 (root/'validation/attachment-ring-audit.json').write_text(json.dumps(report,indent=2)+'\n')
-print('Pass: purchased-ring seat unchanged;28 electronics and selected cell clear the base/ring; encoder relative sensor gap checked separately')
+print('Pass: purchased-ring seat unchanged;27 electronics and selected cell clear the base/ring; encoder relative sensor gap checked separately')

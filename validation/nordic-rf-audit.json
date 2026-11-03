@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "C3_return_length_mm": 1.3476277760003676,
+  "return_width_mm": 0.18,
+  "return_vias": 0,
+  "only_ground_connection_through": "U1 VSS physical pin31 land",
+  "pour_isolation_both_layers_mm": [
+    -4.15,
+    4.93,
+    -1.65,
+    5.9
+  ],
+  "RF_feed_length_mm": 17.9237929030069,
+  "RF_feed_width_mm": 0.5,
+  "RF_feed_vias": 0,
+  "impedance_verified": false,
+  "physical_qualified": false,
+  "remaining_RF_gate": "Supplier-confirmed actual dielectric/copper stackup and CPWG field solution; VNA matching and BLE range/harmonic testing in the complete bearing/ring/phone assembly",
+  "negative_checks_passed": [
+    "direct_ground_pour",
+    "extra_ground_branch",
+    "ground_via"
+  ],
+  "source_sha256": {
+    "validation/check-nordic-rf.py": "5a7c1a02a20345a2d88f6f95afec2dddaf09f72fb414fb333f9644c33223a14f",
+    "published.circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
+    "index.circuit.tsx": "290f4d6b344b40047fc70f8cd59ba1adb912fa1dc49407abb08d5cfb3f07205d",
+    "parts.tsx": "a9ec52070d608a8c4592ce5c03db64cd490dec67b0fb349cfe4a4e489859d341",
+    "critical-routes.json": "2f36c75f8944a02d58dcbf8101bcb76a712b0696ab9e0b7cd99e2bf7cc5b1183"
+  }
+}

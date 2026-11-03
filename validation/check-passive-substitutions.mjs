@@ -6,15 +6,16 @@ import {fittedComponentRecords} from './fitted-component-records.mjs'
 import {records} from './check-cr2450-circuit.mjs'
 import {verifyFreshRouting} from './check-fresh-routing.mjs'
 import {substituteRecords,substitutions} from './passive-substitutions.mjs'
+import {approvedNordicFittedRecords} from './nordic-electrical-revision.mjs'
 export const comparisonCommit='31c224875298f3c41c1698029c5d0f01bee24db3'
 const baseline=()=>JSON.parse(execFileSync('git',['show',`${comparisonCommit}:published.circuit.json`],{maxBuffer:16e6}))
 export function verifyPassiveSubstitutions(current,old=baseline()){
- assert.deepEqual(fittedComponentRecords(current),substituteRecords(fittedComponentRecords(old)),
+ assert.deepEqual(fittedComponentRecords(current),approvedNordicFittedRecords(substituteRecords(fittedComponentRecords(old))),
   'Only six specified supplier identities and CAD paths may change; all lands, values and poses must remain identical')
  if(existsSync('validation/fresh-routing-reference.json')){
   const fresh=verifyFreshRouting(current)
   for(const s of substitutions)for(const ext of ['obj','step'])assert.deepEqual(readFileSync(`imports/${s.model}/${s.model}.${ext}`),readFileSync(`imports/${s.oldPart}/${s.oldPart}.${ext}`))
-  return {...fresh,substitutions,changed_fitted_identities:6,all_28_values_lands_poses_preserved:true,all_routed_traces_pads_vias_connectivity_layers_masks_preserved:false,approved_fresh_routing:true,supplier_obj_step_bytes_identical:true,L2_tolerance:{before_percent:2,after_percent:5,RF_qualification_required:true},stock_reserved:false}
+  return {...fresh,substitutions,changed_fitted_identities:6,other_25_values_lands_poses_preserved:true,bounded_nordic_electrical_correction:true,all_routed_traces_pads_vias_connectivity_layers_masks_preserved:false,approved_fresh_routing:true,supplier_obj_step_bytes_identical:true,L2_tolerance:{before_percent:2,after_percent:5,RF_qualification_required:true},stock_reserved:false}
  }
  const a=records(old),b=records(current)
  assert.deepEqual(b.connections,a.connections,'Connectivity or routing constraints changed')
@@ -73,5 +74,5 @@ if(import.meta.main){
  paths.push(...retained,'dist/index/3d.glb',...(pushfit?['validation/pushfit-cad-audit.json','mechanical/enclosure-parameters.json']:[]))
  report.source_sha256=Object.fromEntries(paths.map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')]))
  writeFileSync('validation/passive-substitution-audit.json',JSON.stringify(report,null,2)+'\n')
- console.log(report.approved_fresh_routing?'PASS: six sourcing substitutions and all28 fitted geometries retained; explicit approved fresh routing verified':'PASS: six substitutions; previous copper and fitted geometry retained')
+ console.log(report.approved_fresh_routing?'PASS: six sourcing substitutions retained with bounded Nordic correction; explicit approved fresh routing verified':'PASS: six substitutions; previous copper and fitted geometry retained')
 }

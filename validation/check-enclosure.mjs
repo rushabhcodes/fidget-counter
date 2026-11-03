@@ -37,7 +37,7 @@ assert.equal(g.finished_cap_retainer_and_screw_clearance_checks,pushfit?0:11)
 assert.equal(g.attachment_ring.separate_trays,0);assert.equal(g.attachment_ring.separate_tray_bonds,0)
 assert.equal(g.handled_parts_per_unit_excluding_adhesive_and_shims,pushfit?9:14);assert.equal(g.screw_driving_operations,pushfit?2:5)
 assert(!sources.some(x=>x.name==='BEARING_V5_Bottom_Tray'))
-assert.equal(fittedComponentRecords(c).length,28)
+assert.equal(fittedComponentRecords(c).length,27)
 for(const name of ['SW1','R5','C17','BEARING_V5_Return_Springs','BEARING_V5_Actuator_Ring','BEARING_V5_Bearing_Carrier','BEARING_V5_Guide_Fasteners'])assert(!c.some(e=>e.type==='source_component'&&e.name===name))
 for(const via of c.filter(x=>x.type==='pcb_via')){assert.equal(via.hole_diameter,.3);assert.equal(via.outer_diameter,.55)}
 const holes=c.filter(x=>x.type==='pcb_hole');assert.equal(holes.length,4)
@@ -67,7 +67,7 @@ for(const file of ['validation/attachment-ring-audit.json','validation/jst-conne
 }
 const insertion=json('validation/pcb-insertion-audit.json')
 assert(insertion.passed&&!insertion.physical_tested)
-assert.equal(insertion.electronics.length,28);assert(insertion.nominal_radial_insertion_clearance_mm>=.3)
+assert.equal(insertion.electronics.length,27);assert(insertion.nominal_radial_insertion_clearance_mm>=.3)
 assert(insertion.previous_obstruction_volume_mm3>1);assert(pushfit?insertion.minimum_fixed_shaft_wall_mm>=1.3:insertion.minimum_male_root_wall_mm>=.8)
 for(const [path,sha] of Object.entries(insertion.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale PCB insertion proof ${path}`)
 const batteryUpgrade=p.battery?.standard==='CR2450'
@@ -85,4 +85,4 @@ if(batteryUpgrade)for(const file of ['validation/cr2450-circuit-audit.json',...(
  for(const [path,sha] of Object.entries(report.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale battery proof ${path}`)
 }
 mkdirSync('work',{recursive:true});writeFileSync('work/enclosure-model-audit.json',JSON.stringify({passed:true,physicalTested:false,style,models:reports,baseDiameterMm:58,heightMm:p.overall_height,circuitSha256:hash(bytes)},null,2)+'\n')
-console.log(`Pass: ${sources.length} aligned mechanical models; 28 retained fitted electronics and four PCB holes preserved; 58 x ${p.overall_height} mm enclosure`)
+console.log(`Pass: ${sources.length} aligned mechanical models; 27 fitted electronics and four PCB holes preserved; 58 x ${p.overall_height} mm enclosure`)

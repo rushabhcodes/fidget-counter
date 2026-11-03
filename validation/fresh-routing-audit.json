@@ -3,19 +3,31 @@
   "approved_new_routing": true,
   "compiler": "0.0.3060",
   "comparison_commit": "a7c29c470c439e6f4e35314b9c68bba5c8d8c100",
-  "all_28_fitted_values_lands_layers_poses_preserved": true,
+  "fitted_components": 27,
+  "nordic_electrical_correction": {
+    "passed": true,
+    "fitted_components": 27,
+    "DEC2_pin32": "unconnected",
+    "DEC3_pin33": "100pF C8 / C77177",
+    "C3_return": "dedicated top trace through VSS31; actual copper isolation checked independently",
+    "schematic_physical_pin_numbers": true,
+    "physical_qualified": false
+  },
+  "other_25_fitted_values_lands_layers_poses_preserved": true,
   "routing_changed_intentionally": true,
   "physical_tested": false,
-  "reference_sha256": "11da1b900798c83263fd8c587c272b175bcf98745caa4dbf6d49083043488811",
+  "reference_sha256": "32ffb9be4daad5c4c5a16d60109dbcc159f2ca5c73c68f9765d56c974a159632",
   "source_sha256": {
-    "index.circuit.tsx": "b5b0683f26710e70fac6ea8ed9a6a06440814ae98b87890450b6b4d0e85fac36",
-    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
-    "critical-routes.json": "8b69441832212e8d6191ce7a895b5b07e5f994482ead347d40fe27e0a8517d57",
+    "index.circuit.tsx": "290f4d6b344b40047fc70f8cd59ba1adb912fa1dc49407abb08d5cfb3f07205d",
+    "published.circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
+    "critical-routes.json": "2f36c75f8944a02d58dcbf8101bcb76a712b0696ab9e0b7cd99e2bf7cc5b1183",
     "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
-    "routing-contract.json": "9d07db83253c47a6c225e247d56c4e4f8b2854a91abb35ccd36fb700dbc6914f",
-    "routed-paths.json": "15e56aacf02145312c9d9fa9d284c02a6a642f087a6f787b0e6c0f7d5d7ccb41",
-    "validation/check-fresh-routing.mjs": "f062ddd7e4628b36e6607b3d00382c5d4dc26b23f29ca46938f4991bb7654ba8",
-    "validation/fresh-routing-reference.json": "11da1b900798c83263fd8c587c272b175bcf98745caa4dbf6d49083043488811",
-    "validation/fitted-component-records.mjs": "bf3968344e16add924448b0e9e62dd6ac0a3d232433f4c765973beab483a0624"
+    "routing-contract.json": "e10878708c2a3848c783903cc28d4a49383b8b7ebccd5dddc7ad22ae24321fe6",
+    "routed-paths.json": "d4999f467bc281096ce6be13c772242ff28e47b0304c0b82945d44aeed5016ea",
+    "validation/check-fresh-routing.mjs": "88138876570607c40e278838b43b4b3b2bdf4fed52a632191faa606b1ddde35a",
+    "validation/fresh-routing-reference.json": "32ffb9be4daad5c4c5a16d60109dbcc159f2ca5c73c68f9765d56c974a159632",
+    "validation/fitted-component-records.mjs": "bf3968344e16add924448b0e9e62dd6ac0a3d232433f4c765973beab483a0624",
+    "validation/nordic-electrical-revision.mjs": "17ac5d3d18b87a318fd16b38e87ea7132f89cddbd7346f15cced22c01f18e8bb",
+    "validation/nordic-electrical-reference.json": "c2bd56c7e6228abbfa597dbeb3d893383a9d70cbd6bd22949c907f1512a094a9"
   }
 }

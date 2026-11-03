@@ -7,30 +7,30 @@
   "drill_coordinate_tolerance_mm": 0.00051,
   "layers": {
     "F_Cu.gbr": {
-      "source_area_mm2": 867.9448615116646,
-      "gerber_area_mm2": 867.9448803340117,
-      "symmetric_difference_mm2": 5.215521594206352e-05,
+      "source_area_mm2": 868.1464217519659,
+      "gerber_area_mm2": 868.1464406821901,
+      "symmetric_difference_mm2": 5.1546241666900397e-05,
       "unexplained_added_mm2": 0.0,
       "unexplained_missing_mm2": 0.0
     },
     "F_Mask.gbr": {
-      "source_area_mm2": 79.39993996603745,
-      "gerber_area_mm2": 79.39996018193729,
-      "symmetric_difference_mm2": 4.88159606503431e-05,
+      "source_area_mm2": 78.85993704604546,
+      "gerber_area_mm2": 78.85995726194528,
+      "symmetric_difference_mm2": 4.8815960650616875e-05,
       "unexplained_added_mm2": 0.0,
       "unexplained_missing_mm2": 0.0
     },
     "F_Paste.gbr": {
-      "source_area_mm2": 30.778180452564474,
-      "gerber_area_mm2": 30.778196332189793,
-      "symmetric_difference_mm2": 2.9426062695975394e-05,
+      "source_area_mm2": 30.513579021768397,
+      "gerber_area_mm2": 30.51359498819579,
+      "symmetric_difference_mm2": 2.905926141596814e-05,
       "unexplained_added_mm2": 0.0,
       "unexplained_missing_mm2": 0.0
     },
     "B_Cu.gbr": {
-      "source_area_mm2": 913.3720338079144,
-      "gerber_area_mm2": 913.372033803581,
-      "symmetric_difference_mm2": 2.875501038334378e-05,
+      "source_area_mm2": 910.9362861272692,
+      "gerber_area_mm2": 910.9362860501784,
+      "symmetric_difference_mm2": 2.8682253022898814e-05,
       "unexplained_added_mm2": 0.0,
       "unexplained_missing_mm2": 0.0
     },
@@ -49,7 +49,7 @@
       "unexplained_missing_mm2": 0.0
     },
     "drill-L1-L2.drl": {
-      "holes": 43,
+      "holes": 40,
       "maximum_coordinate_or_diameter_error_mm": 4.8728265181097186e-05
     },
     "drill_npth.drl": {
@@ -69,12 +69,12 @@
     "removed_real_copper",
     "added_copper_in_mounting_drill"
   ],
-  "minimum_via_to_foreign_pad_mm": 0.15499799999999947,
-  "minimum_drill_to_any_SMT_land_mm": 0.02999800000022193,
-  "archive_sha256": "bd1a6f4ce46eb3f3d18d988441b7f585f2f8b473b7755a8a4975aba96d18abf4",
+  "minimum_via_to_foreign_pad_mm": 0.1941246743604213,
+  "minimum_drill_to_any_SMT_land_mm": 0.034354999999813535,
+  "archive_sha256": "4940c399ea076f13b7e2e65218482afe31cb42ecf59efdfebb91e5970e2d8dba",
   "source_sha256": {
-    "validation/check-gerber-parity.py": "e6901cb903e0805750a56d29f366c4db358129ca062229031c5e99c5cfb46560",
-    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
+    "validation/check-gerber-parity.py": "aa28fd7e667fd6d4b8da193d7874f30b19d12aa15416adb2e37bb1aa9a152d62",
+    "published.circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
     "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
     "validation/requirements-gerber.txt": "f98e5bcec5a4c6e77f7c44a5e7532089257ad297339086a7020dbaac52af465e"
   }

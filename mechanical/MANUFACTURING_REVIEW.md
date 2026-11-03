@@ -9,7 +9,7 @@ Scope: confirmed 10–50-unit PETG pilot, rotation only. Reference: [Ploopy prod
 | Return springs | 3 | 0 | 0 |
 | Handled parts, PCBA counted as one | 27 | 14 | 9 |
 | Adhesive joints | 3 | 2 | 2 |
-| Fitted electronics | 31 | 28 | 28 |
+| Fitted electronics | 31 | 28 | 27 |
 
 The nine parts are base, cap, bearing, two nylon PCB screws, PCBA, cell, encoder magnet and attachment ring. No top screws, separate nut/retainer or split assembly nest are used. Adhesive, shims, consumables and reusable tools are excluded. Use [assembly sequence](../MECHANICAL.md) and log preparation, cure, touch time and rework separately in ASSEMBLY_TIME_STUDY.csv. Savings are unmeasured.
 
@@ -32,3 +32,5 @@ Before batch release:
 7. Measure assembly time/yield/rework across multiple units before authorizing the 10–50-unit batch. Digital print/PCB checks are not a manufacturing qualification.
 
 The initial unrestricted latest-tscircuit trial failed constraints. The active circuit now uses the refined0.0.3060 fresh routing, with new critical paths and local repairs, verified by the compiler, strict routing contracts, native KiCad DRC and actual Gerber artwork checks. Historical spring/thread/retainer revisions remain in Git history and do not qualify current retention.
+
+The 1.0.30 electrical correction removes C7, changes C8 to 100 pF on DEC3 and isolates the C3 return through VSS31. Printed parts, height and handled assembly count remain unchanged. See [the review resolution](../validation/AI_REVIEW_RESOLUTION.md) for the corrected files and remaining RF/retention gates.

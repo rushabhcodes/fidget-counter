@@ -1,29 +1,35 @@
 {
   "passed": true,
   "manufacturing_qualified": false,
-  "source_circuit_sha256": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
+  "source_circuit_sha256": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
   "kicad_version": "9.0.2",
   "profile": "JLC 2layer1oz:0.10mm clearance;0.11mm track;0.15mm different-net SMT-pad spacing;0.20mm drill clearance;0.30mm board edge",
   "copper_refilled": false,
   "native_fill_equivalence": {
     "top": {
-      "symmetric_difference_mm2": 0.0,
+      "symmetric_difference_mm2": 1.743084998284683e-07,
+      "hausdorff_mm": 2.8141986453791137e-07,
+      "native_coordinate_tolerance_nm": 1,
       "physical_regions": 2,
-      "source_area_mm2": 803.372432747889,
-      "export_fragments": 1880
+      "source_area_mm2": 803.75467096995,
+      "export_fragments": 2,
+      "negative_copper_removal_rejected": true
     },
     "bottom": {
-      "symmetric_difference_mm2": 0.0,
+      "symmetric_difference_mm2": 1.0725799770458196e-06,
+      "hausdorff_mm": 3.4934499301648e-07,
+      "native_coordinate_tolerance_nm": 1,
       "physical_regions": 1,
-      "source_area_mm2": 887.1969071003737,
-      "export_fragments": 1148
+      "source_area_mm2": 884.7719071003737,
+      "export_fragments": 1,
+      "negative_copper_removal_rejected": true
     }
   },
   "actual_ground_region_contacts": [
     {
       "layer": "top",
-      "area_mm2": 801.1367849650245,
-      "ground_conductor_contacts": 169
+      "area_mm2": 801.5190231870855,
+      "ground_conductor_contacts": 149
     },
     {
       "layer": "top",
@@ -32,8 +38,8 @@
     },
     {
       "layer": "bottom",
-      "area_mm2": 887.1969071003737,
-      "ground_conductor_contacts": 63
+      "area_mm2": 884.7719071003737,
+      "ground_conductor_contacts": 48
     }
   ],
   "keepout_checks": [
@@ -74,8 +80,8 @@
     },
     {
       "id": "pcb_keepout_7",
-      "purpose": "Via/drill exclusion under opposite-side SMD pad; GND fill is allowed",
-      "passed": true
+      "actual_fill_clear": true,
+      "polygonization_tolerance_mm": 0.015
     },
     {
       "id": "pcb_keepout_8",
@@ -96,13 +102,17 @@
       "id": "pcb_keepout_11",
       "purpose": "Via/drill exclusion under opposite-side SMD pad; GND fill is allowed",
       "passed": true
+    },
+    {
+      "id": "pcb_keepout_12",
+      "purpose": "Via/drill exclusion under opposite-side SMD pad; GND fill is allowed",
+      "passed": true
     }
   ],
   "raw_diagnostic_counts": {
-    "items_not_allowed": 10,
-    "isolated_copper": 199,
+    "items_not_allowed": 20,
     "courtyards_overlap": 1,
-    "lib_footprint_issues": 38,
+    "lib_footprint_issues": 39,
     "silk_over_copper": 3
   },
   "unconnected_items": 0,
@@ -113,18 +123,90 @@
         "description": "Items not allowed (keepout area)",
         "items": [
           {
+            "description": "Track [.U1 > .ANT to .L1 > .pin1] on F.Cu, length 1.3281 mm",
+            "pos": {
+              "x": 97.580116,
+              "y": 94.54
+            },
+            "uuid": "58b42ab6-3d2d-6996-21a6-a876061fe756"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "intended RF shunt branch in pour-exclusion region; source/native copper parity verified at1nm"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
             "description": "Track [.L2 > .pin2 to .ANT1 > .feed] on F.Cu, length 6.8929 mm",
             "pos": {
               "x": 103.35,
               "y": 87.974
             },
-            "uuid": "69defff6-00d9-7fea-6b91-ffca29b58056"
+            "uuid": "7d40088e-1807-7792-52b1-084e429677d2"
           }
         ],
         "severity": "error",
         "type": "items_not_allowed"
       },
       "reason": "intended ANT1 feed entry into RF keepout"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Track [GND] on F.Cu, length 0.4399 mm",
+            "pos": {
+              "x": 96.739884,
+              "y": 94.54
+            },
+            "uuid": "2f2efbf8-5fd8-e568-111f-39387de8a828"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "intended isolated C3 return; actual source and native copper verified to contact general ground only through VSS31 land"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Track [GND] on F.Cu, length 0.3678 mm",
+            "pos": {
+              "x": 96.3,
+              "y": 94.54
+            },
+            "uuid": "3bf9bea4-5780-7fc4-7307-40e47171fdfc"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "intended isolated C3 return; actual source and native copper verified to contact general ground only through VSS31 land"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Track [GND] on F.Cu, length 0.5399 mm",
+            "pos": {
+              "x": 96.039898,
+              "y": 94.800102
+            },
+            "uuid": "59a8d200-1c8d-fa81-6d3b-38fe08fb9383"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "intended isolated C3 return; actual source and native copper verified to contact general ground only through VSS31 land"
     },
     {
       "diagnostic": {
@@ -167,30 +249,12 @@
         "description": "Items not allowed (keepout area)",
         "items": [
           {
-            "description": "NPTH pad of ",
-            "pos": {
-              "x": 88.262027,
-              "y": 88.262027
-            },
-            "uuid": "fcb3ea39-5c68-4606-afa6-1e82f0c4bff5"
-          }
-        ],
-        "severity": "error",
-        "type": "items_not_allowed"
-      },
-      "reason": "mounting drill inside its own support/head keepout"
-    },
-    {
-      "diagnostic": {
-        "description": "Items not allowed (keepout area)",
-        "items": [
-          {
             "description": "Pad 1 [.L2 > .pin2 to .ANT1 > .feed] of ANT1 on F.Cu",
             "pos": {
               "x": 98.476,
               "y": 83.1
             },
-            "uuid": "201ae360-3582-a161-4aea-5f6260521d63"
+            "uuid": "0d0df780-2275-b581-37dd-73824d453183"
           }
         ],
         "severity": "error",
@@ -208,7 +272,7 @@
               "x": 101.57607,
               "y": 83.1
             },
-            "uuid": "199c1c0e-4ed3-e1f2-48bc-200e1fb3ddf2"
+            "uuid": "5d401af0-3a4f-e710-2e20-16f0696feb10"
           }
         ],
         "severity": "error",
@@ -226,7 +290,7 @@
               "x": 100.0,
               "y": 83.1
             },
-            "uuid": "57deea40-2779-5b81-592e-5ebe2629e703"
+            "uuid": "370b4960-499c-70df-35bb-d4e24aebe55d"
           }
         ],
         "severity": "error",
@@ -239,12 +303,138 @@
         "description": "Items not allowed (keepout area)",
         "items": [
           {
+            "description": "Pad 1 [.U1 > .ANT to .L1 > .pin1] of C3 on F.Cu",
+            "pos": {
+              "x": 97.580116,
+              "y": 94.54
+            },
+            "uuid": "00e8d920-590a-8c01-4d02-0ede0cf15643"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "source explicitly excludes C3 from its local pour-exclusion region; both actual fills are clear"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Pad 2 [GND] of C3 on F.Cu",
+            "pos": {
+              "x": 96.739884,
+              "y": 94.54
+            },
+            "uuid": "24f68696-3861-7956-4bcc-6c165f375ed6"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "source explicitly excludes C3 from its local pour-exclusion region; both actual fills are clear"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Footprint C3",
+            "pos": {
+              "x": 97.16,
+              "y": 94.54
+            },
+            "uuid": "3dece7aa-036f-f6b6-44cc-d51679d64c8a"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "source explicitly excludes C3 from its local pour-exclusion region; both actual fills are clear"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "NPTH pad of ",
+            "pos": {
+              "x": 88.262027,
+              "y": 88.262027
+            },
+            "uuid": "3385d9d8-4f2c-47e8-82d0-179efc001928"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "mounting drill inside its own support/head keepout"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Pad 31 [GND] of U1 on F.Cu",
+            "pos": {
+              "x": 95.499994,
+              "y": 94.800102
+            },
+            "uuid": "0a769f20-69b5-2a7f-370c-4a222832413d"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "source excludes U1 from adjacent pour-exclusion region; VSS31 return and unconnected DEC2/pin32 verified independently"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Pad 32 [<no net>] of U1 on F.Cu",
+            "pos": {
+              "x": 95.499994,
+              "y": 94.400052
+            },
+            "uuid": "7f2d4e28-3baf-a518-0973-67a84e967468"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "source excludes U1 from adjacent pour-exclusion region; VSS31 return and unconnected DEC2/pin32 verified independently"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Footprint U1",
+            "pos": {
+              "x": 92.5,
+              "y": 95.0
+            },
+            "uuid": "4fac0680-0ac4-3761-6534-7542405b4cdd"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "source explicitly excludes U1 courtyard from adjacent C3 pour-exclusion region; actual pads and return checked independently"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
             "description": "NPTH pad of ",
             "pos": {
               "x": 111.737973,
               "y": 88.262027
             },
-            "uuid": "4c121308-7602-4035-89cd-c930d3648b1e"
+            "uuid": "bd377b43-411e-443b-9164-bd95d0d0bcff"
           }
         ],
         "severity": "error",
@@ -262,7 +452,7 @@
               "x": 111.737973,
               "y": 111.737973
             },
-            "uuid": "79eb28ae-1b64-4eea-96e5-5756efa9cd79"
+            "uuid": "4e623574-a453-4455-a601-fa6e708b9d16"
           }
         ],
         "severity": "error",
@@ -280,7 +470,7 @@
               "x": 88.262027,
               "y": 111.737973
             },
-            "uuid": "90206845-0c83-465d-b41e-abf68bc1f3ab"
+            "uuid": "753c27c5-118d-4df0-add4-35b08f36bbda"
           }
         ],
         "severity": "error",
@@ -298,7 +488,7 @@
               "x": 95.2,
               "y": 90.1
             },
-            "uuid": "785b23ca-1bf4-69f6-4fbc-084a44938576"
+            "uuid": "7d460334-1195-90f4-5a1a-e14c3a34ac74"
           },
           {
             "description": "Footprint GPIO_SCL",
@@ -320,7 +510,7 @@
     "Three JST graphic segments may be clipped by mask"
   ],
   "library_limit": "Exact footprints embedded; external tscircuit library unavailable to native checker",
-  "isolated_copper_limit": "Export fill-fragment metadata warnings are recorded; exact union region count and every actual GND conductor contact are independently checked",
+  "isolated_copper_limit": "Native fill fragments are unioned with holes preserved as bridged contours. No refill. Source parity is enforced at1nm native coordinate precision; real copper removal is rejected.",
   "fabrication_archive": {
     "files": [
       "F_Cu.gbr",
@@ -339,16 +529,58 @@
       "bom.csv",
       "pick_and_place.csv"
     ],
-    "sha256": "bd1a6f4ce46eb3f3d18d988441b7f585f2f8b473b7755a8a4975aba96d18abf4",
-    "fitted_bom_quantity": 28,
-    "strict_supplier_cpl_rows": 28,
+    "sha256": "4940c399ea076f13b7e2e65218482afe31cb42ecf59efdfebb91e5970e2d8dba",
+    "fitted_bom_quantity": 27,
+    "strict_supplier_cpl_rows": 27,
     "BT1_rotation": 180
   },
   "source_sha256": {
-    "validation/check-native-fabrication.py": "2212134df2dff7e9756529f4f1f80a59b42cd0121ba1576dc3300cc02a781a4d",
-    "validation/kicad-review-adapter.py": "8fcb4bf842637a06e2fa7ac05d5b5f71d2715ae5869b2c3a014160ab5ec7e324",
-    "validation/prepare-supplier-frames.mjs": "815d1730faaf2ca727c70f5e0bf0f9e99692c3ef32d908b9ff7d26b52ba62ffe",
+    "validation/check-native-fabrication.py": "2875ca7da06d45b495aa698e6a0b8dba83d1e97c1921cbc29921d0fee083a1b4",
+    "validation/kicad-review-adapter.py": "4966bd99796beeabcd2b24ddd5689ad0530424950b0df9bde5101e2582522cdd",
+    "validation/coalesce-native-fills.py": "1874dd1a547d4c4cc4e4e6353e95fc679cd6a5a50c5da4516cee1dd408a7e75b",
+    "validation/check-nordic-rf.py": "5a7c1a02a20345a2d88f6f95afec2dddaf09f72fb414fb333f9644c33223a14f",
+    "validation/prepare-supplier-frames.mjs": "e05c1d7cdf5e087d450f621b54ef381829ddf6abe308ebe3d7213a5b815142ba",
     "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
-    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd"
+    "published.circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd"
+  },
+  "nordic_RF_return": {
+    "passed": true,
+    "C3_return_length_mm": 1.3476277760003676,
+    "return_width_mm": 0.18,
+    "return_vias": 0,
+    "only_ground_connection_through": "U1 VSS physical pin31 land",
+    "pour_isolation_both_layers_mm": [
+      -4.15,
+      4.93,
+      -1.65,
+      5.9
+    ],
+    "RF_feed_length_mm": 17.9237929030069,
+    "RF_feed_width_mm": 0.5,
+    "RF_feed_vias": 0,
+    "impedance_verified": false,
+    "physical_qualified": false,
+    "remaining_RF_gate": "Supplier-confirmed actual dielectric/copper stackup and CPWG field solution; VNA matching and BLE range/harmonic testing in the complete bearing/ring/phone assembly"
+  },
+  "fill_topology": {
+    "method": "Union existing native fragments; preserve holes as bridged contours; no refill",
+    "native_coordinate_grid_nm": 1,
+    "zones": [
+      {
+        "zone_index": 0,
+        "fragments_before": 1903,
+        "contours_after": 1
+      },
+      {
+        "zone_index": 1,
+        "fragments_before": 1,
+        "contours_after": 1
+      },
+      {
+        "zone_index": 2,
+        "fragments_before": 1154,
+        "contours_after": 1
+      }
+    ]
   }
 }

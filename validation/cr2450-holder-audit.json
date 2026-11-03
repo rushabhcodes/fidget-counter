@@ -20,15 +20,15 @@
     "Printed post/board fit,0.55mm PCB edge web and retention need physical qualification"
   ],
   "source_sha256": {
-    "validation/check-cr2450-holder.py": "4bb2fde5bce4dcd7d2ccbaee4a275b3a90150ad5a1db97394dec216039d16b94",
-    "parts.tsx": "56a8b3993d257c0ccef55a84c9814b689182a9dc754bff06afe089d9543c7915",
+    "validation/check-cr2450-holder.py": "5fd5bfc82b93854f4ea17eb232a82e1ff5982a17c862dbda11a1a23a76f2098b",
+    "parts.tsx": "a9ec52070d608a8c4592ce5c03db64cd490dec67b0fb349cfe4a4e489859d341",
     "mechanical/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec",
     "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f",
     "mechanical/build_battery_courtyard.py": "c386547f06a432732bc106a4e98696f26f569d51938226ed623d98c19737da9c",
     "mechanical/references/MYOUNG_BS-24-B4AA014_MY-CP-0246_A0.pdf": "1f0d62dd33bb6eb78a641b680388a26356e53a284bce1a1146854488e90c99bf",
-    "dist/index/circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
-    "dist/index/3d.glb": "85b978ecc119ac678620268a8e742dbbd78c33c6f8c72320067dfe32379bae4d",
-    "mechanical/STEP_Parts/Stationary_Base.step": "9c9b52e046ff8a71d28181f0b584955640660a92edde7ab1372732ee54659571",
+    "dist/index/circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
+    "dist/index/3d.glb": "e2a8c90c4411993717b37d5dd791244016c8b48fbdc544d61976367f21874463",
+    "mechanical/STEP_Parts/Stationary_Base.step": "97a485258f61aee789dde9ab2957f2351f0e246bcbc0e503a8df9cf7be04463b",
     "imports/BS_24_B4AA014/BS_24_B4AA014.step": "1446db6fa5286480ba989cfd709c9e0429209990297f99abe7f51daebc1a0f6a",
     "imports/BS_24_B4AA014/BS_24_B4AA014.obj": "37b1332676c02573b8c96ea693be5f80d3373a40ab602d9cb70b069c2f6f6d24",
     "imports/BS_24_B4AA014/BS_24_B4AA014.tsx": "ddc0165b866906067ffbf5435488e4663689e6eab659208b0958df4d752adc4a"

@@ -622,10 +622,10 @@
     "rotation": "https://ploopyco.github.io/knob/assembly-instructions/",
     "bearing": "https://ploopyco.github.io/knob/appendices/hardware/"
   },
-  "scope": "Rotation only; SW1, R5 and C17 removed. SWD hardware reset retained. No firmware included.",
+  "scope": "Rotation only; SW1, R5 and C17 removed. SWD hardware reset retained. Pilot firmware is included separately.",
   "model_detail": {
     "bearing": "21 balls (AST6808 reference), grooved/chamfered races, cage and shields; representative internals",
-    "electronics": "All28 retained supplier STEP models at native poses"
+    "electronics": "All27 fitted supplier STEP models at native poses"
   },
   "physical_checks_required": [
     "Printed bearing shaft/housing coupon fit and support removal",

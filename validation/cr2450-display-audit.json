@@ -68,6 +68,6 @@
   "source_sha256": {
     "validation/check-cr2450-display.py": "14d6205aefeb54bf3293a56a04c9bf3de50449a1763e7b87ad31847ac23feeb5",
     "mechanical/Circuit_Models/manifest.json": "2843c78a682d9beda31c6789f259129212703eef1ee84b83c32ec23206d0b87e",
-    "dist/index/3d.glb": "85b978ecc119ac678620268a8e742dbbd78c33c6f8c72320067dfe32379bae4d"
+    "dist/index/3d.glb": "e2a8c90c4411993717b37d5dd791244016c8b48fbdc544d61976367f21874463"
   }
 }

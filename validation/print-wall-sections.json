@@ -61,7 +61,7 @@
     "Section sampling is not a global minimum-thickness proof of all decorative features"
   ],
   "source_sha256": {
-    "mechanical/STEP_Parts/Stationary_Base.step": "9c9b52e046ff8a71d28181f0b584955640660a92edde7ab1372732ee54659571",
+    "mechanical/STEP_Parts/Stationary_Base.step": "97a485258f61aee789dde9ab2957f2351f0e246bcbc0e503a8df9cf7be04463b",
     "mechanical/printing/check_wall_sections.py": "6e428d6530aade964682c29eff0a9f77c026f64a4f1ea3bce19f5c6605d579a0",
     "mechanical/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec"
   }

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-03T12:35:12.326Z",
+  "checkedAt": "2026-11-03T18:46:30.042Z",
   "passed": true,
   "sourcePackage": "@tsci/tscircuit.standard-jst-programmer@0.8.0",
   "reference": "https://github.com/tscircuit/standard-jst-programmer",
@@ -66,12 +66,12 @@
   "crystalBranches": [
     {
       "name": "U1_XC1",
-      "lengthMm": 5.891166473986108,
+      "lengthMm": 7.37398106871193,
       "vias": 0
     },
     {
       "name": "U1_XC2",
-      "lengthMm": 4.737049326950107,
+      "lengthMm": 5.079855552604601,
       "vias": 0
     },
     {
@@ -112,7 +112,7 @@
     "maxY": -10.288118299999997
   },
   "courtyardClear": true,
-  "circuitSha256": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
+  "circuitSha256": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
   "physicalConnectorFitTested": false,
   "physicalProgrammingTested": false
 }

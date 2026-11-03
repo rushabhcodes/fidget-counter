@@ -1,6 +1,6 @@
 {
   "name": "@tsci/rushabhcodes.fidget-counter",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "Circular CR2450-powered nRF52810 BLE fidget rotation counter with TMAG3001 angle sensor",
   "main": "index.circuit.tsx",
   "keywords": [
