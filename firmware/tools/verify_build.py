@@ -43,13 +43,15 @@ def check_hex(path):
         raise ValueError("Initial stack is outside nRF52810 RAM")
     if not reset & 1 or not (8 <= (reset & ~1) < 0x2e000):
         raise ValueError("Invalid Cortex-M reset vector")
+    if (reset & ~1) not in memory or (reset & ~1) + 1 not in memory:
+        raise ValueError("HEX does not contain its reset handler")
     return {"initial_stack":hex(stack), "reset_vector":hex(reset),
             "flash_data_bytes":len(memory), "highest_flash_address":hex(max(memory))}
 
 def main():
     build = Path(sys.argv[1] if len(sys.argv) > 1 else APP / "build")
     config = (build / "zephyr/.config").read_text()
-    required = ["SOC_NRF52810_QFAA", "BOARD_FIDGET_COUNTER", "BT", "BT_PERIPHERAL",
+    required = ["SOC_NRF52810_QFAA", "BOARD_FIDGET_COUNTER", "BT", "BT_CTLR", "BT_PERIPHERAL",
                 "CLOCK_CONTROL_NRF_K32SRC_XTAL", "NVS_DATA_CRC"]
     for symbol in required:
         assert re.search(r"^CONFIG_" + symbol + r"=y$", config, re.M), symbol
@@ -86,6 +88,7 @@ def main():
     result.update({"compiled_for":"nRF52810 QFAA / RevC", "application_flash_limit":188416,
                    "ram_bytes":ram_end - 0x20000000, "ram_headroom_bytes":0x20006000 - ram_end,
                    "physical_tested":False, "zephyr_commit":"19aeae80fac00aa3310ef9a26d08fab4502e812f",
+                   "compiler":subprocess.check_output(["arm-none-eabi-gcc","--version"],text=True).splitlines()[0],
                    "source_commit":subprocess.check_output(["git","rev-parse","HEAD"],cwd=APP,text=True).strip(),
                    "files":{p.name:hashlib.sha256(p.read_bytes()).hexdigest()
                             for p in [hexpath,elf,build/"zephyr/.config",build/"zephyr/zephyr.dts"]}})

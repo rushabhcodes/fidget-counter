@@ -8,3 +8,4 @@ cc -std=c11 -Wall -Wextra -Werror -fsanitize=address,undefined -g \
   -o "$FIDGET_TEST_DIR/test_logic"
 "$FIDGET_TEST_DIR/test_logic"
 python3 -m py_compile tools/verify_build.py tools/flash.py tools/client.py
+python3 -m unittest discover -s tests -p "test_tools.py" -v

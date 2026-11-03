@@ -12,7 +12,7 @@ The board uses192KiB flash and24KiB RAM. CI rejects the wrong MCU, DC/DC enabled
 
 ## Build on Linux
 
-Ubuntu24.04, GCC ARM Embedded, Python3, CMake, Ninja and devicetree compiler are assumed. The maintained Zephyr3.7 LTS snapshot is pinned by commit in west.yml; its imported cmsis/hal_nordic revisions are pinned by that manifest. West is1.4.0. The CI workflow contains the exact build sequence.
+Ubuntu24.04, GCC ARM Embedded, Python3, CMake, Ninja and devicetree compiler are assumed. The maintained Zephyr3.7 LTS snapshot is pinned by commit in west.yml; its imported cmsis/hal_nordic/tinycrypt revisions are pinned by that manifest. West is1.4.0. The CI workflow contains the exact build sequence.
 
 From the Git repository root:
 
