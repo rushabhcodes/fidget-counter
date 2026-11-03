@@ -9,7 +9,7 @@
   "reference_sha256": "11da1b900798c83263fd8c587c272b175bcf98745caa4dbf6d49083043488811",
   "source_sha256": {
     "index.circuit.tsx": "b5b0683f26710e70fac6ea8ed9a6a06440814ae98b87890450b6b4d0e85fac36",
-    "published.circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
     "critical-routes.json": "8b69441832212e8d6191ce7a895b5b07e5f994482ead347d40fe27e0a8517d57",
     "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
     "routing-contract.json": "9d07db83253c47a6c225e247d56c4e4f8b2854a91abb35ccd36fb700dbc6914f",

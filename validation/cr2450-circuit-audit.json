@@ -22,8 +22,8 @@
     "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
     "routing-contract.json": "9d07db83253c47a6c225e247d56c4e4f8b2854a91abb35ccd36fb700dbc6914f",
     "routed-paths.json": "15e56aacf02145312c9d9fa9d284c02a6a642f087a6f787b0e6c0f7d5d7ccb41",
-    "dist/index/circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
-    "published.circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+    "dist/index/circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
+    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
     "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f",
     "validation/check-fresh-routing.mjs": "f062ddd7e4628b36e6607b3d00382c5d4dc26b23f29ca46938f4991bb7654ba8",
     "validation/fresh-routing-reference.json": "11da1b900798c83263fd8c587c272b175bcf98745caa4dbf6d49083043488811"

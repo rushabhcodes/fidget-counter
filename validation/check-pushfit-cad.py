@@ -7,6 +7,9 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'mechanical'
 from hardware_models import bearing_6808
 BASE='a7c29c470c439e6f4e35314b9c68bba5c8d8c100'
 P=json.loads((ROOT/'mechanical/enclosure-parameters.json').read_text())
+if P.get('cap_compaction'):
+ subprocess.run([sys.executable,str(ROOT/'validation/check-compact-cap.py')],check=True)
+ sys.exit(0)
 oldP=json.loads(subprocess.check_output(['git','show',BASE+':mechanical/enclosure-parameters.json'],cwd=ROOT))
 assert P['cap_retention']['mode']=='push_fit'and P['cap_retention']['nominal_diametral_interference_mm']==.05
 assert P['cap_retention']['physical_qualified']is False

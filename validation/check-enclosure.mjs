@@ -71,9 +71,13 @@ assert.equal(insertion.electronics.length,28);assert(insertion.nominal_radial_in
 assert(insertion.previous_obstruction_volume_mm3>1);assert(pushfit?insertion.minimum_fixed_shaft_wall_mm>=1.3:insertion.minimum_male_root_wall_mm>=.8)
 for(const [path,sha] of Object.entries(insertion.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale PCB insertion proof ${path}`)
 const batteryUpgrade=p.battery?.standard==='CR2450'
+if(p.cap_compaction)for(const file of ['validation/compact-cap-audit.json','validation/encoder-gap-audit.json']){
+ const report=json(file);assert(report.passed&&!report.physical_tested,file)
+ for(const [path,sha]of Object.entries(report.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale compact/encoder proof ${path}`)
+}
 const manufacturing=json(pushfit?'validation/pushfit-cad-audit.json':batteryUpgrade?'validation/cr2450-cad-audit.json':'validation/rotation-only-cad-audit.json')
 assert(manufacturing.passed&&!manufacturing.physical_tested)
-assert.equal(manufacturing.comparison_commit,pushfit?'a7c29c470c439e6f4e35314b9c68bba5c8d8c100':batteryUpgrade?'346fade26c8934f9d0b6411d7e30c1c9b06e9dac':'0397495f30583bb6a4501f5fb0f67bccf0f397aa')
+assert.equal(manufacturing.comparison_commit,p.cap_compaction?'b300e196ec7e3ff56dc7dc9638462b9cf52ab772':pushfit?'a7c29c470c439e6f4e35314b9c68bba5c8d8c100':batteryUpgrade?'346fade26c8934f9d0b6411d7e30c1c9b06e9dac':'0397495f30583bb6a4501f5fb0f67bccf0f397aa')
 assert.equal(manufacturing.cap_results.length,11)
 for(const [path,sha] of Object.entries(manufacturing.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale CAD proof ${path}`)
 if(batteryUpgrade)for(const file of ['validation/cr2450-circuit-audit.json',...(freshRouting?['validation/fresh-routing-audit.json','validation/native-fabrication-audit.json','validation/gerber-parity-audit.json','validation/source-snapshot-audit.json']:['validation/cr2450-copper-audit.json']),'validation/cr2450-holder-audit.json','validation/cr2450-display-audit.json','validation/passive-substitution-audit.json',...(pushfit?['validation/npth-copper-audit.json','validation/print-readiness.json']:[])]){

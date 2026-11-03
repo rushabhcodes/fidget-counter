@@ -1,5 +1,5 @@
 {
-  "design": "V8 CR2450 rotation-only printed pilot; unchanged external height",
+  "design": "V9 compact CR2450 rotation-only push-fit pilot",
   "cap_style": "all",
   "cap_styles": [
     "circular",
@@ -17,9 +17,9 @@
   "units": "mm",
   "base_diameter": 58.0,
   "cap_max_diameter": 61.6,
-  "overall_height": 17.2,
-  "cap_deck_bottom": 15.9,
-  "cap_edge_bottom": 9.2,
+  "overall_height": 16.6,
+  "cap_deck_bottom": 15.3,
+  "cap_edge_bottom": 8.6,
   "grip_height": 8.0,
   "cap_skirt_inner_radius": 26.8,
   "pcb_diameter": 36.5,
@@ -29,13 +29,13 @@
   "magnet_thickness": 1.5,
   "magnet_bottom": 13.9,
   "magnet_pocket_diameter": 5.2,
-  "material": "PETG for four rigid printed parts; purchased metal bearing",
-  "service": "Remove three cap screws, lift cap while leaving outer retainer below bearing; unscrew inner nut and lift bearing before removing two PCB screws",
-  "publication": "Local assembly optimization after verified 1.0.25; physically unqualified",
-  "hub_cover_thickness": 1.7,
-  "cap_style_change": "Undo three countersunk screws to transfer the common bearing assembly to another cap",
+  "material": "PETG for two rigid printed parts; purchased metal bearing",
+  "service": "Pull cap/bearing evenly; support the appropriate race and remove two PCB screws for cell/programming access",
+  "publication": "Compact fit-test pilot; physical qualification required",
+  "hub_cover_thickness": 1.3,
+  "cap_style_change": "Use a cap with its own encoder magnet; transfer the bearing with race-specific support and a qualified hand fit",
   "encoder_magnet_per_top_module": 1,
-  "cap_mount_hardware_count": 3,
+  "cap_mount_hardware_count": 0,
   "magnet_installation": "One diametric diameter5 x1.5 mm disc seated against the integral cap stop at Z15.4; qualify sidewall adhesive and sensing",
   "pcb_retention": "Two opposite M2 nylon screws on four solid posts; close-fit2.2mm holes, no locating collars; physical retention qualification required",
   "pcb_mount": {
@@ -203,5 +203,12 @@
     "nominal_diametral_interference_mm": 0.05,
     "physical_qualified": false,
     "qualification": "Calibrate actual printer/material with shaft/housing coupons; hand-only seating, pull-off force, creep, wobble, endurance and Hall/RF testing required. No positive axial lock."
+  },
+  "cap_compaction": {
+    "baseline_commit": "b300e196ec7e3ff56dc7dc9638462b9cf52ab772",
+    "top_reduction_mm": 0.6,
+    "minimum_main_deck_mm": 1.3,
+    "minimum_encoder_roof_mm": 1.2,
+    "minimum_connector_clearance_mm": 0.7
   }
 }

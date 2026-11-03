@@ -119,7 +119,16 @@ magnet=detailed_magnet(P['magnet_diameter']/2,P['magnet_bottom'],P['magnet_thick
 assert P['encoder_stop']['mode']=='integral_cap' and abs(P['encoder_stop']['seated_top_z_mm']-magnet_top)<1e-7
 # The cap itself now locates the magnet at the same Z. Remove the separate
 # 0.2 mm spacer and bond only in the existing radial pocket clearance.
-hub=hub.fuse(ring(2.6,3.5,P['magnet_bottom']-.1,P['cap_deck_bottom']-P['magnet_bottom']+.1)).fuse(disk(3.5,magnet_top,P['cap_deck_bottom']-magnet_top))
+pocket_r=P['magnet_pocket_diameter']/2
+hub=hub.fuse(ring(pocket_r,pocket_r+.9,P['magnet_bottom']-.1,max(P['cap_deck_bottom'],magnet_top)-P['magnet_bottom']+.1))
+if P['cap_deck_bottom']>magnet_top+1e-7:
+ hub=hub.fuse(disk(pocket_r+.9,magnet_top,P['cap_deck_bottom']-magnet_top))
+# A lower roof must keep the established magnet seat, including after the
+# exterior grip union. Preserve the magnet/sensor gap rather than moving it.
+magnet_pocket_cut=disk(pocket_r,P['magnet_bottom']-.1,P['magnet_thickness']+.1)
+hub=hub.cut(magnet_pocket_cut)
+assert P['overall_height']-P['cap_deck_bottom']>=1.3-1e-7,'Main cap deck too thin'
+assert P['overall_height']-magnet_top>=1.2-1e-7,'Encoder pocket roof too thin'
 for x,y in cap_holes:
  hub=hub.fuse(disk(2.5,bt,P['overall_height']-bt,x,y))
  hub=hub.cut(disk(1.1,bz-.1,P['overall_height']-bz+.2,x,y))
@@ -139,7 +148,7 @@ if not pushfit:
   hub=hub.cut(cq.Solid.makeCone(1.1,2.,1.1,cq.Vector(x,y,P['overall_height']-1.1)))
 hub=hub.clean();caps={}
 for style in styles:
- cap=hub.fuse(make_grip(style,P))
+ cap=hub.fuse(make_grip(style,P)).cut(magnet_pocket_cut)
  # Apply assembly holes AFTER the exterior grip union. Otherwise that union
  # fills part of the screw bore, head recess and lower boss sockets again.
  for x,y in cap_holes:

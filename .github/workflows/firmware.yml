@@ -6,11 +6,17 @@ on:
       - "firmware/**"
       - ".github/workflows/firmware.yml"
       - "index.circuit.tsx"
+      - "ASSEMBLY.md"
+      - "PROGRAMMING.md"
+      - "mechanical/enclosure-parameters.json"
   pull_request:
     paths:
       - "firmware/**"
       - ".github/workflows/firmware.yml"
       - "index.circuit.tsx"
+      - "ASSEMBLY.md"
+      - "PROGRAMMING.md"
+      - "mechanical/enclosure-parameters.json"
   workflow_dispatch:
 permissions:
   contents: read

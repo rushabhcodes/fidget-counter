@@ -1,6 +1,6 @@
-# 1.0.28 fabrication review
+# 1.0.29 fabrication review
 
-The selected circuit replaces the former copper with refined fresh routing on **tscircuit0.0.3060**. All28 fitted components, supplier identities/values, solder lands, layers, poses, real electrical pin attributes and pin-net partitions match the previous release. There are72 PCB traces and40 routing vias, versus82/48 previously; the fourØ2.2 mounting drills andØ36.5×1.0 board remain. No push button or press mechanism is present.
+The current circuit retains the checked1.0.28 fresh routing on **tscircuit0.0.3060**; this revision lowers only the cap shell. All28 fitted components, supplier identities/values, solder lands, layers, poses, real electrical pin attributes and pin-net partitions match the previous release. There are72 PCB traces and40 routing vias, versus82/48 previously; the fourØ2.2 mounting drills andØ36.5×1.0 board remain. No push button or press mechanism is present.
 
 The original unrestricted new-router trial failed and is retained under experiments/fresh-routing. The selected design combines19 newly generated critical paths,53 latest-pipeline traces, four local branch repairs and three clearance adjustments. It does not reuse the old trace set. Eight clock/load-cap branches remain≤10mm/zero vias; RF feed remains0.5mm on top; C18 has3mm decoupling and1.5mm ground-stub constraints. See the experiment report and strict routing contracts.
 
@@ -20,7 +20,7 @@ Supplier placement frames are derived from18 unmodified/provenance-checked JLC i
 
 The manufacturing bundle contains the exact checked gerbers.zip plus BOM/CPL and audit evidence. Upload the **inner gerbers.zip** for the board and its accompanying BOM/CPL for assembly; do not upload failed experiment JSON or a full enclosure model. Request1.0mm board, two layers/1oz copper, Standard PCBA and ENIG for the WCSP sensor, and review stencil/fixture requirements with the quote. Stock and attrition are not reserved.
 
-This review supports a controlled prototype/quote package. Actual holder reflow/contact force, cell polarity/seating, magnetic/Hall interference, oscillator accuracy, RF matching/radiation, battery performance, firmware and production test are unqualified. Printed push-fit seating/pull-off, PETG creep/service/drop life, two-screw board retention and both magnet adhesive joints need physical trials. Firmware is absent. Do not treat digital checks as batch qualification.
+This review supports a controlled prototype/quote package. Actual holder reflow/contact force, cell polarity/seating, magnetic/Hall interference, oscillator accuracy, RF matching/radiation, battery performance, firmware and production test are unqualified. Printed push-fit seating/pull-off, PETG creep/service/drop life, two-screw board retention and both magnet adhesive joints need physical trials. Pilot firmware and verified build artifacts are available through firmware/README.md; populated-board firmware acceptance remains open. Do not treat digital checks as batch qualification.
 
 ## Reproduce
 

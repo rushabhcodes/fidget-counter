@@ -126,7 +126,7 @@
         [
           30.79983765734622,
           30.799837657346224,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -144,7 +144,7 @@
         [
           30.8,
           29.0,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -162,7 +162,7 @@
         [
           30.797094004482,
           28.796223849570207,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -180,7 +180,7 @@
         [
           30.8,
           30.8,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -198,7 +198,7 @@
         [
           30.8,
           28.8,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -216,7 +216,7 @@
         [
           30.8,
           30.8,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -234,7 +234,7 @@
         [
           30.798601319004,
           28.796223849570207,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -252,7 +252,7 @@
         [
           30.8,
           30.8,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -270,7 +270,7 @@
         [
           30.8,
           30.8,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -288,7 +288,7 @@
         [
           30.35,
           30.346020619251938,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -306,7 +306,7 @@
         [
           30.8,
           29.2,
-          17.2
+          16.6
         ]
       ],
       "material_groups": 1
@@ -314,7 +314,7 @@
   ],
   "source_sha256": {
     "mechanical/hardware_models.py": "cc7779f3d393011b726865e31ef664cbc83cf4b86ab12543a0f66a8fb7d29283",
-    "mechanical/build_enclosure.py": "b239fe63ed7bb9a38be542fc1d43529a36db0c4120fbca86399509ac3e76bb53",
+    "mechanical/build_enclosure.py": "0fe26eeb4ad1b3a3ffad466ac229823c5ff343feeeb5d6b2372c031ed94196bf",
     "mechanical/export_circuit_models.py": "71d17ba8bef55a01016a39d2d9d88063fc2ed25f2ac7c3d323845762aa7cae89",
     "mechanical/mesh_export.py": "a8b20d735f20a3e1d4772e6bf6efee3ef9932b498eb563a32f5e915015368f74",
     "mechanical/glb_models.py": "1298685a6f5c6a7ed9368643a653b83f6856c9ebe163b99aa43f0a7ab5a4cc33"

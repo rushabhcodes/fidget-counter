@@ -87,7 +87,7 @@ result = {'passed': True, 'physical_tested': False, 'connector': source['manufac
           'full_press_travel_mm': 0, 'cap_checks': reports,
           'minimum_conservative_clearance_mm': min(r['conservative_clearance_mm'] for r in reports),
           'minimum_supplier_step_clearance_mm': min(r['supplier_step_clearance_mm'] for r in reports),
-          'service': 'Remove top cap screws, cap, inner nut and bearing; unscrew/lift PCB for side-entry access. Disconnect cable before refitting.',
+          'service': 'Pull cap/bearing evenly, support the appropriate race; remove two PCB screws and lift the PCBA for side-entry access. Disconnect cable before refitting.',
           'sha256': {str(f.relative_to(root)): hashlib.sha256(f.read_bytes()).hexdigest() for f in files}}
 (root / 'validation/jst-connector-clearance.json').write_text(json.dumps(result, indent=2) + '\n')
 print('Pass: supplier STEP and fitted GLB agree; all eleven caps clear the JST throughout rotation')

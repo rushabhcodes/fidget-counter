@@ -79,13 +79,20 @@ for (const name of readdirSync(resolve(root, "cloud-assets"))) {
     unlinkSync(resolve(root, path))
 }
 for (const name of ["circuit.json", "pcb.png", "pcb.svg", "schematic.png", "schematic.svg", "3d.glb"]) {
-  const bytes = readFileSync(resolve(root, "dist/published", name))
+  let bytes = readFileSync(resolve(root, "dist/published", name))
   const output = `dist/published/${name}`
   let source = "published.circuit.json"
   let encoding = "raw"
   let sourceParts
   if (name === "circuit.json") {
-    if (sha256(bytes) !== sha256(readFileSync(resolve(root, source)))) {
+    const saved = readFileSync(resolve(root, source))
+    // The JSON exporter omits a terminal LF. Restore that one formatting byte
+    // only; every circuit record and all other source bytes remain strict.
+    if (!bytes.equals(saved) && Buffer.concat([bytes, Buffer.from("\n")]).equals(saved)) {
+      bytes = saved
+      writeFileSync(resolve(root, output), bytes)
+    }
+    if (!bytes.equals(saved)) {
       throw new Error("dist/published/circuit.json differs from published.circuit.json; rebuild the saved snapshot first")
     }
   } else {

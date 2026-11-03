@@ -50,7 +50,7 @@ if(import.meta.main){
  if(pushfit){
   const cad=JSON.parse(readFileSync('validation/pushfit-cad-audit.json'));assert(cad.passed&&!cad.physical_tested&&cad.product_rigid_parts===2&&cad.nominal_diametral_interference_mm===.05)
   for(const [p,h]of Object.entries(cad.source_sha256))assert.equal(sha(readFileSync(p)),h,'Stale bounded push-fit CAD proof: '+p)
-  report.approved_mechanical_revision='Two-part push fit; strict bounded CAD audit vs a7c29c4'
+  report.approved_mechanical_revision=`Two-part push fit; exact CAD audit vs ${cad.comparison_commit}`
   report.retained_print_evidence={new_slicer_execution:true,report:'validation/print-readiness.json'}
  }else{
   const prior=path=>execFileSync('git',['show',`${comparisonCommit}:${path}`],{maxBuffer:32e6})

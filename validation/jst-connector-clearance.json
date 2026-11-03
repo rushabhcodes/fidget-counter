@@ -41,91 +41,91 @@
   "cap_checks": [
     {
       "style": "circular",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     },
     {
       "style": "ships_wheel",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     },
     {
       "style": "rounded_triangle",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     },
     {
       "style": "scalloped_coin",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     },
     {
       "style": "petal_flower",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     },
     {
       "style": "four_leaf_clover",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     },
     {
       "style": "rounded_hexagon",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     },
     {
       "style": "rounded_square",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     },
     {
       "style": "wave_rim",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     },
     {
       "style": "turbine_wheel",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     },
     {
       "style": "thumb_scoop",
-      "rotation_swept_cap_floor_z_mm": 15.9,
-      "conservative_clearance_mm": 1.3800000000000008,
-      "supplier_step_clearance_mm": 1.3889999000000017
+      "rotation_swept_cap_floor_z_mm": 15.3,
+      "conservative_clearance_mm": 0.7800000000000011,
+      "supplier_step_clearance_mm": 0.7889999000000021
     }
   ],
-  "minimum_conservative_clearance_mm": 1.3800000000000008,
-  "minimum_supplier_step_clearance_mm": 1.3889999000000017,
-  "service": "Remove top cap screws, cap, inner nut and bearing; unscrew/lift PCB for side-entry access. Disconnect cable before refitting.",
+  "minimum_conservative_clearance_mm": 0.7800000000000011,
+  "minimum_supplier_step_clearance_mm": 0.7889999000000021,
+  "service": "Pull cap/bearing evenly, support the appropriate race; remove two PCB screws and lift the PCBA for side-entry access. Disconnect cable before refitting.",
   "sha256": {
-    "dist/index/circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
-    "dist/index/3d.glb": "35e32ea77a365c84d0fc846f5ae8bd7f83fd2a8ebe63c6b6445679f5db119284",
+    "dist/index/circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
+    "dist/index/3d.glb": "85b978ecc119ac678620268a8e742dbbd78c33c6f8c72320067dfe32379bae4d",
     "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6",
-    "mechanical/STEP_Parts/Stationary_Base.step": "7f08c6843718ce46c47bdcf73b3e6355751b16198653ad4d65d14f381a3e44a5",
-    "mechanical/enclosure-parameters.json": "ab5279cf7ba3b20594668c5ed60d2979ae44033dd79ee2ad6c66f63f16f06786",
-    "validation/check-jst-fit.py": "c02f45b4bd9523c04e06bf32de609d342c9d1ea47288bb73cfe98e2f6881a0b6",
-    "mechanical/STEP_Parts/Cap_circular.step": "9bbf34e47bbdd93dd42dbb8aad4813cddf45ee6a9f9d9cbb96ea975ea6e226f4",
-    "mechanical/STEP_Parts/Cap_ships_wheel.step": "b84960652053eea4a5824a6618196774994070503197ca27f97aff46c2b2b1b0",
-    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "fa0d09f3ea4b726d6a45cd0cc3b50a928c213972934e92adc8d1bb3a1d0a3d75",
-    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "7dcb79c1db2ec2c534db12ac1706bcdf9a7684f62ba02365ca76841386d2e48a",
-    "mechanical/STEP_Parts/Cap_petal_flower.step": "14bb20b588ae4763fe3a7c2e297179aae999971b6ce4a2926d0c7f4b55e3ac2c",
-    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "fb952e194bc35a369ddeabc1d15b45c818fc4780c55670bd4f37ded7825dde80",
-    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "bf86a7a5fbc9f50c87af74c99e0611d55e36a9ed980ee820fb66f46fa20cf96f",
-    "mechanical/STEP_Parts/Cap_rounded_square.step": "82851162a292ee4ee3f2f1862fa2546b641d6766c9cd6adf2dfd0273b453bac0",
-    "mechanical/STEP_Parts/Cap_wave_rim.step": "cc8daf743991c19f051153120b28d98468bffb706204a7c07346c64f78743ac5",
-    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "a8ffff9dbfb147af0f5ecb73c6dcd8ef685c8d9de8e37bcc1dbef35f6ec1dd81",
-    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "b240758b09b6e19205393de987b1b75079f05415e8024f0d76ccd0cf97094e2b"
+    "mechanical/STEP_Parts/Stationary_Base.step": "9c9b52e046ff8a71d28181f0b584955640660a92edde7ab1372732ee54659571",
+    "mechanical/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec",
+    "validation/check-jst-fit.py": "a4985a901b33cda4a827830d2e54f706a6043f8f3151d32ee438e67c1879cf7f",
+    "mechanical/STEP_Parts/Cap_circular.step": "5381495e818682e97b14763309399bd7efb76e509deed00b6e6fa9855f07f17d",
+    "mechanical/STEP_Parts/Cap_ships_wheel.step": "2d9c73c37e9d55d111e2aa8865dce96fc723e38cef4728057d32a565415e4365",
+    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "44ed7c91d28b02974941ab152e8f16706e32617d76fbe5a29a4109174454f3f2",
+    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "92494c1147c2a98942c638b07eee2fede26a442ff8232ece343e7468aaa4ae03",
+    "mechanical/STEP_Parts/Cap_petal_flower.step": "9e33f2deeaea8ec9eaf166bfa414465785f90b46dd4e212629ff4424371a6844",
+    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "370481b746b9c2b76997356b763b44fe1963e71a6a50a36cbb74e23ad7a2be91",
+    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "b432487d71012d2412967133bd18b98572af8b6c91988505479f3529167f7b38",
+    "mechanical/STEP_Parts/Cap_rounded_square.step": "2504510ee1f5a22a36b225df622a31defa0519815b7251a4aac19fc8a9838d9d",
+    "mechanical/STEP_Parts/Cap_wave_rim.step": "a25f175a26c62f893108c1d7ed12aa55bf665c7f4204983994c69df9c5e1642d",
+    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "b10f0c5cd5392bf3a24ae3901605116c73da92468a85295d4bbfcd1d0c46a3b7",
+    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "1814749d991091a8782b7f8ff85b997506ddfc0d2c74111747dc72af110781f6"
   }
 }

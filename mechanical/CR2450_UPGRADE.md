@@ -1,6 +1,6 @@
 # RevC CR2450 battery revision
 
-> Historical battery/screw-joint study. The active1.0.28 push-fit assembly and fresh PCB routing are described in [the current pilot review](MANUFACTURING_REVIEW.md) and [fabrication review](../validation/FABRICATION_REVIEW.md).
+> Historical battery/screw-joint study. The active1.0.29 compact assembly is16.4mm high; the dimensional table below records the earlier battery-only comparison. See [the compact-cap review](COMPACT_CAP_REVIEW.md). The push-fit assembly and fresh PCB routing are described in [the current pilot review](MANUFACTURING_REVIEW.md) and [fabrication review](../validation/FABRICATION_REVIEW.md).
 
 The active design replaces CR2032 with a **3 V primary CR2450, 24.5 × 5 mm**, in the complete **MYOUNG BS-24-B4AA014 / JLCPCB C7525448** holder. It has two soldered terminals and no separate cover. The [supplier listing](https://jlcpcb.com/partdetail/MYOUNG-BS_24B4AA014/C7525448) specifies CR2450. The [manufacturer drawing](references/MYOUNG_BS-24-B4AA014_MY-CP-0246_A0.pdf), MY-CP-0246 A/0 dated 2022-03-26, is retained locally; it was obtained from [this drawing mirror](https://img.ic.ecer.com/4e/29/582cac3ab49606036a9befde434f8110.pdf).
 

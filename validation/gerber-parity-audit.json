@@ -71,10 +71,10 @@
   ],
   "minimum_via_to_foreign_pad_mm": 0.15499799999999947,
   "minimum_drill_to_any_SMT_land_mm": 0.02999800000022193,
-  "archive_sha256": "17e8e907f164950d5647e7afd63311bec8a7fbb86c4ad31e143bb6718d647fae",
+  "archive_sha256": "bd1a6f4ce46eb3f3d18d988441b7f585f2f8b473b7755a8a4975aba96d18abf4",
   "source_sha256": {
     "validation/check-gerber-parity.py": "e6901cb903e0805750a56d29f366c4db358129ca062229031c5e99c5cfb46560",
-    "published.circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
     "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
     "validation/requirements-gerber.txt": "f98e5bcec5a4c6e77f7c44a5e7532089257ad297339086a7020dbaac52af465e"
   }

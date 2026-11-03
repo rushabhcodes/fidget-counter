@@ -1,7 +1,7 @@
 {
   "passed": true,
   "manufacturing_qualified": false,
-  "source_circuit_sha256": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+  "source_circuit_sha256": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
   "kicad_version": "9.0.2",
   "profile": "JLC 2layer1oz:0.10mm clearance;0.11mm track;0.15mm different-net SMT-pad spacing;0.20mm drill clearance;0.30mm board edge",
   "copper_refilled": false,
@@ -172,7 +172,7 @@
               "x": 88.262027,
               "y": 88.262027
             },
-            "uuid": "8fdaeffb-6e88-4e31-a37f-346096ed656a"
+            "uuid": "fcb3ea39-5c68-4606-afa6-1e82f0c4bff5"
           }
         ],
         "severity": "error",
@@ -244,7 +244,7 @@
               "x": 111.737973,
               "y": 88.262027
             },
-            "uuid": "a5e1eb85-3677-4320-a250-924502d76263"
+            "uuid": "4c121308-7602-4035-89cd-c930d3648b1e"
           }
         ],
         "severity": "error",
@@ -262,7 +262,7 @@
               "x": 111.737973,
               "y": 111.737973
             },
-            "uuid": "7eb5c849-e29f-445b-933b-fec6436fd07e"
+            "uuid": "79eb28ae-1b64-4eea-96e5-5756efa9cd79"
           }
         ],
         "severity": "error",
@@ -280,7 +280,7 @@
               "x": 88.262027,
               "y": 111.737973
             },
-            "uuid": "60cd8f16-6ba2-4a5e-8af5-8c541e8bbd66"
+            "uuid": "90206845-0c83-465d-b41e-abf68bc1f3ab"
           }
         ],
         "severity": "error",
@@ -339,7 +339,7 @@
       "bom.csv",
       "pick_and_place.csv"
     ],
-    "sha256": "17e8e907f164950d5647e7afd63311bec8a7fbb86c4ad31e143bb6718d647fae",
+    "sha256": "bd1a6f4ce46eb3f3d18d988441b7f585f2f8b473b7755a8a4975aba96d18abf4",
     "fitted_bom_quantity": 28,
     "strict_supplier_cpl_rows": 28,
     "BT1_rotation": 180
@@ -349,6 +349,6 @@
     "validation/kicad-review-adapter.py": "8fcb4bf842637a06e2fa7ac05d5b5f71d2715ae5869b2c3a014160ab5ec7e324",
     "validation/prepare-supplier-frames.mjs": "815d1730faaf2ca727c70f5e0bf0f9e99692c3ef32d908b9ff7d26b52ba62ffe",
     "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
-    "published.circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9"
+    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd"
   }
 }

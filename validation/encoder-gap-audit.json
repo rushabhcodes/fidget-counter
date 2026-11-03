@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "comparison_commit": "b300e196ec7e3ff56dc7dc9638462b9cf52ab772",
+  "magnet_and_sensor_world_poses_unchanged": true,
+  "nominal_body_gap_mm": 1.8,
+  "actual_supplier_STEP_body_gap_mm": 1.7989999000000019,
+  "magnet_bottom_z_mm": 13.9,
+  "magnet_top_z_mm": 15.4,
+  "Hall_model_top_z_mm": 12.101000099999998,
+  "gap_definition": "Air gap to supplier model body top; active Hall die-plane height is not inferred from the mesh",
+  "negative_checks_passed": [
+    "magnet_lowered_0.1mm",
+    "sensor_raised_0.1mm"
+  ],
+  "source_sha256": {
+    "validation/check-encoder-gap.py": "7ea74bec43fa64847088016d5bcca8e9f405d08c7bd86facc4bc6e3a4910261d",
+    "mechanical/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec",
+    "published.circuit.json": "a6b5fa652ad7f5bf6eacd1dc65622ec172b6679d7a5ac955b823b6888b93e1bd",
+    "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.step": "fdf0609ecdf3febf5ad11cc6e67910be38daf56d9018bce33ad0c991eaef2aff"
+  }
+}

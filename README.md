@@ -2,7 +2,7 @@
 
 A rotation-only fidget counter with an nRF52810 MCU, TMAG3001A2 angle sensor, CR2450 cell and hollow rotating cap. **One complete turn in either direction counts as one fidget.** Backtracking cancels an unfinished turn.
 
-The current RevC pilot uses **two printed parts, two PCB screws and nine handled parts**, excluding adhesive/tools. It uses a6808-ZZ/61808-2Z bearing,40×52×7mm. The base isØ58mm, maximum capØ61.6mm and height17.0mm above the phone-contact face. There is no cap button, spring or top screw.
+The current RevC pilot uses **two printed parts, two PCB screws and nine handled parts**, excluding adhesive/tools. It uses a6808-ZZ/61808-2Z bearing,40×52×7mm. The base isØ58mm, maximum capØ61.6mm and height16.4mm above the phone-contact face. There is no cap button, spring or top screw. The cap has a1.3mm nominal deck and1.2mm local encoder roof, with0.78mm conservative clearance above the programming connector. See the [compact-cap review](mechanical/COMPACT_CAP_REVIEW.md).
 
 ## Build, program and assemble
 
@@ -44,9 +44,9 @@ Select3V3 and remove the CR2450 before powered programming. J_DEBUG pins are1=VB
 
 ## Files for the pilot
 
-[Print pilot ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/bearing-supported-enclosure/manufacturing/fidget-counter-print-pilot-1.0.28.zip) · [Fabrication ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/bearing-supported-enclosure/manufacturing/fidget-counter-fabrication-1.0.28.zip) · [Package contents](manufacturing/README.md)
+[Print pilot ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/bearing-supported-enclosure/manufacturing/fidget-counter-print-pilot-1.0.29.zip) · [Fabrication ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/bearing-supported-enclosure/manufacturing/fidget-counter-fabrication-1.0.29.zip) · [Package contents](manufacturing/README.md)
 
-These versioned ZIPs contain the checked1.0.28 hardware files. Get the current assembly/programming instructions and firmware separately from this branch. Use the fabrication ZIP's BOM/CPL/Gerbers for the PCBA quote; its verified supplier rotations and paste/mask preparation matter.
+These versioned ZIPs contain the checked1.0.29 hardware files. Get the current assembly/programming instructions and firmware separately from this branch. Use the fabrication ZIP's BOM/CPL/Gerbers for the PCBA quote; its verified supplier rotations and paste/mask preparation matter.
 
 Editable CAD, current STL/STEP/GLB exports and the [print manifest](mechanical/print-ready-manifest.json) are retained. [Mechanical details](MECHANICAL.md), [mechanical BOM](mechanical/MECHANICAL_BOM.csv), [pilot review](mechanical/MANUFACTURING_REVIEW.md) and [PCB review](validation/FABRICATION_REVIEW.md) give the engineering evidence.
 

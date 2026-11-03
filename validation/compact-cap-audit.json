@@ -1,0 +1,198 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "manufacturing_qualified": false,
+  "comparison_commit": "b300e196ec7e3ff56dc7dc9638462b9cf52ab772",
+  "method": "Exact whole-solid translation/restoration comparison, unchanged base, unchanged bearing and encoder interfaces; no waived shape changes",
+  "base_result": {
+    "unexpected_added_mm3": 0.0,
+    "unexpected_removed_mm3": 0.0
+  },
+  "cap_results": [
+    {
+      "name": "Cap_circular",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.6
+    },
+    {
+      "name": "Cap_ships_wheel",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.6
+    },
+    {
+      "name": "Cap_rounded_triangle",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.6
+    },
+    {
+      "name": "Cap_scalloped_coin",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.6
+    },
+    {
+      "name": "Cap_petal_flower",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.6
+    },
+    {
+      "name": "Cap_four_leaf_clover",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.6
+    },
+    {
+      "name": "Cap_rounded_hexagon",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.6
+    },
+    {
+      "name": "Cap_rounded_square",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.6
+    },
+    {
+      "name": "Cap_wave_rim",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.6
+    },
+    {
+      "name": "Cap_turbine_wheel",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.6
+    },
+    {
+      "name": "Cap_thumb_scoop",
+      "unexpected_added_mm3": 0.0,
+      "unexpected_removed_mm3": 0.0,
+      "top_z_mm": 16.600000100000127
+    }
+  ],
+  "nominal_diametral_interference_mm": 0.05,
+  "contact_land_diameter_mm": 42.0,
+  "product_rigid_parts": 2,
+  "product_screws": 2,
+  "handled_parts": 9,
+  "printed_alternatives_checked": 12,
+  "previous_phone_contact_height_mm": 17.0,
+  "phone_contact_height_mm": 16.4,
+  "height_reduction_mm": 0.5999999999999979,
+  "minimum_main_deck_mm": 1.3,
+  "minimum_encoder_roof_mm": 1.2,
+  "minimum_thumb_dish_deck_mm": 0.9,
+  "jst_checks": [
+    {
+      "style": "circular",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    },
+    {
+      "style": "ships_wheel",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    },
+    {
+      "style": "rounded_triangle",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    },
+    {
+      "style": "scalloped_coin",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    },
+    {
+      "style": "petal_flower",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    },
+    {
+      "style": "four_leaf_clover",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    },
+    {
+      "style": "rounded_hexagon",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    },
+    {
+      "style": "rounded_square",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    },
+    {
+      "style": "wave_rim",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    },
+    {
+      "style": "turbine_wheel",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    },
+    {
+      "style": "thumb_scoop",
+      "floor_z_mm": 15.3,
+      "minimum_clearance_mm": 0.7800000000000011
+    }
+  ],
+  "minimum_connector_clearance_mm": 0.7800000000000011,
+  "retention": "Unchanged calibrated friction fits; no positive axial lock",
+  "negative_checks_passed": [
+    "base_floor_cut",
+    "cap_encoder_stop_cut",
+    "cap_extra_material"
+  ],
+  "external_envelope_mm": {
+    "base_diameter": 58,
+    "cap_max_diameter": 61.6,
+    "top_z": 16.6,
+    "phone_contact_to_top": 16.400000000000002
+  },
+  "physical_release_gates": [
+    "Confirm printed cap thickness/warp and actual connector clearance",
+    "Keep the established bearing, adhesive, pull-off, creep and service qualification gates",
+    "Magnetic/count/BLE/RF/current testing on the final prototype"
+  ],
+  "source_sha256": {
+    "validation/check-compact-cap.py": "4e2e17f5cf5f5b4bc70573b13af5ad2dd1d79f029a71d64a9b1642ee119abaa4",
+    "validation/check-pushfit-cad.py": "fd92f87410d1161d0ae981c3789fb176f1a0fdea39faccd27d1a434e0666aeef",
+    "mechanical/build_enclosure.py": "0fe26eeb4ad1b3a3ffad466ac229823c5ff343feeeb5d6b2372c031ed94196bf",
+    "mechanical/grip_profiles.py": "5f8747fd384f8aeefea1154a976a8787c0918e5d9b425c653ca2ce932da83a25",
+    "mechanical/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec",
+    "mechanical/enclosure-validation.json": "4a49d8180da9537a101ae4e221c290e0aa3f45e5d1ba734b3cfbd47ade47042d",
+    "mechanical/STEP_Parts/Cap_circular.step": "5381495e818682e97b14763309399bd7efb76e509deed00b6e6fa9855f07f17d",
+    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "370481b746b9c2b76997356b763b44fe1963e71a6a50a36cbb74e23ad7a2be91",
+    "mechanical/STEP_Parts/Cap_petal_flower.step": "9e33f2deeaea8ec9eaf166bfa414465785f90b46dd4e212629ff4424371a6844",
+    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "b432487d71012d2412967133bd18b98572af8b6c91988505479f3529167f7b38",
+    "mechanical/STEP_Parts/Cap_rounded_square.step": "2504510ee1f5a22a36b225df622a31defa0519815b7251a4aac19fc8a9838d9d",
+    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "44ed7c91d28b02974941ab152e8f16706e32617d76fbe5a29a4109174454f3f2",
+    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "92494c1147c2a98942c638b07eee2fede26a442ff8232ece343e7468aaa4ae03",
+    "mechanical/STEP_Parts/Cap_ships_wheel.step": "2d9c73c37e9d55d111e2aa8865dce96fc723e38cef4728057d32a565415e4365",
+    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "1814749d991091a8782b7f8ff85b997506ddfc0d2c74111747dc72af110781f6",
+    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "b10f0c5cd5392bf3a24ae3901605116c73da92468a85295d4bbfcd1d0c46a3b7",
+    "mechanical/STEP_Parts/Cap_wave_rim.step": "a25f175a26c62f893108c1d7ed12aa55bf665c7f4204983994c69df9c5e1642d",
+    "mechanical/STEP_Parts/Stationary_Base.step": "9c9b52e046ff8a71d28181f0b584955640660a92edde7ab1372732ee54659571",
+    "mechanical/Print_STL/Cap_circular.stl": "2faf2d3eb9862dded97681c0c0bb46bba1af5e3a3cabe973581ce2f61b03e40c",
+    "mechanical/Print_STL/Cap_four_leaf_clover.stl": "a9d27ae86ede79efaeea0ae7bfce0ba3c411099223d8441816bde09a76594ef6",
+    "mechanical/Print_STL/Cap_petal_flower.stl": "9ba03546f81f1e025b057da6227b0fe18def21a3d20838527ba9208df3d2a689",
+    "mechanical/Print_STL/Cap_rounded_hexagon.stl": "71e4d46f39b05306191fec4a9c4290f8054206428b873301c7e12c89a1d6844c",
+    "mechanical/Print_STL/Cap_rounded_square.stl": "413364588682f1b515e5646806067b91ec4b848de142aa87a5b8975f048b02d4",
+    "mechanical/Print_STL/Cap_rounded_triangle.stl": "6bd3ad01638bb9ca3ba1c7d9101a79442a973a614415e0faf909d7dd6d873cf7",
+    "mechanical/Print_STL/Cap_scalloped_coin.stl": "ff9e683fa67ad9df93aac6b932a6ad5a4a4cb9edf09d739835d9e78beb3ac335",
+    "mechanical/Print_STL/Cap_ships_wheel.stl": "7074a880c4a031a8c2f91590d8886cca00c212c34474f810ca64e88296891925",
+    "mechanical/Print_STL/Cap_thumb_scoop.stl": "c8410c846980ff2bddf38cd12198f17ee541a0e3b00995b63e87a0543c1e5b41",
+    "mechanical/Print_STL/Cap_turbine_wheel.stl": "0fff12639b37ba8b82aa67edc8219eb615a495b9f54e54711e1b02a8dc0ca6ac",
+    "mechanical/Print_STL/Cap_wave_rim.stl": "5373ca46f76bcc949844eb2e91da4d5ae253e8eada57d9ac99950b618e1774ff",
+    "mechanical/Print_STL/Stationary_Base.stl": "237609e4cf2c135538fe225450e38ee59b189b6b4552fee1416795b4ebba6799"
+  }
+}

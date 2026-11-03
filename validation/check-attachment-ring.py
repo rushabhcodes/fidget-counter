@@ -8,7 +8,8 @@ from hardware_models import magsafe_ring
 p=json.loads((root/'mechanical/enclosure-parameters.json').read_text());r=p['attachment_ring']
 old=json.loads(subprocess.check_output(['git','show','7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84:mechanical/enclosure-parameters.json'],cwd=root))
 assert p['attachment_ring']==old['attachment_ring'] or {k:v for k,v in p['attachment_ring'].items() if k!='mounting'}=={k:v for k,v in old['attachment_ring'].items() if k!='mounting'}
-assert [p['base_diameter'],p['overall_height']]==[58,17.2]
+assert p['base_diameter']==58
+assert p['overall_height']==(16.6 if p.get('cap_compaction') else 17.2)
 assert [r['outside_mm'],r['inside_mm'],r['thickness_mm']]==[54,45.8,1.9]
 base=cq.importers.importStep(str(root/'mechanical/STEP_Parts/Stationary_Base.step')).val()
 assert not (root/'mechanical/STEP_Parts/Bottom_Tray.step').exists()
@@ -56,7 +57,7 @@ for row in [*electronics,next(row for row in rows if row['name']=='Cell')]:
    actual=actual.translate((pos['x'],pos['y'],pos['z']+p['pcb_bottom']+p['pcb_thickness']/2));volume=part.intersect(actual).Volume()
   assert volume<.003,(label,row['name'],volume)
  clearances.append({'component':row['name'],'minimum_z_mm':float(low[2]),'checked_envelope':'Proven enclosing '+p['battery']['standard']+' cylinder' if row['name']=='Cell' else ('AABB broad phase; exact supplier STEP narrow phase'if row['name']=='Electronic_BT1'else'Fitted mesh AABB'),'rigid_intersections':0})
-report={'passed':True,'physical_tested':False,'source_reference_commit':'157a36b62ba084e0a812fcc93dbe21a016904da8','purchased_ring_assemblies':1,'individual_magnet_pockets':0,'separate_backing_rings':0,'nominal_ring_mm':[54,45.8,1.9],'pocket_mm':[2*(ro+r['radial_clearance_mm']),2*(ri-r['radial_clearance_mm'])],'radial_clearance_mm':r['radial_clearance_mm'],'bondline_mm':r['bondline_mm'],'face_setback_mm':z-.2,'roof_mm':3.9-seat,'outer_wall_mm':28.05-ro-r['radial_clearance_mm'],'envelope_mm':{'diameter':58,'height':17.2,'press':0},'sha256':{str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in [root/'mechanical/enclosure-parameters.json',root/'mechanical/STEP_Parts/Stationary_Base.step',root/'mechanical/Circuit_Models/MagSafe_Ring.glb']},'unqualified':['Supplier sample dimensions and working-face polarity','Ring adhesive peel/shear retention and printed roof strength','Hall error, RF and phone/case compatibility']}
+report={'passed':True,'physical_tested':False,'source_reference_commit':'157a36b62ba084e0a812fcc93dbe21a016904da8','purchased_ring_assemblies':1,'individual_magnet_pockets':0,'separate_backing_rings':0,'nominal_ring_mm':[54,45.8,1.9],'pocket_mm':[2*(ro+r['radial_clearance_mm']),2*(ri-r['radial_clearance_mm'])],'radial_clearance_mm':r['radial_clearance_mm'],'bondline_mm':r['bondline_mm'],'face_setback_mm':z-.2,'roof_mm':3.9-seat,'outer_wall_mm':28.05-ro-r['radial_clearance_mm'],'envelope_mm':{'diameter':58,'height':p['overall_height'],'press':0},'sha256':{str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in [root/'mechanical/enclosure-parameters.json',root/'mechanical/STEP_Parts/Stationary_Base.step',root/'mechanical/Circuit_Models/MagSafe_Ring.glb']},'unqualified':['Supplier sample dimensions and working-face polarity','Ring adhesive peel/shear retention and printed roof strength','Hall error, RF and phone/case compatibility']}
 report['source_reference_commit']='7e34fa6ac4ac2bafb9b2abe5689e58e93ada9c84'
 report['fitted_electronic_components_checked']=28
 report['fixed_hardware_clearances']=clearances

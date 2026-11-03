@@ -1,6 +1,6 @@
 # Assemble one RevC fidget counter
 
-Use the current RevC CR2450 PCB, Stationary_Base and one matching Cap. This is the rotation-only, two-print push-fit pilot. It has no cap button, spring, top screw, nut or separate bearing retainer.
+Use the current RevC CR2450 PCB, Stationary_Base and one matching Cap. This is the rotation-only, two-print push-fit pilot. Its current compact cap gives16.4mm overall phone-contact height. The base and bearing/encoder interfaces match the preceding push-fit pilot. It has no cap button, spring, top screw, nut or separate bearing retainer.
 
 ![Actual assembled, cutaway and exploded CAD](previews/bearing-layout.png)
 
