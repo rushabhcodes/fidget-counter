@@ -64,33 +64,23 @@
       "passed": true
     },
     {
-      "section": "PCB post pilot wall1.45mm at45deg",
-      "sampled_material_points": 24,
+      "section": "PCB post pilot wall0.80mm at45deg",
+      "sampled_material_points": 48,
       "passed": true
     },
     {
-      "section": "Non-retaining locator wall0.6mm at45deg",
-      "sampled_material_points": 24,
+      "section": "PCB post pilot wall0.80mm at135deg",
+      "sampled_material_points": 48,
       "passed": true
     },
     {
-      "section": "PCB post pilot wall1.45mm at135deg",
-      "sampled_material_points": 24,
+      "section": "PCB post pilot wall0.80mm at225deg",
+      "sampled_material_points": 48,
       "passed": true
     },
     {
-      "section": "PCB post pilot wall1.45mm at225deg",
-      "sampled_material_points": 24,
-      "passed": true
-    },
-    {
-      "section": "Non-retaining locator wall0.6mm at225deg",
-      "sampled_material_points": 24,
-      "passed": true
-    },
-    {
-      "section": "PCB post pilot wall1.45mm at315deg",
-      "sampled_material_points": 24,
+      "section": "PCB post pilot wall0.80mm at315deg",
+      "sampled_material_points": 48,
       "passed": true
     },
     {
@@ -116,11 +106,11 @@
     "Section sampling is not a global minimum-thickness proof of all decorative features"
   ],
   "source_sha256": {
-    "mechanical/export/Tooling/Nest_Left.step": "c709acae9f2a5d82fc5ae4ce143454bcbd0b9af4e90c987b9abf507910a6c20f",
-    "mechanical/export/Tooling/Nest_Right.step": "b19608c45f01f6e9c2adde98b71326b444e7a82836b6b0a1b9982cc675d1304b",
-    "mechanical/STEP_Parts/Stationary_Base.step": "b0fe627d2eb5e52c134046a62da3dcf38f65d2214f84f1c02e9aae8ef259d254",
-    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "b35d53fc036162e7e0deb24cccb13f2224cb9a069fd683ab3e003f5bc6f64596",
-    "mechanical/printing/check_wall_sections.py": "7f44281f711a60d5d6fa3d8fad4716d3869726dd731661f02b669d2aee1fbf9a",
-    "mechanical/enclosure-parameters.json": "b7e4bb4603524504afd77bc3261a1efd4a078ff5be5dccd616131de263bf2eda"
+    "mechanical/export/Tooling/Nest_Left.step": "434eaa04af9c8547c53f1dcb586ee0b42ac78c743efa65dea31a3dda5640cbac",
+    "mechanical/export/Tooling/Nest_Right.step": "98517d36e1b98e6ce277a0fccaa59345cd82ae90fbd3af64babcc142cb982afd",
+    "mechanical/STEP_Parts/Stationary_Base.step": "82152206f593c2fecdb34776578684ef2c4030f77c2182d6aef237726ceb5fee",
+    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "132d72e63066353e4bf6f041b427337c20cf278d495a7ed14b037488187c3611",
+    "mechanical/printing/check_wall_sections.py": "891dfb4f300b9bcae28ee97d72892043a4c3616e14c815927fe0213254a8d7b0",
+    "mechanical/enclosure-parameters.json": "78d6e9391402f379d0f7f15404e43e6b9eaec2846b254824a90ce498eb58f9fc"
   }
 }

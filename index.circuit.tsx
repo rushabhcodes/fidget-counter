@@ -42,7 +42,7 @@ const Link=({a,b,w=.11}:{a:string,b:string,w?:number})=>{
 }
 const G=({p}:{p:string})=><Link a={p} b="net.GND"/>
 export default ()=> <assembly.device name="FIDGET_COUNTER">
- <board name="FIDGET_COUNTER_REVB" title="MagSafe BLE Fidget Counter — PCB Rev B rotation only"
+ <board name="FIDGET_COUNTER_REVC" title="MagSafe BLE Fidget Counter — PCB Rev C CR2450 rotation only"
  outline={outline} thickness={1} layers={2} solderMaskColor="green" doubleSidedAssembly
  partsEngine={fixedPartsEngine}
  defaultViaTenting="top_and_bottom_tented" isViaInPadAllowed={false} schLayout={{layoutMode:"relative"}}
@@ -65,10 +65,12 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
  </Fragment>)}
 
  {holes.map((p,i)=><Fragment key={i}><hole name={`H${i+1}`} pcbX={p.x} pcbY={p.y} diameter={mountSpec.hole_diameter_mm}/></Fragment>)}
- {/* Preserve the existing two mounting keepouts. V5 uses nylon screw heads
-     and two rigid locators inside the existing drills; copper is unchanged. */}
+ {/* Two opposite nylon screw heads; all four revised drill positions
+     reserve clearance for the wider CR2450 holder and rigid support posts. */}
  {holes.filter((_,i)=>i===0 || i===2).map((p,i)=><Fragment key={i}><keepout shape="circle" pcbX={p.x} pcbY={p.y}
-  radius={mountSpec.copper_keepout_radius_mm} layers={["top","bottom"]}/></Fragment>)}
+  radius={mountSpec.copper_keepout_radius_mm} layers={["top"]}/></Fragment>)}
+ {holes.map((p,i)=><Fragment key={`post-${i}`}><keepout shape="circle" pcbX={p.x} pcbY={p.y}
+  radius={mountSpec.post_radius_mm} layers={["bottom"]}/></Fragment>)}
  <keepout shape="rect" pcbX={0} pcbY={15.8} width={7} height={4.4}
   layers={["top","bottom"]} excludeRefs={[".ANT1"]}/>
  {/* Reserve the underside of these top pads to prevent via drills in the lands. */}
@@ -106,15 +108,15 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
   pcbPath={[{x:-1,y:-1.45},{x:-1,y:-1.45,via:true,fromLayer:"top",toLayer:"bottom"},{x:-1,y:-1.45},
    {x:3.4,y:-1.45},{x:3.4,y:-1.45,via:true,fromLayer:"bottom",toLayer:"top"},{x:3.4,y:-1.45},{x:3.81,y:-1.04}]}/>
  <schematicsheet name="power-debug" displayName="Power and programming" sheetIndex={0}>
-  <schematicsection name="power" displayName="CR2032 / LDO mode — DCDCEN = 0"/>
-  <schematicsection name="debug" displayName="5-pin JST-SH / 3V3 only — remove CR2032"/>
+  <schematicsection name="power" displayName="CR2450 / LDO mode — DCDCEN = 0"/>
+  <schematicsection name="debug" displayName="5-pin JST-SH / 3V3 only — remove CR2450"/>
   <schematicbox name="U1 Power" chipRef=".U1" schX={0} schY={1} width={1.96} height={1} schSectionName="power"
    pinLabels={{pin1:"VDD1",pin2:"VDD2",pin3:"VDD3",pin6:"DEC1",pin7:"DEC2",pin8:"DEC3",pin9:"DEC4"}}
    schPinArrangement={{leftSide:["pin1","pin2","pin3"],rightSide:["pin6","pin7","pin8","pin9"]}}/>
   <schematicbox name="U1 Ground" chipRef=".U1" schX={0} schY={-2.2} width={1.1} height={.8} schSectionName="power"
    pinLabels={{pin1:"VSS1",pin2:"VSS2",pin3:"EP"}}
    schPinArrangement={{leftSide:["pin1","pin2","pin3"],rightSide:[]}}/>
-  <BatteryHolder name="BT1" layer="bottom" pcbX={-1.2} pcbY={0} pcbSx={hideText} schX={-6} schY={2} schOrientation="vertical" schSectionName="power"/>
+  <BatteryHolder name="BT1" layer="bottom" pcbX={0} pcbY={0} pcbSx={hideText} schX={-6} schY={2} schOrientation="vertical" schSectionName="power"/>
   <Cap name="C4" capacitance="100nF" pcbX={-10} pcbY={.7} schX={-3.5} schY={2.5} schSectionName="power"/>
   <Cap name="C9" capacitance="4.7uF" pcbX={-7.5} pcbY={.5} schX={-3.5} schY={0} schSectionName="power"/>
   <Cap name="C15" capacitance="22uF" pcbX={-6} pcbY={-3.5} pcbRotation={180} schX={-6} schY={0} schSectionName="power"/>
@@ -127,7 +129,7 @@ export default ()=> <assembly.device name="FIDGET_COUNTER">
   <schematicbox name="U1 SWD" chipRef=".U1" schX={11} schY={1} width={2.4} height={.8} schSectionName="debug"
    pinLabels={{pin1:"SWDIO",pin2:"SWDCLK",pin3:"nRESET"}} schPinArrangement={{leftSide:[],rightSide:["pin1","pin2","pin3"]}}/>
   {/* Five-pin side-entry JST-SH. Pin 1 follows the programmer voltage
-      selector: use 3V3 only and remove the CR2032 before connecting. */}
+      selector: use 3V3 only and remove the CR2450 before connecting. */}
   <JstSwd name="J_DEBUG" layer="top" pcbX={0} pcbY={-13.3}
    pcbSx={hideText} schX={16} schY={1} schSectionName="debug"
    connections={{VOUT:"net.VBAT",SWDIO:"net.SWDIO",

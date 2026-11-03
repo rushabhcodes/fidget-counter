@@ -14,7 +14,7 @@ assert all(abs(b.Volume()-4*np.pi*(3.5/2)**3/3)<1e-6 for b in balls)
 # seats and cage cavities must contain voids, not interpenetrating material.
 for label,left,right in [('ball/inner race',balls[0],inner),('ball/outer race',balls[0],outer),('ball/cage',balls[0],parts[3][1]),('shields/outer race',shields,outer),('shields/inner race',shields,inner)]:
  assert left.intersect(right).Volume()<.0001,label
-cell,cell_parts=coin_cell(p['pcb_bottom']-4.7)
+spec=p['battery'];cell,cell_parts=coin_cell(spec['cell_bottom_z_mm'],spec['standard'])
 for i,(_,left,_,_) in enumerate(cell_parts):
  assert left.isValid()
  for _,right,_,_ in cell_parts[i+1:]:assert left.intersect(right).Volume()<.0001,'Cell materials overlap'
@@ -31,7 +31,8 @@ for row in rows:
   assert part.volume>0,(row['name'],group['label'],'Negative mesh volume')
  checks.append({'name':row['name'],'triangles':len(mesh.faces),'watertight':True,'bounds_mm':mesh.bounds.tolist(),'material_groups':len(row.get('groups',[]))})
 # Detailed geometry must stay inside the existing purchased-part envelopes.
-for name,lower,upper in [('Bearing_6808',[-26,-26,6.1],[26,26,13.1]),('Cell',[-10,-10,3.4],[10,10,6.6])]:
+r=spec['diameter_mm']/2;cx,cy=spec['cell_center_mm'];z=spec['cell_bottom_z_mm']
+for name,lower,upper in [('Bearing_6808',[-26,-26,6.1],[26,26,13.1]),('Cell',[cx-r,cy-r,z],[cx+r,cy+r,z+spec['thickness_mm']])]:
  row=next(r for r in checks if r['name']==name);bounds=np.array(row['bounds_mm'])
  assert (bounds[0]>=np.array(lower)-1e-5).all() and (bounds[1]<=np.array(upper)+1e-5).all(),name
 report={'passed':True,'physical_tested':False,'bearing_balls':21,'ball_diameter_mm':3.5,'hardware_interpenetrations':0,'meshes':checks,'source_sha256':{str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in [root/'mechanical/hardware_models.py',root/'mechanical/build_enclosure.py',root/'mechanical/spring_mesh.py',root/'mechanical/export_circuit_models.py',root/'mechanical/mesh_export.py',root/'mechanical/glb_models.py']},'limits':['Representative internals, threads and spring turns; confirm purchased SKUs and force curves']}

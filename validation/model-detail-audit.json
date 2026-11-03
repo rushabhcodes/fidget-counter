@@ -7,7 +7,7 @@
   "meshes": [
     {
       "name": "Stationary_Base",
-      "triangles": 12322,
+      "triangles": 12956,
       "watertight": true,
       "bounds_mm": [
         [
@@ -25,18 +25,18 @@
     },
     {
       "name": "Cell",
-      "triangles": 20898,
+      "triangles": 20018,
       "watertight": true,
       "bounds_mm": [
         [
-          -9.994755690455149,
-          -9.998688836656322,
-          3.4
+          -12.243575720807558,
+          -12.248393824903994,
+          2.0
         ],
         [
-          10.0,
-          9.998688836656322,
-          6.6
+          12.25,
+          12.248393824903994,
+          7.0
         ]
       ],
       "material_groups": 3
@@ -65,14 +65,14 @@
       "watertight": true,
       "bounds_mm": [
         [
-          -12.647026655222003,
-          -12.647773953000222,
-          5.1
+          -13.636976148883171,
+          -13.63772344666139,
+          7.6
         ],
         [
-          12.648023074035523,
-          12.647773953000222,
-          10.4
+          13.637972567696691,
+          13.63772344666139,
+          12.9
         ]
       ],
       "material_groups": 1
@@ -157,12 +157,12 @@
         [
           -2.498688922613787,
           -2.4996722091640806,
-          11.399999999999999
+          13.9
         ],
         [
           2.5,
           2.4996722091640806,
-          12.899999999999999
+          15.4
         ]
       ],
       "material_groups": 1
@@ -367,8 +367,8 @@
     }
   ],
   "source_sha256": {
-    "mechanical/hardware_models.py": "cda7c92a022c721a71ca1d37467451093906c85cbfeb408cc6d2a8c2b8f72c5b",
-    "mechanical/build_enclosure.py": "85fbab9ee2484344ba636ace46e23aec9698893ed255db0848b4ace3d999c5de",
+    "mechanical/hardware_models.py": "cc7779f3d393011b726865e31ef664cbc83cf4b86ab12543a0f66a8fb7d29283",
+    "mechanical/build_enclosure.py": "ef13e66f09bd8cf299b57bf50aba47fc139c99eb40fe885bb6ab089d91e9e916",
     "mechanical/spring_mesh.py": "f34870ba443c391bf0436944b3e081de9f922cc178eb47a5588457818887c6cb",
     "mechanical/export_circuit_models.py": "71d17ba8bef55a01016a39d2d9d88063fc2ed25f2ac7c3d323845762aa7cae89",
     "mechanical/mesh_export.py": "a8b20d735f20a3e1d4772e6bf6efee3ef9932b498eb563a32f5e915015368f74",

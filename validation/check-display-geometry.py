@@ -3,6 +3,10 @@ from pathlib import Path
 import hashlib,json,struct,sys
 import numpy as np
 root=Path(__file__).resolve().parents[1]
+if json.loads((root/'mechanical/enclosure-parameters.json').read_text()).get('battery',{}).get('standard')=='CR2450':
+ import runpy
+ runpy.run_path(str(root/'validation/check-cr2450-display.py'),run_name='__main__')
+ raise SystemExit(0)
 def load(path):
  blob=Path(path).read_bytes();n=struct.unpack_from('<I',blob,12)[0];return json.loads(blob[20:20+n]),blob[28+n:]
 def accessor(g,b,i):

@@ -36,7 +36,7 @@
         "x": 3.74995755,
         "y": -4.7
       },
-      "end_route_index": 1,
+      "end_route_index": 9,
       "layer": "bottom",
       "minimum_segment_length": 5,
       "nearest_allowed_angle_degrees": 225,
@@ -49,7 +49,7 @@
         "x": 9.4999151,
         "y": 0
       },
-      "start_route_index": 0,
+      "start_route_index": 8,
       "styling_issue_type": "long_segment_at_odd_angle",
       "type": "pcb_trace_style_warning",
       "warning_type": "pcb_trace_style_warning"

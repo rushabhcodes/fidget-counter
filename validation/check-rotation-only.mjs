@@ -5,6 +5,9 @@ import {createHash} from 'node:crypto'
 import {execFileSync} from 'node:child_process'
 import {readFileSync,writeFileSync} from 'node:fs'
 import {fittedComponentRecords} from './fitted-component-records.mjs'
+if(JSON.parse(readFileSync('mechanical/enclosure-parameters.json')).battery?.standard==='CR2450'){
+ const {runCr2450Check}=await import('./check-cr2450-circuit.mjs');runCr2450Check();process.exit(0)
+}
 const commit='6224fc92863964ff770789ec086876e289d29bee'
 const old=JSON.parse(execFileSync('git',['show',`${commit}:published.circuit.json`],{maxBuffer:8e6}))
 const current=JSON.parse(readFileSync(process.argv[2]??'dist/index/circuit.json'))

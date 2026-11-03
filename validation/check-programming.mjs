@@ -126,7 +126,8 @@ assert.equal(crystalBranches.length,8)
 const issues=circuit.filter(e=>/error|warning/.test(e.type))
 const styleWarnings=issues.filter(e=>e.type==='pcb_trace_style_warning')
 assert.equal(issues.length-styleWarnings.length,0,JSON.stringify(issues))
-// Core 0.0.2245 adds style advisories to three unchanged legacy segments.
+// Two legacy geometric segments retain their exact advisories. The CR2450
+// ground bridge adds a route prefix, moving the known final segment to8/9.
 // Match every non-ID field exactly (to 1 nm); do not hide other warnings/errors.
 const warningRecord=e=>JSON.parse(JSON.stringify(Object.fromEntries(Object.entries(e)
  .filter(([key])=>!key.endsWith('_id')&&key!=='message'))),(k,v)=>typeof v==='number'?Math.round(v*1e9)/1e9:v)
@@ -138,7 +139,7 @@ const result={checkedAt:new Date().toISOString(),passed:true,sourcePackage:'@tsc
  reference:'https://github.com/tscircuit/standard-jst-programmer',
  acceptedTraceStyleWarnings:styleWarnings.length,
  footprint:source.manufacturer_part_number,supplier:'JLCPCB C136657',matingHousing:'SHR-05V-S-B',cable:'Straight-through five-way JST-SH, 1.0 mm pitch',side:'top',entryDirection:'-Y',pads:reports,mountingTabs:anchors.length,alignmentHoles:0,
- stencilApertures:paste.length,power:'Pin 1 follows programmer voltage selector; select 3V3 and remove CR2032',
+ stencilApertures:paste.length,power:'Pin 1 follows programmer voltage selector; select 3V3 and remove CR2450',
  minimumUnrelatedTopTrackClearanceMm,minimumUnrelatedViaClearanceMm,crystalBranches,courtyardBoundsMm:bounds,courtyardClear:true,
  circuitSha256:createHash('sha256').update(bytes).digest('hex'),physicalConnectorFitTested:false,physicalProgrammingTested:false}
 writeFileSync('validation/programming-interface.json',JSON.stringify(result,null,2)+'\n')

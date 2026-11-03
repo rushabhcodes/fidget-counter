@@ -1,0 +1,25 @@
+Building the single-ring seat, solid PCB screw posts and integral bearing supports...
+Building fixed bearing shaft, coarse inner-race nut and outer-race retainer...
+Checking all 28 electronic models, fixed shaft, bearing-race separation and rotation...
+Exporting printable STLs and assembled/exploded STEP assemblies...
+/workspace/.venvs/fidget-counter/lib/python3.12/site-packages/cadquery/utils.py:82: FutureWarning: save will be removed in the next release.
+  warn(f"{f.__name__} will be removed in the next release.", FutureWarning)
+{
+  "printed_parts": 14,
+  "height_mm": 17.2,
+  "base_diameter_mm": 58,
+  "styles": [
+    "circular",
+    "ships_wheel",
+    "rounded_triangle",
+    "scalloped_coin",
+    "petal_flower",
+    "four_leaf_clover",
+    "rounded_hexagon",
+    "rounded_square",
+    "wave_rim",
+    "turbine_wheel",
+    "thumb_scoop"
+  ],
+  "output": "/workspace/fidget-counter/mechanical/export"
+}

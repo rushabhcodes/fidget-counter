@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "comparison_commit": "346fade26c8934f9d0b6411d7e30c1c9b06e9dac",
+  "scope": "Union of actual BREP copper regions per layer/net, independent of generated island IDs",
+  "permitted_changes": "Old/new four mounting drills/keepouts, holder lands, positive entry segment and two added GND vias",
+  "layer_results": {
+    "top": {
+      "changed_area_mm2": 20.151062595346755,
+      "unexplained_changed_area_mm2": 0.0
+    },
+    "bottom": {
+      "changed_area_mm2": 30.391561982142264,
+      "unexplained_changed_area_mm2": 0.0
+    }
+  },
+  "negative_checks_passed": [
+    "unrelated_copper_cutout",
+    "layer_change",
+    "mask_change"
+  ],
+  "source_sha256": {
+    "validation/check-cr2450-copper.py": "9263b4780a7285eb64a02eb0266df18b2d0e43367a60a10c1ed6fbcbcf6203cf",
+    "published.circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "index.circuit.tsx": "366750e96371babbd6832e461088c5d63e62b17b6679725a6620120af43decd8",
+    "parts.tsx": "56a8b3993d257c0ccef55a84c9814b689182a9dc754bff06afe089d9543c7915",
+    "routed-paths.json": "d89459bda74d620c9a66e07625d8c0386543708e6e0b42bc1d83c999f590a621",
+    "routing-contract.json": "e6e17fea9fe73a364a47f991829e599d1367b051415d2401d3adfd4fa2ea8170"
+  }
+}

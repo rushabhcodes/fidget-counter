@@ -29,7 +29,7 @@ for(const name of ['Stationary_Base','Inner_Race_Nut','Bearing_6808','PCB_Fasten
 assert(!sources.some(x=>['BEARING_V5_Attachment_Magnets','BEARING_V5_Backing_Ring'].includes(x.name)))
 assert.equal(m.modelsPerSelectedStyle,10)
 assert(!sources.some(x=>x.name==='BEARING_V5_Encoder_Spacer'))
-assert.equal(g.separate_encoder_spacers,0);assert.equal(g.encoder_stop_z_mm,12.9)
+assert.equal(g.separate_encoder_spacers,0);assert.equal(g.encoder_stop_z_mm,p.encoder_stop.seated_top_z_mm)
 assert.equal(g.manufacturing_qualified,false)
 assert.equal(g.finished_cap_retainer_and_screw_clearance_checks,11)
 assert.equal(g.attachment_ring.separate_trays,0);assert.equal(g.attachment_ring.separate_tray_bonds,0)
@@ -39,7 +39,7 @@ assert.equal(fittedComponentRecords(c).length,28)
 for(const name of ['SW1','R5','C17','BEARING_V5_Return_Springs','BEARING_V5_Actuator_Ring','BEARING_V5_Bearing_Carrier','BEARING_V5_Guide_Fasteners'])assert(!c.some(e=>e.type==='source_component'&&e.name===name))
 for(const via of c.filter(x=>x.type==='pcb_via')){assert.equal(via.hole_diameter,.3);assert.equal(via.outer_diameter,.55)}
 const holes=c.filter(x=>x.type==='pcb_hole');assert.equal(holes.length,4)
-for(const a of p.pcb_mount.angles_deg){const r=p.pcb_mount.radius_mm,theta=a*Math.PI/180;assert(holes.some(h=>Math.hypot(h.x-r*Math.cos(theta),h.y-r*Math.sin(theta))<1e-6&&h.hole_diameter===3))}
+for(const a of p.pcb_mount.angles_deg){const r=p.pcb_mount.radius_mm,theta=a*Math.PI/180;assert(holes.some(h=>Math.hypot(h.x-r*Math.cos(theta),h.y-r*Math.sin(theta))<1e-6&&h.hole_diameter===p.pcb_mount.hole_diameter_mm))}
 const glb=readFileSync('dist/index/3d.glb'),gltf=JSON.parse(glb.subarray(20,20+glb.readUInt32LE(12)).toString())
 const reports=[]
 for(const source of sources){
@@ -68,10 +68,15 @@ assert(insertion.passed&&!insertion.physical_tested)
 assert.equal(insertion.electronics.length,28);assert(insertion.nominal_radial_insertion_clearance_mm>=.3)
 assert(insertion.previous_obstruction_volume_mm3>1);assert(insertion.minimum_male_root_wall_mm>=.8)
 for(const [path,sha] of Object.entries(insertion.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale PCB insertion proof ${path}`)
-const manufacturing=json('validation/rotation-only-cad-audit.json')
+const batteryUpgrade=p.battery?.standard==='CR2450'
+const manufacturing=json(batteryUpgrade?'validation/cr2450-cad-audit.json':'validation/rotation-only-cad-audit.json')
 assert(manufacturing.passed&&!manufacturing.physical_tested)
-assert.equal(manufacturing.comparison_commit,'0397495f30583bb6a4501f5fb0f67bccf0f397aa')
+assert.equal(manufacturing.comparison_commit,batteryUpgrade?'346fade26c8934f9d0b6411d7e30c1c9b06e9dac':'0397495f30583bb6a4501f5fb0f67bccf0f397aa')
 assert.equal(manufacturing.cap_results.length,11)
 for(const [path,sha] of Object.entries(manufacturing.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale CAD proof ${path}`)
+if(batteryUpgrade)for(const file of ['validation/cr2450-circuit-audit.json','validation/cr2450-copper-audit.json','validation/cr2450-holder-audit.json','validation/cr2450-display-audit.json']){
+ const report=json(file);assert(report.passed,file)
+ for(const [path,sha] of Object.entries(report.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale battery proof ${path}`)
+}
 mkdirSync('work',{recursive:true});writeFileSync('work/enclosure-model-audit.json',JSON.stringify({passed:true,physicalTested:false,style,models:reports,baseDiameterMm:58,heightMm:p.overall_height,circuitSha256:hash(bytes)},null,2)+'\n')
 console.log(`Pass: ${sources.length} aligned mechanical models; 28 retained fitted electronics and four PCB holes preserved; 58 x ${p.overall_height} mm enclosure`)

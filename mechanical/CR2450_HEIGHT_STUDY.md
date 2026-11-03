@@ -1,5 +1,7 @@
 # CR2450 external height study — not a circuit release
 
+> Historical C964813 study. The active RevC implementation uses C7525448 instead; see [CR2450_UPGRADE.md](CR2450_UPGRADE.md). This study is not the current BOM or print set.
+
 The nominal CAD study fits a CR2450-holder envelope with **0 mm added exterior height**. This assumes a CR2450 cell (24.5 × 5 mm) and MYOUNG BS-24-B4AK014 / C964813 holder. The exact battery and holder selected by the user are still unconfirmed. The active PCB and printable product remain CR2032.
 
 | Measurement | Current CR2032 | CR2450 packaging study | Change |

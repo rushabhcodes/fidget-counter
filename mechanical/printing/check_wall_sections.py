@@ -19,15 +19,15 @@ for angle in P['cap_retainer_joint']['fixture_angles_deg']:
  results.append(check(retainer,points,f'Retainer fixture saddle roof1mm at{angle}deg'))
 base=load('Stationary_Base');assert len(base.Shells())==1,'Enclosed cavities remain'
 for angle in P['fixed_bearing_support']['angles_deg']:
- x,y=polar(16.5,angle)
+ x,y=polar(P['fixed_bearing_support']['radius_mm'],angle)
  results.append(check(base,tube(x,y,[0,1.2,2.49],[1.5,2.5,3.1,5.5]),f'Solid fixed bearing web5mm at{angle}deg'))
 results.append(check(base,tube(0,0,[18.66,19.2,19.84],[11.]),'Bearing shaft wall1.2mm'))
 results.append(check(base,tube(0,0,[18.66,19.05,19.49],[13.11,14.2,15.59]),'Continuous PCB throat and male thread root wall0.85mm'))
 results.append(check(base,tube(0,0,[22.76,25,27.14],[2.405,3.,3.895]),'Continuous ring bonding roof1.5mm'))
 for i,angle in enumerate(P['pcb_mount']['angles_deg']):
- x,y=polar(15.2,angle)
- results.append(check(base,tube(x,y,[.81,1.5,2.24],[7.]),f'PCB post pilot wall1.45mm at{angle}deg'))
- if i in [0,2]:results.append(check(base,tube(x,y,[.81,1.1,1.39],[8.3]),f'Non-retaining locator wall0.6mm at{angle}deg'))
+ x,y=polar(P['pcb_mount']['radius_mm'],angle);r=P['pcb_mount']['post_radius_mm']
+ results.append(check(base,tube(x,y,[.81,(.8+r)/2,r-.01],[7.,P['pcb_bottom']-.2]),f'PCB post pilot wall{r-.8:.2f}mm at{angle}deg'))
+ if P['pcb_mount']['collar_height_mm']>0 and i in [0,2]:results.append(check(base,tube(x,y,[.81,1.1,1.39],[P['pcb_bottom']+.2]),f'Non-retaining locator wall0.6mm at{angle}deg'))
 paths=[ROOT/'mechanical/export/Tooling'/(name+'.step') for name in ['Nest_Left','Nest_Right']]
 nest=cq.Compound.makeCompound([cq.importers.importStep(str(path)).val() for path in paths])
 for angle in P['cap_retainer_joint']['fixture_angles_deg']:

@@ -1,5 +1,7 @@
 # Battery and assembly review
 
+> Historical V7 assessment. RevC now implements CR2450 using a different complete holder and revised PCB/base; see [CR2450_UPGRADE.md](CR2450_UPGRADE.md). Battery-retention statements below describe the earlier decision.
+
 The current fitted battery remains a replaceable **3V primary lithium CR2032,20×3.2mm** in the complete underside MYOUNG BS-08-B2AA020-R holder (C964787). Panasonic specifies225mAh nominal for its CR2032, at0.2mA standard continuous drain. This is a reference capacity, not a measured product runtime. Firmware, BLE duty cycle, Hall-sensor current and pulse voltage drop remain unmeasured. The circuit has no battery charger. Remove the cell before powering the programmer.
 
 A Panasonic **CR2450 is24.5×5mm,620mAh nominal**:2.76times the reference capacity. The existing CR2032 holder does not accept it. Checking only the bare cell would miss the contacts, holder, supports, routing and insertion path.

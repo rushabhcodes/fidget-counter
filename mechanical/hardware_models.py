@@ -71,15 +71,16 @@ def screw(radius,length,head_radius,head_height,countersunk=False,nylon=False):
  return shape
 
 def washer(ri,ro,z,h):return cq.Workplane(obj=ring(ri,ro,z,h)).edges().chamfer(.035).val()
-def coin_cell(z):
+def coin_cell(z,standard='CR2032'):
  # Positive can below; recessed negative lid faces the holder above. OD and
- # total thickness remain exactly 20 x 3.2 mm, as in CR2032 data sheets.
- can=cq.Workplane(obj=disk(10,z,3.07)).edges('<Z').fillet(.18).val()
- can=cq.Workplane(obj=can.cut(disk(9.4,z+2.82,.5))).edges('>Z').fillet(.12).val()
- gasket=ring(8.85,9.35,z+2.84,.20)
- lid=disk(8.85,z+2.84,.36)
+ # total envelope follows the selected cell; the seam/engraving is representative.
+ r,h={'CR2032':(10.,3.2),'CR2450':(12.25,5.)}[standard]
+ can=cq.Workplane(obj=disk(r,z,h-.13)).edges('<Z').fillet(.18).val()
+ can=cq.Workplane(obj=can.cut(disk(r-.6,z+h-.38,.5))).edges('>Z').fillet(.12).val()
+ gasket=ring(r-1.15,r-.65,z+h-.36,.20)
+ lid=disk(r-1.15,z+h-.36,.36)
  # Engraving lies inside the metal envelope; generic chemistry/size marking.
- text=cq.Workplane('XY').workplane(offset=z+3.16).text('CR2032',2.1,.08,combine=False).val()
+ text=cq.Workplane('XY').workplane(offset=z+h-.04).text(standard,2.1,.08,combine=False).val()
  lid=lid.cut(text)
  parts=[('Positive can',can,STEEL,'steel'),('Insulating gasket',gasket,GASKET,'rubber'),('Negative lid',lid,CHROME,'steel')]
  return compound(p[1] for p in parts),parts

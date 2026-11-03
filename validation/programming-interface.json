@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-03T06:40:31.906Z",
+  "checkedAt": "2026-11-03T07:29:17.535Z",
   "passed": true,
   "sourcePackage": "@tsci/tscircuit.standard-jst-programmer@0.8.0",
   "reference": "https://github.com/tscircuit/standard-jst-programmer",
@@ -60,7 +60,7 @@
   "mountingTabs": 2,
   "alignmentHoles": 0,
   "stencilApertures": 7,
-  "power": "Pin 1 follows programmer voltage selector; select 3V3 and remove CR2032",
+  "power": "Pin 1 follows programmer voltage selector; select 3V3 and remove CR2450",
   "minimumUnrelatedTopTrackClearanceMm": 0.3701135000000019,
   "minimumUnrelatedViaClearanceMm": 0.5996606698432317,
   "crystalBranches": [
@@ -112,7 +112,7 @@
     "maxY": -10.288118299999997
   },
   "courtyardClear": true,
-  "circuitSha256": "0928b0cfc9de5e205cc559a7e827f9d49ab4217f49272664154412bb1a90cede",
+  "circuitSha256": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
   "physicalConnectorFitTested": false,
   "physicalProgrammingTested": false
 }

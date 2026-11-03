@@ -1,4 +1,4 @@
-> Current RevB is rotation-only. SW1, R5, C17 and CAP_PRESS are removed; P0.29 is explicitly unused. The five-pin programmer and R4/nRESET remain. No firmware or physical count-clear input is supplied.
+> Current RevC is rotation-only. SW1, R5, C17 and CAP_PRESS are removed; P0.29 is explicitly unused. The five-pin programmer and R4/nRESET remain. No firmware or physical count-clear input is supplied.
 
 # V5 enclosure access update
 
@@ -12,7 +12,7 @@ J_DEBUG is a fitted **JST SM05B-SRSS-TB(LF)(SN)** side-entry SMT header, with fi
 
 Use a **straight-through five-way JST-SH cable** with **SHR-05V-S-B** mating housings between J_DEBUG and **J3 / 5PIN** on the [Standard JST programmer 0.8.0](https://tscircuit--standard-jst-programmer-v0-8-0.tscircuit.app/#file=circuits%2Fprogrammer.circuit.tsx). Check continuity **1→1 through 5→5**; wire colors alone do not identify contacts. [JST's SH drawing](https://www.jst-mfg.com/product/pdf/eng/eSH.pdf) specifies the mating housing and the 7.0 × 4.25 × 2.9 mm header body. The PCB footprint courtyard is approximately 8.30 × 6.04 mm. The five-pin extension follows this programmer's assignment; generic five-pin debug cables may differ.
 
-**Select 3V3 and remove the CR2032 before connecting the programmer.** J3 pin 1 follows the programmer's **3V3 / 5V selector** and is directly connected to this board's VBAT rail; it is not a voltage-sense input. The 5V setting must never be used with this board. Disconnect the cable before changing the selector. The programmer's SWD/reset logic is fixed at 3.3 V. Leave programmer J1, J2 and J4 empty while using J3.
+**Select 3V3 and remove the CR2450 before connecting the programmer.** J3 pin 1 follows the programmer's **3V3 / 5V selector** and is directly connected to this board's VBAT rail; it is not a voltage-sense input. The 5V setting must never be used with this board. Disconnect the cable before changing the selector. The programmer's SWD/reset logic is fixed at 3.3 V. Leave programmer J1, J2 and J4 empty while using J3.
 
 This repository contains the PCB design, **no application firmware, bootloader or flashable HEX**. Obtain a complete firmware image for this board before flashing.
 
@@ -46,7 +46,7 @@ The two mechanical solder tabs are not additional signal contacts. There are no 
 
 ## Power and flash with the linked programmer
 
-1. Disconnect programmer USB, remove the CR2032 and disconnect any bench supply.
+1. Disconnect programmer USB, remove the CR2450 and disconnect any bench supply.
 2. Set the programmer selector to **3V3** with the target cable disconnected. Connect only the straight-through five-pin cable between **J3 / 5PIN** and J_DEBUG.
 3. Apply USB power and confirm approximately **3.3 V between J_DEBUG pins 1 and 3** before programming. Keep the connector fully engaged throughout erase/write/verify.
 4. Use the programmer's version-matched CMSIS-DAP firmware and [OpenOCD](https://openocd.org/pages/getting-openocd.html). The example below uses the **OpenOCD 0.12.0** target path `target/nrf52.cfg`. Current development versions may use `target/nordic/nrf52.cfg`; select the installed path. The initial software-reset procedure does not require nRESET to be enabled in UICR.
@@ -147,4 +147,4 @@ After successful recovery, rerun the complete-image programming command above. I
 
 ## Verification status
 
-Updated 29 October 2026 for JST-SH release 1.0.18, retaining the enclosure and original fitted components from release 1.0.15. The exact five-pin side-entry footprint and pinout come from `@tsci/tscircuit.standard-jst-programmer@0.8.0`; its matching C136657 supplier OBJ and STEP are cached under `imports/SM05B_SRSS_TB`. See `validation/programming-interface.json` for electrical, copper, stencil and courtyard checks and `validation/jst-connector-clearance.json` for continuous rotation clearance under all eleven V5 caps. Current RevB retains28 fitted parts after removing SW1/R5/C17; check-rotation-only.mjs compares every retained part and surviving copper record to6224fc9. Actual cable insertion, connector retention and flashing need a populated prototype. The original electrical interface check applies to PCB release 1.0.18; V5 mechanical checks use the current regenerated reports.
+Updated 29 October 2026 for JST-SH release 1.0.18, retaining the enclosure and original fitted components from release 1.0.15. The exact five-pin side-entry footprint and pinout come from `@tsci/tscircuit.standard-jst-programmer@0.8.0`; its matching C136657 supplier OBJ and STEP are cached under `imports/SM05B_SRSS_TB`. See `validation/programming-interface.json` for electrical, copper, stencil and courtyard checks and `validation/jst-connector-clearance.json` for continuous rotation clearance under all eleven V5 caps. Current RevC retains28 fitted parts after removing SW1/R5/C17; check-rotation-only.mjs compares every retained part and surviving copper record to6224fc9. Actual cable insertion, connector retention and flashing need a populated prototype. The original electrical interface check applies to PCB release 1.0.18; V5 mechanical checks use the current regenerated reports.

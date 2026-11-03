@@ -1,4 +1,5 @@
-import {Children,cloneElement,isValidElement} from "react"
+import {Children,cloneElement,isValidElement,createElement} from "react"
+import batteryCourtyard from "./mechanical/battery-holder-courtyard.json"
 import {StandardJstSwdResetSide} from "@tsci/tscircuit.standard-jst-programmer"
 import type {SwdResetConnectorProps} from "@tsci/tscircuit.standard-jst-programmer"
 import type {ReactElement} from "react"
@@ -7,7 +8,7 @@ import {TMAG3001A2YBGR} from "./imports/TMAG3001A2YBGR/TMAG3001A2YBGR"
 import {X201632MKB4SI} from "./imports/X201632MKB4SI/X201632MKB4SI"
 import {ABS07_32_768KHZ_9_T} from "./imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T"
 import {RFANT3216120A5T} from "./imports/RFANT3216120A5T/RFANT3216120A5T"
-import {BS_08_B2AA020_R} from "./imports/BS_08_B2AA020_R/BS_08_B2AA020_R"
+import {BS_24_B4AA014} from "./imports/BS_24_B4AA014/BS_24_B4AA014"
 import type { BatteryProps, ChipProps, CrystalProps, PinAttributeMap } from "@tscircuit/props"
 
 // Exact five-pin JST-SH side-entry footprint/pinout from programmer 0.8.0.
@@ -106,7 +107,24 @@ export const RF_ANT=(p:ChipProps)=><chip
  pinAttributes={{pin1:{isPassive:true,mustBeConnected:true},pin2:{isPassive:true}}} {...p}/>
 // Complete two-terminal holder: unmodified JLCPCB copper and model, fitted below
 // the PCB. Pin 1 is the positive contact, matching the imported polarity marker.
-export const BatteryHolder=(p:BatteryProps)=><battery
- {...{...libraryProps(BS_08_B2AA020_R({name:p.name})),symbol:undefined}} standard="CR2032" voltage="3V"
+export const BatteryHolder=(p:BatteryProps)=>{
+ const imported=libraryProps(BS_24_B4AA014({name:p.name}))
+ const footprint=imported.footprint as ReactElement<{children:React.ReactNode}>
+ const sourceModel=imported.cadModel
+ if(!sourceModel||typeof sourceModel!=="object")throw new Error("Expected the imported CR2450 supplier CAD model")
+ // Preserve every supplier land and CAD asset. Use a checked, curved assembly
+ // courtyard rather than the import's rectangular empty corners.
+ const children=Children.toArray(footprint.props.children).filter(child=>!isValidElement(child)||child.type!=="courtyardoutline")
+ // Compiler drill/courtyard checks use bounding boxes. Retain terminal
+ // courtyards here; the complete curved BODY courtyard is checked against
+ // drills, posts and fitted parts in the mandatory enclosure/holder audit.
+ const curved=cloneElement(footprint,{children:[...children,...batteryCourtyard.native_terminal_courtyards.map(({x,y,...geometry},i)=>createElement("courtyardrect",{key:`cr2450-courtyard-${i}`,pcbX:x,pcbY:y,...geometry}))]})
+ return <battery
+ {...{...imported,footprint:curved,symbol:undefined}}
+ // Align the circular housing axis and symmetric contact lands to the same
+ // drawing datum, rather than the supplier model's asymmetric bounds center.
+ cadModel={{...sourceModel,modelOriginPosition:{x:0,y:0,z:-.9}}}
+ displayName="CR2450 3V primary" voltage="3V"
  pinAttributes={{pin1:{providesPower:true,providesVoltage:"3V",mustBeConnected:true},pin2:{providesGround:true,mustBeConnected:true}}}
  {...p}/>
+}

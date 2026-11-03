@@ -1,7 +1,7 @@
 {
   "passed": true,
   "physical_tested": false,
-  "method": "Continuous Z-prism of actual drilled PCB; continuous conservative Z-prisms of28 supplier STEP bounding boxes; cylindrical cell sweep",
+  "method": "Continuous Z-prism of drilled PCB;27 supplier STEP AABB prisms and two proven height-sliced holder-body prisms; cylindrical cell sweep",
   "motion_upward_from_seated_mm": 20.0,
   "previous_comparison_commit": "bab8aa4b2011a14873aea0a3094a3c7ed4d9e685",
   "previous_obstruction_volume_mm3": 13.263488470285267,
@@ -14,115 +14,143 @@
   "electronics": [
     {
       "component": "U1",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "BT1",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Two proven height-sliced supplier-body projection prisms"
     },
     {
       "component": "C4",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C9",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C15",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C5",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C7",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C8",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C10",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C16",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C18",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "J_DEBUG",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "R4",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "U2",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C6",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "R1",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "R2",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "R3",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "X1",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C1",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C2",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "X2",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C11",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C12",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "L1",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "L2",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "C3",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     },
     {
       "component": "ANT1",
-      "swept_bbox_intersection_mm3": 0.0
+      "swept_intersection_mm3": 0.0,
+      "conservative_envelope": "Supplier STEP AABB"
     }
   ],
   "remaining_physical": [
@@ -131,13 +159,13 @@
     "Battery/holder and populated board physical fit"
   ],
   "source_sha256": {
-    "validation/check-pcb-insertion.py": "6fb5a4fb4fa736c173616439a506865c477196dba0e8028ce995887172627d76",
-    "mechanical/build_enclosure.py": "85fbab9ee2484344ba636ace46e23aec9698893ed255db0848b4ace3d999c5de",
-    "mechanical/enclosure-parameters.json": "b7e4bb4603524504afd77bc3261a1efd4a078ff5be5dccd616131de263bf2eda",
-    "mechanical/STEP_Parts/Stationary_Base.step": "b0fe627d2eb5e52c134046a62da3dcf38f65d2214f84f1c02e9aae8ef259d254",
-    "published.circuit.json": "0928b0cfc9de5e205cc559a7e827f9d49ab4217f49272664154412bb1a90cede",
+    "validation/check-pcb-insertion.py": "99da9dc5576571182d0fe66a4a3634d23e81ebc88c7b52c02728c3b41daf6da5",
+    "mechanical/build_enclosure.py": "ef13e66f09bd8cf299b57bf50aba47fc139c99eb40fe885bb6ab089d91e9e916",
+    "mechanical/enclosure-parameters.json": "78d6e9391402f379d0f7f15404e43e6b9eaec2846b254824a90ce498eb58f9fc",
+    "mechanical/STEP_Parts/Stationary_Base.step": "82152206f593c2fecdb34776578684ef2c4030f77c2182d6aef237726ceb5fee",
+    "published.circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
     "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step": "757179567becc0f67f627e24efc67b4d8b556002f4b336735358f6716bbd37ad",
-    "imports/BS_08_B2AA020_R/BS_08_B2AA020_R.step": "4714a2d39b88797145aacf8a737b9977321a492e45a83ee97f29d933f943d8ec",
+    "imports/BS_24_B4AA014/BS_24_B4AA014.step": "1446db6fa5286480ba989cfd709c9e0429209990297f99abe7f51daebc1a0f6a",
     "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
     "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.step": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110",
     "imports/GRM188R60J226ME15D/GRM188R60J226ME15D.step": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110",
@@ -153,6 +181,8 @@
     "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.step": "54e0f0bcaf7410e7eebc62d9ca4e2d54c30d2d5f52d816b81de85fffb4cb06f4",
     "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.step": "a9e3440491fe778b6cd506a9af4fe608b51e57c361087ef1028b5c09c77fc199",
     "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
-    "imports/RFANT3216120A5T/RFANT3216120A5T.step": "44168c6e5d17ffce4789710ef4075cb75102fd74af108ddc5869e7e437d108ab"
+    "imports/RFANT3216120A5T/RFANT3216120A5T.step": "44168c6e5d17ffce4789710ef4075cb75102fd74af108ddc5869e7e437d108ab",
+    "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f",
+    "validation/cr2450-cad-audit.json": "64a4a0a3d5e52340810dbdd01196d6946ac34210218383e50d9e8ae173da5ddc"
   }
 }

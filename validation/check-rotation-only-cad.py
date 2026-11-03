@@ -4,6 +4,10 @@ import hashlib,json,math,subprocess
 import cadquery as cq
 ROOT=Path(__file__).resolve().parents[1];COMMIT='6224fc92863964ff770789ec086876e289d29bee'
 P=json.loads((ROOT/'mechanical/enclosure-parameters.json').read_text());
+if P.get('battery',{}).get('standard')=='CR2450':
+ import runpy
+ runpy.run_path(str(ROOT/'validation/check-cr2450-cad.py'),run_name='__main__')
+ raise SystemExit(0)
 if P['design'].startswith('V7'):
  import runpy
  runpy.run_path(str(ROOT/'validation/check-assembly-optimization.py'),run_name='__main__')

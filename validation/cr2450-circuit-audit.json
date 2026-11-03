@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "comparison_commit": "346fade26c8934f9d0b6411d7e30c1c9b06e9dac",
+  "retained_unchanged_fitted_components": 27,
+  "fitted_components": 28,
+  "changed_holder": "C7525448 BS-24-B4AA014",
+  "changed_battery_branch_traces": 2,
+  "added_through_vias": 2,
+  "unchanged_other_copper": true,
+  "all_electrical_connectivity_and_pin_attributes_preserved": true,
+  "mounting_holes": {
+    "count": 4,
+    "diameter_mm": 2.2,
+    "pitch_radius_mm": 16.6
+  },
+  "firmware_provided": false,
+  "source_sha256": {
+    "validation/check-cr2450-circuit.mjs": "716cf9e12a68149d6d0a12daa514954a299915c2c4fede35e6d025a17e963175",
+    "index.circuit.tsx": "366750e96371babbd6832e461088c5d63e62b17b6679725a6620120af43decd8",
+    "parts.tsx": "56a8b3993d257c0ccef55a84c9814b689182a9dc754bff06afe089d9543c7915",
+    "passives.tsx": "fb096d385bb3c259deae63b948c3ae2eedf19c5fbb3c2bdd3e7eb3e042b41bb4",
+    "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
+    "routing-contract.json": "e6e17fea9fe73a364a47f991829e599d1367b051415d2401d3adfd4fa2ea8170",
+    "routed-paths.json": "d89459bda74d620c9a66e07625d8c0386543708e6e0b42bc1d83c999f590a621",
+    "dist/index/circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "published.circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f"
+  }
+}

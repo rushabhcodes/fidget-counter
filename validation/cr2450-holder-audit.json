@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "holder": "BS-24-B4AA014",
+  "supplier_drawing": "MY-CP-0246 A/0 2022-03-26",
+  "body_height_mm": 7.6,
+  "loaded_height_mm": 8.6,
+  "cell_floor_clearance_mm": 0.5,
+  "minimum_holder_post_clearance_mm": 0.2499999999999995,
+  "full_curved_body_courtyard_checked": true,
+  "native_courtyard_scope": "Two solder terminals only; compiler outline/drill AABB limitation covered by independent full-body audit",
+  "loaded_cell_rigid_housing_collision_mm3": 0.0,
+  "free_state_contact_intrusion_mm3": 2.48674810892883,
+  "free_state_contact_regions_only": true,
+  "RF_conductor_strip_clear": true,
+  "LCP_body_RF_reserve_overlap_mm2": 8.480520359839067,
+  "limits": [
+    "Loaded spring-contact force, polarity, cell seating and retention require the selected physical holder/cell sample",
+    "LCP housing affects antenna loading; full populated Hall/BLE/RF qualification and matching remain required",
+    "Printed post/board fit,0.55mm PCB edge web and retention need physical qualification"
+  ],
+  "source_sha256": {
+    "validation/check-cr2450-holder.py": "4bb2fde5bce4dcd7d2ccbaee4a275b3a90150ad5a1db97394dec216039d16b94",
+    "parts.tsx": "56a8b3993d257c0ccef55a84c9814b689182a9dc754bff06afe089d9543c7915",
+    "mechanical/enclosure-parameters.json": "78d6e9391402f379d0f7f15404e43e6b9eaec2846b254824a90ce498eb58f9fc",
+    "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f",
+    "mechanical/build_battery_courtyard.py": "c386547f06a432732bc106a4e98696f26f569d51938226ed623d98c19737da9c",
+    "mechanical/references/MYOUNG_BS-24-B4AA014_MY-CP-0246_A0.pdf": "1f0d62dd33bb6eb78a641b680388a26356e53a284bce1a1146854488e90c99bf",
+    "dist/index/circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "dist/index/3d.glb": "fa8c495e2e54e52b0c2ea7e1264c5a5a469f36e47b542e61c57abd7a0348d576",
+    "mechanical/STEP_Parts/Stationary_Base.step": "82152206f593c2fecdb34776578684ef2c4030f77c2182d6aef237726ceb5fee",
+    "imports/BS_24_B4AA014/BS_24_B4AA014.step": "1446db6fa5286480ba989cfd709c9e0429209990297f99abe7f51daebc1a0f6a",
+    "imports/BS_24_B4AA014/BS_24_B4AA014.obj": "37b1332676c02573b8c96ea693be5f80d3373a40ab602d9cb70b069c2f6f6d24",
+    "imports/BS_24_B4AA014/BS_24_B4AA014.tsx": "ddc0165b866906067ffbf5435488e4663689e6eab659208b0958df4d752adc4a"
+  }
+}

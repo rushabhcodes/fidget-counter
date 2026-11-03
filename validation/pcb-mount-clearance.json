@@ -4,58 +4,58 @@
   "base_to_actual_pcb_intersection_mm3": 0.0,
   "mount_centers_mm": [
     [
-      10.748023074035522,
-      10.74802307403552
+      11.73797256769669,
+      11.737972567696689
     ],
     [
-      -10.74802307403552,
-      10.748023074035522
+      -11.737972567696689,
+      11.73797256769669
     ],
     [
-      -10.748023074035524,
-      -10.74802307403552
+      -11.737972567696692,
+      -11.737972567696689
     ],
     [
-      10.748023074035519,
-      -10.748023074035524
+      11.737972567696687,
+      -11.737972567696692
     ]
   ],
-  "nominal_edge_web_mm": 1.5500000000000007,
+  "nominal_edge_web_mm": 0.5499999999999985,
   "pcb_screws": 2,
   "native_glb_holes": [
     {
       "center_mm": [
-        10.748023074035522,
-        10.74802307403552
+        11.73797256769669,
+        11.737972567696689
       ],
-      "diameter_mm": 3,
+      "diameter_mm": 2.2,
       "empty_bore_samples": 144,
       "material_rim_samples": 48
     },
     {
       "center_mm": [
-        -10.74802307403552,
-        10.748023074035522
+        -11.737972567696689,
+        11.73797256769669
       ],
-      "diameter_mm": 3,
+      "diameter_mm": 2.2,
       "empty_bore_samples": 144,
       "material_rim_samples": 48
     },
     {
       "center_mm": [
-        -10.748023074035524,
-        -10.74802307403552
+        -11.737972567696692,
+        -11.737972567696689
       ],
-      "diameter_mm": 3,
+      "diameter_mm": 2.2,
       "empty_bore_samples": 144,
       "material_rim_samples": 48
     },
     {
       "center_mm": [
-        10.748023074035519,
-        -10.748023074035524
+        11.737972567696687,
+        -11.737972567696692
       ],
-      "diameter_mm": 3,
+      "diameter_mm": 2.2,
       "empty_bore_samples": 144,
       "material_rim_samples": 48
     }
@@ -63,46 +63,46 @@
   "published_glb_holes": [
     {
       "center_mm": [
-        10.748023074035522,
-        10.74802307403552
+        11.73797256769669,
+        11.737972567696689
       ],
-      "diameter_mm": 3,
+      "diameter_mm": 2.2,
       "empty_bore_samples": 144,
       "material_rim_samples": 48
     },
     {
       "center_mm": [
-        -10.74802307403552,
-        10.748023074035522
+        -11.737972567696689,
+        11.73797256769669
       ],
-      "diameter_mm": 3,
+      "diameter_mm": 2.2,
       "empty_bore_samples": 144,
       "material_rim_samples": 48
     },
     {
       "center_mm": [
-        -10.748023074035524,
-        -10.74802307403552
+        -11.737972567696692,
+        -11.737972567696689
       ],
-      "diameter_mm": 3,
+      "diameter_mm": 2.2,
       "empty_bore_samples": 144,
       "material_rim_samples": 48
     },
     {
       "center_mm": [
-        10.748023074035519,
-        -10.748023074035524
+        11.737972567696687,
+        -11.737972567696692
       ],
-      "diameter_mm": 3,
+      "diameter_mm": 2.2,
       "empty_bore_samples": 144,
       "material_rim_samples": 48
     }
   ],
   "sha256": {
-    "dist/index/circuit.json": "0928b0cfc9de5e205cc559a7e827f9d49ab4217f49272664154412bb1a90cede",
-    "dist/index/3d.glb": "8afea4d6dd79ccf4208c12877dae8d814dfd3e6a5f720979a97b7327e7c0d6a1",
-    "dist/published/circuit.json": "0928b0cfc9de5e205cc559a7e827f9d49ab4217f49272664154412bb1a90cede",
-    "dist/published/3d.glb": "8afea4d6dd79ccf4208c12877dae8d814dfd3e6a5f720979a97b7327e7c0d6a1",
-    "mechanical/STEP_Parts/Stationary_Base.step": "b0fe627d2eb5e52c134046a62da3dcf38f65d2214f84f1c02e9aae8ef259d254"
+    "dist/index/circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "dist/index/3d.glb": "fa8c495e2e54e52b0c2ea7e1264c5a5a469f36e47b542e61c57abd7a0348d576",
+    "dist/published/circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "dist/published/3d.glb": "fa8c495e2e54e52b0c2ea7e1264c5a5a469f36e47b542e61c57abd7a0348d576",
+    "mechanical/STEP_Parts/Stationary_Base.step": "82152206f593c2fecdb34776578684ef2c4030f77c2182d6aef237726ceb5fee"
   }
 }

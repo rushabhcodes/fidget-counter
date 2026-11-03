@@ -1,5 +1,5 @@
 {
-  "design": "V7 rotation-only printed pilot: standard 6808 bearing and two PCB screws",
+  "design": "V8 CR2450 rotation-only printed pilot; unchanged external height",
   "cap_style": "all",
   "cap_styles": [
     "circular",
@@ -23,11 +23,11 @@
   "grip_height": 8.0,
   "cap_skirt_inner_radius": 26.8,
   "pcb_diameter": 36.5,
-  "pcb_bottom": 8.1,
+  "pcb_bottom": 10.6,
   "pcb_thickness": 1.0,
   "magnet_diameter": 5.0,
   "magnet_thickness": 1.5,
-  "magnet_bottom": 11.4,
+  "magnet_bottom": 13.9,
   "magnet_pocket_diameter": 5.2,
   "material": "PETG for four rigid printed parts; purchased metal bearing",
   "service": "Remove three cap screws, lift cap while leaving outer retainer below bearing; unscrew inner nut and lift bearing before removing two PCB screws",
@@ -36,21 +36,21 @@
   "cap_style_change": "Undo three countersunk screws to transfer the common bearing assembly to another cap",
   "encoder_magnet_per_top_module": 1,
   "cap_mount_hardware_count": 3,
-  "magnet_installation": "One diametric diameter5 x1.5 mm disc seated against the integral cap stop at Z12.9; qualify sidewall adhesive after polarity/field checks",
-  "pcb_retention": "Two opposite M2 nylon screws on four solid posts; two rigid locating collars; physical retention qualification required",
+  "magnet_installation": "One diametric diameter5 x1.5 mm disc seated against the integral cap stop at Z15.4; qualify sidewall adhesive and sensing",
+  "pcb_retention": "Two opposite M2 nylon screws on four solid posts; close-fit2.2mm holes, no locating collars; physical retention qualification required",
   "pcb_mount": {
-    "radius_mm": 15.2,
+    "radius_mm": 16.6,
     "angles_deg": [
       45,
       135,
       225,
       315
     ],
-    "hole_diameter_mm": 3.0,
-    "copper_keepout_radius_mm": 1.8,
-    "shoulder_radius_mm": 2.25,
-    "locator_radius_mm": 1.1,
-    "locator_height_mm": 0.65,
+    "hole_diameter_mm": 2.2,
+    "copper_keepout_radius_mm": 1.9,
+    "shoulder_radius_mm": 1.6,
+    "locator_radius_mm": 0,
+    "locator_height_mm": 0,
     "beam_thickness_mm": 0,
     "beam_width_mm": 0,
     "retaining_outer_radius_mm": 0,
@@ -59,7 +59,10 @@
     "screw_indices": [
       0,
       2
-    ]
+    ],
+    "post_radius_mm": 1.6,
+    "foot_radius_mm": 2.5,
+    "collar_height_mm": 0
   },
   "bearing": {
     "designation": "6808-ZZ / 61808-2Z",
@@ -104,7 +107,7 @@
   "encoder_stop": {
     "mode": "integral_cap",
     "separate_spacer_count": 0,
-    "seated_top_z_mm": 12.9,
+    "seated_top_z_mm": 15.4,
     "previous_spacer_thickness_mm": 0.2,
     "retention": "Seat magnet against integral roof; qualify sidewall adhesive in existing 0.1 mm radial gap; no axial glue layer or loose spacer"
   },
@@ -152,7 +155,7 @@
     "base_supports": "Supports everywhere beneath attachment-ring roof and fixed bearing shoulder; remove all supports before installing bearing or magnets"
   },
   "fixed_bearing_support": {
-    "radius_mm": 16.5,
+    "radius_mm": 18.05,
     "angles_deg": [
       0,
       105,
@@ -162,7 +165,36 @@
     "web_foot_radius_mm": 4.0,
     "web_bottom_z_mm": 1.4,
     "web_head_bottom_z_mm": 3.0,
-    "note": "Three rigid overlapping webs join bearing shaft to the base; no sliding joints, press travel or return parts."
+    "note": "Three rigid overlapping webs join bearing shaft to the base; no sliding joints, press travel or return parts.",
+    "web_head_radius_mm": 2.7,
+    "web_foot_height_mm": 0.4,
+    "web_stem_bottom_z_mm": 1.7,
+    "web_stem_height_mm": 1.5
   },
-  "thumb_dish_depth_mm": 0.4
+  "thumb_dish_depth_mm": 0.4,
+  "battery": {
+    "standard": "CR2450",
+    "voltage_v": 3,
+    "primary_nonrechargeable": true,
+    "diameter_mm": 24.5,
+    "thickness_mm": 5.0,
+    "reference_capacity_mah": 620,
+    "holder_mpn": "BS-24-B4AA014",
+    "holder_jlcpcb": "C7525448",
+    "holder_xy_mm": [
+      0,
+      0
+    ],
+    "cell_bottom_z_mm": 2.0,
+    "cell_center_mm": [
+      0,
+      0
+    ],
+    "supplier_model_cell_bottom_z_mm": 2.7,
+    "qualification": "Supplier free-state contact leaves intrude into the cell envelope; bound this to the contact regions and qualify loaded contact force/retention on a physical sample. No separate cover.",
+    "holder_body_height_mm": 7.6,
+    "holder_loaded_height_mm": 8.6,
+    "loaded_height_source": "MYOUNG MY-CP-0246 A/0 drawing;8.60mm loaded outline includes1mm cell projection beyond7.60mm body",
+    "model_datum_note": "Align STEP circular housing axis to imported land-pattern center; override only modelOriginPosition XY from bounds center to0,0, preservingZ=-0.9 and original source assets"
+  }
 }

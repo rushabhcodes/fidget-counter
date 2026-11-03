@@ -47,7 +47,7 @@ const models = [
 ]
 
 // Fixed bearing support and rotation-only cap; CAD coordinates are mm from the phone plane.
-export const PCB_MIDPLANE_Z_MM = 8.6
+export const PCB_MIDPLANE_Z_MM = 11.1
 export const EnclosureAssembly = ({capStyle="circular",transparentShell=false}: {capStyle?:CapStyle;transparentShell?:boolean} = {}) => <Fragment>
   {models.filter(m => m.style === null || m.style === capStyle).map(m => <assembly.cadassembly
     key={m.name} name={`BEARING_V5_${m.name}`} displayName={m.name.replace(/_/g," ")}

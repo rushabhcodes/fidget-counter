@@ -25,8 +25,8 @@
     "press": 0
   },
   "sha256": {
-    "mechanical/enclosure-parameters.json": "b7e4bb4603524504afd77bc3261a1efd4a078ff5be5dccd616131de263bf2eda",
-    "mechanical/STEP_Parts/Stationary_Base.step": "b0fe627d2eb5e52c134046a62da3dcf38f65d2214f84f1c02e9aae8ef259d254",
+    "mechanical/enclosure-parameters.json": "78d6e9391402f379d0f7f15404e43e6b9eaec2846b254824a90ce498eb58f9fc",
+    "mechanical/STEP_Parts/Stationary_Base.step": "82152206f593c2fecdb34776578684ef2c4030f77c2182d6aef237726ceb5fee",
     "mechanical/Circuit_Models/MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960"
   },
   "unqualified": [
@@ -38,178 +38,178 @@
   "fixed_hardware_clearances": [
     {
       "component": "Electronic_U1",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_BT1",
-      "minimum_z_mm": 2.790000000000001,
-      "checked_envelope": "Fitted mesh AABB",
+      "minimum_z_mm": 2.9999999999999973,
+      "checked_envelope": "AABB broad phase; exact supplier STEP narrow phase",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C4",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C9",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C15",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C5",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C7",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C8",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C10",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C16",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C18",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_J_DEBUG",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_R4",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_U2",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C6",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_R1",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_R2",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_R3",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_X1",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C1",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C2",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_X2",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C11",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C12",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_L1",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_L2",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_C3",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Electronic_ANT1",
-      "minimum_z_mm": 9.1,
+      "minimum_z_mm": 11.6,
       "checked_envelope": "Fitted mesh AABB",
       "rigid_intersections": 0
     },
     {
       "component": "Cell",
-      "minimum_z_mm": 3.4,
-      "checked_envelope": "Proven enclosing CR2032 cylinder",
+      "minimum_z_mm": 2.0,
+      "checked_envelope": "Proven enclosing CR2450 cylinder",
       "rigid_intersections": 0
     }
   ],
-  "source_scene_sha256": "04c824fe408811e16b4c029d2f4667a6af34aa566f928d95abe5801b745b4bf4"
+  "source_scene_sha256": "35a5111baf4a3a05efcb09b4f9e59ea4e0fcb07ba942256cdc4b6e61b48ee8b1"
 }

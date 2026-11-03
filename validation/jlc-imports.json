@@ -399,6 +399,28 @@
           "sha256": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6"
         }
       ]
+    },
+    {
+      "part": "BS_24_B4AA014",
+      "jlcpcb": "C7525448",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C7525448",
+      "files": [
+        {
+          "path": "imports/BS_24_B4AA014/BS_24_B4AA014.obj",
+          "bytes": 415854,
+          "sha256": "37b1332676c02573b8c96ea693be5f80d3373a40ab602d9cb70b069c2f6f6d24"
+        },
+        {
+          "path": "imports/BS_24_B4AA014/BS_24_B4AA014.step",
+          "bytes": 2233508,
+          "sha256": "1446db6fa5286480ba989cfd709c9e0429209990297f99abe7f51daebc1a0f6a"
+        },
+        {
+          "path": "imports/BS_24_B4AA014/BS_24_B4AA014.tsx",
+          "bytes": 20943,
+          "sha256": "ddc0165b866906067ffbf5435488e4663689e6eab659208b0958df4d752adc4a"
+        }
+      ]
     }
   ],
   "notes": [

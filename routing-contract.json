@@ -16,7 +16,7 @@
           "{\"layer\":\"bottom\",\"x\":-1.1,\"y\":6.05}",
           "{\"layer\":\"bottom\",\"x\":-1.4,\"y\":7.4}",
           "{\"layer\":\"bottom\",\"x\":-3.65,\"y\":5.12}",
-          "{\"layer\":\"bottom\",\"x\":9.4999151,\"y\":0}",
+          "{\"layer\":\"bottom\",\"x\":15.550007,\"y\":0}",
           "{\"layer\":\"top\",\"x\":-0.550037,\"y\":7.299976}",
           "{\"layer\":\"top\",\"x\":-1.1,\"y\":6.05}",
           "{\"layer\":\"top\",\"x\":-1.1798840000000002,\"y\":1.2}",
@@ -60,7 +60,7 @@
         "name": "source_net_1",
         "nominalTraceWidth": 0.11,
         "points": [
-          "{\"layer\":\"bottom\",\"x\":-12.9999129,\"y\":0}",
+          "{\"layer\":\"bottom\",\"x\":-15.550007,\"y\":0}",
           "{\"layer\":\"top\",\"x\":-0.199898,\"y\":0.40005}",
           "{\"layer\":\"top\",\"x\":-1.999615,\"y\":-11.300118300000001}",
           "{\"layer\":\"top\",\"x\":-10.420116,\"y\":0.7}",
@@ -2191,52 +2191,6 @@
       },
       {
         "center": {
-          "x": -10.74802307403552,
-          "y": 10.748023074035522
-        },
-        "connectedTo": [],
-        "height": 3,
-        "isNonPlatedHole": true,
-        "layers": [
-          "top",
-          "bottom"
-        ],
-        "shape": "circle",
-        "type": "rect",
-        "width": 3
-      },
-      {
-        "center": {
-          "x": -10.748023074035524,
-          "y": -10.74802307403552
-        },
-        "connectedTo": [],
-        "height": 3,
-        "isNonPlatedHole": true,
-        "layers": [
-          "top",
-          "bottom"
-        ],
-        "shape": "circle",
-        "type": "rect",
-        "width": 3
-      },
-      {
-        "center": {
-          "x": -10.748023074035524,
-          "y": -10.74802307403552
-        },
-        "connectedTo": [],
-        "height": 3.6,
-        "layers": [
-          "top",
-          "bottom"
-        ],
-        "type": "rect",
-        "width": 3.6
-      },
-      {
-        "center": {
           "x": -10.749995666666665,
           "y": 6.4000346666666665
         },
@@ -2757,6 +2711,77 @@
       },
       {
         "center": {
+          "x": -11.737972567696689,
+          "y": 11.73797256769669
+        },
+        "connectedTo": [],
+        "height": 2.2,
+        "isNonPlatedHole": true,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "shape": "circle",
+        "type": "rect",
+        "width": 2.2
+      },
+      {
+        "center": {
+          "x": -11.737972567696689,
+          "y": 11.73797256769669
+        },
+        "connectedTo": [],
+        "height": 3.2,
+        "layers": [
+          "bottom"
+        ],
+        "type": "rect",
+        "width": 3.2
+      },
+      {
+        "center": {
+          "x": -11.737972567696692,
+          "y": -11.737972567696689
+        },
+        "connectedTo": [],
+        "height": 2.2,
+        "isNonPlatedHole": true,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "shape": "circle",
+        "type": "rect",
+        "width": 2.2
+      },
+      {
+        "center": {
+          "x": -11.737972567696692,
+          "y": -11.737972567696689
+        },
+        "connectedTo": [],
+        "height": 3.2,
+        "layers": [
+          "bottom"
+        ],
+        "type": "rect",
+        "width": 3.2
+      },
+      {
+        "center": {
+          "x": -11.737972567696692,
+          "y": -11.737972567696689
+        },
+        "connectedTo": [],
+        "height": 3.8,
+        "layers": [
+          "top"
+        ],
+        "type": "rect",
+        "width": 3.8
+      },
+      {
+        "center": {
           "x": -11.773333333333333,
           "y": 4.525049300000001
         },
@@ -3123,21 +3148,6 @@
         ],
         "type": "rect",
         "width": 0.21384615384615435
-      },
-      {
-        "center": {
-          "x": -12.9999129,
-          "y": 0
-        },
-        "connectedTo": [
-          "source_net_1"
-        ],
-        "height": 3.7999924,
-        "layers": [
-          "bottom"
-        ],
-        "type": "rect",
-        "width": 3.499993
       },
       {
         "center": {
@@ -3786,6 +3796,21 @@
         ],
         "type": "rect",
         "width": 0.540004
+      },
+      {
+        "center": {
+          "x": -15.550007,
+          "y": 0
+        },
+        "connectedTo": [
+          "source_net_1"
+        ],
+        "height": 3.5999928,
+        "layers": [
+          "bottom"
+        ],
+        "type": "rect",
+        "width": 3.3999932
       },
       {
         "center": {
@@ -10075,11 +10100,11 @@
       },
       {
         "center": {
-          "x": 10.748023074035519,
-          "y": -10.748023074035524
+          "x": 11.737972567696687,
+          "y": -11.737972567696692
         },
         "connectedTo": [],
-        "height": 3,
+        "height": 2.2,
         "isNonPlatedHole": true,
         "layers": [
           "top",
@@ -10087,15 +10112,28 @@
         ],
         "shape": "circle",
         "type": "rect",
-        "width": 3
+        "width": 2.2
       },
       {
         "center": {
-          "x": 10.748023074035522,
-          "y": 10.74802307403552
+          "x": 11.737972567696687,
+          "y": -11.737972567696692
         },
         "connectedTo": [],
-        "height": 3,
+        "height": 3.2,
+        "layers": [
+          "bottom"
+        ],
+        "type": "rect",
+        "width": 3.2
+      },
+      {
+        "center": {
+          "x": 11.73797256769669,
+          "y": 11.737972567696689
+        },
+        "connectedTo": [],
+        "height": 2.2,
         "isNonPlatedHole": true,
         "layers": [
           "top",
@@ -10103,21 +10141,49 @@
         ],
         "shape": "circle",
         "type": "rect",
-        "width": 3
+        "width": 2.2
       },
       {
         "center": {
-          "x": 10.748023074035522,
-          "y": 10.74802307403552
+          "x": 11.73797256769669,
+          "y": 11.737972567696689
         },
         "connectedTo": [],
-        "height": 3.6,
+        "height": 3.2,
         "layers": [
-          "top",
           "bottom"
         ],
         "type": "rect",
-        "width": 3.6
+        "width": 3.2
+      },
+      {
+        "center": {
+          "x": 11.73797256769669,
+          "y": 11.737972567696689
+        },
+        "connectedTo": [],
+        "height": 3.8,
+        "layers": [
+          "top"
+        ],
+        "type": "rect",
+        "width": 3.8
+      },
+      {
+        "center": {
+          "x": 15.550007,
+          "y": 0
+        },
+        "connectedTo": [
+          "source_net_0"
+        ],
+        "height": 3.5999928,
+        "layers": [
+          "bottom"
+        ],
+        "netIsAssignable": true,
+        "type": "rect",
+        "width": 3.3999932
       },
       {
         "center": {
@@ -10411,22 +10477,6 @@
         ],
         "type": "rect",
         "width": 0.5
-      },
-      {
-        "center": {
-          "x": 9.4999151,
-          "y": 0
-        },
-        "connectedTo": [
-          "source_net_0"
-        ],
-        "height": 2.7999944,
-        "layers": [
-          "bottom"
-        ],
-        "netIsAssignable": true,
-        "type": "rect",
-        "width": 5.6999886
       }
     ],
     "outline": [

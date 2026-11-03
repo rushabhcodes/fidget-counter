@@ -3,7 +3,7 @@
   "physical_tested": false,
   "manufacturing_qualified": false,
   "parameters": {
-    "design": "V7 rotation-only printed pilot: standard 6808 bearing and two PCB screws",
+    "design": "V8 CR2450 rotation-only printed pilot; unchanged external height",
     "cap_style": "all",
     "cap_styles": [
       "circular",
@@ -27,11 +27,11 @@
     "grip_height": 8.0,
     "cap_skirt_inner_radius": 26.8,
     "pcb_diameter": 36.5,
-    "pcb_bottom": 8.1,
+    "pcb_bottom": 10.6,
     "pcb_thickness": 1.0,
     "magnet_diameter": 5.0,
     "magnet_thickness": 1.5,
-    "magnet_bottom": 11.4,
+    "magnet_bottom": 13.9,
     "magnet_pocket_diameter": 5.2,
     "material": "PETG for four rigid printed parts; purchased metal bearing",
     "service": "Remove three cap screws, lift cap while leaving outer retainer below bearing; unscrew inner nut and lift bearing before removing two PCB screws",
@@ -40,21 +40,21 @@
     "cap_style_change": "Undo three countersunk screws to transfer the common bearing assembly to another cap",
     "encoder_magnet_per_top_module": 1,
     "cap_mount_hardware_count": 3,
-    "magnet_installation": "One diametric diameter5 x1.5 mm disc seated against the integral cap stop at Z12.9; qualify sidewall adhesive after polarity/field checks",
-    "pcb_retention": "Two opposite M2 nylon screws on four solid posts; two rigid locating collars; physical retention qualification required",
+    "magnet_installation": "One diametric diameter5 x1.5 mm disc seated against the integral cap stop at Z15.4; qualify sidewall adhesive and sensing",
+    "pcb_retention": "Two opposite M2 nylon screws on four solid posts; close-fit2.2mm holes, no locating collars; physical retention qualification required",
     "pcb_mount": {
-      "radius_mm": 15.2,
+      "radius_mm": 16.6,
       "angles_deg": [
         45,
         135,
         225,
         315
       ],
-      "hole_diameter_mm": 3.0,
-      "copper_keepout_radius_mm": 1.8,
-      "shoulder_radius_mm": 2.25,
-      "locator_radius_mm": 1.1,
-      "locator_height_mm": 0.65,
+      "hole_diameter_mm": 2.2,
+      "copper_keepout_radius_mm": 1.9,
+      "shoulder_radius_mm": 1.6,
+      "locator_radius_mm": 0,
+      "locator_height_mm": 0,
       "beam_thickness_mm": 0,
       "beam_width_mm": 0,
       "retaining_outer_radius_mm": 0,
@@ -63,7 +63,10 @@
       "screw_indices": [
         0,
         2
-      ]
+      ],
+      "post_radius_mm": 1.6,
+      "foot_radius_mm": 2.5,
+      "collar_height_mm": 0
     },
     "bearing": {
       "designation": "6808-ZZ / 61808-2Z",
@@ -108,7 +111,7 @@
     "encoder_stop": {
       "mode": "integral_cap",
       "separate_spacer_count": 0,
-      "seated_top_z_mm": 12.9,
+      "seated_top_z_mm": 15.4,
       "previous_spacer_thickness_mm": 0.2,
       "retention": "Seat magnet against integral roof; qualify sidewall adhesive in existing 0.1 mm radial gap; no axial glue layer or loose spacer"
     },
@@ -156,7 +159,7 @@
       "base_supports": "Supports everywhere beneath attachment-ring roof and fixed bearing shoulder; remove all supports before installing bearing or magnets"
     },
     "fixed_bearing_support": {
-      "radius_mm": 16.5,
+      "radius_mm": 18.05,
       "angles_deg": [
         0,
         105,
@@ -166,21 +169,50 @@
       "web_foot_radius_mm": 4.0,
       "web_bottom_z_mm": 1.4,
       "web_head_bottom_z_mm": 3.0,
-      "note": "Three rigid overlapping webs join bearing shaft to the base; no sliding joints, press travel or return parts."
+      "note": "Three rigid overlapping webs join bearing shaft to the base; no sliding joints, press travel or return parts.",
+      "web_head_radius_mm": 2.7,
+      "web_foot_height_mm": 0.4,
+      "web_stem_bottom_z_mm": 1.7,
+      "web_stem_height_mm": 1.5
     },
-    "thumb_dish_depth_mm": 0.4
+    "thumb_dish_depth_mm": 0.4,
+    "battery": {
+      "standard": "CR2450",
+      "voltage_v": 3,
+      "primary_nonrechargeable": true,
+      "diameter_mm": 24.5,
+      "thickness_mm": 5.0,
+      "reference_capacity_mah": 620,
+      "holder_mpn": "BS-24-B4AA014",
+      "holder_jlcpcb": "C7525448",
+      "holder_xy_mm": [
+        0,
+        0
+      ],
+      "cell_bottom_z_mm": 2.0,
+      "cell_center_mm": [
+        0,
+        0
+      ],
+      "supplier_model_cell_bottom_z_mm": 2.7,
+      "qualification": "Supplier free-state contact leaves intrude into the cell envelope; bound this to the contact regions and qualify loaded contact force/retention on a physical sample. No separate cover.",
+      "holder_body_height_mm": 7.6,
+      "holder_loaded_height_mm": 8.6,
+      "loaded_height_source": "MYOUNG MY-CP-0246 A/0 drawing;8.60mm loaded outline includes1mm cell projection beyond7.60mm body",
+      "model_datum_note": "Align STEP circular housing axis to imported land-pattern center; override only modelOriginPosition XY from bounds center to0,0, preservingZ=-0.9 and original source assets"
+    }
   },
   "printed_parts": [
     {
       "name": "Stationary_Base",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 7721.178565976743,
-      "step_serialization_volume_difference_mm3": -0.0003964203697250923,
+      "volume_mm3": 7284.652268355608,
+      "step_serialization_volume_difference_mm3": -0.00039085737353161676,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Stationary_Base.stl",
-      "sha256": "11ec41b2351fbb1b099b1d4eb1101e26529fdedb28c309cbff01ee1f331b6258",
+      "sha256": "d8dcfa13df6066bb05dc32f5b198edad82893eb765a151d83bb59320f8f662d5",
       "bounds_mm": [
         [
           -29.0,
@@ -244,12 +276,12 @@
       "name": "Cap_circular",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 10881.069265026897,
-      "step_serialization_volume_difference_mm3": -5.331457941792905e-09,
+      "volume_mm3": 10784.857990010685,
+      "step_serialization_volume_difference_mm3": -5.3041731007397175e-09,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_circular.stl",
-      "sha256": "577932871814e945c93e79e2f31666759f969ab705652f23e5ab4d04fd1b7ffc",
+      "sha256": "9377e09c3aba6ef121266577c3538dac0e104201c163c208501b54697807ea93",
       "bounds_mm": [
         [
           -30.800000000000004,
@@ -267,12 +299,12 @@
       "name": "Cap_ships_wheel",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 9021.615265979184,
-      "step_serialization_volume_difference_mm3": 2.812157617881894e-09,
+      "volume_mm3": 8925.403990962985,
+      "step_serialization_volume_difference_mm3": 2.826709533110261e-09,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_ships_wheel.stl",
-      "sha256": "39046871d3b1dc40c0a024a6133fbd16b96f2d6ee4857c81f2012b004c5719f7",
+      "sha256": "46e9f24b00acd4e7547030e3339d197b34829c15fc12ab4be2c4a2eb0f39c3ca",
       "bounds_mm": [
         [
           -30.8,
@@ -290,12 +322,12 @@
       "name": "Cap_rounded_triangle",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 8591.214632426489,
-      "step_serialization_volume_difference_mm3": -1.0368239600211382e-09,
+      "volume_mm3": 8495.0033574103,
+      "step_serialization_volume_difference_mm3": -1.027729013003409e-09,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_rounded_triangle.stl",
-      "sha256": "4bce38fe4f8a282a5cc039add3a2414827a7162b7f7476e26e8c1ca0a79eed7c",
+      "sha256": "baf7273eb5e8200c970e088bd0dae5d58aa126bfb5ee0abd8f3a124df66b6c02",
       "bounds_mm": [
         [
           -28.8,
@@ -313,12 +345,12 @@
       "name": "Cap_scalloped_coin",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 9584.294120780982,
-      "step_serialization_volume_difference_mm3": -3.3669493859633803e-09,
+      "volume_mm3": 9488.082845764797,
+      "step_serialization_volume_difference_mm3": -3.372406354174018e-09,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_scalloped_coin.stl",
-      "sha256": "d9527dd98208b8c1cb131c21c1073204551a015b2aae5920f9b11b9a12c3effd",
+      "sha256": "fa98df417f74afc89bfc77ac70457f28188c9c2d0f1ed83028b86e4d653f18f4",
       "bounds_mm": [
         [
           -30.8,
@@ -336,12 +368,12 @@
       "name": "Cap_petal_flower",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 9095.540487215198,
-      "step_serialization_volume_difference_mm3": 5.529727786779404e-10,
+      "volume_mm3": 8999.329212199009,
+      "step_serialization_volume_difference_mm3": 5.602487362921238e-10,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_petal_flower.stl",
-      "sha256": "d096611a01a7bbc21ccf8798972b744f56df0af4da9159307e5877a63c1fbc53",
+      "sha256": "748430758a8c69df8e3ebfbc10f2967784e7329f5c56bb910e3ea9bdd163357c",
       "bounds_mm": [
         [
           -30.8,
@@ -359,12 +391,12 @@
       "name": "Cap_four_leaf_clover",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 9086.968739846694,
-      "step_serialization_volume_difference_mm3": 2.4647306418046355e-09,
+      "volume_mm3": 8990.757464830507,
+      "step_serialization_volume_difference_mm3": 2.4683686206117272e-09,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_four_leaf_clover.stl",
-      "sha256": "08f5b1447452a76284161c2ec0b0846d0a30ebf8c5e9586e06750f1f89c5fac4",
+      "sha256": "6bc2ddc3f908eea0dcb49ca87e2e8cf61cf9b27070e1d242f16e10bedd48b27b",
       "bounds_mm": [
         [
           -30.8,
@@ -382,12 +414,12 @@
       "name": "Cap_rounded_hexagon",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 8937.104970241511,
-      "step_serialization_volume_difference_mm3": 9.822542779147625e-11,
+      "volume_mm3": 8840.893695225317,
+      "step_serialization_volume_difference_mm3": 1.0186340659856796e-10,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_rounded_hexagon.stl",
-      "sha256": "64d7c3831bdbafb1cffcd9398cc7604d153f4dd167f69e256c5ab33cc57b3a9d",
+      "sha256": "ba20a86f74a9f1957e78c00382d95729b9ed0cbe848b00efd8b62dc0c6ee90ca",
       "bounds_mm": [
         [
           -30.798601319003673,
@@ -405,12 +437,12 @@
       "name": "Cap_rounded_square",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 8901.903211093617,
-      "step_serialization_volume_difference_mm3": 1.329681253992021e-09,
+      "volume_mm3": 8805.691936077428,
+      "step_serialization_volume_difference_mm3": 1.3333192327991128e-09,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_rounded_square.stl",
-      "sha256": "016508293de341dd919911e3f707abcc49dc0bf33dd3e2f3531036d6c0aeaca3",
+      "sha256": "3382187cc68405fdac15aacb600ad66fd1a3f946fadbff7613729af13f984e91",
       "bounds_mm": [
         [
           -30.8,
@@ -428,12 +460,12 @@
       "name": "Cap_wave_rim",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 9845.813697297815,
-      "step_serialization_volume_difference_mm3": -2.2009771782904863e-10,
+      "volume_mm3": 9749.602422281632,
+      "step_serialization_volume_difference_mm3": -2.2373569663614035e-10,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_wave_rim.stl",
-      "sha256": "672bccdb9184386c6b8de63f04bc657e9819fcf79e5e9952e0e5be69d81bce2f",
+      "sha256": "845d3e41bbbfe72a18981fa69c7eab66ca5abebb80ae1542b3a391eb85c545e1",
       "bounds_mm": [
         [
           -30.8,
@@ -451,12 +483,12 @@
       "name": "Cap_turbine_wheel",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 10760.224269325669,
-      "step_serialization_volume_difference_mm3": -3.101062247878872e-06,
+      "volume_mm3": 10664.012994329129,
+      "step_serialization_volume_difference_mm3": -3.135895894956775e-06,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_turbine_wheel.stl",
-      "sha256": "1c5a7d39e7504272eb8bf087833d0f7879a7cd0b1e1739430c076612ac727621",
+      "sha256": "375bc9211327af4228c91df16a7a835993e4c4867a28462bd5393b8345a04b2c",
       "bounds_mm": [
         [
           -30.35,
@@ -474,12 +506,12 @@
       "name": "Cap_thumb_scoop",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 10237.413775382027,
-      "step_serialization_volume_difference_mm3": -1.0825151548488066e-06,
+      "volume_mm3": 10141.202500365453,
+      "step_serialization_volume_difference_mm3": -1.0825115168699995e-06,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Cap_thumb_scoop.stl",
-      "sha256": "2c2a132c8cc5e8aac7ca4beb359533e1b1d40c168d334996eca60a4fc37b57a6",
+      "sha256": "5031d73f8397850900a0d89f9dd82b743671ca70fc181e668570ee199a604706",
       "bounds_mm": [
         [
           -30.8,
@@ -597,7 +629,7 @@
   "base_diameter_mm": 58,
   "overall_height_mm": 17.2,
   "height_increase_mm": 2.0,
-  "pcb_midplane_z_mm": 8.6,
+  "pcb_midplane_z_mm": 11.1,
   "pcb_screws": 2,
   "pcb_support_posts": 4,
   "pcb_screw_indices": [
@@ -608,10 +640,10 @@
   "return_springs": 0,
   "press_travel_mm": 0,
   "cap_retainer_screws": 3,
-  "jst_swept_clearance_mm": 3.879999999999999,
+  "jst_swept_clearance_mm": 1.379999999999999,
   "sensor_gap_mm": 1.8,
   "separate_encoder_spacers": 0,
-  "encoder_stop_z_mm": 12.9,
+  "encoder_stop_z_mm": 15.4,
   "handled_parts_per_unit_excluding_adhesive_and_shims": 14,
   "screw_driving_operations": 5,
   "finished_cap_retainer_and_screw_clearance_checks": 11,

@@ -1,0 +1,473 @@
+{
+  "checked_utc": "2026-11-03T07:36:14.696897+00:00",
+  "scope": "Local RevC CR2450 PCB, source CAD, prints and buying-list revision",
+  "comparison_commit": "346fade26c8934f9d0b6411d7e30c1c9b06e9dac",
+  "branch": "codex/bearing-supported-enclosure",
+  "physical_tested": false,
+  "manufacturing_qualified": false,
+  "firmware_provided": false,
+  "battery": {
+    "active": "3V primary CR2450 24.5x5mm",
+    "holder": "MYOUNG BS-24-B4AA014 / C7525448",
+    "reference_capacity_mah": 620,
+    "previous_reference_capacity_mah": 225,
+    "capacity_is_not_measured_runtime": true,
+    "body_height_mm": 7.6,
+    "loaded_height_mm": 8.6,
+    "cell_floor_clearance_mm": 0.5,
+    "free_state_contact_intrusion_mm3": 2.48674810892883,
+    "loaded_contact_force_seating_qualified": false
+  },
+  "geometry": {
+    "base_diameter_mm": 58,
+    "maximum_cap_diameter_mm": 61.6,
+    "top_z_mm": 17.2,
+    "phone_contact_to_top_mm": 17.0,
+    "added_exterior_height_mm": 0,
+    "PCB_underside_mm": 10.6,
+    "PCB_top_mm": 11.6,
+    "PCB_and_encoder_internal_rise_mm": 2.5,
+    "encoder_bottom_mm": 13.9,
+    "encoder_stop_mm": 15.4,
+    "nominal_sensor_gap_mm": 1.8,
+    "minimum_JST_conservative_gap_mm": 1.38,
+    "PCB_holes_count": 4,
+    "PCB_hole_diameter_mm": 2.2,
+    "PCB_hole_pitch_radius_mm": 16.6,
+    "PCB_edge_web_mm": 0.55,
+    "PCB_post_pilot_wall_mm": 0.8,
+    "minimum_holder_post_gap_mm": 0.2499999999999995,
+    "thread_root_wall_mm": 0.85,
+    "fixed_throat_diameter_mm": 37.3
+  },
+  "inventory": {
+    "rigid_prints_per_device": 4,
+    "cap_styles_checked": 11,
+    "all_product_meshes": 14,
+    "tooling_halves": 2,
+    "fit_coupons": 4,
+    "screw_drives_per_device": 5,
+    "handled_parts_per_device": 14,
+    "fitted_components": 28,
+    "unchanged_other_fitted_components": 27,
+    "changed_battery_branches": 2,
+    "added_PCB_vias": 2
+  },
+  "checks": {
+    "reproducible-install": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/reproducible-install.log"
+    },
+    "typescript": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/typescript.log"
+    },
+    "regressions19": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/regressions19.log"
+    },
+    "courtyard-projection": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/courtyard-projection.log"
+    },
+    "bounded-routing-migration": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/bounded-routing-migration.log"
+    },
+    "preliminary-circuit-build": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/preliminary-circuit-build.log"
+    },
+    "cad-build": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/cad-build.log"
+    },
+    "bounded-cad": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/bounded-cad.log"
+    },
+    "source-build": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/source-build.log"
+    },
+    "electrical-preservation": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/electrical-preservation.log"
+    },
+    "ground-copper-regions": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/ground-copper-regions.log"
+    },
+    "snapshot-build": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/snapshot-build.log"
+    },
+    "site-build": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/site-build.log"
+    },
+    "model-export": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/model-export.log"
+    },
+    "fixture": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/fixture.log"
+    },
+    "fit-coupons": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/fit-coupons.log"
+    },
+    "actual-slicer": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/actual-slicer.log"
+    },
+    "wall-sections": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/wall-sections.log"
+    },
+    "toolpath-render": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/toolpath-render.log"
+    },
+    "cad-renders": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/cad-renders.log"
+    },
+    "model-detail": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/model-detail.log"
+    },
+    "native-display": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/native-display.log"
+    },
+    "holder-body": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/holder-body.log"
+    },
+    "pcb-holes": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/pcb-holes.log"
+    },
+    "continuous-insertion": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/continuous-insertion.log"
+    },
+    "ring-seat": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/ring-seat.log"
+    },
+    "jst-clearance": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/jst-clearance.log"
+    },
+    "all-electronics": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/all-electronics.log"
+    },
+    "import-provenance": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/import-provenance.log"
+    },
+    "programming": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/programming.log"
+    },
+    "all-cap-assembly": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/all-cap-assembly.log"
+    },
+    "cloud-prepare": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/cloud-prepare.log"
+    },
+    "cloud-restore": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/cloud-restore.log"
+    },
+    "circuit-netlist": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/circuit-netlist.log"
+    },
+    "circuit-pin_specification": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/circuit-pin_specification.log"
+    },
+    "circuit-placement": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/circuit-placement.log"
+    },
+    "circuit-shorts": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/circuit-shorts.log"
+    },
+    "circuit-source": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/circuit-source.log"
+    },
+    "circuit-schematic-placement": {
+      "status": "passed",
+      "evidence": "validation/cr2450-checks/circuit-schematic-placement.log"
+    }
+  },
+  "current_failed_checks": [],
+  "bun_regression_tests_passed": 19,
+  "additional_copper_negative_checks_passed": 3,
+  "actual_slicer": {
+    "executed": true,
+    "version": "PrusaSlicer2.8.1",
+    "parts": 16,
+    "print_warnings": 0,
+    "profile": "Provisional generic0.4mm nozzle/PETG;0.15mm layers;0.20mm first layer;4 requested walls; re-slice for actual printer"
+  },
+  "critical_wall_sections_checked": 19,
+  "ground_copper_changes": {
+    "top": {
+      "changed_area_mm2": 20.151062595346755,
+      "unexplained_changed_area_mm2": 0.0
+    },
+    "bottom": {
+      "changed_area_mm2": 30.391561982142264,
+      "unexplained_changed_area_mm2": 0.0
+    }
+  },
+  "visually_inspected": {
+    "previews/bearing-layout.png": [
+      "assembled",
+      "cutaway",
+      "exploded"
+    ],
+    "previews/print-slice-inspection.png": [
+      "actual base/shoulder/nut/retainer/cap/fixture toolpaths"
+    ]
+  },
+  "known_advisories": [
+    "Two exact retained legacy trace-angle advisories; new ground prefix moves one segment index to8/9 without changing its geometry",
+    "Retained schematic VBAT decoupler grouping advice",
+    "CLI cannot persist this prescribed wire/via route in its optional autorouting cache; checked authored paths and emitted circuit builds are valid"
+  ],
+  "unrun_physical": [
+    "Actual holder/cell loaded contact force, polarity, seating, retention and insertion life",
+    "Printed PETG fits/support removal on the selected printer/nozzle",
+    "PCB0.55mm edge webs,0.8mm posts and two-screw retention/deflection/shock/service life",
+    "Bearing fit/drag/wobble, printed thread and cap screw torque/pull-out/endurance",
+    "Ring and encoder adhesive cure/aging/retention and intended phone/case attachment",
+    "Populated Hall/BLE/RF tuning with larger metal cell, LCP housing, bearing, magnets and phone",
+    "Firmware operation, measured current/runtime and measured assembly time"
+  ],
+  "publication": {
+    "git_push_performed": false,
+    "tsci_push_performed": false,
+    "current_RevC_published": false,
+    "latest_hosted_release": "1.0.25",
+    "latest_hosted_scope": "Preceding6708/seven-screw CR2032 rotation-only pilot"
+  },
+  "source_sha256": {
+    "BOM.csv": "f391fbb7b3992c931fadb8293ff59b6b933073d5f24a6d08d296e41fbcb0fc8c",
+    "MECHANICAL.md": "36dedbd8b1a8ff810100c14d661ee9a824580ebb6848af0ab733407f00fdddbb",
+    "PROGRAMMING.md": "e572a3f9f57da38aa46339c5fbe048598b88f8a10d83553f909f5e8364c8d719",
+    "README.md": "88f3c5c20dd2be69379be5f1b3f86bc6b90bc2f0b8063de2d9c3cfcf821db390",
+    "bun.lock": "1d9a35aa4691c033b443bab61862a467ae4123a4c183fdba5bee0fe7774b3e7c",
+    "cloud-assets/manifest.json": "546c18168616e57571ad4f8444a42a983cf3233cdd9c4a344391d6cf647fe2b5",
+    "enclosure.tsx": "2db8a554d08f9f8059215f412d46e9445c92a9c1eb5be1054d99aeb58fd7c26b",
+    "imports/BS_24_B4AA014/BS_24_B4AA014.obj": "37b1332676c02573b8c96ea693be5f80d3373a40ab602d9cb70b069c2f6f6d24",
+    "imports/BS_24_B4AA014/BS_24_B4AA014.step": "1446db6fa5286480ba989cfd709c9e0429209990297f99abe7f51daebc1a0f6a",
+    "imports/BS_24_B4AA014/BS_24_B4AA014.tsx": "ddc0165b866906067ffbf5435488e4663689e6eab659208b0958df4d752adc4a",
+    "index.circuit.tsx": "366750e96371babbd6832e461088c5d63e62b17b6679725a6620120af43decd8",
+    "mechanical/CR2450_UPGRADE.md": "7f33eb363cbe8f321f4c73903697e29a2cdf4b590945efd22ce247315200c533",
+    "mechanical/Circuit_Models/Bearing_6808.glb": "736f7320e89405017e1a93bb8a8065e15775cf010ce6fa581f8374bafe4fd73c",
+    "mechanical/Circuit_Models/Bearing_6808.mtl": "11b875c24d4b2914cf5dcb3086f7e040192d6902e22727bf57d3cbfd741735ad",
+    "mechanical/Circuit_Models/Bearing_6808.obj": "3549d38713d489083fd24932bd0f5a2fdff728875d72fa2889a426fb521f78dd",
+    "mechanical/Circuit_Models/Cap_Retainer_Screws.glb": "cfb636aa893fa1497305b8c9fcdaf597634d1aaaadfb8b1162a4ddfae3b99e4f",
+    "mechanical/Circuit_Models/Cap_Retainer_Screws.mtl": "a0e306e59efc5f65d9fa1e6f2a14f54c4838560d4a7dff3b344ef774b0264cae",
+    "mechanical/Circuit_Models/Cap_Retainer_Screws.obj": "c7ad6d031dc3a3ab8b7ed90fbed7b0ba8b2a8fa92202ac65f89026350abd7a7e",
+    "mechanical/Circuit_Models/Cap_circular.glb": "d35ad13bfeedefacbda650cacce4e38492d76af36b36c13745a4f640e9d4a428",
+    "mechanical/Circuit_Models/Cap_circular.mtl": "735ab8f4da59be14cfd1e2b30ba1ad86c4e2f653c520057766a629deafe8eb3c",
+    "mechanical/Circuit_Models/Cap_circular.obj": "fcc6bd02f9fc2cc5b2abc0bab43d505959cf93d856152cbed2b6eb16897c9dfe",
+    "mechanical/Circuit_Models/Cap_four_leaf_clover.glb": "e1fb2113d89a16082c251b7b12cbda680ec924eade9e57b499a234e5fa6626a8",
+    "mechanical/Circuit_Models/Cap_four_leaf_clover.mtl": "d2bd18d547ff71ad27bd57ad696d3267108ccc80a81ceb3bdea3f4da8e7fcd9d",
+    "mechanical/Circuit_Models/Cap_four_leaf_clover.obj": "be56c6fea5224d0e7657e5f49f3b68da0370ac93b50fb4e9aee46fc7db150385",
+    "mechanical/Circuit_Models/Cap_petal_flower.glb": "80d7109963155ae30b559776eab6ff15066ff71850c46429e40d3c5b9e49a551",
+    "mechanical/Circuit_Models/Cap_petal_flower.mtl": "e28c6cda24fb5f790aa6fc5d3d048b0fa28dbd862c09c471ce8f3081ecf9cf67",
+    "mechanical/Circuit_Models/Cap_petal_flower.obj": "246ddfa909566bdd317f5222de64d8389924c328954fcc378d7a448e463c4e94",
+    "mechanical/Circuit_Models/Cap_rounded_hexagon.glb": "ab52cb0c3fe9256e5fc0024f4535a6a065a67097ede90dc874d64951ed0763b2",
+    "mechanical/Circuit_Models/Cap_rounded_hexagon.mtl": "6a35e829c07497ac743beef494b88fd6781b859d02414ec49b3cf96b0aec7217",
+    "mechanical/Circuit_Models/Cap_rounded_hexagon.obj": "8e6589b27e39e7603aff092bb825ef47ccd873a26d19a564e008f9f3837c2ec0",
+    "mechanical/Circuit_Models/Cap_rounded_square.glb": "6a82307e6992c1e69c7b363ffe3e5d540d76cca222d3f3943350c07f51d86fcc",
+    "mechanical/Circuit_Models/Cap_rounded_square.mtl": "688fb42951ea0aa68dbd459b3064bf9b1945139e971d4bb5ba3863825bda514d",
+    "mechanical/Circuit_Models/Cap_rounded_square.obj": "9aa961dd37f6437bf52a7ef7369112615b5064050534d2e5aa86c381efae9516",
+    "mechanical/Circuit_Models/Cap_rounded_triangle.glb": "2a3a9d148eabd76bb2fcffd338c19b843f2dc98daf61ba42f04146391b0b251c",
+    "mechanical/Circuit_Models/Cap_rounded_triangle.mtl": "450db1c11982a144cf1e1ba20e66bf1d804e16c4e7f01e93a96271afc37ca4bf",
+    "mechanical/Circuit_Models/Cap_rounded_triangle.obj": "4981b978b78f52ae71881a2cadbe2653c613a12035077b4ad8132e8efded0d81",
+    "mechanical/Circuit_Models/Cap_scalloped_coin.glb": "0d70ba20b644e3a7b0ce11fd1781c1ca27e38ccf3bc6a512366b6e494cb27a99",
+    "mechanical/Circuit_Models/Cap_scalloped_coin.mtl": "7d41fff528f126c74b627445bab5bf5af34e7c976691aed4b143f3733528f940",
+    "mechanical/Circuit_Models/Cap_scalloped_coin.obj": "a951ee6792186095cdf620dec929e7a4bad32f117be57a2413e9962fa4030666",
+    "mechanical/Circuit_Models/Cap_ships_wheel.glb": "3110e946b13b3a61e6f77f3494a7a2f12ecaa1d58d6dafd7ab66ada78991659c",
+    "mechanical/Circuit_Models/Cap_ships_wheel.mtl": "3db7888f919f4a4348db6f9ac8f7506009ab2733fb25e716d47839f8ac9bf4a2",
+    "mechanical/Circuit_Models/Cap_ships_wheel.obj": "b6e697b2bc9edc58e80ac3de154743dfe8ac0cac8eb5231bd297ac37edc69657",
+    "mechanical/Circuit_Models/Cap_thumb_scoop.glb": "171068a3af1e2e2dd1b998d88a0ea75090d9b9921fe60581a0030b688f0635be",
+    "mechanical/Circuit_Models/Cap_thumb_scoop.mtl": "decfb0fb8550f7b004859c5a5cdc1dd12e6c9928acd9a6d9de3c9153078449de",
+    "mechanical/Circuit_Models/Cap_thumb_scoop.obj": "791e978ea038e68542c62d4749b73e0af528d3ba632c2f73bc8c8692d58c3e43",
+    "mechanical/Circuit_Models/Cap_turbine_wheel.glb": "852acefe636c16a31b786660578677a64bc18e653a6fc5227f964ebb0eaf7e9d",
+    "mechanical/Circuit_Models/Cap_turbine_wheel.mtl": "e6dfd06267c3e5fbe9d4686bf82da760ff7030f906214574578a39d9bdd7ca09",
+    "mechanical/Circuit_Models/Cap_turbine_wheel.obj": "11516445939d3da4cdf1df558dba89d417400b0e24c978a2af3f3dda45c69f37",
+    "mechanical/Circuit_Models/Cap_wave_rim.glb": "5200c5f71090b65ad90b1b818dcdc84d94e39890dd3ded12ec98565a0b3e33fc",
+    "mechanical/Circuit_Models/Cap_wave_rim.mtl": "6d6d8e203241951f2285c620675b6a71070e58a86da3799ba2faa407d805d5eb",
+    "mechanical/Circuit_Models/Cap_wave_rim.obj": "e6775e618e5bdfe7b530e54c4196d5f7a7305630d3a2ea339170bef629e4aac6",
+    "mechanical/Circuit_Models/Cell.glb": "3045846fa274953378a976b941ade9177be3e5783347a5f6061bad10d508c709",
+    "mechanical/Circuit_Models/Cell.mtl": "88722ece3b779b410ef4f47fa3a474e4bd40204545c55a7016886835a7e77c4e",
+    "mechanical/Circuit_Models/Cell.obj": "cc5d255625ed2394b240bdefb9b1464a07a118fc6d2195e0f7d99844c0b71b72",
+    "mechanical/Circuit_Models/Inner_Race_Nut.glb": "0d2d1b2d9b17b1de1d3c5745e1b49ef9b65f40cbb445232e951b638c7a990214",
+    "mechanical/Circuit_Models/Inner_Race_Nut.mtl": "1664146cb35d615f408d73a0df983d4250cfa4d98282a818790baa5a7794f7b4",
+    "mechanical/Circuit_Models/Inner_Race_Nut.obj": "17ff123736fc17df88d5b913ca1cab896a393e2b2b655b3aeff3a76ae61ef647",
+    "mechanical/Circuit_Models/MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960",
+    "mechanical/Circuit_Models/MagSafe_Ring.mtl": "aad5f130109e2255f5f88575bb51aade564e5c7a441a6bce6ea955aba282332f",
+    "mechanical/Circuit_Models/MagSafe_Ring.obj": "e8d54b7d68bc8574fa1e2f37df54b67a78622c92a122495b2c17a0e4c5dfeb9b",
+    "mechanical/Circuit_Models/Magnet.glb": "33333e44c37a26795772b49e6afa36df04fe91412f6db3fe37aed81dd9cac453",
+    "mechanical/Circuit_Models/Magnet.mtl": "4ef01bf49aa7af282c154d159281d5eb585f6c40590821a3ebb9cb6711069035",
+    "mechanical/Circuit_Models/Magnet.obj": "7ae853fee156bf5d68908e41e54a489c3746ac3356ed9a59e3235c85dfe6b804",
+    "mechanical/Circuit_Models/Outer_Race_Retainer.glb": "334d2dc70551efdf444ec5166784ca9dff48da780de47f53cc671366cd72987a",
+    "mechanical/Circuit_Models/Outer_Race_Retainer.mtl": "553b47151257d3d2cd75b9c86dec37135b6acd3c963725e05f18c53f29573687",
+    "mechanical/Circuit_Models/Outer_Race_Retainer.obj": "aa6830f0206242b5552960ab2271cc1432eb97972d86b84bd23e29a2a7939af8",
+    "mechanical/Circuit_Models/PCB_Fasteners.glb": "9a856224ee40f18e6772ab37b5480ad9d963f474accc788c4f6a7654a433849a",
+    "mechanical/Circuit_Models/PCB_Fasteners.mtl": "cc83a66474d2da88e384f5739c31e0483593d19319b6813ab7be1ee83ccf7179",
+    "mechanical/Circuit_Models/PCB_Fasteners.obj": "a71b7e1622c6a30b3f2385cc88f2ee16f6b21a4a5289662b5b9086eec4e34047",
+    "mechanical/Circuit_Models/Stationary_Base.glb": "9c92990a183b592dc7c5bb9b2b7b8910ccbff010dfd7e4ab0b35dcd4fe52098f",
+    "mechanical/Circuit_Models/Stationary_Base.mtl": "8870e36cfea3936b83a7b655a335047c337d76fff599a4feac7eb4576db5ffb1",
+    "mechanical/Circuit_Models/Stationary_Base.obj": "23a1bdd813b0c6ec7bb873150f8208ee8f2318e8fa83c181d0d0d16a7667ec3e",
+    "mechanical/Circuit_Models/manifest.json": "f8af0400519eb11af565ac8d058d403d296e325a49f7acba851763288f58c2df",
+    "mechanical/MANUFACTURING_REVIEW.md": "3b2951f32a567b5d6a542b44175eb871e89d49e87d9fbe9df8739e53f20a0da8",
+    "mechanical/MECHANICAL_BOM.csv": "e9e0bdeae8ad352f2bc5cd36528f480eef0ca21704efab34f1854d00464e2ef7",
+    "mechanical/Print_STL/Cap_circular.stl": "9377e09c3aba6ef121266577c3538dac0e104201c163c208501b54697807ea93",
+    "mechanical/Print_STL/Cap_four_leaf_clover.stl": "6bc2ddc3f908eea0dcb49ca87e2e8cf61cf9b27070e1d242f16e10bedd48b27b",
+    "mechanical/Print_STL/Cap_petal_flower.stl": "748430758a8c69df8e3ebfbc10f2967784e7329f5c56bb910e3ea9bdd163357c",
+    "mechanical/Print_STL/Cap_rounded_hexagon.stl": "ba20a86f74a9f1957e78c00382d95729b9ed0cbe848b00efd8b62dc0c6ee90ca",
+    "mechanical/Print_STL/Cap_rounded_square.stl": "3382187cc68405fdac15aacb600ad66fd1a3f946fadbff7613729af13f984e91",
+    "mechanical/Print_STL/Cap_rounded_triangle.stl": "baf7273eb5e8200c970e088bd0dae5d58aa126bfb5ee0abd8f3a124df66b6c02",
+    "mechanical/Print_STL/Cap_scalloped_coin.stl": "fa98df417f74afc89bfc77ac70457f28188c9c2d0f1ed83028b86e4d653f18f4",
+    "mechanical/Print_STL/Cap_ships_wheel.stl": "46e9f24b00acd4e7547030e3339d197b34829c15fc12ab4be2c4a2eb0f39c3ca",
+    "mechanical/Print_STL/Cap_thumb_scoop.stl": "5031d73f8397850900a0d89f9dd82b743671ca70fc181e668570ee199a604706",
+    "mechanical/Print_STL/Cap_turbine_wheel.stl": "375bc9211327af4228c91df16a7a835993e4c4867a28462bd5393b8345a04b2c",
+    "mechanical/Print_STL/Cap_wave_rim.stl": "845d3e41bbbfe72a18981fa69c7eab66ca5abebb80ae1542b3a391eb85c545e1",
+    "mechanical/Print_STL/Coupons/Bearing_Housing_Coupon.stl": "7781db826bc5647035be705b0d90f38719ecf56656a8ab6e4baf1a4f80db42bd",
+    "mechanical/Print_STL/Coupons/Bearing_Shaft_Coupon.stl": "df0e362f0f4e7775f5dccf6f811e5ff7aaae2c2321d03dcbf28518e53e871775",
+    "mechanical/Print_STL/Coupons/Inner_Race_Nut.stl": "74301e3a59b75794bcd0de7a1dda534c85941434f7bf75e1bb06b24b5d5cf63f",
+    "mechanical/Print_STL/Coupons/Inner_Thread_Coupon.stl": "49cd668e156ababe0cfcdb0c2566ae6a1d8b0ac0038412fce60ea94cfe6ffbea",
+    "mechanical/Print_STL/Inner_Race_Nut.stl": "852566d1891f261f70c98d640052d9862f2a397454a503143a85d951293352a3",
+    "mechanical/Print_STL/Outer_Race_Retainer.stl": "83292552559c47d264d3d894a98ade41715bf611deff35ce44477a5ce7fd6936",
+    "mechanical/Print_STL/Stationary_Base.stl": "d8dcfa13df6066bb05dc32f5b198edad82893eb765a151d83bb59320f8f662d5",
+    "mechanical/Print_STL/Tooling/Nest_Left.stl": "a4811c67bb38e750acabca9e8928a2b68828a84c963686423e608c13307156c5",
+    "mechanical/Print_STL/Tooling/Nest_Right.stl": "56dbef604f3591c45d2430c07d18d2714b00ccb4670c3de4e560faa3802852a8",
+    "mechanical/STEP_Parts/Cap_circular.step": "9b01ab5fb4dd433bffffc295efd9f0e4a459804db8c527a03a951d202931d93e",
+    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "698d5d7217ec1ed67c7f726682cade2b9201064ad05a5ac9ad5b3dfe49ed9438",
+    "mechanical/STEP_Parts/Cap_petal_flower.step": "d0080876878158ffc076251a7f9a76bf6e4309d0dbcfd31855941de3603a359a",
+    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "594e2e4baeb5e171255d236235ed0ef200bed2d71464cf9ebc77db2c994a3f96",
+    "mechanical/STEP_Parts/Cap_rounded_square.step": "8226c40ef314336010c0f45fbd5734550ec19e5e96db68aae096a88414d428d1",
+    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "bff2b72dbf99e505aeb6fee0dc1e6b697b37ca42d2da92d2b7bc22c6e8ac4e54",
+    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "618254989d084593c353e4efdea5c54bc50211c74b5b8f209c752419da7bdc0f",
+    "mechanical/STEP_Parts/Cap_ships_wheel.step": "8db96cd85190ad03a97f45ff910223f3b41cce7c8b18640913a6ecb20d2cc600",
+    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "de69018f684e0b98cdfc13787efb02d83faf308e3f568721f02f25950777ba54",
+    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "8965b2db674aafc4e90ecc64a3c30d982c0ed52915637b8bda8724351aaa0153",
+    "mechanical/STEP_Parts/Cap_wave_rim.step": "c1eb95266a5b0a811270db61c3f7a2ae39b195f8222ab9853eb0effa06eaf59f",
+    "mechanical/STEP_Parts/Inner_Race_Nut.step": "19d6d851f2275908f0f1b4c7903eaaa059b3bb9edffa569b9d874fe953652c2f",
+    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "132d72e63066353e4bf6f041b427337c20cf278d495a7ed14b037488187c3611",
+    "mechanical/STEP_Parts/Stationary_Base.step": "82152206f593c2fecdb34776578684ef2c4030f77c2182d6aef237726ceb5fee",
+    "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f",
+    "mechanical/build_battery_courtyard.py": "c386547f06a432732bc106a4e98696f26f569d51938226ed623d98c19737da9c",
+    "mechanical/build_enclosure.py": "ef13e66f09bd8cf299b57bf50aba47fc139c99eb40fe885bb6ab089d91e9e916",
+    "mechanical/enclosure-parameters.json": "78d6e9391402f379d0f7f15404e43e6b9eaec2846b254824a90ce498eb58f9fc",
+    "mechanical/enclosure-validation.json": "11296297f23cc1a5ab4eac64ff42eb1ab1a13b800c1e3940ff8de2eaa42cd057",
+    "mechanical/hardware_models.py": "cc7779f3d393011b726865e31ef664cbc83cf4b86ab12543a0f66a8fb7d29283",
+    "mechanical/print-ready-manifest.json": "c5bbcb28ad17612bdbdb2a2a109cc19f81b256e1b925e49fbb598c51e162d34e",
+    "mechanical/printing/PRINTING.md": "d42c8de055a8d3b6d9cb030c0388a17ff0b8cc4ac32305d2f58ba3e7d6a8ae0b",
+    "mechanical/printing/check_wall_sections.py": "891dfb4f300b9bcae28ee97d72892043a4c3616e14c815927fe0213254a8d7b0",
+    "mechanical/references/MYOUNG_BS-24-B4AA014_MY-CP-0246_A0.pdf": "1f0d62dd33bb6eb78a641b680388a26356e53a284bce1a1146854488e90c99bf",
+    "package.json": "c3ad666b5d2a205e6a2b09cb1970a3d6a834db2045e5674a69c8273b0490d540",
+    "parts.tsx": "56a8b3993d257c0ccef55a84c9814b689182a9dc754bff06afe089d9543c7915",
+    "passives.tsx": "fb096d385bb3c259deae63b948c3ae2eedf19c5fbb3c2bdd3e7eb3e042b41bb4",
+    "previews/bearing-layout.png": "69d345591bfb18fd0ab2fef2f2dd6a62d35f46ed2d6cb72fb2c55efcf6f6256c",
+    "previews/print-slice-inspection.png": "41944b7402092d06f3e5fe5aa7148b488c5b8092f9398195a6160819b92116c9",
+    "published.circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "routed-paths.json": "d89459bda74d620c9a66e07625d8c0386543708e6e0b42bc1d83c999f590a621",
+    "routing-contract.json": "e6e17fea9fe73a364a47f991829e599d1367b051415d2401d3adfd4fa2ea8170",
+    "routing.ts": "e10c2db7cdcd38d8f6b391173260fca1abff836fa58130bf565b8dfede5f93f8",
+    "validation/attachment-ring-audit.json": "a9bd84fb025aa1121850d31bb51ab8211b604f3361c34205cc80b0c14bca0bb4",
+    "validation/bearing-hardware-clearance.json": "e1345692f2df3d23543670bd954aea7a2941ffe7d82883274f4282a4fca3ca81",
+    "validation/check-attachment-ring.py": "e8c6afb0fa13b3888fde5e4d8e8684ad939426dc46390728041c1ab21106e06a",
+    "validation/check-bearing-hardware.py": "9637977880a61c9b79e21bf808114ab7452f8045a5001462a49f221569a028b3",
+    "validation/check-cr2450-cad.py": "deaee1659ff212e6c9ad7099acbd8651ae14c59bbb72b682c0db2731f5f5e931",
+    "validation/check-cr2450-circuit.mjs": "716cf9e12a68149d6d0a12daa514954a299915c2c4fede35e6d025a17e963175",
+    "validation/check-cr2450-copper.py": "9263b4780a7285eb64a02eb0266df18b2d0e43367a60a10c1ed6fbcbcf6203cf",
+    "validation/check-cr2450-display.py": "05359fe4525e216f13118d0f7c25255a88d4b288e703bf25bcf703cd3e75ae29",
+    "validation/check-cr2450-holder.py": "4bb2fde5bce4dcd7d2ccbaee4a275b3a90150ad5a1db97394dec216039d16b94",
+    "validation/check-enclosure.mjs": "94938f018d4b39154c94801029aad73193fbc564219fca72f30e85a251938fc6",
+    "validation/check-model-detail.py": "5344ef1ab7c774afa2825527830fcd02e7b383cede7589f0b80c11b7cee4ae4d",
+    "validation/check-pcb-insertion.py": "99da9dc5576571182d0fe66a4a3634d23e81ebc88c7b52c02728c3b41daf6da5",
+    "validation/check-programming.mjs": "da2fd37507071ac6005a0cf088323bc1f4529047837b95185c63f5c0f2a9c6a5",
+    "validation/cr2450-cad-audit.json": "64a4a0a3d5e52340810dbdd01196d6946ac34210218383e50d9e8ae173da5ddc",
+    "validation/cr2450-circuit-audit.json": "8c592ff008849d7e1043f5af622c4d35f8ccf4de1174cf625a7b5f73841fdb10",
+    "validation/cr2450-copper-audit.json": "14d006be6136d4337236095cbeb3636a9464b3a74f4eaa7c87834b9e707d6576",
+    "validation/cr2450-display-audit.json": "aace52b1ee9b3b327a752d5859fee10e56058f92524a07e6df09d2b58a31c155",
+    "validation/cr2450-holder-audit.json": "768c28c1fa3a76007f3d123d494940ea1fce02f1072d102bfaddc5919b52ac67",
+    "validation/cr2450-regression.test.mjs": "752a80291544f985132671cef3f3e8037907bf42ee78f40f8d06cee28d152c87",
+    "validation/jlc-imports.json": "ca4bcfb474d398e61e243b4e89637671ddd79a80217671ec1dc7bdb2785bef75",
+    "validation/jst-connector-clearance.json": "32837ac8a3fcb546b7ec1e06d5b75a023f2b59782e2149e577d28d6898cc0734",
+    "validation/known-trace-style-warnings.json": "0c57c063fbc4d8e21ff9cba6d7f13bb842409e08d34b14e33eadbfb4fe3cf6f6",
+    "validation/model-detail-audit.json": "1a9ac716748e533bb7dc44a4924b757fea4ffd395ebf5ed65cc9cc8367aa1da7",
+    "validation/pcb-insertion-audit.json": "4b4a4d9b4732ad418b6530e6b3a3f1e420655c57ae51743e9cf0754bac7592a7",
+    "validation/pcb-mount-clearance.json": "87b97d2fe04794c708241ad8a28fa0cf13592c2f94a6734c022bc64696cbe92b",
+    "validation/print-readiness.json": "89ce456b24ad88f7154ee37e2d221c4bb6eb6de6d7460f61f6db99232b8d8323",
+    "validation/print-wall-sections.json": "7db557d52587492a04849cf49d150216c1f161ccd87ea1f7e771d8c015911300",
+    "validation/programming-interface.json": "d0db14b5941490856c405acfb3665b758d5642ae438018daf29469b5f63a5f54"
+  },
+  "output_sha256": {
+    "dist/index/circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "dist/index/3d.glb": "fa8c495e2e54e52b0c2ea7e1264c5a5a469f36e47b542e61c57abd7a0348d576",
+    "dist/published/circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "dist/published/3d.glb": "fa8c495e2e54e52b0c2ea7e1264c5a5a469f36e47b542e61c57abd7a0348d576",
+    "dist/index.html": "4a06e1a1c155e847553c3e46a9b961e6d53fd89640c0dd7a5091dc2dde9834e5"
+  },
+  "validation_log_format": "CLI stdout/stderr with trailing whitespace normalized",
+  "validation_log_sha256": {
+    "validation/cr2450-checks/actual-slicer.log": "64dceaaeb7b04accdf9e112d782979520e2986f8f95ec2bfec09bba25d453bce",
+    "validation/cr2450-checks/all-cap-assembly.log": "abd797e16be74dae7cf1586b6b6c28f4877b1e1755370ebc9f3337b8be7d9516",
+    "validation/cr2450-checks/all-electronics.log": "f56daff5195c2da683f3c2ec20c68ee6ac31679d6d52e5d917de18e132c8ab82",
+    "validation/cr2450-checks/bounded-cad.log": "e9976376df832c5cb461ba1a35e2a4582762b9a7c6903374454bb8e43417ba59",
+    "validation/cr2450-checks/bounded-routing-migration.log": "539165e04a8cfa214184d45e7d6cec185963740f4b1f4faa21e7582dd1e626b9",
+    "validation/cr2450-checks/cad-build.log": "b787ec962e7a621b0372e54098b05e24fa2a7b8e17b327a87b495df6592b840e",
+    "validation/cr2450-checks/cad-renders.log": "ddba044d99e667d8c738a156678da8c3df24a99415457cb32ddd6a534413bee0",
+    "validation/cr2450-checks/circuit-netlist.log": "577028597227364187a8bd9f6f498468942061124d5711d04e54e4e033944730",
+    "validation/cr2450-checks/circuit-pin_specification.log": "6b1891d669cc7500612cf8bc9c0e22700688013a25bb89ad425f3de2ef1f4ad3",
+    "validation/cr2450-checks/circuit-placement.log": "20097b14214b536311c4458c4db741502479344c64ccf98cf23e710c83ad88a9",
+    "validation/cr2450-checks/circuit-schematic-placement.log": "95d2b65cb96d09b5ea962bf4c03c71f575364727a097ac5b76acfa805c82050c",
+    "validation/cr2450-checks/circuit-shorts.log": "f9c9b7eb8f8c0576ce21a9c3a7d8ff791c6ae6f566c0be7a00d22b558d8b2386",
+    "validation/cr2450-checks/circuit-source.log": "6b1891d669cc7500612cf8bc9c0e22700688013a25bb89ad425f3de2ef1f4ad3",
+    "validation/cr2450-checks/cloud-prepare.log": "838f60d70995964e3d7d54c46b17fa31941891c42e60402144c5aace8f8f96df",
+    "validation/cr2450-checks/cloud-restore.log": "0afd879941bba821c9578b3b5e6d121c6bc11125e254b4059ce3f4da89fc3c2b",
+    "validation/cr2450-checks/continuous-insertion.log": "a61cd7f2e2da4833930818b61afb77331462f4937e4af4c3368efa46544a7b7c",
+    "validation/cr2450-checks/courtyard-projection.log": "dfb3455e0dae7ccb96429d063dec4b1e48624501733bd10f6534008b836645a1",
+    "validation/cr2450-checks/electrical-preservation.log": "a975511f3d1f4a68bf644c47697aabc1b5390d6db30f8d0761e21fc64cf98708",
+    "validation/cr2450-checks/fit-coupons.log": "34f49537fde55de42fdafbe9cbc09b1b1d7e6237e24d421c5bfbb72c1ce1567c",
+    "validation/cr2450-checks/fixture.log": "9915cdd5d29b1dc265ae1e4407c94a5a19d75c5d413f95bc6b704bb12b1389df",
+    "validation/cr2450-checks/ground-copper-regions.log": "e87056295ba8017633302f25ff3f9de596aac02f2521a8b767412c815330241a",
+    "validation/cr2450-checks/holder-body.log": "00be49ac90df1c138703de382adc152ffb1b6c4ecac2637c9a8433c8d59d9c77",
+    "validation/cr2450-checks/import-provenance.log": "5fd76ba2f6ef8df986abcae50867cf2774d2420d59df66740765dfa6dab5a41e",
+    "validation/cr2450-checks/jst-clearance.log": "07d780fe5b572a634234ab650b2fa2b75532d1f94da4dc51ce413304eeb1da91",
+    "validation/cr2450-checks/model-detail.log": "abecf194228379a0dae08232d5408e059b8d0a1049abd7a56291c4029db84ae3",
+    "validation/cr2450-checks/model-export.log": "467d9a2af619e0e2de6b7c4b6e04a834f92e61541a04a1c3224ff60e10238387",
+    "validation/cr2450-checks/native-display.log": "e4cb45366ebbd4207ff2a8419d3535f2e8e87c608b3420c2a51f20fda5f8b086",
+    "validation/cr2450-checks/pcb-holes.log": "d8ac6e1b9f56fe475c235163e62d694ef9107b404bf026a17e75145aab5af4dc",
+    "validation/cr2450-checks/preliminary-circuit-build.log": "aa8197d4038c43e52937a86397efc6bb04cb5d295c49cb423e1f33248aeceebe",
+    "validation/cr2450-checks/programming.log": "c374764c8c767c98bc5c65082b68eb3c6e6f98687eba9492248d931ead66892b",
+    "validation/cr2450-checks/regressions19.log": "d434fed44d6e1582e879598fb552df2a5418fbb2e244ff76c14ab0330766778c",
+    "validation/cr2450-checks/reproducible-install.log": "5dfbaf25669290bdacfdff020ba45df96188cc57f23854f5e947045a2ff23216",
+    "validation/cr2450-checks/ring-seat.log": "6a1eb3bf62887310a0c8542592186e31ea3a93ab9d4da7968fd4b3e7e8524f84",
+    "validation/cr2450-checks/site-build.log": "00d2cb931f7c9c4e56b071f042649adcd7e8d808b0193d48ad880ea7de588a17",
+    "validation/cr2450-checks/snapshot-build.log": "0d2996f4dc02ed5d8aa680e1cf7931338bbcdb6ba92614d3c5a9c64f2eef16c6",
+    "validation/cr2450-checks/source-build.log": "ccf0f3b5b5dc429b9e781b9d505c66809e60fa73028e75a48fc22a7ab5a197dd",
+    "validation/cr2450-checks/toolpath-render.log": "40c834e3a5e0ffb931c92da460955faec5c3fb4b653483a0caeaea3c21372fb0",
+    "validation/cr2450-checks/typescript.log": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92",
+    "validation/cr2450-checks/wall-sections.log": "1892bf8319410ac9866464b1d1e1ff4ad199e5f9a452c4f4059a1bef9f841430"
+  }
+}

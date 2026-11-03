@@ -55,16 +55,16 @@ for x,y in supports:wall=wall.cut(disk(4.4,1.8,2.3,x,y))
 base=base.fuse(wall)
 pcb_fast=[]
 for index,(x,y) in enumerate(mounts):
- post=disk(2.25,1.4,pz-1.4,x,y)
+ post=disk(M['post_radius_mm'],1.4,pz-1.4,x,y).fuse(disk(M['foot_radius_mm'],1.4,.4,x,y))
  # Two short, rigid locating collars keep the PCB centered inside the fixed bearing shaft.
  # They never flex or retain the board; the purchased nylon screws do that.
- if index in [0,2]:post=post.fuse(disk(1.4,pz,.5,x,y))
+ if M['collar_height_mm']>0 and index in [0,2]:post=post.fuse(disk(1.4,pz,M['collar_height_mm'],x,y))
  post=post.cut(disk(.8,pz-5,5.6,x,y));base=base.fuse(post)
  if index in pcb_screw_indices:pcb_fast.append(screw(.98,4,1.9,1.3,nylon=True).translate((x,y,pt)))
 # Broad, rigid webs replace the former clearance-fit guide posts and fasteners.
 # The old carrier boss envelope is preserved around the battery holder.
 for x,y in supports:
- base=base.fuse(disk(4.,1.4,.8,x,y),disk(2.5,2.,1.2,x,y))
+ base=base.fuse(disk(G['web_foot_radius_mm'],1.4,G['web_foot_height_mm'],x,y),disk(G['web_stem_radius_mm'],G['web_stem_bottom_z_mm'],G['web_stem_height_mm'],x,y))
 # Base and tray share a material and have no service separation. Merge them,
 # fill their former assembly clearances, and preserve all functional pockets.
 interface_fill=ring(20.85,28.2,.79,2.36)
@@ -77,7 +77,7 @@ base=base.clean()
 print('Building fixed bearing shaft, coarse inner-race nut and outer-race retainer...',flush=True)
 fixed_support=ring(18.65,B['shaft_diameter_mm']/2,5.,bt-5.)
 fixed_support=fixed_support.fuse(ring(18.65,B['inner_shoulder_outer_radius_mm'],5.,bz-5.))
-for x,y in supports:fixed_support=fixed_support.fuse(disk(4.,3.,bz-3.,x,y))
+for x,y in supports:fixed_support=fixed_support.fuse(disk(G['web_head_radius_mm'],3.,bz-3.,x,y))
 # Real helical threads. The female groove has radial and flank clearance.
 thread_start=bt+.05;thread_height=2.2;root_r=N['thread_root_radius_mm']
 def ridge(clearance=0):
@@ -150,8 +150,9 @@ for style in styles:
  clear(caps[style],screw_envelope,style+' finished cap/screw envelopes')
 pcb=disk(P['pcb_diameter']/2,pz,P['pcb_thickness'])
 for x,y in mounts:pcb=pcb.cut(disk(M['hole_diameter_mm']/2,pz-.1,P['pcb_thickness']+.2,x,y))
-holder=cq.importers.importStep(str(HERE/'imports/holder.step')).val().translate((0,0,.01)).rotate((0,0,0),(0,1,0),180).translate((-1.2,0,pz))
-cell,cell_parts=coin_cell(pz-4.7);sensor=box(.824,1.316,pt,.5)
+cell,cell_parts=coin_cell(P['battery']['cell_bottom_z_mm'],P['battery']['standard'])
+cx,cy=P['battery']['cell_center_mm'];cell=cell.translate((cx,cy,0));cell_parts=[(label,shape.translate((cx,cy,0)),color,finish) for label,shape,color,finish in cell_parts]
+sensor=box(.824,1.316,pt,.5)
 circuit=json.loads((ROOT/'published.circuit.json').read_text())
 # Place the same supplier STEP models used by the native electronic preview.
 # Model origin is subtracted before XYZ rotation and board-space translation.
