@@ -53,11 +53,7 @@ jobs:
           cp firmware/build/firmware-build-manifest.json firmware/build/delivery/
           cp firmware/tools/flash.py firmware/tools/verify_build.py firmware/tools/client.py firmware/tools/requirements-client.txt firmware/build/delivery/
           cp firmware/README.md PROGRAMMING.md ASSEMBLY.md firmware/build/delivery/
-          mkdir -p firmware/build/delivery/licenses
-          cp zephyr/LICENSE firmware/build/delivery/licenses/Zephyr-LICENSE
-          cp modules/hal/cmsis/LICENSE.txt firmware/build/delivery/licenses/CMSIS-LICENSE
-          cp modules/hal/nordic/nrfx/LICENSE firmware/build/delivery/licenses/nrfx-LICENSE
-          cp modules/crypto/tinycrypt/LICENSE firmware/build/delivery/licenses/TinyCrypt-LICENSE
+          python3 firmware/tools/package_licenses.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: fidget-counter-revc-${{ github.sha }}

@@ -92,8 +92,9 @@ def main():
                    "physical_tested":False, "zephyr_commit":"19aeae80fac00aa3310ef9a26d08fab4502e812f",
                    "compiler":subprocess.check_output(["arm-none-eabi-gcc","--version"],text=True).splitlines()[0],
                    "source_commit":subprocess.check_output(["git","rev-parse","HEAD"],cwd=APP,text=True).strip(),
-                   "files":{p.name:hashlib.sha256(p.read_bytes()).hexdigest()
-                            for p in [hexpath,elf,build/"zephyr/.config",build/"zephyr/zephyr.dts"]}})
+                   "files":{name:hashlib.sha256(p.read_bytes()).hexdigest() for name,p in
+                            [("fidget-counter-revc.hex",hexpath),("fidget-counter-revc.elf",elf),
+                             ("build.config",build/"zephyr/.config"),("zephyr.dts",build/"zephyr/zephyr.dts")]}})
     (build / "firmware-build-manifest.json").write_text(json.dumps(result,indent=2)+"\n")
     print(json.dumps(result,indent=2))
 if __name__ == "__main__": main()
