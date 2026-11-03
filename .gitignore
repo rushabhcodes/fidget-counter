@@ -38,3 +38,8 @@ checks/
 # Local publishing diagnostics
 .local-validation/
 publish-validation.log
+
+# Pinned west firmware workspace
+/.west/
+/zephyr/
+/modules/

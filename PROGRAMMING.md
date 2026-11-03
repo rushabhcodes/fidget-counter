@@ -1,4 +1,4 @@
-> Current RevC is rotation-only. SW1, R5, C17 and CAP_PRESS are removed; P0.29 is explicitly unused. The five-pin programmer and R4/nRESET remain. No firmware or physical count-clear input is supplied.
+> Current RevC is rotation-only. SW1, R5, C17 and CAP_PRESS are removed; P0.29 is explicitly unused. The five-pin programmer and R4/nRESET remain. Pilot firmware and software count reset are in firmware/; no physical count-clear input is fitted.
 
 # V5 enclosure access update
 
@@ -14,7 +14,7 @@ Use a **straight-through five-way JST-SH cable** with **SHR-05V-S-B** mating hou
 
 **Select 3V3 and remove the CR2450 before connecting the programmer.** J3 pin 1 follows the programmer's **3V3 / 5V selector** and is directly connected to this board's VBAT rail; it is not a voltage-sense input. The 5V setting must never be used with this board. Disconnect the cable before changing the selector. The programmer's SWD/reset logic is fixed at 3.3 V. Leave programmer J1, J2 and J4 empty while using J3.
 
-This repository contains the PCB design, **no application firmware, bootloader or flashable HEX**. Obtain a complete firmware image for this board before flashing.
+The repository now includes [RevC pilot firmware](firmware/README.md), a custom nRF52810 board definition, tests and a CI build. Download the complete HEX only from a successful Firmware run for the intended commit, or build it using that guide. It includes Zephyr's BLE controller and application; no separate SoftDevice or bootloader is needed. Physical flashing and application acceptance remain unverified until tested on a populated unit.
 
 ## Access and identify the contacts
 
@@ -44,6 +44,10 @@ The marked pin 1 is on the left in this PCB top view. The plug's mating-face vie
 
 The two mechanical solder tabs are not additional signal contacts. There are no programming alignment holes or bare programming test-pad row. The V5 fitted-header clearance is regenerated against the actual supplier STEP and a conservative 2.92 mm-high courtyard envelope through the full 360-degree rotation sweep at its fixed height. See `validation/jst-connector-clearance.json` for measured CAD results. Cable mating and printed tolerances still need a prototype.
 
+## Program the supplied pilot firmware
+
+After building or downloading the verified image, use the supplied `firmware/tools/flash.py` (or `flash.py` beside an extracted artifact). It checks the HEX address range/vector table and nRF52810 identity before write/verify/reset. See [the exact command and build instructions](firmware/README.md#flash-before-assembly). The manual OpenOCD/nRF Util alternatives below remain available.
+
 ## Power and flash with the linked programmer
 
 1. Disconnect programmer USB, remove the CR2450 and disconnect any bench supply.
@@ -67,7 +71,7 @@ openocd -f interface/cmsis-dap.cfg \
 
 The `program … verify reset exit` sequence is from [OpenOCD's programming guide](https://openocd.org/doc/html/Flash-Programming.html). The [0.12.0 nRF52 configuration](https://github.com/openocd-org/openocd/blob/v0.12.0/tcl/target/nrf52.cfg) uses a software system reset, so initial flashing does not depend on P0.21 already being configured as nRESET. The command erases sectors that it writes; it does not promise a complete chip erase or preservation of stored calibration/counts. A deliberate full erase or access-protection recovery requires the appropriate tool procedure and loses existing data. Require successful write **and verify** output.
 
-Disconnect USB before unplugging the JST cable. Refit the cell only after disconnecting programmer power. Power-cycle the board and verify BLE, angle sensing and count reset with suitable application firmware. No physical target has been flashed as part of this layout change.
+Disconnect USB before unplugging the JST cable. Refit the cell only after disconnecting programmer power. Power-cycle the board and verify BLE, angle sensing and full-turn counting/reset using [the assembly acceptance steps](ASSEMBLY.md#7-check-the-finished-device). No physical target has been flashed as part of this layout change.
 
 ## Optional standard Cortex / J-Link adapter
 
@@ -147,4 +151,4 @@ After successful recovery, rerun the complete-image programming command above. I
 
 ## Verification status
 
-Updated for1.0.28, tscircuit0.0.3060 and the two-part push-fit enclosure. The exact five-pin side-entry footprint/pinout comes from @tsci/tscircuit.standard-jst-programmer@0.8.0; its C136657 models remain cached under imports/SM05B_SRSS_TB. See validation/programming-interface.json for pinout, stencil,0.13mm connector clearances and clock constraints, and validation/jst-connector-clearance.json for all11 caps. The fresh-routing guard retains all28 fitted geometries, real electrical pin attributes and actual pin-net membership. Actual cable fit, connector retention, flashing and application firmware still need a populated prototype.
+Updated for1.0.28, tscircuit0.0.3060 and the two-part push-fit enclosure. The exact five-pin side-entry footprint/pinout comes from @tsci/tscircuit.standard-jst-programmer@0.8.0; its C136657 models remain cached under imports/SM05B_SRSS_TB. See validation/programming-interface.json for pinout, stencil,0.13mm connector clearances and clock constraints, and validation/jst-connector-clearance.json for all11 caps. The fresh-routing guard retains all28 fitted geometries, real electrical pin attributes and actual pin-net membership. Actual cable fit, connector retention, flashing and pilot firmware behavior still need a populated prototype.

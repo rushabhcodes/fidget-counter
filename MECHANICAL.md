@@ -14,9 +14,11 @@ This is a **coupon-calibrated fit-test pilot**, not a qualified press fit. It ha
 
 ## Assembly
 
+Use the illustrated [step-by-step assembly and acceptance guide](ASSEMBLY.md). The sequence below is the mechanical summary.
+
 1. Print, clean and measure the two product parts after coupon calibration. Remove supports from the ring pocket and bearing shoulder. Confirm seating and a light hand-only push fit with the actual bearing. Reject and recalibrate an excessively tight or loose fit; do not hammer, clamp the complete assembly, or transmit pressing force through the balls/shields.
 2. Verify the ring's dimensions and phone-facing polarity. Bond it into the base's integrated seat with the specified nominal 0.10 mm bondline. Bond the Ø5×1.5 mm diametric encoder magnet against the cap's integral Z15.4 stop using sidewall adhesive, with no axial glue layer. Cure both joints before loading them.
-3. Program and inspect the PCBA before enclosure assembly; firmware is not supplied. Remove the CR2450 before powered programming. Inspect the soldered C7525448 holder and insert the cell with verified polarity.
+3. Program and inspect the PCBA before enclosure assembly; use the [RevC pilot firmware](firmware/README.md) and require flash verification. Remove the CR2450 before powered programming. Inspect the soldered C7525448 holder and insert the cell with verified polarity.
 4. Lower the PCBA/holder/cell through the shaft onto four support posts. Align the four Ø2.2 mm drills at R16.6. Fit **two opposite M2×4 nylon screws** at 45°/225°, with head Ø3.8×1.3 mm maximum and no conductive washers. Qualify screw torque, post strength and board deflection.
 5. With the cap's bearing seat supported, seat the bearing fully into the cap by hand. Lower the cap/bearing onto the fixed shaft, pushing lightly and evenly near the axis. The nominal fits are acceptable only if this hand-only operation does not load or damage the races. A high-force operation requires a revised fit and appropriate race-specific tooling, not extra force on the cap.
 6. Confirm free rotation, seating, axial retention, wobble and both magnet bonds. Measure pull-off force and phone/case attachment loads. Test Hall/count/BLE with bearing, ring and phone present. No push/reset action remains.

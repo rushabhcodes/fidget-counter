@@ -1,0 +1,61 @@
+name: Firmware
+on:
+  push:
+    branches: [codex/bearing-supported-enclosure]
+    paths:
+      - "firmware/**"
+      - ".github/workflows/firmware.yml"
+      - "index.circuit.tsx"
+  pull_request:
+    paths:
+      - "firmware/**"
+      - ".github/workflows/firmware.yml"
+      - "index.circuit.tsx"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      ZEPHYR_TOOLCHAIN_VARIANT: gnuarmemb
+      GNUARMEMB_TOOLCHAIN_PATH: /usr
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Native logic tests and host tools
+        run: sh firmware/tools/test.sh
+      - name: Install build prerequisites
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build gperf device-tree-compiler gcc-arm-none-eabi libnewlib-arm-none-eabi python3-venv
+          python3 -m venv "$RUNNER_TEMP/fidget-venv"
+          "$RUNNER_TEMP/fidget-venv/bin/pip" install west==1.4.0
+          echo "$RUNNER_TEMP/fidget-venv/bin" >> "$GITHUB_PATH"
+      - name: Fetch pinned LTS sources and modules
+        run: |
+          west init -l firmware
+          west update --narrow -o=--depth=1
+          west zephyr-export
+          pip install -r zephyr/scripts/requirements-base.txt
+      - name: Build complete nRF52810 image
+        run: west build -b fidget_counter firmware -d firmware/build -p always
+      - name: Check board, regulator, memory and complete HEX
+        run: python3 firmware/tools/verify_build.py firmware/build
+      - name: Package verified image
+        run: |
+          mkdir -p firmware/build/delivery
+          cp firmware/build/zephyr/zephyr.hex firmware/build/delivery/fidget-counter-revc.hex
+          cp firmware/build/zephyr/zephyr.elf firmware/build/delivery/fidget-counter-revc.elf
+          cp firmware/build/zephyr/zephyr.map firmware/build/delivery/fidget-counter-revc.map
+          cp firmware/build/zephyr/.config firmware/build/delivery/build.config
+          cp firmware/build/zephyr/zephyr.dts firmware/build/delivery/zephyr.dts
+          cp firmware/build/firmware-build-manifest.json firmware/build/delivery/
+          cp firmware/tools/flash.py firmware/tools/verify_build.py firmware/tools/client.py firmware/tools/requirements-client.txt firmware/build/delivery/
+          cp firmware/README.md PROGRAMMING.md ASSEMBLY.md firmware/build/delivery/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fidget-counter-revc-${{ github.sha }}
+          path: firmware/build/delivery/
+          if-no-files-found: error
+          retention-days: 90

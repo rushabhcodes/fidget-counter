@@ -1,0 +1,59 @@
+/dts-v1/;
+#include <nordic/nrf52810_qfaa.dtsi>
+#include <zephyr/dt-bindings/gpio/gpio.h>
+#include <zephyr/dt-bindings/pinctrl/nrf-pinctrl.h>
+
+/ {
+	model = "Fidget Counter RevC CR2450";
+	compatible = "fidget-counter,revc";
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,code-partition = &app_partition;
+	};
+};
+
+&gpio0 { status = "okay"; };
+&gpiote { status = "okay"; };
+&uicr { gpio-as-nreset; };
+
+&pinctrl {
+	fidget_i2c_default: fidget_i2c_default {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SCL, 0, 26)>,
+				<NRF_PSEL(TWIM_SDA, 0, 27)>;
+		};
+	};
+	fidget_i2c_sleep: fidget_i2c_sleep {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SCL, 0, 26)>,
+				<NRF_PSEL(TWIM_SDA, 0, 27)>;
+			low-power-enable;
+		};
+	};
+};
+
+&i2c0 {
+	compatible = "nordic,nrf-twim";
+	status = "okay";
+	clock-frequency = <100000>;
+	pinctrl-0 = <&fidget_i2c_default>;
+	pinctrl-1 = <&fidget_i2c_sleep>;
+	pinctrl-names = "default", "sleep";
+};
+
+&flash0 {
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		app_partition: partition@0 {
+			label = "application";
+			reg = <0x00000000 0x0002e000>;
+		};
+		storage_partition: partition@2e000 {
+			label = "storage";
+			reg = <0x0002e000 0x00002000>;
+		};
+	};
+};

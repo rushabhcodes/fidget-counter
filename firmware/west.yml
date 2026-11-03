@@ -1,0 +1,15 @@
+manifest:
+  version: "0.13"
+  remotes:
+    - name: zephyrproject
+      url-base: https://github.com/zephyrproject-rtos
+  projects:
+    - name: zephyr
+      remote: zephyrproject
+      revision: 19aeae80fac00aa3310ef9a26d08fab4502e812f
+      import:
+        name-allowlist:
+          - cmsis
+          - hal_nordic
+  self:
+    path: firmware
