@@ -24,14 +24,14 @@
   },
   "V2_print": {
     "file": "manufacturing/fidget-counter-V2-magnets-print-test-1.0.31.zip",
-    "sha256": "7124e405db6f4f182d07fa77c6a9794c5fde081d81a2f15f5852ef8de23b6994",
-    "bytes": 4098071,
+    "sha256": "6543c8521473e5c4e89edd39d416bfebba146f8528a1ce17f985f5e73d945ca2",
+    "bytes": 4098135,
     "members": {
       "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Magnet_Carrier_V2.stl": "4cc527c134e2c709adfb49c6883c152ed0876c8b1418afc85ac582b04b87a765",
       "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Base_V2_Discrete.stl": "64d4d9c36c3eae6f50e44a797b5aa9f384fad380e79248344c70d9a8fda45089",
       "mechanical/variants/V2_discrete_magnets/generated/STEP/Base_V2_Discrete.step": "c69f655bda0623dd31736a03d092cc8c76db73b8061113e432a3038ea93784f2",
       "mechanical/variants/V2_discrete_magnets/generated/STEP/Magnet_Carrier_V2.step": "372a6edb596c7e014dd7f4eed73dc0f18987a19fc005913d33f744c3c7be9c82",
-      "mechanical/variants/V2_discrete_magnets/README.md": "bf581158a9ed4f47317ae52d44a3a9996999b7ec2d3fc6ed888c35c2569817e4",
+      "mechanical/variants/V2_discrete_magnets/README.md": "e2f25084da72f9bc2e2db2f88e148bb39402fcb7fc1be9ba593176a59cf8e648",
       "mechanical/variants/V2_discrete_magnets/parameters.json": "3201c98f79cfa3c8a7f3d2147ed67686c6073fc9455ff845972accba30277378",
       "mechanical/variants/V2_discrete_magnets/BOM.csv": "2702e84ec8d83503809b8554a4789b4c87eea2b1c1321e1901189d88cba607b5",
       "mechanical/variants/V2_discrete_magnets/polarity.svg": "58be248d31a17c81920e67a5bf54f7ee3c410c786464170d4e5bf136be1e8fa3",
@@ -84,10 +84,10 @@
   },
   "V2_CAD": {
     "file": "manufacturing/fidget-counter-V2-magnets-CAD-1.0.31.zip",
-    "sha256": "9e26a38138d0ad7e84e43d788f3801afa78325c787132475803f9a4ffbc78364",
-    "bytes": 25894965,
+    "sha256": "eb19466b948d1da99e23c76cf1aa5a189b2b38da915b3860a707616c9152c111",
+    "bytes": 25895029,
     "members": {
-      "mechanical/variants/V2_discrete_magnets/README.md": "bf581158a9ed4f47317ae52d44a3a9996999b7ec2d3fc6ed888c35c2569817e4",
+      "mechanical/variants/V2_discrete_magnets/README.md": "e2f25084da72f9bc2e2db2f88e148bb39402fcb7fc1be9ba593176a59cf8e648",
       "mechanical/variants/V2_discrete_magnets/parameters.json": "3201c98f79cfa3c8a7f3d2147ed67686c6073fc9455ff845972accba30277378",
       "mechanical/variants/V2_discrete_magnets/BOM.csv": "2702e84ec8d83503809b8554a4789b4c87eea2b1c1321e1901189d88cba607b5",
       "mechanical/variants/V2_discrete_magnets/polarity.svg": "58be248d31a17c81920e67a5bf54f7ee3c410c786464170d4e5bf136be1e8fa3",
