@@ -25,8 +25,8 @@
     "press": 0
   },
   "sha256": {
-    "mechanical/enclosure-parameters.json": "e5da8cfa16869ac991ac20ce3fa1c2cf085a5b4175a2df89542d705df4b7fde7",
-    "mechanical/STEP_Parts/Stationary_Base.step": "685d55c90b99e0384ffb4f1d663f1bb45a573afcab399579f41044ab77a7ffae",
+    "mechanical/enclosure-parameters.json": "b7e4bb4603524504afd77bc3261a1efd4a078ff5be5dccd616131de263bf2eda",
+    "mechanical/STEP_Parts/Stationary_Base.step": "b0fe627d2eb5e52c134046a62da3dcf38f65d2214f84f1c02e9aae8ef259d254",
     "mechanical/Circuit_Models/MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960"
   },
   "unqualified": [
@@ -211,5 +211,5 @@
       "rigid_intersections": 0
     }
   ],
-  "source_scene_sha256": "0a42bd925423a9c71f415a1f232d5c17d012168e65844acca19550c0b342a26d"
+  "source_scene_sha256": "04c824fe408811e16b4c029d2f4667a6af34aa566f928d95abe5801b745b4bf4"
 }

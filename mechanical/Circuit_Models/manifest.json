@@ -98,10 +98,11 @@
       "thread_clearance_mm": 0.15,
       "bottom_z_mm": 13.1,
       "top_z_mm": 15.6,
-      "bore_radius_mm": 18.2,
       "thread_root_radius_mm": 19.5,
       "outer_radius_mm": 21.6,
-      "tool_notch_depth_mm": 0.6
+      "tool_notch_depth_mm": 0.6,
+      "shaft_bore_radius_mm": 18.65,
+      "assembly_note": "Continuous37.3mm fixed-shaft throat gives0.4mm radial clearance for36.5mm PCB insertion; nut is fitted afterward"
     },
     "attachment_ring": {
       "supplier": "MagnetPrint Hub N52 MagSafe Magnet Ring Kit",
@@ -188,7 +189,7 @@
       {
         "label": "Stationary_Base",
         "first_face": 0,
-        "face_count": 12710,
+        "face_count": 12322,
         "color": [
           0.34,
           0.4,
@@ -522,7 +523,7 @@
     "Cap_four_leaf_clover.glb": "de0aa7358fa8304cb6b26be4bd1520c7c5542955c661953f1696a4884fee97ca",
     "Cell.glb": "8c196ea9390b97c73a4a1c4bcfa5a65918f8dca04c098c93f3da05244ce667b7",
     "Magnet.glb": "0895b675e4934bae27ad2aebf4479536c4c13940c7167ad2b211583e61da7903",
-    "Stationary_Base.glb": "bdbc8e3ccf0d84bb6cb56f7f61a9150b6b18ccb5ef7c49330073de52de848d3c",
+    "Stationary_Base.glb": "5ccf72f1fc590462dd11a928a555034aee43dd88ef896e5db19b7c06bd9c802b",
     "Cap_rounded_triangle.glb": "7f845fb28ae59604f08de9254bbc82efd3514ff26b9ca0e3572651c9a44b55c3",
     "Cap_Retainer_Screws.glb": "cfb636aa893fa1497305b8c9fcdaf597634d1aaaadfb8b1162a4ddfae3b99e4f",
     "Cap_turbine_wheel.glb": "0279857127b1cbac76c8c5a37c20718f044b7118974d45dfe47a65a2cc518c98",
@@ -561,7 +562,7 @@
     "Magnet.mtl": "4ef01bf49aa7af282c154d159281d5eb585f6c40590821a3ebb9cb6711069035",
     "Magnet.obj": "eb5b1e417f03a70051e90e4e12e23cadbdd693f158ea54e8336b02bf3a044bcc",
     "Stationary_Base.mtl": "8870e36cfea3936b83a7b655a335047c337d76fff599a4feac7eb4576db5ffb1",
-    "Stationary_Base.obj": "d4b83706be8dee52b53533a2e1053f243a00834ecf12740312b7a5ac26131109",
+    "Stationary_Base.obj": "e0e8ac7532b60ed6049f880cb035aec07d52bdea32393bbbc04b3ef5366ef7e5",
     "Outer_Race_Retainer.mtl": "553b47151257d3d2cd75b9c86dec37135b6acd3c963725e05f18c53f29573687",
     "Inner_Race_Nut.obj": "17ff123736fc17df88d5b913ca1cab896a393e2b2b655b3aeff3a76ae61ef647",
     "Cap_Retainer_Screws.mtl": "a0e306e59efc5f65d9fa1e6f2a14f54c4838560d4a7dff3b344ef774b0264cae",

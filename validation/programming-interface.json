@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-02T20:21:40.271Z",
+  "checkedAt": "2026-11-03T06:40:31.906Z",
   "passed": true,
   "sourcePackage": "@tsci/tscircuit.standard-jst-programmer@0.8.0",
   "reference": "https://github.com/tscircuit/standard-jst-programmer",
@@ -112,7 +112,7 @@
     "maxY": -10.288118299999997
   },
   "courtyardClear": true,
-  "circuitSha256": "cba73dbde6089d84d0578fca3e40f8feff739864416dca9fcb0c76c6a884b567",
+  "circuitSha256": "0928b0cfc9de5e205cc559a7e827f9d49ab4217f49272664154412bb1a90cede",
   "physicalConnectorFitTested": false,
   "physicalProgrammingTested": false
 }

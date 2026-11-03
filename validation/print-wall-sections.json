@@ -54,6 +54,11 @@
       "passed": true
     },
     {
+      "section": "Continuous PCB throat and male thread root wall0.85mm",
+      "sampled_material_points": 72,
+      "passed": true
+    },
+    {
       "section": "Continuous ring bonding roof1.5mm",
       "sampled_material_points": 72,
       "passed": true
@@ -111,11 +116,11 @@
     "Section sampling is not a global minimum-thickness proof of all decorative features"
   ],
   "source_sha256": {
-    "mechanical/export/Tooling/Nest_Left.step": "1454494213e382c155307fb34fbd9a06d492f84bfc79a6d27b3d992da6d33932",
-    "mechanical/export/Tooling/Nest_Right.step": "89afdf286fbafa7dc165c0891fb1f33242ad5e031e340d849f496c7a6b8a761b",
-    "mechanical/STEP_Parts/Stationary_Base.step": "685d55c90b99e0384ffb4f1d663f1bb45a573afcab399579f41044ab77a7ffae",
-    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "6055712119f9e974e1592c361dd66c092ba9bdd398313f4acb93b4941b46985f",
-    "mechanical/printing/check_wall_sections.py": "5e221e7e51c5c238cf3edca6c864843b93621eb6169dd6fc44777583a0dea45d",
-    "mechanical/enclosure-parameters.json": "e5da8cfa16869ac991ac20ce3fa1c2cf085a5b4175a2df89542d705df4b7fde7"
+    "mechanical/export/Tooling/Nest_Left.step": "c709acae9f2a5d82fc5ae4ce143454bcbd0b9af4e90c987b9abf507910a6c20f",
+    "mechanical/export/Tooling/Nest_Right.step": "b19608c45f01f6e9c2adde98b71326b444e7a82836b6b0a1b9982cc675d1304b",
+    "mechanical/STEP_Parts/Stationary_Base.step": "b0fe627d2eb5e52c134046a62da3dcf38f65d2214f84f1c02e9aae8ef259d254",
+    "mechanical/STEP_Parts/Outer_Race_Retainer.step": "b35d53fc036162e7e0deb24cccb13f2224cb9a069fd683ab3e003f5bc6f64596",
+    "mechanical/printing/check_wall_sections.py": "7f44281f711a60d5d6fa3d8fad4716d3869726dd731661f02b669d2aee1fbf9a",
+    "mechanical/enclosure-parameters.json": "b7e4bb4603524504afd77bc3261a1efd4a078ff5be5dccd616131de263bf2eda"
   }
 }

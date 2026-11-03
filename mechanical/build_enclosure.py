@@ -84,7 +84,9 @@ def ridge(clearance=0):
  path=cq.Wire.makeHelix(N['pitch_mm'],thread_height,root_r)
  w=.42+clearance;outer=root_r+N['thread_depth_mm']+clearance
  return cq.Workplane('XZ').polyline([(root_r-.08,-w),(outer,-.16-clearance),(outer,.16+clearance),(root_r-.08,w)]).close().sweep(path,isFrenet=True).val().translate((0,0,thread_start))
-neck=ring(N['bore_radius_mm'],root_r,bt-.05,2.55).fuse(ridge()).intersect(disk(20.,bt,2.5)).clean()
+assert N['shaft_bore_radius_mm']-P['pcb_diameter']/2>=.3,'PCB cannot pass through fixed shaft throat with assembly clearance'
+assert root_r-N['shaft_bore_radius_mm']>=.8,'Insufficient male thread root wall'
+neck=ring(N['shaft_bore_radius_mm'],root_r,bt-.05,2.55).fuse(ridge()).intersect(disk(20.,bt,2.5)).clean()
 base=base.fuse(fixed_support,neck).clean()
 nut=ring(root_r+.05,N['outer_radius_mm'],bt+.3,2.2)
 nut=nut.fuse(ring(root_r+.05,B['inner_shoulder_outer_radius_mm'],bt,.3))

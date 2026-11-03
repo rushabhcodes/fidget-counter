@@ -12,6 +12,44 @@ The base remains Ø58 mm and the cap top remains at Z17.2 mm (17.0 mm above the 
 
 Start with [printing instructions](mechanical/printing/PRINTING.md), the [print manifest](mechanical/print-ready-manifest.json), [assembly guide](MECHANICAL.md), [mechanical BOM](mechanical/MECHANICAL_BOM.csv), [pilot review](mechanical/MANUFACTURING_REVIEW.md) and [programming guide](PROGRAMMING.md). Print one circular fit prototype and its coupons before a 10–50-unit batch. CAD and slicing do not prove printed fit, thread strength, adhesive retention, magnetic sensing or RF performance.
 
+## What to buy
+
+Quantities below are **per device with one cap**, except shared consumables and tools. Supplier links are examples checked on **3 November 2026**; stock, shipping to your country and pack quantities still need confirmation. Use the specified dimensions when comparing alternatives.
+
+**Battery status:** the active circuit and current fabrication BOM still use **CR2032**. The separate [CR2450 height study](mechanical/CR2450_HEIGHT_STUDY.md) verifies **0 mm additional exterior height in nominal CAD** (17.0 mm contact-face-to-top), with the PCB raised 2.5 mm internally. Its holder/cell fit and revised PCB are not released. Choose the battery row that matches the final PCB revision, rather than ordering both sizes.
+
+| Item | Quantity | Required specification | Supplier links and fit notes |
+| --- | ---: | --- | --- |
+| Custom assembled PCB | 1 | Ø36.5 × 1.0 mm PCB, with the 28 fitted components in [BOM.csv](BOM.csv) | [JLCPCB assembly service](https://jlcpcb.com/pcb-assembly). This is a custom fabrication/assembly quote, not a stock product. If all **FIT** rows are assembled, BT1's battery holder, J_DEBUG and the other electronics are already included; do not buy those again as loose mechanical parts. |
+| Thin-section bearing | 1 | **6808-ZZ / 61808-2Z, 40 × 52 × 7 mm**, metal shields | [India: SantEnt SKF 61808-2Z](https://store.santent.in/products/61808-2z-skf-ball-bearings) · [US: Bearings Direct 6808-ZZ](https://bearingsdirect.com/6808-zz-ball-bearing-40x52x7mm-shielded/). Confirm sample fit and drag; rubber-sealed 2RS variants need their own drag evaluation. |
+| MagSafe magnetic ring assembly | 1 | Current seat: **N52, OD54 × ID45.8 × 1.9 mm**, complete magnetic array with working face toward the phone | [Default reference: MagnetPrint Hub kit](https://magnetprinthub.com/products/magsafe-magnet-kit). [India alternative: Magneticks](https://www.magneticks.in/magsafe-magnetic-ring-13003978.html) lists a **1.0 mm** ring and requires a changed seat depth; it is not the current 1.9 mm part. See [ring sourcing](mechanical/MAGSAFE_RING_SOURCING.md). |
+| Encoder magnet | 1 per cap | **Ø5 × 1.5 mm, diametrically magnetized neodymium disc** | [BUYNEOMAGNETS exact-size diametric N38 example, 50-pack](https://www.buyneomagnets.com/p/5mm-x-1-5mm-diametrically-magnetized-neodymium-disc-magnet-n38-rare-earth-diametric-magnets-50-pack/). Size/pole-direction match the reference; magnetic grade and Hall performance still need sample testing. India delivery is unverified. Ordinary axially magnetized discs are not equivalent. |
+| Cap-retainer screws | 3 | **M2 × 12 mm countersunk**, head Ø3.8 mm maximum; countersunk length includes the head | [India: 3fparts DIN 965 example](https://3fparts.com/shop/m2-12mm-csk-phillips-countersunk-machine-screws-din-965-stainless-steel-304-a2-70). Check the purchased head profile and tip/lead against a printed sample; torque and pull-out strength remain unqualified. |
+| PCB screws | 2 | **M2 × 4 mm nylon**, head Ø3.8 mm maximum and height 1.3 mm maximum | [Vital Parts DIN 85, SPH85-M2-4-NY-N](https://www.vital-parts.co.uk/slotted-pan-head-nylon-screws-din-85/42809-sph85-m2-4-ny-n). This example is slotted; use a matching driver. UK supplier example; local equivalents must fit the same head envelope. No metal washer is specified. |
+| Battery for current PCB | 1 | **CR2032, 3 V primary lithium, 20 × 3.2 mm**, loose cell without solder tabs | [Adafruit CR2032](https://www.adafruit.com/product/654). It is installed after PCB assembly. The cell is separate from the soldered BT1 holder. |
+| Magnet adhesive | Small amount; shared pack | Compatible two-part adhesive for PETG and the magnet coating; ring bondline nominal 0.10 mm, encoder sidewall bond only | [RS India: LOCTITE EA 3430 clear epoxy example](https://in.rsdelivers.com/product/loctite/loctite-ea-3430-dc24ml/loctite-loctite-ea-3430-adhesive/2442021). **Coupon-test candidate**, not a qualified PETG bond specification. Check cure, adhesion and retention before choosing a batch adhesive. |
+| PETG filament or printing service | As needed | PETG; the provisional print profile assumes a 0.4 mm nozzle and 1.75 mm filament | [Prusament PETG example](https://www.prusa3d.com/product/prusament-petg-jet-black-1kg/). Quantity depends on cap style, supports and batch size. Print the four product parts from the [manifest](mechanical/print-ready-manifest.json); filament is unnecessary if a print service supplies the material. |
+
+The four printed product parts are **Stationary_Base, Inner_Race_Nut, Outer_Race_Retainer and one Cap**. The inner-race nut is printed, so no separate metal nut or heat-set insert is on this list. The reusable two-piece assembly nest and four fit coupons are separate prints. The rotation-only design has no return springs or push-button assembly to purchase.
+
+### Larger-battery option — not yet a purchasing release
+
+| Candidate item | Quantity | Reference | Status |
+| --- | ---: | --- | --- |
+| CR2450 cell | 1 | **3 V primary lithium, 24.5 × 5 mm**, Panasonic reference 620 mAh; [Panasonic India CR2450 pack](https://www.panasonic.com/in/consumer/battery/specialty-batteries/lithium-coin/cr-2450-5be.html) · [India retailer example](https://rajivelectronics.com/product/panasonic-cr2450-3v-lithium-coin-cell-battery/) | For the revised PCB/holder only. LIR2450 rechargeable cells are not substitutes for this 3 V circuit. |
+| CR2450 holder | 1, as a future PCBA part | [MYOUNG BS-24-B4AK014 / C964813](https://jlcpcb.com/partdetail/MYOUNG-BS_24B4AK014/C964813) | Placement-study candidate only. Its supplier cover model has an unresolved cell-volume conflict. It requires a different BT1 footprint and board mounts; do not order it as a drop-in part for the current PCB. Exact user-selected holder is still unconfirmed. |
+
+See [battery and assembly review](mechanical/BATTERY_AND_ASSEMBLY_REVIEW.md) for the current-cell decision and prototype limits. No larger-battery circuit release is claimed by this table.
+
+### Shared programming equipment
+
+| Item | Quantity for the bench | Link and requirement |
+| --- | ---: | --- |
+| Five-way JST-SH programming cable | 1 | [JST A05SR05SR30K152B, DigiKey India](https://www.digikey.in/en/products/detail/jst-sales-america-inc/A05SR05SR30K152B/6708507). Use the **B** candidate and verify continuity **1→1 through 5→5** before powering; the A variant is listed as reversed. |
+| Compatible SWD programmer and adapter | 1 setup | [Standard JST programmer v0.8.0 design](https://tscircuit--standard-jst-programmer-v0-8-0.tscircuit.app/#file=circuits%2Fprogrammer.circuit.tsx), which must itself be assembled/flashed, or a commercial [SEGGER J-Link BASE](https://www.segger.com/products/debug-probes/j-link/models/j-link-base/) with the adapter and target-power arrangement in [PROGRAMMING.md](PROGRAMMING.md). These are alternative setups, not two required purchases. |
+
+Program before enclosure assembly. Use the documented 3.3 V programming arrangement and remove the coin cell when the programmer supplies power. The project does not yet include application firmware. Precision screwdrivers and ordinary PCB-handling tools can be reused across the batch.
+
 ## Rebuild and validate
 
 Use the pinned Bun lockfile and Python requirements. With a working PrusaSlicer CLI:
@@ -22,8 +60,8 @@ bun run typecheck
 bun run check:routing
 bun test validation/import-provenance.test.mjs
 bun run build:source
-bun validation/check-rotation-only.mjs
 cp dist/index/circuit.json published.circuit.json
+bun validation/check-rotation-only.mjs
 python mechanical/build_enclosure.py --style all --assembly-style circular
 python mechanical/tooling/build_assembly_nest.py
 python mechanical/build_fit_coupons.py
@@ -32,14 +70,15 @@ python mechanical/printing/check_wall_sections.py
 python mechanical/printing/render_slices.py
 python mechanical/export_circuit_models.py
 bun run build:source
-bun validation/check-rotation-only.mjs
 cp dist/index/circuit.json published.circuit.json
+bun validation/check-rotation-only.mjs
 bun run build
 python validation/check-rotation-only-cad.py
 python validation/check-model-detail.py
 python validation/check-attachment-ring.py
 python validation/check-display-geometry.py
 python validation/check-pcb-mounts.py
+python validation/check-pcb-insertion.py
 python validation/check-jst-fit.py
 python validation/check-bearing-hardware.py
 bun validation/check-imports.mjs

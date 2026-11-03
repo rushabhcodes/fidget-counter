@@ -2,7 +2,7 @@
 
 # V5 enclosure access update
 
-For the current bearing enclosure, remove the three TOP cap-retainer screws, lift off the cap, unscrew the inner-race nut and remove the bearing. Remove the four nylon PCB screws and lift the PCB for cable or battery access. The V4 instructions about releasing printed latches below are superseded. Electrical pinout and programmer-power instructions remain valid.
+For the current bearing enclosure, remove the three TOP cap-retainer screws, lift off the cap, unscrew the inner-race nut and remove the bearing. Remove the two nylon PCB screws and lift the PCB for cable or battery access. The V4 instructions about releasing printed latches below are superseded. Electrical pinout and programmer-power instructions remain valid.
 
 ---
 
@@ -18,7 +18,7 @@ This repository contains the PCB design, **no application firmware, bootloader o
 
 ## Access and identify the contacts
 
-Program before enclosure assembly. For an assembled V5 device, remove the three top cap screws, lift off the cap, unscrew the inner-race nut and remove the bearing. Remove the four nylon PCB screws and lift the board with its holder; see [the V5 service guide](MECHANICAL.md). Remove the coin cell. J_DEBUG remains on the top face at (0, −13.3) mm with cable entry toward −Y. Lift the PCB for side-entry cable access, then disconnect the cable before reassembly.
+Program before enclosure assembly. For an assembled V5 device, remove the three top cap screws, lift off the cap, unscrew the inner-race nut and remove the bearing. Remove the two nylon PCB screws and lift the board with its holder; see [the V5 service guide](MECHANICAL.md). Remove the coin cell. J_DEBUG remains on the top face at (0, −13.3) mm with cable entry toward −Y. Lift the PCB for side-entry cable access, then disconnect the cable before reassembly.
 
 Viewed from above with the antenna pointing up:
 
@@ -42,7 +42,7 @@ The marked pin 1 is on the left in this PCB top view. The plug's mating-face vie
 | 4 | SWCLK | U1 physical pin 25 | (+1.000125, −11.3001183) |
 | 5 | Open-drain NRST | NRESET, U1 P0.21 / pin 24; existing 100 kΩ pull-up | (+2.000885, −11.3001183) |
 
-The two mechanical solder tabs are not additional signal contacts. There are no programming alignment holes or bare programming test-pad row. The V5 fitted-header clearance is regenerated against the actual supplier STEP and a conservative 2.92 mm-high courtyard envelope through the full 0.8 mm press stroke. See `validation/jst-connector-clearance.json` for measured CAD results. Cable mating and printed tolerances still need a prototype.
+The two mechanical solder tabs are not additional signal contacts. There are no programming alignment holes or bare programming test-pad row. The V5 fitted-header clearance is regenerated against the actual supplier STEP and a conservative 2.92 mm-high courtyard envelope through the full 360-degree rotation sweep at its fixed height. See `validation/jst-connector-clearance.json` for measured CAD results. Cable mating and printed tolerances still need a prototype.
 
 ## Power and flash with the linked programmer
 

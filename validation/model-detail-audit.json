@@ -7,7 +7,7 @@
   "meshes": [
     {
       "name": "Stationary_Base",
-      "triangles": 12710,
+      "triangles": 12322,
       "watertight": true,
       "bounds_mm": [
         [
@@ -368,7 +368,7 @@
   ],
   "source_sha256": {
     "mechanical/hardware_models.py": "cda7c92a022c721a71ca1d37467451093906c85cbfeb408cc6d2a8c2b8f72c5b",
-    "mechanical/build_enclosure.py": "110f6821efa6341ebdd40ec67cc96241547d824df6e7f9721c9646cc9ff9c24e",
+    "mechanical/build_enclosure.py": "85fbab9ee2484344ba636ace46e23aec9698893ed255db0848b4ace3d999c5de",
     "mechanical/spring_mesh.py": "f34870ba443c391bf0436944b3e081de9f922cc178eb47a5588457818887c6cb",
     "mechanical/export_circuit_models.py": "71d17ba8bef55a01016a39d2d9d88063fc2ed25f2ac7c3d323845762aa7cae89",
     "mechanical/mesh_export.py": "a8b20d735f20a3e1d4772e6bf6efee3ef9932b498eb563a32f5e915015368f74",

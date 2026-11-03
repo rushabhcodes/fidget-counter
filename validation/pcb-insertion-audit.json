@@ -1,0 +1,158 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "method": "Continuous Z-prism of actual drilled PCB; continuous conservative Z-prisms of28 supplier STEP bounding boxes; cylindrical cell sweep",
+  "motion_upward_from_seated_mm": 20.0,
+  "previous_comparison_commit": "bab8aa4b2011a14873aea0a3094a3c7ed4d9e685",
+  "previous_obstruction_volume_mm3": 13.263488470285267,
+  "PCB_swept_intersection_mm3": 0.0,
+  "fixed_throat_diameter_mm": 37.3,
+  "PCB_diameter_mm": 36.5,
+  "nominal_radial_insertion_clearance_mm": 0.4,
+  "minimum_male_root_wall_mm": 0.85,
+  "unrelated_base_changes": false,
+  "electronics": [
+    {
+      "component": "U1",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "BT1",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C4",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C9",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C15",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C5",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C7",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C8",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C10",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C16",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C18",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "J_DEBUG",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "R4",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "U2",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C6",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "R1",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "R2",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "R3",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "X1",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C1",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C2",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "X2",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C11",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C12",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "L1",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "L2",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "C3",
+      "swept_bbox_intersection_mm3": 0.0
+    },
+    {
+      "component": "ANT1",
+      "swept_bbox_intersection_mm3": 0.0
+    }
+  ],
+  "remaining_physical": [
+    "Printed throat/PCB outline tolerance and handling",
+    "Male thread strength/torque/life with0.85mm root wall",
+    "Battery/holder and populated board physical fit"
+  ],
+  "source_sha256": {
+    "validation/check-pcb-insertion.py": "6fb5a4fb4fa736c173616439a506865c477196dba0e8028ce995887172627d76",
+    "mechanical/build_enclosure.py": "85fbab9ee2484344ba636ace46e23aec9698893ed255db0848b4ace3d999c5de",
+    "mechanical/enclosure-parameters.json": "b7e4bb4603524504afd77bc3261a1efd4a078ff5be5dccd616131de263bf2eda",
+    "mechanical/STEP_Parts/Stationary_Base.step": "b0fe627d2eb5e52c134046a62da3dcf38f65d2214f84f1c02e9aae8ef259d254",
+    "published.circuit.json": "0928b0cfc9de5e205cc559a7e827f9d49ab4217f49272664154412bb1a90cede",
+    "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step": "757179567becc0f67f627e24efc67b4d8b556002f4b336735358f6716bbd37ad",
+    "imports/BS_08_B2AA020_R/BS_08_B2AA020_R.step": "4714a2d39b88797145aacf8a737b9977321a492e45a83ee97f29d933f943d8ec",
+    "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
+    "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.step": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110",
+    "imports/GRM188R60J226ME15D/GRM188R60J226ME15D.step": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110",
+    "imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
+    "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.step": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110",
+    "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6",
+    "imports/RC0402FR_07100KL/RC0402FR_07100KL.step": "055d10977e0e0b859b0b263328e4e4bfd98261ad252688cb3736f72f67aa4729",
+    "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.step": "fdf0609ecdf3febf5ad11cc6e67910be38daf56d9018bce33ad0c991eaef2aff",
+    "imports/RC0402FR_0710KL/RC0402FR_0710KL.step": "055d10977e0e0b859b0b263328e4e4bfd98261ad252688cb3736f72f67aa4729",
+    "imports/X201632MKB4SI/X201632MKB4SI.step": "40453afb315e093975ba08453ba5105709a4dd71c63128e72ffaea6807aa6cd9",
+    "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
+    "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.step": "d8b313a83de060e58141efc987e51c0ad04a3855784f981139dc3698331d1f2d",
+    "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.step": "54e0f0bcaf7410e7eebc62d9ca4e2d54c30d2d5f52d816b81de85fffb4cb06f4",
+    "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.step": "a9e3440491fe778b6cd506a9af4fe608b51e57c361087ef1028b5c09c77fc199",
+    "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
+    "imports/RFANT3216120A5T/RFANT3216120A5T.step": "44168c6e5d17ffce4789710ef4075cb75102fd74af108ddc5869e7e437d108ab"
+  }
+}

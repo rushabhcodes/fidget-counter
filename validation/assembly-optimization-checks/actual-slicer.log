@@ -1,4 +1,4 @@
-PASS Stationary_Base: fixed-base supports; 128 layers; 9844 support segments
+PASS Stationary_Base: fixed-base supports; 128 layers; 9826 support segments
 PASS Inner_Race_Nut: none supports; 16 layers; 0 support segments
 PASS Outer_Race_Retainer: none supports; 33 layers; 0 support segments
 PASS Cap_circular: none supports; 74 layers; 0 support segments

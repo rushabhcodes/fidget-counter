@@ -29,3 +29,5 @@ Before batch release:
 6. Measure assembly time and rework across several units before approving the10–50-unit pilot. Digital CAD/mesh/slicer checks do not qualify physical production.
 
 V7 geometry comparison is pinned to verified1.0.25 commit0397495; the earlier rotation-removal electrical proof against6224fc9 remains active. The latest local evidence is validation/assembly-optimization-status.json, validation/rotation-only-cad-audit.json and validation/print-readiness.json. Earlier press/two-screw reports remain historical. No new GitHub or tsCircuit publication is claimed by this review.
+
+The fixed threaded throat isØ37.3mm, matching the lower shaft bore and giving0.4mm nominal radial PCB insertion clearance. The formerØ36.4mm throat blocked theØ36.5mm board during assembly despite clearing it in the seated pose. The male thread root now has0.85mm nominal radial wall; print-coupon torque/life testing is still required. Continuous swept-volume checks cover the actual drilled PCB, all28 fitted supplier-model bounds and the cell, and retain a failing comparison with the former throat. See validation/pcb-insertion-audit.json.

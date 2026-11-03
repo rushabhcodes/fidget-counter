@@ -17,6 +17,6 @@ Build complete
 
 ✓ Done
 Build exiting with code 0: build finished successfully
-Applied 15 PBR finishes to 10 models; geometry buffer SHA256 unchanged: fce4b171996585b84ea440f4eeaea8576d9a7c8cb611b8beeec7648101fe8770
-Restored original smooth normals for 10 models / 887016 corners; position stream unchanged: 5872ce9b98118d2f2b23a8a2dcbcfda63131b51742ef770c4af3ec1ebba86f08
-Lossless GLB packing: 37759776 -> 14441952 bytes; rendered attribute stream unchanged: 106818df2cbdd0bb5e9117c5cd4c93cde83c90292c099e0b4e46c4edd9451d32
+Applied 15 PBR finishes to 10 models; geometry buffer SHA256 unchanged: 3cdb56c13ae61f7e71050a219e4556475f0684333dc3081ba2d2cabe8e8d03e2
+Restored original smooth normals for 10 models / 885852 corners; position stream unchanged: a521d1ca0b72347373e5be24af5282ef57e4120b89c7160a8f3a6f70d0223c70
+Lossless GLB packing: 37717872 -> 14424880 bytes; rendered attribute stream unchanged: ab5e8e30a19b92fff25c3e2bbb352f9ce3d21bce1fd794e611afc5b3e75d5a20

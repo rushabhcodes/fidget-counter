@@ -84,10 +84,11 @@
       "thread_clearance_mm": 0.15,
       "bottom_z_mm": 13.1,
       "top_z_mm": 15.6,
-      "bore_radius_mm": 18.2,
       "thread_root_radius_mm": 19.5,
       "outer_radius_mm": 21.6,
-      "tool_notch_depth_mm": 0.6
+      "tool_notch_depth_mm": 0.6,
+      "shaft_bore_radius_mm": 18.65,
+      "assembly_note": "Continuous37.3mm fixed-shaft throat gives0.4mm radial clearance for36.5mm PCB insertion; nut is fitted afterward"
     },
     "attachment_ring": {
       "supplier": "MagnetPrint Hub N52 MagSafe Magnet Ring Kit",
@@ -174,12 +175,12 @@
       "name": "Stationary_Base",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 7851.417206012558,
-      "step_serialization_volume_difference_mm3": -0.00039735423979436746,
+      "volume_mm3": 7721.178565976743,
+      "step_serialization_volume_difference_mm3": -0.0003964203697250923,
       "step_serialization_symmetric_difference_mm3": 0.0,
       "print_mesh_source": "Distributed STEP",
       "file": "Stationary_Base.stl",
-      "sha256": "cbe7d2302d0eb3057f0f5eff841c2356af6d01c1b496af6981a1d504f282e0b7",
+      "sha256": "11ec41b2351fbb1b099b1d4eb1101e26529fdedb28c309cbff01ee1f331b6258",
       "bounds_mm": [
         [
           -29.0,

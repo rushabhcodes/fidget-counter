@@ -63,6 +63,11 @@ for(const file of ['validation/attachment-ring-audit.json','validation/jst-conne
  const report=json(file);assert(report.passed&&!report.physical_tested,file)
  for(const [path,sha] of Object.entries(report.sha256))assert.equal(hash(readFileSync(path)),sha,`Stale clearance result ${path}`)
 }
+const insertion=json('validation/pcb-insertion-audit.json')
+assert(insertion.passed&&!insertion.physical_tested)
+assert.equal(insertion.electronics.length,28);assert(insertion.nominal_radial_insertion_clearance_mm>=.3)
+assert(insertion.previous_obstruction_volume_mm3>1);assert(insertion.minimum_male_root_wall_mm>=.8)
+for(const [path,sha] of Object.entries(insertion.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale PCB insertion proof ${path}`)
 const manufacturing=json('validation/rotation-only-cad-audit.json')
 assert(manufacturing.passed&&!manufacturing.physical_tested)
 assert.equal(manufacturing.comparison_commit,'0397495f30583bb6a4501f5fb0f67bccf0f397aa')

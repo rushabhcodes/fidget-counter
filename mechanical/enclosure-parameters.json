@@ -80,10 +80,11 @@
     "thread_clearance_mm": 0.15,
     "bottom_z_mm": 13.1,
     "top_z_mm": 15.6,
-    "bore_radius_mm": 18.2,
     "thread_root_radius_mm": 19.5,
     "outer_radius_mm": 21.6,
-    "tool_notch_depth_mm": 0.6
+    "tool_notch_depth_mm": 0.6,
+    "shaft_bore_radius_mm": 18.65,
+    "assembly_note": "Continuous37.3mm fixed-shaft throat gives0.4mm radial clearance for36.5mm PCB insertion; nut is fitted afterward"
   },
   "attachment_ring": {
     "supplier": "MagnetPrint Hub N52 MagSafe Magnet Ring Kit",

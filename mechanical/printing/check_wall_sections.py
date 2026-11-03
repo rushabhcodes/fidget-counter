@@ -22,6 +22,7 @@ for angle in P['fixed_bearing_support']['angles_deg']:
  x,y=polar(16.5,angle)
  results.append(check(base,tube(x,y,[0,1.2,2.49],[1.5,2.5,3.1,5.5]),f'Solid fixed bearing web5mm at{angle}deg'))
 results.append(check(base,tube(0,0,[18.66,19.2,19.84],[11.]),'Bearing shaft wall1.2mm'))
+results.append(check(base,tube(0,0,[18.66,19.05,19.49],[13.11,14.2,15.59]),'Continuous PCB throat and male thread root wall0.85mm'))
 results.append(check(base,tube(0,0,[22.76,25,27.14],[2.405,3.,3.895]),'Continuous ring bonding roof1.5mm'))
 for i,angle in enumerate(P['pcb_mount']['angles_deg']):
  x,y=polar(15.2,angle)
