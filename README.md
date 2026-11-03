@@ -51,7 +51,7 @@ Use the pinned Bun lockfile and Python requirements. With a working PrusaSlicer 
 bun install --frozen-lockfile
 bun run typecheck
 bun run check:routing
-bun test validation/import-provenance.test.mjs validation/cr2450-regression.test.mjs
+bun test validation/import-provenance.test.mjs validation/cr2450-regression.test.mjs validation/passive-substitutions.test.mjs
 python mechanical/build_battery_courtyard.py
 bun run build:source
 cp dist/index/circuit.json published.circuit.json
@@ -79,6 +79,7 @@ python validation/check-jst-fit.py
 python validation/check-bearing-hardware.py
 bun validation/check-imports.mjs
 bun run check:programming
+bun validation/check-passive-substitutions.mjs
 bun run check:assembly
 python mechanical/render_bearing_layout.py
 bun run build:cloud:prepare
@@ -87,8 +88,23 @@ bun validation/check-cloud-build.mjs
 
 `mechanical/Print_STL` contains three common product parts and eleven alternative caps. Use exactly one cap per unit. Four fit coupons and two split-nest halves are separate calibration/tooling prints. Purchased/display parts are excluded. Assemblies are generated as assembled and exploded STEP files, with no pressed state.
 
-The compiler remains pinned to tscircuit 0.0.3047. The router retains its failing safeguards for changes to physical terminals, net membership, layers, existing copper, widths, obstacles and board rules. The active CR2450 regression compares 27 retained components, all electrical pin attributes/connectivity and all trace/via/pad geometry outside the battery branches, and regenerated ground copper outside specified battery/mounting regions against commit `346fade`. The earlier press-removal proof remains in history. Two unchanged legacy trace-style advisories are exactly allowlisted; new advisories fail validation.
+The compiler remains pinned to tscircuit 0.0.3047. The router retains its failing safeguards for changes to physical terminals, net membership, layers, existing copper, widths, obstacles and board rules. The active CR2450 regression compares 27 retained component geometries (six explicitly approved sourcing substitutions), all electrical pin attributes/connectivity and all trace/via/pad geometry outside the battery branches, and regenerated ground copper outside specified battery/mounting regions against commit `346fade`. The earlier press-removal proof remains in history. Two unchanged legacy trace-style advisories are exactly allowlisted; new advisories fail validation.
 
-Release **1.0.26** contains the RevC CR2450 revision with the6808 bearing and five screws. Version **1.0.25** is the preceding6708/seven-screw CR2032 rotation-only pilot;1.0.24 is the earlier press mechanism. Hosted publication verification is separate from local CAD/print validation. Historical compiler, manufacturing and publication reports retain their original revision labels; they do not certify the rotation-only pilot. The active evidence is `validation/cr2450-upgrade-status.json`, the `validation/cr2450-*-audit.json` files and `validation/print-readiness.json`. Earlier assembly-optimization reports describe the preceding CR2032 revision.
+Release **1.0.27** replaces the shortage-affected passives listed below. Release **1.0.26** contains the RevC CR2450 revision with the6808 bearing and five screws. Version **1.0.25** is the preceding6708/seven-screw CR2032 rotation-only pilot;1.0.24 is the earlier press mechanism. Hosted publication verification is separate from local CAD/print validation. Historical compiler, manufacturing and publication reports retain their original revision labels; they do not certify the rotation-only pilot. The active evidence is `validation/cr2450-upgrade-status.json`, the `validation/cr2450-*-audit.json` files and `validation/print-readiness.json`. Earlier assembly-optimization reports describe the preceding CR2032 revision.
 
 See the [implemented CR2450 revision](mechanical/CR2450_UPGRADE.md) and [earlier sourcing/screw-joint review](mechanical/BATTERY_AND_ASSEMBLY_REVIEW.md) for battery details, India/US bearing listings and the reasons for retaining five screws. The [tsCircuit package](https://tscircuit.com/rushabhcodes/fidget-counter) carries versioned releases. The implementation and its local validation were completed in commit `1f9a9f9`; publication verification is recorded separately from physical qualification.
+
+
+### Passive sourcing update (1.0.27)
+
+| References | Replacement to select in PCBA quote | Specification |
+| --- | --- | --- |
+| C1, C2, C11, C12 | [FH 0402CG120J500NT / C1547](https://jlcpcb.com/partdetail/0402CG120J500NT/C1547) | 12pF, 50V, C0G, ±5%, 0402; Basic catalog part |
+| C10 | [Samsung CL10B105KA8NNNC / C29936](https://jlcpcb.com/partdetail/CL10B105KA8NNNC/C29936) | 1µF, 25V, X7R, ±10%, 0603 |
+| L2 | [Murata LQG15HS6N8J02D / C77110](https://jlcpcb.com/partdetail/MurataElectronics-LQG15HS6N8J02D/C77110) | 6.8nH, **±5%**, 0402; replaces the ±2% G variant |
+
+The native source, saved circuit and BOM use these exact new supplier identifiers. Their imported solder lands match the preceding parts exactly; supplier OBJ and STEP model bytes also match. The PCB placement, routed copper, net connectivity, enclosure, CR2450 holder and overall height are preserved. Original imports remain as provenance and comparison data, not alternative fitted BOM selections. L2 retains the validated two-terminal schematic symbol and pin aliases while using its new supplier import for the lands, identity and CAD.
+
+**L2 is a conditional RF substitution:** the wider ±5% tolerance is not identical to the previous ±2% specification. Verify antenna matching, radiated performance and oscillator operation on populated samples in the final enclosure before production. Existing battery/contact, printed-fit, magnetic and firmware qualification gates remain open. Public catalog stock is not reserved stock; confirm exact SKUs, quantity and attrition in the assembly quote. For 20 boards the four 12pF references consume 80 pieces before attrition from the same shared SKU stock.
+
+Run `bun validation/check-passive-substitutions.mjs` and `bun test validation/passive-substitutions.test.mjs` in addition to the existing checks. The dedicated guard compares against release 1.0.26 commit `31c2248`, rejects pad/pose/value/connectivity/copper/layer/mask changes, and verifies both supplier model formats byte for byte. See `validation/passive-substitution-audit.json` for the current result; `validation/cr2450-upgrade-status.json` remains the historical battery implementation record.

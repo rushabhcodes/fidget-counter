@@ -1573,10 +1573,10 @@
     "source_component_id": "source_component_11",
     "ftype": "simple_capacitor",
     "name": "C10",
-    "manufacturer_part_number": "CL10B105KA8NNWC",
+    "manufacturer_part_number": "CL10B105KA8NNNC",
     "supplier_part_numbers": {
       "jlcpcb": [
-        "C730442"
+        "C29936"
       ]
     },
     "capacitance": 0.000001,
@@ -2250,10 +2250,10 @@
     "source_component_id": "source_component_22",
     "ftype": "simple_capacitor",
     "name": "C1",
-    "manufacturer_part_number": "GRM1555C1H120JA01D",
+    "manufacturer_part_number": "0402CG120J500NT",
     "supplier_part_numbers": {
       "jlcpcb": [
-        "C76948"
+        "C1547"
       ]
     },
     "capacitance": 1.2e-11,
@@ -2292,10 +2292,10 @@
     "source_component_id": "source_component_23",
     "ftype": "simple_capacitor",
     "name": "C2",
-    "manufacturer_part_number": "GRM1555C1H120JA01D",
+    "manufacturer_part_number": "0402CG120J500NT",
     "supplier_part_numbers": {
       "jlcpcb": [
-        "C76948"
+        "C1547"
       ]
     },
     "capacitance": 1.2e-11,
@@ -2387,10 +2387,10 @@
     "source_component_id": "source_component_25",
     "ftype": "simple_capacitor",
     "name": "C11",
-    "manufacturer_part_number": "GRM1555C1H120JA01D",
+    "manufacturer_part_number": "0402CG120J500NT",
     "supplier_part_numbers": {
       "jlcpcb": [
-        "C76948"
+        "C1547"
       ]
     },
     "capacitance": 1.2e-11,
@@ -2429,10 +2429,10 @@
     "source_component_id": "source_component_26",
     "ftype": "simple_capacitor",
     "name": "C12",
-    "manufacturer_part_number": "GRM1555C1H120JA01D",
+    "manufacturer_part_number": "0402CG120J500NT",
     "supplier_part_numbers": {
       "jlcpcb": [
-        "C76948"
+        "C1547"
       ]
     },
     "capacitance": 1.2e-11,
@@ -2517,10 +2517,10 @@
     "display_inductance": "6.8nH",
     "supplier_part_numbers": {
       "jlcpcb": [
-        "C521064"
+        "C77110"
       ]
     },
-    "manufacturer_part_number": "LQG15HS6N8G02D",
+    "manufacturer_part_number": "LQG15HS6N8J02D",
     "are_pins_interchangeable": true,
     "source_group_id": "source_group_0"
   },
@@ -16520,6 +16520,8 @@
     "pcb_fabrication_note_path_id": "pcb_fabrication_note_path_3",
     "pcb_component_id": "pcb_component_37",
     "layer": "top",
+    "is_filled": true,
+    "has_stroke": false,
     "route": [
       {
         "x": -1.3999984000000496,
@@ -16546,7 +16548,7 @@
         "y": 4.649986799999988
       }
     ],
-    "stroke_width": 0.254,
+    "stroke_width": 0,
     "subcircuit_id": "subcircuit_source_group_0"
   },
   {
@@ -20570,8 +20572,8 @@
     },
     "pcb_component_id": "pcb_component_20",
     "source_component_id": "source_component_11",
-    "model_obj_url": "./imports/CL10B105KA8NNWC/CL10B105KA8NNWC.obj",
-    "model_step_url": "./imports/CL10B105KA8NNWC/CL10B105KA8NNWC.step",
+    "model_obj_url": "./imports/CL10B105KA8NNNC/CL10B105KA8NNNC.obj",
+    "model_step_url": "./imports/CL10B105KA8NNNC/CL10B105KA8NNNC.step",
     "model_origin_alignment": "center_of_component_on_board_surface",
     "anchor_alignment": "center_of_component_on_board_surface",
     "model_origin_position": {
@@ -20845,8 +20847,8 @@
     },
     "pcb_component_id": "pcb_component_31",
     "source_component_id": "source_component_22",
-    "model_obj_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
-    "model_step_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step",
+    "model_obj_url": "./imports/A_0402CG120J500NT/A_0402CG120J500NT.obj",
+    "model_step_url": "./imports/A_0402CG120J500NT/A_0402CG120J500NT.step",
     "model_origin_alignment": "center_of_component_on_board_surface",
     "anchor_alignment": "center_of_component_on_board_surface",
     "model_origin_position": {
@@ -20870,8 +20872,8 @@
     },
     "pcb_component_id": "pcb_component_32",
     "source_component_id": "source_component_23",
-    "model_obj_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
-    "model_step_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step",
+    "model_obj_url": "./imports/A_0402CG120J500NT/A_0402CG120J500NT.obj",
+    "model_step_url": "./imports/A_0402CG120J500NT/A_0402CG120J500NT.step",
     "model_origin_alignment": "center_of_component_on_board_surface",
     "anchor_alignment": "center_of_component_on_board_surface",
     "model_origin_position": {
@@ -20920,8 +20922,8 @@
     },
     "pcb_component_id": "pcb_component_34",
     "source_component_id": "source_component_25",
-    "model_obj_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
-    "model_step_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step",
+    "model_obj_url": "./imports/A_0402CG120J500NT/A_0402CG120J500NT.obj",
+    "model_step_url": "./imports/A_0402CG120J500NT/A_0402CG120J500NT.step",
     "model_origin_alignment": "center_of_component_on_board_surface",
     "anchor_alignment": "center_of_component_on_board_surface",
     "model_origin_position": {
@@ -20945,8 +20947,8 @@
     },
     "pcb_component_id": "pcb_component_35",
     "source_component_id": "source_component_26",
-    "model_obj_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
-    "model_step_url": "./imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step",
+    "model_obj_url": "./imports/A_0402CG120J500NT/A_0402CG120J500NT.obj",
+    "model_step_url": "./imports/A_0402CG120J500NT/A_0402CG120J500NT.step",
     "model_origin_alignment": "center_of_component_on_board_surface",
     "anchor_alignment": "center_of_component_on_board_surface",
     "model_origin_position": {
@@ -20995,8 +20997,8 @@
     },
     "pcb_component_id": "pcb_component_37",
     "source_component_id": "source_component_28",
-    "model_obj_url": "./imports/LQG15HS6N8G02D/LQG15HS6N8G02D.obj",
-    "model_step_url": "./imports/LQG15HS6N8G02D/LQG15HS6N8G02D.step",
+    "model_obj_url": "./imports/LQG15HS6N8J02D/LQG15HS6N8J02D.obj",
+    "model_step_url": "./imports/LQG15HS6N8J02D/LQG15HS6N8J02D.step",
     "model_origin_alignment": "center_of_component_on_board_surface",
     "anchor_alignment": "center_of_component_on_board_surface",
     "model_origin_position": {
@@ -41775,6 +41777,6 @@
   },
   {
     "type": "source_project_metadata",
-    "source_filesystem_md5_hash": "5ed21bd7ac8c1ca358a64a630821df4d"
+    "source_filesystem_md5_hash": "8adbf3d24d12282e0a738b21be135ab8"
   }
 ]

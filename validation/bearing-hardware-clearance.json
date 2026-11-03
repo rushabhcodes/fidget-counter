@@ -460,7 +460,7 @@
     "Bearing magnetic/RF influence need physical qualification"
   ],
   "sha256": {
-    "dist/index/circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "dist/index/circuit.json": "639a34f3aed73f4b74597806e382845ec38b649186bbc08aba3f195e001fc9d1",
     "dist/index/3d.glb": "fa8c495e2e54e52b0c2ea7e1264c5a5a469f36e47b542e61c57abd7a0348d576",
     "mechanical/enclosure-parameters.json": "78d6e9391402f379d0f7f15404e43e6b9eaec2846b254824a90ce498eb58f9fc",
     "validation/check-bearing-hardware.py": "9637977880a61c9b79e21bf808114ab7452f8045a5001462a49f221569a028b3",

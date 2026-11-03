@@ -74,7 +74,7 @@ assert(manufacturing.passed&&!manufacturing.physical_tested)
 assert.equal(manufacturing.comparison_commit,batteryUpgrade?'346fade26c8934f9d0b6411d7e30c1c9b06e9dac':'0397495f30583bb6a4501f5fb0f67bccf0f397aa')
 assert.equal(manufacturing.cap_results.length,11)
 for(const [path,sha] of Object.entries(manufacturing.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale CAD proof ${path}`)
-if(batteryUpgrade)for(const file of ['validation/cr2450-circuit-audit.json','validation/cr2450-copper-audit.json','validation/cr2450-holder-audit.json','validation/cr2450-display-audit.json']){
+if(batteryUpgrade)for(const file of ['validation/cr2450-circuit-audit.json','validation/cr2450-copper-audit.json','validation/cr2450-holder-audit.json','validation/cr2450-display-audit.json','validation/passive-substitution-audit.json']){
  const report=json(file);assert(report.passed,file)
  for(const [path,sha] of Object.entries(report.source_sha256))assert.equal(hash(readFileSync(path)),sha,`Stale battery proof ${path}`)
 }

@@ -1,0 +1,38 @@
+bun test v1.4.4 (38afee6c8)
+
+validation/passive-substitutions.test.mjs:
+(pass) accepts only the six approved sourcing substitutions [79.27ms]
+(pass) rejects wrong replacement SKU or electrical value [65.70ms]
+(pass) rejects moved or resized replacement lands and changed layers [84.19ms]
+(pass) rejects replacement CAD offset changes [26.13ms]
+(pass) rejects real copper, layer, net and mask changes [161.67ms]
+
+validation/import-provenance.test.mjs:
+(pass) accepts the two exact prior anchor compensations and original supplier files [2.38ms]
+(pass) rejects a changed geometric compensation [0.20ms]
+(pass) rejects additional footprint changes inside an adapted wrapper [0.05ms]
+(pass) rejects modified supplier model bytes and unrelated wrappers [0.27ms]
+
+validation/routing-compatibility.test.mjs:
+(pass) prescribed routing across compiler versions > retains the existing routes for the validated terminal IDs [16.19ms]
+(pass) prescribed routing across compiler versions > renumbering and ordering preserve all copper geometry and update every port reference [14.95ms]
+(pass) prescribed routing across compiler versions > rejects moved pads [11.38ms]
+(pass) prescribed routing across compiler versions > rejects changed net membership even when all physical points still exist [10.31ms]
+(pass) prescribed routing across compiler versions > rejects changed existing copper width [10.28ms]
+(pass) prescribed routing across compiler versions > rejects changed layers [13.10ms]
+(pass) prescribed routing across compiler versions > rejects moved obstacles [13.17ms]
+(pass) prescribed routing across compiler versions > rejects unidentifiable through-via port renumbering [11.19ms]
+
+validation/cr2450-regression.test.mjs:
+(pass) accepts only the specified CR2450 circuit revision [126.99ms]
+(pass) rejects moved unrelated components [26.88ms]
+(pass) rejects unrelated copper width and layer changes [226.08ms]
+(pass) rejects changed battery branch geometry [111.97ms]
+(pass) rejects changed mounting drills [107.95ms]
+(pass) rejects changed source connectivity [20.06ms]
+(pass) rejects changed added-via layers [107.94ms]
+
+ 24 pass
+ 0 fail
+ 26 expect() calls
+Ran 24 tests across 4 files. [1271.00ms]

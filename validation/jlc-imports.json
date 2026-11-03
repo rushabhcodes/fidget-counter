@@ -421,6 +421,75 @@
           "sha256": "ddc0165b866906067ffbf5435488e4663689e6eab659208b0958df4d752adc4a"
         }
       ]
+    },
+    {
+      "part": "A_0402CG120J500NT",
+      "jlcpcb": "C1547",
+      "importedAt": "2026-11-03",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C1547",
+      "files": [
+        {
+          "path": "imports/A_0402CG120J500NT/A_0402CG120J500NT.obj",
+          "bytes": 55992,
+          "sha256": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d"
+        },
+        {
+          "path": "imports/A_0402CG120J500NT/A_0402CG120J500NT.step",
+          "bytes": 1481985,
+          "sha256": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14"
+        },
+        {
+          "path": "imports/A_0402CG120J500NT/A_0402CG120J500NT.tsx",
+          "bytes": 2818,
+          "sha256": "4edceabbf1b58b6a41fde1d70f4a7eba949d668ec72eb1414edd8d386432928e"
+        }
+      ]
+    },
+    {
+      "part": "CL10B105KA8NNNC",
+      "jlcpcb": "C29936",
+      "importedAt": "2026-11-03",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C29936",
+      "files": [
+        {
+          "path": "imports/CL10B105KA8NNNC/CL10B105KA8NNNC.obj",
+          "bytes": 57506,
+          "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+        },
+        {
+          "path": "imports/CL10B105KA8NNNC/CL10B105KA8NNNC.step",
+          "bytes": 1468156,
+          "sha256": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110"
+        },
+        {
+          "path": "imports/CL10B105KA8NNNC/CL10B105KA8NNNC.tsx",
+          "bytes": 2784,
+          "sha256": "a3cf86f5ec6f4a79c973bca502367f2a1947a2fb0f2ce5dd8d9e1802fc4eeba2"
+        }
+      ]
+    },
+    {
+      "part": "LQG15HS6N8J02D",
+      "jlcpcb": "C77110",
+      "importedAt": "2026-11-03",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C77110",
+      "files": [
+        {
+          "path": "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.obj",
+          "bytes": 74673,
+          "sha256": "b47da88d07499fc647a8d2ea4052a7f2f80ba43a034606f1f9e9120313059fc9"
+        },
+        {
+          "path": "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.step",
+          "bytes": 1490837,
+          "sha256": "a9e3440491fe778b6cd506a9af4fe608b51e57c361087ef1028b5c09c77fc199"
+        },
+        {
+          "path": "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.tsx",
+          "bytes": 2397,
+          "sha256": "47f261b0aac5b5e7fbeb80d7f9ccba1339d10ef95d6c7819d2ac34897b279b6d"
+        }
+      ]
     }
   ],
   "notes": [

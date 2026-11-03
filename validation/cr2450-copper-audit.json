@@ -20,7 +20,7 @@
   ],
   "source_sha256": {
     "validation/check-cr2450-copper.py": "9263b4780a7285eb64a02eb0266df18b2d0e43367a60a10c1ed6fbcbcf6203cf",
-    "published.circuit.json": "e79c59e694f75b126638266fe343aba2c04be94d9fd3c8c94b9d4b61cf84bab2",
+    "published.circuit.json": "639a34f3aed73f4b74597806e382845ec38b649186bbc08aba3f195e001fc9d1",
     "index.circuit.tsx": "366750e96371babbd6832e461088c5d63e62b17b6679725a6620120af43decd8",
     "parts.tsx": "56a8b3993d257c0ccef55a84c9814b689182a9dc754bff06afe089d9543c7915",
     "routed-paths.json": "d89459bda74d620c9a66e07625d8c0386543708e6e0b42bc1d83c999f590a621",

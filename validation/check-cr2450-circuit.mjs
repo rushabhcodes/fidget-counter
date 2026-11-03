@@ -5,11 +5,12 @@ import {execFileSync} from 'node:child_process'
 import {readFileSync,writeFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import {fittedComponentRecords} from './fitted-component-records.mjs'
+import {substituteRecords} from './passive-substitutions.mjs'
 export const comparisonCommit='346fade26c8934f9d0b6411d7e30c1c9b06e9dac'
 const json=p=>JSON.parse(readFileSync(p))
 const baseline=()=>JSON.parse(execFileSync('git',['show',`${comparisonCommit}:published.circuit.json`],{maxBuffer:16e6}))
 const canonical=v=>JSON.stringify(v,(_,x)=>typeof x==='number'?Math.round(x*1e9)/1e9:x&&!Array.isArray(x)&&typeof x==='object'?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a.localeCompare(b))):x)
-const records=c=>{
+export const records=c=>{
  const source=new Map(c.filter(e=>e.type==='source_component').map(e=>[e.source_component_id,e.name]))
  const ports=new Map(c.filter(e=>e.type==='source_port').map(e=>[e.source_port_id,`${source.get(e.source_component_id)}.${e.pin_number}`]))
  const pcbPorts=new Map(c.filter(e=>e.type==='pcb_port').map(e=>[e.pcb_port_id,ports.get(e.source_port_id)]))
@@ -26,7 +27,7 @@ export function verifyCr2450Circuit(current,old=baseline()){
  const a=records(old),b=records(current)
  const prior=fittedComponentRecords(old),now=fittedComponentRecords(current)
  assert.equal(now.length,28)
- assert.deepEqual(now.filter(e=>e.source.name!=='BT1'),prior.filter(e=>e.source.name!=='BT1'),'Unrelated fitted identity, footprint, layer or pose changed')
+ assert.deepEqual(now.filter(e=>e.source.name!=='BT1'),substituteRecords(prior).filter(e=>e.source.name!=='BT1'),'Unapproved fitted identity, footprint, layer or pose changed')
  assert.deepEqual(b.connections,a.connections,'Electrical connections/route constraints changed')
  assert.deepEqual(b.portAttributes,a.portAttributes,'Electrical pin attributes changed')
  const bt=now.find(e=>e.source.name==='BT1')
@@ -82,13 +83,13 @@ export function verifyCr2450Circuit(current,old=baseline()){
  for(const name of ['SW1','R5','C17'])assert(!current.some(e=>e.type==='source_component'&&e.name===name))
  assert(!current.some(e=>e.type==='source_net'&&e.name==='CAP_PRESS'))
  assert(current.some(e=>e.type==='source_port'&&b.source.get(e.source_component_id)==='U1'&&e.pin_number===41&&e.do_not_connect))
- return {passed:true,comparison_commit:comparisonCommit,retained_unchanged_fitted_components:27,fitted_components:28,changed_holder:'C7525448 BS-24-B4AA014',changed_battery_branch_traces:2,added_through_vias:2,unchanged_other_copper:true,all_electrical_connectivity_and_pin_attributes_preserved:true,mounting_holes:{count:4,diameter_mm:2.2,pitch_radius_mm:16.6},firmware_provided:false}
+ return {passed:true,comparison_commit:comparisonCommit,retained_unchanged_fitted_components:21,approved_passive_identity_substitutions:6,retained_fitted_geometry:27,fitted_components:28,changed_holder:'C7525448 BS-24-B4AA014',changed_battery_branch_traces:2,added_through_vias:2,unchanged_other_copper:true,all_electrical_connectivity_and_pin_attributes_preserved:true,mounting_holes:{count:4,diameter_mm:2.2,pitch_radius_mm:16.6},firmware_provided:false}
 }
 export function runCr2450Check(){
  const report=verifyCr2450Circuit(json(process.argv[2]??'dist/index/circuit.json'))
- const files=['validation/check-cr2450-circuit.mjs','index.circuit.tsx','parts.tsx','passives.tsx','routing.ts','routing-contract.json','routed-paths.json','dist/index/circuit.json','published.circuit.json','mechanical/battery-holder-courtyard.json']
+ const files=['validation/passive-substitutions.mjs','validation/check-cr2450-circuit.mjs','index.circuit.tsx','parts.tsx','passives.tsx','routing.ts','routing-contract.json','routed-paths.json','dist/index/circuit.json','published.circuit.json','mechanical/battery-holder-courtyard.json']
  report.source_sha256=Object.fromEntries(files.map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')]))
  writeFileSync('validation/cr2450-circuit-audit.json',JSON.stringify(report,null,2)+'\n')
- console.log('Pass: CR2450 holder, two bounded battery branches and two vias;27 other fitted parts, all other copper, connectivity and pin attributes preserved')
+ console.log('Pass: CR2450 holder, two bounded battery branches and two vias;27 other fitted geometries (six approved sourcing substitutions), all other copper, connectivity and pin attributes preserved')
 }
 if(import.meta.main)runCr2450Check()
