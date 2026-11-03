@@ -1,5 +1,7 @@
 # Assemble one RevC fidget counter
 
+These steps describe **V1, the premade-ring base**. For the new individual-magnet base, first follow the separate [V2 carrier/polarity assembly steps](mechanical/variants/V2_discrete_magnets/README.md), then reuse the unchanged PCB, cell, bearing and cap steps here. V2 requires its own base and carrier, not the V1 ring seat.
+
 Use the current RevC CR2450 PCB, Stationary_Base and one matching Cap. This is the rotation-only, two-print push-fit pilot. Its current compact cap gives16.4mm overall phone-contact height. The base and bearing/encoder interfaces match the preceding push-fit pilot. It has no cap button, spring, top screw, nut or separate bearing retainer.
 
 ![Actual assembled, cutaway and exploded CAD](previews/bearing-layout.png)

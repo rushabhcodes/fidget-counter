@@ -2,7 +2,7 @@
   "formatVersion": 2,
   "description": "Locally built and checked preview; hashes bind it to the published source and CAD assets.",
   "inputs": {
-    "cloud-build.mjs": "d62a5f4df5dca09730fc0c38ce77f46506858cc23a79d3634445e65e59b37463",
+    "cloud-build.mjs": "885196b032d3b2a19e3a9b7f460874806e546c6c3e0c2e4f576227b0ba73ce6c",
     "critical-routes.json": "2f36c75f8944a02d58dcbf8101bcb76a712b0696ab9e0b7cd99e2bf7cc5b1183",
     "enclosure.tsx": "b3debb234bba50e293384e310cc28952ef4932b393bdf4cf9823e4ba5e3815ed",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj": "5cb7b3d39911902565b7d20a63b8be35513c8d72b9d0dca36c801d731893bcf5",
@@ -141,6 +141,35 @@
     "mechanical/render_bearing_layout.py": "c858c61703908c15e1a00ca4c3268e04ec96b1d762e4473c0aa8e7e72dd08d34",
     "mechanical/render_compact_comparison.py": "c74d3b2d98914009bfc6fd2ebd1c16a7c96ba494d678b83fcccb162e78be6cb4",
     "mechanical/sync_checked_exports.py": "ae8c7b633471e7c2341c49c5a69dd085fd88309cc6cd5470266728bbcc0d3b76",
+    "mechanical/variants/V1_premade_ring/Base_V1_Premade_Ring.step": "97a485258f61aee789dde9ab2957f2351f0e246bcbc0e503a8df9cf7be04463b",
+    "mechanical/variants/V1_premade_ring/Base_V1_Premade_Ring.stl": "237609e4cf2c135538fe225450e38ee59b189b6b4552fee1416795b4ebba6799",
+    "mechanical/variants/V1_premade_ring/MagSafe_Ring_reference.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960",
+    "mechanical/variants/V1_premade_ring/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec",
+    "mechanical/variants/V1_premade_ring/manifest.json": "ac1fa90884309c36d51357bbd3bd95e87f74184c63de5b27a990cf73e34a0e8c",
+    "mechanical/variants/V1_premade_ring/source/build_enclosure.py": "d84408f82438efe5554534f647972ac49de9252bd2fe67a3e9f8f4ea1f6a7c32",
+    "mechanical/variants/V1_premade_ring/source/grip_profiles.py": "5f8747fd384f8aeefea1154a976a8787c0918e5d9b425c653ca2ce932da83a25",
+    "mechanical/variants/V1_premade_ring/source/hardware_models.py": "cc7779f3d393011b726865e31ef664cbc83cf4b86ab12543a0f66a8fb7d29283",
+    "mechanical/variants/V1_premade_ring/source/published.circuit.json": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
+    "mechanical/variants/V1_premade_ring/source/sync_checked_exports.py": "ae8c7b633471e7c2341c49c5a69dd085fd88309cc6cd5470266728bbcc0d3b76",
+    "mechanical/variants/V2_discrete_magnets/audit.py": "3e7d3bedce040ca26d78bc62e9729bbddd5d16e9fb08b889cd6e0f241cc13d4c",
+    "mechanical/variants/V2_discrete_magnets/build.py": "891bde644fbfbea10356ce2ce475aa1ba5721f7fa4f1c8c0d62567379692e4ee",
+    "mechanical/variants/V2_discrete_magnets/check_assembly_steps.py": "91a59589fbf61fccb370ef81c947ea912168cdde3aa7c3c6c48632f0738aafe0",
+    "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Base_V2_Discrete.stl": "64d4d9c36c3eae6f50e44a797b5aa9f384fad380e79248344c70d9a8fda45089",
+    "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Magnet_Carrier_V2.stl": "4cc527c134e2c709adfb49c6883c152ed0876c8b1418afc85ac582b04b87a765",
+    "mechanical/variants/V2_discrete_magnets/generated/Reference_STEP/Attachment_Magnets_V2.step": "2040ba98b1ca435a593f581274ece6f582c4ca1c4e51d3a06b408f352e1d0496",
+    "mechanical/variants/V2_discrete_magnets/generated/Reference_STEP/Steel_Backing_V2.step": "f7937ee5e4fe8e27c0dae764861a4703770ec7024903783159e59c331215c413",
+    "mechanical/variants/V2_discrete_magnets/generated/STEP/Base_V2_Discrete.step": "c69f655bda0623dd31736a03d092cc8c76db73b8061113e432a3038ea93784f2",
+    "mechanical/variants/V2_discrete_magnets/generated/STEP/Magnet_Carrier_V2.step": "372a6edb596c7e014dd7f4eed73dc0f18987a19fc005913d33f744c3c7be9c82",
+    "mechanical/variants/V2_discrete_magnets/generated/V2_assembled.glb": "ea596387628e778f24958723c29b2220723a5c19207f68a7de062d94a2a89f2c",
+    "mechanical/variants/V2_discrete_magnets/generated/assembly-step-audit.json": "7dc9f90ecc00dd8c7f9a21b7c11f2445d7f384a6da58eedcfeeda9e53146b429",
+    "mechanical/variants/V2_discrete_magnets/generated/geometry-audit.json": "0077740438cb5ae3646bf74e6e305d2d964743f33b8113a670da95f295741c39",
+    "mechanical/variants/V2_discrete_magnets/generated/print-audit.json": "c5929aab59d921cd2c4dfbb1a40c1ced057ef7b79c749dd306b1e5ecb3708e2d",
+    "mechanical/variants/V2_discrete_magnets/generated/print-ready-manifest.json": "4f01d73c7d1484f26cbe9c3a98f14b0d48303504276abedee9cff5756b09cfec",
+    "mechanical/variants/V2_discrete_magnets/parameters.json": "3201c98f79cfa3c8a7f3d2147ed67686c6073fc9455ff845972accba30277378",
+    "mechanical/variants/V2_discrete_magnets/polarity.svg": "58be248d31a17c81920e67a5bf54f7ee3c410c786464170d4e5bf136be1e8fa3",
+    "mechanical/variants/V2_discrete_magnets/render.py": "9be36947877a045712514b595d07bd1bde7e9717ac43f6a911a32042b10c7b36",
+    "mechanical/variants/V2_discrete_magnets/review.html": "a0f3a4dce86fbda076782e367f118049c52615b154db35238e29d97f9afd1abf",
+    "mechanical/variants/V2_discrete_magnets/review.png": "3ec110f03115ae4a36ff55519f55e8a603165ace037235acd5b70db8f63fff58",
     "model-assets.d.ts": "bcd106931f1096dab95359b6d47a67456c3da66efd2f5c0c76e29783cada6463",
     "parts.tsx": "a9ec52070d608a8c4592ce5c03db64cd490dec67b0fb349cfe4a4e489859d341",
     "passives.tsx": "e05181fcf99b2751941c16d8f43a81e541126daf283731244e9f65b1783d8ec3",
@@ -164,7 +193,7 @@
     "validation/nordic-electrical-reference.json": "c2bd56c7e6228abbfa597dbeb3d893383a9d70cbd6bd22949c907f1512a094a9",
     "validation/nordic-electrical-revision.mjs": "17ac5d3d18b87a318fd16b38e87ea7132f89cddbd7346f15cced22c01f18e8bb",
     "validation/prepare-supplier-frames.mjs": "e05c1d7cdf5e087d450f621b54ef381829ddf6abe308ebe3d7213a5b815142ba",
-    "validation/restore-cad-inputs.mjs": "ce77c551958cfacd82a3812c17cfa7493d676b46be57c6a73e8934d4917a322b",
+    "validation/restore-cad-inputs.mjs": "e364f010627b07de3fb703014e4bd1f2b1b1a11b9f5223667b141e1f5bf473a0",
     "validation/restore-model-normals.mjs": "de22cf2e85da39515f083abdd82b633a104821e728d41b9cc6121ec5d2cb56bd"
   },
   "packageInput": {
@@ -218,6 +247,32 @@
       "encoding": "gzip-base64",
       "bytes": 12516120,
       "sha256": "e2a8c90c4411993717b37d5dd791244016c8b48fbdc544d61976367f21874463"
+    }
+  ],
+  "variantArtifacts": [
+    {
+      "source": "mechanical/variants/V2_discrete_magnets/review.html",
+      "output": "dist/v2/index.html",
+      "sha256": "a0f3a4dce86fbda076782e367f118049c52615b154db35238e29d97f9afd1abf",
+      "bytes": 3176
+    },
+    {
+      "source": "mechanical/variants/V2_discrete_magnets/review.png",
+      "output": "dist/v2/review.png",
+      "sha256": "3ec110f03115ae4a36ff55519f55e8a603165ace037235acd5b70db8f63fff58",
+      "bytes": 193788
+    },
+    {
+      "source": "mechanical/variants/V2_discrete_magnets/polarity.svg",
+      "output": "dist/v2/polarity.svg",
+      "sha256": "58be248d31a17c81920e67a5bf54f7ee3c410c786464170d4e5bf136be1e8fa3",
+      "bytes": 20108
+    },
+    {
+      "source": "mechanical/variants/V2_discrete_magnets/generated/V2_assembled.glb",
+      "output": "dist/v2/V2_assembled.glb",
+      "sha256": "ea596387628e778f24958723c29b2220723a5c19207f68a7de062d94a2a89f2c",
+      "bytes": 18809860
     }
   ],
   "cadInputArchives": [
@@ -279,10 +334,38 @@
     },
     {
       "source": "cloud-assets/cad-inputs-4.json.gz.b64",
-      "sha256": "d89653995f7b72a8028994ada55a55612ce7841a8fd624eac5c4f8ea7a56df0a",
+      "sha256": "4d83c461edfaa479aa3490f637fafd3a7041329041f44b061b90749eb12f2be2",
       "files": [
         "mechanical/STEP_Parts/Cap_wave_rim.step",
-        "mechanical/STEP_Parts/Stationary_Base.step"
+        "mechanical/STEP_Parts/Stationary_Base.step",
+        "mechanical/variants/V1_premade_ring/Base_V1_Premade_Ring.step",
+        "mechanical/variants/V1_premade_ring/Base_V1_Premade_Ring.stl",
+        "mechanical/variants/V1_premade_ring/MagSafe_Ring_reference.glb",
+        "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Base_V2_Discrete.stl",
+        "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Magnet_Carrier_V2.stl"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-5.json.gz.b64",
+      "sha256": "97f764369a869e025375b9904e7b4ccafe1b845e7b2ae95d047e44e6e5f4d645",
+      "files": [
+        "mechanical/variants/V2_discrete_magnets/generated/Reference_STEP/Attachment_Magnets_V2.step",
+        "mechanical/variants/V2_discrete_magnets/generated/Reference_STEP/Steel_Backing_V2.step",
+        "mechanical/variants/V2_discrete_magnets/generated/STEP/Base_V2_Discrete.step",
+        "mechanical/variants/V2_discrete_magnets/generated/STEP/Magnet_Carrier_V2.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-6.json.gz.b64",
+      "sourceParts": [
+        "cloud-assets/cad-inputs-6.part-000.json.gz.b64",
+        "cloud-assets/cad-inputs-6.part-001.json.gz.b64",
+        "cloud-assets/cad-inputs-6.part-002.json.gz.b64",
+        "cloud-assets/cad-inputs-6.part-003.json.gz.b64"
+      ],
+      "sha256": "bff000d3b834cde6e86e903d846088274c6ece72c8a16e82db37004a28a7bedd",
+      "files": [
+        "mechanical/variants/V2_discrete_magnets/generated/V2_assembled.glb"
       ]
     }
   ]

@@ -6,7 +6,9 @@ import { gunzipSync } from "node:zlib"
 const hash = bytes => createHash("sha256").update(bytes).digest("hex")
 
 const restoreArchive = (root, manifest, archive) => {
-  const packed = readFileSync(resolve(root, archive.source))
+  const packed = archive.sourceParts
+    ? Buffer.concat(archive.sourceParts.map(part => readFileSync(resolve(root,part))))
+    : readFileSync(resolve(root, archive.source))
   if (hash(packed) !== archive.sha256) throw new Error("Invalid checked CAD input archive")
   const entries = JSON.parse(gunzipSync(Buffer.from(packed.toString("utf8").trim(), "base64")))
   if (entries.length !== archive.files.length) throw new Error("Incomplete checked CAD input archive")

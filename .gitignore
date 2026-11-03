@@ -38,6 +38,9 @@ checks/
 # Local publishing diagnostics
 .local-validation/
 publish-validation.log
+mechanical/variants/V2_discrete_magnets/generated/scene_meshes.json
+mechanical/variants/V2_discrete_magnets/generated/*.gcode
+mechanical/variants/V2_discrete_magnets/generated/Assemblies/
 
 # Pinned west firmware workspace
 /.west/

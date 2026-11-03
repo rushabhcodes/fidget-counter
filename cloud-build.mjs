@@ -57,10 +57,16 @@ const circuit = JSON.parse(artifacts.find((item) => item.output.endsWith("/circu
 const errors = circuit.filter((item) => item.type?.endsWith("_error"))
 if (errors.length) throw new Error(`Saved circuit contains ${errors.length} error records`)
 
-for (const item of artifacts) {
+const variants=(manifest.variantArtifacts ?? []).map(artifact => {
+  const bytes=readFileSync(projectPath(artifact.source))
+  if (sha256(bytes)!==artifact.sha256 || bytes.length!==artifact.bytes || manifest.inputs[artifact.source]!==artifact.sha256)
+    throw new Error(`Invalid checked variant artifact: ${artifact.source}`)
+  return {...artifact,bytes}
+})
+for (const item of [...artifacts,...variants]) {
   const output = projectPath(item.output)
   mkdirSync(dirname(output), { recursive: true })
   writeFileSync(output, item.bytes)
   console.log(`[cloud-build] Wrote ${item.output} (${item.bytes.length} bytes)`)
 }
-console.log("[cloud-build] Complete: checked circuit, PCB, schematic and 3D assembly")
+console.log("[cloud-build] Complete: checked circuit, PCB, schematic, 3D assembly and V2 review")

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "assemblies": [
+    {
+      "state": "Assembled",
+      "objects": 72,
+      "supplier_bodies": 27,
+      "sha256": "3fef72de4334dbdd3640b29786344c42d7556eb6f3f825160f8a3c22e3cc8d07",
+      "critical_poses_and_printed_solids_match": true
+    },
+    {
+      "state": "Exploded",
+      "objects": 72,
+      "supplier_bodies": 27,
+      "sha256": "059ad22633eaa8b9cb1dc3fc5929a813a31fb8b3999cb8f97354be66405db31b",
+      "critical_poses_and_printed_solids_match": true
+    }
+  ]
+}

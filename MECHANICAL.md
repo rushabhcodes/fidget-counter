@@ -1,5 +1,7 @@
 # Rotation-only push-fit pilot
 
+This document describes the preserved **V1 premade-ring layout**. The new [V2 individual-magnet base](mechanical/variants/V2_discrete_magnets/README.md) has separate CAD, prints and force-test instructions. Both retain16.4 mm physical height, the same bearing/PCB/cap interfaces and1.8 mm nominal encoder gap. V2 is an experimental alternative pending an A/B holding-force test.
+
 The Ø58 mm PETG base has an integral fixed bearing shaft and three solid support webs. A purchased **6808-ZZ / 61808-2Z, 40×52×7 mm** bearing supports the hollow rotating cap. Following [Ploopy's assembly principle](https://ploopyco.github.io/knob/assembly-instructions/), the bearing pushes into the cap and the cap/bearing pushes onto the base. Ploopy's own 6705ZZ is 25×32×4 mm and cannot surround our Ø36.5 mm board; our CAD is independent.
 
 **One unit: two prints, two M2×4 nylon PCB screws, nine handled parts.** The other five are bearing, PCBA, cell, encoder magnet and attachment ring. There are no top screws, nut, outer retainer, spring, press mechanism or snap tabs. Adhesives, shims and reusable tools are excluded from the count. Assembly time is unmeasured.

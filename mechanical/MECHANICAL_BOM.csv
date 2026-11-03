@@ -8,4 +8,4 @@ MagSafe ring,1,N52 OD54 ID45.8 thickness1.9 mm supplier-specific,Verify working 
 Ring adhesive,As required,Nominal bondline0.10 mm,Qualify adhesion peel shear cure and aging
 Encoder adhesive,As required,Compatible nonmagnetic sidewall adhesive,Qualify magnet retention and aging
 CR2450,1,3 V primary24.5x5 mm loose cell,Holder included with PCBA; remove cell before powered programming
-PCBA,1,RevC Ø36.5 x1.0 mm 28 fitted parts,Includes C7525448 holder; SW1/R5/C17 absent; nRESET retained
+PCBA,1,RevC Ø36.5 x1.0 mm 27 fitted parts,Includes C7525448 holder; C7/SW1/R5/C17 absent; nRESET retained

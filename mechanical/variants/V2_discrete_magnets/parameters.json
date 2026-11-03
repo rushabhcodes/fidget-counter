@@ -1,0 +1,75 @@
+{
+  "variant": "V2 discrete-magnet test base",
+  "qualification": "Prototype alternative; comparable holding force is a physical acceptance target, not a verified result",
+  "source_commit": "6a3be158ec28513a15d348b5957a9a1a7c072228",
+  "magnet": {
+    "supplier": "SuperMagnetMan / SM Magnetics",
+    "part": "M0601",
+    "url": "https://supermagnetman.com/products/m0601",
+    "length_mm": 6.0,
+    "radial_width_mm": 2.0,
+    "thickness_mm": 1.0,
+    "grade": "N50",
+    "magnetization": "through 1 mm thickness",
+    "coating": "nickel",
+    "supplier_max_working_temperature_C": 60,
+    "quantity": 36,
+    "stations": 18,
+    "row_center_radii_mm": [
+      23.3,
+      26.5
+    ],
+    "phone_facing_poles": [
+      "S",
+      "N"
+    ],
+    "phone_face_z_mm": 0.5,
+    "pocket_side_clearance_mm": 0.15,
+    "magnet_to_backing_bondline_mm": 0.05,
+    "supplier_tolerance_confirmed": false
+  },
+  "carrier": {
+    "inside_diameter_mm": 42.6,
+    "outside_diameter_mm": 58.0,
+    "bottom_z_mm": 0.2,
+    "top_z_mm": 1.55,
+    "pocket_floor_mm": 0.3,
+    "material": "PETG",
+    "installation": "Load from top, bond magnets and backing, then bond the complete carrier into the base; adhesive rework required for replacement"
+  },
+  "backing": {
+    "inside_diameter_mm": 43.0,
+    "outside_diameter_mm": 57.6,
+    "thickness_mm": 0.762,
+    "bottom_z_mm": 1.55,
+    "material": "Low-carbon 1008/1010 steel, custom cut from 0.030 inch shim stock; deburr, protect from corrosion and verify magnetic properties",
+    "saturation_flux_density_verified": false,
+    "source_url": "https://artusworld.com/product/10-sheet-steel-shim-stock/"
+  },
+  "base_recess": {
+    "inside_radius_mm": 21.15,
+    "ceiling_z_mm": 2.4
+  },
+  "physical_height_mm": 16.4,
+  "nominal_encoder_gap_mm": 1.8,
+  "printed_product_parts": 3,
+  "handled_parts": 46,
+  "force_acceptance": {
+    "relative_to_V1": "Mean normal pull-off within 10 percent of V1, with no greater slip during the same torque test; test each intended phone and case",
+    "minimum_repeats_per_configuration": 5,
+    "force_measured": false
+  },
+  "unchanged_cap_STEP_sha256": {
+    "mechanical/STEP_Parts/Cap_circular.step": "7557517b57122c0a9ae697f9e130fe2118c93817622b0f432c7442a98578909f",
+    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "25a3d703357f7cbac357b6b36ce45e394248613e9038387c809ac2c97397893a",
+    "mechanical/STEP_Parts/Cap_petal_flower.step": "2cf7b3fa08f91bd0e741d9aea5734483076105c4cc85feaa28ba5f0de516d79d",
+    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "2f04ad6914a0ca20d9a0811207be5240aa5a92a63f46a4ffceb45e17b13a5351",
+    "mechanical/STEP_Parts/Cap_rounded_square.step": "559fc30609566977c442b5bb15da8865130af13dc66e975e99fa60b599ee68d6",
+    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "95c53d8e2b94a65e126bf58d7ffbd43fc6eacc6f6c2e87cae74a0a20ed9fdd44",
+    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "378c84e2f27cac624f455db155b06acfb7e3a28af6c2f35d5c1aa7354a8c6d5c",
+    "mechanical/STEP_Parts/Cap_ships_wheel.step": "3be76804ae6c667de783071b314bd41c504dc5ea0635b84f1a58819757931626",
+    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "19a67ed1fcaf9a2116e4e133326c90dc0490bec679e9f01ab4fbeef8a05328df",
+    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "3d1d45c05282a73d4333fdf06e4260ea4d9f5fe7a4c315e83f134ef98cbc63b6",
+    "mechanical/STEP_Parts/Cap_wave_rim.step": "a6f9559dd1c30fcf4d272f080faf422abc6b91a238978f618843f1c85e033629"
+  }
+}

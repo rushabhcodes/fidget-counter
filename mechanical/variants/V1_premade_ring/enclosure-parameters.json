@@ -1,0 +1,214 @@
+{
+  "design": "V9 compact CR2450 rotation-only push-fit pilot",
+  "cap_style": "all",
+  "cap_styles": [
+    "circular",
+    "ships_wheel",
+    "rounded_triangle",
+    "scalloped_coin",
+    "petal_flower",
+    "four_leaf_clover",
+    "rounded_hexagon",
+    "rounded_square",
+    "wave_rim",
+    "turbine_wheel",
+    "thumb_scoop"
+  ],
+  "units": "mm",
+  "base_diameter": 58.0,
+  "cap_max_diameter": 61.6,
+  "overall_height": 16.6,
+  "cap_deck_bottom": 15.3,
+  "cap_edge_bottom": 8.6,
+  "grip_height": 8.0,
+  "cap_skirt_inner_radius": 26.8,
+  "pcb_diameter": 36.5,
+  "pcb_bottom": 10.6,
+  "pcb_thickness": 1.0,
+  "magnet_diameter": 5.0,
+  "magnet_thickness": 1.5,
+  "magnet_bottom": 13.9,
+  "magnet_pocket_diameter": 5.2,
+  "material": "PETG for two rigid printed parts; purchased metal bearing",
+  "service": "Pull cap/bearing evenly; support the appropriate race and remove two PCB screws for cell/programming access",
+  "publication": "Compact fit-test pilot; physical qualification required",
+  "hub_cover_thickness": 1.3,
+  "cap_style_change": "Use a cap with its own encoder magnet; transfer the bearing with race-specific support and a qualified hand fit",
+  "encoder_magnet_per_top_module": 1,
+  "cap_mount_hardware_count": 0,
+  "magnet_installation": "One diametric diameter5 x1.5 mm disc seated against the integral cap stop at Z15.4; qualify sidewall adhesive and sensing",
+  "pcb_retention": "Two opposite M2 nylon screws on four solid posts; close-fit2.2mm holes, no locating collars; physical retention qualification required",
+  "pcb_mount": {
+    "radius_mm": 16.6,
+    "angles_deg": [
+      45,
+      135,
+      225,
+      315
+    ],
+    "hole_diameter_mm": 2.2,
+    "copper_keepout_radius_mm": 1.9,
+    "shoulder_radius_mm": 1.6,
+    "locator_radius_mm": 0,
+    "locator_height_mm": 0,
+    "beam_thickness_mm": 0,
+    "beam_width_mm": 0,
+    "retaining_outer_radius_mm": 0,
+    "axial_float_mm": 0,
+    "release_displacement_mm": 0,
+    "screw_indices": [
+      0,
+      2
+    ],
+    "post_radius_mm": 1.6,
+    "foot_radius_mm": 2.5,
+    "collar_height_mm": 0
+  },
+  "bearing": {
+    "designation": "6808-ZZ / 61808-2Z",
+    "bore_mm": 40.0,
+    "outside_mm": 52.0,
+    "width_mm": 7.0,
+    "bottom_z_mm": 6.1,
+    "shaft_diameter_mm": 40.05,
+    "housing_diameter_mm": 51.95,
+    "inner_shoulder_outer_radius_mm": 21.0,
+    "outer_shoulder_inner_radius_mm": 25.0,
+    "reference": "https://www.astbearings.com/catalog/root/6808",
+    "note": "Nominal purchased bearing envelope. Confirm race shoulder lands, corner radii, actual fits and magnetic influence with the chosen supplier/sample."
+  },
+  "inner_race_nut": {
+    "pitch_mm": 1.2,
+    "thread_depth_mm": 0.35,
+    "thread_clearance_mm": 0.15,
+    "bottom_z_mm": 13.1,
+    "top_z_mm": 15.6,
+    "thread_root_radius_mm": 19.5,
+    "outer_radius_mm": 21.6,
+    "tool_notch_depth_mm": 0.6,
+    "shaft_bore_radius_mm": 18.65,
+    "assembly_note": "Continuous37.3mm fixed-shaft throat gives0.4mm radial clearance for36.5mm PCB insertion; nut is fitted afterward"
+  },
+  "attachment_ring": {
+    "supplier": "MagnetPrint Hub N52 MagSafe Magnet Ring Kit",
+    "supplier_url": "https://magnetprinthub.com/products/magsafe-magnet-kit",
+    "outside_mm": 54.0,
+    "inside_mm": 45.8,
+    "thickness_mm": 1.9,
+    "supplier_tolerance_mm": 0.05,
+    "magnet_grade": "N52",
+    "magnetization": "Supplier-described one-sided multi-pole Halbach array; working face toward phone",
+    "phone_face_z_mm": 0.4,
+    "radial_clearance_mm": 0.15,
+    "bondline_mm": 0.1,
+    "mounting": "Bond one purchased ring assembly into the integrated base; no separate tray bond",
+    "qualification": "Nominal supplier envelope only; confirm sample dimensions, working face, peel/shear retention and Hall/RF effects before production"
+  },
+  "encoder_stop": {
+    "mode": "integral_cap",
+    "separate_spacer_count": 0,
+    "seated_top_z_mm": 15.4,
+    "previous_spacer_thickness_mm": 0.2,
+    "retention": "Seat magnet against integral roof; qualify sidewall adhesive in existing 0.1 mm radial gap; no axial glue layer or loose spacer"
+  },
+  "integrated_base": {
+    "separate_tray_count": 0,
+    "separate_tray_bonds": 0,
+    "former_assembly_gaps_filled": true
+  },
+  "pilot_batch": {
+    "quantity_range": [
+      10,
+      50
+    ],
+    "process": "3D printed pilot",
+    "user_confirmed": true
+  },
+  "cap_retainer_joint": {
+    "boss_radius_mm": 1.6,
+    "boss_top_z_mm": 9.6,
+    "socket_radius_mm": 1.8,
+    "socket_roof_z_mm": 9.8,
+    "nominal_thread_overlap_mm": 4.4,
+    "previous_thread_overlap_mm": 1.4,
+    "physical_qualified": false,
+    "cap_reinforcement_radius_mm": 3.0,
+    "screw_pitch_radius_mm": 27.8,
+    "fixture_support_z_mm": 5.1,
+    "fixture_notch_width_mm": 3.0,
+    "fixture_notch_radial_start_mm": 28.0,
+    "fixture_angles_deg": [
+      60,
+      180,
+      300
+    ]
+  },
+  "print_process": {
+    "material": "PETG",
+    "nozzle_mm": 0.4,
+    "layer_height_mm": 0.15,
+    "minimum_walls": 4,
+    "assumption": "Provisional generic cartesian printer; actual printer/nozzle not yet confirmed",
+    "cap_orientation": "Deck down except thumb_scoop upright with internal supports",
+    "nut_orientation": "Wide notched face down",
+    "fixture_supports": "Required everywhere under retainer fingers; supports may start on the nest pocket floor",
+    "base_supports": "Supports everywhere beneath attachment-ring roof and fixed bearing shoulder; remove all supports before installing bearing or magnets"
+  },
+  "fixed_bearing_support": {
+    "radius_mm": 18.05,
+    "angles_deg": [
+      0,
+      105,
+      255
+    ],
+    "web_stem_radius_mm": 2.5,
+    "web_foot_radius_mm": 4.0,
+    "web_bottom_z_mm": 1.4,
+    "web_head_bottom_z_mm": 3.0,
+    "note": "Three rigid overlapping webs join bearing shaft to the base; no sliding joints, press travel or return parts.",
+    "web_head_radius_mm": 2.7,
+    "web_foot_height_mm": 0.4,
+    "web_stem_bottom_z_mm": 1.7,
+    "web_stem_height_mm": 1.5
+  },
+  "thumb_dish_depth_mm": 0.4,
+  "battery": {
+    "standard": "CR2450",
+    "voltage_v": 3,
+    "primary_nonrechargeable": true,
+    "diameter_mm": 24.5,
+    "thickness_mm": 5.0,
+    "reference_capacity_mah": 620,
+    "holder_mpn": "BS-24-B4AA014",
+    "holder_jlcpcb": "C7525448",
+    "holder_xy_mm": [
+      0,
+      0
+    ],
+    "cell_bottom_z_mm": 2.0,
+    "cell_center_mm": [
+      0,
+      0
+    ],
+    "supplier_model_cell_bottom_z_mm": 2.7,
+    "qualification": "Supplier free-state contact leaves intrude into the cell envelope; bound this to the contact regions and qualify loaded contact force/retention on a physical sample. No separate cover.",
+    "holder_body_height_mm": 7.6,
+    "holder_loaded_height_mm": 8.6,
+    "loaded_height_source": "MYOUNG MY-CP-0246 A/0 drawing;8.60mm loaded outline includes1mm cell projection beyond7.60mm body",
+    "model_datum_note": "Align STEP circular housing axis to imported land-pattern center; override only modelOriginPosition XY from bounds center to0,0, preservingZ=-0.9 and original source assets"
+  },
+  "cap_retention": {
+    "mode": "push_fit",
+    "reference": "https://ploopyco.github.io/knob/assembly-instructions/",
+    "nominal_diametral_interference_mm": 0.05,
+    "physical_qualified": false,
+    "qualification": "Calibrate actual printer/material with shaft/housing coupons; hand-only seating, pull-off force, creep, wobble, endurance and Hall/RF testing required. No positive axial lock."
+  },
+  "cap_compaction": {
+    "baseline_commit": "b300e196ec7e3ff56dc7dc9638462b9cf52ab772",
+    "top_reduction_mm": 0.6,
+    "minimum_main_deck_mm": 1.3,
+    "minimum_encoder_roof_mm": 1.2,
+    "minimum_connector_clearance_mm": 0.7
+  }
+}

@@ -24,14 +24,14 @@ const run = (cloud, expectedError) => {
     assert(output.includes(expectedError), output)
   } else {
     assert.equal(result.status, 0, output)
-    for (const artifact of manifest.artifacts)
+    for (const artifact of [...manifest.artifacts,...(manifest.variantArtifacts ?? [])])
       assert.equal(hash(readFileSync(resolve(scratch, artifact.output))), artifact.sha256)
   }
 }
 
 try {
   const files = new Set([...Object.keys(manifest.inputs), ...manifest.artifacts.flatMap(a => a.sourceParts ?? [a.source]),
-    "cloud-assets/manifest.json", ...manifest.cadInputArchives.map(a => a.source), "package.json", "bun.lock"])
+    "cloud-assets/manifest.json", ...manifest.cadInputArchives.flatMap(a => a.sourceParts ?? [a.source]), "package.json", "bun.lock"])
   for (const name of files) {
     const target = resolve(scratch, name)
     mkdirSync(dirname(target), { recursive: true })
@@ -49,6 +49,14 @@ try {
   writeFileSync(cadPath, "changed CAD export")
   run(false, `${manifest.cadInputArchives.flatMap(a => a.files)[0]} changed`)
   writeFileSync(cadPath, cadBytes)
+
+  const chunkedCad = manifest.cadInputArchives.find(a => a.sourceParts?.length > 1)
+  assert(chunkedCad,"Exercise chunked CAD restoration")
+  const cadChunkPath=resolve(scratch,chunkedCad.sourceParts[0])
+  const cadChunkBytes=readFileSync(cadChunkPath)
+  writeFileSync(cadChunkPath,"corrupted CAD archive chunk")
+  run(false,"Invalid checked CAD input archive")
+  writeFileSync(cadChunkPath,cadChunkBytes)
 
   const chunked = manifest.artifacts.find(a => a.sourceParts?.length > 1)
   assert(chunked, "Exercise chunked preview restore")

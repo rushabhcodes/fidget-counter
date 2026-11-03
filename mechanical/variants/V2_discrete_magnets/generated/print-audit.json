@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "physically_printed": false,
+  "force_tested": false,
+  "slicer": "PrusaSlicer-2.8.1+linux-x64-GTK3-202409181416 based on Slic3r (with GUI support)",
+  "actual_slicer_executed": true,
+  "geometry_audit_sha256": "0077740438cb5ae3646bf74e6e305d2d964743f33b8113a670da95f295741c39",
+  "audit_source_sha256": "3e7d3bedce040ca26d78bc62e9729bbddd5d16e9fb08b889cd6e0f241cc13d4c",
+  "negative_safeguards_rejected": [
+    "bearing-interface-loss",
+    "punctured-pocket-floor"
+  ],
+  "profile": "Provisional PETG, 0.4mm nozzle, 0.15mm layers, 4 perimeters; configure actual printer",
+  "parts": [
+    {
+      "name": "Base_V2_Discrete",
+      "STL_sha256": "64d4d9c36c3eae6f50e44a797b5aa9f384fad380e79248344c70d9a8fda45089",
+      "slicer_profiles_sha256": {
+        "mechanical/printing/PETG-0.4-audit.ini": "cdd54ff5a859810d4f34b0f6db92a43fc96ff2959344835cb2f9e8e55e67fc2f",
+        "mechanical/printing/base-fixed-supports.ini": "b7b24f90c49ca58dca1cfdae55c18f5542d7ef5354d008b4be3f726895e11ed4"
+      },
+      "first_layer_mm": 0.2,
+      "layers": 111,
+      "extrusion_segments": 86465,
+      "support_segments": 9646,
+      "maximum_bridge_labelled_line_mm": 32.41533513632089,
+      "maximum_actual_unsupported_bridge_gap_mm": 0.0,
+      "maximum_gap_if_supports_removed_mm": 32.4153351363209,
+      "section_areas_mm2": {
+        "0.1": 1404.8333806381768,
+        "2.35": 1432.2796522306378,
+        "3.0": 1445.338585468571,
+        "5.0": 367.70732198427686,
+        "9.0": 191.07000704544885
+      },
+      "slicer_estimates_not_measurements": [
+        "filament used [g] = 10.18",
+        "estimated printing time (normal mode) = 1h 22m 48s",
+        "estimated printing time (silent mode) = 1h 23m 30s"
+      ],
+      "gcode_sha256": "0d8d937fd094154cdeaab048f00b73a8e6aa934c3cee216fc3c727b1734de30d",
+      "gcode_not_distributed": true
+    },
+    {
+      "name": "Magnet_Carrier_V2",
+      "STL_sha256": "4cc527c134e2c709adfb49c6883c152ed0876c8b1418afc85ac582b04b87a765",
+      "slicer_profiles_sha256": {
+        "mechanical/printing/PETG-0.4-audit.ini": "cdd54ff5a859810d4f34b0f6db92a43fc96ff2959344835cb2f9e8e55e67fc2f"
+      },
+      "first_layer_mm": 0.15,
+      "layers": 9,
+      "extrusion_segments": 18999,
+      "support_segments": 0,
+      "maximum_bridge_labelled_line_mm": 0,
+      "maximum_actual_unsupported_bridge_gap_mm": 0,
+      "maximum_gap_if_supports_removed_mm": 0,
+      "section_areas_mm2": {
+        "0.075": 1216.361827790887,
+        "0.225": 1216.3618277908897
+      },
+      "slicer_estimates_not_measurements": [
+        "filament used [g] = 1.53",
+        "estimated printing time (normal mode) = 19m 7s",
+        "estimated printing time (silent mode) = 19m 22s"
+      ],
+      "gcode_sha256": "2f6719468747f82294a2a27d1742f8aac47ca1f732bf186d59cfb923b34b6253",
+      "gcode_not_distributed": true
+    }
+  ],
+  "unchanged_cap_prints": "Use existing cap-specific print manifest and slicer results; every cap STEP hash retained by V2 builder"
+}

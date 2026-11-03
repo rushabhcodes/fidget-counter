@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "force_verified": false,
+  "variant": "V2 discrete-magnet test base",
+  "parameters_sha256": "3201c98f79cfa3c8a7f3d2147ed67686c6073fc9455ff845972accba30277378",
+  "builder_sha256": "891bde644fbfbea10356ce2ce475aa1ba5721f7fa4f1c8c0d62567379692e4ee",
+  "source_circuit_sha256": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
+  "preserved_V1_manifest_sha256": "ac1fa90884309c36d51357bbd3bd95e87f74184c63de5b27a990cf73e34a0e8c",
+  "changes_confined_to_base_recess": true,
+  "all_caps_byte_identical": true,
+  "cap_styles_checked": [
+    "circular",
+    "ships_wheel",
+    "rounded_triangle",
+    "scalloped_coin",
+    "petal_flower",
+    "four_leaf_clover",
+    "rounded_hexagon",
+    "rounded_square",
+    "wave_rim",
+    "turbine_wheel",
+    "thumb_scoop"
+  ],
+  "rotation_samples_per_cap": 24,
+  "supplier_bodies_checked": 27,
+  "magnet_count": 36,
+  "minimum_pocket_to_pocket_web_mm": 0.899999999999999,
+  "carrier_inner_wall_mm": 0.8500000000000014,
+  "carrier_outer_wall_mm": 1.1711480653620931,
+  "carrier_floor_mm": 0.3,
+  "base_roof_z_mm": 2.4,
+  "steel_to_base_bondline_mm": 0.08799999999999986,
+  "physical_height_mm": 16.4,
+  "encoder_gap_mm": 1.8,
+  "printed_product_parts": 3,
+  "handled_parts": 46,
+  "new_printed_parts": [
+    {
+      "name": "Base_V2_Discrete",
+      "STEP": "generated/STEP/Base_V2_Discrete.step",
+      "STEP_sha256": "c69f655bda0623dd31736a03d092cc8c76db73b8061113e432a3038ea93784f2",
+      "STL": "generated/Print_STL/Base_V2_Discrete.stl",
+      "STL_sha256": "64d4d9c36c3eae6f50e44a797b5aa9f384fad380e79248344c70d9a8fda45089",
+      "watertight": true,
+      "single_solid": true,
+      "volume_mm3": 5988.8765124399215,
+      "bed_orientation": "Phone-contact face down; positive Z up",
+      "physical_fitted": false
+    },
+    {
+      "name": "Magnet_Carrier_V2",
+      "STEP": "generated/STEP/Magnet_Carrier_V2.step",
+      "STEP_sha256": "372a6edb596c7e014dd7f4eed73dc0f18987a19fc005913d33f744c3c7be9c82",
+      "STL": "generated/Print_STL/Magnet_Carrier_V2.stl",
+      "STL_sha256": "4cc527c134e2c709adfb49c6883c152ed0876c8b1418afc85ac582b04b87a765",
+      "watertight": true,
+      "single_solid": true,
+      "volume_mm3": 1094.9178383933415,
+      "bed_orientation": "Phone-contact face down; positive Z up",
+      "physical_fitted": false
+    }
+  ],
+  "buy_or_fabricate_not_rigid_print": [
+    "36 M0601 magnets",
+    "1 low-carbon steel backing ring"
+  ],
+  "retained_parts": [
+    "one existing Cap variant",
+    "6808-ZZ bearing",
+    "existing PCBA with CR2450 holder",
+    "CR2450 cell",
+    "two M2 nylon PCB screws",
+    "diametric encoder magnet"
+  ]
+}

@@ -35,26 +35,44 @@ const inputs = [
   "validation/compact-glb.mjs",
   "validation/restore-model-normals.mjs",
   "validation/restore-cad-inputs.mjs",
+  "mechanical/variants/V2_discrete_magnets/review.html",
+  "mechanical/variants/V2_discrete_magnets/review.png",
+  "mechanical/variants/V2_discrete_magnets/polarity.svg",
   ...walk(resolve(root, "imports")).map((path) => relative(root, path)),
   ...walk(resolve(root, "mechanical"))
     .filter((path) => !relative(root, path).startsWith("mechanical/export/") && !path.includes("/__pycache__/"))
+    // Full V2 STEP assemblies ship in a separate manufacturing CAD archive;
+    // the transient render mesh is regenerated from source, not a worker input.
+    .filter((path) => !relative(root,path).startsWith("mechanical/variants/V2_discrete_magnets/generated/Assemblies/") && relative(root,path)!=="mechanical/variants/V2_discrete_magnets/generated/scene_meshes.json")
     .filter((path) => [".py", ".json", ".stl", ".obj", ".mtl", ".step", ".glb"].includes(extname(path)))
     // OBJ/MTL references stay in Git; indexed GLB assets are the runtime inputs.
     .filter((path) => !(relative(root,path).startsWith("mechanical/Circuit_Models/") && [".obj",".mtl"].includes(extname(path))))
     .map((path) => relative(root, path)),
 ]
+const variantPageFiles = {
+  "review.html":"index.html",
+  "review.png":"review.png",
+  "polarity.svg":"polarity.svg",
+  "generated/V2_assembled.glb":"V2_assembled.glb",
+}
 const manifest = {
   formatVersion: 2,
   description: "Locally built and checked preview; hashes bind it to the published source and CAD assets.",
   inputs: Object.fromEntries([...new Set(inputs)].sort().map((name) => [name, sha256(readFileSync(resolve(root, name)))])),
   packageInput: getPackageInput(JSON.parse(readFileSync(resolve(root, "package.json"))), readFileSync(resolve(root, "bun.lock"))),
   artifacts: [],
+  variantArtifacts: Object.entries(variantPageFiles).map(([name,target]) => {
+    const source=`mechanical/variants/V2_discrete_magnets/${name}`
+    const bytes=readFileSync(resolve(root,source))
+    return {source,output:`dist/v2/${target}`,sha256:sha256(bytes),bytes:bytes.length}
+  }),
 }
 mkdirSync(resolve(root, "cloud-assets"), { recursive: true })
 // Keep the worker's input map small. These manufacturing/CAD exports are
 // restored inside the sandbox before the unchanged source hashes are checked.
 const cadFiles = Object.keys(manifest.inputs).filter(name =>
-  name.startsWith("mechanical/Print_STL/") || name.startsWith("mechanical/STEP_Parts/"))
+  name.startsWith("mechanical/Print_STL/") || name.startsWith("mechanical/STEP_Parts/") ||
+  (name.startsWith("mechanical/variants/") && /\.(stl|step|glb)$/.test(name)))
 const cadGroups = []
 let cadGroup = []
 let cadBytes = 0
@@ -72,13 +90,19 @@ if (cadGroup.length) cadGroups.push(cadGroup)
 manifest.cadInputArchives = cadGroups.map((entries, index) => {
   const source = `cloud-assets/cad-inputs-${index}.json.gz.b64`
   const packed = Buffer.from(gzipSync(JSON.stringify(entries), { level: 9 }).toString("base64") + "\n")
-  writeFileSync(resolve(root, source), packed)
-  return { source, sha256: sha256(packed), files: entries.map(entry => entry.path) }
+  const sourceParts = []
+  if (packed.length > 3_000_000) {
+    for (let start=0;start<packed.length;start+=3_000_000) {
+      const part = `cloud-assets/cad-inputs-${index}.part-${String(sourceParts.length).padStart(3,"0")}.json.gz.b64`
+      writeFileSync(resolve(root,part),packed.subarray(start,start+3_000_000));sourceParts.push(part)
+    }
+  } else writeFileSync(resolve(root, source), packed)
+  return { source, ...(sourceParts.length ? {sourceParts} : {}), sha256: sha256(packed), files: entries.map(entry => entry.path) }
 })
-const activeCadArchives = new Set(manifest.cadInputArchives.map(archive => archive.source))
+const activeCadArchives = new Set(manifest.cadInputArchives.flatMap(archive => archive.sourceParts ?? [archive.source]))
 for (const name of readdirSync(resolve(root, "cloud-assets"))) {
   const path = `cloud-assets/${name}`
-  if (/^cad-inputs-\d+\.json\.gz\.b64$/.test(name) && !activeCadArchives.has(path))
+  if (/^cad-inputs-\d+(\.part-\d+)?\.json\.gz\.b64$/.test(name) && !activeCadArchives.has(path))
     unlinkSync(resolve(root, path))
 }
 for (const name of ["circuit.json", "pcb.png", "pcb.svg", "schematic.png", "schematic.svg", "3d.glb"]) {

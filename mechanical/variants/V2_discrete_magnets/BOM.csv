@@ -1,0 +1,12 @@
+Part,Quantity,Specification,Assembly notes
+Base_V2_Discrete,1,PETG printed V2 base,Replaces V1 base; preserve shaft and posts
+Magnet_Carrier_V2,1,PETG printed carrier,Phone-face down; 0.3mm pocket floors
+Selected Cap,1,Existing unchanged cap style,Use the current style-specific print profile
+Attachment magnet,36,SuperMagnetMan M0601 6x2x1mm axial N50,18 inner S and 18 outer N toward phone
+Steel_Backing_V2,1,Low-carbon1008/1010 steel OD57.6 ID43.0 finished W0.762mm,Custom cut and deburr; not a plastic print
+Bearing,1,6808-ZZ / 61808-2Z 40x52x7mm,Unchanged qualified-fit target
+PCB screws,2,M2x4 nylon head OD3.8 height1.3mm maximum,Unchanged opposite-pair PCB mounting
+Encoder magnet,1,Diametric OD5 W1.5mm neodymium,Unchanged integral cap stop and encoder spacing
+CR2450,1,3V primary loose cell,Holder already assembled on PCBA
+PCBA,1,RevC OD36.5 W1.0mm 27 fitted components,Includes C7525448 holder and programming header
+Adhesive,As required,Compatible nonconductive adhesive,Qualify magnet steel and PETG bonds and aging

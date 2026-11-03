@@ -1,0 +1,156 @@
+{
+  "variant": "V2 individual magnets",
+  "physical_qualified": false,
+  "holding_force_verified": false,
+  "default_rigid_part_count": 3,
+  "default_cap": "circular",
+  "default_files": [
+    "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Base_V2_Discrete.stl",
+    "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Magnet_Carrier_V2.stl",
+    "mechanical/Print_STL/Cap_circular.stl"
+  ],
+  "parts": [
+    {
+      "name": "Base_V2_Discrete",
+      "file": "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Base_V2_Discrete.stl",
+      "sha256": "64d4d9c36c3eae6f50e44a797b5aa9f384fad380e79248344c70d9a8fda45089",
+      "STEP_file": "mechanical/variants/V2_discrete_magnets/generated/STEP/Base_V2_Discrete.step",
+      "STEP_sha256": "c69f655bda0623dd31736a03d092cc8c76db73b8061113e432a3038ea93784f2",
+      "quantity_per_default_unit": 1,
+      "orientation": "Phone face down",
+      "supports": "fixed-base",
+      "first_layer_mm": 0.2
+    },
+    {
+      "name": "Magnet_Carrier_V2",
+      "file": "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Magnet_Carrier_V2.stl",
+      "sha256": "4cc527c134e2c709adfb49c6883c152ed0876c8b1418afc85ac582b04b87a765",
+      "STEP_file": "mechanical/variants/V2_discrete_magnets/generated/STEP/Magnet_Carrier_V2.step",
+      "STEP_sha256": "372a6edb596c7e014dd7f4eed73dc0f18987a19fc005913d33f744c3c7be9c82",
+      "quantity_per_default_unit": 1,
+      "orientation": "Phone face down",
+      "supports": "none",
+      "first_layer_mm": 0.15
+    },
+    {
+      "name": "Cap_circular",
+      "file": "mechanical/Print_STL/Cap_circular.stl",
+      "sha256": "2faf2d3eb9862dded97681c0c0bb46bba1af5e3a3cabe973581ce2f61b03e40c",
+      "STEP_file": "mechanical/STEP_Parts/Cap_circular.step",
+      "STEP_sha256": "7557517b57122c0a9ae697f9e130fe2118c93817622b0f432c7442a98578909f",
+      "quantity_per_default_unit": 1,
+      "orientation": "deck down",
+      "supports": "none"
+    },
+    {
+      "name": "Cap_ships_wheel",
+      "file": "mechanical/Print_STL/Cap_ships_wheel.stl",
+      "sha256": "7074a880c4a031a8c2f91590d8886cca00c212c34474f810ca64e88296891925",
+      "STEP_file": "mechanical/STEP_Parts/Cap_ships_wheel.step",
+      "STEP_sha256": "3be76804ae6c667de783071b314bd41c504dc5ea0635b84f1a58819757931626",
+      "quantity_per_default_unit": 0,
+      "orientation": "deck down",
+      "supports": "early-rim"
+    },
+    {
+      "name": "Cap_rounded_triangle",
+      "file": "mechanical/Print_STL/Cap_rounded_triangle.stl",
+      "sha256": "6bd3ad01638bb9ca3ba1c7d9101a79442a973a614415e0faf909d7dd6d873cf7",
+      "STEP_file": "mechanical/STEP_Parts/Cap_rounded_triangle.step",
+      "STEP_sha256": "95c53d8e2b94a65e126bf58d7ffbd43fc6eacc6f6c2e87cae74a0a20ed9fdd44",
+      "quantity_per_default_unit": 0,
+      "orientation": "deck down",
+      "supports": "early-rim"
+    },
+    {
+      "name": "Cap_scalloped_coin",
+      "file": "mechanical/Print_STL/Cap_scalloped_coin.stl",
+      "sha256": "ff9e683fa67ad9df93aac6b932a6ad5a4a4cb9edf09d739835d9e78beb3ac335",
+      "STEP_file": "mechanical/STEP_Parts/Cap_scalloped_coin.step",
+      "STEP_sha256": "378c84e2f27cac624f455db155b06acfb7e3a28af6c2f35d5c1aa7354a8c6d5c",
+      "quantity_per_default_unit": 0,
+      "orientation": "deck down",
+      "supports": "none"
+    },
+    {
+      "name": "Cap_petal_flower",
+      "file": "mechanical/Print_STL/Cap_petal_flower.stl",
+      "sha256": "9ba03546f81f1e025b057da6227b0fe18def21a3d20838527ba9208df3d2a689",
+      "STEP_file": "mechanical/STEP_Parts/Cap_petal_flower.step",
+      "STEP_sha256": "2cf7b3fa08f91bd0e741d9aea5734483076105c4cc85feaa28ba5f0de516d79d",
+      "quantity_per_default_unit": 0,
+      "orientation": "deck down",
+      "supports": "early-rim"
+    },
+    {
+      "name": "Cap_four_leaf_clover",
+      "file": "mechanical/Print_STL/Cap_four_leaf_clover.stl",
+      "sha256": "a9d27ae86ede79efaeea0ae7bfce0ba3c411099223d8441816bde09a76594ef6",
+      "STEP_file": "mechanical/STEP_Parts/Cap_four_leaf_clover.step",
+      "STEP_sha256": "25a3d703357f7cbac357b6b36ce45e394248613e9038387c809ac2c97397893a",
+      "quantity_per_default_unit": 0,
+      "orientation": "deck down",
+      "supports": "early-rim"
+    },
+    {
+      "name": "Cap_rounded_hexagon",
+      "file": "mechanical/Print_STL/Cap_rounded_hexagon.stl",
+      "sha256": "71e4d46f39b05306191fec4a9c4290f8054206428b873301c7e12c89a1d6844c",
+      "STEP_file": "mechanical/STEP_Parts/Cap_rounded_hexagon.step",
+      "STEP_sha256": "2f04ad6914a0ca20d9a0811207be5240aa5a92a63f46a4ffceb45e17b13a5351",
+      "quantity_per_default_unit": 0,
+      "orientation": "deck down",
+      "supports": "none"
+    },
+    {
+      "name": "Cap_rounded_square",
+      "file": "mechanical/Print_STL/Cap_rounded_square.stl",
+      "sha256": "413364588682f1b515e5646806067b91ec4b848de142aa87a5b8975f048b02d4",
+      "STEP_file": "mechanical/STEP_Parts/Cap_rounded_square.step",
+      "STEP_sha256": "559fc30609566977c442b5bb15da8865130af13dc66e975e99fa60b599ee68d6",
+      "quantity_per_default_unit": 0,
+      "orientation": "deck down",
+      "supports": "early-rim"
+    },
+    {
+      "name": "Cap_wave_rim",
+      "file": "mechanical/Print_STL/Cap_wave_rim.stl",
+      "sha256": "5373ca46f76bcc949844eb2e91da4d5ae253e8eada57d9ac99950b618e1774ff",
+      "STEP_file": "mechanical/STEP_Parts/Cap_wave_rim.step",
+      "STEP_sha256": "a6f9559dd1c30fcf4d272f080faf422abc6b91a238978f618843f1c85e033629",
+      "quantity_per_default_unit": 0,
+      "orientation": "deck down",
+      "supports": "none"
+    },
+    {
+      "name": "Cap_turbine_wheel",
+      "file": "mechanical/Print_STL/Cap_turbine_wheel.stl",
+      "sha256": "0fff12639b37ba8b82aa67edc8219eb615a495b9f54e54711e1b02a8dc0ca6ac",
+      "STEP_file": "mechanical/STEP_Parts/Cap_turbine_wheel.step",
+      "STEP_sha256": "3d1d45c05282a73d4333fdf06e4260ea4d9f5fe7a4c315e83f134ef98cbc63b6",
+      "quantity_per_default_unit": 0,
+      "orientation": "deck down",
+      "supports": "none"
+    },
+    {
+      "name": "Cap_thumb_scoop",
+      "file": "mechanical/Print_STL/Cap_thumb_scoop.stl",
+      "sha256": "c8410c846980ff2bddf38cd12198f17ee541a0e3b00995b63e87a0543c1e5b41",
+      "STEP_file": "mechanical/STEP_Parts/Cap_thumb_scoop.step",
+      "STEP_sha256": "19a67ed1fcaf9a2116e4e133326c90dc0490bec679e9f01ab4fbeef8a05328df",
+      "quantity_per_default_unit": 0,
+      "orientation": "upright, cup supported",
+      "supports": "everywhere"
+    }
+  ],
+  "excluded_from_rigid_printing": [
+    "36 attachment magnets",
+    "Steel backing STEP/DXF",
+    "Bearings, PCBA, cell, screws and encoder magnet",
+    "Assembled/exploded STEP and GLB"
+  ],
+  "geometry_audit_sha256": "0077740438cb5ae3646bf74e6e305d2d964743f33b8113a670da95f295741c39",
+  "actual_slicer_audit_sha256": "c5929aab59d921cd2c4dfbb1a40c1ced057ef7b79c749dd306b1e5ecb3708e2d",
+  "unchanged_caps_slicer_audit_sha256": "4704930737e2b2859e40250ddaab2107564d515ff4dd757e94a2c669dc881d44",
+  "machine_Gcode_included": false
+}

@@ -1,18 +1,18 @@
 {
-  "version": "1.0.30",
+  "version": "1.0.31",
   "source_circuit_sha256": "068bc3868214c919f48fe47b5a090fd6159bac2213aa5647a4a6a0e10da998dd",
   "physical_qualified": false,
   "print": {
-    "file": "manufacturing/fidget-counter-print-pilot-1.0.30.zip",
-    "sha256": "c9c7c9897c9828f94f2a946ab833bb80f1ceed6efc3a966c78ac75c94cc33173",
-    "bytes": 4791527,
+    "file": "manufacturing/fidget-counter-print-pilot-1.0.31.zip",
+    "sha256": "5f1a720061284419fefe7d932d61b24684d3f76ac11a017eff63a9427b2fcd8c",
+    "bytes": 4791845,
     "files": {
-      "ASSEMBLY.md": "96aca7327fd780734b5004812191cbe850f6039d956e5acfa8a189181cd28923",
-      "MECHANICAL.md": "af5173089d6567d8b63358ac6a941261b02985403230d3afeb57d020fb56b209",
+      "ASSEMBLY.md": "d306212bed616f5031f0ee0015b2691b2e1a04ee3ac17a11a7c4459261802204",
+      "MECHANICAL.md": "f3eac3c4a9535d52c27d818ec7f909a755fc0dde8b7cc80463755ef5d9042ced",
       "START_HERE.txt": "30bd8578fa829a7c09800536e7738b6d585696d2c6cbcd7a176bf21c2f0d3c7a",
       "mechanical/COMPACT_CAP_REVIEW.md": "3c33ecc56aa0b7be74a46978fb9e96070355b549a96e9ae75bddcfd0b2571038",
       "mechanical/MANUFACTURING_REVIEW.md": "8a407adc1b045ba2477a7e1d817ec078f23fbb83ef27d15530da0c0e70a3a11c",
-      "mechanical/MECHANICAL_BOM.csv": "e79fea532c0b14dcf460a674b695e67b18b2d088fbd3a5ff85e7007a6150b667",
+      "mechanical/MECHANICAL_BOM.csv": "1cd6a9ffc6cbf086df8c83346b632c25b50484a242f1f023d26f8883b06fd3a2",
       "mechanical/Print_STL/Cap_circular.stl": "2faf2d3eb9862dded97681c0c0bb46bba1af5e3a3cabe973581ce2f61b03e40c",
       "mechanical/Print_STL/Cap_four_leaf_clover.stl": "a9d27ae86ede79efaeea0ae7bfce0ba3c411099223d8441816bde09a76594ef6",
       "mechanical/Print_STL/Cap_petal_flower.stl": "9ba03546f81f1e025b057da6227b0fe18def21a3d20838527ba9208df3d2a689",
@@ -66,7 +66,7 @@
     }
   },
   "fabrication": {
-    "file": "manufacturing/fidget-counter-fabrication-1.0.30.zip",
+    "file": "manufacturing/fidget-counter-fabrication-1.0.31.zip",
     "sha256": "cec7361400ce1b22e54e201f758bd8d8006b79b9f76750d8376cb50e751fd03d",
     "bytes": 153384,
     "files": {
