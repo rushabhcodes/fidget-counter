@@ -4,19 +4,43 @@
   "coupons": [
     {
       "file": "Bearing_Housing_Coupon.stl",
-      "sha256": "7781db826bc5647035be705b0d90f38719ecf56656a8ab6e4baf1a4f80db42bd"
+      "sha256": "77e160695775325884dc5adeddbf60db8c50c89449292526ba1fa9d2064c753d"
     },
     {
       "file": "Bearing_Shaft_Coupon.stl",
-      "sha256": "df0e362f0f4e7775f5dccf6f811e5ff7aaae2c2321d03dcbf28518e53e871775"
+      "sha256": "cf68ba607e37f4237e3dd7c9637588eebd403a62d48c962da07ea36a9431169b"
     },
     {
-      "file": "Inner_Thread_Coupon.stl",
-      "sha256": "49cd668e156ababe0cfcdb0c2566ae6a1d8b0ac0038412fce60ea94cfe6ffbea"
+      "file": "Shaft_39p90.stl",
+      "sha256": "61b770b3b45e804984794efcc44b65af2c65b7e030e38553e9a16408a989d9aa"
     },
     {
-      "file": "Inner_Race_Nut.stl",
-      "sha256": "74301e3a59b75794bcd0de7a1dda534c85941434f7bf75e1bb06b24b5d5cf63f"
+      "file": "Shaft_40p00.stl",
+      "sha256": "ac88cce002b67177d5731c4d33d5fd1adbc24915ffb918dd5ea948a8f2727fa4"
+    },
+    {
+      "file": "Shaft_40p05.stl",
+      "sha256": "cf68ba607e37f4237e3dd7c9637588eebd403a62d48c962da07ea36a9431169b"
+    },
+    {
+      "file": "Shaft_40p10.stl",
+      "sha256": "aa434663863a604e9cb26e111eb624a896531e67fcdb178e348258ee7d9dd6b5"
+    },
+    {
+      "file": "Housing_52p10.stl",
+      "sha256": "22f67aedaa7e40ba2b73e403c5eacb6ef4d5b726543fbdea6821fdb55cba0d29"
+    },
+    {
+      "file": "Housing_52p00.stl",
+      "sha256": "bde6732db933d5993b6620dae13159eed1a8a0721809df8e0f3aa0bf03e738f5"
+    },
+    {
+      "file": "Housing_51p95.stl",
+      "sha256": "77e160695775325884dc5adeddbf60db8c50c89449292526ba1fa9d2064c753d"
+    },
+    {
+      "file": "Housing_51p90.stl",
+      "sha256": "587bcb07e549ce6b69a5a83b9ebba4975cc5f4fce31784f698e27d8fa1d0f7c9"
     }
   ]
 }

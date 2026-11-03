@@ -4,22 +4,19 @@ import obj0 from "./mechanical/Circuit_Models/Stationary_Base.glb"
 import obj1 from "./mechanical/Circuit_Models/Cell.glb"
 import obj2 from "./mechanical/Circuit_Models/MagSafe_Ring.glb"
 import obj3 from "./mechanical/Circuit_Models/PCB_Fasteners.glb"
-import obj4 from "./mechanical/Circuit_Models/Inner_Race_Nut.glb"
-import obj5 from "./mechanical/Circuit_Models/Bearing_6808.glb"
-import obj6 from "./mechanical/Circuit_Models/Outer_Race_Retainer.glb"
-import obj7 from "./mechanical/Circuit_Models/Cap_Retainer_Screws.glb"
-import obj8 from "./mechanical/Circuit_Models/Magnet.glb"
-import obj9 from "./mechanical/Circuit_Models/Cap_circular.glb"
-import obj10 from "./mechanical/Circuit_Models/Cap_ships_wheel.glb"
-import obj11 from "./mechanical/Circuit_Models/Cap_rounded_triangle.glb"
-import obj12 from "./mechanical/Circuit_Models/Cap_scalloped_coin.glb"
-import obj13 from "./mechanical/Circuit_Models/Cap_petal_flower.glb"
-import obj14 from "./mechanical/Circuit_Models/Cap_four_leaf_clover.glb"
-import obj15 from "./mechanical/Circuit_Models/Cap_rounded_hexagon.glb"
-import obj16 from "./mechanical/Circuit_Models/Cap_rounded_square.glb"
-import obj17 from "./mechanical/Circuit_Models/Cap_wave_rim.glb"
-import obj18 from "./mechanical/Circuit_Models/Cap_turbine_wheel.glb"
-import obj19 from "./mechanical/Circuit_Models/Cap_thumb_scoop.glb"
+import obj4 from "./mechanical/Circuit_Models/Bearing_6808.glb"
+import obj5 from "./mechanical/Circuit_Models/Magnet.glb"
+import obj6 from "./mechanical/Circuit_Models/Cap_circular.glb"
+import obj7 from "./mechanical/Circuit_Models/Cap_ships_wheel.glb"
+import obj8 from "./mechanical/Circuit_Models/Cap_rounded_triangle.glb"
+import obj9 from "./mechanical/Circuit_Models/Cap_scalloped_coin.glb"
+import obj10 from "./mechanical/Circuit_Models/Cap_petal_flower.glb"
+import obj11 from "./mechanical/Circuit_Models/Cap_four_leaf_clover.glb"
+import obj12 from "./mechanical/Circuit_Models/Cap_rounded_hexagon.glb"
+import obj13 from "./mechanical/Circuit_Models/Cap_rounded_square.glb"
+import obj14 from "./mechanical/Circuit_Models/Cap_wave_rim.glb"
+import obj15 from "./mechanical/Circuit_Models/Cap_turbine_wheel.glb"
+import obj16 from "./mechanical/Circuit_Models/Cap_thumb_scoop.glb"
 
 export const CAP_STYLE_OPTIONS = ["circular", "ships_wheel", "rounded_triangle", "scalloped_coin", "petal_flower", "four_leaf_clover", "rounded_hexagon", "rounded_square", "wave_rim", "turbine_wheel", "thumb_scoop"] as const
 export type CapStyle = typeof CAP_STYLE_OPTIONS[number]
@@ -28,22 +25,19 @@ const models = [
   {name:"Cell",obj:obj1,mtl:"./mechanical/Circuit_Models/Cell.mtl",style:null},
   {name:"MagSafe_Ring",obj:obj2,mtl:"./mechanical/Circuit_Models/MagSafe_Ring.mtl",style:null},
   {name:"PCB_Fasteners",obj:obj3,mtl:"./mechanical/Circuit_Models/PCB_Fasteners.mtl",style:null},
-  {name:"Inner_Race_Nut",obj:obj4,mtl:"./mechanical/Circuit_Models/Inner_Race_Nut.mtl",style:null},
-  {name:"Bearing_6808",obj:obj5,mtl:"./mechanical/Circuit_Models/Bearing_6808.mtl",style:null},
-  {name:"Outer_Race_Retainer",obj:obj6,mtl:"./mechanical/Circuit_Models/Outer_Race_Retainer.mtl",style:null},
-  {name:"Cap_Retainer_Screws",obj:obj7,mtl:"./mechanical/Circuit_Models/Cap_Retainer_Screws.mtl",style:null},
-  {name:"Magnet",obj:obj8,mtl:"./mechanical/Circuit_Models/Magnet.mtl",style:null},
-  {name:"Cap_circular",obj:obj9,mtl:"./mechanical/Circuit_Models/Cap_circular.mtl",style:"circular"},
-  {name:"Cap_ships_wheel",obj:obj10,mtl:"./mechanical/Circuit_Models/Cap_ships_wheel.mtl",style:"ships_wheel"},
-  {name:"Cap_rounded_triangle",obj:obj11,mtl:"./mechanical/Circuit_Models/Cap_rounded_triangle.mtl",style:"rounded_triangle"},
-  {name:"Cap_scalloped_coin",obj:obj12,mtl:"./mechanical/Circuit_Models/Cap_scalloped_coin.mtl",style:"scalloped_coin"},
-  {name:"Cap_petal_flower",obj:obj13,mtl:"./mechanical/Circuit_Models/Cap_petal_flower.mtl",style:"petal_flower"},
-  {name:"Cap_four_leaf_clover",obj:obj14,mtl:"./mechanical/Circuit_Models/Cap_four_leaf_clover.mtl",style:"four_leaf_clover"},
-  {name:"Cap_rounded_hexagon",obj:obj15,mtl:"./mechanical/Circuit_Models/Cap_rounded_hexagon.mtl",style:"rounded_hexagon"},
-  {name:"Cap_rounded_square",obj:obj16,mtl:"./mechanical/Circuit_Models/Cap_rounded_square.mtl",style:"rounded_square"},
-  {name:"Cap_wave_rim",obj:obj17,mtl:"./mechanical/Circuit_Models/Cap_wave_rim.mtl",style:"wave_rim"},
-  {name:"Cap_turbine_wheel",obj:obj18,mtl:"./mechanical/Circuit_Models/Cap_turbine_wheel.mtl",style:"turbine_wheel"},
-  {name:"Cap_thumb_scoop",obj:obj19,mtl:"./mechanical/Circuit_Models/Cap_thumb_scoop.mtl",style:"thumb_scoop"},
+  {name:"Bearing_6808",obj:obj4,mtl:"./mechanical/Circuit_Models/Bearing_6808.mtl",style:null},
+  {name:"Magnet",obj:obj5,mtl:"./mechanical/Circuit_Models/Magnet.mtl",style:null},
+  {name:"Cap_circular",obj:obj6,mtl:"./mechanical/Circuit_Models/Cap_circular.mtl",style:"circular"},
+  {name:"Cap_ships_wheel",obj:obj7,mtl:"./mechanical/Circuit_Models/Cap_ships_wheel.mtl",style:"ships_wheel"},
+  {name:"Cap_rounded_triangle",obj:obj8,mtl:"./mechanical/Circuit_Models/Cap_rounded_triangle.mtl",style:"rounded_triangle"},
+  {name:"Cap_scalloped_coin",obj:obj9,mtl:"./mechanical/Circuit_Models/Cap_scalloped_coin.mtl",style:"scalloped_coin"},
+  {name:"Cap_petal_flower",obj:obj10,mtl:"./mechanical/Circuit_Models/Cap_petal_flower.mtl",style:"petal_flower"},
+  {name:"Cap_four_leaf_clover",obj:obj11,mtl:"./mechanical/Circuit_Models/Cap_four_leaf_clover.mtl",style:"four_leaf_clover"},
+  {name:"Cap_rounded_hexagon",obj:obj12,mtl:"./mechanical/Circuit_Models/Cap_rounded_hexagon.mtl",style:"rounded_hexagon"},
+  {name:"Cap_rounded_square",obj:obj13,mtl:"./mechanical/Circuit_Models/Cap_rounded_square.mtl",style:"rounded_square"},
+  {name:"Cap_wave_rim",obj:obj14,mtl:"./mechanical/Circuit_Models/Cap_wave_rim.mtl",style:"wave_rim"},
+  {name:"Cap_turbine_wheel",obj:obj15,mtl:"./mechanical/Circuit_Models/Cap_turbine_wheel.mtl",style:"turbine_wheel"},
+  {name:"Cap_thumb_scoop",obj:obj16,mtl:"./mechanical/Circuit_Models/Cap_thumb_scoop.mtl",style:"thumb_scoop"},
 ]
 
 // Fixed bearing support and rotation-only cap; CAD coordinates are mm from the phone plane.

@@ -33,6 +33,9 @@ export const routingGeometry = (input:any) => {
 // board geometry, copper obstacles, existing routes, layers, widths, design rules
 // and electrical membership, in addition to terminal XY.
 export const routeBoard = async (input:any) => {
+ const digest=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(canonical(paths.traces))))
+ const outputHash=Array.from(digest,b=>b.toString(16).padStart(2,'0')).join('')
+ if(outputHash!==contract.outputSha256)throw new Error('Approved routed copper changed; revalidate the routing contract')
  if(canonical(routingGeometry(input))!==canonical(contract.geometry))
   throw new Error("Routing terminals or copper changed; update the prescribed routes and rerun all checks")
  const expected=JSON.parse(paths.expectedPhaseSignature)

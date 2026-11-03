@@ -22,13 +22,13 @@
   "source_sha256": {
     "validation/check-cr2450-holder.py": "4bb2fde5bce4dcd7d2ccbaee4a275b3a90150ad5a1db97394dec216039d16b94",
     "parts.tsx": "56a8b3993d257c0ccef55a84c9814b689182a9dc754bff06afe089d9543c7915",
-    "mechanical/enclosure-parameters.json": "78d6e9391402f379d0f7f15404e43e6b9eaec2846b254824a90ce498eb58f9fc",
+    "mechanical/enclosure-parameters.json": "ab5279cf7ba3b20594668c5ed60d2979ae44033dd79ee2ad6c66f63f16f06786",
     "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f",
     "mechanical/build_battery_courtyard.py": "c386547f06a432732bc106a4e98696f26f569d51938226ed623d98c19737da9c",
     "mechanical/references/MYOUNG_BS-24-B4AA014_MY-CP-0246_A0.pdf": "1f0d62dd33bb6eb78a641b680388a26356e53a284bce1a1146854488e90c99bf",
-    "dist/index/circuit.json": "639a34f3aed73f4b74597806e382845ec38b649186bbc08aba3f195e001fc9d1",
-    "dist/index/3d.glb": "fa8c495e2e54e52b0c2ea7e1264c5a5a469f36e47b542e61c57abd7a0348d576",
-    "mechanical/STEP_Parts/Stationary_Base.step": "82152206f593c2fecdb34776578684ef2c4030f77c2182d6aef237726ceb5fee",
+    "dist/index/circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+    "dist/index/3d.glb": "35e32ea77a365c84d0fc846f5ae8bd7f83fd2a8ebe63c6b6445679f5db119284",
+    "mechanical/STEP_Parts/Stationary_Base.step": "7f08c6843718ce46c47bdcf73b3e6355751b16198653ad4d65d14f381a3e44a5",
     "imports/BS_24_B4AA014/BS_24_B4AA014.step": "1446db6fa5286480ba989cfd709c9e0429209990297f99abe7f51daebc1a0f6a",
     "imports/BS_24_B4AA014/BS_24_B4AA014.obj": "37b1332676c02573b8c96ea693be5f80d3373a40ab602d9cb70b069c2f6f6d24",
     "imports/BS_24_B4AA014/BS_24_B4AA014.tsx": "ddc0165b866906067ffbf5435488e4663689e6eab659208b0958df4d752adc4a"

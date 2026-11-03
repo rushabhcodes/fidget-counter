@@ -9,7 +9,8 @@
   "fixed_throat_diameter_mm": 37.3,
   "PCB_diameter_mm": 36.5,
   "nominal_radial_insertion_clearance_mm": 0.4,
-  "minimum_male_root_wall_mm": 0.85,
+  "minimum_male_root_wall_mm": null,
+  "minimum_fixed_shaft_wall_mm": 1.375,
   "unrelated_base_changes": false,
   "electronics": [
     {
@@ -159,11 +160,11 @@
     "Battery/holder and populated board physical fit"
   ],
   "source_sha256": {
-    "validation/check-pcb-insertion.py": "99da9dc5576571182d0fe66a4a3634d23e81ebc88c7b52c02728c3b41daf6da5",
-    "mechanical/build_enclosure.py": "ef13e66f09bd8cf299b57bf50aba47fc139c99eb40fe885bb6ab089d91e9e916",
-    "mechanical/enclosure-parameters.json": "78d6e9391402f379d0f7f15404e43e6b9eaec2846b254824a90ce498eb58f9fc",
-    "mechanical/STEP_Parts/Stationary_Base.step": "82152206f593c2fecdb34776578684ef2c4030f77c2182d6aef237726ceb5fee",
-    "published.circuit.json": "639a34f3aed73f4b74597806e382845ec38b649186bbc08aba3f195e001fc9d1",
+    "validation/check-pcb-insertion.py": "8d81f94f33c73a22851e0eb17e27f7534524ace763f9ba1c06f6a406e224f340",
+    "mechanical/build_enclosure.py": "b239fe63ed7bb9a38be542fc1d43529a36db0c4120fbca86399509ac3e76bb53",
+    "mechanical/enclosure-parameters.json": "ab5279cf7ba3b20594668c5ed60d2979ae44033dd79ee2ad6c66f63f16f06786",
+    "mechanical/STEP_Parts/Stationary_Base.step": "7f08c6843718ce46c47bdcf73b3e6355751b16198653ad4d65d14f381a3e44a5",
+    "published.circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
     "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step": "757179567becc0f67f627e24efc67b4d8b556002f4b336735358f6716bbd37ad",
     "imports/BS_24_B4AA014/BS_24_B4AA014.step": "1446db6fa5286480ba989cfd709c9e0429209990297f99abe7f51daebc1a0f6a",
     "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
@@ -183,6 +184,6 @@
     "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
     "imports/RFANT3216120A5T/RFANT3216120A5T.step": "44168c6e5d17ffce4789710ef4075cb75102fd74af108ddc5869e7e437d108ab",
     "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f",
-    "validation/cr2450-cad-audit.json": "64a4a0a3d5e52340810dbdd01196d6946ac34210218383e50d9e8ae173da5ddc"
+    "validation/pushfit-cad-audit.json": "e8d4b7587446ca3e4f130d354a12ed84d4bfdd4e622b77f2cdd5cd748e0fc374"
   }
 }

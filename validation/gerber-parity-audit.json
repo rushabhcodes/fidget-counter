@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "parser": "gerbonara 1.6.3",
+  "method": "Ordered dark/clear artwork primitives, independent of generator; compare complete Cu/mask/paste unions and every drill/outline segment",
+  "artwork_tolerance_mm": 0.002,
+  "drill_coordinate_tolerance_mm": 0.00051,
+  "layers": {
+    "F_Cu.gbr": {
+      "source_area_mm2": 867.9448615116646,
+      "gerber_area_mm2": 867.9448803340117,
+      "symmetric_difference_mm2": 5.215521594206352e-05,
+      "unexplained_added_mm2": 0.0,
+      "unexplained_missing_mm2": 0.0
+    },
+    "F_Mask.gbr": {
+      "source_area_mm2": 79.39993996603745,
+      "gerber_area_mm2": 79.39996018193729,
+      "symmetric_difference_mm2": 4.88159606503431e-05,
+      "unexplained_added_mm2": 0.0,
+      "unexplained_missing_mm2": 0.0
+    },
+    "F_Paste.gbr": {
+      "source_area_mm2": 30.778180452564474,
+      "gerber_area_mm2": 30.778196332189793,
+      "symmetric_difference_mm2": 2.9426062695975394e-05,
+      "unexplained_added_mm2": 0.0,
+      "unexplained_missing_mm2": 0.0
+    },
+    "B_Cu.gbr": {
+      "source_area_mm2": 913.3720338079144,
+      "gerber_area_mm2": 913.372033803581,
+      "symmetric_difference_mm2": 2.875501038334378e-05,
+      "unexplained_added_mm2": 0.0,
+      "unexplained_missing_mm2": 0.0
+    },
+    "B_Mask.gbr": {
+      "source_area_mm2": 39.68482887763633,
+      "gerber_area_mm2": 39.68482879763641,
+      "symmetric_difference_mm2": 1.3560092300965477e-05,
+      "unexplained_added_mm2": 0.0,
+      "unexplained_missing_mm2": 0.0
+    },
+    "B_Paste.gbr": {
+      "source_area_mm2": 11.995152019247977,
+      "gerber_area_mm2": 11.995151000050006,
+      "symmetric_difference_mm2": 1.399997176519278e-06,
+      "unexplained_added_mm2": 0.0,
+      "unexplained_missing_mm2": 0.0
+    },
+    "drill-L1-L2.drl": {
+      "holes": 43,
+      "maximum_coordinate_or_diameter_error_mm": 4.8728265181097186e-05
+    },
+    "drill_npth.drl": {
+      "holes": 4,
+      "maximum_coordinate_or_diameter_error_mm": 2.7432303312480144e-05
+    },
+    "Edge_Cuts.gbr": {
+      "closed": true,
+      "segments": 128,
+      "diameter_mm": 36.5
+    }
+  },
+  "parser_notes": [
+    "G90 absolute-position command occurs after M95; parsed positions match source"
+  ],
+  "negative_checks_passed": [
+    "removed_real_copper",
+    "added_copper_in_mounting_drill"
+  ],
+  "minimum_via_to_foreign_pad_mm": 0.15499799999999947,
+  "minimum_drill_to_any_SMT_land_mm": 0.02999800000022193,
+  "archive_sha256": "17e8e907f164950d5647e7afd63311bec8a7fbb86c4ad31e143bb6718d647fae",
+  "source_sha256": {
+    "validation/check-gerber-parity.py": "e6901cb903e0805750a56d29f366c4db358129ca062229031c5e99c5cfb46560",
+    "published.circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+    "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
+    "validation/requirements-gerber.txt": "f98e5bcec5a4c6e77f7c44a5e7532089257ad297339086a7020dbaac52af465e"
+  }
+}

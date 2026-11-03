@@ -132,7 +132,7 @@ assert.equal(issues.length-styleWarnings.length,0,JSON.stringify(issues))
 const warningRecord=e=>JSON.parse(JSON.stringify(Object.fromEntries(Object.entries(e)
  .filter(([key])=>!key.endsWith('_id')&&key!=='message'))),(k,v)=>typeof v==='number'?Math.round(v*1e9)/1e9:v)
 const warningKey=e=>JSON.stringify(e,(_,v)=>v&&!Array.isArray(v)&&typeof v==='object'?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a.localeCompare(b))):v)
-const known=JSON.parse(readFileSync('validation/known-trace-style-warnings.json')).warnings
+const known=[] // The fresh revision must have no unreviewed trace-style advisories.
 assert.deepEqual(styleWarnings.map(warningRecord).sort((a,b)=>warningKey(a).localeCompare(warningKey(b))),
  known.sort((a,b)=>warningKey(a).localeCompare(warningKey(b))),'Trace style advisories changed; review the routing')
 const result={checkedAt:new Date().toISOString(),passed:true,sourcePackage:'@tsci/tscircuit.standard-jst-programmer@0.8.0',

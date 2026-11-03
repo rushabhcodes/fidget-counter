@@ -13,7 +13,7 @@ selected={r['name']:r for r in rows if r['name'] not in other_caps}
 # Tooling is rendered from the same checked STEP halves supplied for printing.
 import cadquery as cq
 tooling=[]
-for name in ['Nest_Left','Nest_Right']:
+for name in ([] if parameters.get('cap_retention',{}).get('mode')=='push_fit' else ['Nest_Left','Nest_Right']):
  path=root/'mechanical/export/Tooling'/(name+'.step')
  if path.exists():
   vertices,faces=cq.importers.importStep(str(path)).val().tessellate(.05,.13)
@@ -85,7 +85,7 @@ def render(modes,path,size):
    if mode in ['Phone-side ring','Ring seat']:xyz=(xyz[0],xyz[1],-xyz[2])
    light=vtk.vtkLight();light.SetPosition(*xyz);light.SetFocalPoint(0,0,10);light.SetIntensity(intensity);renderer.AddLight(light)
   title=vtk.vtkTextActor();title.SetInput(mode);title.SetPosition(24,size[1]-60);title.GetTextProperty().SetFontSize(27);title.GetTextProperty().SetColor(.1,.18,.24);renderer.AddActor2D(title)
-  caption=vtk.vtkTextActor();caption.SetInput({'Retainer joint':'4.4 mm nominal thread overlap | printed joint unqualified','Assembly nest':'Retainer BEFORE bearing | remove nest before drag test','Assembled':'58 mm base | 17.2 mm nominal top datum | rotation only','Cutaway':'Source CAD section | supplier STEP electronics','Exploded':'Integrated base | integral magnet stop | 14 handled parts | two PCB screws','Phone-side ring':'One purchased ring | OD54 ID45.8 W1.9 mm','Ring seat':'Integrated bond-in seat | no separate tray joint','Bearing detail':'Race section, shields omitted | 21 balls | representative internals'}[mode]);caption.SetPosition(24,40);caption.GetTextProperty().SetFontSize(16);caption.GetTextProperty().SetColor(.22,.28,.34);renderer.AddActor2D(caption)
+  caption=vtk.vtkTextActor();caption.SetInput({'Retainer joint':'4.4 mm nominal thread overlap | printed joint unqualified','Assembly nest':'Retainer BEFORE bearing | remove nest before drag test','Assembled':'58 mm base | 17.2 mm nominal top datum | rotation only','Cutaway':'Source CAD section | supplier STEP electronics','Exploded':('Push-fit base + cap | 9 handled parts | two PCB screws' if parameters.get('cap_retention',{}).get('mode')=='push_fit' else 'Integrated base | integral magnet stop | 14 handled parts | two PCB screws'),'Phone-side ring':'One purchased ring | OD54 ID45.8 W1.9 mm','Ring seat':'Integrated bond-in seat | no separate tray joint','Bearing detail':'Race section, shields omitted | 21 balls | representative internals'}[mode]);caption.SetPosition(24,40);caption.GetTextProperty().SetFontSize(16);caption.GetTextProperty().SetColor(.22,.28,.34);renderer.AddActor2D(caption)
   footer=vtk.vtkTextActor();footer.SetInput('Nominal CAD; physical fit and strength verification pending.');footer.SetPosition(24,18);footer.GetTextProperty().SetFontSize(12);footer.GetTextProperty().SetColor(.4,.44,.48);renderer.AddActor2D(footer)
  window.Render();im=vtk.vtkWindowToImageFilter();im.SetInput(window);im.SetInputBufferTypeToRGB();im.ReadFrontBufferOff();im.Update()
  writer=vtk.vtkPNGWriter();writer.SetFileName(str(path));writer.SetInputConnection(im.GetOutputPort());writer.Write();window.Finalize();print(path)
@@ -96,4 +96,4 @@ render(['Bearing detail'],out/'bearing-detail.png',(1200,850))
 render(['Phone-side ring','Ring seat','Exploded'],out/'magsafe-ring-layout.png',(2400,1050))
 if tooling:render(['Assembly nest'],out/'assembly-nest.png',(1400,1000))
 
-render(['Retainer joint'],out/'retainer-joint.png',(1400,1000))
+if parameters.get('cap_retention',{}).get('mode')!='push_fit':render(['Retainer joint'],out/'retainer-joint.png',(1400,1000))

@@ -70,9 +70,9 @@
     "outside_mm": 52.0,
     "width_mm": 7.0,
     "bottom_z_mm": 6.1,
-    "shaft_diameter_mm": 39.7,
-    "housing_diameter_mm": 52.2,
-    "inner_shoulder_outer_radius_mm": 20.65,
+    "shaft_diameter_mm": 40.05,
+    "housing_diameter_mm": 51.95,
+    "inner_shoulder_outer_radius_mm": 21.0,
     "outer_shoulder_inner_radius_mm": 25.0,
     "reference": "https://www.astbearings.com/catalog/root/6808",
     "note": "Nominal purchased bearing envelope. Confirm race shoulder lands, corner radii, actual fits and magnetic influence with the chosen supplier/sample."
@@ -196,5 +196,12 @@
     "holder_loaded_height_mm": 8.6,
     "loaded_height_source": "MYOUNG MY-CP-0246 A/0 drawing;8.60mm loaded outline includes1mm cell projection beyond7.60mm body",
     "model_datum_note": "Align STEP circular housing axis to imported land-pattern center; override only modelOriginPosition XY from bounds center to0,0, preservingZ=-0.9 and original source assets"
+  },
+  "cap_retention": {
+    "mode": "push_fit",
+    "reference": "https://ploopyco.github.io/knob/assembly-instructions/",
+    "nominal_diametral_interference_mm": 0.05,
+    "physical_qualified": false,
+    "qualification": "Calibrate actual printer/material with shaft/housing coupons; hand-only seating, pull-off force, creep, wobble, endurance and Hall/RF testing required. No positive axial lock."
   }
 }

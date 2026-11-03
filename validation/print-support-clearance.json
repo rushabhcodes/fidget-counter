@@ -1,10 +1,9 @@
 {
   "passed": true,
   "physical_tested": false,
-  "method": "Actual G-code support heights vs fixed shaft/thread fit region",
+  "method": "Actual G-code support heights vs fixed shaft fit region",
   "maximum_base_support_z_mm": 4.8,
   "bearing_fit_starts_above_bed_mm": 5.9,
-  "thread_starts_above_bed_mm": 12.9,
   "limits": [
     "Support cleanup and actual extrusion width remain physical checks"
   ]

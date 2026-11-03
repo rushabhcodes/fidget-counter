@@ -1,0 +1,354 @@
+{
+  "passed": true,
+  "manufacturing_qualified": false,
+  "source_circuit_sha256": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+  "kicad_version": "9.0.2",
+  "profile": "JLC 2layer1oz:0.10mm clearance;0.11mm track;0.15mm different-net SMT-pad spacing;0.20mm drill clearance;0.30mm board edge",
+  "copper_refilled": false,
+  "native_fill_equivalence": {
+    "top": {
+      "symmetric_difference_mm2": 0.0,
+      "physical_regions": 2,
+      "source_area_mm2": 803.372432747889,
+      "export_fragments": 1880
+    },
+    "bottom": {
+      "symmetric_difference_mm2": 0.0,
+      "physical_regions": 1,
+      "source_area_mm2": 887.1969071003737,
+      "export_fragments": 1148
+    }
+  },
+  "actual_ground_region_contacts": [
+    {
+      "layer": "top",
+      "area_mm2": 801.1367849650245,
+      "ground_conductor_contacts": 169
+    },
+    {
+      "layer": "top",
+      "area_mm2": 2.2356477828645023,
+      "ground_conductor_contacts": 8
+    },
+    {
+      "layer": "bottom",
+      "area_mm2": 887.1969071003737,
+      "ground_conductor_contacts": 63
+    }
+  ],
+  "keepout_checks": [
+    {
+      "id": "pcb_keepout_0",
+      "actual_fill_clear": true,
+      "polygonization_tolerance_mm": 0.015
+    },
+    {
+      "id": "pcb_keepout_1",
+      "actual_fill_clear": true,
+      "polygonization_tolerance_mm": 0.015
+    },
+    {
+      "id": "pcb_keepout_2",
+      "actual_fill_clear": true,
+      "polygonization_tolerance_mm": 0.015
+    },
+    {
+      "id": "pcb_keepout_3",
+      "actual_fill_clear": true,
+      "polygonization_tolerance_mm": 0.015
+    },
+    {
+      "id": "pcb_keepout_4",
+      "actual_fill_clear": true,
+      "polygonization_tolerance_mm": 0.015
+    },
+    {
+      "id": "pcb_keepout_5",
+      "actual_fill_clear": true,
+      "polygonization_tolerance_mm": 0.015
+    },
+    {
+      "id": "pcb_keepout_6",
+      "actual_fill_clear": true,
+      "polygonization_tolerance_mm": 0.015
+    },
+    {
+      "id": "pcb_keepout_7",
+      "purpose": "Via/drill exclusion under opposite-side SMD pad; GND fill is allowed",
+      "passed": true
+    },
+    {
+      "id": "pcb_keepout_8",
+      "purpose": "Via/drill exclusion under opposite-side SMD pad; GND fill is allowed",
+      "passed": true
+    },
+    {
+      "id": "pcb_keepout_9",
+      "purpose": "Via/drill exclusion under opposite-side SMD pad; GND fill is allowed",
+      "passed": true
+    },
+    {
+      "id": "pcb_keepout_10",
+      "purpose": "Via/drill exclusion under opposite-side SMD pad; GND fill is allowed",
+      "passed": true
+    },
+    {
+      "id": "pcb_keepout_11",
+      "purpose": "Via/drill exclusion under opposite-side SMD pad; GND fill is allowed",
+      "passed": true
+    }
+  ],
+  "raw_diagnostic_counts": {
+    "items_not_allowed": 10,
+    "isolated_copper": 199,
+    "courtyards_overlap": 1,
+    "lib_footprint_issues": 38,
+    "silk_over_copper": 3
+  },
+  "unconnected_items": 0,
+  "unresolved_electrical_errors": 0,
+  "narrowly_classified_export_semantic_errors": [
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Track [.L2 > .pin2 to .ANT1 > .feed] on F.Cu, length 6.8929 mm",
+            "pos": {
+              "x": 103.35,
+              "y": 87.974
+            },
+            "uuid": "69defff6-00d9-7fea-6b91-ffca29b58056"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "intended ANT1 feed entry into RF keepout"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Zone [GND] on F.Cu",
+            "pos": {
+              "x": 117.899894,
+              "y": 100.0
+            },
+            "uuid": "5647a1aa-3262-fbb6-44f2-66ea43b83676"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "outline-based check; exact actual fills and keepouts independently verified"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Zone [GND] on B.Cu",
+            "pos": {
+              "x": 117.899894,
+              "y": 100.0
+            },
+            "uuid": "065878a0-6cfe-78df-1faa-95a253ac5bdd"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "outline-based check; exact actual fills and keepouts independently verified"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "NPTH pad of ",
+            "pos": {
+              "x": 88.262027,
+              "y": 88.262027
+            },
+            "uuid": "8fdaeffb-6e88-4e31-a37f-346096ed656a"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "mounting drill inside its own support/head keepout"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Pad 1 [.L2 > .pin2 to .ANT1 > .feed] of ANT1 on F.Cu",
+            "pos": {
+              "x": 98.476,
+              "y": 83.1
+            },
+            "uuid": "201ae360-3582-a161-4aea-5f6260521d63"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "source excludes ANT1 from its RF keepout"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of ANT1 on F.Cu",
+            "pos": {
+              "x": 101.57607,
+              "y": 83.1
+            },
+            "uuid": "199c1c0e-4ed3-e1f2-48bc-200e1fb3ddf2"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "source excludes ANT1 from its RF keepout"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Footprint ANT1",
+            "pos": {
+              "x": 100.0,
+              "y": 83.1
+            },
+            "uuid": "57deea40-2779-5b81-592e-5ebe2629e703"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "source excludes ANT1 from its RF keepout"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "NPTH pad of ",
+            "pos": {
+              "x": 111.737973,
+              "y": 88.262027
+            },
+            "uuid": "a5e1eb85-3677-4320-a250-924502d76263"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "mounting drill inside its own support/head keepout"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "NPTH pad of ",
+            "pos": {
+              "x": 111.737973,
+              "y": 111.737973
+            },
+            "uuid": "7eb5c849-e29f-445b-933b-fec6436fd07e"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "mounting drill inside its own support/head keepout"
+    },
+    {
+      "diagnostic": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "NPTH pad of ",
+            "pos": {
+              "x": 88.262027,
+              "y": 111.737973
+            },
+            "uuid": "60cd8f16-6ba2-4a5e-8af5-8c541e8bbd66"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "reason": "mounting drill inside its own support/head keepout"
+    },
+    {
+      "diagnostic": {
+        "description": "Courtyards overlap",
+        "items": [
+          {
+            "description": "Footprint C16",
+            "pos": {
+              "x": 95.2,
+              "y": 90.1
+            },
+            "uuid": "785b23ca-1bf4-69f6-4fbc-084a44938576"
+          },
+          {
+            "description": "Footprint GPIO_SCL",
+            "pos": {
+              "x": 94.45,
+              "y": 90.55
+            },
+            "uuid": "7d476f00-785a-bb5f-6dfc-e5be639f101d"
+          }
+        ],
+        "severity": "error",
+        "type": "courtyards_overlap"
+      },
+      "reason": "DNP bare signal via courtyard; no assembled component body"
+    }
+  ],
+  "negative_wrong_net_short_rejected": true,
+  "silk_limits": [
+    "Three JST graphic segments may be clipped by mask"
+  ],
+  "library_limit": "Exact footprints embedded; external tscircuit library unavailable to native checker",
+  "isolated_copper_limit": "Export fill-fragment metadata warnings are recorded; exact union region count and every actual GND conductor contact are independently checked",
+  "fabrication_archive": {
+    "files": [
+      "F_Cu.gbr",
+      "F_SilkScreen.gbr",
+      "F_Mask.gbr",
+      "F_Paste.gbr",
+      "B_Cu.gbr",
+      "B_SilkScreen.gbr",
+      "B_Mask.gbr",
+      "B_Paste.gbr",
+      "Edge_Cuts.gbr",
+      "F_Fab.gbr",
+      "B_Fab.gbr",
+      "drill-L1-L2.drl",
+      "drill_npth.drl",
+      "bom.csv",
+      "pick_and_place.csv"
+    ],
+    "sha256": "17e8e907f164950d5647e7afd63311bec8a7fbb86c4ad31e143bb6718d647fae",
+    "fitted_bom_quantity": 28,
+    "strict_supplier_cpl_rows": 28,
+    "BT1_rotation": 180
+  },
+  "source_sha256": {
+    "validation/check-native-fabrication.py": "2212134df2dff7e9756529f4f1f80a59b42cd0121ba1576dc3300cc02a781a4d",
+    "validation/kicad-review-adapter.py": "8fcb4bf842637a06e2fa7ac05d5b5f71d2715ae5869b2c3a014160ab5ec7e324",
+    "validation/prepare-supplier-frames.mjs": "815d1730faaf2ca727c70f5e0bf0f9e99692c3ef32d908b9ff7d26b52ba62ffe",
+    "gerber-compat.mjs": "2583f05c71c78e4974e9b6ef8df230a8d0d81c6827d8f7d38ed4879600e2bc16",
+    "published.circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9"
+  }
+}

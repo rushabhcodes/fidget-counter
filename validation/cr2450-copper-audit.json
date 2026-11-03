@@ -1,29 +1,33 @@
 {
   "passed": true,
-  "comparison_commit": "346fade26c8934f9d0b6411d7e30c1c9b06e9dac",
-  "scope": "Union of actual BREP copper regions per layer/net, independent of generated island IDs",
-  "permitted_changes": "Old/new four mounting drills/keepouts, holder lands, positive entry segment and two added GND vias",
-  "layer_results": {
-    "top": {
-      "changed_area_mm2": 20.151062595346755,
-      "unexplained_changed_area_mm2": 0.0
-    },
-    "bottom": {
-      "changed_area_mm2": 30.391561982142264,
-      "unexplained_changed_area_mm2": 0.0
-    }
+  "physical_tested": false,
+  "scope": "Authorized fresh routing supersedes historical battery-only copper; strict full copper/electrical signature and actual NPTH clearance checked",
+  "minimum_required_measured_margin_mm": 0.28,
+  "hole_edge_clearance_mm": {
+    "top": [
+      0.7908505108018354,
+      0.29325847391544635,
+      0.7908505108018357,
+      0.29325847391544485
+    ],
+    "bottom": [
+      0.49229538818821217,
+      0.49229538818821217,
+      0.4922953881882122,
+      0.4922953881882105
+    ]
   },
   "negative_checks_passed": [
-    "unrelated_copper_cutout",
-    "layer_change",
-    "mask_change"
+    "unrelated_cutout",
+    "layer",
+    "mask"
   ],
   "source_sha256": {
-    "validation/check-cr2450-copper.py": "9263b4780a7285eb64a02eb0266df18b2d0e43367a60a10c1ed6fbcbcf6203cf",
-    "published.circuit.json": "639a34f3aed73f4b74597806e382845ec38b649186bbc08aba3f195e001fc9d1",
-    "index.circuit.tsx": "366750e96371babbd6832e461088c5d63e62b17b6679725a6620120af43decd8",
-    "parts.tsx": "56a8b3993d257c0ccef55a84c9814b689182a9dc754bff06afe089d9543c7915",
-    "routed-paths.json": "d89459bda74d620c9a66e07625d8c0386543708e6e0b42bc1d83c999f590a621",
-    "routing-contract.json": "e6e17fea9fe73a364a47f991829e599d1367b051415d2401d3adfd4fa2ea8170"
+    "validation/check-npth-copper.py": "f5501018840739c43908024437b8ecec7e5c2434feddf90546d9318a85863746",
+    "published.circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+    "index.circuit.tsx": "b5b0683f26710e70fac6ea8ed9a6a06440814ae98b87890450b6b4d0e85fac36",
+    "validation/check-fresh-routing.mjs": "f062ddd7e4628b36e6607b3d00382c5d4dc26b23f29ca46938f4991bb7654ba8",
+    "validation/fresh-routing-reference.json": "11da1b900798c83263fd8c587c272b175bcf98745caa4dbf6d49083043488811",
+    "validation/check-cr2450-copper.py": "532bd73c2f76b8f4473606f5943af29d5273db292bd0d9a392a138a4013df17e"
   }
 }

@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-11-03T08:25:24.638Z",
+  "checkedAt": "2026-11-03T11:20:09.043Z",
   "passed": true,
   "sourcePackage": "@tsci/tscircuit.standard-jst-programmer@0.8.0",
   "reference": "https://github.com/tscircuit/standard-jst-programmer",
-  "acceptedTraceStyleWarnings": 2,
+  "acceptedTraceStyleWarnings": 0,
   "footprint": "SM05B-SRSS-TB(LF)(SN)",
   "supplier": "JLCPCB C136657",
   "matingHousing": "SHR-05V-S-B",
@@ -61,47 +61,47 @@
   "alignmentHoles": 0,
   "stencilApertures": 7,
   "power": "Pin 1 follows programmer voltage selector; select 3V3 and remove CR2450",
-  "minimumUnrelatedTopTrackClearanceMm": 0.3701135000000019,
-  "minimumUnrelatedViaClearanceMm": 0.5996606698432317,
+  "minimumUnrelatedTopTrackClearanceMm": 0.1591332979468691,
+  "minimumUnrelatedViaClearanceMm": 6.600113500000209,
   "crystalBranches": [
     {
       "name": "U1_XC1",
-      "lengthMm": 5.733959096295852,
+      "lengthMm": 5.891166473986108,
       "vias": 0
     },
     {
       "name": "U1_XC2",
-      "lengthMm": 5.849969009124063,
+      "lengthMm": 4.737049326950107,
       "vias": 0
     },
     {
       "name": "C1_1",
-      "lengthMm": 1.3301010005234297,
+      "lengthMm": 1.3301109411254965,
       "vias": 0
     },
     {
       "name": "C2_1",
-      "lengthMm": 1.8053433884928216,
+      "lengthMm": 1.8537910402370759,
       "vias": 0
     },
     {
       "name": "U1_XL1",
-      "lengthMm": 2.621620736724572,
+      "lengthMm": 2.6139598789309,
       "vias": 0
     },
     {
       "name": "U1_XL2",
-      "lengthMm": 4.374956001282802,
+      "lengthMm": 3.2766568436631163,
       "vias": 0
     },
     {
       "name": "C11_1",
-      "lengthMm": 1.8012711496278955,
+      "lengthMm": 1.818707127117457,
       "vias": 0
     },
     {
       "name": "C12_1",
-      "lengthMm": 1.8712663515714518,
+      "lengthMm": 1.9429711958293856,
       "vias": 0
     }
   ],
@@ -112,7 +112,7 @@
     "maxY": -10.288118299999997
   },
   "courtyardClear": true,
-  "circuitSha256": "639a34f3aed73f4b74597806e382845ec38b649186bbc08aba3f195e001fc9d1",
+  "circuitSha256": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
   "physicalConnectorFitTested": false,
   "physicalProgrammingTested": false
 }

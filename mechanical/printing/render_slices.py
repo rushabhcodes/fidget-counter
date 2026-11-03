@@ -11,13 +11,13 @@ ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'work/print-readiness'
 report=json.loads((ROOT/'validation/print-readiness.json').read_text())
 parts={p['name']:p for p in report['parts']}
 
-# Exact audit paths must keep support below the bearing fit and male thread.
+# Exact audit paths must keep support below the bearing fit.
 name='Stationary_Base';p=parts[name]
 assert p['support_segments']>0 and p['maximum_support_z_mm']<5.2
-(ROOT/'validation/print-support-clearance.json').write_text(json.dumps({'passed':True,'physical_tested':False,'method':'Actual G-code support heights vs fixed shaft/thread fit region','maximum_base_support_z_mm':p['maximum_support_z_mm'],'bearing_fit_starts_above_bed_mm':5.9,'thread_starts_above_bed_mm':12.9,'limits':['Support cleanup and actual extrusion width remain physical checks']},indent=2)+'\n')
+(ROOT/'validation/print-support-clearance.json').write_text(json.dumps({'passed':True,'physical_tested':False,'method':'Actual G-code support heights vs fixed shaft fit region','maximum_base_support_z_mm':p['maximum_support_z_mm'],'bearing_fit_starts_above_bed_mm':5.9,'limits':['Support cleanup and actual extrusion width remain physical checks']},indent=2)+'\n')
 
 fig,axes=plt.subplots(3,3,figsize=(18,15),layout='constrained')
-cases=[('Stationary_Base',.2,'Base first layer'),('Stationary_Base',2.3,'Base supported roof'),('Stationary_Base',4.85,'Integrated bearing shoulder'),('Inner_Race_Nut',1.7,'Nut notch roof'),('Outer_Race_Retainer',1.7,'Retainer bosses'),('Cap_circular',4.7,'Default cap bearing housing'),('Cap_four_leaf_clover',1.85,'Noncircular cap supported rim'),('Cap_thumb_scoop',9.05,'Thumb cap supported interior'),('Nest_Left',12.2,'Fixture support finger')]
+cases=[('Stationary_Base',.2,'Base first layer'),('Stationary_Base',2.3,'Supported magnet pocket roof'),('Stationary_Base',4.85,'Integrated bearing shoulder'),('Cap_circular',.2,'Cap deck on bed'),('Cap_circular',4.7,'Cap bearing housing'),('Cap_ships_wheel',1.85,'Ships-wheel rim'),('Cap_four_leaf_clover',1.85,'Supported clover rim'),('Cap_thumb_scoop',9.05,'Supported thumb-cap interior'),('Cap_rounded_triangle',1.85,'Supported triangle rim')]
 colors={'model':'#167d96','support':'#e99425','bridge':'#c94745'}
 for ax,(name,target,title) in zip(axes.flat,cases):
  rows=json.loads((OUT/(name+'-paths.json')).read_text())

@@ -20,7 +20,8 @@ base_profile=ROOT/'mechanical/printing/PETG-0.4-audit.ini'
 support_profile=ROOT/'mechanical/printing/supports-everywhere.ini'
 fixed_base_profile=ROOT/'mechanical/printing/base-fixed-supports.ini'
 rim_profile=ROOT/'mechanical/printing/cap-early-rim-supports.ini'
-names=['Stationary_Base','Inner_Race_Nut','Outer_Race_Retainer',*['Cap_'+s for s in P['cap_styles']],'Nest_Left','Nest_Right']
+pushfit=P.get('cap_retention',{}).get('mode')=='push_fit'
+names=['Stationary_Base',*['Cap_'+s for s in P['cap_styles']]] if pushfit else ['Stationary_Base','Inner_Race_Nut','Outer_Race_Retainer',*['Cap_'+s for s in P['cap_styles']],'Nest_Left','Nest_Right']
 parts=[];critical=[]
 
 def polar(r,angle):
@@ -31,30 +32,38 @@ def probe(shape,points,label):
 
 # Independent probes of the specific formerly sub-nozzle/weak walls. These
 # test material, not just parameter values, for every finished cap variant.
-for style in P['cap_styles']:
- shape=cq.importers.importStep(str(ROOT/'mechanical/STEP_Parts'/('Cap_'+style+'.step'))).val()
- for angle in [0,120,240]:
-  x,y=polar(P['cap_retainer_joint']['screw_pitch_radius_mm'],angle)
-  for z,start in [(6.9,1.805),(8.,1.805),(9.7,1.805),(17.199,2.005)]:
-   points=[]
-   for direction in [-45,0,45]:
-    dx,dy=polar(1,angle+direction)
-    points.extend((x+dx*r,y+dy*r,z) for r in np.linspace(start,2.995,8))
-   probe(shape,points,(style,'insufficient socket/countersink outer wall',z))
- critical.append({'part':'Cap_'+style,'lower_socket_outer_wall_mm':1.2,'top_countersink_outer_wall_mm':1.0,'method':'Exact STEP material probes on three bosses at four heights and three outward directions'})
-nut=cq.importers.importStep(str(ROOT/'mechanical/STEP_Parts/Inner_Race_Nut.step')).val()
-for angle in [0,90,180,270]:
- points=[]
- for z in [14.3,14.7,15.4]:
-  points.extend((*polar(r,angle),z) for r in np.linspace(20.01,20.99,12))
- probe(nut,points,'Nut wall below tool notch is thinner than1mm')
-critical.append({'part':'Inner_Race_Nut','wall_beneath_tool_notches_mm':1.0,'thread_clearance_mm':.15,'pitch_mm':1.2,'print_notch_bridge_width_mm':3.0})
-critical.extend([
- {'part':'Outer_Race_Retainer','boss_pilot_wall_mm':.8,'threaded_wall_and_pullout':'Unqualified; test with actual M2 fastener'},
- {'part':'Stationary_Base','fixed_web_stem_diameter_mm':5.,'shaft_wall_mm':1.2,'thread_radial_depth_mm':.35,'limit':'Connected thread detail; actual thread coupon must be tested'},
- {'part':'Stationary_Base','ring_roof_mm':1.5,'PCB_post_pilot_wall_mm':1.45,'non_retaining_locator_wall_mm':.6,'ring_roof_supports':'Required; unsupported annulus creates long tangential bridges despite4.4mm radial width'},
- {'part':'Nest_Left/Nest_Right','support_finger_thickness_mm':1.0,'finger_width_mm':2.6,'support_requirement':'Everywhere, including from pocket floor; not build-plate-only'},
-])
+if not pushfit:
+ for style in P['cap_styles']:
+  shape=cq.importers.importStep(str(ROOT/'mechanical/STEP_Parts'/('Cap_'+style+'.step'))).val()
+  for angle in [0,120,240]:
+   x,y=polar(P['cap_retainer_joint']['screw_pitch_radius_mm'],angle)
+   for z,start in [(6.9,1.805),(8.,1.805),(9.7,1.805),(17.199,2.005)]:
+    points=[]
+    for direction in [-45,0,45]:
+     dx,dy=polar(1,angle+direction)
+     points.extend((x+dx*r,y+dy*r,z) for r in np.linspace(start,2.995,8))
+    probe(shape,points,(style,'insufficient socket/countersink outer wall',z))
+  critical.append({'part':'Cap_'+style,'lower_socket_outer_wall_mm':1.2,'top_countersink_outer_wall_mm':1.0,'method':'Exact STEP material probes on three bosses at four heights and three outward directions'})
+ nut=cq.importers.importStep(str(ROOT/'mechanical/STEP_Parts/Inner_Race_Nut.step')).val()
+ for angle in [0,90,180,270]:
+  points=[]
+  for z in [14.3,14.7,15.4]:
+   points.extend((*polar(r,angle),z) for r in np.linspace(20.01,20.99,12))
+  probe(nut,points,'Nut wall below tool notch is thinner than1mm')
+ critical.append({'part':'Inner_Race_Nut','wall_beneath_tool_notches_mm':1.0,'thread_clearance_mm':.15,'pitch_mm':1.2,'print_notch_bridge_width_mm':3.0})
+ critical.extend([
+  {'part':'Outer_Race_Retainer','boss_pilot_wall_mm':.8,'threaded_wall_and_pullout':'Unqualified; test with actual M2 fastener'},
+  {'part':'Stationary_Base','fixed_web_stem_diameter_mm':5.,'shaft_wall_mm':1.2,'thread_radial_depth_mm':.35,'limit':'Connected thread detail; actual thread coupon must be tested'},
+  {'part':'Stationary_Base','ring_roof_mm':1.5,'PCB_post_pilot_wall_mm':1.45,'non_retaining_locator_wall_mm':.6,'ring_roof_supports':'Required; unsupported annulus creates long tangential bridges despite4.4mm radial width'},
+  {'part':'Nest_Left/Nest_Right','support_finger_thickness_mm':1.0,'finger_width_mm':2.6,'support_requirement':'Everywhere, including from pocket floor; not build-plate-only'},
+ ])
+
+else:
+ for style in P['cap_styles']:
+  cap=cq.importers.importStep(str(ROOT/'mechanical/STEP_Parts'/('Cap_'+style+'.step'))).val()
+  probe(cap,[(10,0,16.0),(16,0,16.0)],'Missing cap deck')
+  critical.append({'part':'Cap_'+style,'no_top_fastener_holes':True,'housing_nominal_wall_mm':28.8-P['bearing']['housing_diameter_mm']/2})
+ critical.append({'part':'Stationary_Base','minimum_nominal_shaft_wall_mm':P['bearing']['shaft_diameter_mm']/2-18.65,'physical_interference_fit_qualified':False})
 
 def gcode_stats(path):
  pos={'X':0.,'Y':0.,'Z':0.};kind='';rows=[];layer_z=set();types={};metadata={}
@@ -108,7 +117,9 @@ for name in names:
  assert 'print warning:' not in log.lower(),(name,log)
  assert not re.search(r'(non.manifold|repairing|unable to slice|empty layer)',log,re.I),(name,log)
  stats,paths=gcode_stats(gcode);assert stats['layers']>5 and stats['positive_XY_extrusion_segments']>100,name
- if mode!='none':assert stats['support_segments']>0,(name,'Required supports absent')
+ if mode!='none':
+  if pushfit and mode=='early-rim' and stats['support_segments']==0:assert stats['maximum_bridge_line_mm']<=5,(name,'Unsupported bridge exceeds5mm')
+  else:assert stats['support_segments']>0,(name,'Required supports absent')
  else:
   assert stats['support_segments']==0,(name,'Unexpected support contacting fit surfaces')
   assert stats['maximum_bridge_line_mm']<=5,(name,'Free bridge exceeds conservative5mm PETG audit limit')
@@ -120,9 +131,9 @@ for name in names:
  parts.append(row);print(f'PASS {name}: {mode} supports; {stats["layers"]} layers; {stats["support_segments"]} support segments',flush=True)
 
 version=subprocess.check_output([a.slicer,'--help'],text=True).splitlines()[0]
-manifest={'format_version':1,'scope':'Controlled PETG fit-test print set; production/physical qualification still required','default_cap':'circular','default_rigid_part_count':4,'default_files':[r['file'] for r in parts if r['quantity_per_default_unit']],'cap_alternatives':[r['file'] for r in parts if r['role']=='cap alternative'],'tooling_files':[r['file'] for r in parts if r['role']=='tooling'],'excluded_from_rigid_printing':['All purchased bearings, screws, cells and magnets','Circuit display OBJ/GLB assets and electronic models'],'printer_assumptions':{**P['print_process'],'bed_mm':[220,220,200],'first_layer_mm':.2,'nominal_line_width_mm':.45,'infill_percent':100},'profile':str(base_profile.relative_to(ROOT)),'parts':parts,'gcode_distribution':'Audit G-code is in ignored work/ only. Re-slice with the actual printer profile; no machine G-code is shipped.'}
+manifest={'format_version':1,'scope':'Controlled PETG fit-test print set; production/physical qualification still required','default_cap':'circular','default_rigid_part_count':2 if pushfit else 4,'default_files':[r['file'] for r in parts if r['quantity_per_default_unit']],'cap_alternatives':[r['file'] for r in parts if r['role']=='cap alternative'],'tooling_files':[r['file'] for r in parts if r['role']=='tooling'],'excluded_from_rigid_printing':['All purchased bearings, screws, cells and magnets','Circuit display OBJ/GLB assets and electronic models'],'printer_assumptions':{**{k:v for k,v in P['print_process'].items() if not pushfit or k not in ['nut_orientation','fixture_supports']},'bed_mm':[220,220,200],'first_layer_mm':.2,'nominal_line_width_mm':.45,'infill_percent':100},'profile':str(base_profile.relative_to(ROOT)),'parts':parts,'gcode_distribution':'Audit G-code is in ignored work/ only. Re-slice with the actual printer profile; no machine G-code is shipped.'}
 (ROOT/'mechanical/print-ready-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 sources=[Path(__file__),ROOT/'mechanical/build_enclosure.py',ROOT/'mechanical/enclosure-parameters.json',base_profile,support_profile,rim_profile,fixed_base_profile,*[ROOT/r['file'] for r in parts]]
-report={'passed':True,'physical_tested':False,'manufacturing_qualified':False,'actual_slicer_executed':True,'slicer':version,'slicer_launcher_sha256':sha(Path(a.slicer).resolve()) if Path(a.slicer).is_file() else None,'parts_checked':len(parts),'critical_wall_checks':critical,'parts':parts,'remaining_physical_tests':['Printer/nozzle/filament process and coupon fit','Support removal and mating/bonding surface finish','Printed thread torque/pull-out/life','Bearing/magnetic/adhesive/firmware production gates'],'source_sha256':{str(f.relative_to(ROOT)):sha(f) for f in sources}}
+report={'passed':True,'physical_tested':False,'manufacturing_qualified':False,'actual_slicer_executed':True,'slicer':version,'slicer_launcher_sha256':sha(Path(a.slicer).resolve()) if Path(a.slicer).is_file() else None,'parts_checked':len(parts),'critical_wall_checks':critical,'parts':parts,'remaining_physical_tests':['Printer/nozzle/filament process and coupon fit','Support removal and mating/bonding surface finish','Push-fit assembly force/pull-off/creep/life' if pushfit else 'Printed thread torque/pull-out/life','Bearing/magnetic/adhesive/firmware production gates'],'source_sha256':{str(f.relative_to(ROOT)):sha(f) for f in sources}}
 (ROOT/'validation/print-readiness.json').write_text(json.dumps(report,indent=2)+'\n')
-print('PASS: 14 rigid product alternatives +2 tooling halves; real slicer output; no slicer print warnings; physical qualification pending')
+print(f'PASS: {len(parts)} rigid product/tooling alternatives; real slicer output; no slicer print warnings; physical qualification pending')

@@ -54,8 +54,15 @@ describe("prescribed routing across compiler versions",()=>{
   ;[a[0],b[0]]=[b[0],a[0]]
   await assert.rejects(output(value),/Routing terminals or copper changed/)
  })
- test("rejects changed existing copper width",async()=>{
-  const value=input();value.traces[0].route[0].width+=.01
+ test("rejects changed fixed copper width",async()=>{
+  const value=input()
+  const fixed=value.obstacles.find(o=>!o.componentId&&o.connectedTo.some(id=>id.startsWith('source_trace_')))
+  assert(fixed,'Fixed critical routes must appear as copper obstacles')
+  fixed.width+=.01
+  await assert.rejects(output(value),/copper changed/)
+ })
+ test("rejects an unexpected copper trace",async()=>{
+  const value=input();value.traces.push({type:'pcb_trace',connectsTo:[],route:[{route_type:'wire',x:0,y:0,layer:'top',width:.11}]})
   await assert.rejects(output(value),/copper changed/)
  })
  test("rejects changed layers",async()=>{

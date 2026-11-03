@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "method": "Exact ordered circuit records; exclude only descriptive source_project_metadata filesystem hash",
+  "records": 1154,
+  "source_circuit_sha256": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+  "saved_circuit_sha256": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+  "source_sha256": {
+    "validation/check-source-snapshot.mjs": "a400e4e850f57f25e399bb0db2b77836b7427c806bb99c5783c0dcf9783b8d48",
+    "index.circuit.tsx": "b5b0683f26710e70fac6ea8ed9a6a06440814ae98b87890450b6b4d0e85fac36",
+    "parts.tsx": "56a8b3993d257c0ccef55a84c9814b689182a9dc754bff06afe089d9543c7915",
+    "passives.tsx": "e05181fcf99b2751941c16d8f43a81e541126daf283731244e9f65b1783d8ec3",
+    "enclosure.tsx": "b3debb234bba50e293384e310cc28952ef4932b393bdf4cf9823e4ba5e3815ed",
+    "critical-routes.json": "8b69441832212e8d6191ce7a895b5b07e5f994482ead347d40fe27e0a8517d57",
+    "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
+    "routing-contract.json": "9d07db83253c47a6c225e247d56c4e4f8b2854a91abb35ccd36fb700dbc6914f",
+    "routed-paths.json": "15e56aacf02145312c9d9fa9d284c02a6a642f087a6f787b0e6c0f7d5d7ccb41",
+    "published.circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9"
+  }
+}

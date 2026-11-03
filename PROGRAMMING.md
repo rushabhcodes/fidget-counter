@@ -2,7 +2,7 @@
 
 # V5 enclosure access update
 
-For the current bearing enclosure, remove the three TOP cap-retainer screws, lift off the cap, unscrew the inner-race nut and remove the bearing. Remove the two nylon PCB screws and lift the PCB for cable or battery access. The V4 instructions about releasing printed latches below are superseded. Electrical pinout and programmer-power instructions remain valid.
+For the current push-fit enclosure, pull the cap assembly straight off evenly, supporting the appropriate bearing race if it stays on the base. Remove the two nylon PCB screws and lift the PCBA for cable/battery access. See [service instructions](MECHANICAL.md); do not force through the bearing balls.
 
 ---
 
@@ -18,7 +18,7 @@ This repository contains the PCB design, **no application firmware, bootloader o
 
 ## Access and identify the contacts
 
-Program before enclosure assembly. For an assembled V5 device, remove the three top cap screws, lift off the cap, unscrew the inner-race nut and remove the bearing. Remove the two nylon PCB screws and lift the board with its holder; see [the V5 service guide](MECHANICAL.md). Remove the coin cell. J_DEBUG remains on the top face at (0, −13.3) mm with cable entry toward −Y. Lift the PCB for side-entry cable access, then disconnect the cable before reassembly.
+Program before enclosure assembly. For an assembled device, pull off the cap/bearing assembly evenly, then remove the two nylon PCB screws and lift the board/holder; see [the service guide](MECHANICAL.md). Remove the coin cell. J_DEBUG remains on the top face at (0, −13.3) mm with cable entry toward −Y. Lift the PCB for side-entry cable access, then disconnect the cable before reassembly.
 
 Viewed from above with the antenna pointing up:
 
@@ -89,11 +89,11 @@ Copy the J-Link probe's serial number from the first line of its entry, as descr
 
 ## Prepare the firmware image
 
-Build for **nRF52810**, with 192 kB flash and 24 kB RAM ([Nordic specification](https://docs.nordicsemi.com/r/bundle/ps_nrf52810/page/keyfeatures_html5.html)). Use this board's pin map from [the firmware pin map below](#firmware-pin-map), including SCL=P0.26, SDA=P0.27, HALL_INT=P0.28 and CAP_PRESS=P0.29. Keep **DCDCEN=0 (LDO mode)**; this PCB has no DC/DC inductors. Its crystals are 32 MHz and 32.768 kHz. A development-kit example needs its board pins, clocks and regulator settings adapted before use here.
+Build for **nRF52810**, with 192 kB flash and 24 kB RAM ([Nordic specification](https://docs.nordicsemi.com/r/bundle/ps_nrf52810/page/keyfeatures_html5.html)). Use this board's pin map from [the firmware pin map below](#firmware-pin-map), including SCL=P0.26, SDA=P0.27 and HALL_INT=P0.28. P0.29 is unused in the rotation-only revision; there is no CAP_PRESS input. Keep **DCDCEN=0 (LDO mode)**; this PCB has no DC/DC inductors. Its crystals are 32 MHz and 32.768 kHz. A development-kit example needs its board pins, clocks and regulator settings adapted before use here.
 
 Produce an Intel HEX with the correct addresses and all required firmware regions. For an application that depends on a separate BLE stack/SoftDevice, bootloader or settings, use the firmware project's complete merged HEX. An application-only HEX that assumes an installed stack cannot boot after a full erase. Let that firmware project define its memory layout; the 192 kB flash also has to accommodate any stack and bootloader.
 
-Keep readback protection disabled during initial bring-up so programming verification and debugging remain available. If hardware reset is required, configure P0.21 as nRESET through the firmware/toolchain's UICR reset configuration. The cap switch is a separate GPIO and is not a hardware reset button.
+Keep readback protection disabled during initial bring-up so programming verification and debugging remain available. If hardware reset is required, configure P0.21 as nRESET through the firmware/toolchain's UICR reset configuration. P0.29 is unused; the cap switch and its circuit have been removed. Hardware nRESET remains available through J_DEBUG.
 
 ## Firmware pin map
 
@@ -102,7 +102,7 @@ Keep readback protection disabled during initial bring-up so programming verific
 | I2C SCL | P0.26 / 38 |
 | I2C SDA | P0.27 / 39 |
 | Hall interrupt | P0.28 / 40 |
-| P0.29 / pin41 | Unused in rotation-only RevB; no cap button |
+| P0.29 / pin41 | Unused in rotation-only RevC; no cap button |
 | SWDIO | 26 |
 | SWDCLK | 25 |
 | Optional nRESET | P0.21 / 24 |
@@ -131,7 +131,7 @@ nrfutil device program \
 
 Require a successful programming and verification result. `RESET_SYSTEM` starts the application through SWD without depending on P0.21 already being configured as nRESET. If the image enables readback protection at startup, it may prevent later readback/debugging; leave protection off for this initial procedure. Full erase also removes any previously enabled UICR pin-reset configuration, which must be restored by the new image or the programming tool when needed.
 
-Disconnect the cable, power-cycle the board, and check the application's documented behavior. With suitable fidget firmware, confirm BLE discovery, Hall angle changes during rotation, and count accuracy using the chosen application. There is no cap button or physical count-clear action in RevB. There is no onboard LED for a generic blink test. Flash verification checks the stored image; it does not verify these application functions.
+Disconnect the cable, power-cycle the board, and check the application's documented behavior. With suitable fidget firmware, confirm BLE discovery, Hall angle changes during rotation, and count accuracy using the chosen application. There is no cap button or physical count-clear action in RevC. There is no onboard LED for a generic blink test. Flash verification checks the stored image; it does not verify these application functions.
 
 ## Recover or troubleshoot
 
@@ -147,4 +147,4 @@ After successful recovery, rerun the complete-image programming command above. I
 
 ## Verification status
 
-Updated 29 October 2026 for JST-SH release 1.0.18, retaining the enclosure and original fitted components from release 1.0.15. The exact five-pin side-entry footprint and pinout come from `@tsci/tscircuit.standard-jst-programmer@0.8.0`; its matching C136657 supplier OBJ and STEP are cached under `imports/SM05B_SRSS_TB`. See `validation/programming-interface.json` for electrical, copper, stencil and courtyard checks and `validation/jst-connector-clearance.json` for continuous rotation clearance under all eleven V5 caps. Current RevC retains28 fitted parts after removing SW1/R5/C17; check-rotation-only.mjs compares every retained part and surviving copper record to6224fc9. Actual cable insertion, connector retention and flashing need a populated prototype. The original electrical interface check applies to PCB release 1.0.18; V5 mechanical checks use the current regenerated reports.
+Updated for1.0.28, tscircuit0.0.3060 and the two-part push-fit enclosure. The exact five-pin side-entry footprint/pinout comes from @tsci/tscircuit.standard-jst-programmer@0.8.0; its C136657 models remain cached under imports/SM05B_SRSS_TB. See validation/programming-interface.json for pinout, stencil,0.13mm connector clearances and clock constraints, and validation/jst-connector-clearance.json for all11 caps. The fresh-routing guard retains all28 fitted geometries, real electrical pin attributes and actual pin-net membership. Actual cable fit, connector retention, flashing and application firmware still need a populated prototype.

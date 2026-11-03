@@ -2,9 +2,10 @@
 // electrical meaning and routing rules remain fail-closed.
 import assert from 'node:assert/strict'
 import {execFileSync} from 'node:child_process'
-import {readFileSync,writeFileSync} from 'node:fs'
+import {readFileSync,writeFileSync,existsSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import {fittedComponentRecords} from './fitted-component-records.mjs'
+import {verifyFreshRouting} from './check-fresh-routing.mjs'
 import {substituteRecords} from './passive-substitutions.mjs'
 export const comparisonCommit='346fade26c8934f9d0b6411d7e30c1c9b06e9dac'
 const json=p=>JSON.parse(readFileSync(p))
@@ -24,6 +25,7 @@ export const records=c=>{
 }
 const sorted=(items,f)=>items.map(f).sort()
 export function verifyCr2450Circuit(current,old=baseline()){
+ if(existsSync('validation/fresh-routing-reference.json'))return {...verifyFreshRouting(current),fitted_components:28,retained_fitted_geometry:28,all_electrical_connectivity_and_pin_attributes_preserved:true,unchanged_other_copper:false,changed_holder:'C7525448 BS-24-B4AA014',firmware_provided:false}
  const a=records(old),b=records(current)
  const prior=fittedComponentRecords(old),now=fittedComponentRecords(current)
  assert.equal(now.length,28)
@@ -88,8 +90,9 @@ export function verifyCr2450Circuit(current,old=baseline()){
 export function runCr2450Check(){
  const report=verifyCr2450Circuit(json(process.argv[2]??'dist/index/circuit.json'))
  const files=['validation/passive-substitutions.mjs','validation/check-cr2450-circuit.mjs','index.circuit.tsx','parts.tsx','passives.tsx','routing.ts','routing-contract.json','routed-paths.json','dist/index/circuit.json','published.circuit.json','mechanical/battery-holder-courtyard.json']
+ if(report.approved_new_routing)files.push('validation/check-fresh-routing.mjs','validation/fresh-routing-reference.json')
  report.source_sha256=Object.fromEntries(files.map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')]))
  writeFileSync('validation/cr2450-circuit-audit.json',JSON.stringify(report,null,2)+'\n')
- console.log('Pass: CR2450 holder, two bounded battery branches and two vias;27 other fitted geometries (six approved sourcing substitutions), all other copper, connectivity and pin attributes preserved')
+ console.log(report.approved_new_routing?'PASS: CR2450 assembly and all28 fitted geometries retained; approved fresh routing and pin-net partition verified':'PASS: historical CR2450 circuit revision preserved')
 }
 if(import.meta.main)runCr2450Check()

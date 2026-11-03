@@ -37,7 +37,9 @@ def match(expected,actual,tolerance=1e-4):
 def digest(t):
  t=np.asarray(t,dtype='<f4').copy();t[t==0]=0;corners=np.sort(t.view('V12').reshape(-1,3),axis=1).copy().view('V36').ravel();corners.sort();return hashlib.sha256(corners.tobytes()).hexdigest()
 manifest=json.loads((R/'mechanical/Circuit_Models/manifest.json').read_text());mid=manifest['pcbMidplaneZMm'];native,buffer=load(R/'dist/index/3d.glb')
-retained=['Bearing_6808','Inner_Race_Nut','Outer_Race_Retainer','Cap_Retainer_Screws','MagSafe_Ring'];retained_checks=[]
+pushfit=manifest['sourceParameters'].get('cap_retention',{}).get('mode')=='push_fit'
+if pushfit:BASE='a7c29c470c439e6f4e35314b9c68bba5c8d8c100'
+retained=['Bearing_6808','PCB_Fasteners','MagSafe_Ring','Cell','Magnet'] if pushfit else ['Bearing_6808','Inner_Race_Nut','Outer_Race_Retainer','Cap_Retainer_Screws','MagSafe_Ring'];retained_checks=[]
 for name in retained:
  path='mechanical/Circuit_Models/'+name+'.glb';g,b=load(R/path);oldg,oldb=load(subprocess.check_output(['git','show',BASE+':'+path],cwd=R))
  assert digest(np.concatenate([triangles(g,b,m)for m in g['meshes']]))==digest(np.concatenate([triangles(oldg,oldb,m)for m in oldg['meshes']])),name+' world geometry changed'
@@ -48,7 +50,7 @@ for node in native['nodes']:
  name=node['name'].removeprefix('BEARING_V5_');g,b=load(R/'mechanical/Circuit_Models'/(name+'.glb'));source=np.concatenate([triangles(g,b,m)for m in g['meshes']]);expected=np.stack((-source[:,:,0],source[:,:,2]-mid,source[:,:,1]),axis=2)
  actual=triangles(native,buffer,native['meshes'][node['mesh']]);assert not node.get('matrix')and not node.get('rotation')and not node.get('scale')
  actual+=np.asarray(node.get('translation',[0,0,0]));error=match(expected,actual);checks.append({'name':name,'triangles':len(actual),'maximum_triangle_match_error_mm':error})
-assert len(checks)==10
+assert len(checks)==(7 if pushfit else 10)
 assets=[]
 for path in sorted((R/'mechanical/Circuit_Models').glob('*.glb')):
  g,b=load(path);v=[];faces=[]
@@ -56,7 +58,7 @@ for path in sorted((R/'mechanical/Circuit_Models').glob('*.glb')):
   if line.startswith('v '):v.append(list(map(float,line.split()[1:4])))
   elif line.startswith('f '):faces.append([int(x.split('/')[0])-1 for x in line.split()[1:]])
  assert digest(np.concatenate([triangles(g,b,m)for m in g['meshes']]))==digest(np.asarray(v)[np.asarray(faces)]),path.name+' OBJ/GLB mismatch';assets.append(path.stem)
-assert len(assets)==20
+assert len(assets)==(17 if pushfit else 20)
 files=[Path(__file__),R/'mechanical/Circuit_Models/manifest.json',R/'dist/index/3d.glb']
 report={'passed':True,'comparison_commit':BASE,'native_triangle_tolerance_mm':1e-4,'native_models':checks,'unchanged_world_geometry':retained_checks,'source_assets_equal_OBJ':assets,'source_sha256':{str(f.relative_to(R)):hashlib.sha256(f.read_bytes()).hexdigest()for f in files}}
-(R/'validation/cr2450-display-audit.json').write_text(json.dumps(report,indent=2)+'\n');print('PASS: all10 native mechanical meshes match complete source triangles/poses; five retained world geometries and all20 OBJ/GLB triangle multisets preserved')
+(R/'validation/cr2450-display-audit.json').write_text(json.dumps(report,indent=2)+'\n');print(f'PASS: all{len(checks)} native meshes match complete source triangles/poses;{len(retained_checks)} retained world geometries and all{len(assets)} OBJ/GLB triangle multisets preserved')

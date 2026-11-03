@@ -1,4 +1,0 @@
-$ bun validation/check-assembly-structure.mjs && bun run check:enclosure
-Pass: all 11 grip selectors contain the fixed bearing support and mechanical-only hardware
-$ bun validation/check-enclosure.mjs
-Pass: 10 aligned mechanical models; 28 retained fitted electronics and four PCB holes preserved; 58 x 17.2 mm enclosure

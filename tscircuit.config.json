@@ -5,6 +5,6 @@
   "includeBoardFiles": [
     "published.circuit.json"
   ],
-  "alwaysUseLatestTscircuitOnCloud": true,
+  "alwaysUseLatestTscircuitOnCloud": false,
   "buildCommand": "bun cloud-build.mjs && tscircuit build published.circuit.json --site --disable-parts-engine"
 }

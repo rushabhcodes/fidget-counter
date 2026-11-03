@@ -1,9 +1,9 @@
 Operation,Quantity,Measured_seconds,Rework_seconds,Operator_and_unit,Notes
-Kitting and print cleanup,4prints,,,,Record support and pilot preparation separately
+Kitting and print cleanup,2prints,,,,Record coupon calibration and support removal separately
 Ring bonding,1,,,,Log handling and cure separately
 Encoder magnet bonding,1,,,,Sidewall bond against integral stop
-Program test and load cell,1PCBA,,,,No cell while programming; firmware absent
-PCB installation,2screws,,,,Qualified nylon screw torque
-Retainer bearing and nut,3parts,,,,Retainer before bearing; use split nest
-Cap installation,3screws,,,,Qualified torque and head flushness
+Program test and load cell,1PCBA,,,,No cell while powered programming; firmware absent
+PCB installation,2screws,,,,Qualify nylon screw torque and board retention
+Bearing into cap,1bearing,,,,Light hand fit after coupon calibration; no force through balls
+Cap onto base,1fit,,,,Record seating and pull-off forces; no positive axial lock
 Final inspection and functional test,1unit,,,,Rotation retention Hall BLE and attachment

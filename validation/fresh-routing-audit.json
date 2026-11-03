@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "approved_new_routing": true,
+  "compiler": "0.0.3060",
+  "comparison_commit": "a7c29c470c439e6f4e35314b9c68bba5c8d8c100",
+  "all_28_fitted_values_lands_layers_poses_preserved": true,
+  "routing_changed_intentionally": true,
+  "physical_tested": false,
+  "reference_sha256": "11da1b900798c83263fd8c587c272b175bcf98745caa4dbf6d49083043488811",
+  "source_sha256": {
+    "index.circuit.tsx": "b5b0683f26710e70fac6ea8ed9a6a06440814ae98b87890450b6b4d0e85fac36",
+    "published.circuit.json": "3ae48d2e260e725e2114e346524eafd7b4a2ee3cf3be565511f964292304bff9",
+    "critical-routes.json": "8b69441832212e8d6191ce7a895b5b07e5f994482ead347d40fe27e0a8517d57",
+    "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
+    "routing-contract.json": "9d07db83253c47a6c225e247d56c4e4f8b2854a91abb35ccd36fb700dbc6914f",
+    "routed-paths.json": "15e56aacf02145312c9d9fa9d284c02a6a642f087a6f787b0e6c0f7d5d7ccb41",
+    "validation/check-fresh-routing.mjs": "f062ddd7e4628b36e6607b3d00382c5d4dc26b23f29ca46938f4991bb7654ba8",
+    "validation/fresh-routing-reference.json": "11da1b900798c83263fd8c587c272b175bcf98745caa4dbf6d49083043488811",
+    "validation/fitted-component-records.mjs": "bf3968344e16add924448b0e9e62dd6ac0a3d232433f4c765973beab483a0624"
+  }
+}

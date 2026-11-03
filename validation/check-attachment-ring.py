@@ -25,7 +25,8 @@ roof=annulus(ri-r['radial_clearance_mm'],ro+r['radial_clearance_mm'],seat+.001,3
 assert abs(base.intersect(roof).Volume()-roof.Volume())<.002,'Discontinuous or thin bonding roof'
 assert 3.9-seat>=1.5-1e-6 and 28.05-ro-r['radial_clearance_mm']>=.9-1e-6
 manifest=json.loads((root/'mechanical/Circuit_Models/manifest.json').read_text())
-assert manifest['modelsPerSelectedStyle']==10 and manifest['totalAssets']==20
+pushfit=p.get('cap_retention',{}).get('mode')=='push_fit'
+assert manifest['modelsPerSelectedStyle']==(7 if pushfit else 10) and manifest['totalAssets']==(17 if pushfit else 20)
 assert 'MagSafe_Ring.glb' in manifest['modelSha256']
 assert not any(n.startswith(('Backing_Ring','Attachment_Magnets')) for n in manifest['modelSha256'])
 rows=json.loads((root/'mechanical/export/Validation/scene_meshes.json').read_text())

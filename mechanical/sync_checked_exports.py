@@ -7,7 +7,7 @@ import shutil
 def sync_checked_exports(root, output):
     root, output = Path(root), Path(output)
     report = json.loads((output / 'Validation/geometry.json').read_text())
-    expected = {'Stationary_Base', 'Inner_Race_Nut', 'Outer_Race_Retainer'}
+    expected = {'Stationary_Base'} if report['parameters'].get('cap_retention',{}).get('mode')=='push_fit' else {'Stationary_Base', 'Inner_Race_Nut', 'Outer_Race_Retainer'}
     expected.update('Cap_' + style for style in report['parameters']['cap_styles'])
     assert {part['name'] for part in report['printed_parts']} == expected, 'Build all grip styles before distributing CAD'
     for folder,suffix in [(output/'STL','.stl'),(output/'STEP','.step')]:

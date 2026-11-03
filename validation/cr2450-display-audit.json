@@ -1,11 +1,11 @@
 {
   "passed": true,
-  "comparison_commit": "346fade26c8934f9d0b6411d7e30c1c9b06e9dac",
+  "comparison_commit": "a7c29c470c439e6f4e35314b9c68bba5c8d8c100",
   "native_triangle_tolerance_mm": 0.0001,
   "native_models": [
     {
       "name": "Stationary_Base",
-      "triangles": 12956,
+      "triangles": 11026,
       "maximum_triangle_match_error_mm": 0.0
     },
     {
@@ -24,23 +24,8 @@
       "maximum_triangle_match_error_mm": 0.0
     },
     {
-      "name": "Inner_Race_Nut",
-      "triangles": 2734,
-      "maximum_triangle_match_error_mm": 0.0
-    },
-    {
       "name": "Bearing_6808",
       "triangles": 168704,
-      "maximum_triangle_match_error_mm": 0.0
-    },
-    {
-      "name": "Outer_Race_Retainer",
-      "triangles": 3192,
-      "maximum_triangle_match_error_mm": 0.0
-    },
-    {
-      "name": "Cap_Retainer_Screws",
-      "triangles": 51756,
       "maximum_triangle_match_error_mm": 0.0
     },
     {
@@ -50,20 +35,19 @@
     },
     {
       "name": "Cap_circular",
-      "triangles": 8170,
+      "triangles": 4048,
       "maximum_triangle_match_error_mm": 0.0
     }
   ],
   "unchanged_world_geometry": [
     "Bearing_6808",
-    "Inner_Race_Nut",
-    "Outer_Race_Retainer",
-    "Cap_Retainer_Screws",
-    "MagSafe_Ring"
+    "PCB_Fasteners",
+    "MagSafe_Ring",
+    "Cell",
+    "Magnet"
   ],
   "source_assets_equal_OBJ": [
     "Bearing_6808",
-    "Cap_Retainer_Screws",
     "Cap_circular",
     "Cap_four_leaf_clover",
     "Cap_petal_flower",
@@ -76,16 +60,14 @@
     "Cap_turbine_wheel",
     "Cap_wave_rim",
     "Cell",
-    "Inner_Race_Nut",
     "MagSafe_Ring",
     "Magnet",
-    "Outer_Race_Retainer",
     "PCB_Fasteners",
     "Stationary_Base"
   ],
   "source_sha256": {
-    "validation/check-cr2450-display.py": "05359fe4525e216f13118d0f7c25255a88d4b288e703bf25bcf703cd3e75ae29",
-    "mechanical/Circuit_Models/manifest.json": "f8af0400519eb11af565ac8d058d403d296e325a49f7acba851763288f58c2df",
-    "dist/index/3d.glb": "fa8c495e2e54e52b0c2ea7e1264c5a5a469f36e47b542e61c57abd7a0348d576"
+    "validation/check-cr2450-display.py": "14d6205aefeb54bf3293a56a04c9bf3de50449a1763e7b87ad31847ac23feeb5",
+    "mechanical/Circuit_Models/manifest.json": "75e4bb7e7bf94f143a0cc365b03123c0152e13f9c00028909bc653838ac19fd9",
+    "dist/index/3d.glb": "35e32ea77a365c84d0fc846f5ae8bd7f83fd2a8ebe63c6b6445679f5db119284"
   }
 }

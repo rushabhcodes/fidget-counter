@@ -1,0 +1,93 @@
+{
+  "compiler": "0.0.3060",
+  "initial_unrestricted_build_exit_code": 1,
+  "initial_errors": [
+    {
+      "type": "pcb_trace_too_long_error",
+      "pcb_trace_too_long_error_id": "pcb_trace_too_long_error_0",
+      "error_type": "pcb_trace_too_long_error",
+      "message": "PCB trace is 10.61mm long, exceeding the 10mm maximum",
+      "pcb_trace_id": "source_trace_62__source_trace_64_mst1_0",
+      "source_trace_id": "source_trace_62",
+      "actual_trace_length": 10.60557495417249,
+      "maximum_trace_length": 10,
+      "subcircuit_id": "subcircuit_source_group_0"
+    },
+    {
+      "type": "pcb_trace_too_long_error",
+      "pcb_trace_too_long_error_id": "pcb_trace_too_long_error_1",
+      "error_type": "pcb_trace_too_long_error",
+      "message": "PCB trace is 12.66mm long, exceeding the 3mm maximum",
+      "pcb_trace_id": "source_trace_7__source_trace_8__source_net_0_mst16_0",
+      "source_trace_id": "source_trace_10",
+      "source_net_id": "source_net_0",
+      "actual_trace_length": 12.664003763980896,
+      "maximum_trace_length": 3,
+      "subcircuit_id": "subcircuit_source_group_0"
+    },
+    {
+      "type": "pcb_trace_error",
+      "pcb_trace_error_id": "pcb_trace_error_0",
+      "error_type": "pcb_trace_error",
+      "message": "PCB trace uses 2 vias, exceeding the 0 maximum",
+      "pcb_trace_id": "source_trace_44_0",
+      "source_trace_id": "source_trace_44",
+      "pcb_component_ids": [
+        "pcb_component_3",
+        "pcb_component_11"
+      ],
+      "pcb_port_ids": [
+        "pcb_port_48",
+        "pcb_port_66"
+      ],
+      "subcircuit_id": "subcircuit_source_group_0"
+    },
+    {
+      "type": "pcb_trace_error",
+      "pcb_trace_error_id": "pcb_trace_error_1",
+      "error_type": "pcb_trace_error",
+      "message": "PCB trace uses 2 vias, exceeding the 0 maximum",
+      "pcb_trace_id": "source_trace_62__source_trace_64_mst1_0",
+      "source_trace_id": "source_trace_62",
+      "pcb_component_ids": [
+        "pcb_component_3",
+        "pcb_component_21"
+      ],
+      "pcb_port_ids": [
+        "pcb_port_36",
+        "pcb_port_93"
+      ],
+      "subcircuit_id": "subcircuit_source_group_0"
+    },
+    {
+      "type": "pcb_placement_error",
+      "pcb_placement_error_id": "pcb_placement_error_0",
+      "error_type": "pcb_placement_error",
+      "message": "Via hole at (-15.13mm, 5.14mm) overlaps SMD pad C12.pin2 at (-14.80mm, 5.02mm)",
+      "subcircuit_id": "subcircuit_source_group_0"
+    }
+  ],
+  "initial_warning_types": {
+    "pcb_trace_warning": 1,
+    "pcb_trace_style_warning": 2
+  },
+  "initial_vias": 42,
+  "previous_release_vias": 48,
+  "active_final_vias": 40,
+  "active_final_circuit_errors": 0,
+  "ground_constraint_translation": "The removed positioned1.5mm C18-via stub cannot be applied to a global-net pin endpoint. Initial preflight rejected1.57mm; the exploratory global-net gate was removed, then the final design restored an explicit1.5mm local stub and3mm decoupling limits.",
+  "final_new_critical_paths": 19,
+  "final_latest_router_connections": 16,
+  "final_latest_router_output_traces": 53,
+  "locally_repaired_auto_branches": 4,
+  "additional_final_clearance_fixes": [
+    "Relocated one GND via to(-3.02,5.10)",
+    "Relocated one SDA via to(-6.10,8.78)",
+    "Moved the connector GND detour belowY-12.30 to retain0.13mm pad clearance"
+  ],
+  "initial_snapshot_sha256": "2a4edde753cc886185971b283ebfee4db7509bf52105c596a2fff921affbff59",
+  "active_snapshot_sha256": "3e2970e7b6ef0a0b1509586bdd4e9bab351a6172d7db0b64bef7d90dbfb23d3c",
+  "old_copper_reused": false,
+  "fitted_geometry_and_pin_net_partition_retained": true,
+  "physical_qualified": false
+}

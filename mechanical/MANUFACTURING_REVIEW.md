@@ -1,35 +1,34 @@
-# Rotation-only printed pilot review
+# Push-fit printed pilot review
 
-Scope: confirmed10–50-unit PETG pilot, with rotation only. No springs, sliding carrier, pusher, actuator or user push button remain. Hardware nRESET is retained for programming/service. Firmware and count-clear UX are not supplied.
+Scope: confirmed 10–50-unit PETG pilot, rotation only. Reference: [Ploopy product](https://ploopy.co/knob/), [assembly](https://ploopyco.github.io/knob/assembly-instructions/) and [hardware](https://ploopyco.github.io/knob/appendices/hardware/), checked 2026-11-03. Its bearing-in-cap/push-on-base sequence and two PCB screws guide this independent design; its smaller bearing and electronics are not interchangeable.
 
-| Per-unit inventory | Press pilot6224fc9 | Hosted1.0.25 | Local RevC |
+| Per-unit inventory | Earlier press pilot | Previous RevC | Current push-fit pilot |
 | --- | ---: | ---: | ---: |
-| Rigid prints |5|4|4|
-| Screw drives |10|7|5|
-| Return springs |3|0|0|
-| Guide washers |3|0|0|
-| Silicone actuator |1|0|0|
-| Handled parts; PCBA counted as one |27|16|14|
-| Adhesive joints |3|2|2|
-| Fitted electronics |31|28|28|
+| Rigid prints | 5 | 4 | 2 |
+| Screw drives | 10 | 5 | 2 |
+| Return springs | 3 | 0 | 0 |
+| Handled parts, PCBA counted as one | 27 | 14 | 9 |
+| Adhesive joints | 3 | 2 | 2 |
+| Fitted electronics | 31 | 28 | 28 |
 
-The14parts are four prints, two nylon PCB screws, three cap screws, one bearing, one cell, one encoder magnet, one attachment ring and one PCBA. Adhesive, shims, consumables and reusable tooling are excluded. Log preparation, curing, assembly and rework separately in ASSEMBLY_TIME_STUDY.csv; no measured touch-time claim is made.
+The nine parts are base, cap, bearing, two nylon PCB screws, PCBA, cell, encoder magnet and attachment ring. No top screws, separate nut/retainer or split assembly nest are used. Adhesive, shims, consumables and reusable tools are excluded. Use [assembly sequence](../MECHANICAL.md) and log preparation, cure, touch time and rework separately in ASSEMBLY_TIME_STUDY.csv. Savings are unmeasured.
 
-The base retains three solid bearing webs. A coarse removable nut retains only the inner race; three top-entry screws join the cap to the outer-race retainer. Four board posts remain without locating collars, with opposite PCB screws at45°/225°. Board retention and deflection must be tested physically. Bayonet/snap-fit alternatives were evaluated but not selected for this supported-print pilot; see [battery and assembly review](BATTERY_AND_ASSEMBLY_REVIEW.md) for reasons, sources and the larger-cell assessment.
+The 6808-ZZ/61808-2Z bearing is40×52×7 atZ6.1–13.1. BaseØ58 and maximumcapØ61.6 remain; physical height remains17.0. ShaftØ40.05 and boreØ51.95 intentionally provide0.05mm diametral interference, not clearance. Inner shoulderØ42 matches [NSK recommendation](https://www.nsk.com/engineering/products/bearings/ball-bearings/deep-groove-ball-bearings/single-row-deep-groove-ball-bearings/6808zz-dgbb-sr.html) and [ZKL maximum](https://www.zkl.cz/en/p/61808-2Z). This does not qualify every supplier's shields/races. The through boreØ37.3 leaves1.375mm shaft wall and0.4mm nominal radial board insertion clearance.
 
-The base remainsØ58mm and topZ17.2mm,17.0mm above phone-contact face. The standard6808-ZZ /61808-2Z bearing is40×52×7mm atZ6.1–13.1. The RevC PCB and encoder rise2.5mm internally for CR2450; the bearing/nut/retainer stay at their V7 heights. ShaftØ39.7 and housingØ52.2 give nominal radial clearances0.15 and0.10mm. Cap screw pitch radius is27.8mm; nominal thread overlap4.4mm, pilot wall0.8mm, socket outer wall1.2mm and countersink rim1.0mm. The common cap deck is1.3mm thick; decorative thumb-dish cuts do not remove its protected material. Thread pitch1.2mm/groove allowance0.15mm require actual printer coupons. The split nest supports the retainer’s three shallow saddles atZ5.1 before bearing insertion and opens≥3mm per half.
+Two-screw board retention remains reversible and accessible. Snap tabs add printed strain/creep and tolerance sensitivity and are not needed for the present reduction. The push-fit bearing has no positive axial lock: light seating, retention and service cannot be inferred from nominal CAD interference. Calibrate coupons, measure forces and test creep before approving the concept. Keep the previous screw-retained revision available if force/retention goals cannot coexist.
+
+## Digital checks and physical release gates
+
+See validation/pushfit-cad-audit.json, print-readiness.json, print-wall-sections.json, pcb-insertion-audit.json, cr2450-holder-audit.json and the [PCB review](../validation/FABRICATION_REVIEW.md). Exact BREP/mesh comparisons, clearances, full insertion sweep, all11 cap interfaces and24 rotor samples are checked. All12 product STL alternatives were actually sliced with PrusaSlicer2.8.1, generic0.4mm/PETG,0.15mm layers/.20first,4walls,100%infill and per-part support modes; there are no slicer warnings. No physical print or force test has been performed.
 
 Before batch release:
 
-1. Confirm printer/nozzle/filament; print fit coupons then one circular prototype. Current slicer assumption is generic0.4mm nozzle,PETG,0.15mm layers,0.20mm first layer and four walls. Remove supports and measure fits/warpage.
-2. Qualify bearing land contact, drag/wobble/retention, thread torque/pull-out and repeated service. Confirm the actual bearing/screws/ring drawings and samples; avoid loading bearing shields.
-3. Test two-screw board retention, bending, shock and vibration before accepting the reduced count. All four revised Ø2.2mm holes remain if physical testing calls for four screws.
-4. Qualify both adhesive joints, encoder retention, supplier ring dimensions and phone-facing polarity, peel/shear/cure/aging.
-5. Measure Hall/count accuracy, steel/magnetic/phone interference, BLE and battery performance. Firmware and actual runtime remain unverified.
-6. Measure assembly time and rework across several units before approving the10–50-unit pilot. Digital CAD/mesh/slicer checks do not qualify physical production.
+1. Confirm printer/material, calibrate the ten coupons and print one circular prototype. Measure shaft/bore, cleanup, seating force, pull-off force, race/shield contact, free rotation, wobble, repeated service, PETG creep and phone/magnet/drop loads. Hand-only seating is required; never force through the bearing balls.
+2. Qualify two nylon screws: post strength, torque, board deflection, shock and vibration. Four drills/posts remain if testing requires four screws. PCB edge webs are0.55mm and post pilot walls0.8mm.
+3. Inspect the actual C7525448 loaded holder/cell. CAD includes limited free-state spring-contact interference; it does not establish loaded contact force, polarity, reflow or cell insertion/removal reliability. Nominal cell/floor clearance is0.5mm.
+4. Qualify both adhesive joints and supplier-specific ring dimensions/polarity, peel/shear, cure and aging. Keep the encoder seated at its stop; no axial glue layer.
+5. Verify the JLCPCB BOM/CPL assembly preview, particularly bottom BT1 positive pin1 and supplier rotation. Confirm exact stock, attrition, Standard PCBA/ENIG capability for the sensor, stencil, board stack and antenna fixture requirements before ordering.
+6. Measure Hall/count accuracy with bearing/ring/phone, oscillator operation, RF matching/radiated performance, battery consumption/runtime. L2±5% is a conditional RF starting value. Firmware and production test software are absent.
+7. Measure assembly time/yield/rework across multiple units before authorizing the 10–50-unit batch. Digital print/PCB checks are not a manufacturing qualification.
 
-The active CR2450 comparison is pinned to commit346fade; preceding V7 and press-removal comparisons remain historical. Current evidence is validation/cr2450-upgrade-status.json, the cr2450-*-audit.json reports and validation/print-readiness.json. Earlier press/two-screw reports remain historical. No new GitHub or tsCircuit publication is claimed by this review.
-
-The fixed threaded throat isØ37.3mm, matching the lower shaft bore and giving0.4mm nominal radial PCB insertion clearance. The formerØ36.4mm throat blocked theØ36.5mm board during assembly despite clearing it in the seated pose. The male thread root now has0.85mm nominal radial wall; print-coupon torque/life testing is still required. Continuous swept-volume checks cover the actual drilled PCB, all28 fitted supplier-model bounds and the cell, and retain a failing comparison with the former throat. See validation/pcb-insertion-audit.json.
-
-The active cell is CR2450 in the complete C7525448 holder. Its8.6mm loaded outline leaves0.5mm nominal cell/floor clearance. Four0.8mm pilot-wall posts and0.55mm PCB hole/edge webs need printed retention testing. Loaded holder-contact seating/force, polarity and RF loading remain physical release gates; see [the CR2450 revision](CR2450_UPGRADE.md).
+The initial unrestricted latest-tscircuit trial failed constraints. The active circuit now uses the refined0.0.3060 fresh routing, with new critical paths and local repairs, verified by the compiler, strict routing contracts, native KiCad DRC and actual Gerber artwork checks. Historical spring/thread/retainer revisions remain in Git history and do not qualify current retention.

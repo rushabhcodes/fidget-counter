@@ -7,7 +7,7 @@
   "meshes": [
     {
       "name": "Stationary_Base",
-      "triangles": 12956,
+      "triangles": 11026,
       "watertight": true,
       "bounds_mm": [
         [
@@ -18,7 +18,7 @@
         [
           29.0,
           28.996197626303335,
-          15.6
+          13.1
         ]
       ],
       "material_groups": 1
@@ -78,24 +78,6 @@
       "material_groups": 1
     },
     {
-      "name": "Inner_Race_Nut",
-      "triangles": 2734,
-      "watertight": true,
-      "bounds_mm": [
-        [
-          -21.5942038954781,
-          -21.59716788717766,
-          13.1
-        ],
-        [
-          21.6,
-          21.59716788717766,
-          15.6
-        ]
-      ],
-      "material_groups": 1
-    },
-    {
       "name": "Bearing_6808",
       "triangles": 168704,
       "watertight": true,
@@ -112,42 +94,6 @@
         ]
       ],
       "material_groups": 5
-    },
-    {
-      "name": "Outer_Race_Retainer",
-      "triangles": 3192,
-      "watertight": true,
-      "bounds_mm": [
-        [
-          -28.795655901161403,
-          -28.792969668965345,
-          4.6
-        ],
-        [
-          29.4,
-          28.792969668965405,
-          9.6
-        ]
-      ],
-      "material_groups": 1
-    },
-    {
-      "name": "Cap_Retainer_Screws",
-      "triangles": 51756,
-      "watertight": true,
-      "bounds_mm": [
-        [
-          -15.799003581186492,
-          -25.975257104172087,
-          5.199999999999999
-        ],
-        [
-          29.7,
-          25.9752571041721,
-          17.2
-        ]
-      ],
-      "material_groups": 1
     },
     {
       "name": "Magnet",
@@ -169,7 +115,7 @@
     },
     {
       "name": "Cap_circular",
-      "triangles": 8170,
+      "triangles": 4048,
       "watertight": true,
       "bounds_mm": [
         [
@@ -178,7 +124,7 @@
           6.1
         ],
         [
-          30.8,
+          30.79983765734622,
           30.799837657346224,
           17.2
         ]
@@ -187,17 +133,17 @@
     },
     {
       "name": "Cap_ships_wheel",
-      "triangles": 7972,
+      "triangles": 4384,
       "watertight": true,
       "bounds_mm": [
         [
           -30.8,
-          -28.999595730639584,
+          -29.0,
           6.1
         ],
         [
           30.8,
-          28.999595730639587,
+          29.0,
           17.2
         ]
       ],
@@ -205,17 +151,17 @@
     },
     {
       "name": "Cap_rounded_triangle",
-      "triangles": 6946,
+      "triangles": 2756,
       "watertight": true,
       "bounds_mm": [
         [
-          -28.8,
-          -28.795110211968407,
+          -28.78505016311014,
+          -28.796223849570207,
           6.1
         ],
         [
-          30.8,
-          28.79511021196836,
+          30.797094004482,
+          28.796223849570207,
           17.2
         ]
       ],
@@ -223,7 +169,7 @@
     },
     {
       "name": "Cap_scalloped_coin",
-      "triangles": 9082,
+      "triangles": 4886,
       "watertight": true,
       "bounds_mm": [
         [
@@ -241,7 +187,7 @@
     },
     {
       "name": "Cap_petal_flower",
-      "triangles": 8362,
+      "triangles": 4166,
       "watertight": true,
       "bounds_mm": [
         [
@@ -259,7 +205,7 @@
     },
     {
       "name": "Cap_four_leaf_clover",
-      "triangles": 8108,
+      "triangles": 3768,
       "watertight": true,
       "bounds_mm": [
         [
@@ -277,17 +223,17 @@
     },
     {
       "name": "Cap_rounded_hexagon",
-      "triangles": 6706,
+      "triangles": 2512,
       "watertight": true,
       "bounds_mm": [
         [
           -30.798601319,
-          -28.795110211968407,
+          -28.796223849570207,
           6.1
         ],
         [
-          30.8,
-          28.79511021196836,
+          30.798601319004,
+          28.796223849570207,
           17.2
         ]
       ],
@@ -295,7 +241,7 @@
     },
     {
       "name": "Cap_rounded_square",
-      "triangles": 7060,
+      "triangles": 2728,
       "watertight": true,
       "bounds_mm": [
         [
@@ -313,7 +259,7 @@
     },
     {
       "name": "Cap_wave_rim",
-      "triangles": 8972,
+      "triangles": 4864,
       "watertight": true,
       "bounds_mm": [
         [
@@ -331,17 +277,17 @@
     },
     {
       "name": "Cap_turbine_wheel",
-      "triangles": 7548,
+      "triangles": 3362,
       "watertight": true,
       "bounds_mm": [
         [
           -30.345484067543303,
-          -30.3454840675433,
+          -30.346020619251938,
           6.1
         ],
         [
-          30.8,
-          30.343415132675602,
+          30.35,
+          30.346020619251938,
           17.2
         ]
       ],
@@ -349,7 +295,7 @@
     },
     {
       "name": "Cap_thumb_scoop",
-      "triangles": 9240,
+      "triangles": 5046,
       "watertight": true,
       "bounds_mm": [
         [
@@ -368,13 +314,12 @@
   ],
   "source_sha256": {
     "mechanical/hardware_models.py": "cc7779f3d393011b726865e31ef664cbc83cf4b86ab12543a0f66a8fb7d29283",
-    "mechanical/build_enclosure.py": "ef13e66f09bd8cf299b57bf50aba47fc139c99eb40fe885bb6ab089d91e9e916",
-    "mechanical/spring_mesh.py": "f34870ba443c391bf0436944b3e081de9f922cc178eb47a5588457818887c6cb",
+    "mechanical/build_enclosure.py": "b239fe63ed7bb9a38be542fc1d43529a36db0c4120fbca86399509ac3e76bb53",
     "mechanical/export_circuit_models.py": "71d17ba8bef55a01016a39d2d9d88063fc2ed25f2ac7c3d323845762aa7cae89",
     "mechanical/mesh_export.py": "a8b20d735f20a3e1d4772e6bf6efee3ef9932b498eb563a32f5e915015368f74",
     "mechanical/glb_models.py": "1298685a6f5c6a7ed9368643a653b83f6856c9ebe163b99aa43f0a7ab5a4cc33"
   },
   "limits": [
-    "Representative internals, threads and spring turns; confirm purchased SKUs and force curves"
+    "Representative bearing internals and screw threads; confirm purchased SKUs and physical fits"
   ]
 }

@@ -360,28 +360,6 @@
       ]
     },
     {
-      "part": "BS_08_B2AA020_R",
-      "jlcpcb": "C964787",
-      "command": "tsci import --jlcpcb --download --use-exact-footprint C964787",
-      "files": [
-        {
-          "path": "imports/BS_08_B2AA020_R/BS_08_B2AA020_R.obj",
-          "bytes": 98977,
-          "sha256": "6f14b69db8252082af19981ea4ef8f6eba675bc210f14e77315b19862ccfe0ad"
-        },
-        {
-          "path": "imports/BS_08_B2AA020_R/BS_08_B2AA020_R.step",
-          "bytes": 1788228,
-          "sha256": "4714a2d39b88797145aacf8a737b9977321a492e45a83ee97f29d933f943d8ec"
-        },
-        {
-          "path": "imports/BS_08_B2AA020_R/BS_08_B2AA020_R.tsx",
-          "bytes": 7902,
-          "sha256": "9ebc546bb682b8f1d11121895e15a4aeb793ab8c1d8e24dea64601790a055a3c"
-        }
-      ]
-    },
-    {
       "part": "SM05B_SRSS_TB",
       "jlcpcb": "C136657",
       "importedAt": "2026-10-29",
@@ -488,6 +466,30 @@
           "path": "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.tsx",
           "bytes": 2397,
           "sha256": "47f261b0aac5b5e7fbeb80d7f9ccba1339d10ef95d6c7819d2ac34897b279b6d"
+        }
+      ]
+    },
+    {
+      "part": "SM05B_SRSS_TB_LF__SN_",
+      "jlcpcb": "C136657",
+      "importedAt": "2026-11-03",
+      "purpose": "Unmodified supplier footprint to independently verify programming connector pick-and-place orientation",
+      "command": "tsci import --jlcpcb --download --use-exact-footprint C136657",
+      "files": [
+        {
+          "path": "imports/SM05B_SRSS_TB_LF__SN_/SM05B_SRSS_TB_LF__SN_.obj",
+          "bytes": 48913,
+          "sha256": "1b55eaa8e535dbdebf27816238bd3a8d9bba57e3f22416e2ff7283c884bf6d10"
+        },
+        {
+          "path": "imports/SM05B_SRSS_TB_LF__SN_/SM05B_SRSS_TB_LF__SN_.step",
+          "bytes": 1889623,
+          "sha256": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6"
+        },
+        {
+          "path": "imports/SM05B_SRSS_TB_LF__SN_/SM05B_SRSS_TB_LF__SN_.tsx",
+          "bytes": 3988,
+          "sha256": "4e147be493b9565e6370e856fe639ec767bf92f52269b3679d55646b1711792b"
         }
       ]
     }

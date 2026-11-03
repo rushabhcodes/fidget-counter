@@ -13,6 +13,7 @@ ap.add_argument('--parameters',type=Path,default=HERE/'enclosure-parameters.json
 ap.add_argument('--assembly-style',default='all',help='Export all assembly STEP variants, or one style while still checking/exporting every requested cap')
 a=ap.parse_args();P=json.loads(a.parameters.read_text());OUT=a.out.resolve()
 for d in ['STEP','STL','Assemblies','Validation']:(OUT/d).mkdir(parents=True,exist_ok=True)
+pushfit=P.get('cap_retention',{}).get('mode')=='push_fit'
 styles=P['cap_styles'] if a.style=='all' else [a.style]
 assert all(s in P['cap_styles'] for s in styles)
 assembly_styles=styles if a.assembly_style=='all' else [a.assembly_style]
@@ -87,7 +88,7 @@ def ridge(clearance=0):
 assert N['shaft_bore_radius_mm']-P['pcb_diameter']/2>=.3,'PCB cannot pass through fixed shaft throat with assembly clearance'
 assert root_r-N['shaft_bore_radius_mm']>=.8,'Insufficient male thread root wall'
 neck=ring(N['shaft_bore_radius_mm'],root_r,bt-.05,2.55).fuse(ridge()).intersect(disk(20.,bt,2.5)).clean()
-base=base.fuse(fixed_support,neck).clean()
+base=base.fuse(fixed_support,*([] if pushfit else [neck])).clean()
 nut=ring(root_r+.05,N['outer_radius_mm'],bt+.3,2.2)
 nut=nut.fuse(ring(root_r+.05,B['inner_shoulder_outer_radius_mm'],bt,.3))
 nut=nut.cut(ridge(N['thread_clearance_mm']))
@@ -96,7 +97,7 @@ for angle in [0,90,180,270]:
 nut=nut.clean()
 bearing,inner,outer,seals,bearing_parts=(bearing_6808 if bearing_name=='Bearing_6808' else bearing_6708)(bz)
 retainer=ring(B['outer_shoulder_inner_radius_mm'],28.8,bz-1.5,1.5)
-cap_holes=[polar(J['screw_pitch_radius_mm'],a) for a in [0,120,240]];cap_fast=[]
+cap_holes=[] if pushfit else [polar(J['screw_pitch_radius_mm'],a) for a in [0,120,240]];cap_fast=[]
 for x,y in cap_holes:
  # Integral upper bosses put 4.4 mm of nominal M2 engagement in the same
  # envelope. The former 1.5 mm ring alone supplied only 1.4 mm engagement.
@@ -127,14 +128,15 @@ for x,y in cap_holes:
 # Vertical pads retain at least 1.0 mm around the countersinks and 1.2 mm
 # outside the lower sockets. Clip their inner faces to the existing stepped
 # bearing bore; extend the complete pads through the grip/deck union above it.
-reinforcement=comp(disk(J['cap_reinforcement_radius_mm'],bz,P['overall_height']-bz,x,y) for x,y in cap_holes)
-reinforcement=reinforcement.cut(disk(B['housing_diameter_mm']/2,bz-.1,bt-bz+.1))
-reinforcement=reinforcement.cut(disk(B['outer_shoulder_inner_radius_mm'],bt,P['cap_deck_bottom']-bt))
-hub=hub.fuse(reinforcement)
-for x,y in cap_holes:
- hub=hub.cut(disk(1.1,bz-.1,P['overall_height']-bz+.2,x,y))
- hub=hub.cut(disk(1.8,bz-.1,J['socket_roof_z_mm']-bz+.1,x,y))
- hub=hub.cut(cq.Solid.makeCone(1.1,2.,1.1,cq.Vector(x,y,P['overall_height']-1.1)))
+if not pushfit:
+ reinforcement=comp(disk(J['cap_reinforcement_radius_mm'],bz,P['overall_height']-bz,x,y) for x,y in cap_holes)
+ reinforcement=reinforcement.cut(disk(B['housing_diameter_mm']/2,bz-.1,bt-bz+.1))
+ reinforcement=reinforcement.cut(disk(B['outer_shoulder_inner_radius_mm'],bt,P['cap_deck_bottom']-bt))
+ hub=hub.fuse(reinforcement)
+ for x,y in cap_holes:
+  hub=hub.cut(disk(1.1,bz-.1,P['overall_height']-bz+.2,x,y))
+  hub=hub.cut(disk(1.8,bz-.1,J['socket_roof_z_mm']-bz+.1,x,y))
+  hub=hub.cut(cq.Solid.makeCone(1.1,2.,1.1,cq.Vector(x,y,P['overall_height']-1.1)))
 hub=hub.clean();caps={}
 for style in styles:
  cap=hub.fuse(make_grip(style,P))
@@ -145,9 +147,10 @@ for style in styles:
   cap=cap.cut(disk(1.8,bz-.1,J['socket_roof_z_mm']-bz+.1,x,y))
   cap=cap.cut(cq.Solid.makeCone(1.1,2.,1.1,cq.Vector(x,y,P['overall_height']-1.1)))
  caps[style]=cap.clean()
- screw_envelope=comp(disk(.98,5.2,10.9,x,y).fuse(cq.Solid.makeCone(.98,1.9,1.1,cq.Vector(x,y,16.1))) for x,y in cap_holes)
- clear(caps[style],retainer,style+' finished cap/retainer bosses')
- clear(caps[style],screw_envelope,style+' finished cap/screw envelopes')
+ if not pushfit:
+  screw_envelope=comp(disk(.98,5.2,10.9,x,y).fuse(cq.Solid.makeCone(.98,1.9,1.1,cq.Vector(x,y,16.1))) for x,y in cap_holes)
+  clear(caps[style],retainer,style+' finished cap/retainer bosses')
+  clear(caps[style],screw_envelope,style+' finished cap/screw envelopes')
 pcb=disk(P['pcb_diameter']/2,pz,P['pcb_thickness'])
 for x,y in mounts:pcb=pcb.cut(disk(M['hole_diameter_mm']/2,pz-.1,P['pcb_thickness']+.2,x,y))
 cell,cell_parts=coin_cell(P['battery']['cell_bottom_z_mm'],P['battery']['standard'])
@@ -169,22 +172,23 @@ for cad in (e for e in circuit if e['type']=='cad_component' and e.get('model_st
 assert len(electronics)==28
 holder=electronics['Electronic_BT1']; sensor=electronics['Electronic_U2'];jst=electronics['Electronic_J_DEBUG']
 jst_box=box(8.3,6.1,pt,2.92,0,-13.3)
-physical={'Stationary_Base':base,'Inner_Race_Nut':nut,'Outer_Race_Retainer':retainer,**{'Cap_'+s:c for s,c in caps.items()}}
+physical={'Stationary_Base':base,**({} if pushfit else {'Inner_Race_Nut':nut,'Outer_Race_Retainer':retainer}),**{'Cap_'+s:c for s,c in caps.items()}}
 for name,shape in physical.items():assert shape.isValid() and len(shape.Solids())==1,(name,'Invalid/disconnected printed part',len(shape.Solids()))
-stationary={'Stationary_Base':base,'PCB':pcb,'Cell':cell,'MagSafe_Ring':attachment,'PCB_Fasteners':comp(pcb_fast),'Inner_Race_Nut':nut,**electronics}
-moving={bearing_name:bearing,'Outer_Race_Retainer':retainer,'Cap_Retainer_Screws':comp(cap_fast),'Magnet':magnet}
+stationary={'Stationary_Base':base,'PCB':pcb,'Cell':cell,'MagSafe_Ring':attachment,'PCB_Fasteners':comp(pcb_fast),**({} if pushfit else {'Inner_Race_Nut':nut}),**electronics}
+moving={bearing_name:bearing,**({} if pushfit else {'Outer_Race_Retainer':retainer,'Cap_Retainer_Screws':comp(cap_fast)}),'Magnet':magnet}
 print('Checking all 28 electronic models, fixed shaft, bearing-race separation and rotation...',flush=True)
 for name,shape in electronics.items():
  clear(base,shape,'integrated base/'+name)
- clear(nut,shape,'nut/'+name)
+ if not pushfit:clear(nut,shape,'nut/'+name)
  for other,rotor in {**moving,**{'Cap_'+k:v for k,v in caps.items()}}.items():
   checked=ring(B['bore_mm']/2,B['outside_mm']/2,bz,B['width_mm']) if other.startswith('Bearing_') else rotor
   clear(checked,shape,other+'/'+name)
 clear(base,pcb,'PCB seating');clear(base,cell,'cell/base');clear(base,attachment,'ring/integrated base')
 assert abs(attachment.BoundingBox().zmin-ring_z)<1e-6
 assert abs(seat_z-attachment.BoundingBox().zmax-R['bondline_mm'])<1e-6
-for label,left,right in [('base/outer race',base,outer),('nut/seals',nut,seals),('cap/inner race',hub,inner),('retainer/inner race',retainer,inner),('base/nut thread',base,nut),('base/cap',base,hub),('nut/cap',nut,hub)]:clear(left,right,label)
-clear(retainer,hub,'retainer boss/cap socket');clear(retainer,outer,'retainer boss/bearing')
+for label,left,right in [('base/outer race',base,outer),('cap/inner race',hub,inner),('base/cap',base,hub)]+([] if pushfit else [('nut/seals',nut,seals),('retainer/inner race',retainer,inner),('base/nut thread',base,nut),('nut/cap',nut,hub)]):clear(left,right,label)
+if not pushfit:
+ clear(retainer,hub,'retainer boss/cap socket');clear(retainer,outer,'retainer boss/bearing')
 rotation=[]
 # The stepped bore and deck are axisymmetric. Every exterior grip lies outside
 # the 26.8mm radial keepout. The small screw pads are inside the same stepped
@@ -194,7 +198,7 @@ for angle in range(0,360,15):
  for name,fixed in stationary.items():clear(rotor,fixed,f'rotor/{name} {angle}')
  rotation.append({'angle_deg':angle,'rigid_collisions':0})
 for style,cap in caps.items():
- for name in ['Stationary_Base','Inner_Race_Nut','PCB_Fasteners']:clear(cap,stationary[name],style+'/'+name)
+ for name in ['Stationary_Base','PCB_Fasteners']+([] if pushfit else ['Inner_Race_Nut']):clear(cap,stationary[name],style+'/'+name)
  clear(cap,jst_box,style+'/JST courtyard')
 for style in styles:clear(make_grip(style,P),disk(26.8,P['cap_edge_bottom']-.01,P['cap_deck_bottom']-P['cap_edge_bottom']),style+' grip keepout')
 floor=hub.intersect(ring(10.24,16.9,0,25)).BoundingBox().zmin;jst_gap=floor-pt-2.92
@@ -249,10 +253,13 @@ for style,cap in caps.items():
      groups.append({'label':label,'first_face':start,'face_count':len(ff),'color':part_color,'finish':finish})
     meshes.append({'style':style,'name':name,'nativeElectronic':name.startswith('Electronic_'),'color':color,'vertices':vertices,'faces':faces,'groups':groups});seen_meshes.add(name)
   if style in assembly_styles:assembly.save(str(OUT/'Assemblies'/f'{style}_{state}.step'))
-report={'status':'Nominal rotation-only CAD pilot; physical qualification required','physical_tested':False,'manufacturing_qualified':False,'parameters':P,'printed_parts':manifest,'rotation_checks':rotation,'continuous_rotation_deg':360,'rotation_method':'Axisymmetric stepped rotor and exterior grip keepout, supplemented by24 sampled final-hub angles','base_diameter_mm':58,'overall_height_mm':P['overall_height'],'height_increase_mm':P['overall_height']-15.2,'pcb_midplane_z_mm':mid,'pcb_screws':len(pcb_fast),'pcb_support_posts':4,'pcb_screw_indices':pcb_screw_indices,'flexible_printed_latches':0,'return_springs':0,'press_travel_mm':0,'cap_retainer_screws':3,'jst_swept_clearance_mm':jst_gap,'sensor_gap_mm':1.8,'separate_encoder_spacers':0,'encoder_stop_z_mm':magnet_top,'handled_parts_per_unit_excluding_adhesive_and_shims':12+len(pcb_fast),'screw_driving_operations':3+len(pcb_fast),'finished_cap_retainer_and_screw_clearance_checks':len(caps),'assembly_step_styles':assembly_styles,'references':{'rotation':'https://ploopyco.github.io/knob/assembly-instructions/','bearing':'https://ploopyco.github.io/knob/appendices/hardware/'},'scope':'Rotation only; SW1, R5 and C17 removed. SWD hardware reset retained. No firmware included.','model_detail':{'bearing':'21 balls (AST6808 reference), grooved/chamfered races, cage and shields; representative internals','electronics':'All28 retained supplier STEP models at native poses'},'physical_checks_required':['Printed bearing shaft/housing/thread coupon fit and support removal','Bearing axial retention, rotational drag and cap screw strength','Magnet retention, Hall calibration, phone attachment and RF','Rotation/removal endurance, assembly timing and firmware']}
+report={'status':'Nominal rotation-only CAD pilot; physical qualification required','physical_tested':False,'manufacturing_qualified':False,'parameters':P,'printed_parts':manifest,'rotation_checks':rotation,'continuous_rotation_deg':360,'rotation_method':'Axisymmetric stepped rotor and exterior grip keepout, supplemented by24 sampled final-hub angles','base_diameter_mm':58,'overall_height_mm':P['overall_height'],'height_increase_mm':P['overall_height']-15.2,'pcb_midplane_z_mm':mid,'pcb_screws':len(pcb_fast),'pcb_support_posts':4,'pcb_screw_indices':pcb_screw_indices,'flexible_printed_latches':0,'return_springs':0,'press_travel_mm':0,'cap_retainer_screws':3,'jst_swept_clearance_mm':jst_gap,'sensor_gap_mm':1.8,'separate_encoder_spacers':0,'encoder_stop_z_mm':magnet_top,'handled_parts_per_unit_excluding_adhesive_and_shims':12+len(pcb_fast),'screw_driving_operations':3+len(pcb_fast),'finished_cap_retainer_and_screw_clearance_checks':len(caps),'assembly_step_styles':assembly_styles,'references':{'rotation':'https://ploopyco.github.io/knob/assembly-instructions/','bearing':'https://ploopyco.github.io/knob/appendices/hardware/'},'scope':'Rotation only; SW1, R5 and C17 removed. SWD hardware reset retained. No firmware included.','model_detail':{'bearing':'21 balls (AST6808 reference), grooved/chamfered races, cage and shields; representative internals','electronics':'All28 retained supplier STEP models at native poses'},'physical_checks_required':['Printed bearing shaft/housing coupon fit and support removal','Bearing seating/pull-off retention, rotational drag, PETG creep and PCB screw strength','Magnet retention, Hall calibration, phone attachment and RF','Rotation/removal endurance, assembly timing and firmware']}
+if pushfit:
+ report.update({'cap_retention':P['cap_retention'],'cap_retainer_screws':0,'handled_parts_per_unit_excluding_adhesive_and_shims':9,'screw_driving_operations':len(pcb_fast),'finished_cap_retainer_and_screw_clearance_checks':0,'product_rigid_parts':2,'separate_inner_race_nuts':0,'separate_outer_race_retainers':0})
 report['bearing_designation']=B['designation']
 report['pcb_retention_qualification']='Two opposite screws on four rigid posts; physical board deflection and retention untested'
 report['battery']={'type':'Primary lithium CR2032','voltage_v':3,'diameter_mm':20,'thickness_mm':3.2,'reference_nominal_capacity_mah':225,'larger_cell_assessed':'CR2450 24.5x5 mm, 620mAh; complete-holder trial interferes with PCB posts; not a drop-in replacement','fit_study':'mechanical/BATTERY_AND_ASSEMBLY_REVIEW.md'}
+report['battery']={**P['battery'],'physical_qualified':False}
 report['attachment_ring']={'supplier':R['supplier'],'purchased_assemblies':1,'individual_magnet_pockets':0,'separate_backing_rings':0,'nominal_dimensions_mm':[R['outside_mm'],R['inside_mm'],R['thickness_mm']],'phone_face_setback_mm':ring_z-.2,'radial_clearance_mm':R['radial_clearance_mm'],'bondline_mm':R['bondline_mm'],'roof_thickness_mm':3.9-seat_z,'outer_wall_mm':28.05-ro-R['radial_clearance_mm'],'physical_qualified':False,'separate_trays':0,'separate_tray_bonds':0,'display_note':'Purchased segmented ring reference; confirm supplier dimensions and working face.'}
 (OUT/'Validation'/'geometry.json').write_text(json.dumps(report,indent=2)+'\n');(OUT/'Validation'/'scene_meshes.json').write_text(json.dumps(meshes))
 if set(styles)==set(P['cap_styles']):

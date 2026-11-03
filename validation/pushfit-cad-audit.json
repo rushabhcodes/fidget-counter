@@ -1,0 +1,204 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "manufacturing_qualified": false,
+  "comparison_commit": "a7c29c470c439e6f4e35314b9c68bba5c8d8c100",
+  "retention": "Calibrated friction push fits; no positive axial lock",
+  "base_result": {
+    "added_volume_mm3": 203.48895268243268,
+    "removed_volume_mm3": 295.84998291435187,
+    "unexplained_added_mm3": 0.0,
+    "unexplained_removed_mm3": 0.0
+  },
+  "cap_results": [
+    {
+      "name": "Cap_circular",
+      "added_volume_mm3": 336.2777546521073,
+      "removed_volume_mm3": 81.01215888934527,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    },
+    {
+      "name": "Cap_ships_wheel",
+      "added_volume_mm3": 336.69835168652247,
+      "removed_volume_mm3": 111.29923796533345,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    },
+    {
+      "name": "Cap_rounded_triangle",
+      "added_volume_mm3": 336.69835168652156,
+      "removed_volume_mm3": 63.20659172517943,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    },
+    {
+      "name": "Cap_scalloped_coin",
+      "added_volume_mm3": 336.69835168652156,
+      "removed_volume_mm3": 63.20456146529149,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    },
+    {
+      "name": "Cap_petal_flower",
+      "added_volume_mm3": 336.69835168652156,
+      "removed_volume_mm3": 63.1957569532607,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    },
+    {
+      "name": "Cap_four_leaf_clover",
+      "added_volume_mm3": 317.4905418402094,
+      "removed_volume_mm3": 210.76051335040913,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    },
+    {
+      "name": "Cap_rounded_hexagon",
+      "added_volume_mm3": 336.69835168652156,
+      "removed_volume_mm3": 63.1984142683816,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    },
+    {
+      "name": "Cap_rounded_square",
+      "added_volume_mm3": 317.49050217084533,
+      "removed_volume_mm3": 210.92007428340793,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    },
+    {
+      "name": "Cap_wave_rim",
+      "added_volume_mm3": 333.80942424535516,
+      "removed_volume_mm3": 170.9054947794073,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    },
+    {
+      "name": "Cap_turbine_wheel",
+      "added_volume_mm3": 335.52351113561735,
+      "removed_volume_mm3": 89.16715115027502,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    },
+    {
+      "name": "Cap_thumb_scoop",
+      "added_volume_mm3": 336.6983516865225,
+      "removed_volume_mm3": 63.19448766381346,
+      "unexplained_added_mm3": 0.0,
+      "unexplained_removed_mm3": 0.0
+    }
+  ],
+  "inner_race_intended_interference_volume_mm3": 20.19736461977118,
+  "outer_race_checks": [
+    {
+      "style": "circular",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    },
+    {
+      "style": "ships_wheel",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    },
+    {
+      "style": "rounded_triangle",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    },
+    {
+      "style": "scalloped_coin",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    },
+    {
+      "style": "petal_flower",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    },
+    {
+      "style": "four_leaf_clover",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    },
+    {
+      "style": "rounded_hexagon",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    },
+    {
+      "style": "rounded_square",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    },
+    {
+      "style": "wave_rim",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    },
+    {
+      "style": "turbine_wheel",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    },
+    {
+      "style": "thumb_scoop",
+      "outer_race_intended_interference_volume_mm3": 26.22752081867111,
+      "unexpected_interference_mm3": 0.0
+    }
+  ],
+  "nominal_diametral_interference_mm": 0.05,
+  "contact_land_diameter_mm": 42.0,
+  "product_rigid_parts": 2,
+  "product_screws": 2,
+  "handled_parts": 9,
+  "printed_alternatives_checked": 12,
+  "external_envelope_mm": {
+    "base_diameter": 58,
+    "cap_max_diameter": 61.6,
+    "top_z": 17.2,
+    "phone_contact_to_top": 17.0
+  },
+  "negative_checks_passed": [
+    "unrelated_outer_addition",
+    "unrelated_floor_cut"
+  ],
+  "physical_release_gates": [
+    "Calibrate both fits with selected bearing and actual printer/material",
+    "Measure low hand seating force; never force the bearing through its balls",
+    "Measure pull-off retention against actual phone/magnet detachment loads",
+    "Wobble, rotational drag, creep, thermal cycling and removal life",
+    "Adhesive retention, loaded holder/cell, Hall/BLE/RF and firmware"
+  ],
+  "source_sha256": {
+    "validation/check-pushfit-cad.py": "91a80caba55af2a04b35f2f440f7226beb889866334b315ac326ee91ee7c779c",
+    "mechanical/build_enclosure.py": "b239fe63ed7bb9a38be542fc1d43529a36db0c4120fbca86399509ac3e76bb53",
+    "mechanical/grip_profiles.py": "5f8747fd384f8aeefea1154a976a8787c0918e5d9b425c653ca2ce932da83a25",
+    "mechanical/enclosure-parameters.json": "ab5279cf7ba3b20594668c5ed60d2979ae44033dd79ee2ad6c66f63f16f06786",
+    "mechanical/enclosure-validation.json": "8544686cbc3141934aae0839ce048d9674d139f862a0429e6e8876b7b1db9f31",
+    "mechanical/STEP_Parts/Cap_circular.step": "9bbf34e47bbdd93dd42dbb8aad4813cddf45ee6a9f9d9cbb96ea975ea6e226f4",
+    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "fb952e194bc35a369ddeabc1d15b45c818fc4780c55670bd4f37ded7825dde80",
+    "mechanical/STEP_Parts/Cap_petal_flower.step": "14bb20b588ae4763fe3a7c2e297179aae999971b6ce4a2926d0c7f4b55e3ac2c",
+    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "bf86a7a5fbc9f50c87af74c99e0611d55e36a9ed980ee820fb66f46fa20cf96f",
+    "mechanical/STEP_Parts/Cap_rounded_square.step": "82851162a292ee4ee3f2f1862fa2546b641d6766c9cd6adf2dfd0273b453bac0",
+    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "fa0d09f3ea4b726d6a45cd0cc3b50a928c213972934e92adc8d1bb3a1d0a3d75",
+    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "7dcb79c1db2ec2c534db12ac1706bcdf9a7684f62ba02365ca76841386d2e48a",
+    "mechanical/STEP_Parts/Cap_ships_wheel.step": "b84960652053eea4a5824a6618196774994070503197ca27f97aff46c2b2b1b0",
+    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "b240758b09b6e19205393de987b1b75079f05415e8024f0d76ccd0cf97094e2b",
+    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "a8ffff9dbfb147af0f5ecb73c6dcd8ef685c8d9de8e37bcc1dbef35f6ec1dd81",
+    "mechanical/STEP_Parts/Cap_wave_rim.step": "cc8daf743991c19f051153120b28d98468bffb706204a7c07346c64f78743ac5",
+    "mechanical/STEP_Parts/Stationary_Base.step": "7f08c6843718ce46c47bdcf73b3e6355751b16198653ad4d65d14f381a3e44a5",
+    "mechanical/Print_STL/Cap_circular.stl": "c0e7c48c58109c7d01372d56c4b997c5c5ae917ed30ab559035bfb6c81137741",
+    "mechanical/Print_STL/Cap_four_leaf_clover.stl": "4b557c453de3b8135f54716405f6fc4978367418f7da526fba56da8097ad65d8",
+    "mechanical/Print_STL/Cap_petal_flower.stl": "7385c0e723473063f262f342fb309b79a798fbd03e65995e4b9ecb18e9c27aa5",
+    "mechanical/Print_STL/Cap_rounded_hexagon.stl": "f7b8d9cd33c392954ec888df0a5d8d814e1b469161c9810e3d2abdc9b0d1d7c2",
+    "mechanical/Print_STL/Cap_rounded_square.stl": "edf49281cd184afac2fde858ccbf938ba26f4bfba1af23fe737c59adc42b0eed",
+    "mechanical/Print_STL/Cap_rounded_triangle.stl": "61e0e465b1d2e0ae553a91b206c78c9a88bfd6b334ba40c978592c97d554c404",
+    "mechanical/Print_STL/Cap_scalloped_coin.stl": "ac4fde4f00f02e7b2c8e5bd7831b3c71d1c033563a40f5a5093e7fc9deeb1605",
+    "mechanical/Print_STL/Cap_ships_wheel.stl": "69dfdb972ed3afc3de3948dc8e2f1e7094d45dfc17576f449f8c02958ebe6e0d",
+    "mechanical/Print_STL/Cap_thumb_scoop.stl": "2f95caa8a58e048bb9de77e37861e8cb98475468d3462e4a0e4122dde54b4e09",
+    "mechanical/Print_STL/Cap_turbine_wheel.stl": "ec0c462ab359a2560807bc48eda0fed65703fa41c922d0e947fe5a36f065b62d",
+    "mechanical/Print_STL/Cap_wave_rim.stl": "a59dc8965cdc07c76b1d5ee134f02665b2a5d65a4255529e63bcee472c52fa12",
+    "mechanical/Print_STL/Stationary_Base.stl": "237609e4cf2c135538fe225450e38ee59b189b6b4552fee1416795b4ebba6799"
+  }
+}
