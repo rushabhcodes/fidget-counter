@@ -34,6 +34,13 @@ class Tools(unittest.TestCase):
         for stack,reset in [(0x20008000,0x101),(0x20005804,0x101),(0x20005800,0x100),(0x20005800,0x2e001)]:
             with self.subTest(stack=stack,reset=reset),self.assertRaises(ValueError):
                 self.check(image(stack,reset))
+    def test_segment_records(self):
+        self.check(image(extra=[record(2,data=b"\x10\x00"),record(0,0,b"\x01"),record(3,data=b"\x00\x00\x01\x01")]))
+    def test_segment_into_storage(self):
+        with self.assertRaises(ValueError):
+            self.check(image(extra=[record(2,data=b"\x2e\x00"),record(0,0,b"\x01")]))
+    def test_malformed_segment(self):
+        with self.assertRaises(ValueError): self.check(image(extra=[record(2,data=b"\x01")]))
     def test_missing_entry_code(self):
         with self.assertRaises(ValueError): self.check(image(reset=0x201))
     def test_missing_eof(self):

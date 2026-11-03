@@ -26,10 +26,12 @@ def check_hex(path):
         elif kind == 1:
             if length or address: raise ValueError("Malformed EOF")
             eof = True
-        elif kind == 4:
+        elif kind in (2, 4):
             if length != 2 or address: raise ValueError("Malformed address")
-            upper = int.from_bytes(data, "big") << 16
-        elif kind == 5:
+            upper = int.from_bytes(data, "big") << (4 if kind == 2 else 16)
+        elif kind in (3, 5):
+            # Start-segment/start-linear metadata do not write memory.
+            # Actual boot uses the independently checked Cortex-M vectors.
             if length != 4 or address: raise ValueError("Malformed start address")
         else:
             raise ValueError("Unsupported HEX record type")

@@ -29,7 +29,15 @@ Dry-test with light hand pressure only. Stop if loose, tight, distorted or rubbi
 
 **This joint has no positive axial lock.** Before a batch, measure seating and pull-off forces with the chosen bearing and printer, including repeated service and PETG creep. No retention-force limit or screw torque has yet been physically qualified.
 
-## 3. Prepare and program the PCBA
+## 3. Bond the two magnet assemblies
+
+Check the purchased ring's dimensions and its working face against the phone/case. Dry-fit it in the underside annular seat. Bond with the qualified adhesive and nominal0.10mm bondline; keep the ring flat, fully seated and clear of the rim. The alternate1.0mm ring is not a drop-in substitute for this1.9mm seat.
+
+Seat the Ø5×1.5mm **diametric** encoder magnet in the cap against its integral stop. Apply adhesive to the sidewall only. Do not put a glue layer beneath the magnet; that changes the sensor gap. An ordinary axially magnetized disc will not provide the intended XY rotation signal.
+
+Program the boards in step4 while the bonds cure. Let both bonds cure fully according to the selected adhesive's instructions before fitting or loading the magnets. No adhesive has yet been qualified for this PETG/magnet coating. Keep magnet debris away from the bearing and electronics.
+
+## 4. Prepare and program the PCBA
 
 Inspect the board for solder bridges, damaged components and a properly attached holder/header. Confirm BT1 is the complete C7525448 holder on the bottom side and its positive contact agrees with the board polarity. The loose coin cell is fitted later.
 
@@ -37,17 +45,9 @@ Keep the **CR2450 out**. Use the [firmware build/artifact instructions](firmware
 
 Program the complete RevC HEX and require a successful write **and verify** result. The flash script checks nRF52810 identity before writing. A generic DK image is unsuitable: this board has no LED/button/UART and uses different I2C pins.
 
-With the board still powered from the programmer, scan for Fidget Counter in Nordic nRF Connect or the supplied desktop client. A sensor-fault flag is expected without the encoder magnet nearby. Confirm the sensor responds when the cap magnet is presented at its intended position. Do not allow a loose magnet to touch components.
+With the board still powered from the programmer, scan for Fidget Counter in Nordic nRF Connect or the supplied desktop client and read its status. A sensor-fault flag is expected while the bonded cap magnet is away from the board. Complete the magnetic/count tests after fitting the cap in step7.
 
 Power off and disconnect the programming cable before fitting the battery.
-
-## 4. Bond the two magnet assemblies
-
-Check the purchased ring's dimensions and its working face against the phone/case. Dry-fit it in the underside annular seat. Bond with the qualified adhesive and nominal0.10mm bondline; keep the ring flat, fully seated and clear of the rim. The alternate1.0mm ring is not a drop-in substitute for this1.9mm seat.
-
-Seat the Ø5×1.5mm **diametric** encoder magnet in the cap against its integral stop. Apply adhesive to the sidewall only. Do not put a glue layer beneath the magnet; that changes the sensor gap. An ordinary axially magnetized disc will not provide the intended XY rotation signal.
-
-Let both bonds cure fully according to the selected adhesive's instructions. No adhesive has yet been qualified for this PETG/magnet coating. Keep magnet debris away from the bearing and electronics.
 
 ## 5. Fit the battery and board
 
