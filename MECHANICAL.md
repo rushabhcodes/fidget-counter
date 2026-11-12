@@ -1,3 +1,9 @@
+# Current mechanical version: v1.0.32, V3 bottom-loaded discs
+
+The current base has 20 blind underside pockets for Ø6 × 3 mm axial magnets. There is no steel backing or separate carrier; one base and one cap are the two printed product parts. Use the [V3 CAD/print/assembly guide](mechanical/variants/V3_disc_magnets/README.md), its print manifest and the current mechanical BOM. Physical height remains16.4mm and the encoder gap remains1.8mm. The native circuit preview selects V3.
+
+The sections below document the preserved common/V1 bearing hardware. V1 premade-ring seats, V2 steel/carrier parts and their variant-specific sourcing are historical alternatives; they are not V3 print instructions.
+
 # Rotation-only push-fit pilot
 
 This document describes the preserved **V1 premade-ring layout**. The new [V2 individual-magnet base](mechanical/variants/V2_discrete_magnets/README.md) has separate CAD, prints and force-test instructions. Both retain16.4 mm physical height, the same bearing/PCB/cap interfaces and1.8 mm nominal encoder gap. V2 is an experimental alternative pending an A/B holding-force test.

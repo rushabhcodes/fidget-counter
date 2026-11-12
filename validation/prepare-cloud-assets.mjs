@@ -21,6 +21,7 @@ const inputs = [
   "validation/jlc-imports.json",
   "validation/check-fresh-routing.mjs",
   "validation/check-source-snapshot.mjs",
+  "validation/check-disc-variant.mjs",
   "validation/fresh-routing-reference.json",
   "validation/fitted-component-records.mjs",
   "validation/nordic-electrical-revision.mjs",
@@ -38,12 +39,15 @@ const inputs = [
   "mechanical/variants/V2_discrete_magnets/review.html",
   "mechanical/variants/V2_discrete_magnets/review.png",
   "mechanical/variants/V2_discrete_magnets/polarity.svg",
+  "mechanical/variants/V3_disc_magnets/review.html",
+  "mechanical/variants/V3_disc_magnets/review.png",
+  "mechanical/variants/V3_disc_magnets/exploded-v1.0.32.png",
   ...walk(resolve(root, "imports")).map((path) => relative(root, path)),
   ...walk(resolve(root, "mechanical"))
     .filter((path) => !relative(root, path).startsWith("mechanical/export/") && !path.includes("/__pycache__/"))
     // Full V2 STEP assemblies ship in a separate manufacturing CAD archive;
     // the transient render mesh is regenerated from source, not a worker input.
-    .filter((path) => !relative(root,path).startsWith("mechanical/variants/V2_discrete_magnets/generated/Assemblies/") && relative(root,path)!=="mechanical/variants/V2_discrete_magnets/generated/scene_meshes.json")
+    .filter((path) => !/mechanical\/variants\/V[23]_[^/]+\/generated\/Assemblies\//.test(relative(root,path)) && !/mechanical\/variants\/V[23]_[^/]+\/generated\/scene_meshes\.json$/.test(relative(root,path)))
     .filter((path) => [".py", ".json", ".stl", ".obj", ".mtl", ".step", ".glb"].includes(extname(path)))
     // OBJ/MTL references stay in Git; indexed GLB assets are the runtime inputs.
     .filter((path) => !(relative(root,path).startsWith("mechanical/Circuit_Models/") && [".obj",".mtl"].includes(extname(path))))
@@ -61,11 +65,21 @@ const manifest = {
   inputs: Object.fromEntries([...new Set(inputs)].sort().map((name) => [name, sha256(readFileSync(resolve(root, name)))])),
   packageInput: getPackageInput(JSON.parse(readFileSync(resolve(root, "package.json"))), readFileSync(resolve(root, "bun.lock"))),
   artifacts: [],
-  variantArtifacts: Object.entries(variantPageFiles).map(([name,target]) => {
+  variantArtifacts: [...Object.entries(variantPageFiles).map(([name,target]) => {
     const source=`mechanical/variants/V2_discrete_magnets/${name}`
     const bytes=readFileSync(resolve(root,source))
     return {source,output:`dist/v2/${target}`,sha256:sha256(bytes),bytes:bytes.length}
-  }),
+  }),...Object.entries({
+    "review.html":"index.html",
+    "review.png":"review.png",
+    "exploded-v1.0.32.png":"exploded-v1.0.32.png",
+    "generated/V3_assembled.glb":"generated/V3_assembled.glb",
+    "generated/V3_exploded.glb":"generated/V3_exploded.glb",
+  }).map(([name,target])=>{
+    const source=`mechanical/variants/V3_disc_magnets/${name}`
+    const bytes=readFileSync(resolve(root,source))
+    return {source,output:`dist/v3/${target}`,sha256:sha256(bytes),bytes:bytes.length}
+  })],
 }
 mkdirSync(resolve(root, "cloud-assets"), { recursive: true })
 // Keep the worker's input map small. These manufacturing/CAD exports are

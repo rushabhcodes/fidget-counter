@@ -1,11 +1,10 @@
 Part,Quantity,Specification,Notes
-Stationary_Base,1,PETG Ø58 mm,Integral fixed bearing shaft; three support webs; ring seat; four PCB posts; coupon-calibrated Ø40.05 shaft
-Selected Cap_*.stl,1,PETG selected grip,Common Ø51.95 bearing bore; no top fasteners; integral encoder stop
-Thin-section ball bearing,1,6808-ZZ / 61808-2Z ID40 OD52 W7 mm,Verify actual race/shield drawing and hand-only fit; no positive axial lock
-PCB screws,2,M2 x4 nylon head OD3.8 height1.3 mm maximum,Opposite holes45/225 degrees; no metal washer; physical torque and board-retention test required
-Encoder magnet,1,Diametrically magnetized Ø5 x1.5 mm,Sidewall bond; seat against integral stop Z15.4; no axial glue layer
-MagSafe ring,1,N52 OD54 ID45.8 thickness1.9 mm supplier-specific,Verify working face and sample dimensions; not universal MagSafe dimensions
-Ring adhesive,As required,Nominal bondline0.10 mm,Qualify adhesion peel shear cure and aging
-Encoder adhesive,As required,Compatible nonmagnetic sidewall adhesive,Qualify magnet retention and aging
-CR2450,1,3 V primary24.5x5 mm loose cell,Holder included with PCBA; remove cell before powered programming
-PCBA,1,RevC Ø36.5 x1.0 mm 27 fitted parts,Includes C7525448 holder; C7/SW1/R5/C17 absent; nRESET retained
+Base_V3_Discs,1,PETG one-piece base20 bottom-entry blind D6.4mm pockets,Use V3 generated STL; no backing or separate carrier
+Selected Cap_*.stl,1,PETG unchanged selected style,One of11 alternatives; circular default
+Attachment disc magnets,20,D6 x3mm axial N52 nickel-coated neodymium,Insert from underside; sidewall adhesive; nominal0.2mm face recess
+Bearing,1,6808-ZZ /61808-2Z ID40 OD52 W7mm,Qualify actual race shoulders and printed fits
+PCB screws,2,M2x4 nylon head OD3.8 height1.3mm maximum,Opposite PCB holes; no metal washers
+Encoder magnet,1 per cap,Diametrically magnetized D5 x1.5mm,Seat against integral cap stop; sidewall adhesive
+CR2450,1,3V primary24.5x5mm loose cell,Holder included on PCBA
+PCBA,1,RevC OD36.5 W1.0mm27 fitted components,Includes CR2450 holder and programming header
+Adhesive,As needed,Nonconductive compatible with PETG and nickel,Qualify cured magnet retention and environmental aging

@@ -1,0 +1,21 @@
+Pocket,Top_view_angle_deg,X_mm,Y_mm,Phone_facing_pole_after_test,Measured_phone_case,Notes
+1,0,24.85,0.0,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+2,18,23.6338,7.6791,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+3,36,20.1041,14.6065,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+4,54,14.6065,20.1041,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+5,72,7.6791,23.6338,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+6,90,0.0,24.85,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+7,108,-7.6791,23.6338,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+8,126,-14.6065,20.1041,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+9,144,-20.1041,14.6065,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+10,162,-23.6338,7.6791,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+11,180,-24.85,0.0,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+12,198,-23.6338,-7.6791,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+13,216,-20.1041,-14.6065,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+14,234,-14.6065,-20.1041,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+15,252,-7.6791,-23.6338,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+16,270,-0.0,-24.85,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+17,288,7.6791,-23.6338,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+18,306,14.6065,-20.1041,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+19,324,20.1041,-14.6065,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding
+20,342,23.6338,-7.6791,UNASSIGNED,,Bottom view is mirrored; choose measured arrangement before bonding

@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "physically_printed": false,
+  "force_tested": false,
+  "slicer": "PrusaSlicer-2.9.2+UNKNOWN based on Slic3r (with GUI support)",
+  "actual_slicer_executed": true,
+  "geometry_audit_sha256": "cf270df798a3c486b806ee40f209cfb70a1f10739bfccdd0b8f089127aea12bd",
+  "audit_source_sha256": "9286f2919031a82fc343c264a472679268ecdf5359dacd667f2d4139d91c202b",
+  "negative_safeguards_rejected": [
+    "bearing-interface-loss",
+    "punctured-blind-roof"
+  ],
+  "profile": "Provisional PETG, 0.4mm nozzle, 0.15mm layers, 4 perimeters; configure actual printer",
+  "parts": [
+    {
+      "name": "Base_V3_Discs",
+      "STL_sha256": "95304262ba207dfd90137b7afca48d88aa5c9d5e1bd26a3f9b8eb04a580d3e59",
+      "slicer_profiles_sha256": {
+        "mechanical/printing/PETG-0.4-audit.ini": "cdd54ff5a859810d4f34b0f6db92a43fc96ff2959344835cb2f9e8e55e67fc2f",
+        "mechanical/printing/base-fixed-supports.ini": "b7b24f90c49ca58dca1cfdae55c18f5542d7ef5354d008b4be3f726895e11ed4"
+      },
+      "first_layer_mm": 0.2,
+      "layers": 112,
+      "extrusion_segments": 138603,
+      "support_segments": 13797,
+      "maximum_bridge_labelled_line_mm": 31.39800995286166,
+      "maximum_actual_unsupported_bridge_gap_mm": 2.8966741357473125,
+      "maximum_gap_if_supports_removed_mm": 6.399896141412132,
+      "section_areas_mm2": {
+        "0.1": 1977.7539368163743,
+        "2.35": 795.6513153510866,
+        "3.0": 805.3607922627868,
+        "3.3": 1448.5790275150525,
+        "4.1": 1396.1456295166756,
+        "5.0": 367.70540080962996,
+        "9.0": 191.07000704544885
+      },
+      "slicer_estimates_not_measurements": [
+        "filament used [g] = 11.01",
+        "estimated printing time (normal mode) = 1h 45m 29s",
+        "estimated printing time (silent mode) = 1h 46m 57s"
+      ],
+      "gcode_sha256": "6252954994c02655a953b4a69255ff28ecc9fa45e3dd307facfdead0ea047ce8",
+      "gcode_not_distributed": true
+    }
+  ],
+  "unchanged_cap_prints": "Use existing cap-specific print manifest and slicer results; every cap STEP hash retained by V3 builder"
+}

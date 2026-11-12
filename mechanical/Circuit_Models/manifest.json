@@ -14,7 +14,7 @@
     "thumb_scoop"
   ],
   "modelsPerSelectedStyle": 7,
-  "totalAssets": 17,
+  "totalAssets": 19,
   "pcbMidplaneZMm": 11.1,
   "sourceParameters": {
     "design": "V9 compact CR2450 rotation-only push-fit pilot",
@@ -517,6 +517,241 @@
         ],
         "finish": "plastic"
       }
+    ],
+    "Base_V3_Discs": [
+      {
+        "label": "Base_V3_Discs",
+        "first_face": 0,
+        "face_count": 31722,
+        "color": [
+          0.55,
+          0.63,
+          0.69
+        ],
+        "finish": "plastic"
+      }
+    ],
+    "Attachment_Discs_V3": [
+      {
+        "label": "Attachment_Disc_01",
+        "first_face": 0,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_02",
+        "first_face": 556,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_03",
+        "first_face": 1112,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_04",
+        "first_face": 1668,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_05",
+        "first_face": 2224,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_06",
+        "first_face": 2780,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_07",
+        "first_face": 3336,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_08",
+        "first_face": 3892,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_09",
+        "first_face": 4448,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_10",
+        "first_face": 5004,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_11",
+        "first_face": 5560,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_12",
+        "first_face": 6116,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_13",
+        "first_face": 6672,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_14",
+        "first_face": 7228,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_15",
+        "first_face": 7784,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_16",
+        "first_face": 8340,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_17",
+        "first_face": 8896,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_18",
+        "first_face": 9452,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_19",
+        "first_face": 10008,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      },
+      {
+        "label": "Attachment_Disc_20",
+        "first_face": 10564,
+        "face_count": 556,
+        "color": [
+          0.72,
+          0.74,
+          0.75
+        ],
+        "finish": "steel"
+      }
     ]
   },
   "modelSha256": {
@@ -536,7 +771,9 @@
     "Cap_thumb_scoop.glb": "8478569b0dcd32d55eb3d77e77bb5adb6e8b89f77ab153141a6cfd853ff07128",
     "Cap_circular.glb": "cdb6128cf370b4301637cd96a07d382b9292935c6d94262332993e3e11983bfc",
     "Bearing_6808.glb": "736f7320e89405017e1a93bb8a8065e15775cf010ce6fa581f8374bafe4fd73c",
-    "PCB_Fasteners.glb": "9a856224ee40f18e6772ab37b5480ad9d963f474accc788c4f6a7654a433849a"
+    "PCB_Fasteners.glb": "9a856224ee40f18e6772ab37b5480ad9d963f474accc788c4f6a7654a433849a",
+    "Attachment_Discs_V3.glb": "d609819f61d26178d406ae0046a4208c62aff4148f806fb38941d9044ae18e67",
+    "Base_V3_Discs.glb": "048abf5c261acfe51caf8bf706fc4976243d5287397043645db380fa57c86d0d"
   },
   "referenceModelSha256": {
     "Cap_circular.mtl": "735ab8f4da59be14cfd1e2b30ba1ad86c4e2f653c520057766a629deafe8eb3c",
@@ -572,6 +809,64 @@
     "MagSafe_Ring.mtl": "aad5f130109e2255f5f88575bb51aade564e5c7a441a6bce6ea955aba282332f",
     "Bearing_6808.obj": "3549d38713d489083fd24932bd0f5a2fdff728875d72fa2889a426fb521f78dd",
     "MagSafe_Ring.obj": "e8d54b7d68bc8574fa1e2f37df54b67a78622c92a122495b2c17a0e4c5dfeb9b",
-    "PCB_Fasteners.obj": "a71b7e1622c6a30b3f2385cc88f2ee16f6b21a4a5289662b5b9086eec4e34047"
+    "PCB_Fasteners.obj": "a71b7e1622c6a30b3f2385cc88f2ee16f6b21a4a5289662b5b9086eec4e34047",
+    "Base_V3_Discs.obj": "27ad81c55713285e79327433bb44603c21a457bc9d0a57653deb1b0e2ea00248",
+    "Attachment_Discs_V3.obj": "0d94f3f590c933c84fb47ce17c36e4c3950b6225fad948a1289b88c5d0b9082e",
+    "Attachment_Discs_V3.mtl": "8055fa2fddb6af37879a29b6f9e222e2b27cccd35e4802c9a88a867961647e40",
+    "Base_V3_Discs.mtl": "349848774b2229fa967f018d0e66bdfa2465f1304e329b40c0753895d754f4c8"
+  },
+  "activeVariant": "V3_disc_magnets",
+  "activeVariantParameters": {
+    "variant": "V3 diameter-6 by 3 mm disc-magnet base",
+    "release": "1.0.32",
+    "baseline_commit": "3e1826a07d1e9314e3ca289c356e1b499013a456",
+    "qualification": "CAD/print-fit prototype; attachment force and phone compatibility require measurement",
+    "physical_height_mm": 16.4,
+    "base_diameter_mm": 58.0,
+    "nominal_encoder_gap_mm": 1.8,
+    "magnet": {
+      "quantity": 20,
+      "diameter_mm": 6.0,
+      "thickness_mm": 3.0,
+      "grade": "N52",
+      "coating": "Ni-Cu-Ni",
+      "magnetization": "axial through 3 mm thickness",
+      "diameter_tolerance_allowance_mm": 0.1,
+      "thickness_tolerance_allowance_mm": 0.1,
+      "pitch_radius_mm": 24.85,
+      "first_angle_deg": 0,
+      "phone_face_z_mm": 0.4,
+      "pocket_diameter_mm": 6.4,
+      "phone_facing_polarity": "Unassigned until measured phone/case tests; record each pocket before bonding",
+      "polarity_note": "One row of axial discs does not reproduce the V2 opposite inner/outer radial poles. CAD does not establish MagSafe holding force.",
+      "supplier_example": "JC Magnetics JCN52-DSC6-3 (axial, not DSC6-3DM)",
+      "supplier_url": "https://www.jc-magnetics.com/Magnet-Discs/Magnet-N52-6mm-3mm-Discs",
+      "india_supplier_url": "https://patelmagnets.com/shop/6-x-3mm-neodymium-magnets/",
+      "supplier_review_date": "2026-11-12",
+      "supplier_note": "Patel lists N35 and N52: select N52. JC lists conflicting +/-0.05 and +/-0.1 mm tolerances; design uses +/-0.1 mm. Confirm batch dimensions/grade and delivery before ordering."
+    },
+    "pockets": {
+      "insertion": "From the phone-facing underside directly into the one-piece base",
+      "phone_contact_z_mm": 0.2,
+      "blind_stop_z_mm": 3.4,
+      "base_roof_top_z_mm": 4.4,
+      "annulus_inner_radius_mm": 20.7,
+      "entry_diameter_mm": 6.6,
+      "entry_chamfer_height_mm": 0.2,
+      "retention": "Qualified nonconductive sidewall adhesive; magnet sits against dry blind stop; no glue layer above magnet",
+      "nominal_face_recess_mm": 0.2,
+      "minimum_face_recess_at_max_magnet_thickness_mm": 0.1,
+      "steel_backing_count": 0,
+      "separate_carrier_count": 0
+    },
+    "printed_product_parts": 2,
+    "handled_parts": 28,
+    "unchanged_interfaces": [
+      "All eleven cap STEP/STL files",
+      "6808-ZZ bearing seats above Z5.4",
+      "RevC PCB and CR2450 holder/cell poses",
+      "Two M2x4 nylon screws",
+      "Diameter-5 by 1.5 mm diametric encoder magnet and integral cap stop"
+    ]
   }
 }

@@ -69,4 +69,4 @@ for (const item of [...artifacts,...variants]) {
   writeFileSync(output, item.bytes)
   console.log(`[cloud-build] Wrote ${item.output} (${item.bytes.length} bytes)`)
 }
-console.log("[cloud-build] Complete: checked circuit, PCB, schematic, 3D assembly and V2 review")
+console.log("[cloud-build] Complete: checked circuit, PCB, schematic, V3 assembly and preserved V2 review")

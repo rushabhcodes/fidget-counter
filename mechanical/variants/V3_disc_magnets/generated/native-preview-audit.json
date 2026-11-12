@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "physical_tested": false,
+  "variant": "V3 diameter-6 by 3 mm disc-magnet base",
+  "pcb_records_identical": true,
+  "fitted_components_identical": 27,
+  "mechanical_models": [
+    {
+      "name": "Base_V3_Discs",
+      "maximum_bounds_error_mm": 0
+    },
+    {
+      "name": "Cell",
+      "maximum_bounds_error_mm": 0
+    },
+    {
+      "name": "Attachment_Discs_V3",
+      "maximum_bounds_error_mm": 0
+    },
+    {
+      "name": "PCB_Fasteners",
+      "maximum_bounds_error_mm": 0
+    },
+    {
+      "name": "Bearing_6808",
+      "maximum_bounds_error_mm": 0
+    },
+    {
+      "name": "Magnet",
+      "maximum_bounds_error_mm": 0
+    },
+    {
+      "name": "Cap_circular",
+      "maximum_bounds_error_mm": 0
+    }
+  ],
+  "circuit_sha256": "46966e9520343803f3c7f76f097f259d79b88ef4d7c113680065421c76bd6c62"
+}

@@ -1,3 +1,13 @@
+# Current v1.0.32 — V3 bottom-insert circular magnets
+
+Use [V3 print test](fidget-counter-V3-discs-print-test-1.0.32.zip) for the two default product STLs plus pocket/bearing fit coupons. Use [V3 complete CAD](fidget-counter-V3-discs-CAD-1.0.32.zip) for assembled/exploded STEP, GLB, all cap alternatives and source. [disc-variant-manifest.json](disc-variant-manifest.json) records archive/member hashes.
+
+V3 has20 Ø6×3mm axial attachment discs inserted from the underside into blind base pockets. It has no steel backing or separate magnet carrier. Follow the [V3 guide](../mechanical/variants/V3_disc_magnets/README.md), print manifest and [order list](../mechanical/variants/V3_disc_magnets/ORDER_LIST.csv). Never print a purchased-part or whole-assembly reference as a product part. No machine G-code is distributed.
+
+The [v1.0.32 fabrication ZIP](fidget-counter-fabrication-1.0.32.zip) keeps every corrected1.0.31 Gerber/BOM/CPL payload byte unchanged and adds a V3 release note. Quote all27 FIT parts, including the holder and JST header. Physical fit, magnet bonding, pole arrangement and phone holding force require prototype tests.
+
+The following entries describe preserved earlier versions and their explicitly named archives.
+
 # 1.0.31 prototype files
 
 The new individual-magnet base is a separate **V2 fit/force-test alternative**, with the previous premade-ring base preserved as **V1**. These layouts share the existing cap, bearing and27-component PCB. Neither is physically production-qualified, and V2 holding-force equivalence is unverified.

@@ -5,6 +5,10 @@ import {fittedComponentRecords} from './fitted-component-records.mjs'
 const json = path => JSON.parse(readFileSync(path))
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const p=json('mechanical/enclosure-parameters.json'),m=json('mechanical/Circuit_Models/manifest.json')
+if(m.activeVariant==='V3_disc_magnets'){
+ await import('./check-disc-variant.mjs')
+ process.exit(0)
+}
 const g=json('mechanical/enclosure-validation.json'),stls=json('validation/bearing-stl-audit.json')
 const pushfit=p.cap_retention?.mode==='push_fit',freshRouting=json('package.json').dependencies.tscircuit==='0.0.3060'
 assert.deepEqual(m.sourceParameters,p,'Stale model parameters')

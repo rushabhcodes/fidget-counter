@@ -1,8 +1,8 @@
 import {assembly} from "@tscircuit/core"
 import {Fragment} from "react"
-import obj0 from "./mechanical/Circuit_Models/Stationary_Base.glb"
+import obj0 from "./mechanical/Circuit_Models/Base_V3_Discs.glb"
 import obj1 from "./mechanical/Circuit_Models/Cell.glb"
-import obj2 from "./mechanical/Circuit_Models/MagSafe_Ring.glb"
+import obj2 from "./mechanical/Circuit_Models/Attachment_Discs_V3.glb"
 import obj3 from "./mechanical/Circuit_Models/PCB_Fasteners.glb"
 import obj4 from "./mechanical/Circuit_Models/Bearing_6808.glb"
 import obj5 from "./mechanical/Circuit_Models/Magnet.glb"
@@ -21,9 +21,9 @@ import obj16 from "./mechanical/Circuit_Models/Cap_thumb_scoop.glb"
 export const CAP_STYLE_OPTIONS = ["circular", "ships_wheel", "rounded_triangle", "scalloped_coin", "petal_flower", "four_leaf_clover", "rounded_hexagon", "rounded_square", "wave_rim", "turbine_wheel", "thumb_scoop"] as const
 export type CapStyle = typeof CAP_STYLE_OPTIONS[number]
 const models = [
-  {name:"Stationary_Base",obj:obj0,mtl:"./mechanical/Circuit_Models/Stationary_Base.mtl",style:null},
+  {name:"Base_V3_Discs",obj:obj0,mtl:"./mechanical/Circuit_Models/Base_V3_Discs.mtl",style:null},
   {name:"Cell",obj:obj1,mtl:"./mechanical/Circuit_Models/Cell.mtl",style:null},
-  {name:"MagSafe_Ring",obj:obj2,mtl:"./mechanical/Circuit_Models/MagSafe_Ring.mtl",style:null},
+  {name:"Attachment_Discs_V3",obj:obj2,mtl:"./mechanical/Circuit_Models/Attachment_Discs_V3.mtl",style:null},
   {name:"PCB_Fasteners",obj:obj3,mtl:"./mechanical/Circuit_Models/PCB_Fasteners.mtl",style:null},
   {name:"Bearing_6808",obj:obj4,mtl:"./mechanical/Circuit_Models/Bearing_6808.mtl",style:null},
   {name:"Magnet",obj:obj5,mtl:"./mechanical/Circuit_Models/Magnet.mtl",style:null},
@@ -40,7 +40,8 @@ const models = [
   {name:"Cap_thumb_scoop",obj:obj16,mtl:"./mechanical/Circuit_Models/Cap_thumb_scoop.mtl",style:"thumb_scoop"},
 ]
 
-// Fixed bearing support and rotation-only cap; CAD coordinates are mm from the phone plane.
+// V3: twenty diameter-6 by 3 mm discs insert from underneath the one-piece base.
+// CAD coordinates are mm from the phone plane; all upper interfaces are retained.
 export const PCB_MIDPLANE_Z_MM = 11.1
 export const EnclosureAssembly = ({capStyle="circular",transparentShell=false}: {capStyle?:CapStyle;transparentShell?:boolean} = {}) => <Fragment>
   {models.filter(m => m.style === null || m.style === capStyle).map(m => <assembly.cadassembly
@@ -48,6 +49,6 @@ export const EnclosureAssembly = ({capStyle="circular",transparentShell=false}: 
     cadModel={{glbUrl:m.obj,modelUnitToMmScale:1,
       modelOriginPosition:{x:0,y:0,z:0},positionOffset:{x:0,y:0,z:-PCB_MIDPLANE_Z_MM},
       rotationOffset:{x:0,y:0,z:0},
-      showAsTranslucentModel:transparentShell && (m.style !== null || ["Bottom_Tray","Stationary_Base"].includes(m.name)),
+      showAsTranslucentModel:transparentShell && (m.style !== null || m.name === "Base_V3_Discs"),
     }}/>)}
 </Fragment>

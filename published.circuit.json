@@ -2555,7 +2555,7 @@
     "type": "source_component",
     "source_component_id": "source_component_32",
     "ftype": "subassembly",
-    "name": "BEARING_V5_Stationary_Base"
+    "name": "BEARING_V5_Base_V3_Discs"
   },
   {
     "type": "source_component",
@@ -2567,7 +2567,7 @@
     "type": "source_component",
     "source_component_id": "source_component_34",
     "ftype": "subassembly",
-    "name": "BEARING_V5_MagSafe_Ring"
+    "name": "BEARING_V5_Attachment_Discs_V3"
   },
   {
     "type": "source_component",
@@ -19588,7 +19588,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_27",
-    "model_glb_url": "./mechanical/Circuit_Models/Stationary_Base.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Base_V3_Discs.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -19640,7 +19640,7 @@
   {
     "type": "cad_component",
     "cad_component_id": "cad_component_29",
-    "model_glb_url": "./mechanical/Circuit_Models/MagSafe_Ring.glb",
+    "model_glb_url": "./mechanical/Circuit_Models/Attachment_Discs_V3.glb",
     "position": {
       "x": 0,
       "y": 0,
@@ -37061,6 +37061,6 @@
   },
   {
     "type": "source_project_metadata",
-    "source_filesystem_md5_hash": "e3c9d5cef1f5479715b9a126650d8bfd"
+    "source_filesystem_md5_hash": "fe49d92930b05f2d35c872736fa8e44a"
   }
 ]
