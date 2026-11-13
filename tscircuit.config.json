@@ -5,6 +5,26 @@
   "includeBoardFiles": [
     "published.circuit.json"
   ],
+  "ignoredFiles": [
+    "**/__pycache__/**",
+    "**/*.pyc",
+    "work/**",
+    "checks/**",
+    "build/**",
+    "firmware/build/**",
+    "mechanical/export/**",
+    "mechanical/Print_STL/**",
+    "mechanical/STEP_Parts/**",
+    "mechanical/variants/**/generated/Assemblies/**",
+    "mechanical/variants/**/generated/scene_meshes.json",
+    "mechanical/variants/**/generated/*.gcode",
+    "mechanical/variants/**/*.step",
+    "mechanical/variants/**/*.stl",
+    "mechanical/variants/**/*.glb",
+    "**/imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step",
+    "**/mechanical/Circuit_Models/Bearing_6808.glb",
+    "manufacturing/*.zip"
+  ],
   "alwaysUseLatestTscircuitOnCloud": false,
   "buildCommand": "bun cloud-build.mjs && tscircuit build published.circuit.json --site --disable-parts-engine"
 }

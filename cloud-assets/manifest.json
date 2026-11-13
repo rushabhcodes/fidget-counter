@@ -200,7 +200,7 @@
     "routed-paths.json": "d4999f467bc281096ce6be13c772242ff28e47b0304c0b82945d44aeed5016ea",
     "routing-contract.json": "e10878708c2a3848c783903cc28d4a49383b8b7ebccd5dddc7ad22ae24321fe6",
     "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
-    "tscircuit.config.json": "b76543a9c45ef55d63381bde606ef73f0066d3c1dae646e110e505fba3a870aa",
+    "tscircuit.config.json": "869afd0dbe0e7d48eafc0a82a831a9b7af31ba30190da73b80d4bb97183a6bf5",
     "tsconfig.json": "3369b71950778d4e33593aee7a0389f2f4162946c3abfd8c1ec7c138c16e8276",
     "validation/apply-model-materials.mjs": "e47f5fe28d64c51604024e5b1af0b120fc7b433bc3137ac91cf7af25f8a766f4",
     "validation/check-disc-variant.mjs": "017e587463e9f84d21f915a0795be88a7e636597402565b03ed6073eb2265905",
@@ -332,13 +332,27 @@
   "cadInputArchives": [
     {
       "source": "cloud-assets/cad-inputs-0.json.gz.b64",
-      "sha256": "a25343c29e56c6c5f3a630909032bb0899dd12bb5f121e6e5a0b16ba7c2c0bcd",
+      "sha256": "0d0b104e5012bac2e55d68f522753f0accb3e8dfa1224136a190b6956745b124",
       "files": [
+        "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-1.json.gz.b64",
+      "sha256": "969c2ac65cc35bfec9e4f11922431b0879bfe463c8f881fcaf5802dada567d40",
+      "files": [
+        "mechanical/Circuit_Models/Bearing_6808.glb",
         "mechanical/Print_STL/Cap_circular.stl",
         "mechanical/Print_STL/Cap_four_leaf_clover.stl",
         "mechanical/Print_STL/Cap_petal_flower.stl",
         "mechanical/Print_STL/Cap_rounded_hexagon.stl",
-        "mechanical/Print_STL/Cap_rounded_square.stl",
+        "mechanical/Print_STL/Cap_rounded_square.stl"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-2.json.gz.b64",
+      "sha256": "1014095365b8c26684fefe6d3b3d88c037a984f8ad806fb5cdcc0a52256d3ef3",
+      "files": [
         "mechanical/Print_STL/Cap_rounded_triangle.stl",
         "mechanical/Print_STL/Cap_scalloped_coin.stl",
         "mechanical/Print_STL/Cap_ships_wheel.stl",
@@ -360,7 +374,7 @@
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-1.json.gz.b64",
+      "source": "cloud-assets/cad-inputs-3.json.gz.b64",
       "sha256": "80d48a01170ef2637a07a03653bfb0c39106189c9d8d78e51d138e3a3075a389",
       "files": [
         "mechanical/STEP_Parts/Cap_four_leaf_clover.step",
@@ -370,7 +384,7 @@
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-2.json.gz.b64",
+      "source": "cloud-assets/cad-inputs-4.json.gz.b64",
       "sha256": "8334d4e8a8916a23f22890e46d5469b2d91546e04ea1fa705a233ae0ef3eb677",
       "files": [
         "mechanical/STEP_Parts/Cap_rounded_triangle.step",
@@ -379,7 +393,7 @@
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-3.json.gz.b64",
+      "source": "cloud-assets/cad-inputs-5.json.gz.b64",
       "sha256": "70dcba8d7a830cc451b01a8c0ae44d7cc125d5ab7b576a8ae4088801f15cd409",
       "files": [
         "mechanical/STEP_Parts/Cap_thumb_scoop.step",
@@ -387,7 +401,7 @@
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-4.json.gz.b64",
+      "source": "cloud-assets/cad-inputs-6.json.gz.b64",
       "sha256": "4d83c461edfaa479aa3490f637fafd3a7041329041f44b061b90749eb12f2be2",
       "files": [
         "mechanical/STEP_Parts/Cap_wave_rim.step",
@@ -400,7 +414,7 @@
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-5.json.gz.b64",
+      "source": "cloud-assets/cad-inputs-7.json.gz.b64",
       "sha256": "97f764369a869e025375b9904e7b4ccafe1b845e7b2ae95d047e44e6e5f4d645",
       "files": [
         "mechanical/variants/V2_discrete_magnets/generated/Reference_STEP/Attachment_Magnets_V2.step",
@@ -410,12 +424,12 @@
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-6.json.gz.b64",
+      "source": "cloud-assets/cad-inputs-8.json.gz.b64",
       "sourceParts": [
-        "cloud-assets/cad-inputs-6.part-000.json.gz.b64",
-        "cloud-assets/cad-inputs-6.part-001.json.gz.b64",
-        "cloud-assets/cad-inputs-6.part-002.json.gz.b64",
-        "cloud-assets/cad-inputs-6.part-003.json.gz.b64"
+        "cloud-assets/cad-inputs-8.part-000.json.gz.b64",
+        "cloud-assets/cad-inputs-8.part-001.json.gz.b64",
+        "cloud-assets/cad-inputs-8.part-002.json.gz.b64",
+        "cloud-assets/cad-inputs-8.part-003.json.gz.b64"
       ],
       "sha256": "bff000d3b834cde6e86e903d846088274c6ece72c8a16e82db37004a28a7bedd",
       "files": [
@@ -423,7 +437,7 @@
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-7.json.gz.b64",
+      "source": "cloud-assets/cad-inputs-9.json.gz.b64",
       "sha256": "41f0fd5f4da04ec00af6763943906c859502c477eb3a1e180a30756e9fa7dce5",
       "files": [
         "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.3.stl",
@@ -435,12 +449,12 @@
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-8.json.gz.b64",
+      "source": "cloud-assets/cad-inputs-10.json.gz.b64",
       "sourceParts": [
-        "cloud-assets/cad-inputs-8.part-000.json.gz.b64",
-        "cloud-assets/cad-inputs-8.part-001.json.gz.b64",
-        "cloud-assets/cad-inputs-8.part-002.json.gz.b64",
-        "cloud-assets/cad-inputs-8.part-003.json.gz.b64"
+        "cloud-assets/cad-inputs-10.part-000.json.gz.b64",
+        "cloud-assets/cad-inputs-10.part-001.json.gz.b64",
+        "cloud-assets/cad-inputs-10.part-002.json.gz.b64",
+        "cloud-assets/cad-inputs-10.part-003.json.gz.b64"
       ],
       "sha256": "0506967117c79dfd27a9d48b98ed4aa0206c7692f90f838af4558fdce85bd5a4",
       "files": [
@@ -448,12 +462,12 @@
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-9.json.gz.b64",
+      "source": "cloud-assets/cad-inputs-11.json.gz.b64",
       "sourceParts": [
-        "cloud-assets/cad-inputs-9.part-000.json.gz.b64",
-        "cloud-assets/cad-inputs-9.part-001.json.gz.b64",
-        "cloud-assets/cad-inputs-9.part-002.json.gz.b64",
-        "cloud-assets/cad-inputs-9.part-003.json.gz.b64"
+        "cloud-assets/cad-inputs-11.part-000.json.gz.b64",
+        "cloud-assets/cad-inputs-11.part-001.json.gz.b64",
+        "cloud-assets/cad-inputs-11.part-002.json.gz.b64",
+        "cloud-assets/cad-inputs-11.part-003.json.gz.b64"
       ],
       "sha256": "5655eda917538d33b750e610d31e423d9b154a8fb25200ba18406322246d7757",
       "files": [

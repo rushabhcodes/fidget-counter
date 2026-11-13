@@ -37,7 +37,7 @@ Removing steel changes the flux path and can reduce attachment force or increase
 
 ## Deliverables and checks
 
-[Print-test ZIP](../../../manufacturing/fidget-counter-V3-discs-print-test-1.0.32.zip) · [Full CAD ZIP](../../../manufacturing/fidget-counter-V3-discs-CAD-1.0.32.zip) · [Assembled/cutaway/underside views](review.png) · [Assembled GLB](generated/V3_assembled.glb) · [Exploded GLB](generated/V3_exploded.glb).
+[Print-test ZIP](https://github.com/rushabhcodes/fidget-counter/blob/269d7fc8520fe3cc74f33e63c9aec0ce2ba25b8e/manufacturing/fidget-counter-V3-discs-print-test-1.0.32.zip) · [Full CAD ZIP](https://github.com/rushabhcodes/fidget-counter/blob/269d7fc8520fe3cc74f33e63c9aec0ce2ba25b8e/manufacturing/fidget-counter-V3-discs-CAD-1.0.32.zip) · [Assembled/cutaway/underside views](review.png) · [Assembled GLB](generated/V3_assembled.glb) · [Exploded GLB](generated/V3_exploded.glb).
 
 The print kit contains exactly two default product STLs, fit coupons, profiles and instructions. The CAD kit adds exact assembled/exploded STEP, GLB, all cap alternatives, source and audit evidence. Reference magnet STEP/GLB files are purchased-part illustrations, not print parts.
 

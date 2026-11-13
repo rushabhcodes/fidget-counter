@@ -19,9 +19,9 @@ This remains a fit-test prototype. Removing the steel backing changes the magnet
 
 ## Files to print or order
 
-- [V3 print-test ZIP — two default product parts and fit coupons](manufacturing/fidget-counter-V3-discs-print-test-1.0.32.zip)
-- [V3 complete exact CAD ZIP — STEP, GLB, all cap alternatives and source](manufacturing/fidget-counter-V3-discs-CAD-1.0.32.zip)
-- [Current PCB fabrication ZIP — Gerbers, BOM and CPL](manufacturing/fidget-counter-fabrication-1.0.32.zip)
+- [V3 print-test ZIP — two default product parts and fit coupons](https://github.com/rushabhcodes/fidget-counter/blob/269d7fc8520fe3cc74f33e63c9aec0ce2ba25b8e/manufacturing/fidget-counter-V3-discs-print-test-1.0.32.zip)
+- [V3 complete exact CAD ZIP — STEP, GLB, all cap alternatives and source](https://github.com/rushabhcodes/fidget-counter/blob/269d7fc8520fe3cc74f33e63c9aec0ce2ba25b8e/manufacturing/fidget-counter-V3-discs-CAD-1.0.32.zip)
+- [Current PCB fabrication ZIP — Gerbers, BOM and CPL](https://github.com/rushabhcodes/fidget-counter/blob/269d7fc8520fe3cc74f33e63c9aec0ce2ba25b8e/manufacturing/fidget-counter-fabrication-1.0.32.zip)
 - [V3 print manifest](mechanical/variants/V3_disc_magnets/generated/print-ready-manifest.json), [mechanical BOM](mechanical/MECHANICAL_BOM.csv), [electronic BOM](BOM.csv)
 
 The PCB fabrication payload is unchanged from corrected v1.0.31/1.0.30. Get a Standard double-sided PCBA/ENIG quote for all **27 FIT** components. Holder BT1 and J_DEBUG are already included. Application firmware is rotation-only: one complete turn either way counts once, with unfinished backtracking canceled. Firmware, the RevC board definition, BLE client and CI build remain in [firmware](firmware/README.md); use an artifact from a successful run for the intended commit.

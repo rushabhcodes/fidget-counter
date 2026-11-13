@@ -86,7 +86,11 @@ mkdirSync(resolve(root, "cloud-assets"), { recursive: true })
 // restored inside the sandbox before the unchanged source hashes are checked.
 const cadFiles = Object.keys(manifest.inputs).filter(name =>
   name.startsWith("mechanical/Print_STL/") || name.startsWith("mechanical/STEP_Parts/") ||
-  (name.startsWith("mechanical/variants/") && /\.(stl|step|glb)$/.test(name)))
+  (name.startsWith("mechanical/variants/") && /\.(stl|step|glb)$/.test(name)) ||
+  // The CLI's individual-file endpoint also limits large supplier STEP and
+  // bearing models. Restore these exact bytes from checked archive chunks.
+  ((name.startsWith("imports/") || name.startsWith("mechanical/Circuit_Models/")) &&
+    readFileSync(resolve(root,name)).length > 2_750_000))
 const cadGroups = []
 let cadGroup = []
 let cadBytes = 0
