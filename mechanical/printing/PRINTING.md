@@ -1,4 +1,10 @@
-# PETG pilot print set
+# Current v1.0.33 V3 print set
+
+Use the [V3 print manifest](../variants/V3_disc_magnets/generated/print-ready-manifest.json) and updated STLs under `mechanical/variants/V3_disc_magnets/generated/Print_STL/`: one `Base_V3_Discs` and one selected `Cap`. The cap holds the same Ø6×3mm axial magnet on edge in a keyed slot. All eleven cap styles are updated; overall height is20.9mm. Print the cap deck down except `thumb_scoop`, which prints upright with internal supports. Follow each part's ordered `slicer_profiles` in the V3 manifest. For the upright scoop, load `V3-edge-cap-supports.ini` after the everywhere profile; its0.2mm XY support separation supports the raised deck close to the inner wall. V3 has twenty blind bottom pockets; remove their supports completely and preserve the dry stops.
+
+The following named root STL files, manifest and older dimensions document the preserved V1 print set. The PETG process guidance is shared; current V3 geometry and audit results live in its own directory.
+
+# Preserved V1 PETG pilot print set
 
 Use `mechanical/print-ready-manifest.json` and matching STL hashes. A unit uses **two rigid prints: Stationary_Base and one chosen Cap**. Circular is the starter; ten other caps are alternatives. No nut, retainer, top screws or split nest are used. Ten fit coupons are calibration prints.
 

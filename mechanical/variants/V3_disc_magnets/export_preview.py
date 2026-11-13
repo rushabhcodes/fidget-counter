@@ -13,7 +13,8 @@ sys.path.insert(0, str(R / "mechanical"))
 from glb_models import write_glb
 
 rows = json.loads((H / "generated/scene_meshes.json").read_text())
-selected = {r["name"]: [r] for r in rows if r["name"] == "Base_V3_Discs"}
+selected = {r["name"]: [r] for r in rows if r["name"] in ["Base_V3_Discs", "Magnet"]}
+selected.update({r["name"]:[r] for r in json.loads((H / "generated/cap_meshes.json").read_text())})
 selected["Attachment_Discs_V3"] = [r for r in rows if r["name"].startswith("Attachment_Disc_")]
 assert len(selected["Attachment_Discs_V3"]) == 20
 manifest = json.loads((MODELS / "manifest.json").read_text())
@@ -30,7 +31,7 @@ for name, source in selected.items():
         mesh = trimesh.Trimesh(vertices=row["vertices"], faces=row["faces"], process=True)
         mesh = trimesh.graph.smooth_shade(mesh, angle=np.radians(38), facet_minarea=None)
         groups.append({"label": row["name"], "first_face": len(faces), "face_count": len(mesh.faces), "color": row["color"],
-                       "finish": "steel" if name in ["Steel_Backing_V3", "Attachment_Discs_V3"] else "plastic"})
+                       "finish": "steel" if name in ["Magnet", "Attachment_Discs_V3"] else "plastic"})
         faces.extend(mesh.faces + len(vertices))
         vertices.extend(mesh.vertices)
         normals.extend(mesh.vertex_normals)
@@ -51,4 +52,4 @@ for suffix, field in [(".glb", "modelSha256"), (".obj", "referenceModelSha256"),
     for path in MODELS.glob("*" + suffix):
         manifest[field][path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
 (MODELS / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-print("Exported bottom-load base and 20 discs; seven mechanical models per selected cap")
+print("Exported bottom-load base,20 attachment discs, axial encoder on edge and11 updated caps")

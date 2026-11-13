@@ -1,8 +1,8 @@
 # Assemble one RevC fidget counter
 
-For current **v1.0.32 V3**, print the bottom-load base and one cap, then follow the [V3 blind-pocket magnet insertion and bonding steps](mechanical/variants/V3_disc_magnets/README.md#pocket-dimensions-and-assembly). There is no steel backing or separate carrier. The electronics, CR2450, two PCB screws, bearing and cap steps below remain the common RevC procedure. Historical V1/V2 magnet assemblies have their own variant guides.
+For current **v1.0.33 V3**, print the bottom-load base and one cap, then follow the [V3 blind-pocket magnet insertion and bonding steps](mechanical/variants/V3_disc_magnets/README.md#pocket-dimensions-and-assembly). There is no steel backing or separate carrier. The electronics, CR2450, two PCB screws, bearing and cap steps below remain the common RevC procedure. Historical V1/V2 magnet assemblies have their own variant guides.
 
-Use the current RevC CR2450 PCB, V3 Base_V3_Discs and one matching Cap. This is the rotation-only, two-print push-fit pilot. Its current compact cap gives16.4mm overall phone-contact height. The base and bearing/encoder interfaces match the preceding push-fit pilot. It has no cap button, spring, top screw, nut or separate bearing retainer.
+Use the current RevC CR2450 PCB, V3 Base_V3_Discs and one matching Cap. This is the rotation-only, two-print push-fit pilot. Its updated cap gives20.9mm overall phone-contact height. The base and bearing seats retain the preceding push-fit geometry; the encoder has a keyed edge slot. It has no cap button, spring, top screw, nut or separate bearing retainer.
 
 ![Current V3 assembled, underside and cutaway CAD](mechanical/variants/V3_disc_magnets/review.png)
 
@@ -17,13 +17,13 @@ Use the current RevC CR2450 PCB, V3 Base_V3_Discs and one matching Cap. This is 
 | M2×4mm nylon PCB screw, head no larger thanØ3.8×1.3mm | 2 |
 | CR2450 primary3V cell,24.5×5mm | 1 |
 | Ø6 × 3 mm axial N52 attachment discs, bottom inserted | 20 |
-| Diametrically magnetized encoder disc,Ø5×1.5mm | 1 |
+| Identical Ø6 × 3 mm axial N52 encoder disc, on edge | 1 |
 
 Have the correct screw driver, calipers, print-cleanup tools, a qualified PETG/magnet adhesive, a multimeter, the five-way straight-through JST-SH cable and a SWD programmer. Adhesive and reusable tools are not unit parts. The bearing internals shown in the CAD are representative.
 
 ## 2. Qualify the print fit first
 
-Print the ten bearing-fit coupons, then the base and one circular cap, following [PRINTING.md](mechanical/printing/PRINTING.md). The provisional process is PETG,0.4mm nozzle,0.15mm layers, four walls and the listed support/orientation settings. Re-slice for the actual printer.
+Print the ten bearing-fit coupons, then the base and one circular cap, using the [V3 print manifest](mechanical/variants/V3_disc_magnets/generated/print-ready-manifest.json) and V3 generated STLs. The shared [PETG guidance](mechanical/printing/PRINTING.md) also contains historical V1 part names; take V3 orientations/supports from its own manifest. The provisional process is PETG,0.4mm nozzle,0.15mm layers, four walls and the listed support/orientation settings. Re-slice for the actual printer.
 
 Remove support remnants from both bearing seats, all20 blind attachment pockets and the encoder pocket. Clean loose plastic from screw pilots. Measure the actual bearing and both fits. The nominal shaftØ40.05 and cap boreØ51.95 intentionally give0.05mm diametral interference; a printer may not reproduce that fit.
 
@@ -35,7 +35,7 @@ Dry-test with light hand pressure only. Stop if loose, tight, distorted or rubbi
 
 Use the V3 guide to measure, pole-check and sidewall-bond all20 attachment discs from underneath. Keep blind stops dry and verify every face is recessed before adhesive cures. Qualify the actual phone/case pull and slip; there is no backing ring or loose carrier.
 
-Seat the Ø5×1.5mm **diametric** encoder magnet in the cap against its integral stop. Apply adhesive to the sidewall only. Do not put a glue layer beneath the magnet; that changes the sensor gap. An ordinary axially magnetized disc will not provide the intended XY rotation signal.
+Use one more of the **same Ø6×3mm axial discs**. Insert it on its edge from inside the cap into the keyed3.4×6.4mm slot, against the dry upper stop. The pole-to-pole3mm thickness lies parallel to the PCB; the6mm diameter stands vertically. Apply adhesive only to the slot sidewalls. The slot prevents a flat orientation. This produces a magnetic axis that rotates in the PCB plane; a centered flat axial disc would not. See the [encoder section](mechanical/variants/V3_disc_magnets/encoder-orientation.png).
 
 Program the boards in step4 while the bonds cure. Let all magnet bonds cure fully according to the selected adhesive's instructions before fitting or loading the magnets. No adhesive has yet been qualified for this PETG/magnet coating. Keep magnet debris away from the bearing and electronics.
 
@@ -57,7 +57,7 @@ Insert the CR2450 into the holder with polarity confirmed from the holder drawin
 
 With the base on the phone-contact face, lower the PCBA/holder/cell through the hollow fixed shaft. Align the antenna toward the corresponding CAD orientation and all four board holes with the four posts. The cell/holder must clear the floor without force. The nominal cell/floor clearance is0.5mm; confirm it on the real unit.
 
-Fit the **two opposite M2×4 nylon screws** at the45° and225° mounting positions, matching the [cutaway](previews/bearing-layout.png). Leave the other two holes/posts unscrewed. Do not add metal washers, longer screws or larger heads. Tighten only until the PCB seats flat; stop if a post strips or the board bends. Set a repeatable torque only after testing the printed posts.
+Fit the **two opposite M2×4 nylon screws** at the45° and225° mounting positions, matching the [cutaway](mechanical/variants/V3_disc_magnets/review.png). Leave the other two holes/posts unscrewed. Do not add metal washers, longer screws or larger heads. Tighten only until the PCB seats flat; stop if a post strips or the board bends. Set a repeatable torque only after testing the printed posts.
 
 ## 6. Fit the bearing and cap
 

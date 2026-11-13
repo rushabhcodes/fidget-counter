@@ -4,7 +4,7 @@
   "inputs": {
     "cloud-build.mjs": "813cd9aea8ef99de5fce334d39ad5a861e8ce6323bfede19904d3b97e318f706",
     "critical-routes.json": "2f36c75f8944a02d58dcbf8101bcb76a712b0696ab9e0b7cd99e2bf7cc5b1183",
-    "enclosure.tsx": "21710b2696e056276ab31620b593344ae12d2be873eaa9f48dff2cf55571c4ec",
+    "enclosure.tsx": "83349da4f33ed5ce194a5b49d5285c0cdea2cd2717a0687c5d25bfb759d6f473",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj": "5cb7b3d39911902565b7d20a63b8be35513c8d72b9d0dca36c801d731893bcf5",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.step": "d8b313a83de060e58141efc987e51c0ad04a3855784f981139dc3698331d1f2d",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.tsx": "773a9b178e1e8daba40ec2b7f9804b891397ca47f1fbdabb2cc1f6b101eac994",
@@ -74,23 +74,23 @@
     "mechanical/Circuit_Models/Attachment_Discs_V3.glb": "d609819f61d26178d406ae0046a4208c62aff4148f806fb38941d9044ae18e67",
     "mechanical/Circuit_Models/Base_V3_Discs.glb": "048abf5c261acfe51caf8bf706fc4976243d5287397043645db380fa57c86d0d",
     "mechanical/Circuit_Models/Bearing_6808.glb": "736f7320e89405017e1a93bb8a8065e15775cf010ce6fa581f8374bafe4fd73c",
-    "mechanical/Circuit_Models/Cap_circular.glb": "cdb6128cf370b4301637cd96a07d382b9292935c6d94262332993e3e11983bfc",
-    "mechanical/Circuit_Models/Cap_four_leaf_clover.glb": "a00167724c211dc6e768440deebb8bf798c87cbe32bed14cb2c2b056f3ae50f2",
-    "mechanical/Circuit_Models/Cap_petal_flower.glb": "cb6efd8936f927bd7f9741fe5642483319cf943dec191da43f040d8f9f4647fc",
-    "mechanical/Circuit_Models/Cap_rounded_hexagon.glb": "5371ea3a6857e40a5ad7b612cd1d98999f2e26266e99a5dec80395d95f5929ee",
-    "mechanical/Circuit_Models/Cap_rounded_square.glb": "a88d4cba9d6f1d6136b2f52a15e7f2f7c66310f9bea1d21aca4c9d648c467440",
-    "mechanical/Circuit_Models/Cap_rounded_triangle.glb": "0d778dcfc69dfd5bf28debdc5bb5d3808e4dc05eaf9cbd96307cd1fea1055408",
-    "mechanical/Circuit_Models/Cap_scalloped_coin.glb": "9d1105f39bc985fca37aac48e4e3a04595cfbdd3fce0b33ee38f384b1e2a9437",
-    "mechanical/Circuit_Models/Cap_ships_wheel.glb": "cb1c38fc3fd680f7501a18f2437ab20ebe0b889869c0437d30bdc97de5ee7b12",
-    "mechanical/Circuit_Models/Cap_thumb_scoop.glb": "8478569b0dcd32d55eb3d77e77bb5adb6e8b89f77ab153141a6cfd853ff07128",
-    "mechanical/Circuit_Models/Cap_turbine_wheel.glb": "3094e14844394119d5b1161b669747392059fc9cca0939f1ba78c0a11f712423",
-    "mechanical/Circuit_Models/Cap_wave_rim.glb": "69e55356d1c9eb6f68e37e540f9609910beb8a4947c75db7ceed53d528c642fe",
+    "mechanical/Circuit_Models/Cap_circular.glb": "c4f88668d3dcd728e15f5960438edde2e689ef3b3794f50b09e274222cdf3784",
+    "mechanical/Circuit_Models/Cap_four_leaf_clover.glb": "f4b6f32198a99fd8bcbd9f47141877c05c10ef1beddb7703dd65e1ab53fd1e12",
+    "mechanical/Circuit_Models/Cap_petal_flower.glb": "d50995dbe4ab48e73df3ec195a6c04347d45780a8c5de22c8deb35c4cd12aab3",
+    "mechanical/Circuit_Models/Cap_rounded_hexagon.glb": "cb5ad36d4ba5faae14c8c3d77a13a8c543de5d9652805b73c655887b5c4b4277",
+    "mechanical/Circuit_Models/Cap_rounded_square.glb": "6ba335fa073930e5822f04e7c46f6724ec9248bff635be38860754fb3a7c23e0",
+    "mechanical/Circuit_Models/Cap_rounded_triangle.glb": "0ed6ff9abbf5421f0f21417d72579cf3606b5162846c36b1b4e2178472be87f1",
+    "mechanical/Circuit_Models/Cap_scalloped_coin.glb": "c099f67d7cdb313fd75698067bb889aefe1cd28faf558fbd37655d7e25a35050",
+    "mechanical/Circuit_Models/Cap_ships_wheel.glb": "9b2f245f4f163b76d0f10b7da7ad49a9763c840100ad6b563b33c96753cd72c9",
+    "mechanical/Circuit_Models/Cap_thumb_scoop.glb": "ce998d73bb0a3f3a498f2eda06f88950d01120c6fae6a4af9d5688d2ac7a9fba",
+    "mechanical/Circuit_Models/Cap_turbine_wheel.glb": "7a9e6ef51b21c9fb72b94cea31e7fcc1a7f05891c303bffb07b39375f62aad5a",
+    "mechanical/Circuit_Models/Cap_wave_rim.glb": "e1de779128a3a19e59b82969c17415a46e4a782204c77164bbab755217632f9b",
     "mechanical/Circuit_Models/Cell.glb": "3045846fa274953378a976b941ade9177be3e5783347a5f6061bad10d508c709",
     "mechanical/Circuit_Models/MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960",
-    "mechanical/Circuit_Models/Magnet.glb": "33333e44c37a26795772b49e6afa36df04fe91412f6db3fe37aed81dd9cac453",
+    "mechanical/Circuit_Models/Magnet.glb": "d7f664cc1c40ef3b55e26f89d4e0202ac8e0330abd3281fe48221fef7923a4a3",
     "mechanical/Circuit_Models/PCB_Fasteners.glb": "9a856224ee40f18e6772ab37b5480ad9d963f474accc788c4f6a7654a433849a",
     "mechanical/Circuit_Models/Stationary_Base.glb": "966affb8856af09b57c438899c59c696bf51aa960121a0f3e49f697ed67da099",
-    "mechanical/Circuit_Models/manifest.json": "1f2d693f259fce7371a01a0db84ced5b609197ccdd154fa6aabf5cb0c7d4f1cc",
+    "mechanical/Circuit_Models/manifest.json": "75c18718912c66f18e6cc03f17fa03130d1f6122a53f54c5dd5329b798836590",
     "mechanical/Print_STL/Cap_circular.stl": "2faf2d3eb9862dded97681c0c0bb46bba1af5e3a3cabe973581ce2f61b03e40c",
     "mechanical/Print_STL/Cap_four_leaf_clover.stl": "a9d27ae86ede79efaeea0ae7bfce0ba3c411099223d8441816bde09a76594ef6",
     "mechanical/Print_STL/Cap_petal_flower.stl": "9ba03546f81f1e025b057da6227b0fe18def21a3d20838527ba9208df3d2a689",
@@ -172,38 +172,61 @@
     "mechanical/variants/V2_discrete_magnets/render.py": "9be36947877a045712514b595d07bd1bde7e9717ac43f6a911a32042b10c7b36",
     "mechanical/variants/V2_discrete_magnets/review.html": "a0f3a4dce86fbda076782e367f118049c52615b154db35238e29d97f9afd1abf",
     "mechanical/variants/V2_discrete_magnets/review.png": "3ec110f03115ae4a36ff55519f55e8a603165ace037235acd5b70db8f63fff58",
-    "mechanical/variants/V3_disc_magnets/audit.py": "9286f2919031a82fc343c264a472679268ecdf5359dacd667f2d4139d91c202b",
-    "mechanical/variants/V3_disc_magnets/build.py": "16c9fd88f72fc25bc349a02c9516dab91da3eb25952af92d6bf12db952b78aab",
-    "mechanical/variants/V3_disc_magnets/exploded-v1.0.32.png": "4902f805f72b3f9287aa3d1482dddb62860980f4b91e45aef626abb4340b047b",
-    "mechanical/variants/V3_disc_magnets/export_preview.py": "6f30e24f3f129cb0eeba1769cc0447972713c9d6f92d620b88cc17deb0a7e60c",
+    "mechanical/variants/V3_disc_magnets/audit.py": "0aa8ff979ea7ead65d7963f78d48a3eb376b2759e374a6af310dc235aa3d8c2a",
+    "mechanical/variants/V3_disc_magnets/build.py": "369496525b82612b73e7cce2d5315a3f8d1d94e1c928bd9434663c20e225e8ae",
+    "mechanical/variants/V3_disc_magnets/encoder-orientation.png": "88607ca1daff9b387a7070b34923295651c59eeec74cd442d46da2b199fc07c0",
+    "mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png": "364f9c0ccd10c7f5df6ca92c548eef81373e8a76097d544010063bdb2f83494f",
+    "mechanical/variants/V3_disc_magnets/export_preview.py": "0fc711e54c55a8d5a6a73e5fcf01e9f2cc0a2730242ed15d87c4ec50937f4b66",
     "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.3.stl": "20bd0ff6e741748909192e08cdd2a6dd96e5ac4e6f334832f701097b255c64fc",
     "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.4.stl": "87da9339db876edc94ee962814f062e491d725998fd8188be77fcf86c85493a5",
     "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.5.stl": "e9223a8b3713b757e7adf02768649e0493aebaa1bf75b8afa92947e1246dad04",
     "mechanical/variants/V3_disc_magnets/generated/Print_STL/Base_V3_Discs.stl": "95304262ba207dfd90137b7afca48d88aa5c9d5e1bd26a3f9b8eb04a580d3e59",
-    "mechanical/variants/V3_disc_magnets/generated/Reference_STEP/Attachment_Discs_V3.step": "d330e9c12f321001f7c88eaa7806f15134fc232217471f80b0c9353655116dd8",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Base_V3_Discs.step": "83bb074305c50ce65654aeeb9c4ae3af7a6ee2f8416e1da2f8da3687ffb81704",
-    "mechanical/variants/V3_disc_magnets/generated/V3_assembled.glb": "4e5f9c411ed62261cf9a16efe2a2e7256d14956aea7c3483feec6b0a15dcbc8c",
-    "mechanical/variants/V3_disc_magnets/generated/V3_exploded.glb": "c01bce32630e63864a7a1e3d1c96233f6b79f074b141aea692b3dc0b8ed25fdd",
-    "mechanical/variants/V3_disc_magnets/generated/assembly-step-audit.json": "a2b912346c02b220bcd14e2873858ac7bdef52f3be44aee2eacdf4773e187923",
-    "mechanical/variants/V3_disc_magnets/generated/geometry-audit.json": "cf270df798a3c486b806ee40f209cfb70a1f10739bfccdd0b8f089127aea12bd",
-    "mechanical/variants/V3_disc_magnets/generated/native-preview-audit.json": "7031284de2767de6b98491561b649b104eb7c06caad7cce8f255210c750bff42",
-    "mechanical/variants/V3_disc_magnets/generated/print-audit.json": "0b3fb440e1956309b79ef59b4fd67316caf0e817fddca6b4fcd0a932922162aa",
-    "mechanical/variants/V3_disc_magnets/generated/print-ready-manifest.json": "fe559c49d842ac96f763dd24cb5085d4078e1ca1f355fdf2365370018ca295a9",
-    "mechanical/variants/V3_disc_magnets/parameters.json": "395cdb4aec7c7f2854dfbd7c59ecda012a8eae3639c9ee21558ef97632c019a8",
-    "mechanical/variants/V3_disc_magnets/render.py": "8ff10cd918038a657e57c9ccfcb86829ea866efce112cf4f265b915366f6c61f",
-    "mechanical/variants/V3_disc_magnets/review.html": "0c5524225b9af71905d5c3a6992f9248e33adb2d0561f9a8f7da939561a13a2a",
-    "mechanical/variants/V3_disc_magnets/review.png": "616b3b4460016588d06d5e046746d024b75decec4373b4ac3f74b8d8b786960e",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_circular.stl": "4f8810dfa851c53989236074102ac34c47e713aad6e87604a3591a9835a94c06",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_four_leaf_clover.stl": "b7c0113f34f4e74bfd43d439a0de76dc6c084d4690e7461ae8517da2766f31e8",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_petal_flower.stl": "2e39ba211ecd0c33703827e76db9fe4722cce6c7c0b7f11e7afa9209afc16042",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_hexagon.stl": "8906ad9db1e4b01532547271d9f8b6a063b79a70cf146dd2acdd292a7d812900",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_square.stl": "288b2cb2ef93fe14dde734bb485e3a34d88c0733d0277d9da2f110468d8209de",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_triangle.stl": "8856a6da2a9fbd142f35fa240611bd6ce6a662874b11e5bd64b20c2afb3caf72",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_scalloped_coin.stl": "56a6e114a3b636f4bd1da783a06dcfe04210a3388d465dac9e4f6b2dceada75c",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_ships_wheel.stl": "0e92ff1af56d6941679ea58540a1455acef3b6c3e79faa0a032b41543a2e97d3",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_thumb_scoop.stl": "527e4100af8e343982525851057aebe3a6c3713145fe1ce97eae5e2224592cff",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_turbine_wheel.stl": "d48f6e13e4fa9cf86ec7ee1990062157a2762b42fbaac432d0388fcd3063eea2",
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_wave_rim.stl": "814c6f93f62d1d1478e11917fe08ee7e3851801c15c2ddf14b8fda1166b86855",
+    "mechanical/variants/V3_disc_magnets/generated/Reference_STEP/Attachment_Discs_V3.step": "070da754b41ec3c11c80dfca31f8e06d2d7b7275ade7f4766122fd7069aff00f",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Base_V3_Discs.step": "842dc512f975acffb7b557fef1386fbc007ccc8dfa73f92f0b7c60933afa6973",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_circular.step": "d23249eca152fd882f2faf91877cb5da45ae187c74520e2b063ef60321d40618",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_four_leaf_clover.step": "a1c9d0f31e815e63c61e6e6c8b2b11f6743c9d41fc0066979fb305786e0788c4",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_petal_flower.step": "aebd9a6ace3947d313705cfff517bfb9c72a77234a76c32f032244a12a686630",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_hexagon.step": "4f35d9a432be40ef529db19fe5fc85617685ec58fa45c5bd8582f92a10902dc1",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_square.step": "e9a9a29cfe963a65ab2eb921ad5043bd6ac2fa1993a2ec9ea8408b8f5a8bfc8e",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_triangle.step": "5854c96090f3c19fa1172ca0dfb9b1cc37c0805ba3f5acc1752613a48e5610fc",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_scalloped_coin.step": "c718b06ad442385bb42755ce505c135d92216226e3d6dd939efd24fde6f968a2",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_ships_wheel.step": "fb808fcd1b6ebbeeaf913823c08f235169f23a3a0afa9ce17830174d24415efc",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_thumb_scoop.step": "3bf66fdc638e855d0f7130a9a850525a5698d4296b13f5fc26ee9f511208117d",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_turbine_wheel.step": "b90b4aa7fbd5b876c709f09ebff292789a2ebb50c4712110305f5d3864e82ae9",
+    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_wave_rim.step": "eec4383871aa59b7c2e2eebec584428b4588134f6610603c9b92259c131fed07",
+    "mechanical/variants/V3_disc_magnets/generated/V3_assembled.glb": "14e43f88c0b328f2b35c7e69e7ace8306e68ec40284a0c68981ec9ad1a3da07a",
+    "mechanical/variants/V3_disc_magnets/generated/V3_exploded.glb": "f278536e95f8b7b6486ab8ac0d96e467489f3f7d5cf2dd2754aa31d38adffe22",
+    "mechanical/variants/V3_disc_magnets/generated/assembly-step-audit.json": "dd633527f22795c7187d7dbb32d529e4d459abe8bfde3792bd5f49a5536d4614",
+    "mechanical/variants/V3_disc_magnets/generated/geometry-audit.json": "117b1b04f308568a6006b63018c37fa2185c79222323cfd74165f4ae2bf91207",
+    "mechanical/variants/V3_disc_magnets/generated/native-preview-audit.json": "6515d0196a46dae2bcbbf04a91bcd04ce8ce8f4c746c129de9a55058d564dc15",
+    "mechanical/variants/V3_disc_magnets/generated/print-audit.json": "ed3580c082f09c45f9683b597e417870ba5f1fcefb47f504de5e4049743f8e42",
+    "mechanical/variants/V3_disc_magnets/generated/print-ready-manifest.json": "bda73b6c80cdc028f1cc998a2cf47088f1cddcc85b8c7becb2ef140504eea2d4",
+    "mechanical/variants/V3_disc_magnets/parameters.json": "cb82fe2e467e0549a8a796a7a54bd9cc49875f753035c02a1b041e5b6e1e5598",
+    "mechanical/variants/V3_disc_magnets/render.py": "6854da66359e3015e763d99a6861522c0b75ffdc72de1cc78152be31037bd847",
+    "mechanical/variants/V3_disc_magnets/review.html": "aefa7470c0dd5a75597a404fdcaaaf3b2dafe3911e701094a6b9e44786898296",
+    "mechanical/variants/V3_disc_magnets/review.png": "6905a2e72014dd218ab788b6a96e193355a9e881e1cc1a38e020e1b5536d03b8",
     "model-assets.d.ts": "bcd106931f1096dab95359b6d47a67456c3da66efd2f5c0c76e29783cada6463",
     "parts.tsx": "a9ec52070d608a8c4592ce5c03db64cd490dec67b0fb349cfe4a4e489859d341",
     "passives.tsx": "e05181fcf99b2751941c16d8f43a81e541126daf283731244e9f65b1783d8ec3",
-    "published.circuit.json": "46966e9520343803f3c7f76f097f259d79b88ef4d7c113680065421c76bd6c62",
+    "published.circuit.json": "90b340371b6a0327c96ccfe2de1bec3110ae22bfee26d4b9ab646ec7129dba26",
     "routed-paths.json": "d4999f467bc281096ce6be13c772242ff28e47b0304c0b82945d44aeed5016ea",
     "routing-contract.json": "e10878708c2a3848c783903cc28d4a49383b8b7ebccd5dddc7ad22ae24321fe6",
     "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
-    "tscircuit.config.json": "bddfd3784062bdeb6cf49e5ec78d8ba78bce57bec241e03c20d7075c8fd7aedf",
+    "tscircuit.config.json": "1c7a862f952af93641eb03b8dae60be89bd5ecc4074276d8bd203f51c307ac83",
     "tsconfig.json": "3369b71950778d4e33593aee7a0389f2f4162946c3abfd8c1ec7c138c16e8276",
     "validation/apply-model-materials.mjs": "e47f5fe28d64c51604024e5b1af0b120fc7b433bc3137ac91cf7af25f8a766f4",
-    "validation/check-disc-variant.mjs": "017e587463e9f84d21f915a0795be88a7e636597402565b03ed6073eb2265905",
+    "validation/check-disc-variant.mjs": "4954909ffd3c95c3d4297e205c7952e1cc3d82c0892cfbe4415c1b63483502be",
     "validation/check-fresh-routing.mjs": "88138876570607c40e278838b43b4b3b2bdf4fed52a632191faa606b1ddde35a",
     "validation/check-nordic-rf.py": "5a7c1a02a20345a2d88f6f95afec2dddaf09f72fb414fb333f9644c33223a14f",
     "validation/check-source-snapshot.mjs": "a400e4e850f57f25e399bb0db2b77836b7427c806bb99c5783c0dcf9783b8d48",
@@ -231,7 +254,7 @@
       "output": "dist/published/circuit.json",
       "encoding": "raw",
       "bytes": 874652,
-      "sha256": "46966e9520343803f3c7f76f097f259d79b88ef4d7c113680065421c76bd6c62"
+      "sha256": "90b340371b6a0327c96ccfe2de1bec3110ae22bfee26d4b9ab646ec7129dba26"
     },
     {
       "source": "cloud-assets/pcb.png.gz.b64",
@@ -269,8 +292,8 @@
       ],
       "output": "dist/published/3d.glb",
       "encoding": "gzip-base64",
-      "bytes": 13635384,
-      "sha256": "0823850a4435a3390b4cdc11d3c15e59dae9130b533970fc7c5d61d08d430454"
+      "bytes": 13665324,
+      "sha256": "ee2833d827273679481daeb56ca81ef73812bb1f316890198d2721c74c2658e8"
     }
   ],
   "variantArtifacts": [
@@ -301,32 +324,38 @@
     {
       "source": "mechanical/variants/V3_disc_magnets/review.html",
       "output": "dist/v3/index.html",
-      "sha256": "0c5524225b9af71905d5c3a6992f9248e33adb2d0561f9a8f7da939561a13a2a",
-      "bytes": 1865
+      "sha256": "aefa7470c0dd5a75597a404fdcaaaf3b2dafe3911e701094a6b9e44786898296",
+      "bytes": 2118
     },
     {
       "source": "mechanical/variants/V3_disc_magnets/review.png",
       "output": "dist/v3/review.png",
-      "sha256": "616b3b4460016588d06d5e046746d024b75decec4373b4ac3f74b8d8b786960e",
-      "bytes": 191119
+      "sha256": "6905a2e72014dd218ab788b6a96e193355a9e881e1cc1a38e020e1b5536d03b8",
+      "bytes": 192536
     },
     {
-      "source": "mechanical/variants/V3_disc_magnets/exploded-v1.0.32.png",
-      "output": "dist/v3/exploded-v1.0.32.png",
-      "sha256": "4902f805f72b3f9287aa3d1482dddb62860980f4b91e45aef626abb4340b047b",
-      "bytes": 430137
+      "source": "mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png",
+      "output": "dist/v3/exploded-v1.0.33.png",
+      "sha256": "364f9c0ccd10c7f5df6ca92c548eef81373e8a76097d544010063bdb2f83494f",
+      "bytes": 432837
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/encoder-orientation.png",
+      "output": "dist/v3/encoder-orientation.png",
+      "sha256": "88607ca1daff9b387a7070b34923295651c59eeec74cd442d46da2b199fc07c0",
+      "bytes": 115673
     },
     {
       "source": "mechanical/variants/V3_disc_magnets/generated/V3_assembled.glb",
       "output": "dist/v3/generated/V3_assembled.glb",
-      "sha256": "4e5f9c411ed62261cf9a16efe2a2e7256d14956aea7c3483feec6b0a15dcbc8c",
-      "bytes": 19386332
+      "sha256": "14e43f88c0b328f2b35c7e69e7ace8306e68ec40284a0c68981ec9ad1a3da07a",
+      "bytes": 19371868
     },
     {
       "source": "mechanical/variants/V3_disc_magnets/generated/V3_exploded.glb",
       "output": "dist/v3/generated/V3_exploded.glb",
-      "sha256": "c01bce32630e63864a7a1e3d1c96233f6b79f074b141aea692b3dc0b8ed25fdd",
-      "bytes": 19390440
+      "sha256": "f278536e95f8b7b6486ab8ac0d96e467489f3f7d5cf2dd2754aa31d38adffe22",
+      "bytes": 19375976
     }
   ],
   "cadInputArchives": [
@@ -438,38 +467,84 @@
     },
     {
       "source": "cloud-assets/cad-inputs-9.json.gz.b64",
-      "sha256": "41f0fd5f4da04ec00af6763943906c859502c477eb3a1e180a30756e9fa7dce5",
+      "sha256": "fcb3572eab68204d9dcefe979e36d809e1d24ef8bd82dd1a7514e2fe2a46d787",
       "files": [
         "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.3.stl",
         "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.4.stl",
         "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.5.stl",
         "mechanical/variants/V3_disc_magnets/generated/Print_STL/Base_V3_Discs.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_circular.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_four_leaf_clover.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_petal_flower.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_hexagon.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_square.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_triangle.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_scalloped_coin.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_ships_wheel.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_thumb_scoop.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_turbine_wheel.stl",
+        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_wave_rim.stl",
         "mechanical/variants/V3_disc_magnets/generated/Reference_STEP/Attachment_Discs_V3.step",
         "mechanical/variants/V3_disc_magnets/generated/STEP/Base_V3_Discs.step"
       ]
     },
     {
       "source": "cloud-assets/cad-inputs-10.json.gz.b64",
+      "sha256": "595c077165c3a59655afd3042632d24f142163783eb6a5c02085fd9748494b38",
+      "files": [
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_circular.step",
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_four_leaf_clover.step",
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_petal_flower.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-11.json.gz.b64",
+      "sha256": "b1bce6508b32c266b4c99784d0d6b18d7abb5cc336c2fcdc78a3d652f3b6d258",
+      "files": [
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_hexagon.step",
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_square.step",
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_triangle.step",
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_scalloped_coin.step",
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_ships_wheel.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-12.json.gz.b64",
+      "sha256": "70d238d91ddd2096bf8eec6f1c46429b20655994966b9e5815d453fd5b7a9592",
+      "files": [
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_thumb_scoop.step",
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_turbine_wheel.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-13.json.gz.b64",
+      "sha256": "0947b32b20c4702dde86cab7da37c5b816854c963a2716e8f06e5274224420ac",
+      "files": [
+        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_wave_rim.step"
+      ]
+    },
+    {
+      "source": "cloud-assets/cad-inputs-14.json.gz.b64",
       "sourceParts": [
-        "cloud-assets/cad-inputs-10.part-000.json.gz.b64",
-        "cloud-assets/cad-inputs-10.part-001.json.gz.b64",
-        "cloud-assets/cad-inputs-10.part-002.json.gz.b64",
-        "cloud-assets/cad-inputs-10.part-003.json.gz.b64"
+        "cloud-assets/cad-inputs-14.part-000.json.gz.b64",
+        "cloud-assets/cad-inputs-14.part-001.json.gz.b64",
+        "cloud-assets/cad-inputs-14.part-002.json.gz.b64",
+        "cloud-assets/cad-inputs-14.part-003.json.gz.b64"
       ],
-      "sha256": "0506967117c79dfd27a9d48b98ed4aa0206c7692f90f838af4558fdce85bd5a4",
+      "sha256": "f3e4c2c364b269de54f2a893d18320c86046c83d3ab896c9c077d842bf5c7608",
       "files": [
         "mechanical/variants/V3_disc_magnets/generated/V3_assembled.glb"
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-11.json.gz.b64",
+      "source": "cloud-assets/cad-inputs-15.json.gz.b64",
       "sourceParts": [
-        "cloud-assets/cad-inputs-11.part-000.json.gz.b64",
-        "cloud-assets/cad-inputs-11.part-001.json.gz.b64",
-        "cloud-assets/cad-inputs-11.part-002.json.gz.b64",
-        "cloud-assets/cad-inputs-11.part-003.json.gz.b64"
+        "cloud-assets/cad-inputs-15.part-000.json.gz.b64",
+        "cloud-assets/cad-inputs-15.part-001.json.gz.b64",
+        "cloud-assets/cad-inputs-15.part-002.json.gz.b64",
+        "cloud-assets/cad-inputs-15.part-003.json.gz.b64"
       ],
-      "sha256": "5655eda917538d33b750e610d31e423d9b154a8fb25200ba18406322246d7757",
+      "sha256": "0bfc888e8fd586fc64cf3172338518283e3d2792b841fc8a48088e22a3868590",
       "files": [
         "mechanical/variants/V3_disc_magnets/generated/V3_exploded.glb"
       ]

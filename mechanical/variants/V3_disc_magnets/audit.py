@@ -9,7 +9,7 @@ from shapely.ops import unary_union
 from shapely.affinity import translate
 
 H=Path(__file__).resolve().parent; R=H.parents[2]; G=H/'generated'
-P=json.loads((H/'parameters.json').read_text()); M=P['magnet']; B=P['pockets']
+P=json.loads((H/'parameters.json').read_text()); M=P['magnet']; B=P['pockets']; E=P['encoder']
 sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
 ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--slicer',required=True);a=ap.parse_args()
 report=json.loads((G/'geometry-audit.json').read_text())
@@ -17,6 +17,8 @@ assert report['parameters_sha256']==sha(H/'parameters.json') and report['builder
 assert report['frozen_circuit_sha256']==sha(H.parent/'V1_premade_ring/source/published.circuit.json')
 assert report['magnet_count']==20 and report['steel_backing_count']==report['separate_carrier_count']==0
 assert report['printed_product_parts']==2 and report['handled_parts']==28
+assert report['encoder']==E and E['same_part_as_attachment_discs']
+assert E['axis_in_rotor']==[1,0,0] and E['diameter_mm']==6 and E['thickness_mm']==3
 original=cq.importers.importStep(str(H.parent/'V1_premade_ring/Base_V1_Premade_Ring.step')).val()
 base=cq.importers.importStep(str(G/'STEP/Base_V3_Discs.step')).val()
 allowed=cq.Workplane('XY').workplane(offset=.1).circle(29.1).circle(B['annulus_inner_radius_mm']).extrude(B['base_roof_top_z_mm']-.1).val()
@@ -63,6 +65,9 @@ for state in ['Assembled','Exploded']:
     delivered=objects['Base_V3_Discs'].translate((0,0,-32 if state=='Exploded' else 0))
     assert base.cut(delivered).Volume()+delivered.cut(base).Volume()<.002
     assert abs(objects['Bearing_6808'].BoundingBox().zmin-(6.1+(107 if state=='Exploded' else 0)))<1e-5
+    encoder=objects['Magnet'].BoundingBox()
+    assert abs(encoder.xlen-3)<1e-5 and abs(encoder.ylen-6)<1e-5 and abs(encoder.zlen-6)<1e-5
+    assert abs(encoder.zmin-(E['bottom_z_mm']+(130 if state=='Exploded' else 0)))<1e-5
     scene=trimesh.load(G/('V3_'+state.lower()+'.glb'),force='scene')
     assert set(scene.graph.nodes_geometry)==set(objects),'GLB and STEP contain different parts'
     for name,shape in objects.items():
@@ -78,26 +83,45 @@ version=subprocess.run([a.slicer,'--help'],text=True,capture_output=True,check=T
 parts=[]
 for row in report['new_printed_parts']:
     step=H/row['STEP'];stl=H/row['STL'];name=row['name']
-    assert name=='Base_V3_Discs','Only the one-piece base is a new V3 print'
+    assert name=='Base_V3_Discs' or name.startswith('Cap_')
     assert sha(step)==row['STEP_sha256'] and sha(stl)==row['STL_sha256']
     shape=cq.importers.importStep(str(step)).val();mesh=trimesh.load_mesh(stl,process=True)
     assert shape.isValid() and len(shape.Solids())==1
     assert mesh.is_watertight and mesh.is_winding_consistent and mesh.is_volume and len(mesh.split())==1
     assert np.isfinite(mesh.vertices).all() and abs(mesh.bounds[0,2])<1e-5
-    points=mesh.vertices[np.linspace(0,len(mesh.vertices)-1,60,dtype=int)].copy();points[:,2]+=shape.BoundingBox().zmin
+    points=mesh.vertices[np.linspace(0,len(mesh.vertices)-1,60,dtype=int)].copy()
+    points[:,2]-=row['print_translation_z_mm']
+    if row['print_rotation_x_deg']==180:points[:,1:]*=-1
     assert max(cq.Vertex.makeVertex(*p).distance(shape)for p in points)<.002, 'STL differs from STEP'
     sections={}
-    for z in [.1,2.35,3.0,3.3,4.1,5.0,9.0]:
+    for z in ([.1,2.35,3.0,3.3,4.1,5.0,9.0] if name=='Base_V3_Discs' else [.1,.7,1.25,3.,6.,9.,12.]):
         section=mesh.section(plane_origin=[0,0,z],plane_normal=[0,0,1]);assert section is not None,(name,z)
         planar,_=section.to_2D();polygons=planar.polygons_full
         assert polygons and all(p.is_valid for p in polygons),(name,z)
         sections[str(z)]=sum(p.area for p in polygons)
     gcode=work/(name+'.gcode');profiles=[R/'mechanical/printing/PETG-0.4-audit.ini']
-    if name=='Base_V3_Discs':profiles.append(R/'mechanical/printing/base-fixed-supports.ini')
+    support=row['supports']
+    if support=='fixed-base':profiles.append(R/'mechanical/printing/base-fixed-supports.ini')
+    elif support=='early-rim':profiles.append(R/'mechanical/printing/cap-early-rim-supports.ini')
+    elif support=='everywhere':profiles.append(R/'mechanical/printing/supports-everywhere.ini')
+    if name=='Cap_thumb_scoop':profiles.append(R/'mechanical/printing/V3-edge-cap-supports.ini')
+    if name.startswith('Cap_'):
+        assert not shape.isInside(cq.Vector(0,0,E['slot_stop_z_mm']-.01),1e-6),'Edge slot blocked'
+        assert shape.isInside(cq.Vector(0,0,E['slot_stop_z_mm']+.01),1e-6),'Slot roof missing'
+        assert shape.isInside(cq.Vector(2.2,0,17),1e-6),'Keyed sidewall missing'
     command=[a.slicer]
     for profile in profiles:command+=['--load',str(profile)]
     command+=['--export-gcode','--center','110,110','--output',str(gcode),str(stl)]
-    result=subprocess.run(command,text=True,capture_output=True,timeout=180)
+    # The headless slicer can stall during startup on this worker. Retry one
+    # timeout; never accept partial G-code or waive a nonzero exit status.
+    slicer_timeout_retries=0
+    for attempt in range(2):
+        try:
+            result=subprocess.run(command,text=True,capture_output=True,timeout=60)
+            break
+        except subprocess.TimeoutExpired:
+            if attempt:raise
+            slicer_timeout_retries+=1
     (work/(name+'.log')).write_text(result.stdout+result.stderr)
     assert result.returncode==0,(name,result.stdout[-1000:],result.stderr[-1000:])
     text=gcode.read_text();assert 'G1' in text and ';TYPE:' in text
@@ -136,7 +160,9 @@ for row in report['new_printed_parts']:
                 loops=[Polygon(path[:,:2])for path in paths if len(path)>3]
                 solid=unary_union([])
                 for loop in loops:solid=solid.symmetric_difference(loop)
-                polygons.append(translate(solid,xoff=110,yoff=110))
+                # --center centers the mesh bounding box, which is offset
+                # from the rotor axis for asymmetric caps such as triangle.
+                polygons.append(translate(solid,xoff=110-mesh.bounds[:,0].mean(),yoff=110-mesh.bounds[:,1].mean()))
             solid=unary_union(polygons)
             near=[path.buffer(.19,cap_style=2)for sz,path in support_paths if bz-.375<=sz<=bz-.125]
             coverage[bz]=(unary_union([solid,*near]),solid)
@@ -148,19 +174,18 @@ for row in report['new_printed_parts']:
     max_air=max(unsupported,default=0)
     assert max_air<=5,(name,'Actual unsupported bridge gap exceeds 5mm',max_air)
     if name=='Base_V3_Discs':assert max(without_supports,default=0)>5, 'Support-removal safeguard was not exercised'
-    assert supports>0
-    parts.append({'name':name,'STL_sha256':sha(stl),'slicer_profiles_sha256':{str(p.relative_to(R)):sha(p)for p in profiles},'first_layer_mm':.2,'layers':len(layerz),'extrusion_segments':extrusions,'support_segments':supports,'maximum_bridge_labelled_line_mm':max(bridges,default=0),'maximum_actual_unsupported_bridge_gap_mm':max_air,'maximum_gap_if_supports_removed_mm':max(without_supports,default=0),'section_areas_mm2':sections,'slicer_estimates_not_measurements':meta,'gcode_sha256':sha(gcode),'gcode_not_distributed':True})
-result={'passed':True,'physically_printed':False,'force_tested':False,'slicer':version,'actual_slicer_executed':True,'geometry_audit_sha256':sha(G/'geometry-audit.json'),'audit_source_sha256':sha(Path(__file__)),'negative_safeguards_rejected':[x[0]for x in mutants],'profile':'Provisional PETG, 0.4mm nozzle, 0.15mm layers, 4 perimeters; configure actual printer','parts':parts,'unchanged_cap_prints':'Use existing cap-specific print manifest and slicer results; every cap STEP hash retained by V3 builder'}
+    # Automatic supports may legitimately generate no paths on a rim that
+    # meets the bridge bound unaided. The base and upright scoop need them.
+    if row['supports'] in ['fixed-base','everywhere']:assert supports>0,(name,'Required support paths missing')
+    elif support=='none':assert supports==0,(name,'Unexpected support paths')
+    parts.append({'name':name,'STL_sha256':sha(stl),'slicer_profiles_sha256':{str(p.relative_to(R)):sha(p)for p in profiles},'first_layer_mm':.2,'layers':len(layerz),'extrusion_segments':extrusions,'support_segments':supports,'maximum_bridge_labelled_line_mm':max(bridges,default=0),'maximum_actual_unsupported_bridge_gap_mm':max_air,'maximum_gap_if_supports_removed_mm':max(without_supports,default=0),'section_areas_mm2':sections,'slicer_estimates_not_measurements':meta,'gcode_sha256':sha(gcode),'gcode_not_distributed':True,'slicer_timeout_retries':slicer_timeout_retries})
+result={'passed':True,'physically_printed':False,'force_tested':False,'slicer':version,'actual_slicer_executed':True,'geometry_audit_sha256':sha(G/'geometry-audit.json'),'audit_source_sha256':sha(Path(__file__)),'negative_safeguards_rejected':[x[0]for x in mutants],'profile':'Provisional PETG, 0.4mm nozzle, 0.15mm layers, 4 perimeters; configure actual printer','parts':parts,'updated_caps_sliced':11,'encoder_orientation':'Axial disc on edge; axisX in rotor frame'}
 (G/'print-audit.json').write_text(json.dumps(result,indent=2)+'\n')
-cap_manifest=json.loads((R/'mechanical/print-ready-manifest.json').read_text())
-cap_parts=[part for part in cap_manifest['parts'] if part['name'].startswith('Cap_')]
-assert len(cap_parts)==11
 manifest_parts=[]
 for part in report['new_printed_parts']:
-    manifest_parts.append({'name':part['name'],'file':str((H/part['STL']).relative_to(R)),'sha256':part['STL_sha256'],'STEP_file':str((H/part['STEP']).relative_to(R)),'STEP_sha256':part['STEP_sha256'],'quantity_per_default_unit':1,'orientation':'Phone face down','supports':'fixed-base','first_layer_mm':.2})
-for part in cap_parts:
-    for key in ['file','STEP_file']:assert sha(R/part[key])==part['sha256' if key=='file' else 'STEP_sha256']
-    manifest_parts.append({key:part[key]for key in ['name','file','sha256','STEP_file','STEP_sha256','quantity_per_default_unit','orientation','supports']})
-print_manifest={'variant':'V3 bottom-insert circular disc magnets','physical_qualified':False,'holding_force_verified':False,'default_rigid_part_count':2,'default_cap':'circular','default_files':[p['file']for p in manifest_parts if p['quantity_per_default_unit']],'parts':manifest_parts,'excluded_from_rigid_printing':['20 diameter6x3 attachment magnets','Bearings, PCBA, cell, screws and encoder magnet','Assembled/exploded STEP and GLB'],'geometry_audit_sha256':sha(G/'geometry-audit.json'),'actual_slicer_audit_sha256':sha(G/'print-audit.json'),'unchanged_caps_slicer_audit_sha256':sha(R/'validation/print-readiness.json'),'machine_Gcode_included':False}
+    manifest_parts.append({'name':part['name'],'file':str((H/part['STL']).relative_to(R)),'sha256':part['STL_sha256'],'STEP_file':str((H/part['STEP']).relative_to(R)),'STEP_sha256':part['STEP_sha256'],'quantity_per_default_unit':part['quantity_per_default_unit'],'orientation':part['orientation'],'supports':part['supports'],'first_layer_mm':.2})
+    manifest_parts[-1]['slicer_profiles']=list(next(row for row in parts if row['name']==part['name'])['slicer_profiles_sha256'])
+assert len(manifest_parts)==12 and sum(p['quantity_per_default_unit']for p in manifest_parts)==2
+print_manifest={'variant':'V3 bottom discs and same axial encoder on edge','release':P['release'],'physical_qualified':False,'holding_force_verified':False,'default_rigid_part_count':2,'default_cap':'circular','default_files':[p['file']for p in manifest_parts if p['quantity_per_default_unit']],'parts':manifest_parts,'excluded_from_rigid_printing':['21 diameter6x3 axial NdFeB discs','Bearings, PCBA, cell and screws','Assembled/exploded STEP and GLB'],'geometry_audit_sha256':sha(G/'geometry-audit.json'),'actual_slicer_audit_sha256':sha(G/'print-audit.json'),'machine_Gcode_included':False}
 (G/'print-ready-manifest.json').write_text(json.dumps(print_manifest,indent=2)+'\n')
 print(json.dumps(result,indent=2),flush=True)

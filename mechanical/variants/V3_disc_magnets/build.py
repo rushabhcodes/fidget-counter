@@ -1,6 +1,7 @@
 """Build the 1.0.32 disc base from frozen 1.0.31 hardware and supplier STEP.
 
-No V1/V2 part, circuit, cap, bearing seat or electrical placement is rewritten.
+No V1/V2 part, circuit, bearing seat or electrical placement is rewritten.
+Updated caps use the same axial attachment disc held on edge.
 Bottom-entry blind pockets are confined below Z4.4 mm; no steel or carrier.
 """
 from pathlib import Path
@@ -18,7 +19,7 @@ G = H / "generated"
 V1 = H.parent / "V1_premade_ring"
 P = json.loads((H / "parameters.json").read_text())
 OLD = json.loads((V1 / "enclosure-parameters.json").read_text())
-M, B = P["magnet"], P["pockets"]
+M, B, E = P["magnet"], P["pockets"], P["encoder"]
 sha = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
 for folder in ["STEP", "Print_STL", "Reference_STEP", "Assemblies", "Fit_Coupons", "Circuit_Models"]:
     (G / folder).mkdir(parents=True, exist_ok=True)
@@ -144,26 +145,70 @@ for name, fixed in new.items():
         if name != "Base_V3_Discs":
             clear(fixed, fastener, name + "/screw")
 
-print("Checking every existing cap around the complete rotation...", flush=True)
-caps = {}
+print("Building the keyed holder for the same axial disc, mounted on edge...", flush=True)
+from grip_profiles import make_grip
+cap_parameters={**OLD,"overall_height":E["cap_top_z_mm"],"cap_deck_bottom":E["cap_deck_bottom_z_mm"],
+                "grip_height":E["cap_top_z_mm"]-OLD["cap_edge_bottom"]}
+# Keep the calibrated bearing bore and lower shoulder. Only the roof/grip grow
+# upwards to accommodate the6mm vertical diameter and the1.2mm pocket roof.
+hub=ring(OLD["bearing"]["housing_diameter_mm"]/2,28.8,OLD["bearing"]["bottom_z_mm"],E["cap_deck_bottom_z_mm"]-OLD["bearing"]["bottom_z_mm"])
+hub=hub.fuse(ring(OLD["bearing"]["outer_shoulder_inner_radius_mm"],28.8,OLD["bearing"]["bottom_z_mm"]+7,E["cap_deck_bottom_z_mm"]-OLD["bearing"]["bottom_z_mm"]-7))
+hub=hub.fuse(disc(26.8,E["cap_deck_bottom_z_mm"],E["cap_top_z_mm"]-E["cap_deck_bottom_z_mm"]))
+outer_x=E["slot_width_x_mm"]+2*E["holder_wall_mm"]
+outer_y=E["slot_length_y_mm"]+2*E["holder_wall_mm"]
+holder=cq.Workplane("XY").box(outer_x,outer_y,E["cap_deck_bottom_z_mm"]+.15-E["slot_mouth_z_mm"],centered=(True,True,False)).edges("|Z").fillet(.4).val().translate((0,0,E["slot_mouth_z_mm"]))
+slot=cq.Workplane("XY").box(E["slot_width_x_mm"],E["slot_length_y_mm"],E["slot_stop_z_mm"]-E["slot_mouth_z_mm"]+.1,centered=(True,True,False)).val().translate((0,0,E["slot_mouth_z_mm"]-.1))
+hub=hub.fuse(holder).clean()
+# Model the very same axial disc as the base. Rotating90deg aboutY makes the
+# magnetization axisX (parallel to PCB), rather than the spin axisZ.
+encoder=encoder_magnet(E["diameter_mm"]/2,-E["thickness_mm"]/2,E["thickness_mm"]).rotate((0,0,0),(0,1,0),90).translate((0,0,E["center_z_mm"]))
+assert abs(encoder.BoundingBox().zmin-E["bottom_z_mm"])<1e-7
+assert abs(encoder.BoundingBox().zmax-E["top_z_mm"])<1e-7
+assert abs(encoder.BoundingBox().xlen-E["thickness_mm"])<1e-7
+assert E["cap_top_z_mm"]-E["slot_stop_z_mm"]>=E["minimum_roof_mm"]-1e-7
+# A continuous360deg holder envelope proves clearance against the actual PCB,
+# supplier bodies, base and fasteners without resampling thousands of solids.
+encoder_sweep=disc(math.hypot(outer_x/2,outer_y/2),E["slot_mouth_z_mm"],E["slot_stop_z_mm"]-E["slot_mouth_z_mm"])
+for name,shape in {"Base":base,"PCB":pcb,"Cell":cell,"Screws":cq.Compound.makeCompound(fasteners),**electronics}.items():
+    clear(encoder_sweep,shape,"complete encoder sweep/"+name)
+    bb=shape.BoundingBox()
+    if name.startswith("Electronic_"):
+        assert bb.zmax<E["cap_deck_bottom_z_mm"]
+        assert max(math.hypot(x,y)for x in[bb.xmin,bb.xmax]for y in[bb.ymin,bb.ymax])<25
+caps={};encoder_insertion=[-8,-6,-4,-2,-1,-.1,0]
 for style in OLD["cap_styles"]:
-    cap = cq.importers.importStep(str(ROOT / "mechanical/STEP_Parts" / ("Cap_" + style + ".step"))).val()
-    caps["Cap_" + style] = cap
-    for angle in range(0, 360, 15):
-        rotated = cap.rotate((0, 0, 0), (0, 0, 1), angle)
-        for name, fixed in new.items():
-            clear(rotated, fixed, style + "/" + name)
-    print("  cleared", style, flush=True)
+    cap=hub.fuse(make_grip(style,cap_parameters)).cut(slot).clean()
+    assert cap.isValid()and len(cap.Solids())==1,style
+    caps["Cap_"+style]=cap
+    for dz in encoder_insertion:clear(cap,encoder.translate((0,0,dz)),style+" edge-disc insertion")
+    wrong_flat=encoder_magnet(E["diameter_mm"]/2,E["bottom_z_mm"],E["thickness_mm"])
+    assert overlap(cap,wrong_flat)>.1,style+" does not enforce edge orientation"
+    # The complete old bearing-contact zone must remain byte-for-byte geometry.
+    oldcap=cq.importers.importStep(str(ROOT/"mechanical/STEP_Parts"/("Cap_"+style+".step"))).val()
+    fit_zone=disc(31,OLD["bearing"]["bottom_z_mm"]-.01,7.01)
+    assert cap.intersect(fit_zone).cut(oldcap).Volume()+oldcap.intersect(fit_zone).cut(cap).Volume()<.002,style+" bearing interface changed"
+    for angle in range(0,360,15):
+        rotated=cap.rotate((0,0,0),(0,0,1),angle)
+        for name,fixed in new.items():clear(rotated,fixed,style+"/"+name)
+    print("  cleared",style,flush=True)
 
-printed = []
-for name, shape in [("Base_V3_Discs", base)]:
-    step, stl = G / "STEP" / (name + ".step"), G / "Print_STL" / (name + ".stl")
-    cq.exporters.export(shape, str(step))
-    oriented = shape.translate((0, 0, -shape.BoundingBox().zmin))
-    cq.exporters.export(oriented, str(stl), tolerance=0.025, angularTolerance=0.09)
-    mesh = trimesh.load_mesh(stl, process=True)
-    assert mesh.is_watertight and mesh.is_winding_consistent and mesh.is_volume and len(mesh.split()) == 1
-    printed.append({"name": name, "STEP": str(step.relative_to(H)), "STEP_sha256": sha(step), "STL": str(stl.relative_to(H)), "STL_sha256": sha(stl), "volume_mm3": shape.Volume()})
+printed=[]
+old_prints={r['name']:r for r in json.loads((ROOT/'mechanical/print-ready-manifest.json').read_text())['parts']}
+for name,shape in [("Base_V3_Discs",base),*caps.items()]:
+    step,stl=G/'STEP'/(name+'.step'),G/'Print_STL'/(name+'.stl')
+    cq.exporters.export(shape,str(step))
+    invert=name.startswith('Cap_')and name!='Cap_thumb_scoop'
+    oriented=shape.rotate((0,0,0),(1,0,0),180)if invert else shape
+    translate_z=-oriented.BoundingBox().zmin
+    oriented=oriented.translate((0,0,translate_z))
+    cq.exporters.export(oriented,str(stl),tolerance=.025,angularTolerance=.09)
+    mesh=trimesh.load_mesh(stl,process=True)
+    assert mesh.is_watertight and mesh.is_winding_consistent and mesh.is_volume and len(mesh.split())==1,name
+    info=old_prints.get(name,{})
+    printed.append({'name':name,'STEP':str(step.relative_to(H)),'STEP_sha256':sha(step),'STL':str(stl.relative_to(H)),'STL_sha256':sha(stl),'volume_mm3':shape.Volume(),
+                    'print_rotation_x_deg':180 if invert else 0,'print_translation_z_mm':translate_z,
+                    'orientation':'deck down'if invert else('upright, cup supported'if name.startswith('Cap_')else'phone face down'),
+                    'supports':info.get('supports','fixed-base'),'quantity_per_default_unit':int(name in['Base_V3_Discs','Cap_circular'])})
 for diameter in [6.3, 6.4, 6.5]:
     coupon = cq.Workplane("XY").box(10, 10, B["base_roof_top_z_mm"] - B["phone_contact_z_mm"], centered=(True, True, False)).val()
     coupon = coupon.cut(disc(diameter / 2, -0.1, B["blind_stop_z_mm"] - B["phone_contact_z_mm"] + 0.1))
@@ -172,11 +217,11 @@ for diameter in [6.3, 6.4, 6.5]:
 cq.exporters.export(cq.Compound.makeCompound(list(magnets.values())), str(G / "Reference_STEP/Attachment_Discs_V3.step"))
 
 common = {"PCB": pcb, "Cell": cell, "PCB_Fasteners": cq.Compound.makeCompound(fasteners), **electronics,
-          "Bearing_6808": bearing, "Magnet": encoder_magnet(OLD["magnet_diameter"] / 2, OLD["magnet_bottom"], OLD["magnet_thickness"])}
+          "Bearing_6808": bearing, "Magnet": encoder}
 values = {**common, "Cap_circular": caps["Cap_circular"], **new}
 colors = {"Base_V3_Discs": (0.55, 0.63, 0.69),
           "Cap_circular": (0.18, 0.48, 0.60), "PCB": (0.15, 0.43, 0.29), "Bearing_6808": (0.70, 0.73, 0.77),
-          "Cell": (0.73, 0.75, 0.78), "Magnet": (0.77, 0.57, 0.36), "PCB_Fasteners": (0.85, 0.85, 0.80)}
+          "Cell": (0.73, 0.75, 0.78), "Magnet": (0.72, 0.74, 0.75), "PCB_Fasteners": (0.85, 0.85, 0.80)}
 offsets = {"Base_V3_Discs": 32,
            "Cell": 58, "PCB": 75, "PCB_Fasteners": 91, "Bearing_6808": 107, "Magnet": 130, "Cap_circular": 148}
 rows = []
@@ -186,6 +231,12 @@ for name, shape in values.items():
     rows.append({"name": name, "vertices": [list(v.toTuple()) for v in vertices], "faces": faces, "color": colors.get(name, default),
                  "exploded_dz_mm": 14 if name.startswith("Attachment_Disc_") else (75 if name.startswith("Electronic_") else offsets[name])})
 (G / "scene_meshes.json").write_text(json.dumps(rows, separators=(",", ":")) + "\n")
+cap_rows=[]
+for name,shape in caps.items():
+    vv,ff=shape.tessellate(.035,.09)
+    cap_rows.append({'name':name,'vertices':[list(v.toTuple())for v in vv],'faces':ff,'color':colors.get(name,(.18,.48,.60))})
+(G/'cap_meshes.json').write_text(json.dumps(cap_rows,separators=(',',':'))+'\n')
+
 for state in ["Assembled", "Exploded"]:
     scene = trimesh.Scene()
     assembly = cq.Assembly(name="V3_" + state)
@@ -213,6 +264,7 @@ report = {"passed": True, "physical_tested": False, "holding_force_verified": Fa
           "all_upper_interfaces_unchanged_above_z_mm": B["base_roof_top_z_mm"], "cap_styles_checked": OLD["cap_styles"], "rotation_samples_per_cap": 24,
           "physical_height_mm": P["physical_height_mm"], "encoder_gap_mm": P["nominal_encoder_gap_mm"], "printed_product_parts": 2, "handled_parts": 28,
           "steel_backing_count": 0, "separate_carrier_count": 0,
+          "encoder": E, "encoder_insertion_poses_per_cap":len(encoder_insertion),"flat_wrong_orientation_rejected":True,"all_bearing_interfaces_unchanged":True,
           "new_printed_parts": printed, "scene_objects": len(rows), "polarity": M["phone_facing_polarity"]}
 (G / "geometry-audit.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report, indent=2), flush=True)

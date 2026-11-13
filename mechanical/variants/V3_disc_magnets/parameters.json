@@ -1,9 +1,9 @@
 {
   "variant": "V3 diameter-6 by 3 mm disc-magnet base",
-  "release": "1.0.32",
+  "release": "1.0.33",
   "baseline_commit": "3e1826a07d1e9314e3ca289c356e1b499013a456",
   "qualification": "CAD/print-fit prototype; attachment force and phone compatibility require measurement",
-  "physical_height_mm": 16.4,
+  "physical_height_mm": 20.9,
   "base_diameter_mm": 58.0,
   "nominal_encoder_gap_mm": 1.8,
   "magnet": {
@@ -44,10 +44,39 @@
   "printed_product_parts": 2,
   "handled_parts": 28,
   "unchanged_interfaces": [
-    "All eleven cap STEP/STL files",
-    "6808-ZZ bearing seats above Z5.4",
+    "Bottom20-disc pockets and base geometry",
+    "6808-ZZ bearing seats",
     "RevC PCB and CR2450 holder/cell poses",
     "Two M2x4 nylon screws",
-    "Diameter-5 by 1.5 mm diametric encoder magnet and integral cap stop"
-  ]
+    "Nominal1.8mm minimum magnet-to-sensor clearance"
+  ],
+  "encoder": {
+    "same_part_as_attachment_discs": true,
+    "diameter_mm": 6.0,
+    "thickness_mm": 3.0,
+    "grade": "N52",
+    "magnetization": "axial through3mm thickness",
+    "axis_in_rotor": [
+      1,
+      0,
+      0
+    ],
+    "rotation_from_flat_about_y_deg": 90,
+    "bottom_z_mm": 13.9,
+    "center_z_mm": 16.9,
+    "top_z_mm": 19.9,
+    "sensor_top_z_mm": 12.1,
+    "minimum_sensor_clearance_mm": 1.8,
+    "slot_width_x_mm": 3.4,
+    "slot_length_y_mm": 6.4,
+    "slot_mouth_z_mm": 13.8,
+    "slot_stop_z_mm": 19.9,
+    "holder_wall_mm": 0.9,
+    "minimum_roof_mm": 1.2,
+    "cap_deck_bottom_z_mm": 19.8,
+    "cap_top_z_mm": 21.1,
+    "grip_edge_bottom_z_mm": 8.6,
+    "installation": "Insert the same axial6x3mm disc on edge from inside the cap; seat its curved edge against the dry stop and retain with sidewall adhesive",
+    "qualification": "Physical field strength and TMAG3001 range/counting must be tested; a flat centered axial disc cannot provide the intended XY angle signal"
+  }
 }

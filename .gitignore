@@ -1,5 +1,5 @@
 # Dependencies
-node_modules/
+node_modules
 
 # Build output
 dist/
@@ -49,5 +49,6 @@ mechanical/variants/V2_discrete_magnets/generated/Assemblies/
 
 # V3 render inputs and full exact assemblies ship in the CAD archive.
 mechanical/variants/V3_disc_magnets/generated/scene_meshes.json
+mechanical/variants/V3_disc_magnets/generated/cap_meshes.json
 mechanical/variants/V3_disc_magnets/generated/Assemblies/
 mechanical/variants/V3_disc_magnets/generated/*.gcode

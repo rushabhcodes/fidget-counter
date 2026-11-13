@@ -1,12 +1,13 @@
 {
-  "variant": "V3 bottom-insert circular disc magnets",
+  "variant": "V3 bottom discs and same axial encoder on edge",
+  "release": "1.0.33",
   "physical_qualified": false,
   "holding_force_verified": false,
   "default_rigid_part_count": 2,
   "default_cap": "circular",
   "default_files": [
     "mechanical/variants/V3_disc_magnets/generated/Print_STL/Base_V3_Discs.stl",
-    "mechanical/Print_STL/Cap_circular.stl"
+    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_circular.stl"
   ],
   "parts": [
     {
@@ -14,130 +15,184 @@
       "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Base_V3_Discs.stl",
       "sha256": "95304262ba207dfd90137b7afca48d88aa5c9d5e1bd26a3f9b8eb04a580d3e59",
       "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Base_V3_Discs.step",
-      "STEP_sha256": "83bb074305c50ce65654aeeb9c4ae3af7a6ee2f8416e1da2f8da3687ffb81704",
+      "STEP_sha256": "842dc512f975acffb7b557fef1386fbc007ccc8dfa73f92f0b7c60933afa6973",
       "quantity_per_default_unit": 1,
-      "orientation": "Phone face down",
+      "orientation": "phone face down",
       "supports": "fixed-base",
-      "first_layer_mm": 0.2
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/base-fixed-supports.ini"
+      ]
     },
     {
       "name": "Cap_circular",
-      "file": "mechanical/Print_STL/Cap_circular.stl",
-      "sha256": "2faf2d3eb9862dded97681c0c0bb46bba1af5e3a3cabe973581ce2f61b03e40c",
-      "STEP_file": "mechanical/STEP_Parts/Cap_circular.step",
-      "STEP_sha256": "7557517b57122c0a9ae697f9e130fe2118c93817622b0f432c7442a98578909f",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_circular.stl",
+      "sha256": "4f8810dfa851c53989236074102ac34c47e713aad6e87604a3591a9835a94c06",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_circular.step",
+      "STEP_sha256": "d23249eca152fd882f2faf91877cb5da45ae187c74520e2b063ef60321d40618",
       "quantity_per_default_unit": 1,
       "orientation": "deck down",
-      "supports": "none"
+      "supports": "none",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ]
     },
     {
       "name": "Cap_ships_wheel",
-      "file": "mechanical/Print_STL/Cap_ships_wheel.stl",
-      "sha256": "7074a880c4a031a8c2f91590d8886cca00c212c34474f810ca64e88296891925",
-      "STEP_file": "mechanical/STEP_Parts/Cap_ships_wheel.step",
-      "STEP_sha256": "3be76804ae6c667de783071b314bd41c504dc5ea0635b84f1a58819757931626",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_ships_wheel.stl",
+      "sha256": "0e92ff1af56d6941679ea58540a1455acef3b6c3e79faa0a032b41543a2e97d3",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_ships_wheel.step",
+      "STEP_sha256": "fb808fcd1b6ebbeeaf913823c08f235169f23a3a0afa9ce17830174d24415efc",
       "quantity_per_default_unit": 0,
       "orientation": "deck down",
-      "supports": "early-rim"
+      "supports": "early-rim",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/cap-early-rim-supports.ini"
+      ]
     },
     {
       "name": "Cap_rounded_triangle",
-      "file": "mechanical/Print_STL/Cap_rounded_triangle.stl",
-      "sha256": "6bd3ad01638bb9ca3ba1c7d9101a79442a973a614415e0faf909d7dd6d873cf7",
-      "STEP_file": "mechanical/STEP_Parts/Cap_rounded_triangle.step",
-      "STEP_sha256": "95c53d8e2b94a65e126bf58d7ffbd43fc6eacc6f6c2e87cae74a0a20ed9fdd44",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_triangle.stl",
+      "sha256": "8856a6da2a9fbd142f35fa240611bd6ce6a662874b11e5bd64b20c2afb3caf72",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_triangle.step",
+      "STEP_sha256": "5854c96090f3c19fa1172ca0dfb9b1cc37c0805ba3f5acc1752613a48e5610fc",
       "quantity_per_default_unit": 0,
       "orientation": "deck down",
-      "supports": "early-rim"
+      "supports": "early-rim",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/cap-early-rim-supports.ini"
+      ]
     },
     {
       "name": "Cap_scalloped_coin",
-      "file": "mechanical/Print_STL/Cap_scalloped_coin.stl",
-      "sha256": "ff9e683fa67ad9df93aac6b932a6ad5a4a4cb9edf09d739835d9e78beb3ac335",
-      "STEP_file": "mechanical/STEP_Parts/Cap_scalloped_coin.step",
-      "STEP_sha256": "378c84e2f27cac624f455db155b06acfb7e3a28af6c2f35d5c1aa7354a8c6d5c",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_scalloped_coin.stl",
+      "sha256": "56a6e114a3b636f4bd1da783a06dcfe04210a3388d465dac9e4f6b2dceada75c",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_scalloped_coin.step",
+      "STEP_sha256": "c718b06ad442385bb42755ce505c135d92216226e3d6dd939efd24fde6f968a2",
       "quantity_per_default_unit": 0,
       "orientation": "deck down",
-      "supports": "none"
+      "supports": "none",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ]
     },
     {
       "name": "Cap_petal_flower",
-      "file": "mechanical/Print_STL/Cap_petal_flower.stl",
-      "sha256": "9ba03546f81f1e025b057da6227b0fe18def21a3d20838527ba9208df3d2a689",
-      "STEP_file": "mechanical/STEP_Parts/Cap_petal_flower.step",
-      "STEP_sha256": "2cf7b3fa08f91bd0e741d9aea5734483076105c4cc85feaa28ba5f0de516d79d",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_petal_flower.stl",
+      "sha256": "2e39ba211ecd0c33703827e76db9fe4722cce6c7c0b7f11e7afa9209afc16042",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_petal_flower.step",
+      "STEP_sha256": "aebd9a6ace3947d313705cfff517bfb9c72a77234a76c32f032244a12a686630",
       "quantity_per_default_unit": 0,
       "orientation": "deck down",
-      "supports": "early-rim"
+      "supports": "early-rim",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/cap-early-rim-supports.ini"
+      ]
     },
     {
       "name": "Cap_four_leaf_clover",
-      "file": "mechanical/Print_STL/Cap_four_leaf_clover.stl",
-      "sha256": "a9d27ae86ede79efaeea0ae7bfce0ba3c411099223d8441816bde09a76594ef6",
-      "STEP_file": "mechanical/STEP_Parts/Cap_four_leaf_clover.step",
-      "STEP_sha256": "25a3d703357f7cbac357b6b36ce45e394248613e9038387c809ac2c97397893a",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_four_leaf_clover.stl",
+      "sha256": "b7c0113f34f4e74bfd43d439a0de76dc6c084d4690e7461ae8517da2766f31e8",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_four_leaf_clover.step",
+      "STEP_sha256": "a1c9d0f31e815e63c61e6e6c8b2b11f6743c9d41fc0066979fb305786e0788c4",
       "quantity_per_default_unit": 0,
       "orientation": "deck down",
-      "supports": "early-rim"
+      "supports": "early-rim",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/cap-early-rim-supports.ini"
+      ]
     },
     {
       "name": "Cap_rounded_hexagon",
-      "file": "mechanical/Print_STL/Cap_rounded_hexagon.stl",
-      "sha256": "71e4d46f39b05306191fec4a9c4290f8054206428b873301c7e12c89a1d6844c",
-      "STEP_file": "mechanical/STEP_Parts/Cap_rounded_hexagon.step",
-      "STEP_sha256": "2f04ad6914a0ca20d9a0811207be5240aa5a92a63f46a4ffceb45e17b13a5351",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_hexagon.stl",
+      "sha256": "8906ad9db1e4b01532547271d9f8b6a063b79a70cf146dd2acdd292a7d812900",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_hexagon.step",
+      "STEP_sha256": "4f35d9a432be40ef529db19fe5fc85617685ec58fa45c5bd8582f92a10902dc1",
       "quantity_per_default_unit": 0,
       "orientation": "deck down",
-      "supports": "none"
+      "supports": "none",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ]
     },
     {
       "name": "Cap_rounded_square",
-      "file": "mechanical/Print_STL/Cap_rounded_square.stl",
-      "sha256": "413364588682f1b515e5646806067b91ec4b848de142aa87a5b8975f048b02d4",
-      "STEP_file": "mechanical/STEP_Parts/Cap_rounded_square.step",
-      "STEP_sha256": "559fc30609566977c442b5bb15da8865130af13dc66e975e99fa60b599ee68d6",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_square.stl",
+      "sha256": "288b2cb2ef93fe14dde734bb485e3a34d88c0733d0277d9da2f110468d8209de",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_square.step",
+      "STEP_sha256": "e9a9a29cfe963a65ab2eb921ad5043bd6ac2fa1993a2ec9ea8408b8f5a8bfc8e",
       "quantity_per_default_unit": 0,
       "orientation": "deck down",
-      "supports": "early-rim"
+      "supports": "early-rim",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/cap-early-rim-supports.ini"
+      ]
     },
     {
       "name": "Cap_wave_rim",
-      "file": "mechanical/Print_STL/Cap_wave_rim.stl",
-      "sha256": "5373ca46f76bcc949844eb2e91da4d5ae253e8eada57d9ac99950b618e1774ff",
-      "STEP_file": "mechanical/STEP_Parts/Cap_wave_rim.step",
-      "STEP_sha256": "a6f9559dd1c30fcf4d272f080faf422abc6b91a238978f618843f1c85e033629",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_wave_rim.stl",
+      "sha256": "814c6f93f62d1d1478e11917fe08ee7e3851801c15c2ddf14b8fda1166b86855",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_wave_rim.step",
+      "STEP_sha256": "eec4383871aa59b7c2e2eebec584428b4588134f6610603c9b92259c131fed07",
       "quantity_per_default_unit": 0,
       "orientation": "deck down",
-      "supports": "none"
+      "supports": "none",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ]
     },
     {
       "name": "Cap_turbine_wheel",
-      "file": "mechanical/Print_STL/Cap_turbine_wheel.stl",
-      "sha256": "0fff12639b37ba8b82aa67edc8219eb615a495b9f54e54711e1b02a8dc0ca6ac",
-      "STEP_file": "mechanical/STEP_Parts/Cap_turbine_wheel.step",
-      "STEP_sha256": "3d1d45c05282a73d4333fdf06e4260ea4d9f5fe7a4c315e83f134ef98cbc63b6",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_turbine_wheel.stl",
+      "sha256": "d48f6e13e4fa9cf86ec7ee1990062157a2762b42fbaac432d0388fcd3063eea2",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_turbine_wheel.step",
+      "STEP_sha256": "b90b4aa7fbd5b876c709f09ebff292789a2ebb50c4712110305f5d3864e82ae9",
       "quantity_per_default_unit": 0,
       "orientation": "deck down",
-      "supports": "none"
+      "supports": "none",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini"
+      ]
     },
     {
       "name": "Cap_thumb_scoop",
-      "file": "mechanical/Print_STL/Cap_thumb_scoop.stl",
-      "sha256": "c8410c846980ff2bddf38cd12198f17ee541a0e3b00995b63e87a0543c1e5b41",
-      "STEP_file": "mechanical/STEP_Parts/Cap_thumb_scoop.step",
-      "STEP_sha256": "19a67ed1fcaf9a2116e4e133326c90dc0490bec679e9f01ab4fbeef8a05328df",
+      "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_thumb_scoop.stl",
+      "sha256": "527e4100af8e343982525851057aebe3a6c3713145fe1ce97eae5e2224592cff",
+      "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_thumb_scoop.step",
+      "STEP_sha256": "3bf66fdc638e855d0f7130a9a850525a5698d4296b13f5fc26ee9f511208117d",
       "quantity_per_default_unit": 0,
       "orientation": "upright, cup supported",
-      "supports": "everywhere"
+      "supports": "everywhere",
+      "first_layer_mm": 0.2,
+      "slicer_profiles": [
+        "mechanical/printing/PETG-0.4-audit.ini",
+        "mechanical/printing/supports-everywhere.ini",
+        "mechanical/printing/V3-edge-cap-supports.ini"
+      ]
     }
   ],
   "excluded_from_rigid_printing": [
-    "20 diameter6x3 attachment magnets",
-    "Bearings, PCBA, cell, screws and encoder magnet",
+    "21 diameter6x3 axial NdFeB discs",
+    "Bearings, PCBA, cell and screws",
     "Assembled/exploded STEP and GLB"
   ],
-  "geometry_audit_sha256": "cf270df798a3c486b806ee40f209cfb70a1f10739bfccdd0b8f089127aea12bd",
-  "actual_slicer_audit_sha256": "0b3fb440e1956309b79ef59b4fd67316caf0e817fddca6b4fcd0a932922162aa",
-  "unchanged_caps_slicer_audit_sha256": "4704930737e2b2859e40250ddaab2107564d515ff4dd757e94a2c669dc881d44",
+  "geometry_audit_sha256": "117b1b04f308568a6006b63018c37fa2185c79222323cfd74165f4ae2bf91207",
+  "actual_slicer_audit_sha256": "ed3580c082f09c45f9683b597e417870ba5f1fcefb47f504de5e4049743f8e42",
   "machine_Gcode_included": false
 }

@@ -6,6 +6,7 @@ import { gzipSync } from "node:zlib"
 import { getPackageInput } from "./cloud-package-input.mjs"
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
+const releaseVersion = JSON.parse(readFileSync(resolve(root,"package.json"))).version
 const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex")
 const walk = (path) => readdirSync(path, { withFileTypes: true }).flatMap((item) => {
   const child = resolve(path, item.name)
@@ -41,13 +42,14 @@ const inputs = [
   "mechanical/variants/V2_discrete_magnets/polarity.svg",
   "mechanical/variants/V3_disc_magnets/review.html",
   "mechanical/variants/V3_disc_magnets/review.png",
-  "mechanical/variants/V3_disc_magnets/exploded-v1.0.32.png",
+  `mechanical/variants/V3_disc_magnets/exploded-v${releaseVersion}.png`,
+  "mechanical/variants/V3_disc_magnets/encoder-orientation.png",
   ...walk(resolve(root, "imports")).map((path) => relative(root, path)),
   ...walk(resolve(root, "mechanical"))
     .filter((path) => !relative(root, path).startsWith("mechanical/export/") && !path.includes("/__pycache__/"))
     // Full V2 STEP assemblies ship in a separate manufacturing CAD archive;
     // the transient render mesh is regenerated from source, not a worker input.
-    .filter((path) => !/mechanical\/variants\/V[23]_[^/]+\/generated\/Assemblies\//.test(relative(root,path)) && !/mechanical\/variants\/V[23]_[^/]+\/generated\/scene_meshes\.json$/.test(relative(root,path)))
+    .filter((path) => !/mechanical\/variants\/V[23]_[^/]+\/generated\/Assemblies\//.test(relative(root,path)) && !/mechanical\/variants\/V[23]_[^/]+\/generated\/(scene|cap)_meshes\.json$/.test(relative(root,path)))
     .filter((path) => [".py", ".json", ".stl", ".obj", ".mtl", ".step", ".glb"].includes(extname(path)))
     // OBJ/MTL references stay in Git; indexed GLB assets are the runtime inputs.
     .filter((path) => !(relative(root,path).startsWith("mechanical/Circuit_Models/") && [".obj",".mtl"].includes(extname(path))))
@@ -72,7 +74,8 @@ const manifest = {
   }),...Object.entries({
     "review.html":"index.html",
     "review.png":"review.png",
-    "exploded-v1.0.32.png":"exploded-v1.0.32.png",
+    [`exploded-v${releaseVersion}.png`]:`exploded-v${releaseVersion}.png`,
+    "encoder-orientation.png":"encoder-orientation.png",
     "generated/V3_assembled.glb":"generated/V3_assembled.glb",
     "generated/V3_exploded.glb":"generated/V3_exploded.glb",
   }).map(([name,target])=>{

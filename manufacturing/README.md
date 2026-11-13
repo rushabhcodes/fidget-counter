@@ -1,10 +1,10 @@
-# Current v1.0.32 — V3 bottom-insert circular magnets
+# Current v1.0.33 — V3 discs and the same axial encoder on edge
 
-Use [V3 print test](https://github.com/rushabhcodes/fidget-counter/blob/269d7fc8520fe3cc74f33e63c9aec0ce2ba25b8e/manufacturing/fidget-counter-V3-discs-print-test-1.0.32.zip) for the two default product STLs plus pocket/bearing fit coupons. Use [V3 complete CAD](https://github.com/rushabhcodes/fidget-counter/blob/269d7fc8520fe3cc74f33e63c9aec0ce2ba25b8e/manufacturing/fidget-counter-V3-discs-CAD-1.0.32.zip) for assembled/exploded STEP, GLB, all cap alternatives and source. [disc-variant-manifest.json](disc-variant-manifest.json) records archive/member hashes.
+Use [V3 print test](https://github.com/rushabhcodes/fidget-counter/blob/codex/axial-encoder-1.0.33/manufacturing/fidget-counter-V3-discs-print-test-1.0.33.zip) for the two default product STLs plus pocket/bearing fit coupons. Use [V3 complete CAD](https://github.com/rushabhcodes/fidget-counter/blob/codex/axial-encoder-1.0.33/manufacturing/fidget-counter-V3-discs-CAD-1.0.33.zip) for assembled/exploded STEP, GLB, all cap alternatives and source. [disc-variant-manifest.json](disc-variant-manifest.json) records archive/member hashes.
 
-V3 has20 Ø6×3mm axial attachment discs inserted from the underside into blind base pockets. It has no steel backing or separate magnet carrier. Follow the [V3 guide](../mechanical/variants/V3_disc_magnets/README.md), print manifest and [order list](../mechanical/variants/V3_disc_magnets/ORDER_LIST.csv). Never print a purchased-part or whole-assembly reference as a product part. No machine G-code is distributed.
+V3 has20 Ø6×3mm axial attachment discs inserted from the underside into blind base pockets. The top encoder uses one identical disc on edge, for21 identical discs in total. All11 generated caps have keyed slots; overall height is20.9mm. It has no steel backing or separate magnet carrier. Follow the [V3 guide](../mechanical/variants/V3_disc_magnets/README.md), print manifest and [order list](../mechanical/variants/V3_disc_magnets/ORDER_LIST.csv). Never print a purchased-part or whole-assembly reference as a product part. No machine G-code is distributed.
 
-The [v1.0.32 fabrication ZIP](https://github.com/rushabhcodes/fidget-counter/blob/269d7fc8520fe3cc74f33e63c9aec0ce2ba25b8e/manufacturing/fidget-counter-fabrication-1.0.32.zip) keeps every corrected1.0.31 Gerber/BOM/CPL payload byte unchanged and adds a V3 release note. Quote all27 FIT parts, including the holder and JST header. Physical fit, magnet bonding, pole arrangement and phone holding force require prototype tests.
+The [v1.0.33 fabrication ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/axial-encoder-1.0.33/manufacturing/fidget-counter-fabrication-1.0.33.zip) keeps every corrected1.0.31 Gerber/BOM/CPL payload byte unchanged and adds a V3 release note. Quote all27 FIT parts, including the holder and JST header. Physical fit, magnet bonding, pole arrangement and phone holding force require prototype tests.
 
 The following entries describe preserved earlier versions and their explicitly named archives.
 
@@ -22,6 +22,6 @@ The new individual-magnet base is a separate **V2 fit/force-test alternative**, 
 
 The manifest gives archive and member SHA256 values. Recreate with `python validation/package-manufacturing.py` after all checks pass. These files support a controlled prototype and fabrication quote. Printed seating/pull-off/creep/adhesion, holder contacts, magnetic/Hall/RF/oscillator behavior and firmware remain physical release gates. No purchase or manufacturing order is implied.
 
-Earlier versioned ZIPs remain available for links in published releases. Use the version and files named in the current manifest for this16.4mm cap.
+Earlier versioned ZIPs remain available for links in published releases. Use the version and files named in the current manifest for the current20.9mm cap.
 
 The corrected 1.0.30 PCB files supersede the DEC2/DEC3 and RF-return wiring in earlier bundles. Do not order the older PCB files. See validation/AI_REVIEW_RESOLUTION.md in this branch and the fabrication bundle. RF and printed-retention qualification remain open.

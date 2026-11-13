@@ -41,11 +41,12 @@ const models = [
 ]
 
 // V3: twenty diameter-6 by 3 mm discs insert from underneath the one-piece base.
+// The encoder is an identical axial disc held on edge, with its axis parallel to PCB.
 // CAD coordinates are mm from the phone plane; all upper interfaces are retained.
 export const PCB_MIDPLANE_Z_MM = 11.1
 export const EnclosureAssembly = ({capStyle="circular",transparentShell=false}: {capStyle?:CapStyle;transparentShell?:boolean} = {}) => <Fragment>
   {models.filter(m => m.style === null || m.style === capStyle).map(m => <assembly.cadassembly
-    key={m.name} name={`BEARING_V5_${m.name}`} displayName={m.name.replace(/_/g," ")}
+    key={m.name} name={`BEARING_V5_${m.name}`} displayName={m.name === "Magnet" ? "Encoder disc on edge" : m.name.replace(/_/g," ")}
     cadModel={{glbUrl:m.obj,modelUnitToMmScale:1,
       modelOriginPosition:{x:0,y:0,z:0},positionOffset:{x:0,y:0,z:-PCB_MIDPLANE_Z_MM},
       rotationOffset:{x:0,y:0,z:0},

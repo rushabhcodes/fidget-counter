@@ -19,7 +19,7 @@
     "mechanical/Circuit_Models/*.obj",
     "mechanical/Circuit_Models/*.mtl",
     "mechanical/variants/**/generated/Assemblies/**",
-    "mechanical/variants/**/generated/scene_meshes.json",
+    "mechanical/variants/**/generated/*_meshes.json",
     "mechanical/variants/**/generated/*.gcode",
     "mechanical/variants/**/*.step",
     "mechanical/variants/**/*.stl",
@@ -28,6 +28,6 @@
     "**/mechanical/Circuit_Models/Bearing_6808.glb",
     "manufacturing/*.zip"
   ],
-  "alwaysUseLatestTscircuitOnCloud": false,
+  "alwaysUseLatestTscircuitOnCloud": true,
   "buildCommand": "bun cloud-build.mjs && tscircuit build published.circuit.json --site --disable-parts-engine"
 }

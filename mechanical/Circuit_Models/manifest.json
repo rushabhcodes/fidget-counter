@@ -366,11 +366,11 @@
       {
         "label": "Magnet",
         "first_face": 0,
-        "face_count": 772,
+        "face_count": 1116,
         "color": [
-          0.58,
-          0.6,
-          0.63
+          0.72,
+          0.74,
+          0.75
         ],
         "finish": "steel"
       }
@@ -379,11 +379,11 @@
       {
         "label": "Cap_circular",
         "first_face": 0,
-        "face_count": 4048,
+        "face_count": 4380,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -392,11 +392,11 @@
       {
         "label": "Cap_ships_wheel",
         "first_face": 0,
-        "face_count": 4384,
+        "face_count": 5664,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -405,11 +405,11 @@
       {
         "label": "Cap_rounded_triangle",
         "first_face": 0,
-        "face_count": 2756,
+        "face_count": 3208,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -418,11 +418,11 @@
       {
         "label": "Cap_scalloped_coin",
         "first_face": 0,
-        "face_count": 4886,
+        "face_count": 5228,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -431,11 +431,11 @@
       {
         "label": "Cap_petal_flower",
         "first_face": 0,
-        "face_count": 4166,
+        "face_count": 4546,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -444,11 +444,11 @@
       {
         "label": "Cap_four_leaf_clover",
         "first_face": 0,
-        "face_count": 3768,
+        "face_count": 4182,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -457,11 +457,11 @@
       {
         "label": "Cap_rounded_hexagon",
         "first_face": 0,
-        "face_count": 2512,
+        "face_count": 2830,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -470,11 +470,11 @@
       {
         "label": "Cap_rounded_square",
         "first_face": 0,
-        "face_count": 2728,
+        "face_count": 3156,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -483,11 +483,11 @@
       {
         "label": "Cap_wave_rim",
         "first_face": 0,
-        "face_count": 4864,
+        "face_count": 5190,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -496,11 +496,11 @@
       {
         "label": "Cap_turbine_wheel",
         "first_face": 0,
-        "face_count": 3362,
+        "face_count": 4116,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -509,11 +509,11 @@
       {
         "label": "Cap_thumb_scoop",
         "first_face": 0,
-        "face_count": 5046,
+        "face_count": 5462,
         "color": [
-          0.12,
-          0.47,
-          0.58
+          0.18,
+          0.48,
+          0.6
         ],
         "finish": "plastic"
       }
@@ -755,53 +755,53 @@
     ]
   },
   "modelSha256": {
-    "Cap_wave_rim.glb": "69e55356d1c9eb6f68e37e540f9609910beb8a4947c75db7ceed53d528c642fe",
-    "Cap_rounded_hexagon.glb": "5371ea3a6857e40a5ad7b612cd1d98999f2e26266e99a5dec80395d95f5929ee",
-    "Cap_rounded_square.glb": "a88d4cba9d6f1d6136b2f52a15e7f2f7c66310f9bea1d21aca4c9d648c467440",
-    "Cap_scalloped_coin.glb": "9d1105f39bc985fca37aac48e4e3a04595cfbdd3fce0b33ee38f384b1e2a9437",
-    "Cap_petal_flower.glb": "cb6efd8936f927bd7f9741fe5642483319cf943dec191da43f040d8f9f4647fc",
+    "Cap_wave_rim.glb": "e1de779128a3a19e59b82969c17415a46e4a782204c77164bbab755217632f9b",
+    "Cap_rounded_hexagon.glb": "cb5ad36d4ba5faae14c8c3d77a13a8c543de5d9652805b73c655887b5c4b4277",
+    "Cap_rounded_square.glb": "6ba335fa073930e5822f04e7c46f6724ec9248bff635be38860754fb3a7c23e0",
+    "Cap_scalloped_coin.glb": "c099f67d7cdb313fd75698067bb889aefe1cd28faf558fbd37655d7e25a35050",
+    "Cap_petal_flower.glb": "d50995dbe4ab48e73df3ec195a6c04347d45780a8c5de22c8deb35c4cd12aab3",
     "MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960",
-    "Cap_four_leaf_clover.glb": "a00167724c211dc6e768440deebb8bf798c87cbe32bed14cb2c2b056f3ae50f2",
+    "Cap_four_leaf_clover.glb": "f4b6f32198a99fd8bcbd9f47141877c05c10ef1beddb7703dd65e1ab53fd1e12",
     "Cell.glb": "3045846fa274953378a976b941ade9177be3e5783347a5f6061bad10d508c709",
-    "Magnet.glb": "33333e44c37a26795772b49e6afa36df04fe91412f6db3fe37aed81dd9cac453",
+    "Magnet.glb": "d7f664cc1c40ef3b55e26f89d4e0202ac8e0330abd3281fe48221fef7923a4a3",
     "Stationary_Base.glb": "966affb8856af09b57c438899c59c696bf51aa960121a0f3e49f697ed67da099",
-    "Cap_rounded_triangle.glb": "0d778dcfc69dfd5bf28debdc5bb5d3808e4dc05eaf9cbd96307cd1fea1055408",
-    "Cap_turbine_wheel.glb": "3094e14844394119d5b1161b669747392059fc9cca0939f1ba78c0a11f712423",
-    "Cap_ships_wheel.glb": "cb1c38fc3fd680f7501a18f2437ab20ebe0b889869c0437d30bdc97de5ee7b12",
-    "Cap_thumb_scoop.glb": "8478569b0dcd32d55eb3d77e77bb5adb6e8b89f77ab153141a6cfd853ff07128",
-    "Cap_circular.glb": "cdb6128cf370b4301637cd96a07d382b9292935c6d94262332993e3e11983bfc",
+    "Cap_rounded_triangle.glb": "0ed6ff9abbf5421f0f21417d72579cf3606b5162846c36b1b4e2178472be87f1",
+    "Cap_turbine_wheel.glb": "7a9e6ef51b21c9fb72b94cea31e7fcc1a7f05891c303bffb07b39375f62aad5a",
+    "Cap_ships_wheel.glb": "9b2f245f4f163b76d0f10b7da7ad49a9763c840100ad6b563b33c96753cd72c9",
+    "Cap_thumb_scoop.glb": "ce998d73bb0a3f3a498f2eda06f88950d01120c6fae6a4af9d5688d2ac7a9fba",
+    "Cap_circular.glb": "c4f88668d3dcd728e15f5960438edde2e689ef3b3794f50b09e274222cdf3784",
     "Bearing_6808.glb": "736f7320e89405017e1a93bb8a8065e15775cf010ce6fa581f8374bafe4fd73c",
     "PCB_Fasteners.glb": "9a856224ee40f18e6772ab37b5480ad9d963f474accc788c4f6a7654a433849a",
     "Attachment_Discs_V3.glb": "d609819f61d26178d406ae0046a4208c62aff4148f806fb38941d9044ae18e67",
     "Base_V3_Discs.glb": "048abf5c261acfe51caf8bf706fc4976243d5287397043645db380fa57c86d0d"
   },
   "referenceModelSha256": {
-    "Cap_circular.mtl": "735ab8f4da59be14cfd1e2b30ba1ad86c4e2f653c520057766a629deafe8eb3c",
-    "Cap_circular.obj": "4fdc78416aca1418bfd987df3582f9f35fd4faeaa779ac0d0724639f739b9c2f",
-    "Cap_four_leaf_clover.mtl": "d2bd18d547ff71ad27bd57ad696d3267108ccc80a81ceb3bdea3f4da8e7fcd9d",
-    "Cap_four_leaf_clover.obj": "9aa98f375ecbf0e1afb89db06571fe41ae3b8fa5ed703d4bb882fb4353017b72",
-    "Cap_petal_flower.mtl": "e28c6cda24fb5f790aa6fc5d3d048b0fa28dbd862c09c471ce8f3081ecf9cf67",
-    "Cap_petal_flower.obj": "bd62bd45d6d5e1bd0c93ae948f11e992f248b4ae51a3501e20639bc557a9cd12",
-    "Cap_rounded_hexagon.mtl": "6a35e829c07497ac743beef494b88fd6781b859d02414ec49b3cf96b0aec7217",
-    "Cap_rounded_hexagon.obj": "842ec024bcdf0ef895be8e8fdfbef51e9cf18ee33bc226f847c9062ed41595e3",
-    "Cap_rounded_square.mtl": "688fb42951ea0aa68dbd459b3064bf9b1945139e971d4bb5ba3863825bda514d",
-    "Cap_rounded_square.obj": "39ee4e9254a2f617f88e4c4392b6a5e750232bc88baa609e66656a38a1129810",
-    "Cap_rounded_triangle.mtl": "450db1c11982a144cf1e1ba20e66bf1d804e16c4e7f01e93a96271afc37ca4bf",
-    "Cap_rounded_triangle.obj": "3463388b962eefc60d5bf5b2583aa5229313763e6df7e62deb489b7d919963d4",
-    "Cap_scalloped_coin.mtl": "7d41fff528f126c74b627445bab5bf5af34e7c976691aed4b143f3733528f940",
-    "Cap_scalloped_coin.obj": "36c171fc764683456cd89ac12c73b674a74d3111582562334d5a8c1c91b40584",
-    "Cap_ships_wheel.mtl": "3db7888f919f4a4348db6f9ac8f7506009ab2733fb25e716d47839f8ac9bf4a2",
-    "Cap_ships_wheel.obj": "79b9d706dd0106a0356ef46fa4eb262276d0a23c45e0953e5543783ebaa3d9cc",
-    "Cap_thumb_scoop.mtl": "decfb0fb8550f7b004859c5a5cdc1dd12e6c9928acd9a6d9de3c9153078449de",
-    "Cap_thumb_scoop.obj": "5c66056efb1ebfbb2b4f451dad69d3879a887e3816364a8ee31d60f7578012bd",
-    "Cap_turbine_wheel.mtl": "e6dfd06267c3e5fbe9d4686bf82da760ff7030f906214574578a39d9bdd7ca09",
-    "Cap_turbine_wheel.obj": "32cc53fbfac48d51eeaa29064fd9e5691ef1a3d3f762d036da5e1391d42abfbb",
-    "Cap_wave_rim.mtl": "6d6d8e203241951f2285c620675b6a71070e58a86da3799ba2faa407d805d5eb",
-    "Cap_wave_rim.obj": "9ea0f14836d1a6c6bcb1f2a937e18fd8bc0287023948f3a2e3f6fbfdd462bdea",
+    "Cap_circular.mtl": "096531d3ed06c425eb789eb77660b61b9417f487a547a854e60787c64a3a1201",
+    "Cap_circular.obj": "c403012c1ae0cd61317899083b870be180a507b890110a9a84e3f102d43ba3fc",
+    "Cap_four_leaf_clover.mtl": "cb897faf64fa51bc790652a99f6b6ea746ce6d7310c2e96db22e5bb1df58d575",
+    "Cap_four_leaf_clover.obj": "51eafa7ca39133a9ffc79917bee185695690b684ba892e072be8020449116942",
+    "Cap_petal_flower.mtl": "d8a759d580b0a1db59947f93fd5b8ebb9c8e5ea4ca84bbde11ab1fda519bbe1f",
+    "Cap_petal_flower.obj": "08f2fcde20c0f391eb1e9317114632e3d09c6d6b5a41b4a1f6be772b93115949",
+    "Cap_rounded_hexagon.mtl": "e73fb300909412111c1d7a0b40fd14f7a9a905fb5812dedd3c077bd3807027b1",
+    "Cap_rounded_hexagon.obj": "cbc182c1a5043c50728634e990414f801edc37d200d6e438ca3d15d731f2f326",
+    "Cap_rounded_square.mtl": "7eea603f5f670be402ecea80cc330421bb6fea39ba166bd69c7c0cc9880cc6cb",
+    "Cap_rounded_square.obj": "de71027b926a62a310fe09a5ca8fe0a9491d596dca99f143b3e745cda9363abe",
+    "Cap_rounded_triangle.mtl": "e3fdd3dba58ae58ff8cad6db3dae25304ff4eff8dad1e8e48971d5a71171a699",
+    "Cap_rounded_triangle.obj": "3e6d4623fb87b73bb068dea44180b3cba36cd37b6e718f14f179899f827176c9",
+    "Cap_scalloped_coin.mtl": "a15f011a446f8f0943210ceccb2c0c58fda570092446082e685bb95b3d59803d",
+    "Cap_scalloped_coin.obj": "70ce2dbe49eab13a36a08e09fdecb9ee17158c1a606eb713ff534383dac5983d",
+    "Cap_ships_wheel.mtl": "54b22d44d3ddb996a09e46ae29d12161f2f4d2ac94b7ef5c98ee570380b6de4f",
+    "Cap_ships_wheel.obj": "efa3e075edb48393bf5966a5fffecfb82afe8e665819f92a61726d4d90cbed6f",
+    "Cap_thumb_scoop.mtl": "631a8649ac557ad6949e38b4a2e2f6dd922dcdfa1997aeeadcedec1a42938096",
+    "Cap_thumb_scoop.obj": "4ce44f0ef8f12276f186342ceb474005f74082df32a23826124e565f716f67ea",
+    "Cap_turbine_wheel.mtl": "52a58a87c02a865fd6e47bb3e19fbe46f3328f21425ad2ba0fbca98ca7053d98",
+    "Cap_turbine_wheel.obj": "ded5e846b7aec1fbd473965e0e6f5d288509ca425340b3de65a6cedf7f479803",
+    "Cap_wave_rim.mtl": "5abc5f87c32a5395277edfb68f3709f04181afac6582e2293217a2bee5d44e04",
+    "Cap_wave_rim.obj": "38be07b98fb236b358d08798010f29916a91dab996e1ae6c8bbf7549ea264c2b",
     "Cell.mtl": "88722ece3b779b410ef4f47fa3a474e4bd40204545c55a7016886835a7e77c4e",
     "Cell.obj": "cc5d255625ed2394b240bdefb9b1464a07a118fc6d2195e0f7d99844c0b71b72",
-    "Magnet.mtl": "4ef01bf49aa7af282c154d159281d5eb585f6c40590821a3ebb9cb6711069035",
-    "Magnet.obj": "7ae853fee156bf5d68908e41e54a489c3746ac3356ed9a59e3235c85dfe6b804",
+    "Magnet.mtl": "14ff6ef48c48add7c54e7d6668c8355cf73c005ca12412b69cb1b5ea4d42f8f5",
+    "Magnet.obj": "ee682d3d753a428f5abac6cff41ebb4f453c055269a52a8e53cb42fca0ef957d",
     "Stationary_Base.mtl": "8870e36cfea3936b83a7b655a335047c337d76fff599a4feac7eb4576db5ffb1",
     "Stationary_Base.obj": "ff0635cbac41998d557fd83f96519b7213acc4b5bb053b7d41cc1903911a9cb1",
     "PCB_Fasteners.mtl": "cc83a66474d2da88e384f5739c31e0483593d19319b6813ab7be1ee83ccf7179",
@@ -818,10 +818,10 @@
   "activeVariant": "V3_disc_magnets",
   "activeVariantParameters": {
     "variant": "V3 diameter-6 by 3 mm disc-magnet base",
-    "release": "1.0.32",
+    "release": "1.0.33",
     "baseline_commit": "3e1826a07d1e9314e3ca289c356e1b499013a456",
     "qualification": "CAD/print-fit prototype; attachment force and phone compatibility require measurement",
-    "physical_height_mm": 16.4,
+    "physical_height_mm": 20.9,
     "base_diameter_mm": 58.0,
     "nominal_encoder_gap_mm": 1.8,
     "magnet": {
@@ -862,11 +862,40 @@
     "printed_product_parts": 2,
     "handled_parts": 28,
     "unchanged_interfaces": [
-      "All eleven cap STEP/STL files",
-      "6808-ZZ bearing seats above Z5.4",
+      "Bottom20-disc pockets and base geometry",
+      "6808-ZZ bearing seats",
       "RevC PCB and CR2450 holder/cell poses",
       "Two M2x4 nylon screws",
-      "Diameter-5 by 1.5 mm diametric encoder magnet and integral cap stop"
-    ]
+      "Nominal1.8mm minimum magnet-to-sensor clearance"
+    ],
+    "encoder": {
+      "same_part_as_attachment_discs": true,
+      "diameter_mm": 6.0,
+      "thickness_mm": 3.0,
+      "grade": "N52",
+      "magnetization": "axial through3mm thickness",
+      "axis_in_rotor": [
+        1,
+        0,
+        0
+      ],
+      "rotation_from_flat_about_y_deg": 90,
+      "bottom_z_mm": 13.9,
+      "center_z_mm": 16.9,
+      "top_z_mm": 19.9,
+      "sensor_top_z_mm": 12.1,
+      "minimum_sensor_clearance_mm": 1.8,
+      "slot_width_x_mm": 3.4,
+      "slot_length_y_mm": 6.4,
+      "slot_mouth_z_mm": 13.8,
+      "slot_stop_z_mm": 19.9,
+      "holder_wall_mm": 0.9,
+      "minimum_roof_mm": 1.2,
+      "cap_deck_bottom_z_mm": 19.8,
+      "cap_top_z_mm": 21.1,
+      "grip_edge_bottom_z_mm": 8.6,
+      "installation": "Insert the same axial6x3mm disc on edge from inside the cap; seat its curved edge against the dry stop and retain with sidewall adhesive",
+      "qualification": "Physical field strength and TMAG3001 range/counting must be tested; a flat centered axial disc cannot provide the intended XY angle signal"
+    }
   }
 }

@@ -1,4 +1,4 @@
-"""Package the checked two-print, bottom-loaded v1.0.32 enclosure."""
+"""Package the checked two-print enclosure with its axial encoder on edge."""
 from pathlib import Path
 import hashlib
 import json
@@ -48,33 +48,37 @@ def archive(label, files, instructions):
             "members": {name: sha(data) for name, data in sorted(entries.items())}}
 
 
-docs = [H / name for name in ["README.md", "ORDER_LIST.csv", "parameters.json", "polarity-map.csv", "review.png", "exploded-v1.0.32.png", "review.html"]]
+docs = [H / name for name in ["README.md", "ORDER_LIST.csv", "parameters.json", "polarity-map.csv", "review.png", f"exploded-v{version}.png", "encoder-orientation.png", "review.html"]]
 docs += [G / name for name in ["geometry-audit.json", "print-audit.json", "print-ready-manifest.json", "assembly-step-audit.json", "native-preview-audit.json"]]
-docs += [R / "ASSEMBLY.md", R / "PROGRAMMING.md", R / "mechanical/MECHANICAL_BOM.csv"]
+docs += [R / "ASSEMBLY.md", R / "PROGRAMMING.md", R / "BOM.csv", R / "mechanical/MECHANICAL_BOM.csv", R / "mechanical/printing/PRINTING.md"]
 profiles = list((R / "mechanical/printing").glob("*.ini"))
 coupons = list((G / "Fit_Coupons").glob("*.stl")) + list((R / "mechanical/Print_STL/Coupons").glob("*.stl"))
 prints = archive("V3-discs-print-test", [*docs, *default, *coupons, *profiles],
-    "V1.0.32 V3: BOTTOM-INSERT ROUND DISCS. Print exactly Base_V3_Discs.stl and Cap_circular.stl for one device (2 product parts). "
-    "Fit coupons are tests, not device parts. Source20 diameter6 x thickness3 mm AXIAL N52 magnets. Insert from underside into blind pockets and retain with qualified sidewall adhesive. "
+    f"V{version} V3: ONE AXIAL MAGNET TYPE, TWO ORIENTATIONS. Print exactly the V3 generated Base_V3_Discs.stl and Cap_circular.stl for one device (2 product parts). "
+    "Fit coupons are tests, not device parts. Source21 identical diameter6 x thickness3 mm AXIAL N52 magnets:20 bottom attachment discs and1 encoder disc on edge in the keyed cap slot. "
+    "Insert attachment discs from the underside into blind pockets and retain with qualified sidewall adhesive. Insert the top disc from inside the cap, with its magnetic axis parallel to the PCB. "
     "NO steel backing, premade ring or separate magnet carrier. Read V3 README first. Clear base supports from all blind stops; faces must remain recessed. "
     "Use the provisional PETG profiles and re-slice for your actual printer; no machine G-code is supplied. "
     "Holding force, phone pole arrangement, adhesive retention and physical fit require prototype measurements.\n")
 
-# Include every frozen input the V3 builder verifies, plus all unchanged cap
-# alternatives, so the CAD archive is independently editable/rebuildable.
+# Include every frozen input the V3 builder verifies and all updated cap
+# alternatives so the CAD archive is independently editable/rebuildable.
 v1 = R / "mechanical/variants/V1_premade_ring"
 frozen = json.loads((v1 / "manifest.json").read_text())
 inputs = [v1 / "manifest.json", *[v1 / name for name in frozen["files"]], *[R / name for name in frozen["supplier_STEP_sha256"]]]
 inputs += [R / "mechanical/variants/V2_discrete_magnets/parameters.json", R / "mechanical/requirements.txt", R / "mechanical/glb_models.py"]
+v2 = json.loads((R / "mechanical/variants/V2_discrete_magnets/parameters.json").read_text())
+inputs += [R / name for name in v2["unchanged_cap_STEP_sha256"]]
+inputs += [R / "mechanical/print-ready-manifest.json"]
 sources = [p for p in H.glob("*.py")] + [Path(__file__).resolve()]
-caps = [R / part[key] for part in manifest["parts"] if part["name"].startswith("Cap_") for key in ["file", "STEP_file"]]
-cad = archive("V3-discs-CAD", [*docs, *profiles, *coupons, *inputs, *sources, *caps,
+current_parts = [R / part[key] for part in manifest["parts"] for key in ["file", "STEP_file"]]
+cad = archive("V3-discs-CAD", [*docs, *profiles, *coupons, *inputs, *sources, *current_parts,
     *list((G / "STEP").glob("*.step")), *list((G / "Reference_STEP").glob("*.step")),
     *list((G / "Assemblies").glob("*.step")), G / "V3_assembled.glb", G / "V3_exploded.glb", R / "BOM.csv"],
-    "V1.0.32 V3 EXACT CAD AND SOURCE. Current assemblies contain20 bottom-loaded round magnets, one base and one cap; NO steel backing or carrier. "
+    f"V{version} V3 EXACT CAD AND SOURCE. Current assemblies contain20 bottom-loaded round magnets and1 identical axial disc on edge in the updated cap; NO steel backing or carrier. "
     "Use only the V3 print manifest for printing. Assembled/exploded STEP, purchased-part references and frozen V1/V2 source inputs are for review/rebuilding, NOT product printing. "
     "V1/V2 files under their named folders are immutable historic build inputs, not alternate parts to mix into V3. "
-    "All11 current cap STEP/STL alternatives are included. Rebuild from archive root with the documented CAD Python requirements. "
+    "All11 updated cap STEP/STL alternatives are under V3/generated. Root mechanical/STEP_Parts cap files are frozen old comparison inputs, not current print parts. Rebuild standalone CAD from the archive root using build.py, audit.py and render.py with the documented Python requirements. Native circuit preview export and Bun checks require the full Git checkout. "
     "Holding force and physical qualification remain unverified. No order has been placed.\n")
 
 old_fab = D / "fidget-counter-fabrication-1.0.31.zip"
@@ -89,7 +93,7 @@ with zipfile.ZipFile(old_fab) as original, zipfile.ZipFile(new_fab) as revised:
         assert original.read(name) == revised.read(name)
 fabrication = {"file": str(new_fab.relative_to(R)), "bytes": new_fab.stat().st_size, "sha256": sha(new_fab.read_bytes()), "payload_identical_to": old_fab.name}
 result = {"version": version, "variant": "V3 bottom-loaded discs", "physical_qualified": False, "holding_force_verified": False,
-          "printed_product_parts": 2, "attachment_discs": 20, "steel_backing_count": 0, "separate_carrier_count": 0,
+          "printed_product_parts": 2, "attachment_discs": 20, "encoder_disc_identical_to_attachment": True, "total_axial_discs": 21, "physical_height_mm": 20.9, "steel_backing_count": 0, "separate_carrier_count": 0,
           "print": prints, "CAD": cad, "fabrication": fabrication}
 (D / "disc-variant-manifest.json").write_text(json.dumps(result, indent=2) + "\n")
 print(json.dumps({k: {n: v[n] for n in ["file", "bytes", "sha256"]} for k, v in result.items() if k in ["print", "CAD", "fabrication"]}, indent=2))
