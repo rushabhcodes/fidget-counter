@@ -1,10 +1,12 @@
-# Current v1.0.33 — V3 discs and the same axial encoder on edge
+# Current v1.0.34 — V3 discs and the same axial encoder on edge
 
-Use [V3 print test](https://github.com/rushabhcodes/fidget-counter/blob/codex/axial-encoder-1.0.33/manufacturing/fidget-counter-V3-discs-print-test-1.0.33.zip) for the two default product STLs plus pocket/bearing fit coupons. Use [V3 complete CAD](https://github.com/rushabhcodes/fidget-counter/blob/codex/axial-encoder-1.0.33/manufacturing/fidget-counter-V3-discs-CAD-1.0.33.zip) for assembled/exploded STEP, GLB, all cap alternatives and source. [disc-variant-manifest.json](disc-variant-manifest.json) records archive/member hashes.
+Use [V3 print test](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-V3-discs-print-test-1.0.34.zip) for the two default product STLs plus pocket/bearing fit coupons. Use [V3 complete CAD](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-V3-discs-CAD-1.0.34.zip) for assembled/exploded STEP, GLB, all cap alternatives and source. [disc-variant-manifest.json](disc-variant-manifest.json) records archive/member hashes.
 
 V3 has20 Ø6×3mm axial attachment discs inserted from the underside into blind base pockets. The top encoder uses one identical disc on edge, for21 identical discs in total. All11 generated caps have keyed slots; overall height is20.9mm. It has no steel backing or separate magnet carrier. Follow the [V3 guide](../mechanical/variants/V3_disc_magnets/README.md), print manifest and [order list](../mechanical/variants/V3_disc_magnets/ORDER_LIST.csv). Never print a purchased-part or whole-assembly reference as a product part. No machine G-code is distributed.
 
-The [v1.0.33 fabrication ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/axial-encoder-1.0.33/manufacturing/fidget-counter-fabrication-1.0.33.zip) keeps every corrected1.0.31 Gerber/BOM/CPL payload byte unchanged and adds a V3 release note. Quote all27 FIT parts, including the holder and JST header. Physical fit, magnet bonding, pole arrangement and phone holding force require prototype tests.
+The [v1.0.34 fabrication ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-fabrication-1.0.34.zip) keeps every corrected1.0.31 Gerber/BOM/CPL payload byte unchanged and adds a V3 release note. Quote all27 FIT parts, including the holder and JST header. Physical fit, magnet bonding, pole arrangement and phone holding force require prototype tests.
+
+The print and CAD kits include the native tsCircuit drawing source/document and its two-sheet A3 PDF/SVG/PNG exports. Physical geometry is unchanged from1.0.33.
 
 The following entries describe preserved earlier versions and their explicitly named archives.
 

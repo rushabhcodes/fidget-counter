@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "renderer": "Native tsCircuit / PoppyGL",
+  "source": "dist/enclosure-drawing.assembly/circuit.json",
+  "output": "enclosure-drawing.circuit.json",
+  "native_pages": 2,
+  "native_views": 6,
+  "native_dimension_lines": 7,
+  "measurements": [
+    {
+      "name": "OverallDiameter",
+      "value_mm": 61.599674224853516,
+      "nominal_mm": 61.6
+    },
+    {
+      "name": "OverallHeight",
+      "value_mm": 20.900000378489494,
+      "nominal_mm": 20.9
+    },
+    {
+      "name": "BaseDiameter",
+      "value_mm": 58,
+      "nominal_mm": 58
+    },
+    {
+      "name": "AttachmentPitchDiameter",
+      "value_mm": 49.7,
+      "nominal_mm": 49.7
+    },
+    {
+      "name": "DiscThickness",
+      "value_mm": 3,
+      "nominal_mm": 3
+    },
+    {
+      "name": "DiscDiameter",
+      "value_mm": 6,
+      "nominal_mm": 6
+    },
+    {
+      "name": "EncoderHallGap",
+      "value_mm": 1.7989997863769531,
+      "nominal_mm": 1.8
+    }
+  ],
+  "source_sha256": "89c17eb99e877ce5462e1c936fb3c77fcaa08f6487865e521b5c1b078a4582d4",
+  "resolver_sha256": "29c842605f879a58d03145e54cb274328ab0938b2ce59292f985437af729ba48",
+  "circuit_sha256": "e2564de382cdfeb6e6cbac57ccad04ab5cf1b23768d10ee32c41dcaf8c9f8ed3",
+  "exploded_parts_match_assembled": true,
+  "native_model_states": 2,
+  "models_per_state": 9,
+  "no_PCB_records_in_drawing": true,
+  "compiler": "0.0.3168",
+  "physical_geometry_release": "1.0.33"
+}

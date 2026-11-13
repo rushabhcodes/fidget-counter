@@ -1,6 +1,6 @@
 # Assemble one RevC fidget counter
 
-For current **v1.0.33 V3**, print the bottom-load base and one cap, then follow the [V3 blind-pocket magnet insertion and bonding steps](mechanical/variants/V3_disc_magnets/README.md#pocket-dimensions-and-assembly). There is no steel backing or separate carrier. The electronics, CR2450, two PCB screws, bearing and cap steps below remain the common RevC procedure. Historical V1/V2 magnet assemblies have their own variant guides.
+For current **v1.0.34 V3**, print the bottom-load base and one cap, then follow the [V3 blind-pocket magnet insertion and bonding steps](mechanical/variants/V3_disc_magnets/README.md#pocket-dimensions-and-assembly). There is no steel backing or separate carrier. The electronics, CR2450, two PCB screws, bearing and cap steps below remain the common RevC procedure. Historical V1/V2 magnet assemblies have their own variant guides.
 
 Use the current RevC CR2450 PCB, V3 Base_V3_Discs and one matching Cap. This is the rotation-only, two-print push-fit pilot. Its updated cap gives20.9mm overall phone-contact height. The base and bearing seats retain the preceding push-fit geometry; the encoder has a keyed edge slot. It has no cap button, spring, top screw, nut or separate bearing retainer.
 

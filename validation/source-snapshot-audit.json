@@ -1,12 +1,14 @@
 {
   "passed": true,
   "method": "Exact ordered circuit records; exclude only descriptive source_project_metadata filesystem hash",
-  "records": 1140,
-  "source_circuit_sha256": "90b340371b6a0327c96ccfe2de1bec3110ae22bfee26d4b9ab646ec7129dba26",
-  "saved_circuit_sha256": "90b340371b6a0327c96ccfe2de1bec3110ae22bfee26d4b9ab646ec7129dba26",
+  "records": 1147,
+  "source_circuit_sha256": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d",
+  "saved_circuit_sha256": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d",
   "source_sha256": {
-    "validation/check-source-snapshot.mjs": "a400e4e850f57f25e399bb0db2b77836b7427c806bb99c5783c0dcf9783b8d48",
-    "index.circuit.tsx": "290f4d6b344b40047fc70f8cd59ba1adb912fa1dc49407abb08d5cfb3f07205d",
+    "validation/check-source-snapshot.mjs": "a324d639fa88211b83d8f613c047d6ab8286bb228856f942952e96838d27a904",
+    "validation/normalize-compiler-output.mjs": "d3a2657c1c36ec96c35cd47cd81775f8d5cf70617c7bfb5916db70639011df5b",
+    "validation/compiler-compat-reference.json": "8516edda06a00519197046e9a24a15b0c6f3cb9fac623a3cfa0ac88dbfb0a4e3",
+    "index.circuit.tsx": "29d982fee1a530dec1f1d0354c84103f48ae7faa93268a725152c3e9b037d5f3",
     "parts.tsx": "a9ec52070d608a8c4592ce5c03db64cd490dec67b0fb349cfe4a4e489859d341",
     "passives.tsx": "e05181fcf99b2751941c16d8f43a81e541126daf283731244e9f65b1783d8ec3",
     "enclosure.tsx": "83349da4f33ed5ce194a5b49d5285c0cdea2cd2717a0687c5d25bfb759d6f473",
@@ -14,6 +16,6 @@
     "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
     "routing-contract.json": "e10878708c2a3848c783903cc28d4a49383b8b7ebccd5dddc7ad22ae24321fe6",
     "routed-paths.json": "d4999f467bc281096ce6be13c772242ff28e47b0304c0b82945d44aeed5016ea",
-    "published.circuit.json": "90b340371b6a0327c96ccfe2de1bec3110ae22bfee26d4b9ab646ec7129dba26"
+    "published.circuit.json": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d"
   }
 }

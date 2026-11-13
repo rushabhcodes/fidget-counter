@@ -1,76 +1,56 @@
 {
-  "formatVersion": 2,
-  "description": "Locally built and checked preview; hashes bind it to the published source and CAD assets.",
+  "formatVersion": 3,
+  "description": "Checked latest-tsCircuit preview and native engineering drawings; manufacturing CAD ships in GitHub kits.",
   "inputs": {
-    "cloud-build.mjs": "813cd9aea8ef99de5fce334d39ad5a861e8ce6323bfede19904d3b97e318f706",
+    "cloud-build.mjs": "9a64e77b76bf6ceabfebc54f9ce6197d64e0a1a5c71241c5a5fadc1464e0d440",
     "critical-routes.json": "2f36c75f8944a02d58dcbf8101bcb76a712b0696ab9e0b7cd99e2bf7cc5b1183",
+    "enclosure-drawing.assembly.tsx": "89c17eb99e877ce5462e1c936fb3c77fcaa08f6487865e521b5c1b078a4582d4",
+    "enclosure-drawing.circuit.json": "e2564de382cdfeb6e6cbac57ccad04ab5cf1b23768d10ee32c41dcaf8c9f8ed3",
     "enclosure.tsx": "83349da4f33ed5ce194a5b49d5285c0cdea2cd2717a0687c5d25bfb759d6f473",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj": "5cb7b3d39911902565b7d20a63b8be35513c8d72b9d0dca36c801d731893bcf5",
-    "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.step": "d8b313a83de060e58141efc987e51c0ad04a3855784f981139dc3698331d1f2d",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.tsx": "773a9b178e1e8daba40ec2b7f9804b891397ca47f1fbdabb2cc1f6b101eac994",
     "imports/A_0402CG120J500NT/A_0402CG120J500NT.obj": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d",
-    "imports/A_0402CG120J500NT/A_0402CG120J500NT.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
     "imports/A_0402CG120J500NT/A_0402CG120J500NT.tsx": "4edceabbf1b58b6a41fde1d70f4a7eba949d668ec72eb1414edd8d386432928e",
     "imports/BS_24_B4AA014/BS_24_B4AA014.obj": "37b1332676c02573b8c96ea693be5f80d3373a40ab602d9cb70b069c2f6f6d24",
-    "imports/BS_24_B4AA014/BS_24_B4AA014.step": "1446db6fa5286480ba989cfd709c9e0429209990297f99abe7f51daebc1a0f6a",
     "imports/BS_24_B4AA014/BS_24_B4AA014.tsx": "ddc0165b866906067ffbf5435488e4663689e6eab659208b0958df4d752adc4a",
     "imports/CL10B105KA8NNNC/CL10B105KA8NNNC.obj": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2",
-    "imports/CL10B105KA8NNNC/CL10B105KA8NNNC.step": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110",
     "imports/CL10B105KA8NNNC/CL10B105KA8NNNC.tsx": "a3cf86f5ec6f4a79c973bca502367f2a1947a2fb0f2ce5dd8d9e1802fc4eeba2",
     "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.obj": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2",
-    "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.step": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110",
     "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.tsx": "5542c7c34bb8c463e7fbe39e9905a37d217575bba9ad742c42b01e8c351984eb",
     "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.obj": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d",
-    "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
     "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.tsx": "995f2947f850eddfe592707f562eb9310628e63e32d2c3f2cc0b1b1426f33b03",
     "imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.obj": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d",
-    "imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
     "imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.tsx": "d0fd09855b3fc3c9625cd8037a6bfddc548d452f24d2df1ee25363e19621e938",
     "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d",
-    "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
     "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.tsx": "e9256483c613ef5f1d8153d8474c686c3cfd064495bcde7e3e0285f967c91842",
     "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.obj": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d",
-    "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.step": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14",
     "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.tsx": "7f1190238b0dae41c71b32909d60c636ee785c8f50f3fe404d292049a63a0899",
     "imports/GRM188R60J226ME15D/GRM188R60J226ME15D.obj": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2",
-    "imports/GRM188R60J226ME15D/GRM188R60J226ME15D.step": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110",
     "imports/GRM188R60J226ME15D/GRM188R60J226ME15D.tsx": "5e47da4f12d61039525619c0435f586aa86db6228e3d44a27997ead976e850ce",
     "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.obj": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2",
-    "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.step": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110",
     "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.tsx": "7f82887730a602640519427f3e61118035920018690f3707d38e065fb45e815d",
     "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.obj": "b63526a517650b79fb6295c769af37c49321e39f50c7a23ca7c6a9b148031910",
-    "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.step": "54e0f0bcaf7410e7eebc62d9ca4e2d54c30d2d5f52d816b81de85fffb4cb06f4",
     "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.tsx": "984cbe947f9d326a801fd523aa6c91ded7b9f726caa88e2d33056e13b25a778f",
     "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.obj": "b47da88d07499fc647a8d2ea4052a7f2f80ba43a034606f1f9e9120313059fc9",
-    "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.step": "a9e3440491fe778b6cd506a9af4fe608b51e57c361087ef1028b5c09c77fc199",
     "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.tsx": "b66642ae98540ea22fd36e222b70cbd2c5d09a06411b6731d642c1428283c8b3",
     "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.obj": "b47da88d07499fc647a8d2ea4052a7f2f80ba43a034606f1f9e9120313059fc9",
-    "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.step": "a9e3440491fe778b6cd506a9af4fe608b51e57c361087ef1028b5c09c77fc199",
     "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.tsx": "47f261b0aac5b5e7fbeb80d7f9ccba1339d10ef95d6c7819d2ac34897b279b6d",
     "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.obj": "8258dd6e76bc88992a6c1f9f021455cdf3a4c014b8e6f4d21aace97017f2351d",
-    "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step": "757179567becc0f67f627e24efc67b4d8b556002f4b336735358f6716bbd37ad",
     "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.tsx": "16545ac2b5a2a88e2c3c7f1d5c0c600a7fdf76b9e9cd76d621aba6e6320d5266",
     "imports/RC0402FR_07100KL/RC0402FR_07100KL.obj": "658e8980a1ff78ad44b1f30b6de0c63023cfd0b883902f3c1333902984d7bfe4",
-    "imports/RC0402FR_07100KL/RC0402FR_07100KL.step": "055d10977e0e0b859b0b263328e4e4bfd98261ad252688cb3736f72f67aa4729",
     "imports/RC0402FR_07100KL/RC0402FR_07100KL.tsx": "46f9e8e09e23bf75e78b2462cbd204ff7f14cae8c271903ab7f5d0a21a73e646",
     "imports/RC0402FR_0710KL/RC0402FR_0710KL.obj": "658e8980a1ff78ad44b1f30b6de0c63023cfd0b883902f3c1333902984d7bfe4",
-    "imports/RC0402FR_0710KL/RC0402FR_0710KL.step": "055d10977e0e0b859b0b263328e4e4bfd98261ad252688cb3736f72f67aa4729",
     "imports/RC0402FR_0710KL/RC0402FR_0710KL.tsx": "c87b0b8e4645446c1f17751797e5f7e83f427e539f32278c305d37f38d55868d",
     "imports/RFANT3216120A5T/RFANT3216120A5T.obj": "ba4988b20c73c147f25e669f375ba18952fc7264b4439dea6b34edb862bfbdfb",
-    "imports/RFANT3216120A5T/RFANT3216120A5T.step": "44168c6e5d17ffce4789710ef4075cb75102fd74af108ddc5869e7e437d108ab",
     "imports/RFANT3216120A5T/RFANT3216120A5T.tsx": "8489f287fdb3d052b5fe8617e245211732e94e3dcc16e5a8ef6934e2ec161f2c",
     "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.obj": "1b55eaa8e535dbdebf27816238bd3a8d9bba57e3f22416e2ff7283c884bf6d10",
-    "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.step": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6",
     "imports/SM05B_SRSS_TB_LF__SN_/SM05B_SRSS_TB_LF__SN_.obj": "1b55eaa8e535dbdebf27816238bd3a8d9bba57e3f22416e2ff7283c884bf6d10",
-    "imports/SM05B_SRSS_TB_LF__SN_/SM05B_SRSS_TB_LF__SN_.step": "ab33b622e6a54b6ebafffcb21fec230bef83d56353a914c847e89a277b40f8a6",
     "imports/SM05B_SRSS_TB_LF__SN_/SM05B_SRSS_TB_LF__SN_.tsx": "4e147be493b9565e6370e856fe639ec767bf92f52269b3679d55646b1711792b",
     "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.obj": "6f173be057eaf9f0a0862da20b531eca856cc867241bce9419154798d4a7f23d",
-    "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.step": "fdf0609ecdf3febf5ad11cc6e67910be38daf56d9018bce33ad0c991eaef2aff",
     "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.tsx": "a81e534199e0707e775ec31edf9ec8e3460ac86a71fcd3e3f5772cec216c1c8c",
     "imports/X201632MKB4SI/X201632MKB4SI.obj": "4dc100dd1132d03621c32baea19177e179987dca238440bf56c9a0eb7dc74047",
-    "imports/X201632MKB4SI/X201632MKB4SI.step": "40453afb315e093975ba08453ba5105709a4dd71c63128e72ffaea6807aa6cd9",
     "imports/X201632MKB4SI/X201632MKB4SI.tsx": "f0558fb79ade1f5a4ffc94483c4d6f460ba6b69a1ebf5ca9fe6da2b83d59864f",
-    "index.circuit.tsx": "290f4d6b344b40047fc70f8cd59ba1adb912fa1dc49407abb08d5cfb3f07205d",
+    "index.circuit.tsx": "29d982fee1a530dec1f1d0354c84103f48ae7faa93268a725152c3e9b037d5f3",
     "mechanical/Circuit_Models/Attachment_Discs_V3.glb": "d609819f61d26178d406ae0046a4208c62aff4148f806fb38941d9044ae18e67",
     "mechanical/Circuit_Models/Base_V3_Discs.glb": "048abf5c261acfe51caf8bf706fc4976243d5287397043645db380fa57c86d0d",
     "mechanical/Circuit_Models/Bearing_6808.glb": "736f7320e89405017e1a93bb8a8065e15775cf010ce6fa581f8374bafe4fd73c",
@@ -86,45 +66,15 @@
     "mechanical/Circuit_Models/Cap_turbine_wheel.glb": "7a9e6ef51b21c9fb72b94cea31e7fcc1a7f05891c303bffb07b39375f62aad5a",
     "mechanical/Circuit_Models/Cap_wave_rim.glb": "e1de779128a3a19e59b82969c17415a46e4a782204c77164bbab755217632f9b",
     "mechanical/Circuit_Models/Cell.glb": "3045846fa274953378a976b941ade9177be3e5783347a5f6061bad10d508c709",
+    "mechanical/Circuit_Models/Drawings/Flat_Disc_6x3.glb": "893fd32efd3d11b4320af46bc7f61ff134242cd0221a7bb500c08eef27f6001b",
+    "mechanical/Circuit_Models/Drawings/Hall_Sensor.glb": "85ffaad72a8a07ce3189a9b2fed7fae1624998dfc60b048fb9112f2187d6b29f",
+    "mechanical/Circuit_Models/Drawings/PCBA_Body.glb": "1464c2e5d266805444ab83fd1abc0d4a3e7816718bbe7dd5342ca5deb1f2ce97",
+    "mechanical/Circuit_Models/Drawings/manifest.json": "1aee59c59f9bae5bcaf67db28c19d18a433c6bce2aa7afdd7c63a65255af29ce",
     "mechanical/Circuit_Models/MagSafe_Ring.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960",
     "mechanical/Circuit_Models/Magnet.glb": "d7f664cc1c40ef3b55e26f89d4e0202ac8e0330abd3281fe48221fef7923a4a3",
     "mechanical/Circuit_Models/PCB_Fasteners.glb": "9a856224ee40f18e6772ab37b5480ad9d963f474accc788c4f6a7654a433849a",
     "mechanical/Circuit_Models/Stationary_Base.glb": "966affb8856af09b57c438899c59c696bf51aa960121a0f3e49f697ed67da099",
     "mechanical/Circuit_Models/manifest.json": "75c18718912c66f18e6cc03f17fa03130d1f6122a53f54c5dd5329b798836590",
-    "mechanical/Print_STL/Cap_circular.stl": "2faf2d3eb9862dded97681c0c0bb46bba1af5e3a3cabe973581ce2f61b03e40c",
-    "mechanical/Print_STL/Cap_four_leaf_clover.stl": "a9d27ae86ede79efaeea0ae7bfce0ba3c411099223d8441816bde09a76594ef6",
-    "mechanical/Print_STL/Cap_petal_flower.stl": "9ba03546f81f1e025b057da6227b0fe18def21a3d20838527ba9208df3d2a689",
-    "mechanical/Print_STL/Cap_rounded_hexagon.stl": "71e4d46f39b05306191fec4a9c4290f8054206428b873301c7e12c89a1d6844c",
-    "mechanical/Print_STL/Cap_rounded_square.stl": "413364588682f1b515e5646806067b91ec4b848de142aa87a5b8975f048b02d4",
-    "mechanical/Print_STL/Cap_rounded_triangle.stl": "6bd3ad01638bb9ca3ba1c7d9101a79442a973a614415e0faf909d7dd6d873cf7",
-    "mechanical/Print_STL/Cap_scalloped_coin.stl": "ff9e683fa67ad9df93aac6b932a6ad5a4a4cb9edf09d739835d9e78beb3ac335",
-    "mechanical/Print_STL/Cap_ships_wheel.stl": "7074a880c4a031a8c2f91590d8886cca00c212c34474f810ca64e88296891925",
-    "mechanical/Print_STL/Cap_thumb_scoop.stl": "c8410c846980ff2bddf38cd12198f17ee541a0e3b00995b63e87a0543c1e5b41",
-    "mechanical/Print_STL/Cap_turbine_wheel.stl": "0fff12639b37ba8b82aa67edc8219eb615a495b9f54e54711e1b02a8dc0ca6ac",
-    "mechanical/Print_STL/Cap_wave_rim.stl": "5373ca46f76bcc949844eb2e91da4d5ae253e8eada57d9ac99950b618e1774ff",
-    "mechanical/Print_STL/Coupons/Bearing_Housing_Coupon.stl": "77e160695775325884dc5adeddbf60db8c50c89449292526ba1fa9d2064c753d",
-    "mechanical/Print_STL/Coupons/Bearing_Shaft_Coupon.stl": "cf68ba607e37f4237e3dd7c9637588eebd403a62d48c962da07ea36a9431169b",
-    "mechanical/Print_STL/Coupons/Housing_51p90.stl": "587bcb07e549ce6b69a5a83b9ebba4975cc5f4fce31784f698e27d8fa1d0f7c9",
-    "mechanical/Print_STL/Coupons/Housing_51p95.stl": "77e160695775325884dc5adeddbf60db8c50c89449292526ba1fa9d2064c753d",
-    "mechanical/Print_STL/Coupons/Housing_52p00.stl": "bde6732db933d5993b6620dae13159eed1a8a0721809df8e0f3aa0bf03e738f5",
-    "mechanical/Print_STL/Coupons/Housing_52p10.stl": "22f67aedaa7e40ba2b73e403c5eacb6ef4d5b726543fbdea6821fdb55cba0d29",
-    "mechanical/Print_STL/Coupons/Shaft_39p90.stl": "61b770b3b45e804984794efcc44b65af2c65b7e030e38553e9a16408a989d9aa",
-    "mechanical/Print_STL/Coupons/Shaft_40p00.stl": "ac88cce002b67177d5731c4d33d5fd1adbc24915ffb918dd5ea948a8f2727fa4",
-    "mechanical/Print_STL/Coupons/Shaft_40p05.stl": "cf68ba607e37f4237e3dd7c9637588eebd403a62d48c962da07ea36a9431169b",
-    "mechanical/Print_STL/Coupons/Shaft_40p10.stl": "aa434663863a604e9cb26e111eb624a896531e67fcdb178e348258ee7d9dd6b5",
-    "mechanical/Print_STL/Stationary_Base.stl": "237609e4cf2c135538fe225450e38ee59b189b6b4552fee1416795b4ebba6799",
-    "mechanical/STEP_Parts/Cap_circular.step": "7557517b57122c0a9ae697f9e130fe2118c93817622b0f432c7442a98578909f",
-    "mechanical/STEP_Parts/Cap_four_leaf_clover.step": "25a3d703357f7cbac357b6b36ce45e394248613e9038387c809ac2c97397893a",
-    "mechanical/STEP_Parts/Cap_petal_flower.step": "2cf7b3fa08f91bd0e741d9aea5734483076105c4cc85feaa28ba5f0de516d79d",
-    "mechanical/STEP_Parts/Cap_rounded_hexagon.step": "2f04ad6914a0ca20d9a0811207be5240aa5a92a63f46a4ffceb45e17b13a5351",
-    "mechanical/STEP_Parts/Cap_rounded_square.step": "559fc30609566977c442b5bb15da8865130af13dc66e975e99fa60b599ee68d6",
-    "mechanical/STEP_Parts/Cap_rounded_triangle.step": "95c53d8e2b94a65e126bf58d7ffbd43fc6eacc6f6c2e87cae74a0a20ed9fdd44",
-    "mechanical/STEP_Parts/Cap_scalloped_coin.step": "378c84e2f27cac624f455db155b06acfb7e3a28af6c2f35d5c1aa7354a8c6d5c",
-    "mechanical/STEP_Parts/Cap_ships_wheel.step": "3be76804ae6c667de783071b314bd41c504dc5ea0635b84f1a58819757931626",
-    "mechanical/STEP_Parts/Cap_thumb_scoop.step": "19a67ed1fcaf9a2116e4e133326c90dc0490bec679e9f01ab4fbeef8a05328df",
-    "mechanical/STEP_Parts/Cap_turbine_wheel.step": "3d1d45c05282a73d4333fdf06e4260ea4d9f5fe7a4c315e83f134ef98cbc63b6",
-    "mechanical/STEP_Parts/Cap_wave_rim.step": "a6f9559dd1c30fcf4d272f080faf422abc6b91a238978f618843f1c85e033629",
-    "mechanical/STEP_Parts/Stationary_Base.step": "97a485258f61aee789dde9ab2957f2351f0e246bcbc0e503a8df9cf7be04463b",
     "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f",
     "mechanical/build_battery_courtyard.py": "c386547f06a432732bc106a4e98696f26f569d51938226ed623d98c19737da9c",
     "mechanical/build_enclosure.py": "d84408f82438efe5554534f647972ac49de9252bd2fe67a3e9f8f4ea1f6a7c32",
@@ -143,9 +93,6 @@
     "mechanical/render_bearing_layout.py": "c858c61703908c15e1a00ca4c3268e04ec96b1d762e4473c0aa8e7e72dd08d34",
     "mechanical/render_compact_comparison.py": "c74d3b2d98914009bfc6fd2ebd1c16a7c96ba494d678b83fcccb162e78be6cb4",
     "mechanical/sync_checked_exports.py": "ae8c7b633471e7c2341c49c5a69dd085fd88309cc6cd5470266728bbcc0d3b76",
-    "mechanical/variants/V1_premade_ring/Base_V1_Premade_Ring.step": "97a485258f61aee789dde9ab2957f2351f0e246bcbc0e503a8df9cf7be04463b",
-    "mechanical/variants/V1_premade_ring/Base_V1_Premade_Ring.stl": "237609e4cf2c135538fe225450e38ee59b189b6b4552fee1416795b4ebba6799",
-    "mechanical/variants/V1_premade_ring/MagSafe_Ring_reference.glb": "f8f63b45d6875998059ea3aad077b397859e5918e19d652dbcae71d5df687960",
     "mechanical/variants/V1_premade_ring/enclosure-parameters.json": "0d5aa354aea49bbf034dfe73290f86b36ebd1bd161eee7f42b70fdccbfb642ec",
     "mechanical/variants/V1_premade_ring/manifest.json": "ac1fa90884309c36d51357bbd3bd95e87f74184c63de5b27a990cf73e34a0e8c",
     "mechanical/variants/V1_premade_ring/source/build_enclosure.py": "d84408f82438efe5554534f647972ac49de9252bd2fe67a3e9f8f4ea1f6a7c32",
@@ -156,176 +103,201 @@
     "mechanical/variants/V2_discrete_magnets/audit.py": "3e7d3bedce040ca26d78bc62e9729bbddd5d16e9fb08b889cd6e0f241cc13d4c",
     "mechanical/variants/V2_discrete_magnets/build.py": "891bde644fbfbea10356ce2ce475aa1ba5721f7fa4f1c8c0d62567379692e4ee",
     "mechanical/variants/V2_discrete_magnets/check_assembly_steps.py": "91a59589fbf61fccb370ef81c947ea912168cdde3aa7c3c6c48632f0738aafe0",
-    "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Base_V2_Discrete.stl": "64d4d9c36c3eae6f50e44a797b5aa9f384fad380e79248344c70d9a8fda45089",
-    "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Magnet_Carrier_V2.stl": "4cc527c134e2c709adfb49c6883c152ed0876c8b1418afc85ac582b04b87a765",
-    "mechanical/variants/V2_discrete_magnets/generated/Reference_STEP/Attachment_Magnets_V2.step": "2040ba98b1ca435a593f581274ece6f582c4ca1c4e51d3a06b408f352e1d0496",
-    "mechanical/variants/V2_discrete_magnets/generated/Reference_STEP/Steel_Backing_V2.step": "f7937ee5e4fe8e27c0dae764861a4703770ec7024903783159e59c331215c413",
-    "mechanical/variants/V2_discrete_magnets/generated/STEP/Base_V2_Discrete.step": "c69f655bda0623dd31736a03d092cc8c76db73b8061113e432a3038ea93784f2",
-    "mechanical/variants/V2_discrete_magnets/generated/STEP/Magnet_Carrier_V2.step": "372a6edb596c7e014dd7f4eed73dc0f18987a19fc005913d33f744c3c7be9c82",
-    "mechanical/variants/V2_discrete_magnets/generated/V2_assembled.glb": "ea596387628e778f24958723c29b2220723a5c19207f68a7de062d94a2a89f2c",
     "mechanical/variants/V2_discrete_magnets/generated/assembly-step-audit.json": "7dc9f90ecc00dd8c7f9a21b7c11f2445d7f384a6da58eedcfeeda9e53146b429",
     "mechanical/variants/V2_discrete_magnets/generated/geometry-audit.json": "0077740438cb5ae3646bf74e6e305d2d964743f33b8113a670da95f295741c39",
     "mechanical/variants/V2_discrete_magnets/generated/print-audit.json": "c5929aab59d921cd2c4dfbb1a40c1ced057ef7b79c749dd306b1e5ecb3708e2d",
     "mechanical/variants/V2_discrete_magnets/generated/print-ready-manifest.json": "4f01d73c7d1484f26cbe9c3a98f14b0d48303504276abedee9cff5756b09cfec",
     "mechanical/variants/V2_discrete_magnets/parameters.json": "3201c98f79cfa3c8a7f3d2147ed67686c6073fc9455ff845972accba30277378",
-    "mechanical/variants/V2_discrete_magnets/polarity.svg": "58be248d31a17c81920e67a5bf54f7ee3c410c786464170d4e5bf136be1e8fa3",
     "mechanical/variants/V2_discrete_magnets/render.py": "9be36947877a045712514b595d07bd1bde7e9717ac43f6a911a32042b10c7b36",
-    "mechanical/variants/V2_discrete_magnets/review.html": "a0f3a4dce86fbda076782e367f118049c52615b154db35238e29d97f9afd1abf",
-    "mechanical/variants/V2_discrete_magnets/review.png": "3ec110f03115ae4a36ff55519f55e8a603165ace037235acd5b70db8f63fff58",
     "mechanical/variants/V3_disc_magnets/audit.py": "0aa8ff979ea7ead65d7963f78d48a3eb376b2759e374a6af310dc235aa3d8c2a",
     "mechanical/variants/V3_disc_magnets/build.py": "369496525b82612b73e7cce2d5315a3f8d1d94e1c928bd9434663c20e225e8ae",
+    "mechanical/variants/V3_disc_magnets/drawings/drawing-audit.json": "ef83f964961b2178de0794f5513e54991997a50c9bd687cea8da7eaab46f4e5c",
+    "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.png": "7ee3b629335cc14ca59d36d2e5798a0f47d09e0d93155d5298e52da919d2d630",
+    "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.svg": "e51df99d4e452e9ae28df7bda856d1f201edd761ad1bd4a22f1f37fc25ce4715",
+    "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-2.png": "999c805aec3f8694317d5cfb44c0deb160e671db6914af7fce8c44ec56bdb025",
+    "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-2.svg": "fa2a6317b71ab4740ef35aa9b42eb5b901e391f13c3752aec79fff86bb285843",
+    "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34.pdf": "98b0c0215b1aba018c37d3b71e6690908df214a1048442bd2f79b189054bffab",
     "mechanical/variants/V3_disc_magnets/encoder-orientation.png": "88607ca1daff9b387a7070b34923295651c59eeec74cd442d46da2b199fc07c0",
     "mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png": "364f9c0ccd10c7f5df6ca92c548eef81373e8a76097d544010063bdb2f83494f",
+    "mechanical/variants/V3_disc_magnets/export_drawing_models.py": "88d807f68e8fee0b87f28e6fcf5904de6db6e50aeafc14a110e4ff370eee5eac",
     "mechanical/variants/V3_disc_magnets/export_preview.py": "0fc711e54c55a8d5a6a73e5fcf01e9f2cc0a2730242ed15d87c4ec50937f4b66",
-    "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.3.stl": "20bd0ff6e741748909192e08cdd2a6dd96e5ac4e6f334832f701097b255c64fc",
-    "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.4.stl": "87da9339db876edc94ee962814f062e491d725998fd8188be77fcf86c85493a5",
-    "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.5.stl": "e9223a8b3713b757e7adf02768649e0493aebaa1bf75b8afa92947e1246dad04",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Base_V3_Discs.stl": "95304262ba207dfd90137b7afca48d88aa5c9d5e1bd26a3f9b8eb04a580d3e59",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_circular.stl": "4f8810dfa851c53989236074102ac34c47e713aad6e87604a3591a9835a94c06",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_four_leaf_clover.stl": "b7c0113f34f4e74bfd43d439a0de76dc6c084d4690e7461ae8517da2766f31e8",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_petal_flower.stl": "2e39ba211ecd0c33703827e76db9fe4722cce6c7c0b7f11e7afa9209afc16042",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_hexagon.stl": "8906ad9db1e4b01532547271d9f8b6a063b79a70cf146dd2acdd292a7d812900",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_square.stl": "288b2cb2ef93fe14dde734bb485e3a34d88c0733d0277d9da2f110468d8209de",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_triangle.stl": "8856a6da2a9fbd142f35fa240611bd6ce6a662874b11e5bd64b20c2afb3caf72",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_scalloped_coin.stl": "56a6e114a3b636f4bd1da783a06dcfe04210a3388d465dac9e4f6b2dceada75c",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_ships_wheel.stl": "0e92ff1af56d6941679ea58540a1455acef3b6c3e79faa0a032b41543a2e97d3",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_thumb_scoop.stl": "527e4100af8e343982525851057aebe3a6c3713145fe1ce97eae5e2224592cff",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_turbine_wheel.stl": "d48f6e13e4fa9cf86ec7ee1990062157a2762b42fbaac432d0388fcd3063eea2",
-    "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_wave_rim.stl": "814c6f93f62d1d1478e11917fe08ee7e3851801c15c2ddf14b8fda1166b86855",
-    "mechanical/variants/V3_disc_magnets/generated/Reference_STEP/Attachment_Discs_V3.step": "070da754b41ec3c11c80dfca31f8e06d2d7b7275ade7f4766122fd7069aff00f",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Base_V3_Discs.step": "842dc512f975acffb7b557fef1386fbc007ccc8dfa73f92f0b7c60933afa6973",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_circular.step": "d23249eca152fd882f2faf91877cb5da45ae187c74520e2b063ef60321d40618",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_four_leaf_clover.step": "a1c9d0f31e815e63c61e6e6c8b2b11f6743c9d41fc0066979fb305786e0788c4",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_petal_flower.step": "aebd9a6ace3947d313705cfff517bfb9c72a77234a76c32f032244a12a686630",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_hexagon.step": "4f35d9a432be40ef529db19fe5fc85617685ec58fa45c5bd8582f92a10902dc1",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_square.step": "e9a9a29cfe963a65ab2eb921ad5043bd6ac2fa1993a2ec9ea8408b8f5a8bfc8e",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_triangle.step": "5854c96090f3c19fa1172ca0dfb9b1cc37c0805ba3f5acc1752613a48e5610fc",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_scalloped_coin.step": "c718b06ad442385bb42755ce505c135d92216226e3d6dd939efd24fde6f968a2",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_ships_wheel.step": "fb808fcd1b6ebbeeaf913823c08f235169f23a3a0afa9ce17830174d24415efc",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_thumb_scoop.step": "3bf66fdc638e855d0f7130a9a850525a5698d4296b13f5fc26ee9f511208117d",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_turbine_wheel.step": "b90b4aa7fbd5b876c709f09ebff292789a2ebb50c4712110305f5d3864e82ae9",
-    "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_wave_rim.step": "eec4383871aa59b7c2e2eebec584428b4588134f6610603c9b92259c131fed07",
-    "mechanical/variants/V3_disc_magnets/generated/V3_assembled.glb": "14e43f88c0b328f2b35c7e69e7ace8306e68ec40284a0c68981ec9ad1a3da07a",
-    "mechanical/variants/V3_disc_magnets/generated/V3_exploded.glb": "f278536e95f8b7b6486ab8ac0d96e467489f3f7d5cf2dd2754aa31d38adffe22",
     "mechanical/variants/V3_disc_magnets/generated/assembly-step-audit.json": "dd633527f22795c7187d7dbb32d529e4d459abe8bfde3792bd5f49a5536d4614",
     "mechanical/variants/V3_disc_magnets/generated/geometry-audit.json": "117b1b04f308568a6006b63018c37fa2185c79222323cfd74165f4ae2bf91207",
-    "mechanical/variants/V3_disc_magnets/generated/native-preview-audit.json": "6515d0196a46dae2bcbbf04a91bcd04ce8ce8f4c746c129de9a55058d564dc15",
+    "mechanical/variants/V3_disc_magnets/generated/native-preview-audit.json": "20bc27a59c2dc179bd635be6d1480ab0742c86a14b27a9b2f6bd9b3870ad48b9",
     "mechanical/variants/V3_disc_magnets/generated/print-audit.json": "ed3580c082f09c45f9683b597e417870ba5f1fcefb47f504de5e4049743f8e42",
     "mechanical/variants/V3_disc_magnets/generated/print-ready-manifest.json": "bda73b6c80cdc028f1cc998a2cf47088f1cddcc85b8c7becb2ef140504eea2d4",
     "mechanical/variants/V3_disc_magnets/parameters.json": "cb82fe2e467e0549a8a796a7a54bd9cc49875f753035c02a1b041e5b6e1e5598",
     "mechanical/variants/V3_disc_magnets/render.py": "6854da66359e3015e763d99a6861522c0b75ffdc72de1cc78152be31037bd847",
-    "mechanical/variants/V3_disc_magnets/review.html": "aefa7470c0dd5a75597a404fdcaaaf3b2dafe3911e701094a6b9e44786898296",
+    "mechanical/variants/V3_disc_magnets/review.html": "2419bf3a34d300f81df3833680ca54673df1cdc3cd9212dcd2d11deddb3ee051",
     "mechanical/variants/V3_disc_magnets/review.png": "6905a2e72014dd218ab788b6a96e193355a9e881e1cc1a38e020e1b5536d03b8",
     "model-assets.d.ts": "bcd106931f1096dab95359b6d47a67456c3da66efd2f5c0c76e29783cada6463",
     "parts.tsx": "a9ec52070d608a8c4592ce5c03db64cd490dec67b0fb349cfe4a4e489859d341",
     "passives.tsx": "e05181fcf99b2751941c16d8f43a81e541126daf283731244e9f65b1783d8ec3",
-    "published.circuit.json": "90b340371b6a0327c96ccfe2de1bec3110ae22bfee26d4b9ab646ec7129dba26",
+    "published.circuit.json": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d",
     "routed-paths.json": "d4999f467bc281096ce6be13c772242ff28e47b0304c0b82945d44aeed5016ea",
     "routing-contract.json": "e10878708c2a3848c783903cc28d4a49383b8b7ebccd5dddc7ad22ae24321fe6",
     "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
-    "tscircuit.config.json": "1c7a862f952af93641eb03b8dae60be89bd5ecc4074276d8bd203f51c307ac83",
+    "tscircuit.config.json": "776ed9abc96e2a3d884745bfff6e1b1cf61dcf4b1d9d60d352840c1ef4e428a9",
     "tsconfig.json": "3369b71950778d4e33593aee7a0389f2f4162946c3abfd8c1ec7c138c16e8276",
     "validation/apply-model-materials.mjs": "e47f5fe28d64c51604024e5b1af0b120fc7b433bc3137ac91cf7af25f8a766f4",
     "validation/check-disc-variant.mjs": "4954909ffd3c95c3d4297e205c7952e1cc3d82c0892cfbe4415c1b63483502be",
-    "validation/check-fresh-routing.mjs": "88138876570607c40e278838b43b4b3b2bdf4fed52a632191faa606b1ddde35a",
+    "validation/check-fresh-routing.mjs": "22338b8afed7d2205e637964088023159b411944b413364fb2c4ddd4f1eba200",
+    "validation/check-native-drawings.mjs": "e6b46c38ca5ce89eb4f95f8975d2200d1263f682c11abffeec413d1f19373373",
     "validation/check-nordic-rf.py": "5a7c1a02a20345a2d88f6f95afec2dddaf09f72fb414fb333f9644c33223a14f",
-    "validation/check-source-snapshot.mjs": "a400e4e850f57f25e399bb0db2b77836b7427c806bb99c5783c0dcf9783b8d48",
+    "validation/check-source-snapshot.mjs": "a324d639fa88211b83d8f613c047d6ab8286bb228856f942952e96838d27a904",
     "validation/cloud-package-input.mjs": "eeadd46469991a4b8fcb34c0e9ce12bfc66d230fadbb1be70ecb27a17fa57cce",
     "validation/compact-glb.mjs": "6ad5b29b288615cfbdfe7f4906a5e3ee9cfd58e40c02e49b12500bda1600bc37",
+    "validation/compiler-compat-reference.json": "8516edda06a00519197046e9a24a15b0c6f3cb9fac623a3cfa0ac88dbfb0a4e3",
     "validation/enrich-orientations.mjs": "ee681a0ceb422a2e5378dfb455cece05cfe64865626c5bb2ad7c4245c03f5164",
     "validation/fitted-component-records.mjs": "bf3968344e16add924448b0e9e62dd6ac0a3d232433f4c765973beab483a0624",
-    "validation/fresh-routing-reference.json": "32ffb9be4daad5c4c5a16d60109dbcc159f2ca5c73c68f9765d56c974a159632",
+    "validation/fresh-routing-reference.json": "c206c6145c9956a099f62a969599cc19b43f47996b5ef057524cfdcf6fed4b84",
     "validation/import-provenance.mjs": "7bd439812b56afb33f7a0e5aa54b55b3796b2fbbb2ff2a868a1dc12bd77d19d2",
     "validation/jlc-imports.json": "a5633a0320c0ae2549522b9e7ce5b6b730d55d97bae75777bfac6e65733f240f",
+    "validation/native-drawing-audit.json": "869ddeb464e737078a06d0ffd3c41ad14fd2433fa51aff1a15b6631bcccffe4c",
     "validation/nordic-electrical-reference.json": "c2bd56c7e6228abbfa597dbeb3d893383a9d70cbd6bd22949c907f1512a094a9",
     "validation/nordic-electrical-revision.mjs": "17ac5d3d18b87a318fd16b38e87ea7132f89cddbd7346f15cced22c01f18e8bb",
+    "validation/normalize-compiler-output.mjs": "d3a2657c1c36ec96c35cd47cd81775f8d5cf70617c7bfb5916db70639011df5b",
+    "validation/prepare-cloud-assets.mjs": "c5caf1429dd5359a2d0827fbd0fd2be71cad1295abca7582c9eee2d571228ca6",
     "validation/prepare-supplier-frames.mjs": "e05c1d7cdf5e087d450f621b54ef381829ddf6abe308ebe3d7213a5b815142ba",
+    "validation/resolve-native-drawing-dimensions.mjs": "29c842605f879a58d03145e54cb274328ab0938b2ce59292f985437af729ba48",
     "validation/restore-cad-inputs.mjs": "e364f010627b07de3fb703014e4bd1f2b1b1a11b9f5223667b141e1f5bf473a0",
-    "validation/restore-model-normals.mjs": "de22cf2e85da39515f083abdd82b633a104821e728d41b9cc6121ec5d2cb56bd"
+    "validation/restore-model-normals.mjs": "de22cf2e85da39515f083abdd82b633a104821e728d41b9cc6121ec5d2cb56bd",
+    "validation/source-snapshot-audit.json": "bfe712056bd0610176a7d1ca8f7ca6cff320e15134b990e452ee2f12945ac637"
   },
   "packageInput": {
-    "sha256": "f386acc1e35c4819e98b7714e3784d65ee43f66df150d07ed29757a285968b5f",
-    "compilerVersion": "0.0.3060",
-    "localLockfileSha256": "68a70f6f63cac65ef065c3cc833b028156e25d2002b95a5960f1c3bff9e95af6"
+    "sha256": "0678e50770bc206b1693fcbcaa178e49710591c279ca77865d5f2950d83abdb5",
+    "compilerVersion": "0.0.3168",
+    "localLockfileSha256": "39ef0ab1e5d7dca399e67a3cfb376a2f24097d59e7dfbdf59b94fa9fe209b658"
   },
   "artifacts": [
     {
-      "source": "published.circuit.json",
+      "source": "cloud-assets/preview-circuit.json.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/preview-circuit.json.part-000.gz.b64"
+      ],
       "output": "dist/published/circuit.json",
-      "encoding": "raw",
-      "bytes": 874652,
-      "sha256": "90b340371b6a0327c96ccfe2de1bec3110ae22bfee26d4b9ab646ec7129dba26"
+      "encoding": "gzip-base64",
+      "bytes": 876618,
+      "sha256": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d"
     },
     {
-      "source": "cloud-assets/pcb.png.gz.b64",
+      "source": "cloud-assets/preview-pcb.png.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/preview-pcb.png.part-000.gz.b64"
+      ],
       "output": "dist/published/pcb.png",
       "encoding": "gzip-base64",
       "bytes": 83997,
       "sha256": "86e5fb6539e42180f8ba07ee96778d4b14cac6ba450c22d818671316fd31c875"
     },
     {
-      "source": "cloud-assets/pcb.svg.gz.b64",
+      "source": "cloud-assets/preview-pcb.svg.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/preview-pcb.svg.part-000.gz.b64"
+      ],
       "output": "dist/published/pcb.svg",
       "encoding": "gzip-base64",
       "bytes": 366971,
       "sha256": "42569408311ee9a5f831b4483e09e4ccac56170f8791ee27ee2d7af0daa6170e"
     },
     {
-      "source": "cloud-assets/schematic.png.gz.b64",
+      "source": "cloud-assets/preview-schematic.png.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/preview-schematic.png.part-000.gz.b64"
+      ],
       "output": "dist/published/schematic.png",
       "encoding": "gzip-base64",
-      "bytes": 34166,
-      "sha256": "e2b8ce078f6a88e06045347e2bdf72648c0c38e7ee2a04928ecfca4e8444c5a0"
+      "bytes": 33576,
+      "sha256": "8c27137ed8663c281e281779410d1ed6e8fa9f88e76facc08843aadcc25436ef"
     },
     {
-      "source": "cloud-assets/schematic.svg.gz.b64",
+      "source": "cloud-assets/preview-schematic.svg.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/preview-schematic.svg.part-000.gz.b64"
+      ],
       "output": "dist/published/schematic.svg",
       "encoding": "gzip-base64",
-      "bytes": 130262,
-      "sha256": "ece965e6ac23ec6625ed5ef9f6970da6541895be5005f9a6917a3c718c94b52f"
+      "bytes": 130074,
+      "sha256": "469f4953221dd80fc89eafc164907c623a5dda9c802e79ecce557f9b4270c368"
     },
     {
-      "source": "cloud-assets/3d.glb.gz.b64",
+      "source": "cloud-assets/preview-3d.glb.part-000.gz.b64",
       "sourceParts": [
-        "cloud-assets/3d.glb.part-000.gz.b64",
-        "cloud-assets/3d.glb.part-001.gz.b64"
+        "cloud-assets/preview-3d.glb.part-000.gz.b64",
+        "cloud-assets/preview-3d.glb.part-001.gz.b64"
       ],
       "output": "dist/published/3d.glb",
       "encoding": "gzip-base64",
       "bytes": 13665324,
       "sha256": "ee2833d827273679481daeb56ca81ef73812bb1f316890198d2721c74c2658e8"
+    },
+    {
+      "source": "cloud-assets/preview-3d.png.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/preview-3d.png.part-000.gz.b64"
+      ],
+      "output": "dist/published/3d.png",
+      "encoding": "gzip-base64",
+      "bytes": 19536,
+      "sha256": "2809564a5be11abd67f69efa4011fae270bef729eba5cd04873a68486c2d4345"
+    },
+    {
+      "source": "cloud-assets/native-drawing-document.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/native-drawing-document.part-000.gz.b64"
+      ],
+      "output": "dist/enclosure-drawing/circuit.json",
+      "encoding": "gzip-base64",
+      "bytes": 31535,
+      "sha256": "e2564de382cdfeb6e6cbac57ccad04ab5cf1b23768d10ee32c41dcaf8c9f8ed3"
+    },
+    {
+      "source": "cloud-assets/native-enclosure-assembly.svg.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/native-enclosure-assembly.svg.part-000.gz.b64"
+      ],
+      "output": "dist/enclosure-drawing/drawings/enclosure-assembly.svg",
+      "encoding": "gzip-base64",
+      "bytes": 114936,
+      "sha256": "e51df99d4e452e9ae28df7bda856d1f201edd761ad1bd4a22f1f37fc25ce4715"
+    },
+    {
+      "source": "cloud-assets/native-enclosure-magnet-details.svg.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/native-enclosure-magnet-details.svg.part-000.gz.b64"
+      ],
+      "output": "dist/enclosure-drawing/drawings/enclosure-magnet-details.svg",
+      "encoding": "gzip-base64",
+      "bytes": 138088,
+      "sha256": "fa2a6317b71ab4740ef35aa9b42eb5b901e391f13c3752aec79fff86bb285843"
+    },
+    {
+      "source": "cloud-assets/native-drawing-preview.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/native-drawing-preview.part-000.gz.b64"
+      ],
+      "output": "dist/enclosure-drawing/3d.png",
+      "encoding": "gzip-base64",
+      "bytes": 115219,
+      "sha256": "6bf7561ecdb8fd1a0207d14ec20f5dade2a7db717d07fe2ea4c315181176da1c"
+    },
+    {
+      "source": "cloud-assets/native-site.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/native-site.part-000.gz.b64"
+      ],
+      "output": "dist/index.html",
+      "encoding": "gzip-base64",
+      "bytes": 2420,
+      "sha256": "70388db09dcd04f3725b114cf0e080fd0e139b65bfebe49ab4367f1debc6e036"
     }
   ],
   "variantArtifacts": [
     {
-      "source": "mechanical/variants/V2_discrete_magnets/review.html",
-      "output": "dist/v2/index.html",
-      "sha256": "a0f3a4dce86fbda076782e367f118049c52615b154db35238e29d97f9afd1abf",
-      "bytes": 3176
-    },
-    {
-      "source": "mechanical/variants/V2_discrete_magnets/review.png",
-      "output": "dist/v2/review.png",
-      "sha256": "3ec110f03115ae4a36ff55519f55e8a603165ace037235acd5b70db8f63fff58",
-      "bytes": 193788
-    },
-    {
-      "source": "mechanical/variants/V2_discrete_magnets/polarity.svg",
-      "output": "dist/v2/polarity.svg",
-      "sha256": "58be248d31a17c81920e67a5bf54f7ee3c410c786464170d4e5bf136be1e8fa3",
-      "bytes": 20108
-    },
-    {
-      "source": "mechanical/variants/V2_discrete_magnets/generated/V2_assembled.glb",
-      "output": "dist/v2/V2_assembled.glb",
-      "sha256": "ea596387628e778f24958723c29b2220723a5c19207f68a7de062d94a2a89f2c",
-      "bytes": 18809860
-    },
-    {
       "source": "mechanical/variants/V3_disc_magnets/review.html",
       "output": "dist/v3/index.html",
-      "sha256": "aefa7470c0dd5a75597a404fdcaaaf3b2dafe3911e701094a6b9e44786898296",
-      "bytes": 2118
+      "sha256": "2419bf3a34d300f81df3833680ca54673df1cdc3cd9212dcd2d11deddb3ee051",
+      "bytes": 2744
     },
     {
       "source": "mechanical/variants/V3_disc_magnets/review.png",
@@ -346,207 +318,158 @@
       "bytes": 115673
     },
     {
-      "source": "mechanical/variants/V3_disc_magnets/generated/V3_assembled.glb",
-      "output": "dist/v3/generated/V3_assembled.glb",
-      "sha256": "14e43f88c0b328f2b35c7e69e7ace8306e68ec40284a0c68981ec9ad1a3da07a",
-      "bytes": 19371868
+      "source": "mechanical/variants/V3_disc_magnets/drawings/drawing-audit.json",
+      "output": "dist/v3/drawings/drawing-audit.json",
+      "sha256": "ef83f964961b2178de0794f5513e54991997a50c9bd687cea8da7eaab46f4e5c",
+      "bytes": 2190
     },
     {
-      "source": "mechanical/variants/V3_disc_magnets/generated/V3_exploded.glb",
-      "output": "dist/v3/generated/V3_exploded.glb",
-      "sha256": "f278536e95f8b7b6486ab8ac0d96e467489f3f7d5cf2dd2754aa31d38adffe22",
-      "bytes": 19375976
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.svg",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.34-sheet-1.svg",
+      "sha256": "e51df99d4e452e9ae28df7bda856d1f201edd761ad1bd4a22f1f37fc25ce4715",
+      "bytes": 114936
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.png",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.34-sheet-1.png",
+      "sha256": "7ee3b629335cc14ca59d36d2e5798a0f47d09e0d93155d5298e52da919d2d630",
+      "bytes": 338846
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-2.svg",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.34-sheet-2.svg",
+      "sha256": "fa2a6317b71ab4740ef35aa9b42eb5b901e391f13c3752aec79fff86bb285843",
+      "bytes": 138088
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-2.png",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.34-sheet-2.png",
+      "sha256": "999c805aec3f8694317d5cfb44c0deb160e671db6914af7fce8c44ec56bdb025",
+      "bytes": 630156
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34.pdf",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.34.pdf",
+      "sha256": "98b0c0215b1aba018c37d3b71e6690908df214a1048442bd2f79b189054bffab",
+      "bytes": 109951
     }
   ],
   "cadInputArchives": [
     {
-      "source": "cloud-assets/cad-inputs-0.json.gz.b64",
-      "sha256": "0d0b104e5012bac2e55d68f522753f0accb3e8dfa1224136a190b6956745b124",
+      "source": "cloud-assets/runtime-inputs-0.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/runtime-inputs-0.part-000.gz.b64"
+      ],
+      "sha256": "ae57db5b7eefe1373b80724d066ca669c73549e7fc2c5599cebf184a2c6d3647",
       "files": [
-        "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step"
+        "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj",
+        "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.tsx",
+        "imports/A_0402CG120J500NT/A_0402CG120J500NT.obj",
+        "imports/A_0402CG120J500NT/A_0402CG120J500NT.tsx",
+        "imports/BS_24_B4AA014/BS_24_B4AA014.obj",
+        "imports/BS_24_B4AA014/BS_24_B4AA014.tsx",
+        "imports/CL10B105KA8NNNC/CL10B105KA8NNNC.obj",
+        "imports/CL10B105KA8NNNC/CL10B105KA8NNNC.tsx",
+        "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.obj",
+        "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.tsx",
+        "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.obj",
+        "imports/GJM1555C1HR80WB01D/GJM1555C1HR80WB01D.tsx",
+        "imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.obj",
+        "imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.tsx",
+        "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
+        "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.tsx",
+        "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.obj",
+        "imports/GRM155R71C104KA88D/GRM155R71C104KA88D.tsx",
+        "imports/GRM188R60J226ME15D/GRM188R60J226ME15D.obj",
+        "imports/GRM188R60J226ME15D/GRM188R60J226ME15D.tsx",
+        "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.obj",
+        "imports/GRM188R60J475KE19D/GRM188R60J475KE19D.tsx",
+        "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.obj",
+        "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.tsx",
+        "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.obj",
+        "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.tsx",
+        "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.obj",
+        "imports/LQG15HS6N8J02D/LQG15HS6N8J02D.tsx",
+        "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.obj",
+        "imports/NRF52810_QFAA_R/NRF52810_QFAA_R.tsx",
+        "imports/RC0402FR_07100KL/RC0402FR_07100KL.obj",
+        "imports/RC0402FR_07100KL/RC0402FR_07100KL.tsx",
+        "imports/RC0402FR_0710KL/RC0402FR_0710KL.obj",
+        "imports/RC0402FR_0710KL/RC0402FR_0710KL.tsx",
+        "imports/RFANT3216120A5T/RFANT3216120A5T.obj",
+        "imports/RFANT3216120A5T/RFANT3216120A5T.tsx",
+        "imports/SM05B_SRSS_TB/SM05B_SRSS_TB.obj",
+        "imports/SM05B_SRSS_TB_LF__SN_/SM05B_SRSS_TB_LF__SN_.obj",
+        "imports/SM05B_SRSS_TB_LF__SN_/SM05B_SRSS_TB_LF__SN_.tsx",
+        "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.obj",
+        "imports/TMAG3001A2YBGR/TMAG3001A2YBGR.tsx",
+        "imports/X201632MKB4SI/X201632MKB4SI.obj",
+        "imports/X201632MKB4SI/X201632MKB4SI.tsx"
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-1.json.gz.b64",
-      "sha256": "969c2ac65cc35bfec9e4f11922431b0879bfe463c8f881fcaf5802dada567d40",
+      "source": "cloud-assets/runtime-inputs-1.part-000.gz.b64",
+      "sourceParts": [
+        "cloud-assets/runtime-inputs-1.part-000.gz.b64"
+      ],
+      "sha256": "26f46800f7c06716720908aeae829c30b5977b553a6c0c6403b4c696239f9c39",
       "files": [
         "mechanical/Circuit_Models/Bearing_6808.glb",
-        "mechanical/Print_STL/Cap_circular.stl",
-        "mechanical/Print_STL/Cap_four_leaf_clover.stl",
-        "mechanical/Print_STL/Cap_petal_flower.stl",
-        "mechanical/Print_STL/Cap_rounded_hexagon.stl",
-        "mechanical/Print_STL/Cap_rounded_square.stl"
+        "mechanical/Circuit_Models/Drawings/Flat_Disc_6x3.glb"
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-2.json.gz.b64",
-      "sha256": "1014095365b8c26684fefe6d3b3d88c037a984f8ad806fb5cdcc0a52256d3ef3",
-      "files": [
-        "mechanical/Print_STL/Cap_rounded_triangle.stl",
-        "mechanical/Print_STL/Cap_scalloped_coin.stl",
-        "mechanical/Print_STL/Cap_ships_wheel.stl",
-        "mechanical/Print_STL/Cap_thumb_scoop.stl",
-        "mechanical/Print_STL/Cap_turbine_wheel.stl",
-        "mechanical/Print_STL/Cap_wave_rim.stl",
-        "mechanical/Print_STL/Coupons/Bearing_Housing_Coupon.stl",
-        "mechanical/Print_STL/Coupons/Bearing_Shaft_Coupon.stl",
-        "mechanical/Print_STL/Coupons/Housing_51p90.stl",
-        "mechanical/Print_STL/Coupons/Housing_51p95.stl",
-        "mechanical/Print_STL/Coupons/Housing_52p00.stl",
-        "mechanical/Print_STL/Coupons/Housing_52p10.stl",
-        "mechanical/Print_STL/Coupons/Shaft_39p90.stl",
-        "mechanical/Print_STL/Coupons/Shaft_40p00.stl",
-        "mechanical/Print_STL/Coupons/Shaft_40p05.stl",
-        "mechanical/Print_STL/Coupons/Shaft_40p10.stl",
-        "mechanical/Print_STL/Stationary_Base.stl",
-        "mechanical/STEP_Parts/Cap_circular.step"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-3.json.gz.b64",
-      "sha256": "80d48a01170ef2637a07a03653bfb0c39106189c9d8d78e51d138e3a3075a389",
-      "files": [
-        "mechanical/STEP_Parts/Cap_four_leaf_clover.step",
-        "mechanical/STEP_Parts/Cap_petal_flower.step",
-        "mechanical/STEP_Parts/Cap_rounded_hexagon.step",
-        "mechanical/STEP_Parts/Cap_rounded_square.step"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-4.json.gz.b64",
-      "sha256": "8334d4e8a8916a23f22890e46d5469b2d91546e04ea1fa705a233ae0ef3eb677",
-      "files": [
-        "mechanical/STEP_Parts/Cap_rounded_triangle.step",
-        "mechanical/STEP_Parts/Cap_scalloped_coin.step",
-        "mechanical/STEP_Parts/Cap_ships_wheel.step"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-5.json.gz.b64",
-      "sha256": "70dcba8d7a830cc451b01a8c0ae44d7cc125d5ab7b576a8ae4088801f15cd409",
-      "files": [
-        "mechanical/STEP_Parts/Cap_thumb_scoop.step",
-        "mechanical/STEP_Parts/Cap_turbine_wheel.step"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-6.json.gz.b64",
-      "sha256": "4d83c461edfaa479aa3490f637fafd3a7041329041f44b061b90749eb12f2be2",
-      "files": [
-        "mechanical/STEP_Parts/Cap_wave_rim.step",
-        "mechanical/STEP_Parts/Stationary_Base.step",
-        "mechanical/variants/V1_premade_ring/Base_V1_Premade_Ring.step",
-        "mechanical/variants/V1_premade_ring/Base_V1_Premade_Ring.stl",
-        "mechanical/variants/V1_premade_ring/MagSafe_Ring_reference.glb",
-        "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Base_V2_Discrete.stl",
-        "mechanical/variants/V2_discrete_magnets/generated/Print_STL/Magnet_Carrier_V2.stl"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-7.json.gz.b64",
-      "sha256": "97f764369a869e025375b9904e7b4ccafe1b845e7b2ae95d047e44e6e5f4d645",
-      "files": [
-        "mechanical/variants/V2_discrete_magnets/generated/Reference_STEP/Attachment_Magnets_V2.step",
-        "mechanical/variants/V2_discrete_magnets/generated/Reference_STEP/Steel_Backing_V2.step",
-        "mechanical/variants/V2_discrete_magnets/generated/STEP/Base_V2_Discrete.step",
-        "mechanical/variants/V2_discrete_magnets/generated/STEP/Magnet_Carrier_V2.step"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-8.json.gz.b64",
+      "source": "cloud-assets/runtime-inputs-2.part-000.gz.b64",
       "sourceParts": [
-        "cloud-assets/cad-inputs-8.part-000.json.gz.b64",
-        "cloud-assets/cad-inputs-8.part-001.json.gz.b64",
-        "cloud-assets/cad-inputs-8.part-002.json.gz.b64",
-        "cloud-assets/cad-inputs-8.part-003.json.gz.b64"
+        "cloud-assets/runtime-inputs-2.part-000.gz.b64"
       ],
-      "sha256": "bff000d3b834cde6e86e903d846088274c6ece72c8a16e82db37004a28a7bedd",
+      "sha256": "475fa1a62b583369d9ece9022820ff61d70711c3be0f8086c896f7dbac5ae35b",
       "files": [
-        "mechanical/variants/V2_discrete_magnets/generated/V2_assembled.glb"
+        "mechanical/Circuit_Models/Drawings/Hall_Sensor.glb"
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-9.json.gz.b64",
-      "sha256": "fcb3572eab68204d9dcefe979e36d809e1d24ef8bd82dd1a7514e2fe2a46d787",
-      "files": [
-        "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.3.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.4.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Fit_Coupons/Disc_pocket_D6.5.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Base_V3_Discs.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_circular.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_four_leaf_clover.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_petal_flower.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_hexagon.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_square.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_rounded_triangle.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_scalloped_coin.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_ships_wheel.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_thumb_scoop.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_turbine_wheel.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Print_STL/Cap_wave_rim.stl",
-        "mechanical/variants/V3_disc_magnets/generated/Reference_STEP/Attachment_Discs_V3.step",
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Base_V3_Discs.step"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-10.json.gz.b64",
-      "sha256": "595c077165c3a59655afd3042632d24f142163783eb6a5c02085fd9748494b38",
-      "files": [
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_circular.step",
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_four_leaf_clover.step",
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_petal_flower.step"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-11.json.gz.b64",
-      "sha256": "b1bce6508b32c266b4c99784d0d6b18d7abb5cc336c2fcdc78a3d652f3b6d258",
-      "files": [
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_hexagon.step",
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_square.step",
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_rounded_triangle.step",
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_scalloped_coin.step",
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_ships_wheel.step"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-12.json.gz.b64",
-      "sha256": "70d238d91ddd2096bf8eec6f1c46429b20655994966b9e5815d453fd5b7a9592",
-      "files": [
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_thumb_scoop.step",
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_turbine_wheel.step"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-13.json.gz.b64",
-      "sha256": "0947b32b20c4702dde86cab7da37c5b816854c963a2716e8f06e5274224420ac",
-      "files": [
-        "mechanical/variants/V3_disc_magnets/generated/STEP/Cap_wave_rim.step"
-      ]
-    },
-    {
-      "source": "cloud-assets/cad-inputs-14.json.gz.b64",
+      "source": "cloud-assets/runtime-inputs-3.part-000.gz.b64",
       "sourceParts": [
-        "cloud-assets/cad-inputs-14.part-000.json.gz.b64",
-        "cloud-assets/cad-inputs-14.part-001.json.gz.b64",
-        "cloud-assets/cad-inputs-14.part-002.json.gz.b64",
-        "cloud-assets/cad-inputs-14.part-003.json.gz.b64"
+        "cloud-assets/runtime-inputs-3.part-000.gz.b64",
+        "cloud-assets/runtime-inputs-3.part-001.gz.b64",
+        "cloud-assets/runtime-inputs-3.part-002.gz.b64"
       ],
-      "sha256": "f3e4c2c364b269de54f2a893d18320c86046c83d3ab896c9c077d842bf5c7608",
+      "sha256": "f2c4fee210ed651e4a8842a770fd92905a6a10a36aaba28f749f75408eb902e2",
       "files": [
-        "mechanical/variants/V3_disc_magnets/generated/V3_assembled.glb"
+        "mechanical/Circuit_Models/Drawings/PCBA_Body.glb"
       ]
     },
     {
-      "source": "cloud-assets/cad-inputs-15.json.gz.b64",
+      "source": "cloud-assets/runtime-inputs-4.part-000.gz.b64",
       "sourceParts": [
-        "cloud-assets/cad-inputs-15.part-000.json.gz.b64",
-        "cloud-assets/cad-inputs-15.part-001.json.gz.b64",
-        "cloud-assets/cad-inputs-15.part-002.json.gz.b64",
-        "cloud-assets/cad-inputs-15.part-003.json.gz.b64"
+        "cloud-assets/runtime-inputs-4.part-000.gz.b64"
       ],
-      "sha256": "0bfc888e8fd586fc64cf3172338518283e3d2792b841fc8a48088e22a3868590",
+      "sha256": "5fc6d2e993418f8ce1581388b5574b022ea6196465f4d835d59461c55ab98728",
       "files": [
-        "mechanical/variants/V3_disc_magnets/generated/V3_exploded.glb"
+        "mechanical/Circuit_Models/Drawings/manifest.json",
+        "validation/apply-model-materials.mjs",
+        "validation/check-disc-variant.mjs",
+        "validation/check-fresh-routing.mjs",
+        "validation/check-native-drawings.mjs",
+        "validation/check-nordic-rf.py",
+        "validation/check-source-snapshot.mjs",
+        "validation/compact-glb.mjs",
+        "validation/compiler-compat-reference.json",
+        "validation/enrich-orientations.mjs",
+        "validation/fitted-component-records.mjs",
+        "validation/fresh-routing-reference.json",
+        "validation/import-provenance.mjs",
+        "validation/jlc-imports.json",
+        "validation/native-drawing-audit.json",
+        "validation/nordic-electrical-reference.json",
+        "validation/nordic-electrical-revision.mjs",
+        "validation/normalize-compiler-output.mjs",
+        "validation/prepare-cloud-assets.mjs",
+        "validation/prepare-supplier-frames.mjs",
+        "validation/resolve-native-drawing-dimensions.mjs",
+        "validation/restore-model-normals.mjs",
+        "validation/source-snapshot-audit.json"
       ]
     }
   ]

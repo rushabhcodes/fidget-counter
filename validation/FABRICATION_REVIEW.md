@@ -14,7 +14,7 @@ Nordic's nRF52810 Product Specification v1.3, sections 7.3.1 and 7.3.9, supports
 
 ## Digital verification
 
-The compiler remains pinned to **tscircuit 0.0.3060** with a reproducible frozen lockfile. Source/saved-circuit comparison covers every record except descriptive filesystem metadata. The bounded revision guard permits only the specified component/pin changes against the earlier design; its complete routing reference continues to reject unapproved copper, nets, layers, widths, locations, masks, constraints and supplier orientations. Targeted tests reject the previous DEC3 value, a DEC2 connection and misleading schematic pin numbers.
+The compiler remains pinned to **tscircuit 0.0.3168** with a reproducible frozen lockfile. Source/saved-circuit comparison covers every record except descriptive filesystem metadata. The bounded revision guard permits only the specified component/pin changes against the earlier design; its complete routing reference continues to reject unapproved copper, nets, layers, widths, locations, masks, constraints and supplier orientations. Targeted tests reject the previous DEC3 value, a DEC2 connection and misleading schematic pin numbers.
 
 **KiCad 9.0.2** independently checks 0.10 mm copper clearance, 0.11 mm tracks, 0.15 mm different-net SMT pad spacing, 0.20 mm drill clearance and 0.30 mm board-edge clearance. The final native check requires zero unresolved electrical/clearance errors and zero unconnected items. An actual injected wrong-net short must be rejected.
 
@@ -37,3 +37,5 @@ The bearing has no positive axial lock. Coupon fit, seating/pull-off force, drag
 ## Reproduce
 
 Install Bun dependencies with `bun install --frozen-lockfile`; install mechanical Python requirements plus validation/requirements-gerber.txt, KiCad 9 CLI/pcbnew and PrusaSlicer 2.8.1. Run the source build, refresh the saved snapshot, then bounded routing/RF checks, Bun tests, TypeScript, source parity, native fabrication and Gerber parity. Follow README.md for commands and the print manifest for slicer instructions. Audit hashes bind results to the final source and exports.
+
+Release 1.0.34 upgrades the compiler to 0.0.3168. The bounded compatibility adapter normalizes equivalent display-offset units and inductor pin aliases, validates new-compiler pour fingerprints, then retains the three released copper-pour polygons and route membership metadata. All physical PCB records remain exact against corrected 1.0.31. Native engineering drawings use a separate drawing assembly and do not add PCB components.

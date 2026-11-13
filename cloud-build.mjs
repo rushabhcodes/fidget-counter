@@ -19,7 +19,7 @@ const projectPath = (name) => {
 }
 
 console.log("[cloud-build] Verifying source and checked preview artifacts")
-if (manifest.formatVersion !== 2) throw new Error("Unsupported checked preview manifest; run build:cloud:prepare")
+if (manifest.formatVersion !== 3) throw new Error("Unsupported checked preview manifest; run build:cloud:prepare")
 verifyPackageInput({
   packageJson: JSON.parse(readFileSync(projectPath("package.json"))),
   lockfile: readFileSync(projectPath("bun.lock")),
@@ -69,4 +69,12 @@ for (const item of [...artifacts,...variants]) {
   writeFileSync(output, item.bytes)
   console.log(`[cloud-build] Wrote ${item.output} (${item.bytes.length} bytes)`)
 }
-console.log("[cloud-build] Complete: checked circuit, PCB, schematic, V3 assembly and preserved V2 review")
+// Native viewers resolve CAD URLs relative to the site or selected snapshot.
+for(const name of Object.keys(manifest.inputs).filter(name=>
+  (name.startsWith('imports/')||name.startsWith('mechanical/Circuit_Models/'))&&/\.(glb|obj|mtl)$/.test(name))){
+  const bytes=readFileSync(projectPath(name))
+  for(const prefix of ['dist/','dist/published/','dist/enclosure-drawing/']){
+    const path=projectPath(prefix+name);mkdirSync(dirname(path),{recursive:true});writeFileSync(path,bytes)
+  }
+}
+console.log("[cloud-build] Complete: checked PCB, 3D models, native engineering drawings and A3 exports")

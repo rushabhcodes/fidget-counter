@@ -27,7 +27,7 @@ export function logicalNetPartition(c){
 }
 const old=()=>JSON.parse(execFileSync('git',['show','a7c29c470c439e6f4e35314b9c68bba5c8d8c100:published.circuit.json'],{maxBuffer:16e6}));
 export function verifyFreshRouting(c){
- const ref=JSON.parse(readFileSync('validation/fresh-routing-reference.json'));assert.equal(ref.compiler,'0.0.3060');assert.equal(JSON.parse(readFileSync('package.json')).dependencies.tscircuit,ref.compiler);
+ const ref=JSON.parse(readFileSync('validation/fresh-routing-reference.json'));assert.equal(ref.reference_compiler??ref.compiler,'0.0.3060');assert.equal(JSON.parse(readFileSync('package.json')).dependencies.tscircuit,ref.compiler);
  const baseline=old();assert.deepEqual(fittedComponentRecords(c),approvedNordicFittedRecords(fittedComponentRecords(baseline)),'Fitted identity, value, land, layer or CAD pose changed beyond the bounded Nordic correction');
  assert.deepEqual(logicalNetPartition(c),approvedNordicPartition(logicalNetPartition(baseline)),'Actual component-pin net membership changed');
  assert.deepEqual(freshRoutingSignature(c).pins,approvedNordicPins(freshRoutingSignature(baseline).pins),'Real electrical pin attributes changed');

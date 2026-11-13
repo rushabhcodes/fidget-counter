@@ -1,7 +1,7 @@
 import {routeBoard} from "./routing"
 import routes from "./critical-routes.json";
 const criticalRoutes: Record<string, import("@tscircuit/props").TraceProps["pcbPath"]> = routes;
-// Fresh 0.0.3060 routing, verified and frozen by the physical/electrical routing contract.
+// Approved0.0.3060 route geometry; the latest pinned compiler is checked against the same physical/electrical contract.
 import { Fragment } from "react";
 import { assembly } from "@tscircuit/core";
 import enclosureParameters from "./mechanical/enclosure-parameters.json";

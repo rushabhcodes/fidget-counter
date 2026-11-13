@@ -1,5 +1,5 @@
 {
-  "compiler": "0.0.3060",
+  "compiler": "0.0.3168",
   "baseline_commit": "a7c29c470c439e6f4e35314b9c68bba5c8d8c100",
   "intent": "Bounded Nordic PS7.3.1/7.3.9 electrical correction; C7 removed, C8=100pF, C3 local VSS31 return; all other fitted parts and electrical semantics retained",
   "signature": {
@@ -612,5 +612,6 @@
       "{\"is_antenna_trace\":false,\"route\":[{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":-0.054916,\"y\":4.4},{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":-0.054916,\"y\":4.4},{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":3.35,\"y\":4.4},{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":3.35,\"y\":7.95},{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":3.35,\"y\":12.026},{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":-1.524,\"y\":16.9},{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":-1.524,\"y\":16.9}],\"sourceConnection\":\"{\\\"max_via_count\\\":0,\\\"nets\\\":[],\\\"ports\\\":[\\\"ANT1.1\\\",\\\"L2.2\\\"]}\",\"trace_length\":17.923792903,\"type\":\"pcb_trace\"}",
       "{\"is_antenna_trace\":false,\"route\":[{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":-2.380011,\"y\":4.4},{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":-2.380011,\"y\":4.4},{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":-1.145084,\"y\":4.4},{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":-1.145084,\"y\":4.4},{\"layer\":\"top\",\"route_type\":\"wire\",\"width\":0.5,\"x\":-1.145084,\"y\":4.4}],\"sourceConnection\":\"{\\\"max_via_count\\\":0,\\\"nets\\\":[],\\\"ports\\\":[\\\"L1.2\\\",\\\"L2.1\\\"]}\",\"trace_length\":1.234927,\"type\":\"pcb_trace\"}"
     ]
-  }
+  },
+  "reference_compiler": "0.0.3060"
 }

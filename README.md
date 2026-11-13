@@ -1,12 +1,14 @@
-# Fidget counter — v1.0.33
+# Fidget counter — v1.0.34
 
 V3 uses **20 circular Ø6 × 3 mm axial magnets inserted from underneath a one-piece base**. The blind pockets have integral stops and sidewall adhesive retention. The enclosure uses two PETG prints: one base and one selected cap. There is no permanent magnetic ring, steel backing or separate magnet carrier in this version.
 
-![Current V3: assembled, underside pockets and cutaway](mechanical/variants/V3_disc_magnets/review.png)
+![Native tsCircuit engineering drawing and exploded enclosure](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.png)
 
 The native circuit preview selects V3. The base remains Ø58 mm, the largest cap Ø61.6 mm and physical height **20.9 mm**. The top encoder uses the **same Ø6 × 3 mm axial disc as the base, mounted on its edge** in a keyed slot. All eleven cap styles have been updated. Keeping the 1.8 mm sensor clearance adds 4.5 mm to the cap height; the bearing, PCB, CR2450 and screw positions are retained.
 
-[Encoder orientation](mechanical/variants/V3_disc_magnets/encoder-orientation.png) · [Full exploded view](mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png) · [Print, source and assemble V3](mechanical/variants/V3_disc_magnets/README.md) · [Parts to order](mechanical/variants/V3_disc_magnets/ORDER_LIST.csv)
+[Native engineering drawing](enclosure-drawing.circuit.json) · [A3 engineering PDF](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34.pdf) · [Encoder orientation](mechanical/variants/V3_disc_magnets/encoder-orientation.png) · [Full exploded view](mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png) · [Print, source and assemble V3](mechanical/variants/V3_disc_magnets/README.md) · [Parts to order](mechanical/variants/V3_disc_magnets/ORDER_LIST.csv)
+
+The drawing is authored with native `assembly.drawing.page` and `partview` elements in [enclosure-drawing.assembly.tsx](enclosure-drawing.assembly.tsx). It includes assembled, exploded, front, underside and section views. Model-derived measurements are stored as native `drawing_dimension_line` records. The physical enclosure remains CAD revision 1.0.33.
 
 ## Build one prototype
 
@@ -19,26 +21,29 @@ This remains a fit-test prototype. Removing the steel backing changes the magnet
 
 ## Files to print or order
 
-- [V3 print-test ZIP — two default product parts and fit coupons](https://github.com/rushabhcodes/fidget-counter/blob/codex/axial-encoder-1.0.33/manufacturing/fidget-counter-V3-discs-print-test-1.0.33.zip)
-- [V3 complete exact CAD ZIP — STEP, GLB, all cap alternatives and source](https://github.com/rushabhcodes/fidget-counter/blob/codex/axial-encoder-1.0.33/manufacturing/fidget-counter-V3-discs-CAD-1.0.33.zip)
-- [Current PCB fabrication ZIP — Gerbers, BOM and CPL](https://github.com/rushabhcodes/fidget-counter/blob/codex/axial-encoder-1.0.33/manufacturing/fidget-counter-fabrication-1.0.33.zip)
+- [V3 print-test ZIP — two default product parts and fit coupons](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-V3-discs-print-test-1.0.34.zip)
+- [V3 complete exact CAD ZIP — STEP, GLB, all cap alternatives and source](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-V3-discs-CAD-1.0.34.zip)
+- [Current PCB fabrication ZIP — Gerbers, BOM and CPL](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-fabrication-1.0.34.zip)
 - [V3 print manifest](mechanical/variants/V3_disc_magnets/generated/print-ready-manifest.json), [mechanical BOM](mechanical/MECHANICAL_BOM.csv), [electronic BOM](BOM.csv)
 
 The PCB fabrication payload is unchanged from corrected v1.0.31/1.0.30. Get a Standard double-sided PCBA/ENIG quote for all **27 FIT** components. Holder BT1 and J_DEBUG are already included. Application firmware is rotation-only: one complete turn either way counts once, with unfinished backtracking canceled. Firmware, the RevC board definition, BLE client and CI build remain in [firmware](firmware/README.md); use an artifact from a successful run for the intended commit.
 
 ## Rebuild and verify
 
-Use pinned tscircuit0.0.3060/Bun, the mechanical Python requirements, VTK/Matplotlib for images and an installed PrusaSlicer CLI. For V3 the variant builder is the authoritative base and cap generator; the root enclosure parameters continue to describe the unchanged common V1 hardware.
+Use pinned tscircuit 0.0.3168/Bun, the mechanical Python requirements, VTK/Matplotlib for images and an installed PrusaSlicer CLI. For V3 the variant builder is the authoritative base and cap generator; the root enclosure parameters continue to describe the unchanged common V1 hardware.
 
 ```sh
 bun install --frozen-lockfile
+python -m pip install -r mechanical/drawing-requirements.txt
 python mechanical/variants/V3_disc_magnets/build.py
 python mechanical/variants/V3_disc_magnets/export_preview.py
 python mechanical/variants/V3_disc_magnets/audit.py --slicer /path/to/prusa-slicer
 python mechanical/variants/V3_disc_magnets/render.py
 bun run typecheck
-bun test
 bun run build:source
+bun test
+bun run build:drawings
+python validation/export-native-drawings.py
 bun run check:assembly
 bun run check:programming
 ```
@@ -46,3 +51,5 @@ bun run check:programming
 The V3 CAD audit checks 20 bottom insertion paths, blind roofs, all eleven caps through full rotation, 27 actual supplier bodies and unchanged upper interfaces. The native preview check requires all routed PCB records and fitted electronic records to equal frozen corrected v1.0.31. Print audits check actual toolpaths; they do not qualify a particular printer, magnet bond or attachment force.
 
 [V1 premade ring](mechanical/variants/V1_premade_ring/README.md) and [V2 rectangular magnets with steel/carrier](mechanical/variants/V2_discrete_magnets/README.md) are preserved historical alternatives. Use each version's complete matching parts. Their old audit reports describe those versions, not V3. [Mechanical background](MECHANICAL.md), [assembly](ASSEMBLY.md), [programming](PROGRAMMING.md) and [PCB review](validation/FABRICATION_REVIEW.md) retain the common hardware evidence.
+
+Compiler 0.0.3168 is the latest npm release checked on 2026-11-13. Its schema adapter preserves every approved physical PCB record and the three original copper pours; this release does not change PCB fabrication geometry. Cloud publishing restores checked native artifacts and drawing sheets instead of recompiling CAD. Full manufacturing STEP/STL remain in the GitHub CAD kit.

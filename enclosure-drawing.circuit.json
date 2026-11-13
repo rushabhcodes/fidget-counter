@@ -1,0 +1,1243 @@
+[
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_0",
+    "ftype": "printedpart",
+    "name": "Base",
+    "material": "petg"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_1",
+    "ftype": "subassembly",
+    "name": "AttachmentDiscs",
+    "display_name": "20 × Ø6 × 3 axial discs"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_2",
+    "ftype": "subassembly",
+    "name": "Mount"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_3",
+    "ftype": "printedpart",
+    "name": "Cap",
+    "material": "petg"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_4",
+    "ftype": "subassembly",
+    "name": "Encoder",
+    "display_name": "Same Ø6 × 3 axial disc on edge"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_5",
+    "ftype": "subassembly",
+    "name": "Bearing",
+    "display_name": "6808-ZZ / 40 × 52 × 7"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_6",
+    "ftype": "subassembly",
+    "name": "PCB_Screws",
+    "display_name": "2 × M2 × 4 nylon"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_7",
+    "ftype": "subassembly",
+    "name": "BoardAnd26FittedParts"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_8",
+    "ftype": "subassembly",
+    "name": "Hall"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_9",
+    "ftype": "subassembly",
+    "name": "PCBA"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_10",
+    "ftype": "subassembly",
+    "name": "Battery",
+    "display_name": "CR2450"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_11",
+    "ftype": "subassembly",
+    "name": "Assembled"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_12",
+    "ftype": "printedpart",
+    "name": "Base",
+    "material": "petg"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_13",
+    "ftype": "subassembly",
+    "name": "AttachmentDiscs",
+    "display_name": "20 × Ø6 × 3 axial discs"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_14",
+    "ftype": "subassembly",
+    "name": "Mount"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_15",
+    "ftype": "printedpart",
+    "name": "Cap",
+    "material": "petg"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_16",
+    "ftype": "subassembly",
+    "name": "Encoder",
+    "display_name": "Same Ø6 × 3 axial disc on edge"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_17",
+    "ftype": "subassembly",
+    "name": "Bearing",
+    "display_name": "6808-ZZ / 40 × 52 × 7"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_18",
+    "ftype": "subassembly",
+    "name": "PCB_Screws",
+    "display_name": "2 × M2 × 4 nylon"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_19",
+    "ftype": "subassembly",
+    "name": "BoardAnd26FittedParts"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_20",
+    "ftype": "subassembly",
+    "name": "Hall"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_21",
+    "ftype": "subassembly",
+    "name": "PCBA"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_22",
+    "ftype": "subassembly",
+    "name": "Battery",
+    "display_name": "CR2450"
+  },
+  {
+    "type": "source_component",
+    "source_component_id": "source_component_23",
+    "ftype": "subassembly",
+    "name": "Exploded"
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_0",
+    "model_glb_url": "./mechanical/Circuit_Models/Base_V3_Discs.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_0",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_1",
+    "model_glb_url": "./mechanical/Circuit_Models/Attachment_Discs_V3.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_1",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_2",
+    "model_glb_url": "./mechanical/Circuit_Models/Cap_circular.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_3",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_3",
+    "model_glb_url": "./mechanical/Circuit_Models/Magnet.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_4",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_4",
+    "model_glb_url": "./mechanical/Circuit_Models/Bearing_6808.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_5",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_5",
+    "model_glb_url": "./mechanical/Circuit_Models/PCB_Fasteners.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_6",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_6",
+    "model_glb_url": "./mechanical/Circuit_Models/Drawings/PCBA_Body.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_7",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_7",
+    "model_glb_url": "./mechanical/Circuit_Models/Drawings/Hall_Sensor.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_8",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_8",
+    "model_glb_url": "./mechanical/Circuit_Models/Cell.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_10",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_9",
+    "model_glb_url": "./mechanical/Circuit_Models/Base_V3_Discs.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 25
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_12",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_10",
+    "model_glb_url": "./mechanical/Circuit_Models/Attachment_Discs_V3.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": -20
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_13",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_11",
+    "model_glb_url": "./mechanical/Circuit_Models/Cap_circular.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 280
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_15",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_12",
+    "model_glb_url": "./mechanical/Circuit_Models/Magnet.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 235
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_16",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_13",
+    "model_glb_url": "./mechanical/Circuit_Models/Bearing_6808.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 190
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_17",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_14",
+    "model_glb_url": "./mechanical/Circuit_Models/PCB_Fasteners.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 145
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_18",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_15",
+    "model_glb_url": "./mechanical/Circuit_Models/Drawings/PCBA_Body.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 105
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_19",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_16",
+    "model_glb_url": "./mechanical/Circuit_Models/Drawings/Hall_Sensor.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 105
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_20",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_component",
+    "cad_component_id": "cad_component_17",
+    "model_glb_url": "./mechanical/Circuit_Models/Cell.glb",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 70
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "layer": "top",
+    "source_component_id": "source_component_22",
+    "model_origin_position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "model_unit_to_mm_scale_factor": 1,
+    "model_object_fit": "contain_within_bounds",
+    "anchor_alignment": "center",
+    "show_as_translucent_model": false
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_0",
+    "name": "Assembled",
+    "quantity": 1,
+    "source_component_id": "source_component_11"
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_1",
+    "name": "Mount",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_0",
+    "source_component_id": "source_component_2"
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_2",
+    "name": "Base",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_1",
+    "source_component_id": "source_component_0",
+    "cad_component_ids": [
+      "cad_component_0"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_3",
+    "name": "20 × Ø6 × 3 axial discs",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_1",
+    "source_component_id": "source_component_1",
+    "cad_component_ids": [
+      "cad_component_1"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_4",
+    "name": "Cap",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_0",
+    "source_component_id": "source_component_3",
+    "cad_component_ids": [
+      "cad_component_2"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_5",
+    "name": "Same Ø6 × 3 axial disc on edge",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_0",
+    "source_component_id": "source_component_4",
+    "cad_component_ids": [
+      "cad_component_3"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_6",
+    "name": "6808-ZZ / 40 × 52 × 7",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_0",
+    "source_component_id": "source_component_5",
+    "cad_component_ids": [
+      "cad_component_4"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_7",
+    "name": "2 × M2 × 4 nylon",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_0",
+    "source_component_id": "source_component_6",
+    "cad_component_ids": [
+      "cad_component_5"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_8",
+    "name": "PCBA",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_0",
+    "source_component_id": "source_component_9"
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_9",
+    "name": "BoardAnd26FittedParts",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_8",
+    "source_component_id": "source_component_7",
+    "cad_component_ids": [
+      "cad_component_6"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_10",
+    "name": "Hall",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_8",
+    "source_component_id": "source_component_8",
+    "cad_component_ids": [
+      "cad_component_7"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_11",
+    "name": "CR2450",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_0",
+    "source_component_id": "source_component_10",
+    "cad_component_ids": [
+      "cad_component_8"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_12",
+    "name": "Exploded",
+    "quantity": 1,
+    "source_component_id": "source_component_23"
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_13",
+    "name": "Mount",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_12",
+    "source_component_id": "source_component_14"
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_14",
+    "name": "Base",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_13",
+    "source_component_id": "source_component_12",
+    "cad_component_ids": [
+      "cad_component_9"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_15",
+    "name": "20 × Ø6 × 3 axial discs",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_13",
+    "source_component_id": "source_component_13",
+    "cad_component_ids": [
+      "cad_component_10"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_16",
+    "name": "Cap",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_12",
+    "source_component_id": "source_component_15",
+    "cad_component_ids": [
+      "cad_component_11"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_17",
+    "name": "Same Ø6 × 3 axial disc on edge",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_12",
+    "source_component_id": "source_component_16",
+    "cad_component_ids": [
+      "cad_component_12"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_18",
+    "name": "6808-ZZ / 40 × 52 × 7",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_12",
+    "source_component_id": "source_component_17",
+    "cad_component_ids": [
+      "cad_component_13"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_19",
+    "name": "2 × M2 × 4 nylon",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_12",
+    "source_component_id": "source_component_18",
+    "cad_component_ids": [
+      "cad_component_14"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_20",
+    "name": "PCBA",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_12",
+    "source_component_id": "source_component_21"
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_21",
+    "name": "BoardAnd26FittedParts",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_20",
+    "source_component_id": "source_component_19",
+    "cad_component_ids": [
+      "cad_component_15"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_22",
+    "name": "Hall",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_20",
+    "source_component_id": "source_component_20",
+    "cad_component_ids": [
+      "cad_component_16"
+    ]
+  },
+  {
+    "type": "cad_assembly_bom_item",
+    "cad_assembly_bom_item_id": "cad_assembly_bom_item_23",
+    "name": "CR2450",
+    "quantity": 1,
+    "parent_cad_assembly_bom_item_id": "cad_assembly_bom_item_12",
+    "source_component_id": "source_component_22",
+    "cad_component_ids": [
+      "cad_component_17"
+    ]
+  },
+  {
+    "type": "drawing_page",
+    "drawing_page_id": "drawing_page_0",
+    "name": "enclosure-assembly",
+    "display_name": "Enclosure / assembled and exploded",
+    "width": 420,
+    "height": 297,
+    "page_size": "iso_a3",
+    "orientation": "landscape"
+  },
+  {
+    "type": "drawing_part_view",
+    "drawing_part_view_id": "drawing_part_view_0",
+    "drawing_page_id": "drawing_page_0",
+    "source_component_ids": [
+      "source_component_11",
+      "source_component_2",
+      "source_component_0",
+      "source_component_1",
+      "source_component_3",
+      "source_component_4",
+      "source_component_5",
+      "source_component_6",
+      "source_component_9",
+      "source_component_7",
+      "source_component_8",
+      "source_component_10"
+    ],
+    "name": "AssembledIso",
+    "display_name": "Assembled enclosure",
+    "direction": "isometric",
+    "center": {
+      "x": -100,
+      "y": 65
+    },
+    "width": 180,
+    "height": 110,
+    "show_hidden_edges": false
+  },
+  {
+    "type": "drawing_part_view",
+    "drawing_part_view_id": "drawing_part_view_1",
+    "drawing_page_id": "drawing_page_0",
+    "source_component_ids": [
+      "source_component_11",
+      "source_component_2",
+      "source_component_0",
+      "source_component_1",
+      "source_component_3",
+      "source_component_4",
+      "source_component_5",
+      "source_component_6",
+      "source_component_9",
+      "source_component_7",
+      "source_component_8",
+      "source_component_10"
+    ],
+    "name": "Front",
+    "display_name": "Front / nominal mm",
+    "direction": "y_negative",
+    "center": {
+      "x": -100,
+      "y": -45
+    },
+    "width": 180,
+    "height": 85,
+    "show_hidden_edges": false
+  },
+  {
+    "type": "drawing_part_view",
+    "drawing_part_view_id": "drawing_part_view_2",
+    "drawing_page_id": "drawing_page_0",
+    "source_component_ids": [
+      "source_component_23",
+      "source_component_14",
+      "source_component_12",
+      "source_component_13",
+      "source_component_15",
+      "source_component_16",
+      "source_component_17",
+      "source_component_18",
+      "source_component_21",
+      "source_component_19",
+      "source_component_20",
+      "source_component_22"
+    ],
+    "name": "ExplodedIso",
+    "display_name": "Exploded enclosure / 20 bottom discs + same disc on edge",
+    "direction": "isometric",
+    "center": {
+      "x": 100,
+      "y": 15
+    },
+    "width": 180,
+    "height": 220,
+    "show_hidden_edges": false
+  },
+  {
+    "type": "drawing_page_title_block",
+    "drawing_page_title_block_id": "drawing_page_title_block_0",
+    "drawing_page_id": "drawing_page_0",
+    "title": "Fidget counter / enclosure and exploded assembly",
+    "legal_owner": "rushabhcodes",
+    "identification_number": "FCT-MECH-001",
+    "revision_index": "1.0.34",
+    "date_of_issue": "2026-11-13",
+    "creator": "rushabhcodes",
+    "sheet_number": 1,
+    "number_of_sheets": 2
+  },
+  {
+    "type": "drawing_page",
+    "drawing_page_id": "drawing_page_1",
+    "name": "enclosure-magnet-details",
+    "display_name": "Magnet pattern and sensor clearance",
+    "width": 420,
+    "height": 297,
+    "page_size": "iso_a3",
+    "orientation": "landscape"
+  },
+  {
+    "type": "drawing_part_view",
+    "drawing_part_view_id": "drawing_part_view_3",
+    "drawing_page_id": "drawing_page_1",
+    "source_component_ids": [
+      "source_component_2",
+      "source_component_0",
+      "source_component_1"
+    ],
+    "name": "BottomPockets",
+    "display_name": "20 × Ø6.4 blind pockets, 3.2 deep / Ø49.7 PCD",
+    "direction": "z_negative",
+    "center": {
+      "x": -105,
+      "y": 45
+    },
+    "width": 175,
+    "height": 145,
+    "show_hidden_edges": false
+  },
+  {
+    "type": "drawing_part_view",
+    "drawing_part_view_id": "drawing_part_view_4",
+    "drawing_page_id": "drawing_page_1",
+    "source_component_ids": [
+      "source_component_4"
+    ],
+    "name": "AxialDisc",
+    "display_name": "Encoder Ø6 × 3 / mounted on edge",
+    "direction": "y_negative",
+    "center": {
+      "x": -105,
+      "y": -90
+    },
+    "width": 32,
+    "height": 90,
+    "show_hidden_edges": false
+  },
+  {
+    "type": "drawing_part_view",
+    "drawing_part_view_id": "drawing_part_view_5",
+    "drawing_page_id": "drawing_page_1",
+    "source_component_ids": [
+      "source_component_11",
+      "source_component_2",
+      "source_component_0",
+      "source_component_1",
+      "source_component_3",
+      "source_component_4",
+      "source_component_5",
+      "source_component_6",
+      "source_component_9",
+      "source_component_7",
+      "source_component_8",
+      "source_component_10"
+    ],
+    "name": "CenterSection",
+    "display_name": "Center section / 3.4 × 6.4 slot, 1.2 roof, 1.8 Hall gap",
+    "direction": "y_negative",
+    "center": {
+      "x": 100,
+      "y": 45
+    },
+    "width": 180,
+    "height": 145,
+    "show_hidden_edges": false,
+    "section": {
+      "axis": "y",
+      "offset": 0,
+      "keep_side": "greater",
+      "hatch_spacing": 0.6
+    }
+  },
+  {
+    "type": "drawing_page_title_block",
+    "drawing_page_title_block_id": "drawing_page_title_block_1",
+    "drawing_page_id": "drawing_page_1",
+    "title": "Fidget counter / magnet pockets and axial encoder",
+    "legal_owner": "rushabhcodes",
+    "identification_number": "FCT-MECH-001",
+    "revision_index": "1.0.34",
+    "date_of_issue": "2026-11-13",
+    "creator": "rushabhcodes",
+    "sheet_number": 2,
+    "number_of_sheets": 2
+  },
+  {
+    "type": "source_project_metadata",
+    "source_filesystem_md5_hash": "2191ee76609405cb04d6af112fa87fdb"
+  },
+  {
+    "type": "drawing_dimension_line",
+    "drawing_dimension_line_id": "drawing_dimension_line_0",
+    "drawing_part_view_id": "drawing_part_view_1",
+    "start": {
+      "x": -181.81818345679818,
+      "y": -79.75988874828568
+    },
+    "end": {
+      "x": -18.18181654320182,
+      "y": -79.75988874828568
+    },
+    "text": "Ø61.60 mm",
+    "edge_ref_start": {
+      "x": -181.81818345679818,
+      "y": -72.75988874828568
+    },
+    "edge_ref_end": {
+      "x": -18.18181654320182,
+      "y": -72.75988874828568
+    },
+    "name": "OverallDiameter"
+  },
+  {
+    "type": "drawing_dimension_line",
+    "drawing_dimension_line_id": "drawing_dimension_line_1",
+    "drawing_part_view_id": "drawing_part_view_1",
+    "start": {
+      "x": -11.181816543201819,
+      "y": -72.75988874828568
+    },
+    "end": {
+      "x": -11.181816543201819,
+      "y": -17.24011327050688
+    },
+    "text": "20.90 mm",
+    "edge_ref_start": {
+      "x": -18.18181654320182,
+      "y": -72.75988874828568
+    },
+    "edge_ref_end": {
+      "x": -18.18181654320182,
+      "y": -17.24011327050688
+    },
+    "name": "OverallHeight"
+  },
+  {
+    "type": "drawing_dimension_line",
+    "drawing_dimension_line_id": "drawing_dimension_line_2",
+    "drawing_part_view_id": "drawing_part_view_3",
+    "start": {
+      "x": -170.90909084770828,
+      "y": -27.909094223752618
+    },
+    "end": {
+      "x": -39.090909152291715,
+      "y": -27.909094223752618
+    },
+    "text": "Ø58.00 mm",
+    "edge_ref_start": {
+      "x": -170.90909084770828,
+      "y": -20.909094223752618
+    },
+    "edge_ref_end": {
+      "x": -39.090909152291715,
+      "y": -20.909094223752618
+    },
+    "name": "BaseDiameter"
+  },
+  {
+    "type": "drawing_dimension_line",
+    "drawing_dimension_line_id": "drawing_dimension_line_3",
+    "drawing_part_view_id": "drawing_part_view_3",
+    "start": {
+      "x": -48.522727325325825,
+      "y": 117.90909422375262
+    },
+    "end": {
+      "x": -161.47727267467417,
+      "y": 117.90909422375262
+    },
+    "text": "Ø49.70 PCD",
+    "edge_ref_start": {
+      "x": -48.522727325325825,
+      "y": 45
+    },
+    "edge_ref_end": {
+      "x": -161.47727267467417,
+      "y": 45
+    },
+    "name": "AttachmentPitchDiameter"
+  },
+  {
+    "type": "drawing_dimension_line",
+    "drawing_dimension_line_id": "drawing_dimension_line_4",
+    "drawing_part_view_id": "drawing_part_view_4",
+    "start": {
+      "x": -119.54545497894287,
+      "y": -126.09090839326382
+    },
+    "end": {
+      "x": -90.45454502105713,
+      "y": -126.09090839326382
+    },
+    "text": "3.00 mm",
+    "edge_ref_start": {
+      "x": -119.54545497894287,
+      "y": -119.09090839326382
+    },
+    "edge_ref_end": {
+      "x": -90.45454502105713,
+      "y": -119.09090839326382
+    },
+    "name": "DiscThickness"
+  },
+  {
+    "type": "drawing_dimension_line",
+    "drawing_dimension_line_id": "drawing_dimension_line_5",
+    "drawing_part_view_id": "drawing_part_view_4",
+    "start": {
+      "x": -83.45454502105713,
+      "y": -119.09090839326382
+    },
+    "end": {
+      "x": -83.45454502105713,
+      "y": -60.90909160673618
+    },
+    "text": "Ø6.00 mm",
+    "edge_ref_start": {
+      "x": -90.45454502105713,
+      "y": -119.09090839326382
+    },
+    "edge_ref_end": {
+      "x": -90.45454502105713,
+      "y": -60.90909160673618
+    },
+    "name": "DiscDiameter"
+  },
+  {
+    "type": "drawing_dimension_line",
+    "drawing_dimension_line_id": "drawing_dimension_line_6",
+    "drawing_part_view_id": "drawing_part_view_5",
+    "start": {
+      "x": 112.98467286489904,
+      "y": 48.85450493225101
+    },
+    "end": {
+      "x": 112.98467286489904,
+      "y": 53.63345537082911
+    },
+    "text": "1.80 mm NOM",
+    "edge_ref_start": {
+      "x": 103.98467286489904,
+      "y": 48.85450493225101
+    },
+    "edge_ref_end": {
+      "x": 103.98467286489904,
+      "y": 53.63345537082911
+    },
+    "name": "EncoderHallGap"
+  }
+]

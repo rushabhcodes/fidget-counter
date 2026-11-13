@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "geometry_release": "1.0.33",
+  "models": [
+    {
+      "name": "PCBA_Body",
+      "file": "mechanical/Circuit_Models/Drawings/PCBA_Body.glb",
+      "bytes": 10698192,
+      "sha256": "1464c2e5d266805444ab83fd1abc0d4a3e7816718bbe7dd5342ca5deb1f2ce97",
+      "CAD_bodies": [
+        "PCB",
+        "Electronic_U1",
+        "Electronic_BT1",
+        "Electronic_C4",
+        "Electronic_C9",
+        "Electronic_C15",
+        "Electronic_C5",
+        "Electronic_C8",
+        "Electronic_C10",
+        "Electronic_C16",
+        "Electronic_C18",
+        "Electronic_J_DEBUG",
+        "Electronic_R4",
+        "Electronic_C6",
+        "Electronic_R1",
+        "Electronic_R2",
+        "Electronic_R3",
+        "Electronic_X1",
+        "Electronic_C1",
+        "Electronic_C2",
+        "Electronic_X2",
+        "Electronic_C11",
+        "Electronic_C12",
+        "Electronic_L1",
+        "Electronic_L2",
+        "Electronic_C3",
+        "Electronic_ANT1"
+      ]
+    },
+    {
+      "name": "Hall_Sensor",
+      "file": "mechanical/Circuit_Models/Drawings/Hall_Sensor.glb",
+      "bytes": 1209860,
+      "sha256": "85ffaad72a8a07ce3189a9b2fed7fae1624998dfc60b048fb9112f2187d6b29f",
+      "CAD_bodies": [
+        "Electronic_U2"
+      ]
+    },
+    {
+      "name": "Flat_Disc_6x3",
+      "file": "mechanical/Circuit_Models/Drawings/Flat_Disc_6x3.glb",
+      "bytes": 21240,
+      "sha256": "893fd32efd3d11b4320af46bc7f61ff134242cd0221a7bb500c08eef27f6001b",
+      "CAD_bodies": [
+        "Attachment_Disc_01"
+      ]
+    }
+  ]
+}

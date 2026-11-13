@@ -1,3 +1,5 @@
+Project release 1.0.34 adds native engineering drawings and keeps the physical CAD revision 1.0.33 below. See [native drawing source](enclosure-drawing.assembly.tsx) and the [A3 PDF](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34.pdf).
+
 # Current mechanical version: v1.0.33, V3 axial discs and edge-mounted encoder
 
 The current base has 20 blind underside pockets for Ø6 × 3 mm axial magnets. There is no steel backing or separate carrier; one base and one cap are the two printed product parts. Use the [V3 CAD/print/assembly guide](mechanical/variants/V3_disc_magnets/README.md), its print manifest and the current mechanical BOM. The cap holds one more identical Ø6×3mm axial disc on edge in a keyed slot. Physical height is20.9mm, an increase of4.5mm that preserves1.8mm sensor clearance. All11 cap styles are updated under the V3 generated directory; the root cap STEP/STLs remain historic V1 references. The native circuit preview selects V3.

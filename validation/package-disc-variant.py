@@ -48,7 +48,10 @@ def archive(label, files, instructions):
             "members": {name: sha(data) for name, data in sorted(entries.items())}}
 
 
-docs = [H / name for name in ["README.md", "ORDER_LIST.csv", "parameters.json", "polarity-map.csv", "review.png", f"exploded-v{version}.png", "encoder-orientation.png", "review.html"]]
+geometry_version = json.loads((H / "parameters.json").read_text())["release"]
+docs = [H / name for name in ["README.md", "ORDER_LIST.csv", "parameters.json", "polarity-map.csv", "review.png", f"exploded-v{geometry_version}.png", "encoder-orientation.png", "review.html"]]
+docs += list((H / "drawings").glob("*"))
+docs += [R / "enclosure-drawing.assembly.tsx", R / "enclosure-drawing.circuit.json", R / "validation/native-drawing-audit.json"]
 docs += [G / name for name in ["geometry-audit.json", "print-audit.json", "print-ready-manifest.json", "assembly-step-audit.json", "native-preview-audit.json"]]
 docs += [R / "ASSEMBLY.md", R / "PROGRAMMING.md", R / "BOM.csv", R / "mechanical/MECHANICAL_BOM.csv", R / "mechanical/printing/PRINTING.md"]
 profiles = list((R / "mechanical/printing").glob("*.ini"))

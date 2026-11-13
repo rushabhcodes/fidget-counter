@@ -4,7 +4,7 @@ PRINT,Selected Cap,1,Updated PETG cap with keyed edge-mounted encoder slot,,Use 
 BUY,Axial NdFeB discs,21,D6 x3mm axial N52 nickel-coated neodymium,https://patelmagnets.com/shop/6-x-3mm-neodymium-magnets/,20 bottom attachment discs plus1 identical disc on edge in the top keyed slot; selectN52
 BUY ALTERNATIVE,Attachment discs alternate source,0,JCN52-DSC6-3 axial D6 x3mm N52,https://www.jc-magnetics.com/Magnet-Discs/Magnet-N52-6mm-3mm-Discs,Alternative source for the same21 discs; minimum25 listed; design uses +/-0.1mm tolerance
 BUY,Bearing,1,6808-ZZ /61808-2Z ID40 OD52 W7mm,https://bearinghouse.in/shop/ntn-6808zz-deep-groove-ball-bearings/,Qualify actual race shoulders and printed hand fit
-CUSTOM PCBA,Populated RevC PCB,1,OD36.5 W1.0mm with27 FIT components,https://jlcpcb.com/pcb-assembly,Use1.0.33 fabrication bundle; holder and JST header already included
+CUSTOM PCBA,Populated RevC PCB,1,OD36.5 W1.0mm with27 FIT components,https://jlcpcb.com/pcb-assembly,Use1.0.34 fabrication bundle; holder and JST header already included
 BUY,CR2450,1,3V primary lithium loose cell24.5x5mm,https://www.panasonic.com/in/consumer/battery/specialty-batteries/lithium-coin/cr-2450-5be.html,No tabs; remove before powered programming
 BUY,PCB screws,2,M2x4 nylon head OD3.8 height1.3mm maximum,https://www.vital-parts.co.uk/slotted-pan-head-nylon-screws-din-85/42809-sph85-m2-4-ny-n,Opposite two PCB positions; use matching driver
 SHARED,Adhesive,As needed,Nonconductive adhesive compatible with PETG nickel and steel,,Coupon-test bond and cure before loading magnets
