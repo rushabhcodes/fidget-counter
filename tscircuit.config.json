@@ -6,6 +6,7 @@
     "published.circuit.json"
   ],
   "ignoredFiles": [
+    "node_modules/**",
     "**/__pycache__/**",
     "**/*.pyc",
     "work/**",
@@ -15,6 +16,8 @@
     "mechanical/export/**",
     "mechanical/Print_STL/**",
     "mechanical/STEP_Parts/**",
+    "mechanical/Circuit_Models/*.obj",
+    "mechanical/Circuit_Models/*.mtl",
     "mechanical/variants/**/generated/Assemblies/**",
     "mechanical/variants/**/generated/scene_meshes.json",
     "mechanical/variants/**/generated/*.gcode",
