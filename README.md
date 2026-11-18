@@ -1,6 +1,10 @@
 # Fidget counter — v1.0.34
 
-V3 uses **20 circular Ø6 × 3 mm axial magnets inserted from underneath a one-piece base**. The blind pockets have integral stops and sidewall adhesive retention. The enclosure uses two PETG prints: one base and one selected cap. There is no permanent magnetic ring, steel backing or separate magnet carrier in this version.
+V3 uses **20 circular Ø6 × 3 mm axial magnets inserted from underneath a one-piece base**. The vented pockets have integral annular stops and sidewall adhesive retention. The enclosure uses two PETG prints: one base and one selected cap. There is no permanent magnetic ring, steel backing or separate magnet carrier in this version.
+
+The working base redesign uses a **continuous bearing-support wall and zero supports**, printed phone face down. It replaces the three inherited webs and their open windows. Use the current V3 generated STEP/STL and print manifest; the linked v1.0.34 archives predate this base revision. The magnet stops retain their depth; 45° openings above them eliminate closed roof bridges. Bearing fits, PCB and cap geometry retain their dimensions.
+
+![Current support-free magnet base](mechanical/variants/V3_disc_magnets/base-support-free.png)
 
 ![Native tsCircuit engineering drawing and exploded enclosure](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.png)
 
@@ -8,13 +12,13 @@ The native circuit preview selects V3. The base remains Ø58 mm, the largest cap
 
 [Native engineering drawing](enclosure-drawing.circuit.json) · [A3 engineering PDF](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34.pdf) · [Encoder orientation](mechanical/variants/V3_disc_magnets/encoder-orientation.png) · [Full exploded view](mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png) · [Print, source and assemble V3](mechanical/variants/V3_disc_magnets/README.md) · [Parts to order](mechanical/variants/V3_disc_magnets/ORDER_LIST.csv)
 
-The drawing is authored with native `assembly.drawing.page` and `partview` elements in [enclosure-drawing.assembly.tsx](enclosure-drawing.assembly.tsx). It includes assembled, exploded, front, underside and section views. Model-derived measurements are stored as native `drawing_dimension_line` records. The physical enclosure remains CAD revision 1.0.33.
+The drawing is authored with native `assembly.drawing.page` and `partview` elements in [enclosure-drawing.assembly.tsx](enclosure-drawing.assembly.tsx). It includes assembled, exploded, front, underside and section views. Model-derived measurements are stored as native `drawing_dimension_line` records. These released drawings record CAD revision 1.0.33; the working support-free base is shown above.
 
 ## Build one prototype
 
 1. Print the V3 pocket-fit coupons, then **Base_V3_Discs and one Cap** from the V3 print manifest. Use the updated STLs under `mechanical/variants/V3_disc_magnets/generated/Print_STL/`. The root `mechanical/Print_STL` files are historical V1 parts.
 2. Source **21 identical Ø6 × 3 mm axial N52 discs**: 20 for the base and one for the cap. Also source one 6808-ZZ bearing, one populated RevC PCB, one CR2450 and two M2 × 4 mm nylon screws. The PCB includes its soldered holder and JST programming connector. The [order list](mechanical/variants/V3_disc_magnets/ORDER_LIST.csv) supplies specifications and supplier examples.
-3. Clean and measure the blind pockets, select a measured phone/case pole arrangement, insert and sidewall-bond the discs from the underside. Nominal disc faces sit 0.2 mm below the phone-contact face. See the [V3 assembly directions](mechanical/variants/V3_disc_magnets/README.md#pocket-dimensions-and-assembly).
+3. Clean and measure the vented pockets, select a measured phone/case pole arrangement, insert and sidewall-bond the discs from the underside. Nominal disc faces sit 0.2 mm below the phone-contact face. See the [V3 assembly directions](mechanical/variants/V3_disc_magnets/README.md#pocket-dimensions-and-assembly).
 4. [Build/download the RevC firmware](firmware/README.md), [program the board](PROGRAMMING.md) before fitting the cell, then follow the common board/bearing/cap steps in [ASSEMBLY.md](ASSEMBLY.md).
 
 This remains a fit-test prototype. Removing the steel backing changes the magnetic field and holding force. The single disc row does not reproduce a concentric MagSafe pole pattern. Measure actual phone/case attachment, adhesive retention, Hall counting and BLE/current before a batch; printed push-fit bearing retention also needs qualification.
@@ -48,7 +52,7 @@ bun run check:assembly
 bun run check:programming
 ```
 
-The V3 CAD audit checks 20 bottom insertion paths, blind roofs, all eleven caps through full rotation, 27 actual supplier bodies and unchanged upper interfaces. The native preview check requires all routed PCB records and fitted electronic records to equal frozen corrected v1.0.31. Print audits check actual toolpaths; they do not qualify a particular printer, magnet bond or attachment force.
+The V3 CAD audit checks 20 bottom insertion paths, annular stops and open tapered vents, all eleven caps through full rotation, 27 actual supplier bodies and unchanged upper interfaces. The native preview check requires all routed PCB records and fitted electronic records to equal frozen corrected v1.0.31. Print audits check actual toolpaths; they do not qualify a particular printer, magnet bond or attachment force.
 
 [V1 premade ring](mechanical/variants/V1_premade_ring/README.md) and [V2 rectangular magnets with steel/carrier](mechanical/variants/V2_discrete_magnets/README.md) are preserved historical alternatives. Use each version's complete matching parts. Their old audit reports describe those versions, not V3. [Mechanical background](MECHANICAL.md), [assembly](ASSEMBLY.md), [programming](PROGRAMMING.md) and [PCB review](validation/FABRICATION_REVIEW.md) retain the common hardware evidence.
 

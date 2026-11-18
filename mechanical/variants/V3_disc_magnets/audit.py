@@ -1,4 +1,4 @@
-"""Independently audit bottom entry, blind roofs, exact assemblies and slicer paths."""
+"""Independently audit magnet stops/vents, exact assemblies and slicer paths."""
 from pathlib import Path
 import argparse, hashlib, json, math, re, subprocess
 import cadquery as cq
@@ -9,7 +9,8 @@ from shapely.ops import unary_union
 from shapely.affinity import translate
 
 H=Path(__file__).resolve().parent; R=H.parents[2]; G=H/'generated'
-P=json.loads((H/'parameters.json').read_text()); M=P['magnet']; B=P['pockets']; E=P['encoder']
+P=json.loads((H/'parameters.json').read_text()); M=P['magnet']; B=P['pockets']; E=P['encoder']; S=P['base_support']
+OLD=json.loads((H.parent/'V1_premade_ring/enclosure-parameters.json').read_text())
 sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
 ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--slicer',required=True);a=ap.parse_args()
 report=json.loads((G/'geometry-audit.json').read_text())
@@ -21,28 +22,40 @@ assert report['encoder']==E and E['same_part_as_attachment_discs']
 assert E['axis_in_rotor']==[1,0,0] and E['diameter_mm']==6 and E['thickness_mm']==3
 original=cq.importers.importStep(str(H.parent/'V1_premade_ring/Base_V1_Premade_Ring.step')).val()
 base=cq.importers.importStep(str(G/'STEP/Base_V3_Discs.step')).val()
-allowed=cq.Workplane('XY').workplane(offset=.1).circle(29.1).circle(B['annulus_inner_radius_mm']).extrude(B['base_roof_top_z_mm']-.1).val()
+allowed=cq.Workplane('XY').workplane(offset=.1).circle(29.1).circle(B['annulus_inner_radius_mm']).extrude(B['base_roof_top_z_mm']-.1).val().fuse(
+    cq.Workplane('XY').workplane(offset=S['floor_top_z_mm']-S['wall_overlap_mm']).circle(21.1).circle(14).extrude(OLD['bearing']['bottom_z_mm']-S['floor_top_z_mm']+S['wall_overlap_mm']).val()).clean()
 
 def bounded(shape):
     assert shape.isValid() and len(shape.Solids())==1
     assert shape.cut(original).cut(allowed).Volume()<.002,'Added material outside attachment region'
     assert original.cut(shape).cut(allowed).Volume()<.002,'Changed retained upper interface'
 
-def blind_roofs(shape):
+def continuous_support(shape):
+    wall=cq.Workplane('XY').workplane(offset=S['floor_top_z_mm']).circle(OLD['bearing']['shaft_diameter_mm']/2).circle(S['inner_radius_mm']).extrude(OLD['bearing']['bottom_z_mm']+OLD['bearing']['width_mm']-S['floor_top_z_mm']).val()
+    assert wall.cut(shape).Volume()<.002,'Open window in continuous bearing wall'
+    seat=cq.Workplane('XY').workplane(offset=5).circle(21.1).circle(S['inner_radius_mm']).extrude(OLD['bearing']['bottom_z_mm']+OLD['bearing']['width_mm']-5).val()
+    assert shape.intersect(seat).cut(original).Volume()+original.intersect(seat).cut(shape).Volume()<.002,'Bearing seat changed'
+
+def vented_stops(shape):
     for i in range(M['quantity']):
         t=math.radians(M['first_angle_deg']+i*360/M['quantity'])
         x,y=M['pitch_radius_mm']*math.cos(t),M['pitch_radius_mm']*math.sin(t)
         for z in [.25,1.,3.39]:
             assert not shape.isInside(cq.Vector(x,y,z),1e-6),'Bottom entry or pocket blocked'
-        for z in [3.41,3.8,4.39]:
-            assert shape.isInside(cq.Vector(x,y,z),1e-6),'Blind stop or roof missing'
+        for z in [3.41,3.8,4.15,4.39]:
+            assert not shape.isInside(cq.Vector(x,y,z),1e-6),'Pocket vent blocked'
+        assert shape.isInside(cq.Vector(x+3,y,3.41),1e-6),'Annular magnet stop missing'
+        assert not shape.isInside(cq.Vector(x+2.5,y,3.6),1e-6),'Tapered pocket vent blocked'
+        assert shape.isInside(cq.Vector(x+2.7,y,3.6),1e-6),'Tapered pocket wall missing'
         # Inspect the chamfer and cylindrical wall, not only the pocket center.
         assert not shape.isInside(cq.Vector(x+3.24,y,.25),1e-6),'Entry chamfer missing'
         assert shape.isInside(cq.Vector(x+3.24,y,.6),1e-6),'Pocket sidewall missing'
 
-bounded(base);blind_roofs(base)
+bounded(base);vented_stops(base);continuous_support(base)
 mutants=[('bearing-interface-loss',lambda:bounded(base.cut(cq.Workplane('XY').box(3,3,3).val().translate((19.5,0,10))))),
-         ('punctured-blind-roof',lambda:blind_roofs(base.cut(cq.Workplane('XY').workplane(offset=3.3).center(M['pitch_radius_mm'],0).circle(.5).extrude(2).val())))]
+         ('open-support-window',lambda:continuous_support(base.cut(cq.Workplane('XY').box(4,3,.5).val().translate((20,0,4.7))))),
+         ('missing-magnet-stop',lambda:vented_stops(base.cut(cq.Workplane('XY').workplane(offset=3.3).center(M['pitch_radius_mm'],0).circle(3.2).extrude(.3).val()))),
+         ('blocked-pocket-vent',lambda:vented_stops(base.fuse(cq.Workplane('XY').workplane(offset=4).center(M['pitch_radius_mm'],0).circle(3).extrude(.3).val())))]
 for label,run in mutants:
     try:run()
     except AssertionError:pass
@@ -101,7 +114,8 @@ for row in report['new_printed_parts']:
         sections[str(z)]=sum(p.area for p in polygons)
     gcode=work/(name+'.gcode');profiles=[R/'mechanical/printing/PETG-0.4-audit.ini']
     support=row['supports']
-    if support=='fixed-base':profiles.append(R/'mechanical/printing/base-fixed-supports.ini')
+    if name=='Base_V3_Discs':profiles.append(R/'mechanical/printing/base-no-supports.ini')
+    elif support=='fixed-base':profiles.append(R/'mechanical/printing/base-fixed-supports.ini')
     elif support=='early-rim':profiles.append(R/'mechanical/printing/cap-early-rim-supports.ini')
     elif support=='everywhere':profiles.append(R/'mechanical/printing/supports-everywhere.ini')
     if name=='Cap_thumb_scoop':profiles.append(R/'mechanical/printing/V3-edge-cap-supports.ini')
@@ -126,6 +140,8 @@ for row in report['new_printed_parts']:
     assert result.returncode==0,(name,result.stdout[-1000:],result.stderr[-1000:])
     text=gcode.read_text();assert 'G1' in text and ';TYPE:' in text
     assert not re.search(r'(repaired|non.manifold|empty layers|no extrusions)',result.stdout+result.stderr,re.I), 'Slicer reported a mesh defect'
+    if name=='Base_V3_Discs':
+        assert not re.search(r'(floating bridge anchors|loose extrusions|long bridging extrusions|consider enabling supports)',result.stdout+result.stderr,re.I),'Base needs support or bridge redesign'
     kind='';x=y=z=0.;bridges=[];bridge_paths=[];support_paths=[];supports=extrusions=0;layerz=set();meta=[]
     for line in text.splitlines():
         if line.startswith(';TYPE:'):kind=line[6:].strip()
@@ -172,14 +188,35 @@ for row in report['new_printed_parts']:
         unsupported.extend(spans(line.difference(supported)))
         without_supports.extend(spans(line.difference(solid)))
     max_air=max(unsupported,default=0)
-    assert max_air<=5,(name,'Actual unsupported bridge gap exceeds 5mm',max_air)
-    if name=='Base_V3_Discs':assert max(without_supports,default=0)>5, 'Support-removal safeguard was not exercised'
+    # The support-free base's tapered vents eliminate its former roof bridges.
+    # Keep the tighter 5 mm bound for every unchanged cap/support profile.
+    limit=S['maximum_bridge_span_mm'] if name=='Base_V3_Discs' else 5
+    assert max_air<=limit,(name,'Actual unsupported bridge gap exceeds limit',max_air,limit)
+    if name=='Base_V3_Discs':
+        assert support=='none' and supports==0,'Base generated support paths'
+        assert max_air<=1,'Unexpected bridge in support-free base'
     # Automatic supports may legitimately generate no paths on a rim that
-    # meets the bridge bound unaided. The base and upright scoop need them.
+    # meets the bridge bound unaided. The upright scoop still needs them.
     if row['supports'] in ['fixed-base','everywhere']:assert supports>0,(name,'Required support paths missing')
     elif support=='none':assert supports==0,(name,'Unexpected support paths')
-    parts.append({'name':name,'STL_sha256':sha(stl),'slicer_profiles_sha256':{str(p.relative_to(R)):sha(p)for p in profiles},'first_layer_mm':.2,'layers':len(layerz),'extrusion_segments':extrusions,'support_segments':supports,'maximum_bridge_labelled_line_mm':max(bridges,default=0),'maximum_actual_unsupported_bridge_gap_mm':max_air,'maximum_gap_if_supports_removed_mm':max(without_supports,default=0),'section_areas_mm2':sections,'slicer_estimates_not_measurements':meta,'gcode_sha256':sha(gcode),'gcode_not_distributed':True,'slicer_timeout_retries':slicer_timeout_retries})
-result={'passed':True,'physically_printed':False,'force_tested':False,'slicer':version,'actual_slicer_executed':True,'geometry_audit_sha256':sha(G/'geometry-audit.json'),'audit_source_sha256':sha(Path(__file__)),'negative_safeguards_rejected':[x[0]for x in mutants],'profile':'Provisional PETG, 0.4mm nozzle, 0.15mm layers, 4 perimeters; configure actual printer','parts':parts,'updated_caps_sliced':11,'encoder_orientation':'Axial disc on edge; axisX in rotor frame'}
+    parts.append({'name':name,'STL_sha256':sha(stl),'slicer_profiles_sha256':{str(p.relative_to(R)):sha(p)for p in profiles},'first_layer_mm':.2,'layers':len(layerz),'extrusion_segments':extrusions,'support_segments':supports,'maximum_bridge_labelled_line_mm':max(bridges,default=0),'maximum_actual_unsupported_bridge_gap_mm':max_air,'maximum_allowed_bridge_gap_mm':limit,'maximum_gap_if_supports_removed_mm':max(without_supports,default=0),'section_areas_mm2':sections,'slicer_estimates_not_measurements':meta,'gcode_sha256':sha(gcode),'gcode_not_distributed':True,'slicer_timeout_retries':slicer_timeout_retries})
+coupons=[]
+for stl in sorted((G/'Fit_Coupons').glob('Disc_pocket_D*.stl')):
+    mesh=trimesh.load_mesh(stl,process=True)
+    assert mesh.is_watertight and mesh.is_volume and len(mesh.split())==1,stl.name
+    gcode=work/(stl.stem+'.gcode')
+    command=[a.slicer,'--load',str(R/'mechanical/printing/PETG-0.4-audit.ini'),'--load',str(R/'mechanical/printing/base-no-supports.ini'),
+             '--export-gcode','--center','110,110','--output',str(gcode),str(stl)]
+    run=subprocess.run(command,text=True,capture_output=True,timeout=60)
+    log=run.stdout+run.stderr
+    (work/(stl.stem+'.log')).write_text(log)
+    assert run.returncode==0,(stl.name,log)
+    assert not re.search(r'(floating bridge anchors|loose extrusions|long bridging extrusions|consider enabling supports)',log,re.I),(stl.name,'Coupon needs support')
+    text=gcode.read_text()
+    assert ';TYPE:' in text and not re.search(r';TYPE:Support material',text),stl.name
+    coupons.append({'name':stl.stem,'STL_sha256':sha(stl),'support_segments':0,'support_warnings':False,'gcode_sha256':sha(gcode)})
+assert len(coupons)==3
+result={'passed':True,'physically_printed':False,'force_tested':False,'slicer':version,'actual_slicer_executed':True,'geometry_audit_sha256':sha(G/'geometry-audit.json'),'audit_source_sha256':sha(Path(__file__)),'negative_safeguards_rejected':[x[0]for x in mutants],'profile':'Provisional PETG, 0.4mm nozzle, 0.15mm layers, 4 perimeters; configure actual printer','parts':parts,'pocket_coupons':coupons,'updated_caps_sliced':11,'encoder_orientation':'Axial disc on edge; axisX in rotor frame'}
 (G/'print-audit.json').write_text(json.dumps(result,indent=2)+'\n')
 manifest_parts=[]
 for part in report['new_printed_parts']:

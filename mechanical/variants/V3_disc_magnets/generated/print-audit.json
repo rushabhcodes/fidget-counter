@@ -2,45 +2,48 @@
   "passed": true,
   "physically_printed": false,
   "force_tested": false,
-  "slicer": "PrusaSlicer-2.9.2+UNKNOWN based on Slic3r (with GUI support)",
+  "slicer": "PrusaSlicer-2.7.4+linux-x64-GTK3-202404050928 based on Slic3r (with GUI support)",
   "actual_slicer_executed": true,
-  "geometry_audit_sha256": "117b1b04f308568a6006b63018c37fa2185c79222323cfd74165f4ae2bf91207",
-  "audit_source_sha256": "0aa8ff979ea7ead65d7963f78d48a3eb376b2759e374a6af310dc235aa3d8c2a",
+  "geometry_audit_sha256": "ed42a5fb646b4fb0e51d386cbea50dd21deebd0229a1b35ad94ffb646e751115",
+  "audit_source_sha256": "ab5080cede59df14f00d86b971472756254f92934246d4b0d7e0b9a7c1613dcd",
   "negative_safeguards_rejected": [
     "bearing-interface-loss",
-    "punctured-blind-roof"
+    "open-support-window",
+    "missing-magnet-stop",
+    "blocked-pocket-vent"
   ],
   "profile": "Provisional PETG, 0.4mm nozzle, 0.15mm layers, 4 perimeters; configure actual printer",
   "parts": [
     {
       "name": "Base_V3_Discs",
-      "STL_sha256": "95304262ba207dfd90137b7afca48d88aa5c9d5e1bd26a3f9b8eb04a580d3e59",
+      "STL_sha256": "4b76ecb0f15bed5b8375e656a04629d603b899bb5b2205d88391b8b0cddd4db1",
       "slicer_profiles_sha256": {
         "mechanical/printing/PETG-0.4-audit.ini": "cdd54ff5a859810d4f34b0f6db92a43fc96ff2959344835cb2f9e8e55e67fc2f",
-        "mechanical/printing/base-fixed-supports.ini": "b7b24f90c49ca58dca1cfdae55c18f5542d7ef5354d008b4be3f726895e11ed4"
+        "mechanical/printing/base-no-supports.ini": "efde19f60061a9689ca231ec774a7b98c629293789014cf895f597b276eba2af"
       },
       "first_layer_mm": 0.2,
-      "layers": 112,
-      "extrusion_segments": 138603,
-      "support_segments": 13797,
-      "maximum_bridge_labelled_line_mm": 31.39800995286166,
-      "maximum_actual_unsupported_bridge_gap_mm": 2.8966741357473125,
-      "maximum_gap_if_supports_removed_mm": 6.399896141412132,
+      "layers": 86,
+      "extrusion_segments": 142644,
+      "support_segments": 0,
+      "maximum_bridge_labelled_line_mm": 0,
+      "maximum_actual_unsupported_bridge_gap_mm": 0,
+      "maximum_allowed_bridge_gap_mm": 1.0,
+      "maximum_gap_if_supports_removed_mm": 0,
       "section_areas_mm2": {
-        "0.1": 1977.7539368163743,
-        "2.35": 795.6513153510866,
-        "3.0": 805.3607922627868,
-        "3.3": 1448.5790275150525,
-        "4.1": 1396.1456295166756,
-        "5.0": 367.70540080962996,
-        "9.0": 191.07000704544885
+        "0.1": 1977.7539368163707,
+        "2.35": 937.7793055156714,
+        "3.0": 937.7678155084786,
+        "3.3": 1123.1206395361726,
+        "4.1": 1354.2304272132974,
+        "5.0": 324.7108565028741,
+        "9.0": 191.05601089476977
       },
       "slicer_estimates_not_measurements": [
-        "filament used [g] = 11.01",
-        "estimated printing time (normal mode) = 1h 45m 29s",
-        "estimated printing time (silent mode) = 1h 46m 56s"
+        "filament used [g] = 9.58",
+        "estimated printing time (normal mode) = 1h 33m 32s",
+        "estimated printing time (silent mode) = 1h 35m 23s"
       ],
-      "gcode_sha256": "8d69931f783e7c0ca479b5b297d173cf29e8485e35c00c699af902d434283b3b",
+      "gcode_sha256": "8c1e4d7b06940f82a741c1b164e1fe46a5bbe0e430f7836a21cb5ab026b68752",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -52,11 +55,12 @@
       },
       "first_layer_mm": 0.2,
       "layers": 100,
-      "extrusion_segments": 208263,
+      "extrusion_segments": 208670,
       "support_segments": 0,
-      "maximum_bridge_labelled_line_mm": 4.317270433966368,
-      "maximum_actual_unsupported_bridge_gap_mm": 0.7026178885728193,
-      "maximum_gap_if_supports_removed_mm": 0.7026178885728193,
+      "maximum_bridge_labelled_line_mm": 4.317718957968424,
+      "maximum_actual_unsupported_bridge_gap_mm": 0.7026544302574224,
+      "maximum_allowed_bridge_gap_mm": 5,
+      "maximum_gap_if_supports_removed_mm": 0.7026544302574224,
       "section_areas_mm2": {
         "0.1": 2892.723584330865,
         "0.7": 2906.186940787194,
@@ -68,10 +72,10 @@
       },
       "slicer_estimates_not_measurements": [
         "filament used [g] = 19.53",
-        "estimated printing time (normal mode) = 2h 34m 52s",
-        "estimated printing time (silent mode) = 2h 38m 13s"
+        "estimated printing time (normal mode) = 2h 36m 30s",
+        "estimated printing time (silent mode) = 2h 40m 17s"
       ],
-      "gcode_sha256": "244a8bbd5ab2132db3814f29d5d9a3d40aabb6a0d52cc660c03cd6501d479868",
+      "gcode_sha256": "a46cde8596ab186749a5faea9c5641337ff134bbf2a0d2d2fc50b7349ce99645",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -84,10 +88,11 @@
       },
       "first_layer_mm": 0.2,
       "layers": 100,
-      "extrusion_segments": 165382,
+      "extrusion_segments": 166222,
       "support_segments": 0,
       "maximum_bridge_labelled_line_mm": 0.9583011009072357,
       "maximum_actual_unsupported_bridge_gap_mm": 0.2182565060950031,
+      "maximum_allowed_bridge_gap_mm": 5,
       "maximum_gap_if_supports_removed_mm": 0.2182565060950031,
       "section_areas_mm2": {
         "0.1": 2654.778288220539,
@@ -100,10 +105,10 @@
       },
       "slicer_estimates_not_measurements": [
         "filament used [g] = 15.60",
-        "estimated printing time (normal mode) = 1h 58m 19s",
-        "estimated printing time (silent mode) = 1h 59m 37s"
+        "estimated printing time (normal mode) = 1h 56m 1s",
+        "estimated printing time (silent mode) = 1h 57m 34s"
       ],
-      "gcode_sha256": "70dff31bb5fb72300e2ae0c6961b7f4cd6902b4eb3882fd96f0f3e92e02da284",
+      "gcode_sha256": "b46555186864f1cc55d78caa28b4784802d517f3931e4c1665444e663706b162",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -116,10 +121,11 @@
       },
       "first_layer_mm": 0.2,
       "layers": 103,
-      "extrusion_segments": 138024,
-      "support_segments": 1853,
+      "extrusion_segments": 138370,
+      "support_segments": 1856,
       "maximum_bridge_labelled_line_mm": 9.885470651415638,
       "maximum_actual_unsupported_bridge_gap_mm": 3.806949040898759,
+      "maximum_allowed_bridge_gap_mm": 5,
       "maximum_gap_if_supports_removed_mm": 3.806949040898759,
       "section_areas_mm2": {
         "0.1": 2410.583503439669,
@@ -132,10 +138,10 @@
       },
       "slicer_estimates_not_measurements": [
         "filament used [g] = 15.33",
-        "estimated printing time (normal mode) = 1h 50m 41s",
-        "estimated printing time (silent mode) = 1h 51m 40s"
+        "estimated printing time (normal mode) = 1h 50m 38s",
+        "estimated printing time (silent mode) = 1h 51m 44s"
       ],
-      "gcode_sha256": "134d06509f08ff64db785eaa1c8128d9fe3bed9e5cb5bc1f238692d1e10621a1",
+      "gcode_sha256": "f626eb26414e6552816c7e8f01bb087affe6ac8b185adbb33e5ab3855c896de4",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -147,10 +153,11 @@
       },
       "first_layer_mm": 0.2,
       "layers": 100,
-      "extrusion_segments": 175576,
+      "extrusion_segments": 177736,
       "support_segments": 0,
       "maximum_bridge_labelled_line_mm": 0,
       "maximum_actual_unsupported_bridge_gap_mm": 0,
+      "maximum_allowed_bridge_gap_mm": 5,
       "maximum_gap_if_supports_removed_mm": 0,
       "section_areas_mm2": {
         "0.1": 2718.494411306033,
@@ -162,11 +169,11 @@
         "12.0": 632.7517186283494
       },
       "slicer_estimates_not_measurements": [
-        "filament used [g] = 16.92",
-        "estimated printing time (normal mode) = 2h 5m 35s",
-        "estimated printing time (silent mode) = 2h 7m 3s"
+        "filament used [g] = 16.91",
+        "estimated printing time (normal mode) = 2h 5m 56s",
+        "estimated printing time (silent mode) = 2h 7m 42s"
       ],
-      "gcode_sha256": "d2eaea073ab5b24d38a14045525a9ad770ba4c6698390cce6d9cc0eb3c9fdb86",
+      "gcode_sha256": "1c3f60259fd02fa84d6a2fb8b786bfcb3afcf091aea857cbd8d189b886afbcf8",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -179,10 +186,11 @@
       },
       "first_layer_mm": 0.2,
       "layers": 103,
-      "extrusion_segments": 161497,
-      "support_segments": 1120,
+      "extrusion_segments": 162491,
+      "support_segments": 1121,
       "maximum_bridge_labelled_line_mm": 9.68634843478181,
       "maximum_actual_unsupported_bridge_gap_mm": 3.5795174255756903,
+      "maximum_allowed_bridge_gap_mm": 5,
       "maximum_gap_if_supports_removed_mm": 3.5808754516179313,
       "section_areas_mm2": {
         "0.1": 2557.77243691534,
@@ -195,10 +203,10 @@
       },
       "slicer_estimates_not_measurements": [
         "filament used [g] = 16.17",
-        "estimated printing time (normal mode) = 1h 57m 51s",
-        "estimated printing time (silent mode) = 1h 59m 4s"
+        "estimated printing time (normal mode) = 1h 58m 16s",
+        "estimated printing time (silent mode) = 1h 59m 41s"
       ],
-      "gcode_sha256": "cea1a3e71a2a284f13797553572b25c45910fb5de33c4ef6162c7aa5215ea739",
+      "gcode_sha256": "3cf3eaecbbab551e76335d2f8df734b021f8d73f2645a9e5344665e1b5ec1ca7",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -211,10 +219,11 @@
       },
       "first_layer_mm": 0.2,
       "layers": 103,
-      "extrusion_segments": 149095,
-      "support_segments": 1326,
+      "extrusion_segments": 149679,
+      "support_segments": 1321,
       "maximum_bridge_labelled_line_mm": 10.221228546510433,
       "maximum_actual_unsupported_bridge_gap_mm": 4.12526096144232,
+      "maximum_allowed_bridge_gap_mm": 5,
       "maximum_gap_if_supports_removed_mm": 4.12526096144232,
       "section_areas_mm2": {
         "0.1": 2505.4049993206845,
@@ -227,10 +236,10 @@
       },
       "slicer_estimates_not_measurements": [
         "filament used [g] = 15.87",
-        "estimated printing time (normal mode) = 1h 55m 24s",
-        "estimated printing time (silent mode) = 1h 56m 30s"
+        "estimated printing time (normal mode) = 1h 55m 16s",
+        "estimated printing time (silent mode) = 1h 56m 33s"
       ],
-      "gcode_sha256": "b3fa04c60655ec0f0774b5898fa02b6f813592caed2dcc96fe5d714c7da10d72",
+      "gcode_sha256": "5e679985d4749f317cb0a7c2c39d2aa9a641187ba917165ac446714354622aa5",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -242,10 +251,11 @@
       },
       "first_layer_mm": 0.2,
       "layers": 100,
-      "extrusion_segments": 132895,
+      "extrusion_segments": 133465,
       "support_segments": 0,
       "maximum_bridge_labelled_line_mm": 0,
       "maximum_actual_unsupported_bridge_gap_mm": 0,
+      "maximum_allowed_bridge_gap_mm": 5,
       "maximum_gap_if_supports_removed_mm": 0,
       "section_areas_mm2": {
         "0.1": 2570.7542279809677,
@@ -258,10 +268,10 @@
       },
       "slicer_estimates_not_measurements": [
         "filament used [g] = 15.67",
-        "estimated printing time (normal mode) = 1h 53m 42s",
-        "estimated printing time (silent mode) = 1h 54m 50s"
+        "estimated printing time (normal mode) = 1h 54m 0s",
+        "estimated printing time (silent mode) = 1h 55m 22s"
       ],
-      "gcode_sha256": "433b17b8053a820e96542259d0963b16eece8d12cf12b7feed2bae9c64b1f715",
+      "gcode_sha256": "1ceb4871349ccfca802a7ce3ad1c9f3e7432eb418661dbb90862f2b64c17aa7c",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -274,10 +284,11 @@
       },
       "first_layer_mm": 0.2,
       "layers": 103,
-      "extrusion_segments": 144643,
-      "support_segments": 1552,
+      "extrusion_segments": 145030,
+      "support_segments": 1551,
       "maximum_bridge_labelled_line_mm": 9.939311696490858,
       "maximum_actual_unsupported_bridge_gap_mm": 3.844737962462466,
+      "maximum_allowed_bridge_gap_mm": 5,
       "maximum_gap_if_supports_removed_mm": 3.844737962462466,
       "section_areas_mm2": {
         "0.1": 2453.071414132016,
@@ -290,10 +301,10 @@
       },
       "slicer_estimates_not_measurements": [
         "filament used [g] = 15.58",
-        "estimated printing time (normal mode) = 1h 52m 49s",
-        "estimated printing time (silent mode) = 1h 53m 48s"
+        "estimated printing time (normal mode) = 1h 52m 28s",
+        "estimated printing time (silent mode) = 1h 53m 36s"
       ],
-      "gcode_sha256": "2cd271b07b75453e31dc0a5e16b58709b0885157f077aff2cd14e4e484c6df63",
+      "gcode_sha256": "7b62d775eedba15aeb58210b33a4055f2be03a2f9392b8113a7efd3bc21aa9d5",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -305,10 +316,11 @@
       },
       "first_layer_mm": 0.2,
       "layers": 100,
-      "extrusion_segments": 160201,
+      "extrusion_segments": 161778,
       "support_segments": 0,
       "maximum_bridge_labelled_line_mm": 0,
       "maximum_actual_unsupported_bridge_gap_mm": 0,
+      "maximum_allowed_bridge_gap_mm": 5,
       "maximum_gap_if_supports_removed_mm": 0,
       "section_areas_mm2": {
         "0.1": 2754.7592825622255,
@@ -320,11 +332,11 @@
         "12.0": 648.3218114368224
       },
       "slicer_estimates_not_measurements": [
-        "filament used [g] = 17.21",
-        "estimated printing time (normal mode) = 2h 6m 50s",
-        "estimated printing time (silent mode) = 2h 8m 19s"
+        "filament used [g] = 17.22",
+        "estimated printing time (normal mode) = 2h 6m 34s",
+        "estimated printing time (silent mode) = 2h 8m 15s"
       ],
-      "gcode_sha256": "756feae29c4cc453316dbae187e276073efcc59a2783891fe47c1edaf472b9cb",
+      "gcode_sha256": "53863c0024586f8d1c002e53d90d87673d0611615a4fced6259cdef63e853e8a",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -336,11 +348,12 @@
       },
       "first_layer_mm": 0.2,
       "layers": 100,
-      "extrusion_segments": 166916,
+      "extrusion_segments": 166795,
       "support_segments": 0,
-      "maximum_bridge_labelled_line_mm": 2.183143146932882,
-      "maximum_actual_unsupported_bridge_gap_mm": 0.23075186745218382,
-      "maximum_gap_if_supports_removed_mm": 0.23075186745218382,
+      "maximum_bridge_labelled_line_mm": 1.9380621765051795,
+      "maximum_actual_unsupported_bridge_gap_mm": 0.21085414899871077,
+      "maximum_allowed_bridge_gap_mm": 5,
+      "maximum_gap_if_supports_removed_mm": 0.21085414899871077,
       "section_areas_mm2": {
         "0.1": 2870.323323547081,
         "0.7": 2870.3564909818733,
@@ -352,10 +365,10 @@
       },
       "slicer_estimates_not_measurements": [
         "filament used [g] = 19.28",
-        "estimated printing time (normal mode) = 2h 18m 14s",
-        "estimated printing time (silent mode) = 2h 20m 7s"
+        "estimated printing time (normal mode) = 2h 18m 1s",
+        "estimated printing time (silent mode) = 2h 20m 6s"
       ],
-      "gcode_sha256": "5cbf526dc62fe63caf559025022bec6f556cec11d02b3e7ffda2c56bcebb115e",
+      "gcode_sha256": "74270e048312bc141dab088c569100ef47438f922fac5cf82affbb9ff142047b",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
     },
@@ -368,11 +381,12 @@
         "mechanical/printing/V3-edge-cap-supports.ini": "68131be38638c6cc692b623a59f6e01b6db233284944ba72130599ee8fe12b6c"
       },
       "first_layer_mm": 0.2,
-      "layers": 136,
-      "extrusion_segments": 173051,
-      "support_segments": 11750,
+      "layers": 146,
+      "extrusion_segments": 175234,
+      "support_segments": 11797,
       "maximum_bridge_labelled_line_mm": 52.706091109092874,
-      "maximum_actual_unsupported_bridge_gap_mm": 2.04441541835602,
+      "maximum_actual_unsupported_bridge_gap_mm": 2.0444236512580196,
+      "maximum_allowed_bridge_gap_mm": 5,
       "maximum_gap_if_supports_removed_mm": 49.5394206271764,
       "section_areas_mm2": {
         "0.1": 485.96487962631727,
@@ -384,13 +398,36 @@
         "12.0": 886.3075631896705
       },
       "slicer_estimates_not_measurements": [
-        "filament used [g] = 27.19",
-        "estimated printing time (normal mode) = 3h 1m 1s",
-        "estimated printing time (silent mode) = 3h 2m 50s"
+        "filament used [g] = 27.20",
+        "estimated printing time (normal mode) = 3h 0m 50s",
+        "estimated printing time (silent mode) = 3h 2m 54s"
       ],
-      "gcode_sha256": "f377e5513eb24ed6059714cf5bbf56dba8f3c6c6d3c443ba992595021bb00b44",
+      "gcode_sha256": "ad5db03e83478b341d82856b892f3f0a921937b21a65e23b15970fb1b135044b",
       "gcode_not_distributed": true,
       "slicer_timeout_retries": 0
+    }
+  ],
+  "pocket_coupons": [
+    {
+      "name": "Disc_pocket_D6.3",
+      "STL_sha256": "322555200c7d8ec4ffeb8bcd0e2c7bdc61494d85948e0cccbd987398b088954f",
+      "support_segments": 0,
+      "support_warnings": false,
+      "gcode_sha256": "c4abf3516077fdcbdb658898d3ea254ae646da5406a9b9b7e0a45f2bba62b339"
+    },
+    {
+      "name": "Disc_pocket_D6.4",
+      "STL_sha256": "824940c417af5e8b0ef8c3e33db463db0117790336104b70ba1333ecb06bbcc7",
+      "support_segments": 0,
+      "support_warnings": false,
+      "gcode_sha256": "b24380077497d9b7ac269e5878b11e3648afc120c9a5aeaf78404c1cb31d3cd8"
+    },
+    {
+      "name": "Disc_pocket_D6.5",
+      "STL_sha256": "bc14b07738142e2b95202634a6ff95f5ce38378e3ceb5629f1f454d5c17130df",
+      "support_segments": 0,
+      "support_warnings": false,
+      "gcode_sha256": "58b6ca10424fe5fb969497778b98af8a003dc8aa1281cc54267b8210ca0f4b47"
     }
   ],
   "updated_caps_sliced": 11,

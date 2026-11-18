@@ -522,7 +522,7 @@
       {
         "label": "Base_V3_Discs",
         "first_face": 0,
-        "face_count": 31722,
+        "face_count": 44980,
         "color": [
           0.55,
           0.63,
@@ -773,7 +773,7 @@
     "Bearing_6808.glb": "736f7320e89405017e1a93bb8a8065e15775cf010ce6fa581f8374bafe4fd73c",
     "PCB_Fasteners.glb": "9a856224ee40f18e6772ab37b5480ad9d963f474accc788c4f6a7654a433849a",
     "Attachment_Discs_V3.glb": "d609819f61d26178d406ae0046a4208c62aff4148f806fb38941d9044ae18e67",
-    "Base_V3_Discs.glb": "048abf5c261acfe51caf8bf706fc4976243d5287397043645db380fa57c86d0d"
+    "Base_V3_Discs.glb": "4d1d406fbefec42215b73f3cfe92fadab7c6c17807e77f7ec2eb76b6f85aa99f"
   },
   "referenceModelSha256": {
     "Cap_circular.mtl": "096531d3ed06c425eb789eb77660b61b9417f487a547a854e60787c64a3a1201",
@@ -810,14 +810,14 @@
     "Bearing_6808.obj": "3549d38713d489083fd24932bd0f5a2fdff728875d72fa2889a426fb521f78dd",
     "MagSafe_Ring.obj": "e8d54b7d68bc8574fa1e2f37df54b67a78622c92a122495b2c17a0e4c5dfeb9b",
     "PCB_Fasteners.obj": "a71b7e1622c6a30b3f2385cc88f2ee16f6b21a4a5289662b5b9086eec4e34047",
-    "Base_V3_Discs.obj": "27ad81c55713285e79327433bb44603c21a457bc9d0a57653deb1b0e2ea00248",
+    "Base_V3_Discs.obj": "1ca3fb4809274bb04995f76de4ab61fe8dec9a293a5041bc94f1f251c2e7cfff",
     "Attachment_Discs_V3.obj": "0d94f3f590c933c84fb47ce17c36e4c3950b6225fad948a1289b88c5d0b9082e",
     "Attachment_Discs_V3.mtl": "8055fa2fddb6af37879a29b6f9e222e2b27cccd35e4802c9a88a867961647e40",
     "Base_V3_Discs.mtl": "349848774b2229fa967f018d0e66bdfa2465f1304e329b40c0753895d754f4c8"
   },
   "activeVariant": "V3_disc_magnets",
   "activeVariantParameters": {
-    "variant": "V3 diameter-6 by 3 mm disc-magnet base",
+    "variant": "V3 continuous-wall disc-magnet base, support-free print",
     "release": "1.0.33",
     "baseline_commit": "3e1826a07d1e9314e3ca289c356e1b499013a456",
     "qualification": "CAD/print-fit prototype; attachment force and phone compatibility require measurement",
@@ -857,12 +857,25 @@
       "nominal_face_recess_mm": 0.2,
       "minimum_face_recess_at_max_magnet_thickness_mm": 0.1,
       "steel_backing_count": 0,
-      "separate_carrier_count": 0
+      "separate_carrier_count": 0,
+      "roof_style": "45-degree vented taper above annular magnet stop",
+      "stop_inner_radius_mm": 2.8,
+      "top_vent_radius_mm": 1.8
     },
     "printed_product_parts": 2,
     "handled_parts": 28,
+    "base_support": {
+      "mode": "continuous_annular_wall",
+      "inner_radius_mm": 18.65,
+      "floor_top_z_mm": 1.5,
+      "wall_overlap_mm": 0.1,
+      "supports": "none",
+      "maximum_bridge_span_mm": 1.0,
+      "print_orientation": "Phone-contact face down; bearing shaft up",
+      "note": "Continuous wall replaces the inherited bearing-support webs. Each magnet seats at the original Z3.4 annular stop; a45-degree taper opens above it, eliminating closed roof bridges. No removable supports."
+    },
     "unchanged_interfaces": [
-      "Bottom20-disc pockets and base geometry",
+      "Bottom20-disc pockets, stops and phone-contact face",
       "6808-ZZ bearing seats",
       "RevC PCB and CR2450 holder/cell poses",
       "Two M2x4 nylon screws",

@@ -49,7 +49,7 @@ def archive(label, files, instructions):
 
 
 geometry_version = json.loads((H / "parameters.json").read_text())["release"]
-docs = [H / name for name in ["README.md", "ORDER_LIST.csv", "parameters.json", "polarity-map.csv", "review.png", f"exploded-v{geometry_version}.png", "encoder-orientation.png", "review.html"]]
+docs = [H / name for name in ["README.md", "ORDER_LIST.csv", "parameters.json", "polarity-map.csv", "review.png", "base-support-free.png", f"exploded-v{geometry_version}.png", "encoder-orientation.png", "review.html"]]
 docs += list((H / "drawings").glob("*"))
 docs += [R / "enclosure-drawing.assembly.tsx", R / "enclosure-drawing.circuit.json", R / "validation/native-drawing-audit.json"]
 docs += [G / name for name in ["geometry-audit.json", "print-audit.json", "print-ready-manifest.json", "assembly-step-audit.json", "native-preview-audit.json"]]
@@ -59,8 +59,8 @@ coupons = list((G / "Fit_Coupons").glob("*.stl")) + list((R / "mechanical/Print_
 prints = archive("V3-discs-print-test", [*docs, *default, *coupons, *profiles],
     f"V{version} V3: ONE AXIAL MAGNET TYPE, TWO ORIENTATIONS. Print exactly the V3 generated Base_V3_Discs.stl and Cap_circular.stl for one device (2 product parts). "
     "Fit coupons are tests, not device parts. Source21 identical diameter6 x thickness3 mm AXIAL N52 magnets:20 bottom attachment discs and1 encoder disc on edge in the keyed cap slot. "
-    "Insert attachment discs from the underside into blind pockets and retain with qualified sidewall adhesive. Insert the top disc from inside the cap, with its magnetic axis parallel to the PCB. "
-    "NO steel backing, premade ring or separate magnet carrier. Read V3 README first. Clear base supports from all blind stops; faces must remain recessed. "
+    "Insert attachment discs from the underside into vented pockets and retain with qualified sidewall adhesive. Insert the top disc from inside the cap, with its magnetic axis parallel to the PCB. "
+    "NO steel backing, premade ring or separate magnet carrier. Print the continuous-wall base phone face down with ZERO supports. Preserve annular stops and tapered vents; magnet faces must remain recessed. "
     "Use the provisional PETG profiles and re-slice for your actual printer; no machine G-code is supplied. "
     "Holding force, phone pole arrangement, adhesive retention and physical fit require prototype measurements.\n")
 

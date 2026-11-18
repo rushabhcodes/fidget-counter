@@ -12,7 +12,7 @@ const version=pkg.version,folder='mechanical/variants/V3_disc_magnets'
 const cadVersion=JSON.parse(read(`${folder}/parameters.json`)).release
 const walk=path=>readdirSync(path,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(resolve(path,e.name)):[resolve(path,e.name)])
 const variantFiles={
-  'review.html':'index.html','review.png':'review.png',
+  'review.html':'index.html','review.png':'review.png','base-support-free.png':'base-support-free.png',
   [`exploded-v${cadVersion}.png`]:`exploded-v${cadVersion}.png`,
   'encoder-orientation.png':'encoder-orientation.png',
   ...Object.fromEntries(readdirSync(resolve(root,folder,'drawings')).map(name=>['drawings/'+name,'drawings/'+name])),

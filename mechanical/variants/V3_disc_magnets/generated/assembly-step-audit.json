@@ -7,8 +7,8 @@
       "objects": 54,
       "discs": 20,
       "supplier_bodies": 27,
-      "sha256": "e0104a8a13aa75ed6fe50a93da70b1ce4395a8a10c11435f970ad1dfa715a2af",
-      "GLB_sha256": "14e43f88c0b328f2b35c7e69e7ace8306e68ec40284a0c68981ec9ad1a3da07a",
+      "sha256": "17534a581f33f866b7ffc4af1b3166f128eabe8dda6cdd5cc863172c79a7691e",
+      "GLB_sha256": "d220f0eb31987b06d3a50ea89280f9d1a63030ee981c18c3da79223226134bdf",
       "GLB_matches_STEP_bounds": true
     },
     {
@@ -16,8 +16,8 @@
       "objects": 54,
       "discs": 20,
       "supplier_bodies": 27,
-      "sha256": "429b2292e4b65e73c12e8624c931f3722ffb688ad0009144d795cd1aa742a129",
-      "GLB_sha256": "f278536e95f8b7b6486ab8ac0d96e467489f3f7d5cf2dd2754aa31d38adffe22",
+      "sha256": "bd469d97f27f5df06e457a145189cfaac5f821dff7fcea0cd1a0419ede5a4e77",
+      "GLB_sha256": "b9fa7ece4349174e8f38a36002ffc65ab2a4520a340ea7919f806d33a95803f2",
       "GLB_matches_STEP_bounds": true
     }
   ]

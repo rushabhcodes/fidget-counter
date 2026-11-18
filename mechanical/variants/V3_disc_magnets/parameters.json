@@ -1,5 +1,5 @@
 {
-  "variant": "V3 diameter-6 by 3 mm disc-magnet base",
+  "variant": "V3 continuous-wall disc-magnet base, support-free print",
   "release": "1.0.33",
   "baseline_commit": "3e1826a07d1e9314e3ca289c356e1b499013a456",
   "qualification": "CAD/print-fit prototype; attachment force and phone compatibility require measurement",
@@ -39,12 +39,25 @@
     "nominal_face_recess_mm": 0.2,
     "minimum_face_recess_at_max_magnet_thickness_mm": 0.1,
     "steel_backing_count": 0,
-    "separate_carrier_count": 0
+    "separate_carrier_count": 0,
+    "roof_style": "45-degree vented taper above annular magnet stop",
+    "stop_inner_radius_mm": 2.8,
+    "top_vent_radius_mm": 1.8
   },
   "printed_product_parts": 2,
   "handled_parts": 28,
+  "base_support": {
+    "mode": "continuous_annular_wall",
+    "inner_radius_mm": 18.65,
+    "floor_top_z_mm": 1.5,
+    "wall_overlap_mm": 0.1,
+    "supports": "none",
+    "maximum_bridge_span_mm": 1.0,
+    "print_orientation": "Phone-contact face down; bearing shaft up",
+    "note": "Continuous wall replaces the inherited bearing-support webs. Each magnet seats at the original Z3.4 annular stop; a45-degree taper opens above it, eliminating closed roof bridges. No removable supports."
+  },
   "unchanged_interfaces": [
-    "Bottom20-disc pockets and base geometry",
+    "Bottom20-disc pockets, stops and phone-contact face",
     "6808-ZZ bearing seats",
     "RevC PCB and CR2450 holder/cell poses",
     "Two M2x4 nylon screws",

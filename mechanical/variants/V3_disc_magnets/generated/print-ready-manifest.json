@@ -13,16 +13,16 @@
     {
       "name": "Base_V3_Discs",
       "file": "mechanical/variants/V3_disc_magnets/generated/Print_STL/Base_V3_Discs.stl",
-      "sha256": "95304262ba207dfd90137b7afca48d88aa5c9d5e1bd26a3f9b8eb04a580d3e59",
+      "sha256": "4b76ecb0f15bed5b8375e656a04629d603b899bb5b2205d88391b8b0cddd4db1",
       "STEP_file": "mechanical/variants/V3_disc_magnets/generated/STEP/Base_V3_Discs.step",
-      "STEP_sha256": "842dc512f975acffb7b557fef1386fbc007ccc8dfa73f92f0b7c60933afa6973",
+      "STEP_sha256": "1fb066a65649c754b4019638c5f37f28ded202b348443fe29442c2852141f7d6",
       "quantity_per_default_unit": 1,
       "orientation": "phone face down",
-      "supports": "fixed-base",
+      "supports": "none",
       "first_layer_mm": 0.2,
       "slicer_profiles": [
         "mechanical/printing/PETG-0.4-audit.ini",
-        "mechanical/printing/base-fixed-supports.ini"
+        "mechanical/printing/base-no-supports.ini"
       ]
     },
     {
@@ -192,7 +192,7 @@
     "Bearings, PCBA, cell and screws",
     "Assembled/exploded STEP and GLB"
   ],
-  "geometry_audit_sha256": "117b1b04f308568a6006b63018c37fa2185c79222323cfd74165f4ae2bf91207",
-  "actual_slicer_audit_sha256": "ed3580c082f09c45f9683b597e417870ba5f1fcefb47f504de5e4049743f8e42",
+  "geometry_audit_sha256": "ed42a5fb646b4fb0e51d386cbea50dd21deebd0229a1b35ad94ffb646e751115",
+  "actual_slicer_audit_sha256": "f2896cf00ba44788bc9f24ea57973ff6f395f225eb77baca150522995466757c",
   "machine_Gcode_included": false
 }

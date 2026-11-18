@@ -1,7 +1,7 @@
 {
   "passed": true,
   "physical_tested": false,
-  "variant": "V3 diameter-6 by 3 mm disc-magnet base",
+  "variant": "V3 continuous-wall disc-magnet base, support-free print",
   "pcb_records_identical": true,
   "fitted_components_identical": 27,
   "mechanical_models": [
@@ -34,5 +34,5 @@
       "maximum_bounds_error_mm": 0
     }
   ],
-  "circuit_sha256": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d"
+  "circuit_sha256": "afc2aa953b28a869ee2b92c1d303c448fac027fcc2142c7a33d07bd4e7850263"
 }

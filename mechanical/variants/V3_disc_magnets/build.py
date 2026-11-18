@@ -1,8 +1,9 @@
-"""Build the 1.0.32 disc base from frozen 1.0.31 hardware and supplier STEP.
+"""Build the support-free continuous-wall V3 base and axial-disc caps.
 
 No V1/V2 part, circuit, bearing seat or electrical placement is rewritten.
 Updated caps use the same axial attachment disc held on edge.
-Bottom-entry blind pockets are confined below Z4.4 mm; no steel or carrier.
+Bottom-entry vented pockets retain their stop height; no steel or carrier.
+The fixed sleeve is supported continuously from the floor, without web windows.
 """
 from pathlib import Path
 import hashlib
@@ -56,12 +57,28 @@ v2 = json.loads((H.parent / "V2_discrete_magnets/parameters.json").read_text())
 for name, digest in v2["unchanged_cap_STEP_sha256"].items():
     assert sha(ROOT / name) == digest, ("Changed existing cap", name)
 
-print("Building one-piece base with 20 bottom-entry blind magnet pockets...", flush=True)
+print("Building continuous-wall base with 20 bottom-entry vented magnet pockets...", flush=True)
 original = cq.importers.importStep(str(V1 / "Base_V1_Premade_Ring.step")).val()
-# Fill the inherited premade-ring seat, then machine/print individual blind
-# pockets directly in the base. The upper shaft, posts and cap seats stay put.
-fill = ring(B["annulus_inner_radius_mm"], 29, B["phone_contact_z_mm"], B["base_roof_top_z_mm"] - B["phone_contact_z_mm"])
-base = original.fuse(fill).clean()
+# Build the fixed body directly instead of inheriting the obsolete web feet,
+# stems and unsupported heads from the premade-ring design. Every wall starts
+# on the floor or a wider wall. Tapered pocket vents avoid closed roof bridges.
+S, bearing_spec, mount = P["base_support"], OLD["bearing"], OLD["pcb_mount"]
+assert S["mode"] == "continuous_annular_wall" and S["supports"] == "none"
+inner, floor = S["inner_radius_mm"], S["floor_top_z_mm"]
+bearing_bottom = bearing_spec["bottom_z_mm"]
+bearing_top = bearing_bottom + bearing_spec["width_mm"]
+base = disc(P["base_diameter_mm"] / 2, B["phone_contact_z_mm"], floor - B["phone_contact_z_mm"])
+base = base.fuse(
+    ring(inner, P["base_diameter_mm"] / 2, floor - S["wall_overlap_mm"], B["base_roof_top_z_mm"] - floor + S["wall_overlap_mm"]),
+    ring(inner, bearing_spec["inner_shoulder_outer_radius_mm"], B["base_roof_top_z_mm"], bearing_bottom - B["base_roof_top_z_mm"]),
+    ring(inner, bearing_spec["shaft_diameter_mm"] / 2, bearing_bottom, bearing_top - bearing_bottom))
+for angle in mount["angles_deg"]:
+    t = math.radians(angle)
+    x, y = mount["radius_mm"] * math.cos(t), mount["radius_mm"] * math.sin(t)
+    post = disc(mount["post_radius_mm"], floor - S["wall_overlap_mm"], OLD["pcb_bottom"] - floor + S["wall_overlap_mm"], x, y)
+    post = post.fuse(disc(mount["foot_radius_mm"], floor - S["wall_overlap_mm"], .4, x, y))
+    post = post.cut(disc(.8, OLD["pcb_bottom"] - 5, 5.6, x, y))
+    base = base.fuse(post)
 magnets, centers = {}, []
 for i in range(M["quantity"]):
     angle = M["first_angle_deg"] + i * 360 / M["quantity"]
@@ -71,14 +88,26 @@ for i in range(M["quantity"]):
     pocket = disc(M["pocket_diameter_mm"] / 2, 0.1, B["blind_stop_z_mm"] - 0.1, x, y)
     entry = cq.Solid.makeCone(B["entry_diameter_mm"] / 2, M["pocket_diameter_mm"] / 2,
                              B["entry_chamfer_height_mm"], cq.Vector(x, y, B["phone_contact_z_mm"]))
-    base = base.cut(pocket.fuse(entry))
+    taper_height = B["base_roof_top_z_mm"] - B["blind_stop_z_mm"]
+    assert abs(B["stop_inner_radius_mm"] - B["top_vent_radius_mm"] - taper_height) < 1e-7
+    assert M["pocket_diameter_mm"] / 2 - B["stop_inner_radius_mm"] <= .4 + 1e-7
+    vent = cq.Solid.makeCone(B["stop_inner_radius_mm"], B["top_vent_radius_mm"],
+                            taper_height, cq.Vector(x, y, B["blind_stop_z_mm"]))
+    base = base.cut(pocket.fuse(entry, vent))
     magnets[f"Attachment_Disc_{i + 1:02}"] = disc(M["diameter_mm"] / 2, M["phone_face_z_mm"], M["thickness_mm"], x, y)
 base = base.clean()
-allowed = ring(B["annulus_inner_radius_mm"], 29.1, 0.1, B["base_roof_top_z_mm"] - 0.1)
+# Bound changes to the attachment region and the superseded lower web supports.
+# The calibrated shaft, bearing land and PCB post tops remain exact geometry.
+allowed = ring(B["annulus_inner_radius_mm"], 29.1, 0.1, B["base_roof_top_z_mm"] - 0.1).fuse(
+    ring(14, 21.1, floor - S["wall_overlap_mm"], bearing_bottom - floor + S["wall_overlap_mm"])).clean()
 assert base.cut(original).cut(allowed).Volume() < 0.002
 assert original.cut(base).cut(allowed).Volume() < 0.002
-upper = cq.Workplane("XY").box(100, 100, 40).val().translate((0, 0, B["base_roof_top_z_mm"] + 20.00001))
+upper = cq.Workplane("XY").box(100, 100, 40).val().translate((0, 0, bearing_bottom + 20.00001))
 assert base.intersect(upper).cut(original).Volume() + original.intersect(upper).cut(base).Volume() < 0.002
+seat_zone = ring(inner, 21.1, 5, bearing_top - 5)
+assert base.intersect(seat_zone).cut(original).Volume() + original.intersect(seat_zone).cut(base).Volume() < .002
+continuous_wall = ring(inner, bearing_spec["shaft_diameter_mm"] / 2, floor, bearing_top - floor)
+assert continuous_wall.cut(base).Volume() < .002, "Interrupted bearing support wall"
 min_web = 2 * M["pitch_radius_mm"] * math.sin(math.pi / M["quantity"]) - M["pocket_diameter_mm"]
 inner_wall = M["pitch_radius_mm"] - M["pocket_diameter_mm"] / 2 - B["annulus_inner_radius_mm"]
 outer_wall = 29 - M["pitch_radius_mm"] - M["pocket_diameter_mm"] / 2
@@ -95,7 +124,7 @@ for i, (name, shape) in enumerate(new.items()):
     for other, right in list(new.items())[i + 1:]:
         clear(shape, right, name + "/" + other)
 # Continuous insertion path, starting below the phone-side face. A disc must
-# clear the actual base at every pose until it touches its blind roof.
+# clear the actual base at every pose until it touches its annular stop.
 insertion_poses = [-4, -3, -2, -1, -0.5, -0.1, 0]
 for name, magnet in magnets.items():
     for dz in insertion_poses:
@@ -208,11 +237,14 @@ for name,shape in [("Base_V3_Discs",base),*caps.items()]:
     printed.append({'name':name,'STEP':str(step.relative_to(H)),'STEP_sha256':sha(step),'STL':str(stl.relative_to(H)),'STL_sha256':sha(stl),'volume_mm3':shape.Volume(),
                     'print_rotation_x_deg':180 if invert else 0,'print_translation_z_mm':translate_z,
                     'orientation':'deck down'if invert else('upright, cup supported'if name.startswith('Cap_')else'phone face down'),
-                    'supports':info.get('supports','fixed-base'),'quantity_per_default_unit':int(name in['Base_V3_Discs','Cap_circular'])})
+                    'supports':S['supports'] if name=='Base_V3_Discs' else info.get('supports','fixed-base'),'quantity_per_default_unit':int(name in['Base_V3_Discs','Cap_circular'])})
 for diameter in [6.3, 6.4, 6.5]:
     coupon = cq.Workplane("XY").box(10, 10, B["base_roof_top_z_mm"] - B["phone_contact_z_mm"], centered=(True, True, False)).val()
     coupon = coupon.cut(disc(diameter / 2, -0.1, B["blind_stop_z_mm"] - B["phone_contact_z_mm"] + 0.1))
     coupon = coupon.cut(cq.Solid.makeCone(diameter / 2 + 0.1, diameter / 2, B["entry_chamfer_height_mm"], cq.Vector(0, 0, 0)))
+    coupon_stop = B["stop_inner_radius_mm"] + (diameter - M["pocket_diameter_mm"]) / 2
+    coupon = coupon.cut(cq.Solid.makeCone(coupon_stop, coupon_stop - taper_height, taper_height,
+                                        cq.Vector(0, 0, B["blind_stop_z_mm"] - B["phone_contact_z_mm"])))
     cq.exporters.export(coupon, str(G / "Fit_Coupons" / f"Disc_pocket_D{diameter:.1f}.stl"), tolerance=0.025, angularTolerance=0.09)
 cq.exporters.export(cq.Compound.makeCompound(list(magnets.values())), str(G / "Reference_STEP/Attachment_Discs_V3.step"))
 
@@ -255,13 +287,17 @@ report = {"passed": True, "physical_tested": False, "holding_force_verified": Fa
           "frozen_circuit_sha256": sha(V1 / "source/published.circuit.json"), "supplier_bodies_checked": len(electronics),
           "magnet_count": len(magnets), "pitch_circle_diameter_mm": 2 * M["pitch_radius_mm"], "angular_pitch_deg": 360 / M["quantity"],
           "minimum_pocket_web_mm": min_web, "pocket_inner_wall_mm": inner_wall, "pocket_outer_wall_mm": outer_wall,
-          "minimum_entry_wall_mm": mouth_wall, "blind_roof_thickness_mm": B["base_roof_top_z_mm"] - B["blind_stop_z_mm"],
+          "minimum_entry_wall_mm": mouth_wall, "pocket_taper_height_mm": taper_height,
+          "top_vent_diameter_mm": 2 * B["top_vent_radius_mm"], "magnet_stop_z_mm": B["blind_stop_z_mm"],
+          "minimum_magnet_to_stop_radial_overlap_mm": (M["diameter_mm"] - M["diameter_tolerance_allowance_mm"]) / 2 - B["stop_inner_radius_mm"],
           "minimum_bearing_bottom_to_roof_mm": OLD["bearing"]["bottom_z_mm"] - B["base_roof_top_z_mm"],
           "holder_to_base_mm": base.distance(electronics["Electronic_BT1"]),
           "nominal_phone_face_recess_mm": M["phone_face_z_mm"] - B["phone_contact_z_mm"],
           "minimum_face_recess_at_maximum_magnet_thickness_mm": maximum_magnet_bottom - B["phone_contact_z_mm"],
           "bottom_insertion_poses_per_disc": len(insertion_poses), "bottom_insertion_collision_mm3": 0,
-          "all_upper_interfaces_unchanged_above_z_mm": B["base_roof_top_z_mm"], "cap_styles_checked": OLD["cap_styles"], "rotation_samples_per_cap": 24,
+          "all_upper_interfaces_unchanged_above_z_mm": bearing_bottom, "cap_styles_checked": OLD["cap_styles"], "rotation_samples_per_cap": 24,
+          "base_support": S, "continuous_bearing_wall_missing_volume_mm3": continuous_wall.cut(base).Volume(),
+          "bearing_contact_geometry_unchanged": True,
           "physical_height_mm": P["physical_height_mm"], "encoder_gap_mm": P["nominal_encoder_gap_mm"], "printed_product_parts": 2, "handled_parts": 28,
           "steel_backing_count": 0, "separate_carrier_count": 0,
           "encoder": E, "encoder_insertion_poses_per_cap":len(encoder_insertion),"flat_wrong_orientation_rejected":True,"all_bearing_interfaces_unchanged":True,

@@ -1,6 +1,10 @@
 # v1.0.34 — native engineering drawings and one axial magnet type
 
-Twenty circular **Ø6 × 3 mm axial N52 magnets** insert from the phone-facing underside into blind pockets in a **one-piece PETG base**. Sidewall adhesive retains them against integral stops. The enclosure has two printed product parts: base and one cap. There is **no steel backing, premade magnetic ring or separate carrier** in V3.
+Twenty circular **Ø6 × 3 mm axial N52 magnets** insert from the phone-facing underside into vented pockets in a **one-piece PETG base**. Sidewall adhesive retains them against integral annular stops. The enclosure has two printed product parts: base and one cap. There is **no steel backing, premade magnetic ring or separate carrier** in V3.
+
+The current base replaces the inherited three support webs with a **continuous circular wall** joining the floor to the bearing sleeve. Print it **phone face down, shaft up, with supports disabled**. The pockets have annular stops and 45° top vents, eliminating closed roof bridges. The bearing seats, four PCB post tops, magnet stop depth and overall dimensions remain in place. This working redesign supersedes the earlier base in the v1.0.34 download archives; use the generated STEP/STL and print manifest in this checkout.
+
+![Current continuous-wall base, actual STEP geometry](base-support-free.png)
 
 ![Complete current assembly, exploded from actual CAD](exploded-v1.0.33.png)
 
@@ -10,11 +14,11 @@ The base stays Ø58 mm. The top encoder now uses the **same Ø6 × 3 mm axial N5
 
 One device has 28 handled parts, excluding adhesive/tools; an assembled PCBA counts as one.
 
-[Native drawing source](../../../enclosure-drawing.assembly.tsx) · [Native drawing document](../../../enclosure-drawing.circuit.json) · [A3 two-sheet PDF](drawings/engineering-drawing-v1.0.34.pdf). The native Drawings view contains the assembled/exploded enclosure and magnet details. The underlying printed CAD stays at revision 1.0.33.
+[Native drawing source](../../../enclosure-drawing.assembly.tsx) · [Native drawing document](../../../enclosure-drawing.circuit.json) · [A3 two-sheet PDF](drawings/engineering-drawing-v1.0.34.pdf). The native Drawings view contains the assembled/exploded enclosure and magnet details. Those released drawings record printed CAD revision 1.0.33; the working support-free base is shown above.
 
 ## Print and buy
 
-Print one `generated/Print_STL/Base_V3_Discs.stl` and one updated `generated/Print_STL/Cap_*.stl`. The default kit supplies the circular cap. Print the pocket-fit coupons first. Follow the [print manifest](generated/print-ready-manifest.json), per-part support profiles in that manifest and the provisional PETG / 0.4 mm nozzle / 0.15 mm layer process. The base needs fixed-base supports; clear them fully from every bottom pocket and blind stop. V1/V2 bases and carriers are incompatible with V3.
+Print one `generated/Print_STL/Base_V3_Discs.stl` and one updated `generated/Print_STL/Cap_*.stl`. The default kit supplies the circular cap. Print the pocket-fit coupons first. Follow the [print manifest](generated/print-ready-manifest.json), per-part support profiles in that manifest and the provisional PETG / 0.4 mm nozzle / 0.15 mm layer process. The base uses `base-no-supports.ini`: no automatic or enforced supports. Inspect the annular stops and open tapered vents after printing. Cap support settings are listed separately in the manifest. V1/V2 bases and carriers are incompatible with V3.
 
 | Purchase | Per device | Required specification and supplier example |
 | --- | ---: | --- |
@@ -31,11 +35,11 @@ Print one `generated/Print_STL/Base_V3_Discs.stl` and one updated `generated/Pri
 
 The phone-contact face is Z0.2 mm. The 20 centers sit at R24.85 mm, 18° apart. Pockets are Ø6.4 mm, with a Ø6.6 mm × 0.2 mm entry chamfer. Nominal cylindrical radial clearance is 0.2 mm; a maximum Ø6.1 mm disc leaves 0.15 mm. Pocket webs are 1.375 mm, cylindrical radial walls 0.95 mm and minimum entry walls 0.85 mm.
 
-Each blind stop is at Z3.4 mm. A nominal 3 mm disc seated against that stop ends at Z0.4, **0.2 mm recessed** from the phone-contact face. A 3.1 mm maximum-thickness disc remains 0.1 mm recessed, before printer variation. The solid roof is 1 mm thick, ending at Z4.4; the bearing starts at Z6.1. The base geometry above Z4.4 and the cap/bearing contact geometry are unchanged. All eleven updated caps clear the base through full rotation.
+Each annular stop is at Z3.4 mm. A nominal 3 mm disc seated against that stop ends at Z0.4, **0.2 mm recessed** from the phone-contact face. A 3.1 mm maximum-thickness disc remains 0.1 mm recessed, before printer variation. The Ø6.4 mm pocket narrows at the stop to Ø5.6 mm, leaving a 0.4 mm radial ledge. A 45° taper then opens to a Ø3.6 mm vent at Z4.4. The vent removes the closed roof bridge; even a minimum Ø5.9 mm magnet overlaps the stop by 0.15 mm radially. The bearing starts at Z6.1. The continuous wall has a Ø37.3 mm inner bore; below the shaft, its Ø42 mm shoulder grows directly from the lower body. The bearing-contact geometry, base geometry above Z6.1 and PCB post tops are unchanged. All eleven updated caps clear the base through full rotation.
 
-1. Print the 6.3/6.4/6.5 mm pocket coupons, then the base and one circular cap. Remove support remnants and measure the purchased magnets and actual pockets. The production pocket is Ø6.4; coupons diagnose printer fit. Do not force a disc.
+1. Print the 6.3/6.4/6.5 mm pocket coupons, then the base and one circular cap. The coupons share the vented stop geometry and also print with zero supports. Measure the purchased magnets and actual pockets. The production pocket is Ø6.4; coupons diagnose printer fit. Do not force a disc.
 2. Identify poles with a pole indicator and dry-test the intended phone/case in a removable fixture. Record a measured pole arrangement in `polarity-map.csv` **before bonding**. Pocket numbers are counterclockwise from +X when viewed from the top; their order appears reversed from underneath.
-3. Turn the base over. Apply compatible adhesive to a pocket sidewall, keep its blind stop dry, and insert the disc **from the underside** until it seats. No adhesive layer goes above the disc because that would reduce the phone-face recess. Confirm every face is recessed and no glue remains on the phone-contact rim. Repeat for all 20 and let the adhesive fully cure. Adhesive is the retention method; no hidden backing or snap lip holds a loose disc.
+3. Turn the base over. Apply compatible adhesive to a pocket sidewall, keep its annular stop dry, and insert the disc **from the underside** until it seats on the annular stop. No adhesive layer goes above the disc because that would reduce the phone-face recess. Confirm every face is recessed and no glue remains on the phone-contact rim. Repeat for all 20 and let the adhesive fully cure. Adhesive is the retention method; no hidden backing or snap lip holds a loose disc.
 4. Insert the encoder disc **on its edge from inside the cap**, into the keyed 3.4 × 6.4 mm slot. Its 3 mm pole-to-pole thickness lies along cap X; its circular diameter stands vertically. Seat its curved upper edge against the dry Z19.9 stop and bond only the slot sidewalls. The magnet extends from Z13.9 to Z19.9; the sensor body top is Z12.1. The roof above the stop is 1.2 mm. Confirm the disc cannot turn flat and let the adhesive cure.
 5. Program the board before closing the enclosure, fit the CR2450 and two opposite nylon screws, then the bearing and cap. Follow the common electronic/bearing steps in [ASSEMBLY.md](../../../ASSEMBLY.md) and [PROGRAMMING.md](../../../PROGRAMMING.md). Select 3V3 and remove the cell before powered programming.
 
@@ -62,4 +66,4 @@ bun run check:assembly
 bun run check:programming
 ```
 
-Use `mechanical/requirements.txt`; rendering additionally uses VTK and Matplotlib. The audits check bottom insertion at seven poses for every attachment disc, encoder insertion into all eleven keyed slots, rejection of flat encoder placement, blind stops/roofs, actual supplier bodies, all eleven caps at 24 angles, unchanged bearing contact geometry, STEP/GLB poses and actual slicer output. Native preview validation requires every routed PCB record and all 27 fitted electronic records to match frozen corrected v1.0.31. V1/V2 stay preserved in their own folders. Physical fit and magnetic performance are unverified.
+Use `mechanical/requirements.txt`; rendering additionally uses VTK and Matplotlib. The audits check bottom insertion at seven poses for every attachment disc, encoder insertion into all eleven keyed slots, rejection of flat encoder placement, annular stops and tapered vents, actual supplier bodies, all eleven caps at 24 angles, unchanged bearing contact geometry, STEP/GLB poses and actual slicer output. Native preview validation requires every routed PCB record and all 27 fitted electronic records to match frozen corrected v1.0.31. V1/V2 stay preserved in their own folders. Physical fit and magnetic performance are unverified.
