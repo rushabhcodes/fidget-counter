@@ -21,11 +21,7 @@ const geometry=c.filter(e=>!e.type.startsWith('drawing_'))
 for(const e of geometry)if(e.type==='cad_component')for(const key of ['model_obj_url','model_mtl_url','model_glb_url','model_gltf_url','model_stl_url']){
   if(e[key]?.startsWith('./'))e[key]=pathToFileURL(resolve(e[key])).href
 }
-function membership(view){
-  return view.drawing_assembly_stage_id?c.find(e=>e.type==='drawing_assembly_stage'&&e.drawing_assembly_stage_id===view.drawing_assembly_stage_id):view
-}
 async function sceneFor(view){
-  view=membership(view)
   const key=JSON.stringify([view.source_group_id,view.source_component_ids,view.pcb_board_ids])
   if(cache.has(key))return cache.get(key)
   const ids=new Set(view.source_component_ids)
@@ -72,7 +68,7 @@ const a=bottom.project([-radius,bottom.center[1],0]),b=bottom.project([radius,bo
 add(bottom,'AttachmentPitchDiameter',a,b,{x:0,y:bottom.box.maxY+7-a.y},'Ø49.70 PCD',radius*2,49.7)
 const disc=await viewInfo('AxialDisc');extent(disc,'x','DiscThickness','3.00 mm',3);extent(disc,'y','DiscDiameter','Ø6.00 mm',6)
 const section=await viewInfo('CenterSection')
-const sectionMembers=membership(section.view)
+const sectionMembers=section.view
 const selected=sectionMembers.source_component_ids?new Set(sectionMembers.source_component_ids):new Set(buildSubtree(c,{source_group_id:sectionMembers.source_group_id}).filter(e=>e.type==='source_component').map(e=>e.source_component_id))
 async function partBounds(name){
   const source=c.find(e=>e.type==='source_component'&&e.name===name&&selected.has(e.source_component_id));assert(source,name)
@@ -89,5 +85,5 @@ for(const e of c)if(e.type==='cad_component')for(const key of ['model_obj_url','
 }
 writeFileSync(output,JSON.stringify(c,null,2)+'\n')
 mkdirSync('dist/validation/native-drawing',{recursive:true})
-writeFileSync('dist/validation/native-drawing/dimension-audit.json',JSON.stringify({passed:true,renderer:'Native tsCircuit / PoppyGL',source:input,output,native_pages:c.filter(e=>e.type==='drawing_page').length,native_views:c.filter(e=>['drawing_part_view','drawing_explosion_view'].includes(e.type)).length,native_dimension_lines:measurements.length,measurements,source_sha256:hash('engineering-drawing.tsx'),resolver_sha256:hash(import.meta.filename),circuit_sha256:hash(output)},null,2)+'\n')
+writeFileSync('dist/validation/native-drawing/dimension-audit.json',JSON.stringify({passed:true,renderer:'Native tsCircuit / PoppyGL',source:input,output,native_pages:c.filter(e=>e.type==='drawing_page').length,native_views:c.filter(e=>e.type==='drawing_part_view').length,native_dimension_lines:measurements.length,measurements,source_sha256:hash('engineering-drawing.tsx'),resolver_sha256:hash(import.meta.filename),circuit_sha256:hash(output)},null,2)+'\n')
 console.log('PASS: native drawing pages, model-derived dimensions and portable CAD URLs',measurements)
