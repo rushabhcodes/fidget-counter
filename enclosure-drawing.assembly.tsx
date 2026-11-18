@@ -43,7 +43,7 @@ export default ()=> <assembly.device name="EnclosureDrawing">
 
   <assembly.drawing.page name="enclosure-assembly" displayName="Enclosure / assembled and exploded" size="iso_a3">
     <assembly.drawing.titleblock title="Fidget counter / enclosure and exploded assembly" legalOwner="rushabhcodes"
-      identificationNumber="FCT-MECH-001" revisionIndex={project.version} dateOfIssue="2026-11-13" creator="rushabhcodes" sheetNumber={1} numberOfSheets={2}/>
+      identificationNumber="FCT-MECH-001" revisionIndex={project.version} dateOfIssue="2026-11-18" creator="rushabhcodes" sheetNumber={1} numberOfSheets={2}/>
     <assembly.drawing.partview name="AssembledIso" displayName="Assembled enclosure" partRef=".Assembled" direction="isometric" centerX={-100} centerY={65} width={180} height={110}/>
     <assembly.drawing.partview name="Front" displayName="Front / nominal mm" partRef=".Assembled" direction="y-" centerX={-100} centerY={-45} width={180} height={85}>
     </assembly.drawing.partview>
@@ -52,8 +52,8 @@ export default ()=> <assembly.device name="EnclosureDrawing">
 
   <assembly.drawing.page name="enclosure-magnet-details" displayName="Magnet pattern and sensor clearance" size="iso_a3">
     <assembly.drawing.titleblock title="Fidget counter / magnet pockets and axial encoder" legalOwner="rushabhcodes"
-      identificationNumber="FCT-MECH-001" revisionIndex={project.version} dateOfIssue="2026-11-13" creator="rushabhcodes" sheetNumber={2} numberOfSheets={2}/>
-    <assembly.drawing.partview name="BottomPockets" displayName="20 × Ø6.4 blind pockets, 3.2 deep / Ø49.7 PCD" partRef=".Assembled > .Mount" direction="z-" centerX={-105} centerY={45} width={175} height={145}>
+      identificationNumber="FCT-MECH-001" revisionIndex={project.version} dateOfIssue="2026-11-18" creator="rushabhcodes" sheetNumber={2} numberOfSheets={2}/>
+    <assembly.drawing.partview name="BottomPockets" displayName="20 × Ø6.4 vented pockets / 3.2 stop depth / Ø49.7 PCD" partRef=".Assembled > .Mount" direction="z-" centerX={-105} centerY={45} width={175} height={145}>
     </assembly.drawing.partview>
     <assembly.drawing.partview name="AxialDisc" displayName="Encoder Ø6 × 3 / mounted on edge" partRef=".Assembled > .Encoder" direction="y-" centerX={-105} centerY={-90} width={32} height={90}>
     </assembly.drawing.partview>

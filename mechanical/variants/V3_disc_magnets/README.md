@@ -1,8 +1,8 @@
-# v1.0.34 — native engineering drawings and one axial magnet type
+# v1.0.35 — native engineering drawings and one axial magnet type
 
 Twenty circular **Ø6 × 3 mm axial N52 magnets** insert from the phone-facing underside into vented pockets in a **one-piece PETG base**. Sidewall adhesive retains them against integral annular stops. The enclosure has two printed product parts: base and one cap. There is **no steel backing, premade magnetic ring or separate carrier** in V3.
 
-The current base replaces the inherited three support webs with a **continuous circular wall** joining the floor to the bearing sleeve. Print it **phone face down, shaft up, with supports disabled**. The pockets have annular stops and 45° top vents, eliminating closed roof bridges. The bearing seats, four PCB post tops, magnet stop depth and overall dimensions remain in place. This working redesign supersedes the earlier base in the v1.0.34 download archives; use the generated STEP/STL and print manifest in this checkout.
+The current base replaces the inherited three support webs with a **continuous circular wall** joining the floor to the bearing sleeve. Print it **phone face down, shaft up, with supports disabled**. The pockets have annular stops and 45° top vents, eliminating closed roof bridges. The bearing seats, four PCB post tops, magnet stop depth and overall dimensions remain in place. The v1.0.35 download archives contain this redesigned base, matching fit coupons and print manifest.
 
 ![Current continuous-wall base, actual STEP geometry](base-support-free.png)
 
@@ -14,7 +14,7 @@ The base stays Ø58 mm. The top encoder now uses the **same Ø6 × 3 mm axial N5
 
 One device has 28 handled parts, excluding adhesive/tools; an assembled PCBA counts as one.
 
-[Native drawing source](../../../enclosure-drawing.assembly.tsx) · [Native drawing document](../../../enclosure-drawing.circuit.json) · [A3 two-sheet PDF](drawings/engineering-drawing-v1.0.34.pdf). The native Drawings view contains the assembled/exploded enclosure and magnet details. Those released drawings record printed CAD revision 1.0.33; the working support-free base is shown above.
+[Native drawing source](../../../enclosure-drawing.assembly.tsx) · [Native drawing document](../../../enclosure-drawing.circuit.json) · [A3 two-sheet PDF](drawings/engineering-drawing-v1.0.35.pdf). The native Drawings view contains the assembled/exploded enclosure and magnet details. The drawings and download kits include the continuous-wall base and vented magnet pockets.
 
 ## Print and buy
 
@@ -24,7 +24,7 @@ Print one `generated/Print_STL/Base_V3_Discs.stl` and one updated `generated/Pri
 | --- | ---: | --- |
 | Identical attachment/encoder magnets | 21 | **Ø6 × 3 mm, axial, N52, nickel coated**. [Patel Magnets — select N52](https://patelmagnets.com/shop/6-x-3mm-neodymium-magnets/) or [JC JCN52-DSC6-3](https://www.jc-magnetics.com/Magnet-Discs/Magnet-N52-6mm-3mm-Discs). JC lists a 25-piece minimum, allowing four spares for one prototype. Use 20 flat in the base and one on edge in the cap. |
 | Thin-section bearing | 1 | **6808-ZZ / 61808-2Z, 40 × 52 × 7 mm**. [Bearing House example](https://bearinghouse.in/shop/ntn-6808zz-deep-groove-ball-bearings/). |
-| Populated RevC PCB | 1 | Ø36.5 × 1 mm, all **27 FIT components** from [BOM.csv](../../../BOM.csv), including the soldered CR2450 holder and JST header. [JLCPCB assembly quote](https://jlcpcb.com/pcb-assembly); use the v1.0.34 fabrication bundle. |
+| Populated RevC PCB | 1 | Ø36.5 × 1 mm, all **27 FIT components** from [BOM.csv](../../../BOM.csv), including the soldered CR2450 holder and JST header. [JLCPCB assembly quote](https://jlcpcb.com/pcb-assembly); use the v1.0.35 fabrication bundle. |
 | CR2450 | 1 | Loose 3 V primary lithium cell, Ø24.5 × 5 mm. [Panasonic example](https://www.panasonic.com/in/consumer/battery/specialty-batteries/lithium-coin/cr-2450-5be.html). |
 | PCB screws | 2 | M2 × 4 mm nylon; head at most Ø3.8 × 1.3 mm. [DIN85 example](https://www.vital-parts.co.uk/slotted-pan-head-nylon-screws-din-85/42809-sph85-m2-4-ny-n). |
 | Adhesive / PETG | Shared pack | Qualify nonconductive sidewall adhesive for PETG and the nickel coating. A print service can supply PETG. |
@@ -47,7 +47,7 @@ Removing steel changes the flux path and can reduce attachment force or increase
 
 ## Deliverables and checks
 
-[Print-test ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-V3-discs-print-test-1.0.34.zip) · [Full CAD ZIP](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-V3-discs-CAD-1.0.34.zip) · [Assembled/cutaway/underside views](review.png) · [Assembled GLB](generated/V3_assembled.glb) · [Exploded GLB](generated/V3_exploded.glb).
+[Print-test ZIP](https://github.com/rushabhcodes/fidget-counter/blob/main/manufacturing/fidget-counter-V3-discs-print-test-1.0.35.zip) · [Full CAD ZIP](https://github.com/rushabhcodes/fidget-counter/blob/main/manufacturing/fidget-counter-V3-discs-CAD-1.0.35.zip) · [Assembled/cutaway/underside views](review.png) · [Assembled GLB](generated/V3_assembled.glb) · [Exploded GLB](generated/V3_exploded.glb).
 
 The print kit contains exactly two default product STLs, fit coupons, profiles and instructions. The CAD kit adds exact assembled/exploded STEP, GLB, all eleven updated cap alternatives, frozen rebuild references, source and audit evidence. The root `mechanical/STEP_Parts/Cap_*` and `mechanical/Print_STL/Cap_*` remain historical reference inputs; use the V3 generated caps for this version. Reference magnet STEP/GLB files are purchased-part illustrations, not print parts.
 

@@ -2,8 +2,8 @@
   "passed": true,
   "method": "Exact ordered circuit records; exclude only descriptive source_project_metadata filesystem hash",
   "records": 1147,
-  "source_circuit_sha256": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d",
-  "saved_circuit_sha256": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d",
+  "source_circuit_sha256": "eda57275a389f0013325cc2fb78c7656ca7a826cb0a707c023afcf0aca702c59",
+  "saved_circuit_sha256": "eda57275a389f0013325cc2fb78c7656ca7a826cb0a707c023afcf0aca702c59",
   "source_sha256": {
     "validation/check-source-snapshot.mjs": "a324d639fa88211b83d8f613c047d6ab8286bb228856f942952e96838d27a904",
     "validation/normalize-compiler-output.mjs": "d3a2657c1c36ec96c35cd47cd81775f8d5cf70617c7bfb5916db70639011df5b",
@@ -16,6 +16,6 @@
     "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
     "routing-contract.json": "e10878708c2a3848c783903cc28d4a49383b8b7ebccd5dddc7ad22ae24321fe6",
     "routed-paths.json": "d4999f467bc281096ce6be13c772242ff28e47b0304c0b82945d44aeed5016ea",
-    "published.circuit.json": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d"
+    "published.circuit.json": "eda57275a389f0013325cc2fb78c7656ca7a826cb0a707c023afcf0aca702c59"
   }
 }

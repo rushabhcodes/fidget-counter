@@ -973,8 +973,8 @@
     "title": "Fidget counter / enclosure and exploded assembly",
     "legal_owner": "rushabhcodes",
     "identification_number": "FCT-MECH-001",
-    "revision_index": "1.0.34",
-    "date_of_issue": "2026-11-13",
+    "revision_index": "1.0.35",
+    "date_of_issue": "2026-11-18",
     "creator": "rushabhcodes",
     "sheet_number": 1,
     "number_of_sheets": 2
@@ -999,7 +999,7 @@
       "source_component_1"
     ],
     "name": "BottomPockets",
-    "display_name": "20 × Ø6.4 blind pockets, 3.2 deep / Ø49.7 PCD",
+    "display_name": "20 × Ø6.4 vented pockets / 3.2 stop depth / Ø49.7 PCD",
     "direction": "z_negative",
     "center": {
       "x": -105,
@@ -1069,15 +1069,15 @@
     "title": "Fidget counter / magnet pockets and axial encoder",
     "legal_owner": "rushabhcodes",
     "identification_number": "FCT-MECH-001",
-    "revision_index": "1.0.34",
-    "date_of_issue": "2026-11-13",
+    "revision_index": "1.0.35",
+    "date_of_issue": "2026-11-18",
     "creator": "rushabhcodes",
     "sheet_number": 2,
     "number_of_sheets": 2
   },
   {
     "type": "source_project_metadata",
-    "source_filesystem_md5_hash": "2191ee76609405cb04d6af112fa87fdb"
+    "source_filesystem_md5_hash": "a079a6708d52dd0475d8847d6fccaf92"
   },
   {
     "type": "drawing_dimension_line",

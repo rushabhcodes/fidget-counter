@@ -105,12 +105,14 @@ try {
   writeFileSync(resolve(scratch, "routing-contract.json"), contract)
 
 
-  writeFileSync(resolve(scratch, "cloud-assets/pcb.png.gz.b64"), Buffer.from("corrupted preview").toString("base64"))
+  const pcbArtifact = manifest.artifacts.find(a => a.output === "dist/published/pcb.png")
+  assert(pcbArtifact, "Missing PCB preview artifact")
+  writeFileSync(resolve(scratch, pcbArtifact.sourceParts?.[0] ?? pcbArtifact.source), Buffer.from("corrupted preview").toString("base64"))
   const result = spawnSync(process.execPath, ["cloud-build.mjs"], {
     cwd: scratch, env: { ...process.env, TSCIRCUIT_INSIDE_BUILD_COMMAND: "1" }, encoding: "utf8",
   })
   assert.notEqual(result.status, 0, "A corrupted preview was accepted")
-  console.log("Pass: local and both cloud bootstrap formats restore all six artifacts; changed dependencies, lockfile, source and corrupted assets are rejected")
+  console.log(`Pass: local and both cloud bootstrap formats restore all ${manifest.artifacts.length} artifacts; changed dependencies, lockfile, source and corrupted assets are rejected`)
 } finally {
   rmSync(scratch, { recursive: true, force: true })
 }

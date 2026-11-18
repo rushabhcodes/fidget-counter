@@ -1,4 +1,4 @@
-The working V3 base redesign replaces the inherited three bearing-support webs with a continuous annular wall. Print `Base_V3_Discs.stl` phone face down with zero supports; 45° tapered openings above the annular magnet stops eliminate closed roof bridges. Use the current [V3 generated parts and print manifest](mechanical/variants/V3_disc_magnets/README.md). The bearing seats, PCB posts, magnet stops and cap interfaces retain their dimensions. The released v1.0.34 archives and drawings below predate this base revision.
+The v1.0.35 V3 base replaces the inherited three bearing-support webs with a continuous annular wall. Print `Base_V3_Discs.stl` phone face down with zero supports; 45° tapered openings above the annular magnet stops eliminate closed roof bridges. Use the current [V3 generated parts and print manifest](mechanical/variants/V3_disc_magnets/README.md). The bearing seats, PCB posts, magnet stops and cap interfaces retain their dimensions. The v1.0.35 archives and drawings include this base revision.
 
 # Current mechanical version: v1.0.33, V3 axial discs and edge-mounted encoder
 

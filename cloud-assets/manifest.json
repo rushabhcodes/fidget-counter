@@ -4,8 +4,8 @@
   "inputs": {
     "cloud-build.mjs": "9a64e77b76bf6ceabfebc54f9ce6197d64e0a1a5c71241c5a5fadc1464e0d440",
     "critical-routes.json": "2f36c75f8944a02d58dcbf8101bcb76a712b0696ab9e0b7cd99e2bf7cc5b1183",
-    "enclosure-drawing.assembly.tsx": "89c17eb99e877ce5462e1c936fb3c77fcaa08f6487865e521b5c1b078a4582d4",
-    "enclosure-drawing.circuit.json": "e2564de382cdfeb6e6cbac57ccad04ab5cf1b23768d10ee32c41dcaf8c9f8ed3",
+    "enclosure-drawing.assembly.tsx": "cfed560f60ec0b07f1e166edb00ba35e1305bedab6f4bed2841103b99580603f",
+    "enclosure-drawing.circuit.json": "b24fd638dde95df4d90cc4ebd3c7fba21b69c4a8da89adca5cc7d820bb3260ff",
     "enclosure.tsx": "83349da4f33ed5ce194a5b49d5285c0cdea2cd2717a0687c5d25bfb759d6f473",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.obj": "5cb7b3d39911902565b7d20a63b8be35513c8d72b9d0dca36c801d731893bcf5",
     "imports/ABS07_32_768KHZ_9_T/ABS07_32_768KHZ_9_T.tsx": "773a9b178e1e8daba40ec2b7f9804b891397ca47f1fbdabb2cc1f6b101eac994",
@@ -52,7 +52,7 @@
     "imports/X201632MKB4SI/X201632MKB4SI.tsx": "f0558fb79ade1f5a4ffc94483c4d6f460ba6b69a1ebf5ca9fe6da2b83d59864f",
     "index.circuit.tsx": "29d982fee1a530dec1f1d0354c84103f48ae7faa93268a725152c3e9b037d5f3",
     "mechanical/Circuit_Models/Attachment_Discs_V3.glb": "d609819f61d26178d406ae0046a4208c62aff4148f806fb38941d9044ae18e67",
-    "mechanical/Circuit_Models/Base_V3_Discs.glb": "048abf5c261acfe51caf8bf706fc4976243d5287397043645db380fa57c86d0d",
+    "mechanical/Circuit_Models/Base_V3_Discs.glb": "4d1d406fbefec42215b73f3cfe92fadab7c6c17807e77f7ec2eb76b6f85aa99f",
     "mechanical/Circuit_Models/Bearing_6808.glb": "736f7320e89405017e1a93bb8a8065e15775cf010ce6fa581f8374bafe4fd73c",
     "mechanical/Circuit_Models/Cap_circular.glb": "c4f88668d3dcd728e15f5960438edde2e689ef3b3794f50b09e274222cdf3784",
     "mechanical/Circuit_Models/Cap_four_leaf_clover.glb": "f4b6f32198a99fd8bcbd9f47141877c05c10ef1beddb7703dd65e1ab53fd1e12",
@@ -74,7 +74,7 @@
     "mechanical/Circuit_Models/Magnet.glb": "d7f664cc1c40ef3b55e26f89d4e0202ac8e0330abd3281fe48221fef7923a4a3",
     "mechanical/Circuit_Models/PCB_Fasteners.glb": "9a856224ee40f18e6772ab37b5480ad9d963f474accc788c4f6a7654a433849a",
     "mechanical/Circuit_Models/Stationary_Base.glb": "966affb8856af09b57c438899c59c696bf51aa960121a0f3e49f697ed67da099",
-    "mechanical/Circuit_Models/manifest.json": "75c18718912c66f18e6cc03f17fa03130d1f6122a53f54c5dd5329b798836590",
+    "mechanical/Circuit_Models/manifest.json": "bb9d74a24c6f23530ff85031f015ae72873a34d0e02f39cd2837d4eebda49d50",
     "mechanical/battery-holder-courtyard.json": "e69bdda0c2b61d4027d014f0873fce96df351a1145b21f80833730493451626f",
     "mechanical/build_battery_courtyard.py": "c386547f06a432732bc106a4e98696f26f569d51938226ed623d98c19737da9c",
     "mechanical/build_enclosure.py": "d84408f82438efe5554534f647972ac49de9252bd2fe67a3e9f8f4ea1f6a7c32",
@@ -109,31 +109,38 @@
     "mechanical/variants/V2_discrete_magnets/generated/print-ready-manifest.json": "4f01d73c7d1484f26cbe9c3a98f14b0d48303504276abedee9cff5756b09cfec",
     "mechanical/variants/V2_discrete_magnets/parameters.json": "3201c98f79cfa3c8a7f3d2147ed67686c6073fc9455ff845972accba30277378",
     "mechanical/variants/V2_discrete_magnets/render.py": "9be36947877a045712514b595d07bd1bde7e9717ac43f6a911a32042b10c7b36",
-    "mechanical/variants/V3_disc_magnets/audit.py": "0aa8ff979ea7ead65d7963f78d48a3eb376b2759e374a6af310dc235aa3d8c2a",
-    "mechanical/variants/V3_disc_magnets/build.py": "369496525b82612b73e7cce2d5315a3f8d1d94e1c928bd9434663c20e225e8ae",
-    "mechanical/variants/V3_disc_magnets/drawings/drawing-audit.json": "ef83f964961b2178de0794f5513e54991997a50c9bd687cea8da7eaab46f4e5c",
+    "mechanical/variants/V3_disc_magnets/audit.py": "ab5080cede59df14f00d86b971472756254f92934246d4b0d7e0b9a7c1613dcd",
+    "mechanical/variants/V3_disc_magnets/base-support-free.png": "4f1b72921e551b47ccfb3f3348aba14a6b00c00e90ec65c9475e00f0324ea7c7",
+    "mechanical/variants/V3_disc_magnets/build.py": "22dd7bf71a59d8abfda2eada43e41b9ac66049403c58926c6abd9402015531d0",
+    "mechanical/variants/V3_disc_magnets/drawings/drawing-audit.json": "a720a03214c5203e9b1dde05a80b91f5798f78e080de968769927fcd7dd91581",
     "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.png": "7ee3b629335cc14ca59d36d2e5798a0f47d09e0d93155d5298e52da919d2d630",
     "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.svg": "e51df99d4e452e9ae28df7bda856d1f201edd761ad1bd4a22f1f37fc25ce4715",
     "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-2.png": "999c805aec3f8694317d5cfb44c0deb160e671db6914af7fce8c44ec56bdb025",
     "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-2.svg": "fa2a6317b71ab4740ef35aa9b42eb5b901e391f13c3752aec79fff86bb285843",
     "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34.pdf": "98b0c0215b1aba018c37d3b71e6690908df214a1048442bd2f79b189054bffab",
+    "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35-sheet-1.png": "7d6399cd3cd202a7a158a9ab8467293ca14f1853b52670df67cb63f27f6d9372",
+    "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35-sheet-1.svg": "2ba5f336f474ab073c1283c0683cf57642c3bc5d117ecabf228ab4c6c5b78676",
+    "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35-sheet-2.png": "88fb1ef73c80fe3783c8c4f938b5f52e95ae82ee8712aeb4532737c40a11a19a",
+    "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35-sheet-2.svg": "2f2394d1b928822c5fb17ccc344ab93e793576e83565b97ad349663827bcc6ec",
+    "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35.pdf": "f88875ebba56bd188c619cdf302b39a512c9d0602cac553ed3de56567f316611",
     "mechanical/variants/V3_disc_magnets/encoder-orientation.png": "88607ca1daff9b387a7070b34923295651c59eeec74cd442d46da2b199fc07c0",
-    "mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png": "364f9c0ccd10c7f5df6ca92c548eef81373e8a76097d544010063bdb2f83494f",
+    "mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png": "4d5dc6e1976675e9cb38029e8bc596c65c8b548ab78dc0dff61e2a27b4ab221d",
     "mechanical/variants/V3_disc_magnets/export_drawing_models.py": "88d807f68e8fee0b87f28e6fcf5904de6db6e50aeafc14a110e4ff370eee5eac",
     "mechanical/variants/V3_disc_magnets/export_preview.py": "0fc711e54c55a8d5a6a73e5fcf01e9f2cc0a2730242ed15d87c4ec50937f4b66",
-    "mechanical/variants/V3_disc_magnets/generated/assembly-step-audit.json": "dd633527f22795c7187d7dbb32d529e4d459abe8bfde3792bd5f49a5536d4614",
-    "mechanical/variants/V3_disc_magnets/generated/geometry-audit.json": "117b1b04f308568a6006b63018c37fa2185c79222323cfd74165f4ae2bf91207",
-    "mechanical/variants/V3_disc_magnets/generated/native-preview-audit.json": "20bc27a59c2dc179bd635be6d1480ab0742c86a14b27a9b2f6bd9b3870ad48b9",
-    "mechanical/variants/V3_disc_magnets/generated/print-audit.json": "ed3580c082f09c45f9683b597e417870ba5f1fcefb47f504de5e4049743f8e42",
-    "mechanical/variants/V3_disc_magnets/generated/print-ready-manifest.json": "bda73b6c80cdc028f1cc998a2cf47088f1cddcc85b8c7becb2ef140504eea2d4",
-    "mechanical/variants/V3_disc_magnets/parameters.json": "cb82fe2e467e0549a8a796a7a54bd9cc49875f753035c02a1b041e5b6e1e5598",
+    "mechanical/variants/V3_disc_magnets/generated/assembly-step-audit.json": "08dfad3ca433ad94d470386e49c1d65d710c0ab21b4ce991d7e61d9323f5395a",
+    "mechanical/variants/V3_disc_magnets/generated/geometry-audit.json": "ed42a5fb646b4fb0e51d386cbea50dd21deebd0229a1b35ad94ffb646e751115",
+    "mechanical/variants/V3_disc_magnets/generated/native-preview-audit.json": "23e869faae9001348ad10f6b99383d204fcaa5783254a4067b38af6a128ebd80",
+    "mechanical/variants/V3_disc_magnets/generated/print-audit.json": "f2896cf00ba44788bc9f24ea57973ff6f395f225eb77baca150522995466757c",
+    "mechanical/variants/V3_disc_magnets/generated/print-ready-manifest.json": "0e3522dd8bcc051dbb73245a4b86d2bfcaf92081026b06d509a89c36e2368bfd",
+    "mechanical/variants/V3_disc_magnets/parameters.json": "e6700b7dfddf245dadadbbd45fd755353a1efaf62966a73f8612d56d1a75f679",
     "mechanical/variants/V3_disc_magnets/render.py": "6854da66359e3015e763d99a6861522c0b75ffdc72de1cc78152be31037bd847",
-    "mechanical/variants/V3_disc_magnets/review.html": "2419bf3a34d300f81df3833680ca54673df1cdc3cd9212dcd2d11deddb3ee051",
-    "mechanical/variants/V3_disc_magnets/review.png": "6905a2e72014dd218ab788b6a96e193355a9e881e1cc1a38e020e1b5536d03b8",
+    "mechanical/variants/V3_disc_magnets/render_base.py": "35ca78603943d87257f4735d49ef8ab78ab519ba16e674286ad4a460f72451ad",
+    "mechanical/variants/V3_disc_magnets/review.html": "90e0d0afb0c95e91230238361e1768e18b99f55619997a1fb076288b19928c0e",
+    "mechanical/variants/V3_disc_magnets/review.png": "2ab0a2dc8169c520b0997eb131be9de0734be53cd6cec7a0ccf8fb72a91974aa",
     "model-assets.d.ts": "bcd106931f1096dab95359b6d47a67456c3da66efd2f5c0c76e29783cada6463",
     "parts.tsx": "a9ec52070d608a8c4592ce5c03db64cd490dec67b0fb349cfe4a4e489859d341",
     "passives.tsx": "e05181fcf99b2751941c16d8f43a81e541126daf283731244e9f65b1783d8ec3",
-    "published.circuit.json": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d",
+    "published.circuit.json": "eda57275a389f0013325cc2fb78c7656ca7a826cb0a707c023afcf0aca702c59",
     "routed-paths.json": "d4999f467bc281096ce6be13c772242ff28e47b0304c0b82945d44aeed5016ea",
     "routing-contract.json": "e10878708c2a3848c783903cc28d4a49383b8b7ebccd5dddc7ad22ae24321fe6",
     "routing.ts": "c55604d670a625ab044405076bbbba7f23ae033e73c5d2a884bba4c6ee025253",
@@ -142,7 +149,7 @@
     "validation/apply-model-materials.mjs": "e47f5fe28d64c51604024e5b1af0b120fc7b433bc3137ac91cf7af25f8a766f4",
     "validation/check-disc-variant.mjs": "4954909ffd3c95c3d4297e205c7952e1cc3d82c0892cfbe4415c1b63483502be",
     "validation/check-fresh-routing.mjs": "22338b8afed7d2205e637964088023159b411944b413364fb2c4ddd4f1eba200",
-    "validation/check-native-drawings.mjs": "e6b46c38ca5ce89eb4f95f8975d2200d1263f682c11abffeec413d1f19373373",
+    "validation/check-native-drawings.mjs": "efc50d5e75caf3973f893c3ec4775d7271f40b46e734b6bc5504147fb7de3afa",
     "validation/check-nordic-rf.py": "5a7c1a02a20345a2d88f6f95afec2dddaf09f72fb414fb333f9644c33223a14f",
     "validation/check-source-snapshot.mjs": "a324d639fa88211b83d8f613c047d6ab8286bb228856f942952e96838d27a904",
     "validation/cloud-package-input.mjs": "eeadd46469991a4b8fcb34c0e9ce12bfc66d230fadbb1be70ecb27a17fa57cce",
@@ -153,16 +160,16 @@
     "validation/fresh-routing-reference.json": "c206c6145c9956a099f62a969599cc19b43f47996b5ef057524cfdcf6fed4b84",
     "validation/import-provenance.mjs": "7bd439812b56afb33f7a0e5aa54b55b3796b2fbbb2ff2a868a1dc12bd77d19d2",
     "validation/jlc-imports.json": "a5633a0320c0ae2549522b9e7ce5b6b730d55d97bae75777bfac6e65733f240f",
-    "validation/native-drawing-audit.json": "869ddeb464e737078a06d0ffd3c41ad14fd2433fa51aff1a15b6631bcccffe4c",
+    "validation/native-drawing-audit.json": "d39874059876650f62d85a7f05a38d60c00ffd2fc848a2654c0636a90970f0af",
     "validation/nordic-electrical-reference.json": "c2bd56c7e6228abbfa597dbeb3d893383a9d70cbd6bd22949c907f1512a094a9",
     "validation/nordic-electrical-revision.mjs": "17ac5d3d18b87a318fd16b38e87ea7132f89cddbd7346f15cced22c01f18e8bb",
     "validation/normalize-compiler-output.mjs": "d3a2657c1c36ec96c35cd47cd81775f8d5cf70617c7bfb5916db70639011df5b",
-    "validation/prepare-cloud-assets.mjs": "c5caf1429dd5359a2d0827fbd0fd2be71cad1295abca7582c9eee2d571228ca6",
+    "validation/prepare-cloud-assets.mjs": "970a2f39edec271a835acd37b507bb081acc711308b000540b1a4ba28294411e",
     "validation/prepare-supplier-frames.mjs": "e05c1d7cdf5e087d450f621b54ef381829ddf6abe308ebe3d7213a5b815142ba",
     "validation/resolve-native-drawing-dimensions.mjs": "29c842605f879a58d03145e54cb274328ab0938b2ce59292f985437af729ba48",
     "validation/restore-cad-inputs.mjs": "e364f010627b07de3fb703014e4bd1f2b1b1a11b9f5223667b141e1f5bf473a0",
     "validation/restore-model-normals.mjs": "de22cf2e85da39515f083abdd82b633a104821e728d41b9cc6121ec5d2cb56bd",
-    "validation/source-snapshot-audit.json": "bfe712056bd0610176a7d1ca8f7ca6cff320e15134b990e452ee2f12945ac637"
+    "validation/source-snapshot-audit.json": "e86ba67283308d38f758ecdbae881a3b9aeb9cc75f0eb45aa8991163612b17a2"
   },
   "packageInput": {
     "sha256": "0678e50770bc206b1693fcbcaa178e49710591c279ca77865d5f2950d83abdb5",
@@ -178,7 +185,7 @@
       "output": "dist/published/circuit.json",
       "encoding": "gzip-base64",
       "bytes": 876618,
-      "sha256": "70424392f506f2d2ddc3c3e340cd3bdd14b784ec0697d81d226a7fbacb50ed7d"
+      "sha256": "eda57275a389f0013325cc2fb78c7656ca7a826cb0a707c023afcf0aca702c59"
     },
     {
       "source": "cloud-assets/preview-pcb.png.part-000.gz.b64",
@@ -228,8 +235,8 @@
       ],
       "output": "dist/published/3d.glb",
       "encoding": "gzip-base64",
-      "bytes": 13665324,
-      "sha256": "ee2833d827273679481daeb56ca81ef73812bb1f316890198d2721c74c2658e8"
+      "bytes": 14115560,
+      "sha256": "a828d4d122f01e692d7f07d247a764910a775b4fcd8fdc31ee3325254daf2839"
     },
     {
       "source": "cloud-assets/preview-3d.png.part-000.gz.b64",
@@ -238,8 +245,8 @@
       ],
       "output": "dist/published/3d.png",
       "encoding": "gzip-base64",
-      "bytes": 19536,
-      "sha256": "2809564a5be11abd67f69efa4011fae270bef729eba5cd04873a68486c2d4345"
+      "bytes": 19531,
+      "sha256": "7114756504675df0e740a236e4b215c83e623718a2a17c19a16fbdd369182d30"
     },
     {
       "source": "cloud-assets/native-drawing-document.part-000.gz.b64",
@@ -248,8 +255,8 @@
       ],
       "output": "dist/enclosure-drawing/circuit.json",
       "encoding": "gzip-base64",
-      "bytes": 31535,
-      "sha256": "e2564de382cdfeb6e6cbac57ccad04ab5cf1b23768d10ee32c41dcaf8c9f8ed3"
+      "bytes": 31543,
+      "sha256": "b24fd638dde95df4d90cc4ebd3c7fba21b69c4a8da89adca5cc7d820bb3260ff"
     },
     {
       "source": "cloud-assets/native-enclosure-assembly.svg.part-000.gz.b64",
@@ -258,8 +265,8 @@
       ],
       "output": "dist/enclosure-drawing/drawings/enclosure-assembly.svg",
       "encoding": "gzip-base64",
-      "bytes": 114936,
-      "sha256": "e51df99d4e452e9ae28df7bda856d1f201edd761ad1bd4a22f1f37fc25ce4715"
+      "bytes": 114944,
+      "sha256": "2ba5f336f474ab073c1283c0683cf57642c3bc5d117ecabf228ab4c6c5b78676"
     },
     {
       "source": "cloud-assets/native-enclosure-magnet-details.svg.part-000.gz.b64",
@@ -268,8 +275,8 @@
       ],
       "output": "dist/enclosure-drawing/drawings/enclosure-magnet-details.svg",
       "encoding": "gzip-base64",
-      "bytes": 138088,
-      "sha256": "fa2a6317b71ab4740ef35aa9b42eb5b901e391f13c3752aec79fff86bb285843"
+      "bytes": 137080,
+      "sha256": "2f2394d1b928822c5fb17ccc344ab93e793576e83565b97ad349663827bcc6ec"
     },
     {
       "source": "cloud-assets/native-drawing-preview.part-000.gz.b64",
@@ -278,8 +285,8 @@
       ],
       "output": "dist/enclosure-drawing/3d.png",
       "encoding": "gzip-base64",
-      "bytes": 115219,
-      "sha256": "6bf7561ecdb8fd1a0207d14ec20f5dade2a7db717d07fe2ea4c315181176da1c"
+      "bytes": 92324,
+      "sha256": "0aca27a98d15797d689f4264635a8b7a44b22506bf50db4ebe6f6c572f2e42fd"
     },
     {
       "source": "cloud-assets/native-site.part-000.gz.b64",
@@ -289,27 +296,33 @@
       "output": "dist/index.html",
       "encoding": "gzip-base64",
       "bytes": 2420,
-      "sha256": "70388db09dcd04f3725b114cf0e080fd0e139b65bfebe49ab4367f1debc6e036"
+      "sha256": "5fad90c5fe131763d38aa930c0a91d6ec7be5b973d0b1f1bbbbd93cfd42ec303"
     }
   ],
   "variantArtifacts": [
     {
       "source": "mechanical/variants/V3_disc_magnets/review.html",
       "output": "dist/v3/index.html",
-      "sha256": "2419bf3a34d300f81df3833680ca54673df1cdc3cd9212dcd2d11deddb3ee051",
-      "bytes": 2744
+      "sha256": "90e0d0afb0c95e91230238361e1768e18b99f55619997a1fb076288b19928c0e",
+      "bytes": 3038
     },
     {
       "source": "mechanical/variants/V3_disc_magnets/review.png",
       "output": "dist/v3/review.png",
-      "sha256": "6905a2e72014dd218ab788b6a96e193355a9e881e1cc1a38e020e1b5536d03b8",
-      "bytes": 192536
+      "sha256": "2ab0a2dc8169c520b0997eb131be9de0734be53cd6cec7a0ccf8fb72a91974aa",
+      "bytes": 241799
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/base-support-free.png",
+      "output": "dist/v3/base-support-free.png",
+      "sha256": "4f1b72921e551b47ccfb3f3348aba14a6b00c00e90ec65c9475e00f0324ea7c7",
+      "bytes": 255601
     },
     {
       "source": "mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png",
       "output": "dist/v3/exploded-v1.0.33.png",
-      "sha256": "364f9c0ccd10c7f5df6ca92c548eef81373e8a76097d544010063bdb2f83494f",
-      "bytes": 432837
+      "sha256": "4d5dc6e1976675e9cb38029e8bc596c65c8b548ab78dc0dff61e2a27b4ab221d",
+      "bytes": 435726
     },
     {
       "source": "mechanical/variants/V3_disc_magnets/encoder-orientation.png",
@@ -318,16 +331,40 @@
       "bytes": 115673
     },
     {
-      "source": "mechanical/variants/V3_disc_magnets/drawings/drawing-audit.json",
-      "output": "dist/v3/drawings/drawing-audit.json",
-      "sha256": "ef83f964961b2178de0794f5513e54991997a50c9bd687cea8da7eaab46f4e5c",
-      "bytes": 2190
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35-sheet-1.png",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.35-sheet-1.png",
+      "sha256": "7d6399cd3cd202a7a158a9ab8467293ca14f1853b52670df67cb63f27f6d9372",
+      "bytes": 341433
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34.pdf",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.34.pdf",
+      "sha256": "98b0c0215b1aba018c37d3b71e6690908df214a1048442bd2f79b189054bffab",
+      "bytes": 109951
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35.pdf",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.35.pdf",
+      "sha256": "f88875ebba56bd188c619cdf302b39a512c9d0602cac553ed3de56567f316611",
+      "bytes": 110024
     },
     {
       "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.svg",
       "output": "dist/v3/drawings/engineering-drawing-v1.0.34-sheet-1.svg",
       "sha256": "e51df99d4e452e9ae28df7bda856d1f201edd761ad1bd4a22f1f37fc25ce4715",
       "bytes": 114936
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35-sheet-2.svg",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.35-sheet-2.svg",
+      "sha256": "2f2394d1b928822c5fb17ccc344ab93e793576e83565b97ad349663827bcc6ec",
+      "bytes": 137080
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35-sheet-1.svg",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.35-sheet-1.svg",
+      "sha256": "2ba5f336f474ab073c1283c0683cf57642c3bc5d117ecabf228ab4c6c5b78676",
+      "bytes": 114944
     },
     {
       "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.png",
@@ -342,16 +379,22 @@
       "bytes": 138088
     },
     {
+      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35-sheet-2.png",
+      "output": "dist/v3/drawings/engineering-drawing-v1.0.35-sheet-2.png",
+      "sha256": "88fb1ef73c80fe3783c8c4f938b5f52e95ae82ee8712aeb4532737c40a11a19a",
+      "bytes": 622037
+    },
+    {
+      "source": "mechanical/variants/V3_disc_magnets/drawings/drawing-audit.json",
+      "output": "dist/v3/drawings/drawing-audit.json",
+      "sha256": "a720a03214c5203e9b1dde05a80b91f5798f78e080de968769927fcd7dd91581",
+      "bytes": 2190
+    },
+    {
       "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-2.png",
       "output": "dist/v3/drawings/engineering-drawing-v1.0.34-sheet-2.png",
       "sha256": "999c805aec3f8694317d5cfb44c0deb160e671db6914af7fce8c44ec56bdb025",
       "bytes": 630156
-    },
-    {
-      "source": "mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34.pdf",
-      "output": "dist/v3/drawings/engineering-drawing-v1.0.34.pdf",
-      "sha256": "98b0c0215b1aba018c37d3b71e6690908df214a1048442bd2f79b189054bffab",
-      "bytes": 109951
     }
   ],
   "cadInputArchives": [
@@ -445,7 +488,7 @@
       "sourceParts": [
         "cloud-assets/runtime-inputs-4.part-000.gz.b64"
       ],
-      "sha256": "5fc6d2e993418f8ce1581388b5574b022ea6196465f4d835d59461c55ab98728",
+      "sha256": "6eab66c471fb9280cdb82eef38b9033edc396e46ad5cf264544cc7c17bf2607e",
       "files": [
         "mechanical/Circuit_Models/Drawings/manifest.json",
         "validation/apply-model-materials.mjs",

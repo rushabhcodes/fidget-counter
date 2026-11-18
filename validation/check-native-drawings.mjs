@@ -32,6 +32,6 @@ assert.equal(dims.source_sha256,sha('enclosure-drawing.assembly.tsx'))
 assert.equal(dims.resolver_sha256,sha('validation/resolve-native-drawing-dimensions.mjs'))
 assert.equal(dims.circuit_sha256,sha('enclosure-drawing.circuit.json'))
 for(const model of read('mechanical/Circuit_Models/Drawings/manifest.json').models)assert.equal(model.sha256,sha(model.file))
-const report={...dims,passed:true,exploded_parts_match_assembled:true,native_model_states:2,models_per_state:9,no_PCB_records_in_drawing:true,compiler:read('package.json').dependencies.tscircuit,physical_geometry_release:'1.0.33'}
+const report={...dims,passed:true,exploded_parts_match_assembled:true,native_model_states:2,models_per_state:9,no_PCB_records_in_drawing:true,compiler:read('package.json').dependencies.tscircuit,physical_geometry_release:read('package.json').version}
 writeFileSync('validation/native-drawing-audit.json',JSON.stringify(report,null,2)+'\n')
 console.log('PASS: native A3 drawing pages, six views, seven model-derived dimensions; exploded geometry equals assembled parts; PCB unchanged')

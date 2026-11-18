@@ -1,18 +1,18 @@
-# Fidget counter — v1.0.34
+# Fidget counter — v1.0.35
 
 V3 uses **20 circular Ø6 × 3 mm axial magnets inserted from underneath a one-piece base**. The vented pockets have integral annular stops and sidewall adhesive retention. The enclosure uses two PETG prints: one base and one selected cap. There is no permanent magnetic ring, steel backing or separate magnet carrier in this version.
 
-The working base redesign uses a **continuous bearing-support wall and zero supports**, printed phone face down. It replaces the three inherited webs and their open windows. Use the current V3 generated STEP/STL and print manifest; the linked v1.0.34 archives predate this base revision. The magnet stops retain their depth; 45° openings above them eliminate closed roof bridges. Bearing fits, PCB and cap geometry retain their dimensions.
+The support-free base uses a **continuous bearing-support wall and zero supports**, printed phone face down. It replaces the three inherited webs and their open windows. The linked v1.0.35 archives include the current generated STEP/STL and print manifest. The magnet stops retain their depth; 45° openings above them eliminate closed roof bridges. Bearing fits, PCB and cap geometry retain their dimensions.
 
 ![Current support-free magnet base](mechanical/variants/V3_disc_magnets/base-support-free.png)
 
-![Native tsCircuit engineering drawing and exploded enclosure](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34-sheet-1.png)
+![Native tsCircuit engineering drawing and exploded enclosure](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35-sheet-1.png)
 
 The native circuit preview selects V3. The base remains Ø58 mm, the largest cap Ø61.6 mm and physical height **20.9 mm**. The top encoder uses the **same Ø6 × 3 mm axial disc as the base, mounted on its edge** in a keyed slot. All eleven cap styles have been updated. Keeping the 1.8 mm sensor clearance adds 4.5 mm to the cap height; the bearing, PCB, CR2450 and screw positions are retained.
 
-[Native engineering drawing](enclosure-drawing.circuit.json) · [A3 engineering PDF](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.34.pdf) · [Encoder orientation](mechanical/variants/V3_disc_magnets/encoder-orientation.png) · [Full exploded view](mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png) · [Print, source and assemble V3](mechanical/variants/V3_disc_magnets/README.md) · [Parts to order](mechanical/variants/V3_disc_magnets/ORDER_LIST.csv)
+[Native engineering drawing](enclosure-drawing.circuit.json) · [A3 engineering PDF](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35.pdf) · [Encoder orientation](mechanical/variants/V3_disc_magnets/encoder-orientation.png) · [Full exploded view](mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png) · [Print, source and assemble V3](mechanical/variants/V3_disc_magnets/README.md) · [Parts to order](mechanical/variants/V3_disc_magnets/ORDER_LIST.csv)
 
-The drawing is authored with native `assembly.drawing.page` and `partview` elements in [enclosure-drawing.assembly.tsx](enclosure-drawing.assembly.tsx). It includes assembled, exploded, front, underside and section views. Model-derived measurements are stored as native `drawing_dimension_line` records. These released drawings record CAD revision 1.0.33; the working support-free base is shown above.
+The drawing is authored with native `assembly.drawing.page` and `partview` elements in [enclosure-drawing.assembly.tsx](enclosure-drawing.assembly.tsx). It includes assembled, exploded, front, underside and section views. Model-derived measurements are stored as native `drawing_dimension_line` records. The drawings and download kits include the continuous-wall base and vented magnet pockets.
 
 ## Build one prototype
 
@@ -25,9 +25,9 @@ This remains a fit-test prototype. Removing the steel backing changes the magnet
 
 ## Files to print or order
 
-- [V3 print-test ZIP — two default product parts and fit coupons](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-V3-discs-print-test-1.0.34.zip)
-- [V3 complete exact CAD ZIP — STEP, GLB, all cap alternatives and source](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-V3-discs-CAD-1.0.34.zip)
-- [Current PCB fabrication ZIP — Gerbers, BOM and CPL](https://github.com/rushabhcodes/fidget-counter/blob/codex/engineering-drawing-1.0.34/manufacturing/fidget-counter-fabrication-1.0.34.zip)
+- [V3 print-test ZIP — two default product parts and fit coupons](https://github.com/rushabhcodes/fidget-counter/blob/main/manufacturing/fidget-counter-V3-discs-print-test-1.0.35.zip)
+- [V3 complete exact CAD ZIP — STEP, GLB, all cap alternatives and source](https://github.com/rushabhcodes/fidget-counter/blob/main/manufacturing/fidget-counter-V3-discs-CAD-1.0.35.zip)
+- [Current PCB fabrication ZIP — Gerbers, BOM and CPL](https://github.com/rushabhcodes/fidget-counter/blob/main/manufacturing/fidget-counter-fabrication-1.0.35.zip)
 - [V3 print manifest](mechanical/variants/V3_disc_magnets/generated/print-ready-manifest.json), [mechanical BOM](mechanical/MECHANICAL_BOM.csv), [electronic BOM](BOM.csv)
 
 The PCB fabrication payload is unchanged from corrected v1.0.31/1.0.30. Get a Standard double-sided PCBA/ENIG quote for all **27 FIT** components. Holder BT1 and J_DEBUG are already included. Application firmware is rotation-only: one complete turn either way counts once, with unfinished backtracking canceled. Firmware, the RevC board definition, BLE client and CI build remain in [firmware](firmware/README.md); use an artifact from a successful run for the intended commit.
