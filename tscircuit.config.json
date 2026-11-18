@@ -12,8 +12,7 @@
     ".local-validation/**",
     "**/__pycache__/**",
     "**/*.pyc",
-    "firmware/build/**",
-    "**/*.step"
+    "firmware/build/**"
   ],
   "alwaysUseLatestTscircuitOnCloud": true,
   "buildCommand": "bun scripts/build.mjs",
