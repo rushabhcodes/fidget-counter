@@ -1,21 +1,4 @@
-// Bound the reviewed electrical correction; preserve every other fitted part,
-// electrical attribute and pin-net partition against the preceding design.
 import assert from 'node:assert/strict'
-import {readFileSync} from 'node:fs'
-const reference=()=>JSON.parse(readFileSync('validation/nordic-electrical-reference.json'))
-export function approvedNordicFittedRecords(before){
- const r=reference(),names=new Set(['C3','C7','C8'])
- assert.deepEqual(before.filter(e=>names.has(e.source.name)),r.before,'Unexpected pre-correction component records')
- return [...before.filter(e=>!names.has(e.source.name)),...r.after].sort((a,b)=>a.source.name.localeCompare(b.source.name))
-}
-export function approvedNordicPins(before){
- const r=reference(),names=new Set(['U1.32','C7.1','C7.2'])
- assert.deepEqual(before.filter(e=>names.has(JSON.parse(e).terminal)),r.before_pins,'Unexpected pre-correction DEC2 attributes')
- return [...before.filter(e=>!names.has(JSON.parse(e).terminal)),...r.after_pins].sort()
-}
-export function approvedNordicPartition(before){
- return before.map(g=>g.filter(p=>!p.startsWith('C7.'))).filter(g=>g.length).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)))
-}
 export function verifyNordicElectrical(c){
  const owner=new Map(c.filter(e=>e.type==='source_component').map(e=>[e.source_component_id,e.name]))
  const source=new Map(c.filter(e=>e.type==='source_component').map(e=>[e.name,e]))

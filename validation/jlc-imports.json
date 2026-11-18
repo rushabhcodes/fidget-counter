@@ -30,28 +30,6 @@
       ]
     },
     {
-      "part": "CL10B105KA8NNWC",
-      "jlcpcb": "C730442",
-      "command": "tsci import --jlcpcb --download --use-exact-footprint C730442",
-      "files": [
-        {
-          "path": "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.tsx",
-          "bytes": 2785,
-          "sha256": "5542c7c34bb8c463e7fbe39e9905a37d217575bba9ad742c42b01e8c351984eb"
-        },
-        {
-          "path": "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.obj",
-          "bytes": 57506,
-          "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
-        },
-        {
-          "path": "imports/CL10B105KA8NNWC/CL10B105KA8NNWC.step",
-          "bytes": 1468156,
-          "sha256": "5f7216cf66690dab2ac39e25f5ad1bda3a067967e55809dd781fa60d385df110"
-        }
-      ]
-    },
-    {
       "part": "GJM1555C1HR80WB01D",
       "jlcpcb": "C88902",
       "command": "tsci import --jlcpcb --download --use-exact-footprint C88902",
@@ -90,28 +68,6 @@
         },
         {
           "path": "imports/GRM1555C1H101JA01D/GRM1555C1H101JA01D.step",
-          "bytes": 1481985,
-          "sha256": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14"
-        }
-      ]
-    },
-    {
-      "part": "GRM1555C1H120JA01D",
-      "jlcpcb": "C76948",
-      "command": "tsci import --jlcpcb --download --use-exact-footprint C76948",
-      "files": [
-        {
-          "path": "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.tsx",
-          "bytes": 2825,
-          "sha256": "e9256483c613ef5f1d8153d8474c686c3cfd064495bcde7e3e0285f967c91842"
-        },
-        {
-          "path": "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.obj",
-          "bytes": 55992,
-          "sha256": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d"
-        },
-        {
-          "path": "imports/GRM1555C1H120JA01D/GRM1555C1H120JA01D.step",
           "bytes": 1481985,
           "sha256": "b49e77a39a55d45c078607d8c791cc5521719fc0140e660f44a3e122fe57af14"
         }
@@ -202,28 +158,6 @@
           "path": "imports/LQG15HS3N9B02D/LQG15HS3N9B02D.step",
           "bytes": 1485269,
           "sha256": "54e0f0bcaf7410e7eebc62d9ca4e2d54c30d2d5f52d816b81de85fffb4cb06f4"
-        }
-      ]
-    },
-    {
-      "part": "LQG15HS6N8G02D",
-      "jlcpcb": "C521064",
-      "command": "tsci import --jlcpcb --download --use-exact-footprint C521064",
-      "files": [
-        {
-          "path": "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.tsx",
-          "bytes": 3420,
-          "sha256": "b66642ae98540ea22fd36e222b70cbd2c5d09a06411b6731d642c1428283c8b3"
-        },
-        {
-          "path": "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.obj",
-          "bytes": 74673,
-          "sha256": "b47da88d07499fc647a8d2ea4052a7f2f80ba43a034606f1f9e9120313059fc9"
-        },
-        {
-          "path": "imports/LQG15HS6N8G02D/LQG15HS6N8G02D.step",
-          "bytes": 1490837,
-          "sha256": "a9e3440491fe778b6cd506a9af4fe608b51e57c361087ef1028b5c09c77fc199"
         }
       ]
     },

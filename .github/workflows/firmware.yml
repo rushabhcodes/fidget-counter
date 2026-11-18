@@ -1,7 +1,7 @@
 name: Firmware
 on:
   push:
-    branches: [codex/bearing-supported-enclosure]
+    branches: [main]
     paths:
       - "firmware/**"
       - ".github/workflows/firmware.yml"

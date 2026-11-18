@@ -53,7 +53,7 @@ def verify(c):
  return {'passed':True,'C3_return_length_mm':length,'return_width_mm':.18,'return_vias':0,'only_ground_connection_through':'U1 VSS physical pin31 land','pour_isolation_both_layers_mm':[-4.15,4.93,-1.65,5.9],'RF_feed_length_mm':feed_length,'RF_feed_width_mm':.5,'RF_feed_vias':0,'impedance_verified':False,'physical_qualified':False,'remaining_RF_gate':'Supplier-confirmed actual dielectric/copper stackup and CPWG field solution; VNA matching and BLE range/harmonic testing in the complete bearing/ring/phone assembly'}
 
 if __name__=='__main__':
- c=json.loads((R/'published.circuit.json').read_text());report=verify(c);negative=[]
+ c=json.loads((R/'dist/index/circuit.json').read_text());report=verify(c);negative=[]
  for kind in ['direct_ground_pour','extra_ground_branch','ground_via']:
   bad=copy.deepcopy(c);original=next(e for e in bad if e['type']=='pcb_trace'and e.get('source_trace_id')==next(e['source_trace_id']for e in bad if e['type']=='source_trace'and e.get('name')=='C3_VSS2_RETURN'))
   if kind=='direct_ground_pour':
@@ -65,6 +65,6 @@ if __name__=='__main__':
   except AssertionError:negative.append(kind)
   else:raise AssertionError('Accepted physical RF bypass: '+kind)
  report['negative_checks_passed']=negative
- report['source_sha256']={str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest()for p in [Path(__file__),R/'published.circuit.json',R/'index.circuit.tsx',R/'parts.tsx',R/'critical-routes.json']}
- (R/'validation/nordic-rf-audit.json').write_text(json.dumps(report,indent=2)+'\n')
+ report['source_sha256']={str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest()for p in [Path(__file__),R/'dist/index/circuit.json',R/'index.circuit.tsx',R/'parts.tsx',R/'critical-routes.json']}
+ (R/'dist/validation/nordic-rf.json').write_text(json.dumps(report,indent=2)+'\n')
  print(f"PASS: C3 ground isolated from both pours;{report['C3_return_length_mm']:.3f}mm top return through VSS31 only;three physical bypass mutations rejected. Actual RF tuning remains unverified.")

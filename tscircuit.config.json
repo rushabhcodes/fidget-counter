@@ -1,56 +1,24 @@
 {
   "$schema": "https://cdn.jsdelivr.net/npm/@tscircuit/cli/types/tscircuit.config.schema.json",
-  "mainEntrypoint": "published.circuit.json",
-  "previewComponentPath": "published.circuit.json",
+  "mainEntrypoint": "index.circuit.tsx",
+  "previewComponentPath": "index.circuit.tsx",
   "includeBoardFiles": [
-    "published.circuit.json",
-    "enclosure-drawing.circuit.json"
+    "index.circuit.tsx"
   ],
   "ignoredFiles": [
     "node_modules/**",
+    "dist/**",
+    "work/**",
+    ".local-validation/**",
     "**/__pycache__/**",
     "**/*.pyc",
-    "work/**",
-    "checks/**",
-    "build/**",
     "firmware/build/**",
-    "mechanical/export/**",
-    "mechanical/Print_STL/**",
-    "mechanical/STEP_Parts/**",
-    "mechanical/Circuit_Models/*.obj",
-    "mechanical/Circuit_Models/*.mtl",
-    "mechanical/variants/**/generated/Assemblies/**",
-    "mechanical/variants/**/generated/*_meshes.json",
-    "mechanical/variants/**/generated/*.gcode",
-    "mechanical/variants/**/*.step",
-    "mechanical/variants/**/*.stl",
-    "mechanical/variants/**/*.glb",
-    "**/imports/NRF52810_QFAA_R/NRF52810_QFAA_R.step",
-    "**/mechanical/Circuit_Models/Bearing_6808.glb",
-    "manufacturing/*.zip",
-    "imports/**",
-    "validation/*.test.mjs",
-    "validation/*.json",
-    "validation/*.md",
-    "validation/*.py",
-    "validation/check-*.mjs",
-    "validation/prepare-*.mjs",
-    "validation/normalize-compiler-output.mjs",
-    "validation/resolve-native-drawing-dimensions.mjs",
-    "validation/apply-model-materials.mjs",
-    "validation/restore-model-normals.mjs",
-    "validation/compact-glb.mjs",
-    "validation/enrich-orientations.mjs",
-    "validation/fitted-component-records.mjs",
-    "validation/nordic-electrical-revision.mjs",
-    "validation/import-provenance.mjs",
-    "mechanical/Circuit_Models/Drawings/**",
-    "previews/**",
-    "experiments/**"
+    "**/*.step"
   ],
   "alwaysUseLatestTscircuitOnCloud": true,
-  "buildCommand": "bun cloud-build.mjs",
+  "buildCommand": "bun scripts/build.mjs",
   "build": {
     "drawings": true
-  }
+  },
+  "siteDefaultComponentPath": "index.circuit.tsx"
 }

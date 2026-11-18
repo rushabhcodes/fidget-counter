@@ -1,7 +1,6 @@
 import assert from 'node:assert/strict'
 import {readFileSync,writeFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
-import {gerberCompatibleCircuit} from '../gerber-compat.mjs'
 const input=process.argv[2]??'dist/index/circuit.json'
 const bytes=readFileSync(input),circuit=JSON.parse(bytes)
 const all=type=>circuit.filter(e=>e.type===type)
@@ -47,7 +46,7 @@ assert.equal(all('pcb_hole').length,4,'Only the four enclosure mounting holes sh
 assert(!all('pcb_hole').some(e=>e.pcb_component_id===pcb.pcb_component_id),'Tag-Connect alignment holes remain')
 assert(!all('pcb_plated_hole').some(e=>e.pcb_component_id===pcb.pcb_component_id))
 const padIds=new Set(pads.map(e=>e.pcb_smtpad_id))
-const paste=gerberCompatibleCircuit(circuit).filter(e=>e.type==='pcb_solder_paste'&&padIds.has(e.pcb_smtpad_id))
+const paste=circuit.filter(e=>e.type==='pcb_solder_paste'&&padIds.has(e.pcb_smtpad_id))
 assert.equal(new Set(paste.map(p=>p.pcb_smtpad_id)).size,7,'All five contacts and both mounting tabs need stencil paste')
 const idToSource=new Map(all('source_trace').map(e=>[e.source_trace_id,e]))
 const mcu=all('source_component').find(e=>e.name==='U1')
@@ -126,9 +125,7 @@ assert.equal(crystalBranches.length,8)
 const issues=circuit.filter(e=>/error|warning/.test(e.type))
 const styleWarnings=issues.filter(e=>e.type==='pcb_trace_style_warning')
 assert.equal(issues.length-styleWarnings.length,0,JSON.stringify(issues))
-// Two legacy geometric segments retain their exact advisories. The CR2450
-// ground bridge adds a route prefix, moving the known final segment to8/9.
-// Match every non-ID field exactly (to 1 nm); do not hide other warnings/errors.
+// Require the current circuit to have no trace-style warnings.
 const warningRecord=e=>JSON.parse(JSON.stringify(Object.fromEntries(Object.entries(e)
  .filter(([key])=>!key.endsWith('_id')&&key!=='message'))),(k,v)=>typeof v==='number'?Math.round(v*1e9)/1e9:v)
 const warningKey=e=>JSON.stringify(e,(_,v)=>v&&!Array.isArray(v)&&typeof v==='object'?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a.localeCompare(b))):v)
@@ -142,5 +139,5 @@ const result={checkedAt:new Date().toISOString(),passed:true,sourcePackage:'@tsc
  stencilApertures:paste.length,power:'Pin 1 follows programmer voltage selector; select 3V3 and remove CR2450',
  minimumUnrelatedTopTrackClearanceMm,minimumUnrelatedViaClearanceMm,crystalBranches,courtyardBoundsMm:bounds,courtyardClear:true,
  circuitSha256:createHash('sha256').update(bytes).digest('hex'),physicalConnectorFitTested:false,physicalProgrammingTested:false}
-writeFileSync('validation/programming-interface.json',JSON.stringify(result,null,2)+'\n')
+writeFileSync('dist/validation/programming-interface.json',JSON.stringify(result,null,2)+'\n')
 console.log('Pass: fitted five-pin JST-SH, correct programmer pinout, seven stencil apertures, no legacy programming pads/holes and clear connector courtyard')

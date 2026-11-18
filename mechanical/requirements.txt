@@ -3,3 +3,4 @@ shapely==2.1.2
 trimesh==5.1.1
 networkx==3.7
 rtree==1.4.1
+fast-simplification==0.1.13

@@ -1,0 +1,12 @@
+Category,Part,Quantity_per_device,Specification,Source_url,Notes
+PRINT,Base_V3_Discs,1,One-piece PETG base with20 bottom-entry vented D6.4mm pockets,,Use dist/mechanical/Print_STL/Base_V3_Discs.stl; zero supports; keep annular stops and vents clear
+PRINT,Selected Cap,1,Updated PETG cap with keyed edge-mounted encoder slot,,Use dist/mechanical/Print_STL/Cap_*.stl; circular in default kit
+BUY,Axial NdFeB discs,21,D6 x3mm axial N52 nickel-coated neodymium,https://patelmagnets.com/shop/6-x-3mm-neodymium-magnets/,20 bottom attachment discs plus1 identical disc on edge in the top keyed slot; selectN52
+BUY ALTERNATIVE,Attachment discs alternate source,0,JCN52-DSC6-3 axial D6 x3mm N52,https://www.jc-magnetics.com/Magnet-Discs/Magnet-N52-6mm-3mm-Discs,Alternative source for the same21 discs; minimum25 listed; design uses +/-0.1mm tolerance
+BUY,Bearing,1,6808-ZZ /61808-2Z ID40 OD52 W7mm,https://bearinghouse.in/shop/ntn-6808zz-deep-groove-ball-bearings/,Qualify actual race shoulders and printed hand fit
+CUSTOM PCBA,Populated RevC PCB,1,OD36.5 W1.0mm with27 FIT components,https://jlcpcb.com/pcb-assembly,Generate fabrication outputs from the current circuit; holder and JST header already included
+BUY,CR2450,1,3V primary lithium loose cell24.5x5mm,https://www.panasonic.com/in/consumer/battery/specialty-batteries/lithium-coin/cr-2450-5be.html,No tabs; remove before powered programming
+BUY,PCB screws,2,M2x4 nylon head OD3.8 height1.3mm maximum,https://www.vital-parts.co.uk/slotted-pan-head-nylon-screws-din-85/42809-sph85-m2-4-ny-n,Opposite two PCB positions; use matching driver
+SHARED,Adhesive,As needed,Nonconductive adhesive compatible with PETG nickel and steel,,Coupon-test bond and cure before loading magnets
+SHARED,Five-way JST-SH cable,1 per bench,A05SR05SR30K152B straight-through candidate,https://www.digikey.in/en/products/detail/jst-sales-america-inc/A05SR05SR30K152B/6708507,Verify1-to1 through5-to5;3V3 only
+SHARED,SWD programmer with adapter,1 per bench,Compatible3.3V CMSIS-DAP or J-Link,https://www.segger.com/products/debug-probes/j-link/models/j-link-base/,Follow PROGRAMMING.md; correct target-power arrangement; remove coin cell before powered programming

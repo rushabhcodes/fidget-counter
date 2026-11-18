@@ -1,59 +1,43 @@
-# Fidget counter — v1.0.35
+# Fidget counter
 
-V3 uses **20 circular Ø6 × 3 mm axial magnets inserted from underneath a one-piece base**. The vented pockets have integral annular stops and sidewall adhesive retention. The enclosure uses two PETG prints: one base and one selected cap. There is no permanent magnetic ring, steel backing or separate magnet carrier in this version.
+A CR2450-powered nRF52810 BLE rotation counter with a centered TMAG3001 Hall sensor. The enclosure uses two PETG prints: a one-piece magnet base and one of eleven caps. The base prints phone face down with **zero supports**. Twenty Ø6 × 3 mm axial magnets fit vented underside pockets; an identical magnet sits on edge inside the cap.
 
-The support-free base uses a **continuous bearing-support wall and zero supports**, printed phone face down. It replaces the three inherited webs and their open windows. The linked v1.0.35 archives include the current generated STEP/STL and print manifest. The magnet stops retain their depth; 45° openings above them eliminate closed roof bridges. Bearing fits, PCB and cap geometry retain their dimensions.
+## Develop and build
 
-![Current support-free magnet base](mechanical/variants/V3_disc_magnets/base-support-free.png)
-
-![Native tsCircuit engineering drawing and exploded enclosure](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35-sheet-1.png)
-
-The native circuit preview selects V3. The base remains Ø58 mm, the largest cap Ø61.6 mm and physical height **20.9 mm**. The top encoder uses the **same Ø6 × 3 mm axial disc as the base, mounted on its edge** in a keyed slot. All eleven cap styles have been updated. Keeping the 1.8 mm sensor clearance adds 4.5 mm to the cap height; the bearing, PCB, CR2450 and screw positions are retained.
-
-[Native engineering drawing](enclosure-drawing.circuit.json) · [A3 engineering PDF](mechanical/variants/V3_disc_magnets/drawings/engineering-drawing-v1.0.35.pdf) · [Encoder orientation](mechanical/variants/V3_disc_magnets/encoder-orientation.png) · [Full exploded view](mechanical/variants/V3_disc_magnets/exploded-v1.0.33.png) · [Print, source and assemble V3](mechanical/variants/V3_disc_magnets/README.md) · [Parts to order](mechanical/variants/V3_disc_magnets/ORDER_LIST.csv)
-
-The drawing is authored with native `assembly.drawing.page` and `partview` elements in [enclosure-drawing.assembly.tsx](enclosure-drawing.assembly.tsx). It includes assembled, exploded, front, underside and section views. Model-derived measurements are stored as native `drawing_dimension_line` records. The drawings and download kits include the continuous-wall base and vented magnet pockets.
-
-## Build one prototype
-
-1. Print the V3 pocket-fit coupons, then **Base_V3_Discs and one Cap** from the V3 print manifest. Use the updated STLs under `mechanical/variants/V3_disc_magnets/generated/Print_STL/`. The root `mechanical/Print_STL` files are historical V1 parts.
-2. Source **21 identical Ø6 × 3 mm axial N52 discs**: 20 for the base and one for the cap. Also source one 6808-ZZ bearing, one populated RevC PCB, one CR2450 and two M2 × 4 mm nylon screws. The PCB includes its soldered holder and JST programming connector. The [order list](mechanical/variants/V3_disc_magnets/ORDER_LIST.csv) supplies specifications and supplier examples.
-3. Clean and measure the vented pockets, select a measured phone/case pole arrangement, insert and sidewall-bond the discs from the underside. Nominal disc faces sit 0.2 mm below the phone-contact face. See the [V3 assembly directions](mechanical/variants/V3_disc_magnets/README.md#pocket-dimensions-and-assembly).
-4. [Build/download the RevC firmware](firmware/README.md), [program the board](PROGRAMMING.md) before fitting the cell, then follow the common board/bearing/cap steps in [ASSEMBLY.md](ASSEMBLY.md).
-
-This remains a fit-test prototype. Removing the steel backing changes the magnetic field and holding force. The single disc row does not reproduce a concentric MagSafe pole pattern. Measure actual phone/case attachment, adhesive retention, Hall counting and BLE/current before a batch; printed push-fit bearing retention also needs qualification.
-
-## Files to print or order
-
-- [V3 print-test ZIP — two default product parts and fit coupons](https://github.com/rushabhcodes/fidget-counter/blob/main/manufacturing/fidget-counter-V3-discs-print-test-1.0.35.zip)
-- [V3 complete exact CAD ZIP — STEP, GLB, all cap alternatives and source](https://github.com/rushabhcodes/fidget-counter/blob/main/manufacturing/fidget-counter-V3-discs-CAD-1.0.35.zip)
-- [Current PCB fabrication ZIP — Gerbers, BOM and CPL](https://github.com/rushabhcodes/fidget-counter/blob/main/manufacturing/fidget-counter-fabrication-1.0.35.zip)
-- [V3 print manifest](mechanical/variants/V3_disc_magnets/generated/print-ready-manifest.json), [mechanical BOM](mechanical/MECHANICAL_BOM.csv), [electronic BOM](BOM.csv)
-
-The PCB fabrication payload is unchanged from corrected v1.0.31/1.0.30. Get a Standard double-sided PCBA/ENIG quote for all **27 FIT** components. Holder BT1 and J_DEBUG are already included. Application firmware is rotation-only: one complete turn either way counts once, with unfinished backtracking canceled. Firmware, the RevC board definition, BLE client and CI build remain in [firmware](firmware/README.md); use an artifact from a successful run for the intended commit.
-
-## Rebuild and verify
-
-Use pinned tscircuit 0.0.3168/Bun, the mechanical Python requirements, VTK/Matplotlib for images and an installed PrusaSlicer CLI. For V3 the variant builder is the authoritative base and cap generator; the root enclosure parameters continue to describe the unchanged common V1 hardware.
+Requires Bun. The project pins tsCircuit **0.0.3236** and its dependency graph in `bun.lock`.
 
 ```sh
 bun install --frozen-lockfile
-python -m pip install -r mechanical/drawing-requirements.txt
-python mechanical/variants/V3_disc_magnets/build.py
-python mechanical/variants/V3_disc_magnets/export_preview.py
-python mechanical/variants/V3_disc_magnets/audit.py --slicer /path/to/prusa-slicer
-python mechanical/variants/V3_disc_magnets/render.py
+bun run dev
+bun run build
 bun run typecheck
-bun run build:source
 bun test
-bun run build:drawings
-python validation/export-native-drawings.py
 bun run check:assembly
 bun run check:programming
+bun run check:imports
 ```
 
-The V3 CAD audit checks 20 bottom insertion paths, annular stops and open tapered vents, all eleven caps through full rotation, 27 actual supplier bodies and unchanged upper interfaces. The native preview check requires all routed PCB records and fitted electronic records to equal frozen corrected v1.0.31. Print audits check actual toolpaths; they do not qualify a particular printer, magnet bond or attachment force.
+Open `dist/index.html` through a static web server to use the generated website. Use **More views (⋯) → Drawing**. The native view contains two A3 engineering sheets: assembled and orthographic views, a dimensioned front view, the underside magnet pattern, an encoder detail and a section through the sensor clearance. PCB, schematic and 3D views use the same circuit.
 
-[V1 premade ring](mechanical/variants/V1_premade_ring/README.md) and [V2 rectangular magnets with steel/carrier](mechanical/variants/V2_discrete_magnets/README.md) are preserved historical alternatives. Use each version's complete matching parts. Their old audit reports describe those versions, not V3. [Mechanical background](MECHANICAL.md), [assembly](ASSEMBLY.md), [programming](PROGRAMMING.md) and [PCB review](validation/FABRICATION_REVIEW.md) retain the common hardware evidence.
+[index.circuit.tsx](index.circuit.tsx) is the circuit source; [engineering-drawing.tsx](engineering-drawing.tsx) defines native tsCircuit drawing pages and views. The build resolves imported-model measurements into native dimension records. [enclosure.tsx](enclosure.tsx) selects the cap. Change `CAP_STYLE` in the circuit to select another style.
 
-Compiler 0.0.3168 is the latest npm release checked on 2026-11-13. Its schema adapter preserves every approved physical PCB record and the three original copper pours; this release does not change PCB fabrication geometry. Cloud publishing restores checked native artifacts and drawing sheets instead of recompiling CAD. Full manufacturing STEP/STL remain in the GitHub CAD kit.
+All generated Circuit JSON, previews, drawings, website files, STEP/STL and validation reports go under ignored `dist/`. There are no checked-in compiled circuit snapshots, release archives or historical design variants. `imports/` contains supplier component definitions and CAD inputs; `mechanical/models/` contains the GLB assets imported by the circuit. These are required inputs for the TypeScript viewer and are refreshed explicitly from the CAD source.
+
+## Mechanical source and printing
+
+```sh
+python -m pip install -r mechanical/requirements.txt
+bun run build:source
+python mechanical/build_enclosure.py
+python mechanical/build_fit_coupons.py
+python mechanical/audit.py --slicer /path/to/prusa-slicer
+# After editing CAD, refresh the imported viewer models and rebuild:
+python mechanical/export_models.py
+bun run build
+```
+
+Generated print parts are in `dist/mechanical/Print_STL`, pocket coupons in `Fit_Coupons`, bearing coupons in `Bearing_Coupons`, and exact assemblies in `Assemblies`. Use the generated `print-ready-manifest.json` for per-part orientation and slicer profiles. The circular cap is the default support-free cap; some other styles require supports.
+
+The base is Ø58 mm, the circular cap Ø61.6 mm and total physical height 20.9 mm. The bearing is 6808-ZZ (40 × 52 × 7 mm). [Mechanical details](MECHANICAL.md), [printing settings](mechanical/printing/PRINTING.md), [assembly](ASSEMBLY.md), [parts to order](mechanical/ORDER_LIST.csv), [electronic BOM](BOM.csv), [programming](PROGRAMMING.md) and [firmware](firmware/README.md) describe the current device.
+
+This is a fit-test prototype. Physical bearing retention, adhesive retention, phone/case holding force, Hall counting and BLE/current performance need qualification on actual hardware.

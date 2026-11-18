@@ -1,7 +1,7 @@
 import {test,expect} from 'bun:test'
 import {readFileSync} from 'node:fs'
 import {verifyNordicElectrical} from './nordic-electrical-revision.mjs'
-const current=()=>JSON.parse(readFileSync('published.circuit.json'))
+const current=()=>JSON.parse(readFileSync('dist/index/circuit.json'))
 test('DEC2 is unconnected; DEC3 has the specified100pF; schematic uses package numbers',()=>{
  expect(verifyNordicElectrical(current()).fitted_components).toBe(27)
 })

@@ -11,7 +11,6 @@ import {RC0402FR_0710KL} from "./imports/RC0402FR_0710KL/RC0402FR_0710KL"
 import {RC0402FR_07100KL} from "./imports/RC0402FR_07100KL/RC0402FR_07100KL"
 import {LQG15HS3N9B02D} from "./imports/LQG15HS3N9B02D/LQG15HS3N9B02D"
 import {LQG15HS6N8J02D} from "./imports/LQG15HS6N8J02D/LQG15HS6N8J02D"
-import {LQG15HS6N8G02D} from "./imports/LQG15HS6N8G02D/LQG15HS6N8G02D"
 
 const caps={
  "100nF":GRM155R71C104KA88D, "4.7uF":GRM188R60J475KE19D,
@@ -35,9 +34,5 @@ export const Res=(props:Omit<ResistorProps,"footprint">)=>{
 export const Ind=(props:Omit<InductorProps,"footprint">)=>{
  const imported=props.inductance==="3.9nH"?LQG15HS3N9B02D:props.inductance==="6.8nH"?LQG15HS6N8J02D:undefined
  if(!imported) throw new Error(`No imported inductor for ${props.inductance}`)
- // Retain the validated two-terminal schematic symbol and aliases. The new
- // supplier import provides its own exact lands, identity and native CAD.
- const legacy=LQG15HS6N8G02D({name:props.name}).props
- return <inductor {...libraryProps(imported({name:props.name}))}
-  {...(props.inductance==="6.8nH"?{symbol:legacy.symbol,pinLabels:legacy.pinLabels}:{})} {...props}/>
+ return <inductor {...libraryProps(imported({name:props.name}))} {...props}/>
 }

@@ -1,3 +1,0 @@
-PETG fit coupons; print at100% mm scale with the same orientation and profile as the product.
-Test actual6808-ZZ samples in the shaft/housing diameter variants. Start from the looser fits. Select a light hand push fit that stays seated, rotates freely and shows no wobble. Never force a tight fit; adjust explicit diameter parameters and regenerate matching base/cap. The default is40.05mm shaft and51.95mm housing, nominal0.05mm diametral interference.
-Calibrated diameter choice, assembly/pull-off force, creep, endurance, shield/race contact and Hall/RF performance remain unqualified. There are no thread or nut coupons in this revision.

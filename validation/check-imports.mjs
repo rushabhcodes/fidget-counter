@@ -26,8 +26,8 @@ for (const component of fitted) {
   if (!source.supplier_part_numbers?.jlcpcb?.length) throw new Error(`Missing exact JLC identifier: ${source.name}`)
 }
 if (fitted.length !== 27) throw new Error(`Expected 27 fitted parts, got ${fitted.length}`)
-mkdirSync("work", {recursive:true})
-writeFileSync("work/import-model-audit.json", JSON.stringify({importedLibraryTypes:provenance.parts.length,
+mkdirSync("dist/validation", {recursive:true})
+writeFileSync("dist/validation/import-model-audit.json", JSON.stringify({importedLibraryTypes:provenance.parts.length,
   originalImportedFiles:provenance.parts.reduce((n,p) => n + p.files.length,0), compilerAnchorCompensations:adaptations, fittedParts:fitted.length,
   exactJlcpcbParts:27,
   builtGlbMeshCount:gltf.meshes.length, circuitSha256:hash("dist/index/circuit.json"), glbSha256:hash("dist/index/3d.glb")}, null, 2) + "\n")

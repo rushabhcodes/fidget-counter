@@ -1,54 +1,19 @@
-# Dependencies
-node_modules
-
-# Build output
+node_modules/
 dist/
 build/
-mechanical/export/
-
-# Environment variables
+work/
+.local-validation/
+.tscircuit/
+__pycache__/
+*.pyc
 .env
-.env.local
-.env.*.local
-
-# IDE files
+.env.*
 .vscode/
 .idea/
 *.swp
-*.swo
-__pycache__/
-*.pyc
-
-# OS files
 .DS_Store
 Thumbs.db
-
-# Debug logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# tscircuit cache
-.tscircuit/
-
-# Local diagnostics and scratch work
-work/
-checks/
-
-# Local publishing diagnostics
-.local-validation/
-publish-validation.log
-mechanical/variants/V2_discrete_magnets/generated/scene_meshes.json
-mechanical/variants/V2_discrete_magnets/generated/*.gcode
-mechanical/variants/V2_discrete_magnets/generated/Assemblies/
-
-# Pinned west firmware workspace
+*.log
 /.west/
 /zephyr/
 /modules/
-
-# V3 render inputs and full exact assemblies ship in the CAD archive.
-mechanical/variants/V3_disc_magnets/generated/scene_meshes.json
-mechanical/variants/V3_disc_magnets/generated/cap_meshes.json
-mechanical/variants/V3_disc_magnets/generated/Assemblies/
-mechanical/variants/V3_disc_magnets/generated/*.gcode

@@ -1,11 +1,12 @@
 import {routeBoard} from "./routing"
 import routes from "./critical-routes.json";
 const criticalRoutes: Record<string, import("@tscircuit/props").TraceProps["pcbPath"]> = routes;
-// Approved0.0.3060 route geometry; the latest pinned compiler is checked against the same physical/electrical contract.
+// Authored route geometry is checked against the physical/electrical contract.
 import { Fragment } from "react";
 import { assembly } from "@tscircuit/core";
-import enclosureParameters from "./mechanical/enclosure-parameters.json";
+import enclosureParameters from "./mechanical/assembly-parameters.json";
 import { EnclosureAssembly, type CapStyle } from "./enclosure";
+import { EngineeringDrawing } from "./engineering-drawing";
 // Select any of the 11 CAP_STYLE_OPTIONS exported by enclosure.tsx.
 const CAP_STYLE: CapStyle = "circular";
 import { NRF52810, TMAG3001, HF_XTAL, LF_XTAL, RF_ANT, BatteryHolder, JstSwd } from "./parts";
@@ -100,7 +101,7 @@ export default () => <assembly.device name="FIDGET_COUNTER">
   <schematicbox name="U1 SWD" chipRef=".U1" schX={11} schY={1} width={2.4} height={.8} schSectionName="debug" pinLabels={{ pin26: "SWDIO", pin25: "SWDCLK", pin24: "nRESET" }} schPinArrangement={{ leftSide: [], rightSide: ["pin26", "pin25", "pin24"] }}/>
   {/* Five-pin side-entry JST-SH. Pin 1 follows the programmer voltage
           selector: use 3V3 only and remove the CR2450 before connecting. */}
-  <JstSwd name="J_DEBUG" layer="top" pcbX={0} pcbY={-13.3} pcbSx={{...hideText,"& silkscreenpath":{visibility:"hidden"}}} schX={16} schY={1} schSectionName="debug" connections={{ VOUT: "net.VBAT", SWDIO: "net.SWDIO",
+  <JstSwd schWidth={1.575} name="J_DEBUG" layer="top" pcbX={0} pcbY={-13.3} pcbSx={{...hideText,"& silkscreenpath":{visibility:"hidden"}}} schX={16} schY={1} schSectionName="debug" connections={{ VOUT: "net.VBAT", SWDIO: "net.SWDIO",
         NRST: "net.NRESET", SWCLK: "net.SWDCLK", GND: "net.GND" }}/>
   <Res name="R4" pcbSx={hideText} resistance="100k" pcbX={-4.2} pcbY={.7} pcbRotation={180} schX={11} schY={-3.5} schOrientation="vertical" schSectionName="debug" connections={{ pin1: "net.VBAT", pin2: "net.NRESET" }}/>
   {["VDD1", "VDD3"].map(p => <Link key={p} a={`.U1.${p}`} b="net.VBAT"/>)}
@@ -181,4 +182,5 @@ export default () => <assembly.device name="FIDGET_COUNTER">
  <silkscreentext text="3V3 ONLY" pcbX={0} pcbY={-17} fontSize={.8}/>
 </board>
  <EnclosureAssembly capStyle={CAP_STYLE}/>
+ <EngineeringDrawing/>
 </assembly.device>;

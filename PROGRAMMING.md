@@ -42,7 +42,7 @@ The marked pin 1 is on the left in this PCB top view. The plug's mating-face vie
 | 4 | SWCLK | U1 physical pin 25 | (+1.000125, −11.3001183) |
 | 5 | Open-drain NRST | NRESET, U1 P0.21 / pin 24; existing 100 kΩ pull-up | (+2.000885, −11.3001183) |
 
-The two mechanical solder tabs are not additional signal contacts. There are no programming alignment holes or bare programming test-pad row. The V5 fitted-header clearance is regenerated against the actual supplier STEP and a conservative 2.92 mm-high courtyard envelope through the full 360-degree rotation sweep at its fixed height. See `validation/jst-connector-clearance.json` for measured CAD results. Cable mating and printed tolerances still need a prototype.
+The two mechanical solder tabs are not additional signal contacts. There are no programming alignment holes or bare programming test-pad row. The V5 fitted-header clearance is regenerated against the actual supplier STEP and a conservative 2.92 mm-high courtyard envelope through the full 360-degree rotation sweep at its fixed height. Run the current mechanical builder to check the supplier body against the enclosure. Cable mating and printed tolerances still need a prototype.
 
 ## Program the supplied pilot firmware
 
@@ -151,4 +151,4 @@ After successful recovery, rerun the complete-image programming command above. I
 
 ## Verification status
 
-Updated for 1.0.30, tscircuit 0.0.3168 and the two-part push-fit enclosure. The exact five-pin side-entry footprint/pinout comes from @tsci/tscircuit.standard-jst-programmer@0.8.0; its C136657 models remain cached under imports/SM05B_SRSS_TB. See validation/programming-interface.json for pinout, stencil,0.13mm connector clearances and clock constraints, and validation/jst-connector-clearance.json for all11 caps. The routing guard bounds the DEC2/DEC3 and RF-return corrections, retains the other 25 fitted geometries and rejects other electrical/copper changes. Actual cable fit, connector retention, flashing and pilot firmware behavior still need a populated prototype.
+The exact five-pin footprint and pinout use `@tsci/tscircuit.standard-jst-programmer@0.8.0`. Supplier CAD inputs are under `imports/SM05B_SRSS_TB`. Run `bun run check:programming` after building to generate `dist/validation/programming-interface.json`. The current routing tests check power, clock and RF constraints. Actual cable fit, retention, flashing and firmware behavior need a populated prototype.

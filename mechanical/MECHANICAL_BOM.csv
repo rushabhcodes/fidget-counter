@@ -1,5 +1,5 @@
 Part,Quantity,Specification,Notes
-Base_V3_Discs,1,PETG one-piece base20 bottom-entry blind D6.4mm pockets,Use V3 generated STL; no backing or separate carrier
+Base_V3_Discs,1,PETG one-piece base20 bottom-entry vented D6.4mm pockets,Use V3 generated STL; no backing or separate carrier
 Selected Cap_*.stl,1,PETG updated style with keyed edge encoder slot,Use V3 generated STL; one of11 alternatives; circular default
 Attachment disc magnets,20,D6 x3mm axial N52 nickel-coated neodymium,Insert from underside; sidewall adhesive; nominal0.2mm face recess
 Bearing,1,6808-ZZ /61808-2Z ID40 OD52 W7mm,Qualify actual race shoulders and printed fits
