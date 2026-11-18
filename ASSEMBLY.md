@@ -72,7 +72,7 @@ Confirm full seating without contact between stationary and moving parts. Rotate
 5. Check all magnet bonds, phone/case attachment and cap pull-off retention on a protected surface. Measure forces; do not approve the joint by feel alone.
 6. For the pilot release, compare at least100 turns in each direction against a reference at several speeds up to10turns/s. Repeat with the final steel bearing, attachment discs, intended phone and case. Test connection/reconnection/reset/save, idle/shock, cap removal, current consumption and contact reliability.
 
-The firmware's radio and magnetic behavior, clock accuracy, runtime, printed retention, screw strength and adhesive aging require real prototypes. A successful digital build and flash verification do not establish those results. Record assembly touch time, cure time and rework separately in [the timing sheet](mechanical/ASSEMBLY_TIME_STUDY.csv) before the10–50-unit batch.
+The firmware's radio and magnetic behavior, clock accuracy, runtime, printed retention, screw strength and adhesive aging require real prototypes. A successful digital build and flash verification do not establish those results. Record assembly touch time, cure time and rework separately before a batch.
 
 ## Battery replacement and service
 
