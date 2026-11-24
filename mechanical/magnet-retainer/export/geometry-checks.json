@@ -1,0 +1,177 @@
+{
+  "status": "CAD and exported mesh checks passed; physical fit and strength untested",
+  "parameters": {
+    "units": "mm",
+    "diameter": 58.0,
+    "thickness": 0.6,
+    "phone_edge_chamfer": 0.15,
+    "nominal_glue_gap": 0.05,
+    "print_layer_height": 0.2
+  },
+  "existing_model": "mechanical/STEP_Parts; enclosure-parameters.json",
+  "existing_bottom_already_has_continuous_floor": true,
+  "retainer_valid_solid": true,
+  "retainer_solids": 1,
+  "volume_mm3": 1583.2013,
+  "print_bounds_mm": [
+    [
+      -28.99856,
+      -28.99964,
+      0.0
+    ],
+    [
+      29.0,
+      28.99964,
+      0.6
+    ]
+  ],
+  "stl_watertight": true,
+  "stl_winding_consistent": true,
+  "stl_bodies": 1,
+  "full_bond_face_area_mm2": 2642.079,
+  "nominal_added_phone_separation_mm": 0.65,
+  "installed_retainer_z_mm": [
+    -0.45,
+    0.15
+  ],
+  "new_phone_plane_z_mm": -0.65,
+  "new_overall_height_including_relocated_pad_mm": 14.65,
+  "original_pad_removed_from_glue_joint": true,
+  "rigid_collision_checks": [
+    {
+      "existing_part": "Bottom_Cover",
+      "retainer_overlap_mm3": 0.0
+    },
+    {
+      "existing_part": "Stationary_Housing",
+      "retainer_overlap_mm3": 0.0
+    },
+    {
+      "existing_part": "MagSafe_Magnet_Array",
+      "retainer_overlap_mm3": 0.0
+    },
+    {
+      "existing_part": "Magnetic_Shield",
+      "retainer_overlap_mm3": 0.0
+    },
+    {
+      "existing_part": "Rotating_Cap_Released",
+      "retainer_overlap_mm3": 0.0
+    },
+    {
+      "existing_part": "Rotating_Cap_Pressed",
+      "retainer_overlap_mm3": 0.0
+    }
+  ],
+  "magnet_coverage": [
+    {
+      "magnet": 1,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 2,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 3,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 4,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 5,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 6,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 7,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 8,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 9,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 10,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 11,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 12,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 13,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 14,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 15,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 16,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 17,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 18,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 19,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 20,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 21,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 22,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 23,
+      "uncovered_volume_mm3": 0.0
+    },
+    {
+      "magnet": 24,
+      "uncovered_volume_mm3": 0.0
+    }
+  ],
+  "physical_checks_required": [
+    "Flat print and dry fit against the actual stationary base",
+    "Glue bond and plate resistance to repeated phone pull-off and edge peeling",
+    "Phone holding, sliding and rotation force after adding 0.65 mm separation"
+  ],
+  "files": {
+    "Magnet_Retainer_58mm.stl": {
+      "sha256": "a65b1d49614460eba8887bc041a8c62fd3dab8bb06197139389b91c38ce2dd57"
+    },
+    "Magnet_Retainer_58mm.step": {
+      "sha256": "fd6ca27019c3c1c941b4a6346ab56da122265d6841a0332326cd5e972c9cef41"
+    }
+  }
+}

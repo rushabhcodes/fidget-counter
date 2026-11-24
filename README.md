@@ -16,6 +16,56 @@ A 36.5 mm circular, two-layer, 1.0 mm PCB for the revised 14.0 mm rotating-cap e
 
 The central TMAG3001A2 measures the diametric encoder magnet's XY angle. A cap-operated tactile switch supports a two-second count-reset hold in firmware. BT1 is the bottom-mounted MYOUNG BS-08-B2AA020-R holder (JLCPCB C964787), imported with its exact footprint and 3D model. The CR2032 is replaced from above: release the two cap latches, remove the four flexure/PCB screws, then lift and flip the board with its soldered holder. The cell positive face points toward the solid bottom cover. Five underside pogo pads provide SWD access; see [PROGRAMMING.md](PROGRAMMING.md) for standard probe wiring and flashing instructions. No LED, charging circuit or tall programming connector is fitted.
 
+## Parts required per device
+
+This list matches the **revision 1.0.7 enclosure in this folder**, including the new glue-on magnet retainer. Dimensions are in millimetres; Ø means diameter, OD means outside diameter and ID means inside diameter. The complete PCB component list is in [BOM.csv](BOM.csv); the hardware and material parts below are also needed to assemble the device.
+
+### Hardware and materials
+
+| Item | Quantity | Required specification / use |
+|---|---:|---|
+| Populated PCB | 1 | Rev A, Ø36.5 × 1.0, assembled with the fitted parts in [BOM.csv](BOM.csv). C13/C14 are DNP tuning sites. |
+| Attachment magnets | 24 | Neodymium discs, **Ø5 × 1.5, axially magnetized**. Fit the bottom tray's Ø5.25 × 1.55 pockets. Check polarity and attraction against the intended phone/case before gluing. Grade and phone holding force remain unqualified. |
+| Encoder magnet | 1 | Neodymium disc, **Ø5 × 1.5, diametrically magnetized**. Fits the moving cap's Ø5.2 pocket. This is a different magnetization from the 24 attachment magnets. |
+| Flexure / PCB retaining screws | 4 | **M1.6, flat countersunk head**, for the housing's Ø1.25 printed pilot holes. CAD reference: Ø2.8 head, 0.6 head height and 3.0 straight shank, approximately **3.6 overall length including the head**. A matching stock screw and thread engagement still need a physical fit check; see the screw note below. |
+| Steel backing ring | 1 | **ID44.05 × OD54.45 × 0.70**. Separate metal part behind the attachment magnets; the supplied STEP is a shape reference, not a printable substitute. |
+| CR2032 battery | 1 | Primary lithium cell, Ø20 × 3.2. Positive face points toward the bottom cover; insert after PCB reflow. |
+| CR2032 holder, BT1 | 1, included in PCB BOM | **MYOUNG BS-08-B2AA020-R / JLCPCB C964787**, soldered to the PCB underside. Buy separately only if it is omitted from the supplied PCBA. |
+| Encoder roof shim | 1 | Nonmagnetic disc, **Ø5 × 0.20**, fitted above the encoder magnet in its blind cap pocket. |
+| Compliant actuator ring | 1 | Silicone, **OD27.4 × ID23.2 × 1.20**. Cut or mold to the reference shape; material force/compression qualification is still required. See [REVIEW_FIXES.md](REVIEW_FIXES.md#press-assembly-and-tolerance-budget). |
+| Actuator shim stock | As needed for one stack | PET annuli, **OD27.4 × ID23.2**. Select a **0–1.20** total stack in **0.05** increments; nominal stack is **0.60**. Adjust to a measured **0.10–0.15** resting switch gap at every cap angle. |
+| Phone-facing protective pad / film | 1 | **Ø58 × 0.20 nominal**, nonmagnetic, smooth protective material. Fit below the new retainer; its thickness affects magnet-to-phone separation. |
+| Super glue / cyanoacrylate | As needed | Plastic-compatible adhesive for the new retainer, plus compatible adhesive for the magnets and cover-to-housing joint. Follow the adhesive's material preparation and full-cure directions. |
+| Printing filament | As needed | PETG for the cap and flexure, as specified in [MECHANICAL.md](MECHANICAL.md#top-battery-access-and-cap-release). Print the retainer in the same rigid material as the base. The silicone ring and PET shims are separate material parts. |
+
+**Magnet total: 25 per device — 24 axial attachment discs + 1 diametric encoder disc.** Do not substitute axial discs for the encoder. The attachment array's polarity arrangement and holding force still need testing with the actual phone.
+
+**Screw selection:** the modeled screws are simplified references, not a verified supplier part. Countersunk screws are specified by overall length including the head, so the CAD's 3.0 mm straight shank must not be read as a confirmed “M1.6 × 3” shopping specification. Match the head and usable length to the printed seat and blind pilot before buying a full set or tightening the assembly. No nuts, washers, heat-set inserts or bottom-cover screws are modeled; the bottom cover and added retainer are bonded.
+
+### Parts to print
+
+Use the complete matching cap, housing, flexure and bottom cover from this revision. The quantities below mean physical pieces; print the spacer and release-key STL multiple times as shown.
+
+| Printed part | Quantity | STL |
+|---|---:|---|
+| Rotating cap | 1 | [Rotating_Cap.stl](mechanical/Print_STL/Rotating_Cap.stl) |
+| Stationary housing | 1 | [Stationary_Housing.stl](mechanical/Print_STL/Stationary_Housing.stl) |
+| Flexure retention system | 1 | [Flexure_Retention_System.stl](mechanical/Print_STL/Flexure_Retention_System.stl) |
+| Bottom cover with magnet pockets | 1 | [Bottom_Cover.stl](mechanical/Print_STL/Bottom_Cover.stl) |
+| PCB spacer bushings, OD4.4 × ID3.4 × 2.5 | 4 | [PCB_Spacer_Print_4.stl](mechanical/Print_STL/PCB_Spacer_Print_4.stl) — print four copies |
+| Glue-on magnet retainer, Ø58 × 0.60 | 1 for the reinforced base | [Magnet_Retainer_58mm.stl](mechanical/magnet-retainer/export/Magnet_Retainer_58mm.stl) |
+| Cap release key, reusable tool | 2 | [Cap_Release_Key_Print_2.stl](mechanical/Print_STL/Cap_Release_Key_Print_2.stl) — print two copies |
+| PCB lift pick, reusable tool | 1 | [PCB_Lift_Pick.stl](mechanical/Print_STL/PCB_Lift_Pick.stl) |
+
+The saved bottom cover already has a solid floor. The **new glue-on retainer reinforces it** and covers the magnet ring with another continuous plate. Print the retainer flat at **0.20 mm layer height, 100% solid, no supports**. Remove the protective pad before bonding the retainer to the fixed base, then relocate the pad to the new phone-facing surface. The plate and nominal glue layer add **0.65 mm**, making the saved enclosure **14.65 mm** high including the relocated pad. Check phone holding force and the cured bond before use. [Retainer fitting instructions, editable STEP and CAD checks](mechanical/magnet-retainer/README.md).
+
+### Assembly and programming tools
+
+- A precision screwdriver matching the selected M1.6 screw drive, tweezers and calipers.
+- Feeler gauges for the 0.10–0.15 mm actuator resting gap, and a flat surface/fixture to hold the retainer while its adhesive cures.
+- For programming: an nRF52810-compatible SWD probe such as J-Link, its 1.27 mm 2×5 Cortex adapter, and a breakout/fixture with five contacts for the Ø1.2 mm pads on 2.0 mm centres. See [PROGRAMMING.md](PROGRAMMING.md) for wiring and power setup.
+- A board-specific firmware image. Firmware and the phone app are not included in this repository.
+
 ## Open and build
 
 ```sh
@@ -105,7 +155,7 @@ Current primary requirements: [rigid PCB capabilities](https://jlcpcb.com/capabi
 - `previews/`: copper layout views, a fitted-part assembly reference and all four schematic sheets in PNG/SVG. `pcb-bottom` shows the actual underside orientation; `pcb-bottom-top-coordinates` retains the source coordinate view. The assembly reference excludes DNP parts, GPIO escape lands and bare test/contact interfaces; crystal manufacturer pin numbering is documented above. Library model downloads are included under `imports/`, with the full device GLB and PNG at `previews/3d.*` and the regenerated bare PCB view at `previews/pcb-3d.*`.
 - `fabrication/`: prototype Gerber/drill ZIP and assembly position reference CSV.
 - `BOM.csv` and `netlist.txt`: assembly intent and electrical connectivity.
-- `mechanical/`: all four compatible printed enclosure parts in STL/STEP, editable CadQuery source/parameters and geometry validation.
+- `mechanical/`: all four compatible printed enclosure parts in STL/STEP, spacers and service tools, editable CadQuery source/parameters and geometry validation. `mechanical/magnet-retainer/` adds the glue-on plate, printable STL, editable STEP, installed reference assembly, preview and fitting instructions.
 - `validation/`: final check logs, warning inventory and source/circuit hashes.
 
 Treat the Gerbers as a prototype review handoff. Resolve the thin mounting-hole web with the fabricator and the stencil/land-pattern details with the assembler before placing an order. RF tuning and magnetic calibration remain prototype measurements.

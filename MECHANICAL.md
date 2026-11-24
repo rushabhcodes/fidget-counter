@@ -53,6 +53,8 @@ The custom disc layout is a mechanical prototype, not a MagSafe-qualified array.
 
 ## Editable enclosure and supplied parts
 
+An optional **Ø58 × 0.60 mm glue-on magnet retainer** is in [mechanical/magnet-retainer](mechanical/magnet-retainer/README.md), with a printable STL, editable STEP, installed reference assembly and CAD checks. It adds a continuous protective plate below the existing solid floor and increases nominal magnet-to-phone separation by 0.65 mm including glue. Remove the pad before bonding, relocate it below the new plate, and physically check the bond and phone holding force before use.
+
 `build_enclosure.py` and `enclosure-parameters.json` regenerate the assembly with CadQuery ≥2.6. Run from the project root:
 
 ```sh
