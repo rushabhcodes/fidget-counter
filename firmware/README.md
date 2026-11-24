@@ -6,7 +6,7 @@ This is source for hardware bring-up. A successful [Firmware workflow](https://g
 
 ## Get the image
 
-Open the successful Firmware run on codex/bearing-supported-enclosure, download its fidget-counter-revc-COMMIT artifact and extract it. The image is fidget-counter-revc.hex. Check its SHA256 against firmware-build-manifest.json. The image includes Zephyr's BLE controller and application, starts at flash0 and needs neither a separate Nordic SoftDevice nor a bootloader. Application flash is0..0x2DFFF; the final8KiB at0x2E000 is NVS count storage.
+Open a successful Firmware run for the intended source commit, download its fidget-counter-revc-COMMIT artifact and extract it. The image is fidget-counter-revc.hex. Check its SHA256 against firmware-build-manifest.json. The image includes Zephyr's BLE controller and application, starts at flash0 and needs neither a separate Nordic SoftDevice nor a bootloader. Application flash is0..0x2DFFF; the final8KiB at0x2E000 is NVS count storage.
 
 The board uses192KiB flash and24KiB RAM. CI rejects the wrong MCU, DC/DC enabled, wrong I2C pins, invalid HEX/vector table, writes into NVS/UICR, flash overflow, or less than2KiB additional static RAM headroom. Thread stacks are already included in linked RAM usage; their physical high-water use remains to be measured.
 
@@ -68,7 +68,7 @@ State is20bytes, little endian:
 | Offset | Field |
 | --- | --- |
 | 0 | Protocol version1 |
-| 1 | Flags: bit0 sensor fault;1 storage fault;2 unsaved counts;3 sample gap/rebased unfinished turn;4 saturation |
+| 1 | Flags: bit0 sensor fault;1 storage fault;2 unsaved counts;3 sample gap/rebased unfinished turn;4 saturation;5 low battery;6 battery measurement fault |
 | 2–3 | Angle in0.0625° units |
 | 4–7 | Increasing-angle turns, uint32 |
 | 8–11 | Decreasing-angle turns, uint32 |
@@ -76,6 +76,12 @@ State is20bytes, little endian:
 | 16–19 | State sequence, uint32 |
 
 Counts checkpoint after2s without accepted motion, at most every60s during continuous motion, or on SAVE/ZERO. CRC-protected NVS uses two4KiB pages. Abrupt power loss can lose counts since the last checkpoint and always loses an unfinished turn. Storage errors are reported; the firmware never silently erases damaged stored data.
+
+## Battery percentage and low-battery warning
+
+The firmware reports estimated CR2450 percentage through standard BLE Battery Service `180F` / Battery Level `2A19`. Fidget Battery Status `76b8a003-5aa4-4c10-b5df-0da684303f21` adds filtered millivolts, validity and the warning latch as a five-byte read/notify payload. Measurements run at boot and once per minute. The warning starts at 20% and clears after three valid readings at 25% or above; ADC failures remain distinguishable from an empty cell. ZERO preserves battery state.
+
+See [BATTERY.md](BATTERY.md) for the wire format, app decoder, provisional curve, runtime assumptions and bench acceptance tests. The desktop client prints battery JSON alongside count updates. The percentage curve and battery life remain uncalibrated until tested on hardware.
 
 ## Sensor and qualification
 

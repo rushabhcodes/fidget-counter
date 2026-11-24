@@ -54,7 +54,7 @@ def main():
     build = Path(sys.argv[1] if len(sys.argv) > 1 else APP / "build")
     config = (build / "zephyr/.config").read_text()
     required = ["SOC_NRF52810_QFAA", "BOARD_FIDGET_COUNTER", "BT", "BT_CTLR", "BT_PERIPHERAL",
-                "CLOCK_CONTROL_NRF_K32SRC_XTAL", "NVS_DATA_CRC"]
+                "CLOCK_CONTROL_NRF_K32SRC_XTAL", "NVS_DATA_CRC", "ADC", "ADC_NRFX_SAADC"]
     for symbol in required:
         assert re.search(r"^CONFIG_" + symbol + r"=y$", config, re.M), symbol
     for symbol in ["SOC_DCDC_NRF52X","SERIAL","CONSOLE","BT_SMP","NRF_APPROTECT_LOCK"]:

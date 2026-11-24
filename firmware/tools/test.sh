@@ -7,5 +7,9 @@ cc -std=c11 -Wall -Wextra -Werror -fsanitize=address,undefined -g \
   -Iinclude src/rotation_counter.c src/tmag3001_frame.c tests/test_logic.c \
   -o "$FIDGET_TEST_DIR/test_logic"
 "$FIDGET_TEST_DIR/test_logic"
+cc -std=c11 -Wall -Wextra -Werror -fsanitize=address,undefined -g \
+  -Iinclude src/battery_state.c tests/test_battery.c \
+  -o "$FIDGET_TEST_DIR/test_battery"
+"$FIDGET_TEST_DIR/test_battery"
 python3 -m py_compile tools/verify_build.py tools/flash.py tools/client.py
 python3 -m unittest discover -s tests -p "test_tools.py" -v
