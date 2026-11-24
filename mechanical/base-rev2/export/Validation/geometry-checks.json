@@ -1,0 +1,365 @@
+{
+  "status": "CAD checked prototype; physical press fit, heat setting and pull-off strength untested",
+  "parameters": {
+    "units": "mm",
+    "magnet_pocket_diameter": 4.95,
+    "magnet_entry_chamfer": 0.2,
+    "insert_reference": "CNC Kitchen M2 x 3",
+    "insert_source": "https://cnckitchen.com/s/CNCKitchen_Heat-Set-Insert-Dimensions-and-Design-Guidelines.pdf",
+    "insert_outer_diameter": 3.6,
+    "insert_length": 3.0,
+    "insert_hole_diameter": 3.2,
+    "insert_hole_depth": 4.1,
+    "insert_recess": 0.1,
+    "boss_diameter": 6.2,
+    "boss_taper_bottom_z": 5.5,
+    "boss_taper_top_z": 5.85,
+    "screw_clearance_diameter": 2.2,
+    "screw_length_including_head": 10.0,
+    "screw_reference_head_diameter": 3.8,
+    "flexure_countersink_diameter": 4.0,
+    "flexure_mount_pad_diameter": 4.6,
+    "retainer_thickness": 0.6,
+    "retainer_glue_gap": 0.05,
+    "magnet_coupon_diameters": [
+      4.9,
+      4.95,
+      5.0,
+      5.05
+    ],
+    "insert_coupon_diameters": [
+      3.1,
+      3.2,
+      3.3
+    ]
+  },
+  "printed_parts": [
+    {
+      "name": "Magnetic_Base_Disc_Reverse_Load",
+      "valid_solid": true,
+      "solids": 1,
+      "stl_watertight": true,
+      "size_mm": [
+        58.0,
+        57.99351,
+        2.15
+      ],
+      "mesh_bed_shift_mm": -0.0,
+      "sha256_stl": "c867d3a905eb7dfd48c4065febced830416666c342cedc4d300f4ac9a6dcfc29"
+    },
+    {
+      "name": "Stationary_Housing_M2_Inserts",
+      "valid_solid": true,
+      "solids": 1,
+      "stl_watertight": true,
+      "size_mm": [
+        58.0,
+        57.99351,
+        10.2
+      ],
+      "mesh_bed_shift_mm": -0.0,
+      "sha256_stl": "916f60d6a1bdc5c1333b37aa129eb96243103b7baee4b741d7da0e91650a3ef4"
+    },
+    {
+      "name": "Flexure_Retention_System_M2",
+      "valid_solid": true,
+      "solids": 1,
+      "stl_watertight": true,
+      "size_mm": [
+        36.59602,
+        36.59602,
+        2.45
+      ],
+      "mesh_bed_shift_mm": -1e-07,
+      "sha256_stl": "91ed0c5783732907c309c525b39ab44e630ab77a6b5d0425f87643f2b9538a07"
+    },
+    {
+      "name": "Magnet_Retainer_58mm",
+      "valid_solid": true,
+      "solids": 1,
+      "stl_watertight": true,
+      "size_mm": [
+        58.0,
+        57.99351,
+        0.6
+      ],
+      "mesh_bed_shift_mm": -0.0,
+      "sha256_stl": "fb9a6719587b217c713abd1fb34b04d15b35d88c315b451718f59d499a33b3b3"
+    },
+    {
+      "name": "Magnet_Fit_Coupon_4p90_4p95_5p00_5p05",
+      "valid_solid": true,
+      "solids": 1,
+      "stl_watertight": true,
+      "size_mm": [
+        32.0,
+        8.0,
+        2.15
+      ],
+      "mesh_bed_shift_mm": -0.0,
+      "sha256_stl": "3dd76d8d62934d9449d65cdc368e4589052bd0fc36d9c07a45243d3392409044"
+    },
+    {
+      "name": "M2_Insert_Fit_Coupon_3p10_3p20_3p30",
+      "valid_solid": true,
+      "solids": 1,
+      "stl_watertight": true,
+      "size_mm": [
+        22.2,
+        6.2,
+        5.0
+      ],
+      "mesh_bed_shift_mm": -0.0,
+      "sha256_stl": "1c966bd40c2d68074c1ec4cc156f268732a41c819dd9228705889bb791e0dca4"
+    }
+  ],
+  "unintended_collisions": [],
+  "intentional_interference": [
+    {
+      "state": "Released",
+      "parts": [
+        "Stationary_Housing",
+        "M2_Inserts"
+      ],
+      "overlap_mm3": 25.635396,
+      "classification": "nominal knurl envelope displaces heated plastic"
+    },
+    {
+      "state": "Released",
+      "parts": [
+        "CR2032",
+        "Battery_Holder"
+      ],
+      "overlap_mm3": 2.621482,
+      "classification": "baseline undeformed battery spring contact"
+    },
+    {
+      "state": "Released",
+      "parts": [
+        "MagSafe_Magnet_Array",
+        "Bottom_Cover"
+      ],
+      "overlap_mm3": 13.597598,
+      "classification": "0.050 mm diametral magnet press fit"
+    },
+    {
+      "state": "Pressed",
+      "parts": [
+        "Stationary_Housing",
+        "M2_Inserts"
+      ],
+      "overlap_mm3": 25.635396,
+      "classification": "nominal knurl envelope displaces heated plastic"
+    },
+    {
+      "state": "Pressed",
+      "parts": [
+        "CR2032",
+        "Battery_Holder"
+      ],
+      "overlap_mm3": 2.621482,
+      "classification": "baseline undeformed battery spring contact"
+    },
+    {
+      "state": "Pressed",
+      "parts": [
+        "MagSafe_Magnet_Array",
+        "Bottom_Cover"
+      ],
+      "overlap_mm3": 13.597598,
+      "classification": "0.050 mm diametral magnet press fit"
+    }
+  ],
+  "magnet_loading": "phone-facing underside, +Z; steel backing ring is the seating stop",
+  "magnet_count": 24,
+  "magnet_nominal_diameter_mm": 5.0,
+  "magnet_diametral_interference_mm": 0.05,
+  "magnet_entry_diameter_mm": 5.35,
+  "magnet_minimum_web_mm": 1.47841,
+  "magnet_minimum_entry_web_mm": 1.07841,
+  "magnet_seated_z_mm": [
+    0.8999999999999999,
+    2.4
+  ],
+  "loading_checks": [
+    {
+      "magnet": 1,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 2,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 3,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 4,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 5,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 6,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 7,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 8,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 9,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 10,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 11,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 12,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 13,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 14,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 15,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 16,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 17,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 18,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 19,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 20,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 21,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 22,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 23,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    },
+    {
+      "magnet": 24,
+      "phone_side_path_clear": true,
+      "retainer_fully_covers_magnet": true
+    }
+  ],
+  "retainer_required": true,
+  "retainer_glue_contact_area_mm2": 2102.76,
+  "nominal_total_height_including_pad_mm": 14.65,
+  "insert_installation": "from underside before bonding magnetic disc; recess insert face 0.10 mm",
+  "insert_seated_z_mm": [
+    0.9,
+    3.9
+  ],
+  "insert_minimum_wall_after_knurl_mm": 1.3,
+  "insert_blind_relief_mm": 1.0,
+  "screw_thread_engagement_mm": 2.3,
+  "screw_tip_to_center_floor_mm": 0.8,
+  "screw_head_recess_mm": 0.1,
+  "pcb_hole_and_mount_positions_changed": false,
+  "boss_taper_to_pressed_skirt_axial_clearance_mm": 0.15,
+  "pcb_extraction_checks": [
+    {
+      "lift_mm": 0,
+      "collisions": []
+    },
+    {
+      "lift_mm": 0.5,
+      "collisions": []
+    },
+    {
+      "lift_mm": 1,
+      "collisions": []
+    },
+    {
+      "lift_mm": 2,
+      "collisions": []
+    },
+    {
+      "lift_mm": 4,
+      "collisions": []
+    },
+    {
+      "lift_mm": 6,
+      "collisions": []
+    },
+    {
+      "lift_mm": 10,
+      "collisions": []
+    },
+    {
+      "lift_mm": 16,
+      "collisions": []
+    },
+    {
+      "lift_mm": 24.0,
+      "collisions": []
+    }
+  ],
+  "baseline_geometry_unchanged": [
+    "PCB",
+    "Rotating_Cap",
+    "Battery_Holder",
+    "PCB_Spacer_Bushings"
+  ]
+}

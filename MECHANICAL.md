@@ -1,5 +1,7 @@
 # PCB / enclosure interface — datasheet-review revision 1.0.7
 
+**For the revised reverse-loading magnet disc and M2 heat-set mounts, use [mechanical/base-rev2/README.md](mechanical/base-rev2/README.md).** It supplies the matching disc, housing, flexure and closing retainer, plus fit coupons and assembly checks. The PCB and original rotating cap are reused. The dimensions and M1.6 hardware below describe the retained original enclosure baseline.
+
 Coordinates are millimetres in a top view, relative to the rotation axis. The board is Ø36.5 × 1.0 mm, with four Ø3.6 mm nonplated mounting holes at (±11.45513, ±11.45513). Their thin 0.25 mm nominal edge web still requires fabricator acceptance. Printed shoulders and bushings support the board.
 
 The revised enclosure is **14.0 mm high**. PCB bottom/top planes are Z=7.1/8.1. U2 is centered at (0,0); U1 is the 6 × 6 mm QFN at (-7.5,5); SW1 is centered at (12.65,0). The encoder magnet's lower face is Z=10.4, leaving nominal sensor package clearance of 1.8 mm released and 0.9 mm pressed. The cap pocket is Ø5.2 mm with a 0.2 mm roof shim; the magnet lower face stays at Z=10.4 mm. Use a diametrically magnetized neodymium Ø5 × 1.5 mm magnet and calibrate with the final phone and cell installed.

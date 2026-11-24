@@ -1,5 +1,7 @@
 # Glue-on magnet retainer — 58 mm base
 
+**Using the reverse-loading disc and M2 mounts? Follow [base revision 2](../base-rev2/README.md) instead.** Its open magnet holes require this closing plate, and its assembly exports/checks include the revised housing. The reference assembly and floor checks on this page apply to the original closed-floor base.
+
 This separate, continuous **Ø58 × 0.60 mm plate** glues beneath the fixed base to cover the attachment-magnet ring. It has a flat bonding face, no holes, and a 0.15 mm bevel on the phone-facing edge. It has no raised locating rim that could enter the rotating cap's clearance.
 
 The saved `Bottom_Cover` already has a 0.60 mm solid floor beneath all 24 Ø5 × 1.5 mm magnets. This part is an **additional protective retainer**, useful when reinforcing that floor or covering exposed pockets on a matching print. It cannot compensate for a detached housing-to-cover joint; check that joint too. CAD checks apply to the saved enclosure, not an unidentified older print.
