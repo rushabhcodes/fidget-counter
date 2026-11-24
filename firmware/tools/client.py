@@ -5,6 +5,8 @@ from bleak import BleakClient, BleakScanner
 SERVICE = "76b8a000-5aa4-4c10-b5df-0da684303f21"
 STATE = "76b8a001-5aa4-4c10-b5df-0da684303f21"
 CONTROL = "76b8a002-5aa4-4c10-b5df-0da684303f21"
+BATTERY = "76b8a003-5aa4-4c10-b5df-0da684303f21"
+BATTERY_LEVEL = "00002a19-0000-1000-8000-00805f9b34fb"
 def decode(payload):
     if len(payload) != 20: raise ValueError("Expected20-byte state")
     version,flags,angle,a,b,total,sequence = struct.unpack("<BBHIIII",payload)
@@ -12,7 +14,20 @@ def decode(payload):
     return {"total":total,"forward":a,"reverse":b,"angle_degrees":angle/16,
             "sensor_fault":bool(flags&1),"storage_fault":bool(flags&2),
             "unsaved":bool(flags&4),"sample_gap":bool(flags&8),
-            "saturated":bool(flags&16),"sequence":sequence}
+            "saturated":bool(flags&16),"low_battery":bool(flags&32),
+            "battery_fault":bool(flags&64),"sequence":sequence}
+def decode_battery(payload):
+    if len(payload) != 5: raise ValueError("Expected5-byte battery status")
+    version,flags,percent,mv = struct.unpack("<BBBH",payload)
+    if version != 1 or flags & ~3: raise ValueError("Unsupported battery status")
+    valid = bool(flags & 1)
+    if valid and (percent > 100 or not 1700 <= mv <= 3600):
+        raise ValueError("Invalid battery measurement")
+    if not valid and (percent != 255 or mv != 65535):
+        raise ValueError("Invalid unavailable-battery encoding")
+    return {"battery_percent":percent if valid else None,
+            "battery_millivolts":mv if valid else None,
+            "battery_valid":valid,"low_battery":bool(flags&2)}
 async def run(args):
     device = args.address or await BleakScanner.find_device_by_filter(
         lambda d,a: SERVICE in [u.lower() for u in (a.service_uuids or [])],timeout=20)
@@ -28,10 +43,13 @@ async def run(args):
                 await asyncio.sleep(.1)
             else: raise RuntimeError("Reset/save not confirmed; inspect device status")
         else:
+            await client.start_notify(BATTERY,lambda _,data:print(json.dumps(decode_battery(data))))
+            print(json.dumps(decode_battery(await client.read_gatt_char(BATTERY))))
             print(json.dumps(decode(await client.read_gatt_char(STATE))))
             await client.start_notify(STATE,lambda _,data:print(json.dumps(decode(data))))
             await asyncio.sleep(args.seconds)
             await client.stop_notify(STATE)
+            await client.stop_notify(BATTERY)
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--address",help="OS-specific BLE address/identifier; select explicitly if multiple units")

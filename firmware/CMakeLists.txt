@@ -3,4 +3,5 @@ set(BOARD_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(fidget_counter)
 target_include_directories(app PRIVATE include)
-target_sources(app PRIVATE src/main.c src/rotation_counter.c src/tmag3001_frame.c)
+target_sources(app PRIVATE src/main.c src/rotation_counter.c src/tmag3001_frame.c
+  src/battery_state.c src/battery_adc.c)

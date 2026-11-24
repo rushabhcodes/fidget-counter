@@ -15,6 +15,7 @@
 
 &gpio0 { status = "okay"; };
 &gpiote { status = "okay"; };
+&adc { status = "okay"; };
 &uicr { gpio-as-nreset; };
 
 &pinctrl {

@@ -1,11 +1,12 @@
-import importlib.util, struct, sys, tempfile, types, unittest
+import asyncio, importlib.util, struct, sys, tempfile, types, unittest
 from pathlib import Path
 from unittest.mock import patch
 TOOLS = Path(__file__).resolve().parents[1] / "tools"
 sys.path.insert(0, str(TOOLS))
 from verify_build import check_hex
 with patch.dict(sys.modules, {"bleak":types.SimpleNamespace(BleakClient=None,BleakScanner=None)}):
-    from client import decode
+    from client import decode, decode_battery
+    import client as client_module
 
 def record(kind, address=0, data=b""):
     body = bytes([len(data)]) + address.to_bytes(2,"big") + bytes([kind]) + data
@@ -57,4 +58,54 @@ class Tools(unittest.TestCase):
     def test_bad_ble_payload(self):
         for data in [b"",b"x"*19,bytes([2])+bytes(19)]:
             with self.subTest(data=data),self.assertRaises(ValueError): decode(data)
+    def test_battery_wire_format(self):
+        self.assertEqual(decode_battery(bytes([1,1,50,0x22,0x0b])),
+            {"battery_percent":50,"battery_millivolts":2850,"battery_valid":True,"low_battery":False})
+        self.assertTrue(decode_battery(struct.pack("<BBBH",1,3,20,2700))["low_battery"])
+    def test_battery_fault_does_not_report_empty_or_clear_last_warning(self):
+        state=decode_battery(bytes([1,2,255,255,255]))
+        self.assertIsNone(state["battery_percent"])
+        self.assertIsNone(state["battery_millivolts"])
+        self.assertFalse(state["battery_valid"])
+        self.assertTrue(state["low_battery"])
+    def test_invalid_battery_wire_format(self):
+        for payload in [b"",bytes(4),bytes([2,1,50,0x22,0x0b]),
+                        bytes([1,4,255,255,255]),bytes([1,1,101,0x22,0x0b]),
+                        bytes([1,0,0,0,0]),struct.pack("<BBBH",1,1,50,5000)]:
+            with self.subTest(payload=payload),self.assertRaises(ValueError): decode_battery(payload)
+    def test_legacy_state_preserves_battery_flags(self):
+        state=decode(struct.pack("<BBHIIII",1,96,0,0,0,0,0))
+        self.assertTrue(state["low_battery"])
+        self.assertTrue(state["battery_fault"])
+
+class BatteryClient(unittest.TestCase):
+    def test_reads_and_subscribes_warning_and_unavailable_status(self):
+        for payload in [struct.pack("<BBBH",1,3,20,2700),bytes([1,2,255,255,255])]:
+            with self.subTest(payload=payload):
+                subscriptions=[]
+                stopped=[]
+                state=struct.pack("<BBHIIII",1,32,0,7,5,12,1234)
+                class FakeClient:
+                    async def __aenter__(self): return self
+                    async def __aexit__(self,*_): return None
+                    async def read_gatt_char(self,uuid):
+                        return payload if uuid==client_module.BATTERY else state
+                    async def start_notify(self,uuid,callback):
+                        subscriptions.append(uuid)
+                        callback(None,payload if uuid==client_module.BATTERY else state)
+                    async def stop_notify(self,uuid): stopped.append(uuid)
+                args=types.SimpleNamespace(address="test-device",reset=False,save=False,seconds=0)
+                with patch.object(client_module,"BleakClient",return_value=FakeClient()),patch("builtins.print") as printed:
+                    asyncio.run(client_module.run(args))
+                self.assertEqual(subscriptions,[client_module.BATTERY,client_module.STATE])
+                self.assertCountEqual(stopped,subscriptions)
+                decoded=[client_module.json.loads(call.args[0]) for call in printed.call_args_list]
+                batteries=[item for item in decoded if "battery_percent" in item]
+                self.assertEqual(len(batteries),2)
+                self.assertTrue(all(item["low_battery"] for item in batteries))
+                self.assertTrue(any(item.get("total")==12 for item in decoded))
+                if payload[1] & 1:
+                    self.assertEqual(batteries[0]["battery_percent"],20)
+                else:
+                    self.assertIsNone(batteries[0]["battery_percent"])
 if __name__ == "__main__": unittest.main()

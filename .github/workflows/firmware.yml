@@ -58,7 +58,7 @@ jobs:
           cp firmware/build/zephyr/zephyr.dts firmware/build/delivery/zephyr.dts
           cp firmware/build/firmware-build-manifest.json firmware/build/delivery/
           cp firmware/tools/flash.py firmware/tools/verify_build.py firmware/tools/client.py firmware/tools/requirements-client.txt firmware/build/delivery/
-          cp firmware/README.md PROGRAMMING.md ASSEMBLY.md firmware/build/delivery/
+          cp firmware/README.md firmware/BATTERY.md PROGRAMMING.md ASSEMBLY.md firmware/build/delivery/
           python3 firmware/tools/package_licenses.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:

@@ -4,6 +4,8 @@ A CR2450-powered nRF52810 BLE rotation counter with a centered TMAG3001 Hall sen
 
 ## Develop and build
 
+The [RevC firmware](firmware/README.md) reports an estimated CR2450 percentage and a low-battery warning over BLE. Standard Battery Service supports percentage reads; [Battery Status](firmware/BATTERY.md) provides voltage, validity and the warning flag for the app. Battery life still requires a current measurement on hardware.
+
 Requires Bun. The project pins tsCircuit **0.0.3236** and its dependency graph in `bun.lock`.
 
 ```sh
