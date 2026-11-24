@@ -18,34 +18,33 @@ The central TMAG3001A2 measures the diametric encoder magnet's XY angle. A cap-o
 
 ## Parts required per device
 
-This list uses the **reverse-loading base revision 2**, derived from this folder's revision 1.0.7 enclosure. Use the revised housing, disc and flexure together with the closing retainer. The PCB, rotating cap and bushings are reused. [Revision 2 design, assembly instructions, fit coupons and CAD checks](mechanical/base-rev2/README.md) are separate from the original enclosure exports and published circuit. Dimensions are in millimetres; Ø means diameter, OD means outside diameter and ID means inside diameter. The complete PCB component list is in [BOM.csv](BOM.csv).
+This list uses the **closed-bottom base revision 2**, derived from this folder's revision 1.0.7 enclosure. Use the revised housing, disc and M2 flexure together. The disc has a flat, integral printed floor; **no steel backing ring or separate closing plate is required**. The PCB, rotating cap and bushings are reused. [Revision 2 design, assembly instructions, fit coupons and CAD checks](mechanical/base-rev2/README.md) are separate from the original enclosure exports and published circuit. Dimensions are in millimetres; Ø means diameter, OD means outside diameter and ID means inside diameter. The complete PCB component list is in [BOM.csv](BOM.csv).
 
 ### Hardware and materials
 
 | Item | Quantity | Required specification / use |
 |---|---:|---|
 | Populated PCB | 1 | Rev A, Ø36.5 × 1.0, assembled with the fitted parts in [BOM.csv](BOM.csv). C13/C14 are DNP tuning sites. |
-| Attachment magnets | 24 | Neodymium discs, **Ø5 × 1.5, axially magnetized**. Insert from the phone-facing underside into **Ø4.95 trial press-fit pockets**, toward the steel backing ring, then close with the retainer. Test the supplied coupon and polarity/phone attraction first. |
+| Attachment magnets | 24 | Neodymium discs, **Ø5 × 1.5, axially magnetized**. Press from the **inner / PCB-facing side** into **Ø4.95 × 1.55 blind pockets**, toward the continuous printed floor, before bonding the disc to the housing. Test the supplied coupon and polarity/phone attraction first. |
 | Encoder magnet | 1 | Neodymium disc, **Ø5 × 1.5, diametrically magnetized**. Fits the moving cap's Ø5.2 pocket. This is a different magnetization from the 24 attachment magnets. |
 | Flexure / PCB retaining screws | 4 | **M2 × 10, countersunk**, 10 mm overall including the head, **Ø3.8 mm head and 90° countersink**, e.g. DIN 965H. Nominal seated thread engagement in the insert is 2.3 mm; physically check the actual head/neck profile and seating. See the [selected screw reference](mechanical/base-rev2/README.md#selected-insert-and-mounting-dimensions). |
 | M2 heat-set inserts | 4 | **CNC Kitchen M2 × 3 reference: Ø3.6 outside × 3.0 long**, in **Ø3.2 × 4.1 deep** underside pockets. Ø6.2 lower bosses leave 1.3 mm wall around the knurled envelope. Heat-set before bonding the magnetic disc; see [dimensions and source](mechanical/base-rev2/README.md#selected-insert-and-mounting-dimensions). |
-| Steel backing ring | 1 | **ID44.05 × OD54.45 × 0.70**. Separate metal part behind the attachment magnets; the supplied STEP is a shape reference, not a printable substitute. |
 | CR2032 battery | 1 | Primary lithium cell, Ø20 × 3.2. Positive face points toward the bottom cover; insert after PCB reflow. |
 | CR2032 holder, BT1 | 1, included in PCB BOM | **MYOUNG BS-08-B2AA020-R / JLCPCB C964787**, soldered to the PCB underside. Buy separately only if it is omitted from the supplied PCBA. |
 | Encoder roof shim | 1 | Nonmagnetic disc, **Ø5 × 0.20**, fitted above the encoder magnet in its blind cap pocket. |
 | Compliant actuator ring | 1 | Silicone, **OD27.4 × ID23.2 × 1.20**. Cut or mold to the reference shape; material force/compression qualification is still required. See [REVIEW_FIXES.md](REVIEW_FIXES.md#press-assembly-and-tolerance-budget). |
 | Actuator shim stock | As needed for one stack | PET annuli, **OD27.4 × ID23.2**. Select a **0–1.20** total stack in **0.05** increments; nominal stack is **0.60**. Adjust to a measured **0.10–0.15** resting switch gap at every cap angle. |
-| Phone-facing protective pad / film | 1 | **Ø58 × 0.20 nominal**, nonmagnetic, smooth protective material. Fit below the new retainer; its thickness affects magnet-to-phone separation. |
-| Super glue / cyanoacrylate | As needed | Plastic-compatible adhesive for the new retainer, plus compatible adhesive for the magnets and cover-to-housing joint. Follow the adhesive's material preparation and full-cure directions. |
-| Printing filament | As needed | PETG for the cap and flexure. Use a suitable thermoplastic for the heat-set housing and print the retainer in the same rigid material as the base. Test heat-setting and press fit with the supplied coupons. The silicone ring and PET shims are separate material parts. |
+| Phone-facing protective pad / film | 1 | **Ø58 × 0.20 nominal**, nonmagnetic, smooth protective material. Fit directly below the disc's flat printed floor; its thickness affects magnet-to-phone separation. |
+| Super glue / cyanoacrylate | As needed | Plastic-compatible adhesive for the loaded disc-to-housing joint and, if needed, the encoder magnet. Follow the adhesive's material preparation and full-cure directions. |
+| Printing filament | As needed | PETG for the cap and flexure; a suitable thermoplastic for the heat-set housing and magnetic disc. Print the 0.60 mm phone-facing floor solid. Test heat-setting and press fit with the supplied coupons. The silicone ring and PET shims are separate material parts. |
 
 **Magnet total: 25 per device — 24 axial attachment discs + 1 diametric encoder disc.** Do not substitute axial discs for the encoder. The attachment array's polarity arrangement and holding force still need testing with the actual phone.
 
-**Mounting hardware:** revision 2 replaces the original M1.6 screws with four M2 screws and four brass inserts. Insert body dimensions vary even when the thread is M2; match the specified compact insert. The screw solids are dimensioned references, so confirm the actual head and length against the seat. The magnetic disc and retainer are bonded; no nuts, washers or bottom-cover screws are required.
+**Mounting hardware:** revision 2 replaces the original M1.6 screws with four M2 screws and four brass inserts. Insert body dimensions vary even when the thread is M2; match the specified compact insert. The screw solids are dimensioned references, so confirm the actual head and length against the seat. The loaded magnetic disc is bonded to the housing; no nuts, washers, backing ring, closing plate or bottom-cover screws are required.
 
 ### Parts to print
 
-Use the revised M2 housing and flexure with the reverse-loading disc and closing plate. Reuse the original cap, bushings and service tools. The quantities below mean physical pieces; print the spacer and release-key STL multiple times as shown.
+Use the revised M2 housing and flexure with the closed-bottom magnetic disc. Reuse the original cap, bushings and service tools. The quantities below mean physical pieces; print the spacer and release-key STL multiple times as shown.
 
 [Download the complete revision 2 print pack](mechanical/base-rev2/export/Base_Rev2_Print_Pack.zip), including the reused prints, fit coupons, editable STEP solids and checked reference assemblies.
 
@@ -54,13 +53,12 @@ Use the revised M2 housing and flexure with the reverse-loading disc and closing
 | Rotating cap | 1 | [Rotating_Cap.stl](mechanical/Print_STL/Rotating_Cap.stl) |
 | Stationary housing with M2 insert pockets | 1 | [Stationary_Housing_M2_Inserts.stl](mechanical/base-rev2/export/Print_STL/Stationary_Housing_M2_Inserts.stl) |
 | Flexure retention system with M2 clearance/countersinks | 1 | [Flexure_Retention_System_M2.stl](mechanical/base-rev2/export/Print_STL/Flexure_Retention_System_M2.stl) |
-| Magnetic base disc with underside press-fit pockets | 1 | [Magnetic_Base_Disc_Reverse_Load.stl](mechanical/base-rev2/export/Print_STL/Magnetic_Base_Disc_Reverse_Load.stl) |
+| Magnetic base disc with inner blind pockets and flat phone face | 1 | [Magnetic_Base_Disc_Closed_Bottom.stl](mechanical/base-rev2/export/Print_STL/Magnetic_Base_Disc_Closed_Bottom.stl) |
 | PCB spacer bushings, OD4.4 × ID3.4 × 2.5 | 4 | [PCB_Spacer_Print_4.stl](mechanical/Print_STL/PCB_Spacer_Print_4.stl) — print four copies |
-| Required closing retainer, Ø58 × 0.60 | 1 | [Magnet_Retainer_58mm.stl](mechanical/base-rev2/export/Print_STL/Magnet_Retainer_58mm.stl) |
 | Cap release key, reusable tool | 2 | [Cap_Release_Key_Print_2.stl](mechanical/Print_STL/Cap_Release_Key_Print_2.stl) — print two copies |
 | PCB lift pick, reusable tool | 1 | [PCB_Lift_Pick.stl](mechanical/Print_STL/PCB_Lift_Pick.stl) |
 
-The **revision 2 disc has open loading holes**, so the closing retainer is required. Heat-set the inserts first, fit the steel backing ring and bond the empty disc, then press the magnets in from the underside and glue on the retainer. Print the retainer flat at **0.20 mm layer height, 100% solid, no supports**, and fit the protective pad below it. The plate and nominal glue layer add **0.65 mm**, making the assembly **14.65 mm** high including the relocated pad. Print the [magnet and insert fit coupons](mechanical/base-rev2/README.md#print-list) first; check phone holding force and the cured bond before use. The original closed-floor bottom cover remains in `mechanical/Print_STL/` for the original design.
+The **revision 2 disc has a flat, continuous 0.60 mm printed bottom**. Print that closed face on the bed, with blind pocket mouths upward. Heat-set the inserts, press the magnets into the separate disc from the inner face, then bond the loaded disc to the housing. Fit the protective pad directly underneath. **No backing ring or separate closing plate is needed**, and overall height is **14.0 mm** including the original 0.20 mm pad. Print the [magnet and insert fit coupons](mechanical/base-rev2/README.md#print-list) first; test the printed floor, cured bond and actual phone holding force before use. The original baseline exports remain in `mechanical/Print_STL/`.
 
 ### Assembly and programming tools
 
@@ -159,7 +157,7 @@ Current primary requirements: [rigid PCB capabilities](https://jlcpcb.com/capabi
 - `previews/`: copper layout views, a fitted-part assembly reference and all four schematic sheets in PNG/SVG. `pcb-bottom` shows the actual underside orientation; `pcb-bottom-top-coordinates` retains the source coordinate view. The assembly reference excludes DNP parts, GPIO escape lands and bare test/contact interfaces; crystal manufacturer pin numbering is documented above. Library model downloads are included under `imports/`, with the full device GLB and PNG at `previews/3d.*` and the regenerated bare PCB view at `previews/pcb-3d.*`.
 - `fabrication/`: prototype Gerber/drill ZIP and assembly position reference CSV.
 - `BOM.csv` and `netlist.txt`: assembly intent and electrical connectivity.
-- `mechanical/`: original revision 1.0.7 enclosure exports, spacers and service tools, editable CadQuery source/parameters and geometry validation. **`mechanical/base-rev2/` contains the latest reverse-loading magnetic disc, M2 insert housing/flexure, required retainer, fit coupons and checked reference assemblies.** `mechanical/magnet-retainer/` retains the original retrofit plate and its baseline fitting instructions.
+- `mechanical/`: original revision 1.0.7 enclosure exports, spacers and service tools, editable CadQuery source/parameters and geometry validation. **`mechanical/base-rev2/` contains the latest closed-bottom magnetic disc, M2 insert housing/flexure, fit coupons and checked reference assemblies.** `mechanical/magnet-retainer/` retains the earlier optional retrofit plate for the original baseline; the latest closed-bottom design does not use it.
 - `validation/`: final check logs, warning inventory and source/circuit hashes.
 
 Treat the Gerbers as a prototype review handoff. Resolve the thin mounting-hole web with the fabricator and the stencil/land-pattern details with the assembler before placing an order. RF tuning and magnetic calibration remain prototype measurements.

@@ -1,7 +1,9 @@
 {
   "units": "mm",
   "magnet_pocket_diameter": 4.95,
-  "magnet_entry_chamfer": 0.2,
+  "magnet_entry_chamfer": 0.15,
+  "phone_floor_thickness": 0.6,
+  "magnet_pocket_depth": 1.55,
   "insert_reference": "CNC Kitchen M2 x 3",
   "insert_source": "https://cnckitchen.com/s/CNCKitchen_Heat-Set-Insert-Dimensions-and-Design-Guidelines.pdf",
   "insert_outer_diameter": 3.6,
@@ -17,8 +19,6 @@
   "screw_reference_head_diameter": 3.8,
   "flexure_countersink_diameter": 4.0,
   "flexure_mount_pad_diameter": 4.6,
-  "retainer_thickness": 0.6,
-  "retainer_glue_gap": 0.05,
   "magnet_coupon_diameters": [4.9, 4.95, 5.0, 5.05],
   "insert_coupon_diameters": [3.1, 3.2, 3.3]
 }

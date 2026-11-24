@@ -1,4 +1,4 @@
-"""Reverse-loading magnet disc and M2 insert mounts for the 1.0.7 enclosure.
+"""Closed-bottom magnet disc and M2 insert mounts for the 1.0.7 enclosure.
 
 Builds the original parametric enclosure in a temporary directory, then applies
 the revision to its exact released/pressed solids. The original design files
@@ -67,22 +67,26 @@ assert (p["boss_diameter"] - p["insert_outer_diameter"]) / 2 >= 1.3 - 1e-6
 assert p["insert_hole_depth"] >= p["insert_recess"] + p["insert_length"] + 1.0 - 1e-6
 assert p["boss_taper_top_z"] <= P["skirt_bottom_z"] - P["button_travel"] - 0.1
 assert 2 * old["disc_pitch_r"] * math.sin(math.pi / 24) - 2 * (pocket_r + p["magnet_entry_chamfer"]) >= 1.0
+assert math.isclose(p["phone_floor_thickness"], P["bottom_skin_thickness"])
+assert math.isclose(p["magnet_pocket_depth"], old["mag_top"] - skin_top)
+assert p["phone_floor_thickness"] >= 0.6
 
-print("Building reverse-loading disc and M2 insert mounts...", flush=True)
-# Keep the same tray envelope, but put the loading mouths on the phone face.
-# The steel backing ring is the upper seating stop; the glued plate closes
-# the lower face after pressing in the magnets. There is no plastic floor
-# beneath the magnets in this revised part.
-disc = disk(radius, pad_z, P["bottom_skin_thickness"])
+print("Building closed-bottom disc and M2 insert mounts...", flush=True)
+# A continuous phone-facing floor is integral with the disc. Magnets load
+# from the inner/PCB-facing side before the disc is bonded to the housing.
+# No steel backing ring or separate phone-side closing plate is required.
+disc = disk(radius, pad_z, p["phone_floor_thickness"])
 disc = disc.fuse(annulus(old["Rbody"], old["tray_ro"], skin_top - 0.01,
                          old["mag_top"] - skin_top + 0.01))
+entry_start = old["mag_top"] - p["magnet_entry_chamfer"]
 for center in old["attachment_centers"]:
     x, y = center["x"], center["y"]
-    disc = disc.cut(disk(pocket_r, pad_z - 0.1, old["mag_top"] - pad_z + 0.3, x, y))
-    disc = disc.cut(cone(pocket_r + p["magnet_entry_chamfer"], pocket_r,
-                         pad_z, p["magnet_entry_chamfer"], x, y))
+    disc = disc.cut(disk(pocket_r, skin_top, p["magnet_pocket_depth"] + 0.1, x, y))
+    disc = disc.cut(cone(pocket_r, pocket_r + p["magnet_entry_chamfer"],
+                         entry_start, p["magnet_entry_chamfer"], x, y))
 disc = disc.clean()
-magnet_bottom = old["shield_z"] - P["attachment_magnet_thickness"]
+magnet_bottom = skin_top
+magnet_top = magnet_bottom + P["attachment_magnet_thickness"]
 magnets = compound([disk(magnet_r, magnet_bottom, P["attachment_magnet_thickness"],
                          c["x"], c["y"]) for c in old["attachment_centers"]])
 
@@ -134,34 +138,31 @@ thread_engagement = min(insert_top, screw_head_top - screw_head_h) - max(insert_
 assert thread_engagement >= 2.0
 assert screw_tip > skin_top
 
-plate = cq.Workplane("XY").circle(radius).extrude(p["retainer_thickness"]).faces("<Z").edges().chamfer(0.15).val()
-plate_bottom = pad_z - p["retainer_glue_gap"] - p["retainer_thickness"]
-installed_plate = plate.translate((0, 0, plate_bottom))
-phone_pad = disk(radius, plate_bottom - P["phone_pad_thickness"], P["phone_pad_thickness"])
+phone_pad = old["phone_pad"]
 printed = {
-    "Magnetic_Base_Disc_Reverse_Load": disc,
+    "Magnetic_Base_Disc_Closed_Bottom": disc,
     "Stationary_Housing_M2_Inserts": housing,
     "Flexure_Retention_System_M2": neutral_flex,
-    "Magnet_Retainer_58mm": plate,
 }
 
-# Coupon holes have the same direction and entry chamfer as the real part.
-def coupon(diameters, thickness, spacing, width, blind_depth=None):
+# Both coupons have blind pockets opening upward. The magnet coupon reproduces
+# the disc's integral phone floor and inner-side lead-in.
+def coupon(diameters, thickness, spacing, width, depth, lead_in=0):
+    assert 0 < depth < thickness
     length = (len(diameters) - 1) * spacing + width
     shape = cq.Workplane("XY").box(length, width, thickness, centered=(False, True, False)).val()
     for index, diameter in enumerate(diameters):
         x = width / 2 + index * spacing
-        if blind_depth is None:
-            shape = shape.cut(disk(diameter / 2, -0.01, thickness + 0.02, x))
-            shape = shape.cut(cone(diameter / 2 + p["magnet_entry_chamfer"], diameter / 2,
-                                    0, p["magnet_entry_chamfer"], x))
-        else:
-            shape = shape.cut(disk(diameter / 2, thickness - blind_depth, blind_depth + 0.01, x))
+        shape = shape.cut(disk(diameter / 2, thickness - depth, depth + 0.01, x))
+        if lead_in:
+            shape = shape.cut(cone(diameter / 2, diameter / 2 + lead_in,
+                                    thickness - lead_in, lead_in, x))
     # An index notch marks the first/smallest hole without raised print labels.
     return shape.cut(disk(0.75, -0.01, thickness + 0.02, 0, -width / 2)).clean()
 
 printed["Magnet_Fit_Coupon_4p90_4p95_5p00_5p05"] = coupon(
-    p["magnet_coupon_diameters"], old["mag_top"] - pad_z, 8, 8)
+    p["magnet_coupon_diameters"], old["mag_top"] - pad_z, 8, 8,
+    p["magnet_pocket_depth"], p["magnet_entry_chamfer"])
 printed["M2_Insert_Fit_Coupon_3p10_3p20_3p30"] = coupon(
     p["insert_coupon_diameters"], 5.0, 8, p["boss_diameter"], p["insert_hole_depth"])
 
@@ -191,10 +192,12 @@ for name, shape in printed.items():
 states = {}
 for state in ("Released", "Pressed"):
     parts = old["states"][state].copy()
+    parts.pop("Magnetic_Shield")
     parts.update({"Stationary_Housing": housing, "Bottom_Cover": disc,
                   "MagSafe_Magnet_Array": magnets,
                   "Flexure_Retention_System": released_flex if state == "Released" else pressed_flex,
-                  "Magnet_Retainer": installed_plate, "Phone_Pad": phone_pad,
+                  "Phone_Pad": phone_pad,
+                  "Encoder_Roof_Shim": old["encoder_shim"].translate((0, 0, -P["button_travel"] if state == "Pressed" else 0)),
                   "M2_Fasteners": screws, "M2_Inserts": inserts,
                   "PCB_Spacer_Bushings": old["pcb_spacers"]})
     states[state] = parts
@@ -215,7 +218,15 @@ for state, parts in states.items():
         pair = {name_a, name_b}
         row = {"state": state, "parts": [name_a, name_b], "overlap_mm3": round(overlap, 6)}
         if pair == {"Bottom_Cover", "MagSafe_Magnet_Array"}:
-            expected = 24 * math.pi * (magnet_r**2 - pocket_r**2) * (old["mag_top"] - magnet_bottom)
+            straight_height = max(0, min(magnet_top, entry_start) - magnet_bottom)
+            taper_lo = max(magnet_bottom, entry_start)
+            taper_hi = min(magnet_top, entry_start + magnet_r - pocket_r)
+            taper_overlap = 0
+            if taper_hi > taper_lo:
+                r_lo = pocket_r + taper_lo - entry_start
+                r_hi = pocket_r + taper_hi - entry_start
+                taper_overlap = magnet_r**2 * (taper_hi - taper_lo) - (r_hi**3 - r_lo**3) / 3
+            expected = 24 * math.pi * ((magnet_r**2 - pocket_r**2) * straight_height + taper_overlap)
             assert abs(overlap - expected) < 0.002
             intentional_fits.append(dict(row, classification=f"{2 * (magnet_r - pocket_r):.3f} mm diametral magnet press fit"))
         elif pair == {"Stationary_Housing", "M2_Inserts"}:
@@ -232,13 +243,14 @@ for state, parts in states.items():
 loading_checks = []
 for c in old["attachment_centers"]:
     x, y = c["x"], c["y"]
-    # A slightly smaller gauge must have an uninterrupted passage from the phone
-    # side to the steel stop, before the retainer is fitted.
-    path = disk(pocket_r - 0.001, pad_z - 0.2, old["shield_z"] - pad_z + 0.2, x, y)
-    assert sum(path.intersect(s).Volume() for s in (disc, housing)) < 0.002
-    floor_probe = disk(magnet_r, 0, p["retainer_thickness"], x, y)
-    assert floor_probe.cut(plate).Volume() < 0.002
-    loading_checks.append({"magnet": c["index"], "phone_side_path_clear": True, "retainer_fully_covers_magnet": True})
+    # The disc is loaded before bonding it to the housing. An inner-side gauge
+    # reaches the seat, while the complete 0.6 mm phone-facing floor stays solid.
+    path = disk(pocket_r - 0.001, skin_top + 0.001,
+                p["magnet_pocket_depth"] + 0.2, x, y)
+    assert path.intersect(disc).Volume() < 0.002
+    floor_probe = disk(magnet_r, pad_z, p["phone_floor_thickness"], x, y)
+    assert floor_probe.cut(disc).Volume() < 0.002
+    loading_checks.append({"magnet": c["index"], "inner_side_path_clear": True, "integral_phone_floor_verified": True})
 
 extraction = []
 for lift in (0, 0.5, 1, 2, 4, 6, 10, 16, P["pcb_service_lift"]):
@@ -258,26 +270,27 @@ for x, y in mounts:
     entry = disk(p["insert_outer_diameter"] / 2, skin_top - 3, 3, x, y)
     assert entry.intersect(housing).Volume() < 0.002
 
-bond_probe = disk(radius, pad_z, 0.001)
-bond_area = disc.intersect(bond_probe).Volume() / 0.001
 report = {
     "status": "CAD checked prototype; physical press fit, heat setting and pull-off strength untested",
     "parameters": p,
     "printed_parts": manifest,
     "unintended_collisions": collisions,
     "intentional_interference": intentional_fits,
-    "magnet_loading": "phone-facing underside, +Z; steel backing ring is the seating stop",
+    "magnet_loading": "inner / PCB-facing side, -Z; integral printed phone floor is the seating stop",
     "magnet_count": 24,
     "magnet_nominal_diameter_mm": 2 * magnet_r,
     "magnet_diametral_interference_mm": round(2 * (magnet_r - pocket_r), 5),
     "magnet_entry_diameter_mm": round(2 * (pocket_r + p["magnet_entry_chamfer"]), 5),
     "magnet_minimum_web_mm": round(2 * old["disc_pitch_r"] * math.sin(math.pi / 24) - 2 * pocket_r, 5),
     "magnet_minimum_entry_web_mm": round(2 * old["disc_pitch_r"] * math.sin(math.pi / 24) - 2 * (pocket_r + p["magnet_entry_chamfer"]), 5),
-    "magnet_seated_z_mm": [magnet_bottom, old["shield_z"]],
+    "magnet_seated_z_mm": [magnet_bottom, magnet_top],
+    "magnet_pocket_depth_mm": p["magnet_pocket_depth"],
+    "magnet_recess_below_inner_face_mm": round(old["mag_top"] - magnet_top, 5),
     "loading_checks": loading_checks,
-    "retainer_required": True,
-    "retainer_glue_contact_area_mm2": round(bond_area, 3),
-    "nominal_total_height_including_pad_mm": round(P["overall_height"] - plate_bottom + P["phone_pad_thickness"], 5),
+    "retainer_required": False,
+    "metal_backing_ring_required": False,
+    "phone_floor_thickness_mm": p["phone_floor_thickness"],
+    "nominal_total_height_including_pad_mm": P["overall_height"],
     "insert_installation": "from underside before bonding magnetic disc; recess insert face 0.10 mm",
     "insert_seated_z_mm": [insert_bottom, insert_top],
     "insert_minimum_wall_after_knurl_mm": (p["boss_diameter"] - p["insert_outer_diameter"]) / 2,
@@ -293,17 +306,23 @@ report = {
 (out / "Validation/geometry-checks.json").write_text(json.dumps(report, indent=2) + "\n")
 assert not collisions, collisions
 
+# These outputs belong to the superseded open-hole variant and must not enter
+# the new print pack. The original retrofit plate remains in its own folder.
+for name in ("Magnetic_Base_Disc_Reverse_Load", "Magnet_Retainer_58mm"):
+    for directory, suffix in (("Print_STL", ".stl"), ("STEP_Parts", ".step")):
+        (out / directory / (name + suffix)).unlink(missing_ok=True)
+
 colors = old["colors"] | {"M2_Inserts": (0.78, 0.56, 0.20), "M2_Fasteners": (0.45, 0.48, 0.52),
-                         "Magnet_Retainer": (0.08, 0.60, 0.60), "Phone_Pad": (0.14, 0.17, 0.20),
+                         "Phone_Pad": (0.14, 0.17, 0.20), "Encoder_Roof_Shim": (0.6, 0.6, 0.6),
                          "PCB_Spacer_Bushings": (0.7, 0.72, 0.74)}
 for state, parts in states.items():
-    assembly = cq.Assembly(name="Reverse_Load_Base_M2_" + state)
+    assembly = cq.Assembly(name="Closed_Bottom_Base_M2_" + state)
     for name, shape in parts.items():
         assembly.add(shape, name=name, color=cq.Color(*colors[name]))
     assembly.export(str(out / f"Assembly_{state}.step"))
 
 from render import render
-render(out, disc, housing, plate, inserts, old, p)
+render(out, disc, housing, inserts, old, p)
 print(json.dumps({"output": str(out), "watertight_prints": len(manifest),
                   "magnet_loading_paths": len(loading_checks), "unintended_collisions": collisions,
                   "thread_engagement_mm": thread_engagement}, indent=2), flush=True)

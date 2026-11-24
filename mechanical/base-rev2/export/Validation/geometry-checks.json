@@ -3,7 +3,9 @@
   "parameters": {
     "units": "mm",
     "magnet_pocket_diameter": 4.95,
-    "magnet_entry_chamfer": 0.2,
+    "magnet_entry_chamfer": 0.15,
+    "phone_floor_thickness": 0.6,
+    "magnet_pocket_depth": 1.55,
     "insert_reference": "CNC Kitchen M2 x 3",
     "insert_source": "https://cnckitchen.com/s/CNCKitchen_Heat-Set-Insert-Dimensions-and-Design-Guidelines.pdf",
     "insert_outer_diameter": 3.6,
@@ -19,8 +21,6 @@
     "screw_reference_head_diameter": 3.8,
     "flexure_countersink_diameter": 4.0,
     "flexure_mount_pad_diameter": 4.6,
-    "retainer_thickness": 0.6,
-    "retainer_glue_gap": 0.05,
     "magnet_coupon_diameters": [
       4.9,
       4.95,
@@ -35,7 +35,7 @@
   },
   "printed_parts": [
     {
-      "name": "Magnetic_Base_Disc_Reverse_Load",
+      "name": "Magnetic_Base_Disc_Closed_Bottom",
       "valid_solid": true,
       "solids": 1,
       "stl_watertight": true,
@@ -45,7 +45,7 @@
         2.15
       ],
       "mesh_bed_shift_mm": -0.0,
-      "sha256_stl": "c867d3a905eb7dfd48c4065febced830416666c342cedc4d300f4ac9a6dcfc29"
+      "sha256_stl": "ab52eacbcab4c252a6ee565c6d5dcee95f2744dfeae1bbfdef636e527a84ad0f"
     },
     {
       "name": "Stationary_Housing_M2_Inserts",
@@ -74,19 +74,6 @@
       "sha256_stl": "91ed0c5783732907c309c525b39ab44e630ab77a6b5d0425f87643f2b9538a07"
     },
     {
-      "name": "Magnet_Retainer_58mm",
-      "valid_solid": true,
-      "solids": 1,
-      "stl_watertight": true,
-      "size_mm": [
-        58.0,
-        57.99351,
-        0.6
-      ],
-      "mesh_bed_shift_mm": -0.0,
-      "sha256_stl": "fb9a6719587b217c713abd1fb34b04d15b35d88c315b451718f59d499a33b3b3"
-    },
-    {
       "name": "Magnet_Fit_Coupon_4p90_4p95_5p00_5p05",
       "valid_solid": true,
       "solids": 1,
@@ -97,7 +84,7 @@
         2.15
       ],
       "mesh_bed_shift_mm": -0.0,
-      "sha256_stl": "3dd76d8d62934d9449d65cdc368e4589052bd0fc36d9c07a45243d3392409044"
+      "sha256_stl": "e4f0d538ea8cd2a9b3ce37ba50f9966df1daab59582756eeb002e75fa4e41817"
     },
     {
       "name": "M2_Insert_Fit_Coupon_3p10_3p20_3p30",
@@ -139,7 +126,7 @@
         "MagSafe_Magnet_Array",
         "Bottom_Cover"
       ],
-      "overlap_mm3": 13.597598,
+      "overlap_mm3": 13.246133,
       "classification": "0.050 mm diametral magnet press fit"
     },
     {
@@ -166,146 +153,149 @@
         "MagSafe_Magnet_Array",
         "Bottom_Cover"
       ],
-      "overlap_mm3": 13.597598,
+      "overlap_mm3": 13.246133,
       "classification": "0.050 mm diametral magnet press fit"
     }
   ],
-  "magnet_loading": "phone-facing underside, +Z; steel backing ring is the seating stop",
+  "magnet_loading": "inner / PCB-facing side, -Z; integral printed phone floor is the seating stop",
   "magnet_count": 24,
   "magnet_nominal_diameter_mm": 5.0,
   "magnet_diametral_interference_mm": 0.05,
-  "magnet_entry_diameter_mm": 5.35,
+  "magnet_entry_diameter_mm": 5.25,
   "magnet_minimum_web_mm": 1.47841,
-  "magnet_minimum_entry_web_mm": 1.07841,
+  "magnet_minimum_entry_web_mm": 1.17841,
   "magnet_seated_z_mm": [
-    0.8999999999999999,
-    2.4
+    0.8,
+    2.3
   ],
+  "magnet_pocket_depth_mm": 1.55,
+  "magnet_recess_below_inner_face_mm": 0.05,
   "loading_checks": [
     {
       "magnet": 1,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 2,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 3,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 4,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 5,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 6,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 7,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 8,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 9,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 10,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 11,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 12,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 13,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 14,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 15,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 16,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 17,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 18,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 19,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 20,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 21,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 22,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 23,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     },
     {
       "magnet": 24,
-      "phone_side_path_clear": true,
-      "retainer_fully_covers_magnet": true
+      "inner_side_path_clear": true,
+      "integral_phone_floor_verified": true
     }
   ],
-  "retainer_required": true,
-  "retainer_glue_contact_area_mm2": 2102.76,
-  "nominal_total_height_including_pad_mm": 14.65,
+  "retainer_required": false,
+  "metal_backing_ring_required": false,
+  "phone_floor_thickness_mm": 0.6,
+  "nominal_total_height_including_pad_mm": 14.0,
   "insert_installation": "from underside before bonding magnetic disc; recess insert face 0.10 mm",
   "insert_seated_z_mm": [
     0.9,

@@ -1,6 +1,6 @@
 # Glue-on magnet retainer — 58 mm base
 
-**Using the reverse-loading disc and M2 mounts? Follow [base revision 2](../base-rev2/README.md) instead.** Its open magnet holes require this closing plate, and its assembly exports/checks include the revised housing. The reference assembly and floor checks on this page apply to the original closed-floor base.
+**The latest [closed-bottom base and M2 mounts](../base-rev2/README.md) do not use this separate plate.** That design has an integral flat phone-facing floor and needs no steel backing ring. This page retains the earlier optional retrofit for the original enclosure baseline.
 
 This separate, continuous **Ø58 × 0.60 mm plate** glues beneath the fixed base to cover the attachment-magnet ring. It has a flat bonding face, no holes, and a 0.15 mm bevel on the phone-facing edge. It has no raised locating rim that could enter the rotating cap's clearance.
 

@@ -1,6 +1,6 @@
 # PCB / enclosure interface — datasheet-review revision 1.0.7
 
-**For the revised reverse-loading magnet disc and M2 heat-set mounts, use [mechanical/base-rev2/README.md](mechanical/base-rev2/README.md).** It supplies the matching disc, housing, flexure and closing retainer, plus fit coupons and assembly checks. The PCB and original rotating cap are reused. The dimensions and M1.6 hardware below describe the retained original enclosure baseline.
+**For the revised closed-bottom magnet disc and M2 heat-set mounts, use [mechanical/base-rev2/README.md](mechanical/base-rev2/README.md).** It supplies the matching one-piece disc, housing and flexure, plus fit coupons and assembly checks. Magnets load from the inner side onto an integral flat phone-facing floor; no steel backing ring or separate closing plate is used. The PCB and original rotating cap are reused. The dimensions and M1.6 hardware below describe the retained original enclosure baseline.
 
 Coordinates are millimetres in a top view, relative to the rotation axis. The board is Ø36.5 × 1.0 mm, with four Ø3.6 mm nonplated mounting holes at (±11.45513, ±11.45513). Their thin 0.25 mm nominal edge web still requires fabricator acceptance. Printed shoulders and bushings support the board.
 
